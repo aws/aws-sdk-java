@@ -18,15 +18,13 @@ import javax.annotation.Generated;
  * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum NetworkInterfaceType {
+public enum NetworkInterfaceCreationType {
 
-    Interface("interface"),
-    NatGateway("natGateway"),
     Efa("efa");
 
     private String value;
 
-    private NetworkInterfaceType(String value) {
+    private NetworkInterfaceCreationType(String value) {
         this.value = value;
     }
 
@@ -40,17 +38,17 @@ public enum NetworkInterfaceType {
      *
      * @param value
      *        real value
-     * @return NetworkInterfaceType corresponding to the value
+     * @return NetworkInterfaceCreationType corresponding to the value
      *
      * @throws IllegalArgumentException
      *         If the specified value does not map to one of the known values in this enum.
      */
-    public static NetworkInterfaceType fromValue(String value) {
+    public static NetworkInterfaceCreationType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (NetworkInterfaceType enumEntry : NetworkInterfaceType.values()) {
+        for (NetworkInterfaceCreationType enumEntry : NetworkInterfaceCreationType.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

@@ -120,6 +120,11 @@ public class InstanceNetworkInterfaceSpecificationStaxUnmarshaller implements Un
                     instanceNetworkInterfaceSpecification.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("InterfaceType", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.setInterfaceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceNetworkInterfaceSpecification;

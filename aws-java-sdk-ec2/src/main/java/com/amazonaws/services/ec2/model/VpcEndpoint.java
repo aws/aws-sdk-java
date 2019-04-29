@@ -88,7 +88,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
     private Boolean privateDnsEnabled;
     /**
      * <p>
-     * Indicates whether the VPC Endpoint is being managed by its service.
+     * Indicates whether the VPC endpoint is being managed by its service.
      * </p>
      */
     private Boolean requesterManaged;
@@ -690,11 +690,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the VPC Endpoint is being managed by its service.
+     * Indicates whether the VPC endpoint is being managed by its service.
      * </p>
      * 
      * @param requesterManaged
-     *        Indicates whether the VPC Endpoint is being managed by its service.
+     *        Indicates whether the VPC endpoint is being managed by its service.
      */
 
     public void setRequesterManaged(Boolean requesterManaged) {
@@ -703,10 +703,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the VPC Endpoint is being managed by its service.
+     * Indicates whether the VPC endpoint is being managed by its service.
      * </p>
      * 
-     * @return Indicates whether the VPC Endpoint is being managed by its service.
+     * @return Indicates whether the VPC endpoint is being managed by its service.
      */
 
     public Boolean getRequesterManaged() {
@@ -715,11 +715,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the VPC Endpoint is being managed by its service.
+     * Indicates whether the VPC endpoint is being managed by its service.
      * </p>
      * 
      * @param requesterManaged
-     *        Indicates whether the VPC Endpoint is being managed by its service.
+     *        Indicates whether the VPC endpoint is being managed by its service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -730,10 +730,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the VPC Endpoint is being managed by its service.
+     * Indicates whether the VPC endpoint is being managed by its service.
      * </p>
      * 
-     * @return Indicates whether the VPC Endpoint is being managed by its service.
+     * @return Indicates whether the VPC endpoint is being managed by its service.
      */
 
     public Boolean isRequesterManaged() {

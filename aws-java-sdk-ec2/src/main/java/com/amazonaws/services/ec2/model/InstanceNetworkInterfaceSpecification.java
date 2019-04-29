@@ -116,6 +116,12 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * </p>
      */
     private String subnetId;
+    /**
+     * <p>
+     * The type of interface.
+     * </p>
+     */
+    private String interfaceType;
 
     /**
      * <p>
@@ -850,6 +856,46 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * The type of interface.
+     * </p>
+     * 
+     * @param interfaceType
+     *        The type of interface.
+     */
+
+    public void setInterfaceType(String interfaceType) {
+        this.interfaceType = interfaceType;
+    }
+
+    /**
+     * <p>
+     * The type of interface.
+     * </p>
+     * 
+     * @return The type of interface.
+     */
+
+    public String getInterfaceType() {
+        return this.interfaceType;
+    }
+
+    /**
+     * <p>
+     * The type of interface.
+     * </p>
+     * 
+     * @param interfaceType
+     *        The type of interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterfaceSpecification withInterfaceType(String interfaceType) {
+        setInterfaceType(interfaceType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -884,7 +930,9 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
         if (getSecondaryPrivateIpAddressCount() != null)
             sb.append("SecondaryPrivateIpAddressCount: ").append(getSecondaryPrivateIpAddressCount()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId());
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getInterfaceType() != null)
+            sb.append("InterfaceType: ").append(getInterfaceType());
         sb.append("}");
         return sb.toString();
     }
@@ -948,6 +996,10 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
+        if (other.getInterfaceType() == null ^ this.getInterfaceType() == null)
+            return false;
+        if (other.getInterfaceType() != null && other.getInterfaceType().equals(this.getInterfaceType()) == false)
+            return false;
         return true;
     }
 
@@ -968,6 +1020,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
         hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode());
         hashCode = prime * hashCode + ((getSecondaryPrivateIpAddressCount() == null) ? 0 : getSecondaryPrivateIpAddressCount().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getInterfaceType() == null) ? 0 : getInterfaceType().hashCode());
         return hashCode;
     }
 

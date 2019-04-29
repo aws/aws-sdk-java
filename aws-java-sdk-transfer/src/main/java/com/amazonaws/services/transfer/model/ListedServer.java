@@ -42,7 +42,12 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String identityProviderType;
-
+    /**
+     * <p>
+     * The type of VPC endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC
+     * endpoint, your server isn't accessible over the public internet.
+     * </p>
+     */
     private String endpointType;
     /**
      * <p>
@@ -193,7 +198,14 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of VPC endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC
+     * endpoint, your server isn't accessible over the public internet.
+     * </p>
+     * 
      * @param endpointType
+     *        The type of VPC endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC
+     *        endpoint, your server isn't accessible over the public internet.
      * @see EndpointType
      */
 
@@ -202,7 +214,13 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The type of VPC endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC
+     * endpoint, your server isn't accessible over the public internet.
+     * </p>
+     * 
+     * @return The type of VPC endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC
+     *         endpoint, your server isn't accessible over the public internet.
      * @see EndpointType
      */
 
@@ -211,7 +229,14 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of VPC endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC
+     * endpoint, your server isn't accessible over the public internet.
+     * </p>
+     * 
      * @param endpointType
+     *        The type of VPC endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC
+     *        endpoint, your server isn't accessible over the public internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */
@@ -222,7 +247,14 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of VPC endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC
+     * endpoint, your server isn't accessible over the public internet.
+     * </p>
+     * 
      * @param endpointType
+     *        The type of VPC endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC
+     *        endpoint, your server isn't accessible over the public internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */

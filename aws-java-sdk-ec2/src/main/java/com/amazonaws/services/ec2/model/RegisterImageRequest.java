@@ -45,7 +45,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     private String architecture;
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
@@ -293,10 +293,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * 
-     * @return One or more block device mapping entries.
+     * @return The block device mapping entries.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -308,11 +308,11 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        The block device mapping entries.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -326,7 +326,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -335,7 +335,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        The block device mapping entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,11 +351,11 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        The block device mapping entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

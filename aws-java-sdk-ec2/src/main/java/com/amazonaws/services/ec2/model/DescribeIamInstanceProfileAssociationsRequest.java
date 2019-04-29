@@ -28,13 +28,13 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
 
     /**
      * <p>
-     * One or more IAM instance profile associations.
+     * The IAM instance profile associations.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> associationIds;
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -67,10 +67,10 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
 
     /**
      * <p>
-     * One or more IAM instance profile associations.
+     * The IAM instance profile associations.
      * </p>
      * 
-     * @return One or more IAM instance profile associations.
+     * @return The IAM instance profile associations.
      */
 
     public java.util.List<String> getAssociationIds() {
@@ -82,11 +82,11 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
 
     /**
      * <p>
-     * One or more IAM instance profile associations.
+     * The IAM instance profile associations.
      * </p>
      * 
      * @param associationIds
-     *        One or more IAM instance profile associations.
+     *        The IAM instance profile associations.
      */
 
     public void setAssociationIds(java.util.Collection<String> associationIds) {
@@ -100,7 +100,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
 
     /**
      * <p>
-     * One or more IAM instance profile associations.
+     * The IAM instance profile associations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -109,7 +109,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
      * </p>
      * 
      * @param associationIds
-     *        One or more IAM instance profile associations.
+     *        The IAM instance profile associations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,11 +125,11 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
 
     /**
      * <p>
-     * One or more IAM instance profile associations.
+     * The IAM instance profile associations.
      * </p>
      * 
      * @param associationIds
-     *        One or more IAM instance profile associations.
+     *        The IAM instance profile associations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,7 +140,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -156,7 +156,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -180,7 +180,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -197,7 +197,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -223,7 +223,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -245,7 +245,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -273,7 +273,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -290,7 +290,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>

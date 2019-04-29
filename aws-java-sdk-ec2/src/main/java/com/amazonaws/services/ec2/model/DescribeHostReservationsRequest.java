@@ -28,7 +28,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -67,7 +67,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
     private com.amazonaws.internal.SdkInternalList<Filter> filter;
     /**
      * <p>
-     * One or more host reservation IDs.
+     * The host reservation IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> hostReservationIdSet;
@@ -88,7 +88,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -124,7 +124,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -168,7 +168,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -205,7 +205,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * </ul>
      * 
      * @param filter
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -251,7 +251,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -293,7 +293,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * </p>
      * 
      * @param filter
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -341,7 +341,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -378,7 +378,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * </ul>
      * 
      * @param filter
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -421,10 +421,10 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more host reservation IDs.
+     * The host reservation IDs.
      * </p>
      * 
-     * @return One or more host reservation IDs.
+     * @return The host reservation IDs.
      */
 
     public java.util.List<String> getHostReservationIdSet() {
@@ -436,11 +436,11 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more host reservation IDs.
+     * The host reservation IDs.
      * </p>
      * 
      * @param hostReservationIdSet
-     *        One or more host reservation IDs.
+     *        The host reservation IDs.
      */
 
     public void setHostReservationIdSet(java.util.Collection<String> hostReservationIdSet) {
@@ -454,7 +454,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more host reservation IDs.
+     * The host reservation IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -463,7 +463,7 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * </p>
      * 
      * @param hostReservationIdSet
-     *        One or more host reservation IDs.
+     *        The host reservation IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -479,11 +479,11 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more host reservation IDs.
+     * The host reservation IDs.
      * </p>
      * 
      * @param hostReservationIdSet
-     *        One or more host reservation IDs.
+     *        The host reservation IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

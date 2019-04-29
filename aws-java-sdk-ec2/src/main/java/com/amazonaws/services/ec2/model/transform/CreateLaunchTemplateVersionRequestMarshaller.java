@@ -191,6 +191,11 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
                         }
                     }
 
+                    if (requestLaunchTemplateDataNetworkInterfacesListValue.getInterfaceType() != null) {
+                        request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".InterfaceType",
+                                StringUtils.fromString(requestLaunchTemplateDataNetworkInterfacesListValue.getInterfaceType()));
+                    }
+
                     if (requestLaunchTemplateDataNetworkInterfacesListValue.getIpv6AddressCount() != null) {
                         request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".Ipv6AddressCount",
                                 StringUtils.fromInteger(requestLaunchTemplateDataNetworkInterfacesListValue.getIpv6AddressCount()));
@@ -493,14 +498,6 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
                 }
             }
 
-            LaunchTemplateHibernationOptionsRequest hibernationOptions = launchTemplateData.getHibernationOptions();
-            if (hibernationOptions != null) {
-
-                if (hibernationOptions.getConfigured() != null) {
-                    request.addParameter("LaunchTemplateData.HibernationOptions.Configured", StringUtils.fromBoolean(hibernationOptions.getConfigured()));
-                }
-            }
-
             com.amazonaws.internal.SdkInternalList<LaunchTemplateLicenseConfigurationRequest> requestLaunchTemplateDataLicenseSpecificationsList = (com.amazonaws.internal.SdkInternalList<LaunchTemplateLicenseConfigurationRequest>) launchTemplateData
                     .getLicenseSpecifications();
             if (!requestLaunchTemplateDataLicenseSpecificationsList.isEmpty() || !requestLaunchTemplateDataLicenseSpecificationsList.isAutoConstruct()) {
@@ -513,6 +510,14 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
                                 StringUtils.fromString(requestLaunchTemplateDataLicenseSpecificationsListValue.getLicenseConfigurationArn()));
                     }
                     licenseSpecificationsListIndex++;
+                }
+            }
+
+            LaunchTemplateHibernationOptionsRequest hibernationOptions = launchTemplateData.getHibernationOptions();
+            if (hibernationOptions != null) {
+
+                if (hibernationOptions.getConfigured() != null) {
+                    request.addParameter("LaunchTemplateData.HibernationOptions.Configured", StringUtils.fromBoolean(hibernationOptions.getConfigured()));
                 }
             }
         }

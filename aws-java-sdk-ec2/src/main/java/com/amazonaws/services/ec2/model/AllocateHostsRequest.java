@@ -27,17 +27,20 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
-     * Hosts, when you are launching instances without specifying a host ID.
+     * Indicates whether the host accepts any untargeted instance launches that match its instance type configuration,
+     * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: Enabled
+     * Default: <code>on</code>
      * </p>
      */
     private String autoPlacement;
     /**
      * <p>
-     * The Availability Zone for the Dedicated Hosts.
+     * The Availability Zone in which to allocate the Dedicated Host.
      * </p>
      */
     private String availabilityZone;
@@ -51,7 +54,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     private String clientToken;
     /**
      * <p>
-     * Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
+     * Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
      * is the only instance type that you can launch onto that host.
      * </p>
      */
@@ -71,18 +74,25 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
-     * Hosts, when you are launching instances without specifying a host ID.
+     * Indicates whether the host accepts any untargeted instance launches that match its instance type configuration,
+     * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: Enabled
+     * Default: <code>on</code>
      * </p>
      * 
      * @param autoPlacement
-     *        This is enabled by default. This property allows instances to be automatically placed onto available
-     *        Dedicated Hosts, when you are launching instances without specifying a host ID.</p>
+     *        Indicates whether the host accepts any untargeted instance launches that match its instance type
+     *        configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For
+     *        more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     *        > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux
+     *        Instances</i>.</p>
      *        <p>
-     *        Default: Enabled
+     *        Default: <code>on</code>
      * @see AutoPlacement
      */
 
@@ -92,17 +102,24 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
-     * Hosts, when you are launching instances without specifying a host ID.
+     * Indicates whether the host accepts any untargeted instance launches that match its instance type configuration,
+     * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: Enabled
+     * Default: <code>on</code>
      * </p>
      * 
-     * @return This is enabled by default. This property allows instances to be automatically placed onto available
-     *         Dedicated Hosts, when you are launching instances without specifying a host ID.</p>
+     * @return Indicates whether the host accepts any untargeted instance launches that match its instance type
+     *         configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     *         > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux
+     *         Instances</i>.</p>
      *         <p>
-     *         Default: Enabled
+     *         Default: <code>on</code>
      * @see AutoPlacement
      */
 
@@ -112,18 +129,25 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
-     * Hosts, when you are launching instances without specifying a host ID.
+     * Indicates whether the host accepts any untargeted instance launches that match its instance type configuration,
+     * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: Enabled
+     * Default: <code>on</code>
      * </p>
      * 
      * @param autoPlacement
-     *        This is enabled by default. This property allows instances to be automatically placed onto available
-     *        Dedicated Hosts, when you are launching instances without specifying a host ID.</p>
+     *        Indicates whether the host accepts any untargeted instance launches that match its instance type
+     *        configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For
+     *        more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     *        > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux
+     *        Instances</i>.</p>
      *        <p>
-     *        Default: Enabled
+     *        Default: <code>on</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoPlacement
      */
@@ -135,18 +159,25 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
-     * Hosts, when you are launching instances without specifying a host ID.
+     * Indicates whether the host accepts any untargeted instance launches that match its instance type configuration,
+     * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: Enabled
+     * Default: <code>on</code>
      * </p>
      * 
      * @param autoPlacement
-     *        This is enabled by default. This property allows instances to be automatically placed onto available
-     *        Dedicated Hosts, when you are launching instances without specifying a host ID.</p>
+     *        Indicates whether the host accepts any untargeted instance launches that match its instance type
+     *        configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For
+     *        more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     *        > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux
+     *        Instances</i>.</p>
      *        <p>
-     *        Default: Enabled
+     *        Default: <code>on</code>
      * @see AutoPlacement
      */
 
@@ -156,18 +187,25 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * This is enabled by default. This property allows instances to be automatically placed onto available Dedicated
-     * Hosts, when you are launching instances without specifying a host ID.
+     * Indicates whether the host accepts any untargeted instance launches that match its instance type configuration,
+     * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: Enabled
+     * Default: <code>on</code>
      * </p>
      * 
      * @param autoPlacement
-     *        This is enabled by default. This property allows instances to be automatically placed onto available
-     *        Dedicated Hosts, when you are launching instances without specifying a host ID.</p>
+     *        Indicates whether the host accepts any untargeted instance launches that match its instance type
+     *        configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For
+     *        more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
+     *        > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux
+     *        Instances</i>.</p>
      *        <p>
-     *        Default: Enabled
+     *        Default: <code>on</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoPlacement
      */
@@ -179,11 +217,11 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The Availability Zone for the Dedicated Hosts.
+     * The Availability Zone in which to allocate the Dedicated Host.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone for the Dedicated Hosts.
+     *        The Availability Zone in which to allocate the Dedicated Host.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -192,10 +230,10 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The Availability Zone for the Dedicated Hosts.
+     * The Availability Zone in which to allocate the Dedicated Host.
      * </p>
      * 
-     * @return The Availability Zone for the Dedicated Hosts.
+     * @return The Availability Zone in which to allocate the Dedicated Host.
      */
 
     public String getAvailabilityZone() {
@@ -204,11 +242,11 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The Availability Zone for the Dedicated Hosts.
+     * The Availability Zone in which to allocate the Dedicated Host.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone for the Dedicated Hosts.
+     *        The Availability Zone in which to allocate the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,13 +312,13 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
+     * Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
      * is the only instance type that you can launch onto that host.
      * </p>
      * 
      * @param instanceType
-     *        Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type,
-     *        that is the only instance type that you can launch onto that host.
+     *        Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance
+     *        type, that is the only instance type that you can launch onto that host.
      */
 
     public void setInstanceType(String instanceType) {
@@ -289,11 +327,11 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
+     * Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
      * is the only instance type that you can launch onto that host.
      * </p>
      * 
-     * @return Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance
+     * @return Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance
      *         type, that is the only instance type that you can launch onto that host.
      */
 
@@ -303,13 +341,13 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
+     * Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
      * is the only instance type that you can launch onto that host.
      * </p>
      * 
      * @param instanceType
-     *        Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type,
-     *        that is the only instance type that you can launch onto that host.
+     *        Specifies the instance type for which to configure your Dedicated Hosts. When you specify the instance
+     *        type, that is the only instance type that you can launch onto that host.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -34,7 +34,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
     private com.amazonaws.internal.SdkInternalList<String> executableUsers;
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -209,7 +209,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more image IDs.
+     * The image IDs.
      * </p>
      * <p>
      * Default: Describes all images available to you.
@@ -309,7 +309,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -481,7 +481,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -665,7 +665,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -838,7 +838,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1024,7 +1024,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -1202,7 +1202,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1390,7 +1390,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -1563,7 +1563,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1746,13 +1746,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more image IDs.
+     * The image IDs.
      * </p>
      * <p>
      * Default: Describes all images available to you.
      * </p>
      * 
-     * @return One or more image IDs.</p>
+     * @return The image IDs.</p>
      *         <p>
      *         Default: Describes all images available to you.
      */
@@ -1766,14 +1766,14 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more image IDs.
+     * The image IDs.
      * </p>
      * <p>
      * Default: Describes all images available to you.
      * </p>
      * 
      * @param imageIds
-     *        One or more image IDs.</p>
+     *        The image IDs.</p>
      *        <p>
      *        Default: Describes all images available to you.
      */
@@ -1789,7 +1789,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more image IDs.
+     * The image IDs.
      * </p>
      * <p>
      * Default: Describes all images available to you.
@@ -1801,7 +1801,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </p>
      * 
      * @param imageIds
-     *        One or more image IDs.</p>
+     *        The image IDs.</p>
      *        <p>
      *        Default: Describes all images available to you.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1819,14 +1819,14 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more image IDs.
+     * The image IDs.
      * </p>
      * <p>
      * Default: Describes all images available to you.
      * </p>
      * 
      * @param imageIds
-     *        One or more image IDs.</p>
+     *        The image IDs.</p>
      *        <p>
      *        Default: Describes all images available to you.
      * @return Returns a reference to this object so that method calls can be chained together.

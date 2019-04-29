@@ -46,7 +46,7 @@ public class CreateTransitGatewayRouteRequest extends AmazonWebServiceRequest im
     private String transitGatewayAttachmentId;
     /**
      * <p>
-     * Indicates whether traffic matching this route is to be dropped.
+     * Indicates whether to drop traffic if the target isn't available.
      * </p>
      */
     private Boolean blackhole;
@@ -173,11 +173,11 @@ public class CreateTransitGatewayRouteRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether traffic matching this route is to be dropped.
+     * Indicates whether to drop traffic if the target isn't available.
      * </p>
      * 
      * @param blackhole
-     *        Indicates whether traffic matching this route is to be dropped.
+     *        Indicates whether to drop traffic if the target isn't available.
      */
 
     public void setBlackhole(Boolean blackhole) {
@@ -186,10 +186,10 @@ public class CreateTransitGatewayRouteRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether traffic matching this route is to be dropped.
+     * Indicates whether to drop traffic if the target isn't available.
      * </p>
      * 
-     * @return Indicates whether traffic matching this route is to be dropped.
+     * @return Indicates whether to drop traffic if the target isn't available.
      */
 
     public Boolean getBlackhole() {
@@ -198,11 +198,11 @@ public class CreateTransitGatewayRouteRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether traffic matching this route is to be dropped.
+     * Indicates whether to drop traffic if the target isn't available.
      * </p>
      * 
      * @param blackhole
-     *        Indicates whether traffic matching this route is to be dropped.
+     *        Indicates whether to drop traffic if the target isn't available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,10 +213,10 @@ public class CreateTransitGatewayRouteRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether traffic matching this route is to be dropped.
+     * Indicates whether to drop traffic if the target isn't available.
      * </p>
      * 
-     * @return Indicates whether traffic matching this route is to be dropped.
+     * @return Indicates whether to drop traffic if the target isn't available.
      */
 
     public Boolean isBlackhole() {

@@ -191,7 +191,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>source-desk-check</code> - Indicates whether the network interface performs source/destination checking. A
+     * <code>source-dest-check</code> - Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code> means checking is disabled. The
      * value must be <code>false</code> for the network interface to perform network address translation (NAT) in your
      * VPC.
@@ -417,7 +417,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>source-desk-check</code> - Indicates whether the network interface performs source/destination checking. A
+     * <code>source-dest-check</code> - Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code> means checking is disabled. The
      * value must be <code>false</code> for the network interface to perform network address translation (NAT) in your
      * VPC.
@@ -619,7 +619,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>source-desk-check</code> - Indicates whether the network interface performs source/destination
+     *         <code>source-dest-check</code> - Indicates whether the network interface performs source/destination
      *         checking. A value of <code>true</code> means checking is enabled, and <code>false</code> means checking
      *         is disabled. The value must be <code>false</code> for the network interface to perform network address
      *         translation (NAT) in your VPC.
@@ -828,7 +828,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>source-desk-check</code> - Indicates whether the network interface performs source/destination checking. A
+     * <code>source-dest-check</code> - Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code> means checking is disabled. The
      * value must be <code>false</code> for the network interface to perform network address translation (NAT) in your
      * VPC.
@@ -1031,7 +1031,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>source-desk-check</code> - Indicates whether the network interface performs source/destination
+     *        <code>source-dest-check</code> - Indicates whether the network interface performs source/destination
      *        checking. A value of <code>true</code> means checking is enabled, and <code>false</code> means checking is
      *        disabled. The value must be <code>false</code> for the network interface to perform network address
      *        translation (NAT) in your VPC.
@@ -1242,7 +1242,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>source-desk-check</code> - Indicates whether the network interface performs source/destination checking. A
+     * <code>source-dest-check</code> - Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code> means checking is disabled. The
      * value must be <code>false</code> for the network interface to perform network address translation (NAT) in your
      * VPC.
@@ -1450,7 +1450,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>source-desk-check</code> - Indicates whether the network interface performs source/destination
+     *        <code>source-dest-check</code> - Indicates whether the network interface performs source/destination
      *        checking. A value of <code>true</code> means checking is enabled, and <code>false</code> means checking is
      *        disabled. The value must be <code>false</code> for the network interface to perform network address
      *        translation (NAT) in your VPC.
@@ -1663,7 +1663,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>source-desk-check</code> - Indicates whether the network interface performs source/destination checking. A
+     * <code>source-dest-check</code> - Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code> means checking is disabled. The
      * value must be <code>false</code> for the network interface to perform network address translation (NAT) in your
      * VPC.
@@ -1866,7 +1866,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>source-desk-check</code> - Indicates whether the network interface performs source/destination
+     *        <code>source-dest-check</code> - Indicates whether the network interface performs source/destination
      *        checking. A value of <code>true</code> means checking is enabled, and <code>false</code> means checking is
      *        disabled. The value must be <code>false</code> for the network interface to perform network address
      *        translation (NAT) in your VPC.

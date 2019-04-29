@@ -27,7 +27,7 @@ public class DescribeFpgaImagesRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more AFI IDs.
+     * The AFI IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> fpgaImageIds;
@@ -40,7 +40,7 @@ public class DescribeFpgaImagesRequest extends AmazonWebServiceRequest implement
     private com.amazonaws.internal.SdkInternalList<String> owners;
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -121,10 +121,10 @@ public class DescribeFpgaImagesRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more AFI IDs.
+     * The AFI IDs.
      * </p>
      * 
-     * @return One or more AFI IDs.
+     * @return The AFI IDs.
      */
 
     public java.util.List<String> getFpgaImageIds() {
@@ -136,11 +136,11 @@ public class DescribeFpgaImagesRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more AFI IDs.
+     * The AFI IDs.
      * </p>
      * 
      * @param fpgaImageIds
-     *        One or more AFI IDs.
+     *        The AFI IDs.
      */
 
     public void setFpgaImageIds(java.util.Collection<String> fpgaImageIds) {
@@ -154,7 +154,7 @@ public class DescribeFpgaImagesRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more AFI IDs.
+     * The AFI IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -163,7 +163,7 @@ public class DescribeFpgaImagesRequest extends AmazonWebServiceRequest implement
      * </p>
      * 
      * @param fpgaImageIds
-     *        One or more AFI IDs.
+     *        The AFI IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +179,11 @@ public class DescribeFpgaImagesRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more AFI IDs.
+     * The AFI IDs.
      * </p>
      * 
      * @param fpgaImageIds
-     *        One or more AFI IDs.
+     *        The AFI IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,7 +275,7 @@ public class DescribeFpgaImagesRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -340,7 +340,7 @@ public class DescribeFpgaImagesRequest extends AmazonWebServiceRequest implement
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -413,7 +413,7 @@ public class DescribeFpgaImagesRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -479,7 +479,7 @@ public class DescribeFpgaImagesRequest extends AmazonWebServiceRequest implement
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -554,7 +554,7 @@ public class DescribeFpgaImagesRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -625,7 +625,7 @@ public class DescribeFpgaImagesRequest extends AmazonWebServiceRequest implement
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -702,7 +702,7 @@ public class DescribeFpgaImagesRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -768,7 +768,7 @@ public class DescribeFpgaImagesRequest extends AmazonWebServiceRequest implement
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>

@@ -46,7 +46,7 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
     private com.amazonaws.internal.SdkInternalList<String> fleetIds;
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -247,7 +247,7 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -282,7 +282,7 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -326,7 +326,7 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -362,7 +362,7 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -408,7 +408,7 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -449,7 +449,7 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -497,7 +497,7 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -533,7 +533,7 @@ public class DescribeFleetsRequest extends AmazonWebServiceRequest implements Se
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>

@@ -379,8 +379,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>platform</code> - The platform. Use <code>windows</code> if you have Windows instances; otherwise, leave
-     * blank.
+     * <code>platform</code> - The platform. To list only Windows instances, use <code>windows</code>.
      * </p>
      * </li>
      * <li>
@@ -879,8 +878,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>platform</code> - The platform. Use <code>windows</code> if you have Windows instances; otherwise, leave
-     * blank.
+     * <code>platform</code> - The platform. To list only Windows instances, use <code>windows</code>.
      * </p>
      * </li>
      * <li>
@@ -1355,8 +1353,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>platform</code> - The platform. Use <code>windows</code> if you have Windows instances; otherwise,
-     *         leave blank.
+     *         <code>platform</code> - The platform. To list only Windows instances, use <code>windows</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -1841,8 +1838,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>platform</code> - The platform. Use <code>windows</code> if you have Windows instances; otherwise, leave
-     * blank.
+     * <code>platform</code> - The platform. To list only Windows instances, use <code>windows</code>.
      * </p>
      * </li>
      * <li>
@@ -2318,8 +2314,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>platform</code> - The platform. Use <code>windows</code> if you have Windows instances; otherwise,
-     *        leave blank.
+     *        <code>platform</code> - The platform. To list only Windows instances, use <code>windows</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -2805,8 +2800,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>platform</code> - The platform. Use <code>windows</code> if you have Windows instances; otherwise, leave
-     * blank.
+     * <code>platform</code> - The platform. To list only Windows instances, use <code>windows</code>.
      * </p>
      * </li>
      * <li>
@@ -3287,8 +3281,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>platform</code> - The platform. Use <code>windows</code> if you have Windows instances; otherwise,
-     *        leave blank.
+     *        <code>platform</code> - The platform. To list only Windows instances, use <code>windows</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -3776,8 +3769,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>platform</code> - The platform. Use <code>windows</code> if you have Windows instances; otherwise, leave
-     * blank.
+     * <code>platform</code> - The platform. To list only Windows instances, use <code>windows</code>.
      * </p>
      * </li>
      * <li>
@@ -4253,8 +4245,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>platform</code> - The platform. Use <code>windows</code> if you have Windows instances; otherwise,
-     *        leave blank.
+     *        <code>platform</code> - The platform. To list only Windows instances, use <code>windows</code>.
      *        </p>
      *        </li>
      *        <li>

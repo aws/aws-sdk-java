@@ -30,17 +30,17 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more conversion task IDs.
+     * The conversion task IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> conversionTaskIds;
 
     /**
      * <p>
-     * One or more conversion task IDs.
+     * The conversion task IDs.
      * </p>
      * 
-     * @return One or more conversion task IDs.
+     * @return The conversion task IDs.
      */
 
     public java.util.List<String> getConversionTaskIds() {
@@ -52,11 +52,11 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more conversion task IDs.
+     * The conversion task IDs.
      * </p>
      * 
      * @param conversionTaskIds
-     *        One or more conversion task IDs.
+     *        The conversion task IDs.
      */
 
     public void setConversionTaskIds(java.util.Collection<String> conversionTaskIds) {
@@ -70,7 +70,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more conversion task IDs.
+     * The conversion task IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
      * </p>
      * 
      * @param conversionTaskIds
-     *        One or more conversion task IDs.
+     *        The conversion task IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more conversion task IDs.
+     * The conversion task IDs.
      * </p>
      * 
      * @param conversionTaskIds
-     *        One or more conversion task IDs.
+     *        The conversion task IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -63,21 +63,20 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * The size of the volume, in GiB.
      * </p>
      * <p>
+     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.
+     * </p>
+     * <p>
      * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
      * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
      * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
      * size must be equal to or larger than the snapshot size.
      * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.
-     * </p>
      */
     private Integer volumeSize;
     /**
      * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
+     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
      * </p>
      * <p>
      * Default: <code>standard</code>
@@ -337,27 +336,27 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * The size of the volume, in GiB.
      * </p>
      * <p>
+     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.
+     * </p>
+     * <p>
      * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
      * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
      * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
      * size must be equal to or larger than the snapshot size.
      * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.
-     * </p>
      * 
      * @param volumeSize
      *        The size of the volume, in GiB.</p>
+     *        <p>
+     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     *        snapshot size.
+     *        </p>
      *        <p>
      *        Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
      *        <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
      *        <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the
      *        volume size must be equal to or larger than the snapshot size.
-     *        </p>
-     *        <p>
-     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     *        snapshot size.
      */
 
     public void setVolumeSize(Integer volumeSize) {
@@ -369,26 +368,26 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * The size of the volume, in GiB.
      * </p>
      * <p>
+     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.
+     * </p>
+     * <p>
      * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
      * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
      * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
      * size must be equal to or larger than the snapshot size.
      * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.
-     * </p>
      * 
      * @return The size of the volume, in GiB.</p>
+     *         <p>
+     *         Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is
+     *         the snapshot size.
+     *         </p>
      *         <p>
      *         Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
      *         <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
      *         <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot,
      *         the volume size must be equal to or larger than the snapshot size.
-     *         </p>
-     *         <p>
-     *         Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is
-     *         the snapshot size.
      */
 
     public Integer getVolumeSize() {
@@ -400,27 +399,27 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * The size of the volume, in GiB.
      * </p>
      * <p>
+     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.
+     * </p>
+     * <p>
      * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
      * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
      * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
      * size must be equal to or larger than the snapshot size.
      * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.
-     * </p>
      * 
      * @param volumeSize
      *        The size of the volume, in GiB.</p>
+     *        <p>
+     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     *        snapshot size.
+     *        </p>
      *        <p>
      *        Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
      *        <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
      *        <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the
      *        volume size must be equal to or larger than the snapshot size.
-     *        </p>
-     *        <p>
-     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     *        snapshot size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -431,16 +430,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
+     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
      * </p>
      * <p>
      * Default: <code>standard</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code>.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.</p>
      *        <p>
      *        Default: <code>standard</code>
      * @see VolumeType
@@ -452,15 +449,13 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
+     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
      * </p>
      * <p>
      * Default: <code>standard</code>
      * </p>
      * 
-     * @return The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or
-     *         <code>standard</code>.</p>
+     * @return The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.</p>
      *         <p>
      *         Default: <code>standard</code>
      * @see VolumeType
@@ -472,16 +467,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
+     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
      * </p>
      * <p>
      * Default: <code>standard</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code>.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.</p>
      *        <p>
      *        Default: <code>standard</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -495,16 +488,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
+     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
      * </p>
      * <p>
      * Default: <code>standard</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code>.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.</p>
      *        <p>
      *        Default: <code>standard</code>
      * @see VolumeType
@@ -516,16 +507,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
+     * The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.
      * </p>
      * <p>
      * Default: <code>standard</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code>.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also set the <b>Iops</b> property.</p>
      *        <p>
      *        Default: <code>standard</code>
      * @return Returns a reference to this object so that method calls can be chained together.

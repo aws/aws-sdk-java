@@ -46,13 +46,13 @@ public class FpgaImageAttribute implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * One or more load permissions.
+     * The load permissions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LoadPermission> loadPermissions;
     /**
      * <p>
-     * One or more product codes.
+     * The product codes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ProductCode> productCodes;
@@ -179,10 +179,10 @@ public class FpgaImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more load permissions.
+     * The load permissions.
      * </p>
      * 
-     * @return One or more load permissions.
+     * @return The load permissions.
      */
 
     public java.util.List<LoadPermission> getLoadPermissions() {
@@ -194,11 +194,11 @@ public class FpgaImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more load permissions.
+     * The load permissions.
      * </p>
      * 
      * @param loadPermissions
-     *        One or more load permissions.
+     *        The load permissions.
      */
 
     public void setLoadPermissions(java.util.Collection<LoadPermission> loadPermissions) {
@@ -212,7 +212,7 @@ public class FpgaImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more load permissions.
+     * The load permissions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -221,7 +221,7 @@ public class FpgaImageAttribute implements Serializable, Cloneable {
      * </p>
      * 
      * @param loadPermissions
-     *        One or more load permissions.
+     *        The load permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,11 +237,11 @@ public class FpgaImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more load permissions.
+     * The load permissions.
      * </p>
      * 
      * @param loadPermissions
-     *        One or more load permissions.
+     *        The load permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,10 +252,10 @@ public class FpgaImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more product codes.
+     * The product codes.
      * </p>
      * 
-     * @return One or more product codes.
+     * @return The product codes.
      */
 
     public java.util.List<ProductCode> getProductCodes() {
@@ -267,11 +267,11 @@ public class FpgaImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more product codes.
+     * The product codes.
      * </p>
      * 
      * @param productCodes
-     *        One or more product codes.
+     *        The product codes.
      */
 
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
@@ -285,7 +285,7 @@ public class FpgaImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more product codes.
+     * The product codes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -294,7 +294,7 @@ public class FpgaImageAttribute implements Serializable, Cloneable {
      * </p>
      * 
      * @param productCodes
-     *        One or more product codes.
+     *        The product codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -310,11 +310,11 @@ public class FpgaImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more product codes.
+     * The product codes.
      * </p>
      * 
      * @param productCodes
-     *        One or more product codes.
+     *        The product codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

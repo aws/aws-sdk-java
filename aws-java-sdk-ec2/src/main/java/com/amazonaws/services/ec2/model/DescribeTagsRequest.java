@@ -27,7 +27,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -92,7 +92,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * initialize any additional object members.
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -134,7 +134,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -172,7 +172,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -218,7 +218,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -257,7 +257,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -305,7 +305,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -349,7 +349,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -399,7 +399,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -438,7 +438,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>

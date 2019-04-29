@@ -28,7 +28,7 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
@@ -40,13 +40,13 @@ public class ImageAttribute implements Serializable, Cloneable {
     private String imageId;
     /**
      * <p>
-     * One or more launch permissions.
+     * The launch permissions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LaunchPermission> launchPermissions;
     /**
      * <p>
-     * One or more product codes.
+     * The product codes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ProductCode> productCodes;
@@ -77,10 +77,10 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * 
-     * @return One or more block device mapping entries.
+     * @return The block device mapping entries.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -92,11 +92,11 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        The block device mapping entries.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -110,7 +110,7 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        The block device mapping entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        The block device mapping entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,10 +190,10 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more launch permissions.
+     * The launch permissions.
      * </p>
      * 
-     * @return One or more launch permissions.
+     * @return The launch permissions.
      */
 
     public java.util.List<LaunchPermission> getLaunchPermissions() {
@@ -205,11 +205,11 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more launch permissions.
+     * The launch permissions.
      * </p>
      * 
      * @param launchPermissions
-     *        One or more launch permissions.
+     *        The launch permissions.
      */
 
     public void setLaunchPermissions(java.util.Collection<LaunchPermission> launchPermissions) {
@@ -223,7 +223,7 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more launch permissions.
+     * The launch permissions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -232,7 +232,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * </p>
      * 
      * @param launchPermissions
-     *        One or more launch permissions.
+     *        The launch permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,11 +248,11 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more launch permissions.
+     * The launch permissions.
      * </p>
      * 
      * @param launchPermissions
-     *        One or more launch permissions.
+     *        The launch permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,10 +263,10 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more product codes.
+     * The product codes.
      * </p>
      * 
-     * @return One or more product codes.
+     * @return The product codes.
      */
 
     public java.util.List<ProductCode> getProductCodes() {
@@ -278,11 +278,11 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more product codes.
+     * The product codes.
      * </p>
      * 
      * @param productCodes
-     *        One or more product codes.
+     *        The product codes.
      */
 
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
@@ -296,7 +296,7 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more product codes.
+     * The product codes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -305,7 +305,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * </p>
      * 
      * @param productCodes
-     *        One or more product codes.
+     *        The product codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,11 +321,11 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more product codes.
+     * The product codes.
      * </p>
      * 
      * @param productCodes
-     *        One or more product codes.
+     *        The product codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

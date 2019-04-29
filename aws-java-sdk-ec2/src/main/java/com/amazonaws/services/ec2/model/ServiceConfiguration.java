@@ -64,8 +64,8 @@ public class ServiceConfiguration implements Serializable, Cloneable {
     private Boolean acceptanceRequired;
     /**
      * <p>
-     * Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using the VPC
-     * Endpoint API is restricted.
+     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * endpoint API is restricted.
      * </p>
      */
     private Boolean managesVpcEndpoints;
@@ -431,13 +431,13 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using the VPC
-     * Endpoint API is restricted.
+     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * endpoint API is restricted.
      * </p>
      * 
      * @param managesVpcEndpoints
-     *        Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using
-     *        the VPC Endpoint API is restricted.
+     *        Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     *        the VPC endpoint API is restricted.
      */
 
     public void setManagesVpcEndpoints(Boolean managesVpcEndpoints) {
@@ -446,12 +446,12 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using the VPC
-     * Endpoint API is restricted.
+     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * endpoint API is restricted.
      * </p>
      * 
-     * @return Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using
-     *         the VPC Endpoint API is restricted.
+     * @return Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     *         the VPC endpoint API is restricted.
      */
 
     public Boolean getManagesVpcEndpoints() {
@@ -460,13 +460,13 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using the VPC
-     * Endpoint API is restricted.
+     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * endpoint API is restricted.
      * </p>
      * 
      * @param managesVpcEndpoints
-     *        Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using
-     *        the VPC Endpoint API is restricted.
+     *        Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     *        the VPC endpoint API is restricted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -477,12 +477,12 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using the VPC
-     * Endpoint API is restricted.
+     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * endpoint API is restricted.
      * </p>
      * 
-     * @return Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using
-     *         the VPC Endpoint API is restricted.
+     * @return Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     *         the VPC endpoint API is restricted.
      */
 
     public Boolean isManagesVpcEndpoints() {

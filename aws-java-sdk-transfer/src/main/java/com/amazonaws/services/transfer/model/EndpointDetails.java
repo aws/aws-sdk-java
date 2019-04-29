@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The configuration settings for the virtual private cloud (VPC) endpoint for your SFTP server.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/EndpointDetails" target="_top">AWS API
  *      Documentation</a>
@@ -25,10 +28,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EndpointDetails implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The ID of the VPC endpoint.
+     * </p>
+     */
     private String vpcEndpointId;
 
     /**
+     * <p>
+     * The ID of the VPC endpoint.
+     * </p>
+     * 
      * @param vpcEndpointId
+     *        The ID of the VPC endpoint.
      */
 
     public void setVpcEndpointId(String vpcEndpointId) {
@@ -36,7 +49,11 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the VPC endpoint.
+     * </p>
+     * 
+     * @return The ID of the VPC endpoint.
      */
 
     public String getVpcEndpointId() {
@@ -44,7 +61,12 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The ID of the VPC endpoint.
+     * </p>
+     * 
      * @param vpcEndpointId
+     *        The ID of the VPC endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

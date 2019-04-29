@@ -104,6 +104,10 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
             request.addParameter("SecondaryPrivateIpAddressCount", StringUtils.fromInteger(createNetworkInterfaceRequest.getSecondaryPrivateIpAddressCount()));
         }
 
+        if (createNetworkInterfaceRequest.getInterfaceType() != null) {
+            request.addParameter("InterfaceType", StringUtils.fromString(createNetworkInterfaceRequest.getInterfaceType()));
+        }
+
         if (createNetworkInterfaceRequest.getSubnetId() != null) {
             request.addParameter("SubnetId", StringUtils.fromString(createNetworkInterfaceRequest.getSubnetId()));
         }

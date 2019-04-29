@@ -28,15 +28,21 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
+     * The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security group.
+     * To specify an IPv6 address range, use a set of IP permissions.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      */
     private String cidrIp;
     /**
      * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
-     * number, use <code>-1</code> to specify all types. If you specify all ICMP/ICMPv6 types, you must specify all
-     * codes.
+     * The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number, use
+     * <code>-1</code> to specify all types. If you specify all ICMP types, you must specify all codes.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      */
     private Integer fromPort;
@@ -56,19 +62,23 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     private String groupName;
     /**
      * <p>
-     * The sets of IP permissions. Can be used to specify multiple rules in a single command.
+     * The sets of IP permissions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissions;
     /**
      * <p>
      * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC only)
-     * Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number other than
-     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on all ports is
-     * allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
-     * must specify a port range. For protocol <code>58</code> (ICMPv6), you can optionally specify a port range; if you
-     * don't, traffic for all types and codes is allowed.
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify
+     * <code>icmpv6</code>, use a set of IP permissions.
+     * </p>
+     * <p>
+     * [VPC only] Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol other than
+     * <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed, regardless of any
+     * ports you specify.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      */
     private String ipProtocol;
@@ -94,9 +104,11 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     private String sourceSecurityGroupOwnerId;
     /**
      * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6 code
-     * number, use <code>-1</code> to specify all codes. If you specify all ICMP/ICMPv6 types, you must specify all
-     * codes.
+     * The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number, use
+     * <code>-1</code> to specify all codes. If you specify all ICMP types, you must specify all codes.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      */
     private Integer toPort;
@@ -116,7 +128,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      *        [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
      *        or the security group name in the request.
      * @param ipPermissions
-     *        The sets of IP permissions. Can be used to specify multiple rules in a single command.
+     *        The sets of IP permissions.
      */
     public AuthorizeSecurityGroupIngressRequest(String groupName, java.util.List<IpPermission> ipPermissions) {
         setGroupName(groupName);
@@ -125,11 +137,18 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
+     * The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security group.
+     * To specify an IPv6 address range, use a set of IP permissions.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      * 
      * @param cidrIp
-     *        The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
+     *        The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security
+     *        group. To specify an IPv6 address range, use a set of IP permissions.</p>
+     *        <p>
+     *        Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      */
 
     public void setCidrIp(String cidrIp) {
@@ -138,10 +157,17 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
+     * The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security group.
+     * To specify an IPv6 address range, use a set of IP permissions.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      * 
-     * @return The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
+     * @return The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source
+     *         security group. To specify an IPv6 address range, use a set of IP permissions.</p>
+     *         <p>
+     *         Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      */
 
     public String getCidrIp() {
@@ -150,11 +176,18 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
+     * The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security group.
+     * To specify an IPv6 address range, use a set of IP permissions.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      * 
      * @param cidrIp
-     *        The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
+     *        The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security
+     *        group. To specify an IPv6 address range, use a set of IP permissions.</p>
+     *        <p>
+     *        Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,15 +198,18 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
-     * number, use <code>-1</code> to specify all types. If you specify all ICMP/ICMPv6 types, you must specify all
-     * codes.
+     * The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number, use
+     * <code>-1</code> to specify all types. If you specify all ICMP types, you must specify all codes.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      * 
      * @param fromPort
-     *        The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6
-     *        type number, use <code>-1</code> to specify all types. If you specify all ICMP/ICMPv6 types, you must
-     *        specify all codes.
+     *        The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number,
+     *        use <code>-1</code> to specify all types. If you specify all ICMP types, you must specify all codes.</p>
+     *        <p>
+     *        Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      */
 
     public void setFromPort(Integer fromPort) {
@@ -182,14 +218,17 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
-     * number, use <code>-1</code> to specify all types. If you specify all ICMP/ICMPv6 types, you must specify all
-     * codes.
+     * The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number, use
+     * <code>-1</code> to specify all types. If you specify all ICMP types, you must specify all codes.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      * 
-     * @return The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6
-     *         type number, use <code>-1</code> to specify all types. If you specify all ICMP/ICMPv6 types, you must
-     *         specify all codes.
+     * @return The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number,
+     *         use <code>-1</code> to specify all types. If you specify all ICMP types, you must specify all codes.</p>
+     *         <p>
+     *         Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      */
 
     public Integer getFromPort() {
@@ -198,15 +237,18 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
-     * number, use <code>-1</code> to specify all types. If you specify all ICMP/ICMPv6 types, you must specify all
-     * codes.
+     * The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number, use
+     * <code>-1</code> to specify all types. If you specify all ICMP types, you must specify all codes.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      * 
      * @param fromPort
-     *        The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6
-     *        type number, use <code>-1</code> to specify all types. If you specify all ICMP/ICMPv6 types, you must
-     *        specify all codes.
+     *        The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number,
+     *        use <code>-1</code> to specify all types. If you specify all ICMP types, you must specify all codes.</p>
+     *        <p>
+     *        Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,10 +351,10 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The sets of IP permissions. Can be used to specify multiple rules in a single command.
+     * The sets of IP permissions.
      * </p>
      * 
-     * @return The sets of IP permissions. Can be used to specify multiple rules in a single command.
+     * @return The sets of IP permissions.
      */
 
     public java.util.List<IpPermission> getIpPermissions() {
@@ -324,11 +366,11 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The sets of IP permissions. Can be used to specify multiple rules in a single command.
+     * The sets of IP permissions.
      * </p>
      * 
      * @param ipPermissions
-     *        The sets of IP permissions. Can be used to specify multiple rules in a single command.
+     *        The sets of IP permissions.
      */
 
     public void setIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
@@ -342,7 +384,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The sets of IP permissions. Can be used to specify multiple rules in a single command.
+     * The sets of IP permissions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -351,7 +393,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * </p>
      * 
      * @param ipPermissions
-     *        The sets of IP permissions. Can be used to specify multiple rules in a single command.
+     *        The sets of IP permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -367,11 +409,11 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The sets of IP permissions. Can be used to specify multiple rules in a single command.
+     * The sets of IP permissions.
      * </p>
      * 
      * @param ipPermissions
-     *        The sets of IP permissions. Can be used to specify multiple rules in a single command.
+     *        The sets of IP permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,22 +425,29 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     /**
      * <p>
      * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC only)
-     * Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number other than
-     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on all ports is
-     * allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
-     * must specify a port range. For protocol <code>58</code> (ICMPv6), you can optionally specify a port range; if you
-     * don't, traffic for all types and codes is allowed.
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify
+     * <code>icmpv6</code>, use a set of IP permissions.
+     * </p>
+     * <p>
+     * [VPC only] Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol other than
+     * <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed, regardless of any
+     * ports you specify.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      * 
      * @param ipProtocol
      *        The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
-     *        href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC
-     *        only) Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number
-     *        other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on
-     *        all ports is allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and
-     *        <code>icmp</code>, you must specify a port range. For protocol <code>58</code> (ICMPv6), you can
-     *        optionally specify a port range; if you don't, traffic for all types and codes is allowed.
+     *        href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To
+     *        specify <code>icmpv6</code>, use a set of IP permissions.</p>
+     *        <p>
+     *        [VPC only] Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol
+     *        other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed,
+     *        regardless of any ports you specify.
+     *        </p>
+     *        <p>
+     *        Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      */
 
     public void setIpProtocol(String ipProtocol) {
@@ -408,22 +457,28 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     /**
      * <p>
      * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC only)
-     * Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number other than
-     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on all ports is
-     * allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
-     * must specify a port range. For protocol <code>58</code> (ICMPv6), you can optionally specify a port range; if you
-     * don't, traffic for all types and codes is allowed.
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify
+     * <code>icmpv6</code>, use a set of IP permissions.
+     * </p>
+     * <p>
+     * [VPC only] Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol other than
+     * <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed, regardless of any
+     * ports you specify.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      * 
      * @return The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
-     *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).
-     *         (VPC only) Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol
-     *         number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6),
-     *         traffic on all ports is allowed, regardless of any ports you specify. For <code>tcp</code>,
-     *         <code>udp</code>, and <code>icmp</code>, you must specify a port range. For protocol <code>58</code>
-     *         (ICMPv6), you can optionally specify a port range; if you don't, traffic for all types and codes is
-     *         allowed.
+     *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To
+     *         specify <code>icmpv6</code>, use a set of IP permissions.</p>
+     *         <p>
+     *         [VPC only] Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol
+     *         other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed,
+     *         regardless of any ports you specify.
+     *         </p>
+     *         <p>
+     *         Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      */
 
     public String getIpProtocol() {
@@ -433,22 +488,29 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     /**
      * <p>
      * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC only)
-     * Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number other than
-     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on all ports is
-     * allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
-     * must specify a port range. For protocol <code>58</code> (ICMPv6), you can optionally specify a port range; if you
-     * don't, traffic for all types and codes is allowed.
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify
+     * <code>icmpv6</code>, use a set of IP permissions.
+     * </p>
+     * <p>
+     * [VPC only] Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol other than
+     * <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed, regardless of any
+     * ports you specify.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      * 
      * @param ipProtocol
      *        The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
-     *        href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC
-     *        only) Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number
-     *        other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on
-     *        all ports is allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and
-     *        <code>icmp</code>, you must specify a port range. For protocol <code>58</code> (ICMPv6), you can
-     *        optionally specify a port range; if you don't, traffic for all types and codes is allowed.
+     *        href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To
+     *        specify <code>icmpv6</code>, use a set of IP permissions.</p>
+     *        <p>
+     *        [VPC only] Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol
+     *        other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed,
+     *        regardless of any ports you specify.
+     *        </p>
+     *        <p>
+     *        Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -587,15 +649,18 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6 code
-     * number, use <code>-1</code> to specify all codes. If you specify all ICMP/ICMPv6 types, you must specify all
-     * codes.
+     * The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number, use
+     * <code>-1</code> to specify all codes. If you specify all ICMP types, you must specify all codes.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      * 
      * @param toPort
-     *        The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6
-     *        code number, use <code>-1</code> to specify all codes. If you specify all ICMP/ICMPv6 types, you must
-     *        specify all codes.
+     *        The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number, use
+     *        <code>-1</code> to specify all codes. If you specify all ICMP types, you must specify all codes.</p>
+     *        <p>
+     *        Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      */
 
     public void setToPort(Integer toPort) {
@@ -604,14 +669,17 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6 code
-     * number, use <code>-1</code> to specify all codes. If you specify all ICMP/ICMPv6 types, you must specify all
-     * codes.
+     * The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number, use
+     * <code>-1</code> to specify all codes. If you specify all ICMP types, you must specify all codes.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      * 
-     * @return The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6
-     *         code number, use <code>-1</code> to specify all codes. If you specify all ICMP/ICMPv6 types, you must
-     *         specify all codes.
+     * @return The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number,
+     *         use <code>-1</code> to specify all codes. If you specify all ICMP types, you must specify all codes.</p>
+     *         <p>
+     *         Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      */
 
     public Integer getToPort() {
@@ -620,15 +688,18 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6 code
-     * number, use <code>-1</code> to specify all codes. If you specify all ICMP/ICMPv6 types, you must specify all
-     * codes.
+     * The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number, use
+     * <code>-1</code> to specify all codes. If you specify all ICMP types, you must specify all codes.
+     * </p>
+     * <p>
+     * Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * </p>
      * 
      * @param toPort
-     *        The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6
-     *        code number, use <code>-1</code> to specify all codes. If you specify all ICMP/ICMPv6 types, you must
-     *        specify all codes.
+     *        The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number, use
+     *        <code>-1</code> to specify all codes. If you specify all ICMP types, you must specify all codes.</p>
+     *        <p>
+     *        Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

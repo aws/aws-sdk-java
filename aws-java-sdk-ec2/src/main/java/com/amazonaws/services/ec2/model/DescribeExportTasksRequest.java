@@ -29,17 +29,17 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more export task IDs.
+     * The export task IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> exportTaskIds;
 
     /**
      * <p>
-     * One or more export task IDs.
+     * The export task IDs.
      * </p>
      * 
-     * @return One or more export task IDs.
+     * @return The export task IDs.
      */
 
     public java.util.List<String> getExportTaskIds() {
@@ -51,11 +51,11 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more export task IDs.
+     * The export task IDs.
      * </p>
      * 
      * @param exportTaskIds
-     *        One or more export task IDs.
+     *        The export task IDs.
      */
 
     public void setExportTaskIds(java.util.Collection<String> exportTaskIds) {
@@ -69,7 +69,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more export task IDs.
+     * The export task IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param exportTaskIds
-     *        One or more export task IDs.
+     *        The export task IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more export task IDs.
+     * The export task IDs.
      * </p>
      * 
      * @param exportTaskIds
-     *        One or more export task IDs.
+     *        The export task IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

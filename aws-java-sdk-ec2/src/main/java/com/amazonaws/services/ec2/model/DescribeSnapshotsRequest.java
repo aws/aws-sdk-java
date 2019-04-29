@@ -37,6 +37,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>encrypted</code> - Indicates whether the snapshot is encrypted (<code>true</code> | <code>false</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
      * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused
      * with the user-configured AWS account alias, which is set from the IAM console.
@@ -150,6 +155,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>encrypted</code> - Indicates whether the snapshot is encrypted (<code>true</code> | <code>false</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
      * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused
      * with the user-configured AWS account alias, which is set from the IAM console.
@@ -212,6 +222,12 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>description</code> - A description of the snapshot.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>encrypted</code> - Indicates whether the snapshot is encrypted (<code>true</code> |
+     *         <code>false</code>)
      *         </p>
      *         </li>
      *         <li>
@@ -292,6 +308,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>encrypted</code> - Indicates whether the snapshot is encrypted (<code>true</code> | <code>false</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
      * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused
      * with the user-configured AWS account alias, which is set from the IAM console.
@@ -355,6 +376,12 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>description</code> - A description of the snapshot.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>encrypted</code> - Indicates whether the snapshot is encrypted (<code>true</code> |
+     *        <code>false</code>)
      *        </p>
      *        </li>
      *        <li>
@@ -437,6 +464,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>encrypted</code> - Indicates whether the snapshot is encrypted (<code>true</code> | <code>false</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
      * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused
      * with the user-configured AWS account alias, which is set from the IAM console.
@@ -505,6 +537,12 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>description</code> - A description of the snapshot.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>encrypted</code> - Indicates whether the snapshot is encrypted (<code>true</code> |
+     *        <code>false</code>)
      *        </p>
      *        </li>
      *        <li>
@@ -589,6 +627,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>encrypted</code> - Indicates whether the snapshot is encrypted (<code>true</code> | <code>false</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
      * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused
      * with the user-configured AWS account alias, which is set from the IAM console.
@@ -652,6 +695,12 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>description</code> - A description of the snapshot.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>encrypted</code> - Indicates whether the snapshot is encrypted (<code>true</code> |
+     *        <code>false</code>)
      *        </p>
      *        </li>
      *        <li>

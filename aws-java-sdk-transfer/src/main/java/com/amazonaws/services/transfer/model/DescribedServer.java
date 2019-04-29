@@ -36,10 +36,26 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String arn;
-
+    /**
+     * <p>
+     * The virtual private cloud (VPC) endpoint settings that you configured for your SFTP server.
+     * </p>
+     */
     private EndpointDetails endpointDetails;
-
+    /**
+     * <p>
+     * The type of endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC endpoint,
+     * your server isn't accessible over the public internet.
+     * </p>
+     */
     private String endpointType;
+    /**
+     * <p>
+     * This value contains the Message-Digest Algorithm (MD5) hash of the server's host key. This value is equivalent to
+     * the output of <code>ssh-keygen -l -E md5 -f my-new-server-key</code> command.
+     * </p>
+     */
+    private String hostKeyFingerprint;
     /**
      * <p>
      * Specifies information to call a customer-supplied authentication API. This field is not populated when the
@@ -137,7 +153,12 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The virtual private cloud (VPC) endpoint settings that you configured for your SFTP server.
+     * </p>
+     * 
      * @param endpointDetails
+     *        The virtual private cloud (VPC) endpoint settings that you configured for your SFTP server.
      */
 
     public void setEndpointDetails(EndpointDetails endpointDetails) {
@@ -145,7 +166,11 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The virtual private cloud (VPC) endpoint settings that you configured for your SFTP server.
+     * </p>
+     * 
+     * @return The virtual private cloud (VPC) endpoint settings that you configured for your SFTP server.
      */
 
     public EndpointDetails getEndpointDetails() {
@@ -153,7 +178,12 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The virtual private cloud (VPC) endpoint settings that you configured for your SFTP server.
+     * </p>
+     * 
      * @param endpointDetails
+     *        The virtual private cloud (VPC) endpoint settings that you configured for your SFTP server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,7 +193,14 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The type of endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC endpoint,
+     * your server isn't accessible over the public internet.
+     * </p>
+     * 
      * @param endpointType
+     *        The type of endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC
+     *        endpoint, your server isn't accessible over the public internet.
      * @see EndpointType
      */
 
@@ -172,7 +209,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The type of endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC endpoint,
+     * your server isn't accessible over the public internet.
+     * </p>
+     * 
+     * @return The type of endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC
+     *         endpoint, your server isn't accessible over the public internet.
      * @see EndpointType
      */
 
@@ -181,7 +224,14 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The type of endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC endpoint,
+     * your server isn't accessible over the public internet.
+     * </p>
+     * 
      * @param endpointType
+     *        The type of endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC
+     *        endpoint, your server isn't accessible over the public internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */
@@ -192,13 +242,66 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The type of endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC endpoint,
+     * your server isn't accessible over the public internet.
+     * </p>
+     * 
      * @param endpointType
+     *        The type of endpoint that your SFTP server is connected to. If your SFTP server is connected to a VPC
+     *        endpoint, your server isn't accessible over the public internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */
 
     public DescribedServer withEndpointType(EndpointType endpointType) {
         this.endpointType = endpointType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * This value contains the Message-Digest Algorithm (MD5) hash of the server's host key. This value is equivalent to
+     * the output of <code>ssh-keygen -l -E md5 -f my-new-server-key</code> command.
+     * </p>
+     * 
+     * @param hostKeyFingerprint
+     *        This value contains the Message-Digest Algorithm (MD5) hash of the server's host key. This value is
+     *        equivalent to the output of <code>ssh-keygen -l -E md5 -f my-new-server-key</code> command.
+     */
+
+    public void setHostKeyFingerprint(String hostKeyFingerprint) {
+        this.hostKeyFingerprint = hostKeyFingerprint;
+    }
+
+    /**
+     * <p>
+     * This value contains the Message-Digest Algorithm (MD5) hash of the server's host key. This value is equivalent to
+     * the output of <code>ssh-keygen -l -E md5 -f my-new-server-key</code> command.
+     * </p>
+     * 
+     * @return This value contains the Message-Digest Algorithm (MD5) hash of the server's host key. This value is
+     *         equivalent to the output of <code>ssh-keygen -l -E md5 -f my-new-server-key</code> command.
+     */
+
+    public String getHostKeyFingerprint() {
+        return this.hostKeyFingerprint;
+    }
+
+    /**
+     * <p>
+     * This value contains the Message-Digest Algorithm (MD5) hash of the server's host key. This value is equivalent to
+     * the output of <code>ssh-keygen -l -E md5 -f my-new-server-key</code> command.
+     * </p>
+     * 
+     * @param hostKeyFingerprint
+     *        This value contains the Message-Digest Algorithm (MD5) hash of the server's host key. This value is
+     *        equivalent to the output of <code>ssh-keygen -l -E md5 -f my-new-server-key</code> command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedServer withHostKeyFingerprint(String hostKeyFingerprint) {
+        setHostKeyFingerprint(hostKeyFingerprint);
         return this;
     }
 
@@ -667,6 +770,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
             sb.append("EndpointDetails: ").append(getEndpointDetails()).append(",");
         if (getEndpointType() != null)
             sb.append("EndpointType: ").append(getEndpointType()).append(",");
+        if (getHostKeyFingerprint() != null)
+            sb.append("HostKeyFingerprint: ").append(getHostKeyFingerprint()).append(",");
         if (getIdentityProviderDetails() != null)
             sb.append("IdentityProviderDetails: ").append(getIdentityProviderDetails()).append(",");
         if (getIdentityProviderType() != null)
@@ -707,6 +812,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getEndpointType() != null && other.getEndpointType().equals(this.getEndpointType()) == false)
             return false;
+        if (other.getHostKeyFingerprint() == null ^ this.getHostKeyFingerprint() == null)
+            return false;
+        if (other.getHostKeyFingerprint() != null && other.getHostKeyFingerprint().equals(this.getHostKeyFingerprint()) == false)
+            return false;
         if (other.getIdentityProviderDetails() == null ^ this.getIdentityProviderDetails() == null)
             return false;
         if (other.getIdentityProviderDetails() != null && other.getIdentityProviderDetails().equals(this.getIdentityProviderDetails()) == false)
@@ -746,6 +855,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getEndpointDetails() == null) ? 0 : getEndpointDetails().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
+        hashCode = prime * hashCode + ((getHostKeyFingerprint() == null) ? 0 : getHostKeyFingerprint().hashCode());
         hashCode = prime * hashCode + ((getIdentityProviderDetails() == null) ? 0 : getIdentityProviderDetails().hashCode());
         hashCode = prime * hashCode + ((getIdentityProviderType() == null) ? 0 : getIdentityProviderType().hashCode());
         hashCode = prime * hashCode + ((getLoggingRole() == null) ? 0 : getLoggingRole().hashCode());

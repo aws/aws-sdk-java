@@ -59,7 +59,9 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique string that identifies a user and is associated with a server as specified by the ServerId. This is the
-     * string that will be used by your user when they log in to your SFTP server.
+     * string that will be used by your user when they log in to your SFTP server. This user name is a minimum of 3 and
+     * a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The
+     * user name can't start with a hyphen.
      * </p>
      */
     private String userName;
@@ -272,12 +274,16 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique string that identifies a user and is associated with a server as specified by the ServerId. This is the
-     * string that will be used by your user when they log in to your SFTP server.
+     * string that will be used by your user when they log in to your SFTP server. This user name is a minimum of 3 and
+     * a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The
+     * user name can't start with a hyphen.
      * </p>
      * 
      * @param userName
      *        A unique string that identifies a user and is associated with a server as specified by the ServerId. This
-     *        is the string that will be used by your user when they log in to your SFTP server.
+     *        is the string that will be used by your user when they log in to your SFTP server. This user name is a
+     *        minimum of 3 and a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9,
+     *        underscore, and hyphen. The user name can't start with a hyphen.
      */
 
     public void setUserName(String userName) {
@@ -287,11 +293,15 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique string that identifies a user and is associated with a server as specified by the ServerId. This is the
-     * string that will be used by your user when they log in to your SFTP server.
+     * string that will be used by your user when they log in to your SFTP server. This user name is a minimum of 3 and
+     * a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The
+     * user name can't start with a hyphen.
      * </p>
      * 
      * @return A unique string that identifies a user and is associated with a server as specified by the ServerId. This
-     *         is the string that will be used by your user when they log in to your SFTP server.
+     *         is the string that will be used by your user when they log in to your SFTP server. This user name is a
+     *         minimum of 3 and a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9,
+     *         underscore, and hyphen. The user name can't start with a hyphen.
      */
 
     public String getUserName() {
@@ -301,12 +311,16 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique string that identifies a user and is associated with a server as specified by the ServerId. This is the
-     * string that will be used by your user when they log in to your SFTP server.
+     * string that will be used by your user when they log in to your SFTP server. This user name is a minimum of 3 and
+     * a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The
+     * user name can't start with a hyphen.
      * </p>
      * 
      * @param userName
      *        A unique string that identifies a user and is associated with a server as specified by the ServerId. This
-     *        is the string that will be used by your user when they log in to your SFTP server.
+     *        is the string that will be used by your user when they log in to your SFTP server. This user name is a
+     *        minimum of 3 and a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9,
+     *        underscore, and hyphen. The user name can't start with a hyphen.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

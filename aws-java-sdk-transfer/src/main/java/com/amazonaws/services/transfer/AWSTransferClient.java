@@ -166,6 +166,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist.
      * @sample AWSTransfer.CreateServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer" target="_top">AWS API
      *      Documentation</a>

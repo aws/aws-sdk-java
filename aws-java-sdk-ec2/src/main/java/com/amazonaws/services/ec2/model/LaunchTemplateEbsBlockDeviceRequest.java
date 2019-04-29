@@ -44,8 +44,9 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * The number of I/O operations per second (IOPS) that the volume supports. For io1, this represents the number of
      * IOPS that are provisioned for the volume. For gp2, this represents the baseline performance of the volume and the
      * rate at which the volume accumulates I/O credits for bursting. For more information about General Purpose SSD
-     * baseline performance, I/O credits, and bursting, see Amazon EBS Volume Types in the Amazon Elastic Compute Cloud
-     * User Guide.
+     * baseline performance, I/O credits, and bursting, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create io1 volumes; it is not used in requests to create
@@ -203,8 +204,9 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * The number of I/O operations per second (IOPS) that the volume supports. For io1, this represents the number of
      * IOPS that are provisioned for the volume. For gp2, this represents the baseline performance of the volume and the
      * rate at which the volume accumulates I/O credits for bursting. For more information about General Purpose SSD
-     * baseline performance, I/O credits, and bursting, see Amazon EBS Volume Types in the Amazon Elastic Compute Cloud
-     * User Guide.
+     * baseline performance, I/O credits, and bursting, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create io1 volumes; it is not used in requests to create
@@ -215,8 +217,9 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      *        The number of I/O operations per second (IOPS) that the volume supports. For io1, this represents the
      *        number of IOPS that are provisioned for the volume. For gp2, this represents the baseline performance of
      *        the volume and the rate at which the volume accumulates I/O credits for bursting. For more information
-     *        about General Purpose SSD baseline performance, I/O credits, and bursting, see Amazon EBS Volume Types in
-     *        the Amazon Elastic Compute Cloud User Guide.</p>
+     *        about General Purpose SSD baseline performance, I/O credits, and bursting, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Condition: This parameter is required for requests to create io1 volumes; it is not used in requests to
      *        create gp2, st1, sc1, or standard volumes.
@@ -231,8 +234,9 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * The number of I/O operations per second (IOPS) that the volume supports. For io1, this represents the number of
      * IOPS that are provisioned for the volume. For gp2, this represents the baseline performance of the volume and the
      * rate at which the volume accumulates I/O credits for bursting. For more information about General Purpose SSD
-     * baseline performance, I/O credits, and bursting, see Amazon EBS Volume Types in the Amazon Elastic Compute Cloud
-     * User Guide.
+     * baseline performance, I/O credits, and bursting, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create io1 volumes; it is not used in requests to create
@@ -242,8 +246,9 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * @return The number of I/O operations per second (IOPS) that the volume supports. For io1, this represents the
      *         number of IOPS that are provisioned for the volume. For gp2, this represents the baseline performance of
      *         the volume and the rate at which the volume accumulates I/O credits for bursting. For more information
-     *         about General Purpose SSD baseline performance, I/O credits, and bursting, see Amazon EBS Volume Types in
-     *         the Amazon Elastic Compute Cloud User Guide.</p>
+     *         about General Purpose SSD baseline performance, I/O credits, and bursting, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
      *         Condition: This parameter is required for requests to create io1 volumes; it is not used in requests to
      *         create gp2, st1, sc1, or standard volumes.
@@ -258,8 +263,9 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * The number of I/O operations per second (IOPS) that the volume supports. For io1, this represents the number of
      * IOPS that are provisioned for the volume. For gp2, this represents the baseline performance of the volume and the
      * rate at which the volume accumulates I/O credits for bursting. For more information about General Purpose SSD
-     * baseline performance, I/O credits, and bursting, see Amazon EBS Volume Types in the Amazon Elastic Compute Cloud
-     * User Guide.
+     * baseline performance, I/O credits, and bursting, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create io1 volumes; it is not used in requests to create
@@ -270,8 +276,9 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      *        The number of I/O operations per second (IOPS) that the volume supports. For io1, this represents the
      *        number of IOPS that are provisioned for the volume. For gp2, this represents the baseline performance of
      *        the volume and the rate at which the volume accumulates I/O credits for bursting. For more information
-     *        about General Purpose SSD baseline performance, I/O credits, and bursting, see Amazon EBS Volume Types in
-     *        the Amazon Elastic Compute Cloud User Guide.</p>
+     *        about General Purpose SSD baseline performance, I/O credits, and bursting, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Condition: This parameter is required for requests to create io1 volumes; it is not used in requests to
      *        create gp2, st1, sc1, or standard volumes.

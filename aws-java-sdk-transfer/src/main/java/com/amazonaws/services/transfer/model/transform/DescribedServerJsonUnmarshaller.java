@@ -60,6 +60,10 @@ public class DescribedServerJsonUnmarshaller implements Unmarshaller<DescribedSe
                     context.nextToken();
                     describedServer.setEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("HostKeyFingerprint", targetDepth)) {
+                    context.nextToken();
+                    describedServer.setHostKeyFingerprint(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("IdentityProviderDetails", targetDepth)) {
                     context.nextToken();
                     describedServer.setIdentityProviderDetails(IdentityProviderDetailsJsonUnmarshaller.getInstance().unmarshall(context));

@@ -27,7 +27,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more bundle task IDs.
+     * The bundle task IDs.
      * </p>
      * <p>
      * Default: Describes all your bundle tasks.
@@ -36,7 +36,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
     private com.amazonaws.internal.SdkInternalList<String> bundleIds;
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -97,13 +97,13 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more bundle task IDs.
+     * The bundle task IDs.
      * </p>
      * <p>
      * Default: Describes all your bundle tasks.
      * </p>
      * 
-     * @return One or more bundle task IDs.</p>
+     * @return The bundle task IDs.</p>
      *         <p>
      *         Default: Describes all your bundle tasks.
      */
@@ -117,14 +117,14 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more bundle task IDs.
+     * The bundle task IDs.
      * </p>
      * <p>
      * Default: Describes all your bundle tasks.
      * </p>
      * 
      * @param bundleIds
-     *        One or more bundle task IDs.</p>
+     *        The bundle task IDs.</p>
      *        <p>
      *        Default: Describes all your bundle tasks.
      */
@@ -140,7 +140,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more bundle task IDs.
+     * The bundle task IDs.
      * </p>
      * <p>
      * Default: Describes all your bundle tasks.
@@ -152,7 +152,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param bundleIds
-     *        One or more bundle task IDs.</p>
+     *        The bundle task IDs.</p>
      *        <p>
      *        Default: Describes all your bundle tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -170,14 +170,14 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more bundle task IDs.
+     * The bundle task IDs.
      * </p>
      * <p>
      * Default: Describes all your bundle tasks.
      * </p>
      * 
      * @param bundleIds
-     *        One or more bundle task IDs.</p>
+     *        The bundle task IDs.</p>
      *        <p>
      *        Default: Describes all your bundle tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -190,7 +190,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -247,7 +247,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -312,7 +312,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -370,7 +370,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -437,7 +437,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -500,7 +500,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -569,7 +569,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -627,7 +627,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>

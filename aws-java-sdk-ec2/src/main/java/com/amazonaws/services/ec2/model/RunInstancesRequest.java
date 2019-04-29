@@ -35,8 +35,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
     /**
      * <p>
-     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an instance
-     * and must be specified here or in a launch template.
+     * The ID of the AMI. An AMI is required to launch an instance and must be specified here or in a launch template.
      * </p>
      */
     private String imageId;
@@ -53,10 +52,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private String instanceType;
     /**
      * <p>
-     * [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6
-     * addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6
-     * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
-     * launch.
+     * [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the
+     * IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific
+     * IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances
+     * to launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
@@ -127,7 +126,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private Integer minCount;
     /**
      * <p>
-     * The monitoring for the instance.
+     * Specifies whether detailed monitoring is enabled for the instance.
      * </p>
      */
     private Boolean monitoring;
@@ -139,7 +138,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private Placement placement;
     /**
      * <p>
-     * The ID of the RAM disk.
+     * The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel
+     * requirements for information about whether you need to specify a RAM disk. To find kernel requirements, go to the
+     * AWS Resource Center and search for the kernel ID.
      * </p>
      * <important>
      * <p>
@@ -191,7 +192,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * at Launch</a> (Linux) and <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and
-     * you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     * you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.
      * </p>
      */
     private String userData;
@@ -254,10 +256,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private String instanceInitiatedShutdownBehavior;
     /**
      * <p>
-     * The network interfaces.
-     * </p>
-     * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * The network interfaces to associate with the instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification> networkInterfaces;
@@ -277,13 +276,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private String privateIpAddress;
     /**
      * <p>
-     * An elastic GPU to associate with the instance.
+     * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
+     * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2 Elastic GPUs</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ElasticGpuSpecification> elasticGpuSpecification;
     /**
      * <p>
-     * An elastic inference accelerator.
+     * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
+     * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ElasticInferenceAccelerator> elasticInferenceAccelerators;
@@ -315,7 +318,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private InstanceMarketOptionsRequest instanceMarketOptions;
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     * The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
@@ -369,8 +372,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * initialize any additional object members.
      * 
      * @param imageId
-     *        The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an
-     *        instance and must be specified here or in a launch template.
+     *        The ID of the AMI. An AMI is required to launch an instance and must be specified here or in a launch
+     *        template.
      * @param minCount
      *        The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2
      *        can launch in the target Availability Zone, Amazon EC2 launches no instances.</p>
@@ -487,13 +490,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an instance
-     * and must be specified here or in a launch template.
+     * The ID of the AMI. An AMI is required to launch an instance and must be specified here or in a launch template.
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an
-     *        instance and must be specified here or in a launch template.
+     *        The ID of the AMI. An AMI is required to launch an instance and must be specified here or in a launch
+     *        template.
      */
 
     public void setImageId(String imageId) {
@@ -502,12 +504,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an instance
-     * and must be specified here or in a launch template.
+     * The ID of the AMI. An AMI is required to launch an instance and must be specified here or in a launch template.
      * </p>
      * 
-     * @return The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an
-     *         instance and must be specified here or in a launch template.
+     * @return The ID of the AMI. An AMI is required to launch an instance and must be specified here or in a launch
+     *         template.
      */
 
     public String getImageId() {
@@ -516,13 +517,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an instance
-     * and must be specified here or in a launch template.
+     * The ID of the AMI. An AMI is required to launch an instance and must be specified here or in a launch template.
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI is required to launch an
-     *        instance and must be specified here or in a launch template.
+     *        The ID of the AMI. An AMI is required to launch an instance and must be specified here or in a launch
+     *        template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -651,17 +651,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6
-     * addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6
-     * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
-     * launch.
+     * [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the
+     * IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific
+     * IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances
+     * to launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
      * @param ipv6AddressCount
-     *        [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses
+     *        [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses
      *        the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign
      *        specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum
      *        number of instances to launch.</p>
@@ -675,19 +675,19 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6
-     * addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6
-     * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
-     * launch.
+     * [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the
+     * IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific
+     * IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances
+     * to launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
-     * @return [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses
-     *         the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign
-     *         specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum
-     *         number of instances to launch.</p>
+     * @return [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2
+     *         chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option
+     *         to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a
+     *         minimum number of instances to launch.</p>
      *         <p>
      *         You cannot specify this option and the network interfaces option in the same request.
      */
@@ -698,17 +698,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6
-     * addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6
-     * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
-     * launch.
+     * [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the
+     * IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific
+     * IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances
+     * to launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
      * @param ipv6AddressCount
-     *        [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses
+     *        [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses
      *        the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign
      *        specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum
      *        number of instances to launch.</p>
@@ -1143,11 +1143,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The monitoring for the instance.
+     * Specifies whether detailed monitoring is enabled for the instance.
      * </p>
      * 
      * @param monitoring
-     *        The monitoring for the instance.
+     *        Specifies whether detailed monitoring is enabled for the instance.
      */
 
     public void setMonitoring(Boolean monitoring) {
@@ -1156,10 +1156,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The monitoring for the instance.
+     * Specifies whether detailed monitoring is enabled for the instance.
      * </p>
      * 
-     * @return The monitoring for the instance.
+     * @return Specifies whether detailed monitoring is enabled for the instance.
      */
 
     public Boolean getMonitoring() {
@@ -1168,11 +1168,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The monitoring for the instance.
+     * Specifies whether detailed monitoring is enabled for the instance.
      * </p>
      * 
      * @param monitoring
-     *        The monitoring for the instance.
+     *        Specifies whether detailed monitoring is enabled for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1183,10 +1183,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The monitoring for the instance.
+     * Specifies whether detailed monitoring is enabled for the instance.
      * </p>
      * 
-     * @return The monitoring for the instance.
+     * @return Specifies whether detailed monitoring is enabled for the instance.
      */
 
     public Boolean isMonitoring() {
@@ -1235,7 +1235,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the RAM disk.
+     * The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel
+     * requirements for information about whether you need to specify a RAM disk. To find kernel requirements, go to the
+     * AWS Resource Center and search for the kernel ID.
      * </p>
      * <important>
      * <p>
@@ -1246,7 +1248,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </important>
      * 
      * @param ramdiskId
-     *        The ID of the RAM disk.</p> <important>
+     *        The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel
+     *        requirements for information about whether you need to specify a RAM disk. To find kernel requirements, go
+     *        to the AWS Resource Center and search for the kernel ID.</p> <important>
      *        <p>
      *        We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
@@ -1260,7 +1264,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the RAM disk.
+     * The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel
+     * requirements for information about whether you need to specify a RAM disk. To find kernel requirements, go to the
+     * AWS Resource Center and search for the kernel ID.
      * </p>
      * <important>
      * <p>
@@ -1270,7 +1276,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * </important>
      * 
-     * @return The ID of the RAM disk.</p> <important>
+     * @return The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel
+     *         requirements for information about whether you need to specify a RAM disk. To find kernel requirements,
+     *         go to the AWS Resource Center and search for the kernel ID.</p> <important>
      *         <p>
      *         We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
@@ -1284,7 +1292,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the RAM disk.
+     * The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel
+     * requirements for information about whether you need to specify a RAM disk. To find kernel requirements, go to the
+     * AWS Resource Center and search for the kernel ID.
      * </p>
      * <important>
      * <p>
@@ -1295,7 +1305,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </important>
      * 
      * @param ramdiskId
-     *        The ID of the RAM disk.</p> <important>
+     *        The ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel
+     *        requirements for information about whether you need to specify a RAM disk. To find kernel requirements, go
+     *        to the AWS Resource Center and search for the kernel ID.</p> <important>
      *        <p>
      *        We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html"> PV-GRUB</a> in the
@@ -1613,7 +1625,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * at Launch</a> (Linux) and <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and
-     * you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     * you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.
      * </p>
      * 
      * @param userData
@@ -1622,7 +1635,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        Instance at Launch</a> (Linux) and <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      *        >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for
-     *        you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     *        you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is
+     *        limited to 16 KB.
      */
 
     public void setUserData(String userData) {
@@ -1636,7 +1650,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * at Launch</a> (Linux) and <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and
-     * you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     * you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.
      * </p>
      * 
      * @return The user data to make available to the instance. For more information, see <a
@@ -1644,7 +1659,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         Instance at Launch</a> (Linux) and <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      *         >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for
-     *         you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     *         you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is
+     *         limited to 16 KB.
      */
 
     public String getUserData() {
@@ -1658,7 +1674,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * at Launch</a> (Linux) and <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and
-     * you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     * you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16
+     * KB.
      * </p>
      * 
      * @param userData
@@ -1667,7 +1684,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        Instance at Launch</a> (Linux) and <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
      *        >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for
-     *        you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     *        you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is
+     *        limited to 16 KB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2132,15 +2150,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The network interfaces.
-     * </p>
-     * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * The network interfaces to associate with the instance.
      * </p>
      * 
-     * @return The network interfaces.</p>
-     *         <p>
-     *         You cannot specify this option and the network interfaces option in the same request.
+     * @return The network interfaces to associate with the instance.
      */
 
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
@@ -2152,16 +2165,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The network interfaces.
-     * </p>
-     * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * The network interfaces to associate with the instance.
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interfaces.</p>
-     *        <p>
-     *        You cannot specify this option and the network interfaces option in the same request.
+     *        The network interfaces to associate with the instance.
      */
 
     public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
@@ -2175,10 +2183,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The network interfaces.
-     * </p>
-     * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * The network interfaces to associate with the instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2187,9 +2192,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interfaces.</p>
-     *        <p>
-     *        You cannot specify this option and the network interfaces option in the same request.
+     *        The network interfaces to associate with the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2205,16 +2208,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The network interfaces.
-     * </p>
-     * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * The network interfaces to associate with the instance.
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interfaces.</p>
-     *        <p>
-     *        You cannot specify this option and the network interfaces option in the same request.
+     *        The network interfaces to associate with the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2313,10 +2311,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance.
+     * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
+     * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2 Elastic GPUs</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return An elastic GPU to associate with the instance.
+     * @return An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
+     *         your Windows instance to accelerate the graphics performance of your applications. For more information,
+     *         see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2
+     *         Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public java.util.List<ElasticGpuSpecification> getElasticGpuSpecification() {
@@ -2328,11 +2332,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance.
+     * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
+     * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2 Elastic GPUs</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param elasticGpuSpecification
-     *        An elastic GPU to associate with the instance.
+     *        An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
+     *        your Windows instance to accelerate the graphics performance of your applications. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2
+     *        Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setElasticGpuSpecification(java.util.Collection<ElasticGpuSpecification> elasticGpuSpecification) {
@@ -2346,7 +2356,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance.
+     * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
+     * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2 Elastic GPUs</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2355,7 +2368,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param elasticGpuSpecification
-     *        An elastic GPU to associate with the instance.
+     *        An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
+     *        your Windows instance to accelerate the graphics performance of your applications. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2
+     *        Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2371,11 +2387,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance.
+     * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
+     * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2 Elastic GPUs</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param elasticGpuSpecification
-     *        An elastic GPU to associate with the instance.
+     *        An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
+     *        your Windows instance to accelerate the graphics performance of your applications. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html"> Amazon EC2
+     *        Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2386,10 +2408,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic inference accelerator.
+     * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
+     * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
      * </p>
      * 
-     * @return An elastic inference accelerator.
+     * @return An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
+     *         resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
+     *         workloads.
      */
 
     public java.util.List<ElasticInferenceAccelerator> getElasticInferenceAccelerators() {
@@ -2401,11 +2426,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic inference accelerator.
+     * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
+     * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
      * </p>
      * 
      * @param elasticInferenceAccelerators
-     *        An elastic inference accelerator.
+     *        An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
+     *        resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
+     *        workloads.
      */
 
     public void setElasticInferenceAccelerators(java.util.Collection<ElasticInferenceAccelerator> elasticInferenceAccelerators) {
@@ -2419,7 +2447,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic inference accelerator.
+     * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
+     * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2428,7 +2457,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param elasticInferenceAccelerators
-     *        An elastic inference accelerator.
+     *        An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
+     *        resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
+     *        workloads.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2444,11 +2475,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic inference accelerator.
+     * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
+     * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
      * </p>
      * 
      * @param elasticInferenceAccelerators
-     *        An elastic inference accelerator.
+     *        An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
+     *        resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
+     *        workloads.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2661,7 +2695,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     * The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
@@ -2672,7 +2706,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param creditSpecification
-     *        The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     *        The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code> and
      *        <code>unlimited</code>. To change this attribute after launch, use
      *        <a>ModifyInstanceCreditSpecification</a>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
@@ -2687,7 +2721,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     * The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
@@ -2697,7 +2731,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3 instances)
      * </p>
      * 
-     * @return The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     * @return The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code> and
      *         <code>unlimited</code>. To change this attribute after launch, use
      *         <a>ModifyInstanceCreditSpecification</a>. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
@@ -2712,7 +2746,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     * The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
@@ -2723,7 +2757,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param creditSpecification
-     *        The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     *        The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code> and
      *        <code>unlimited</code>. To change this attribute after launch, use
      *        <a>ModifyInstanceCreditSpecification</a>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable

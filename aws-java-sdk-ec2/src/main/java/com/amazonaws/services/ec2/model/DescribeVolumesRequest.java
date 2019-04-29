@@ -69,7 +69,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>encrypted</code> - The encryption status of the volume.
+     * <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>)
      * </p>
      * </li>
      * <li>
@@ -207,7 +207,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>encrypted</code> - The encryption status of the volume.
+     * <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>)
      * </p>
      * </li>
      * <li>
@@ -295,7 +295,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         </li>
      *         <li>
      *         <p>
-     *         <code>encrypted</code> - The encryption status of the volume.
+     *         <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> |
+     *         <code>false</code>)
      *         </p>
      *         </li>
      *         <li>
@@ -393,7 +394,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>encrypted</code> - The encryption status of the volume.
+     * <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>)
      * </p>
      * </li>
      * <li>
@@ -482,7 +483,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>encrypted</code> - The encryption status of the volume.
+     *        <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>
+     *        )
      *        </p>
      *        </li>
      *        <li>
@@ -582,7 +584,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>encrypted</code> - The encryption status of the volume.
+     * <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>)
      * </p>
      * </li>
      * <li>
@@ -676,7 +678,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>encrypted</code> - The encryption status of the volume.
+     *        <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>
+     *        )
      *        </p>
      *        </li>
      *        <li>
@@ -778,7 +781,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>encrypted</code> - The encryption status of the volume.
+     * <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>)
      * </p>
      * </li>
      * <li>
@@ -867,7 +870,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>encrypted</code> - The encryption status of the volume.
+     *        <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>
+     *        )
      *        </p>
      *        </li>
      *        <li>

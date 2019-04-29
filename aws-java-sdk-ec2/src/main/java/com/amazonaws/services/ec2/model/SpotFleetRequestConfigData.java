@@ -81,13 +81,15 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     private String iamFleetRole;
     /**
      * <p>
-     * The launch specifications for the Spot Fleet request.
+     * The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't
+     * specify <code>LaunchTemplateConfigs</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SpotFleetLaunchSpecification> launchSpecifications;
     /**
      * <p>
-     * The launch template and overrides.
+     * The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
+     * <code>LaunchSpecifications</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LaunchTemplateConfig> launchTemplateConfigs;
@@ -655,10 +657,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch specifications for the Spot Fleet request.
+     * The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't
+     * specify <code>LaunchTemplateConfigs</code>.
      * </p>
      * 
-     * @return The launch specifications for the Spot Fleet request.
+     * @return The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>,
+     *         you can't specify <code>LaunchTemplateConfigs</code>.
      */
 
     public java.util.List<SpotFleetLaunchSpecification> getLaunchSpecifications() {
@@ -670,11 +674,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch specifications for the Spot Fleet request.
+     * The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't
+     * specify <code>LaunchTemplateConfigs</code>.
      * </p>
      * 
      * @param launchSpecifications
-     *        The launch specifications for the Spot Fleet request.
+     *        The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>,
+     *        you can't specify <code>LaunchTemplateConfigs</code>.
      */
 
     public void setLaunchSpecifications(java.util.Collection<SpotFleetLaunchSpecification> launchSpecifications) {
@@ -688,7 +694,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch specifications for the Spot Fleet request.
+     * The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't
+     * specify <code>LaunchTemplateConfigs</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -697,7 +704,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * </p>
      * 
      * @param launchSpecifications
-     *        The launch specifications for the Spot Fleet request.
+     *        The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>,
+     *        you can't specify <code>LaunchTemplateConfigs</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -713,11 +721,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch specifications for the Spot Fleet request.
+     * The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't
+     * specify <code>LaunchTemplateConfigs</code>.
      * </p>
      * 
      * @param launchSpecifications
-     *        The launch specifications for the Spot Fleet request.
+     *        The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>,
+     *        you can't specify <code>LaunchTemplateConfigs</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -728,10 +738,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template and overrides.
+     * The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
+     * <code>LaunchSpecifications</code>.
      * </p>
      * 
-     * @return The launch template and overrides.
+     * @return The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
+     *         <code>LaunchSpecifications</code>.
      */
 
     public java.util.List<LaunchTemplateConfig> getLaunchTemplateConfigs() {
@@ -743,11 +755,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template and overrides.
+     * The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
+     * <code>LaunchSpecifications</code>.
      * </p>
      * 
      * @param launchTemplateConfigs
-     *        The launch template and overrides.
+     *        The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
+     *        <code>LaunchSpecifications</code>.
      */
 
     public void setLaunchTemplateConfigs(java.util.Collection<LaunchTemplateConfig> launchTemplateConfigs) {
@@ -761,7 +775,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template and overrides.
+     * The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
+     * <code>LaunchSpecifications</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -770,7 +785,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * </p>
      * 
      * @param launchTemplateConfigs
-     *        The launch template and overrides.
+     *        The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
+     *        <code>LaunchSpecifications</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -786,11 +802,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template and overrides.
+     * The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
+     * <code>LaunchSpecifications</code>.
      * </p>
      * 
      * @param launchTemplateConfigs
-     *        The launch template and overrides.
+     *        The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
+     *        <code>LaunchSpecifications</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

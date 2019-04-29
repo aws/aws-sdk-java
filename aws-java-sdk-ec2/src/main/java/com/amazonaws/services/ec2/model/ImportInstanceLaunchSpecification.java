@@ -40,13 +40,13 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     private String architecture;
     /**
      * <p>
-     * One or more security group IDs.
+     * The security group IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> groupIds;
     /**
      * <p>
-     * One or more security group names.
+     * The security group names.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> groupNames;
@@ -211,10 +211,10 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * One or more security group IDs.
+     * The security group IDs.
      * </p>
      * 
-     * @return One or more security group IDs.
+     * @return The security group IDs.
      */
 
     public java.util.List<String> getGroupIds() {
@@ -226,11 +226,11 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * One or more security group IDs.
+     * The security group IDs.
      * </p>
      * 
      * @param groupIds
-     *        One or more security group IDs.
+     *        The security group IDs.
      */
 
     public void setGroupIds(java.util.Collection<String> groupIds) {
@@ -244,7 +244,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * One or more security group IDs.
+     * The security group IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -253,7 +253,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      * </p>
      * 
      * @param groupIds
-     *        One or more security group IDs.
+     *        The security group IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,11 +269,11 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * One or more security group IDs.
+     * The security group IDs.
      * </p>
      * 
      * @param groupIds
-     *        One or more security group IDs.
+     *        The security group IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,10 +284,10 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * One or more security group names.
+     * The security group names.
      * </p>
      * 
-     * @return One or more security group names.
+     * @return The security group names.
      */
 
     public java.util.List<String> getGroupNames() {
@@ -299,11 +299,11 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * One or more security group names.
+     * The security group names.
      * </p>
      * 
      * @param groupNames
-     *        One or more security group names.
+     *        The security group names.
      */
 
     public void setGroupNames(java.util.Collection<String> groupNames) {
@@ -317,7 +317,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * One or more security group names.
+     * The security group names.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -326,7 +326,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      * </p>
      * 
      * @param groupNames
-     *        One or more security group names.
+     *        The security group names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,11 +342,11 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * One or more security group names.
+     * The security group names.
      * </p>
      * 
      * @param groupNames
-     *        One or more security group names.
+     *        The security group names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
