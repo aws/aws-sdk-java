@@ -26,7 +26,7 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
+     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
      * Otherwise, it is not encoded.
      * </p>
      */
@@ -40,7 +40,7 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
+     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
      * Otherwise, it is not encoded.
      * </p>
      * <p>
@@ -55,7 +55,7 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param ciphertextBlob
-     *        The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
+     *        The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
      *        Otherwise, it is not encoded.
      */
 
@@ -65,7 +65,7 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
+     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
      * Otherwise, it is not encoded.
      * </p>
      * <p>
@@ -77,7 +77,7 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @return The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is
-     *         Base64-encdoded. Otherwise, it is not encoded.
+     *         Base64-encoded. Otherwise, it is not encoded.
      */
 
     public java.nio.ByteBuffer getCiphertextBlob() {
@@ -86,7 +86,7 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
+     * The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
      * Otherwise, it is not encoded.
      * </p>
      * <p>
@@ -101,7 +101,7 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param ciphertextBlob
-     *        The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
+     *        The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
      *        Otherwise, it is not encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

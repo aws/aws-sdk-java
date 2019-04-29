@@ -25,7 +25,7 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
+     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
      * not encoded.
      * </p>
      */
@@ -45,7 +45,7 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
+     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
      * not encoded.
      * </p>
      * <p>
@@ -60,7 +60,7 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param ciphertextBlob
-     *        The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise,
+     *        The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
      *        it is not encoded.
      */
 
@@ -70,7 +70,7 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
+     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
      * not encoded.
      * </p>
      * <p>
@@ -81,7 +81,7 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * {@code position}.
      * </p>
      * 
-     * @return The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise,
+     * @return The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
      *         it is not encoded.
      */
 
@@ -91,7 +91,7 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
+     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
      * not encoded.
      * </p>
      * <p>
@@ -106,7 +106,7 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param ciphertextBlob
-     *        The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise,
+     *        The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
      *        it is not encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

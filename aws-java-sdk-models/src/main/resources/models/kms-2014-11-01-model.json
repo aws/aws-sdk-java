@@ -1152,7 +1152,7 @@
         },
         "Plaintext":{
           "shape":"PlaintextType",
-          "documentation":"<p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is not encoded.</p>"
+          "documentation":"<p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>"
         }
       }
     },
@@ -1359,7 +1359,7 @@
       "members":{
         "CiphertextBlob":{
           "shape":"CiphertextType",
-          "documentation":"<p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is not encoded.</p>"
+          "documentation":"<p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>"
         },
         "KeyId":{
           "shape":"KeyIdType",
@@ -1421,11 +1421,11 @@
       "members":{
         "CiphertextBlob":{
           "shape":"CiphertextType",
-          "documentation":"<p>The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is not encoded.</p>"
+          "documentation":"<p>The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>"
         },
         "Plaintext":{
           "shape":"PlaintextType",
-          "documentation":"<p>The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is not encoded. Use this data key for local encryption and decryption, then remove it from memory as soon as possible.</p>"
+          "documentation":"<p>The data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not encoded. Use this data key for local encryption and decryption, then remove it from memory as soon as possible.</p>"
         },
         "KeyId":{
           "shape":"KeyIdType",
@@ -1464,7 +1464,7 @@
       "members":{
         "CiphertextBlob":{
           "shape":"CiphertextType",
-          "documentation":"<p>The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is not encoded.</p>"
+          "documentation":"<p>The encrypted data encryption key. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>"
         },
         "KeyId":{
           "shape":"KeyIdType",
@@ -1490,7 +1490,7 @@
       "members":{
         "Plaintext":{
           "shape":"PlaintextType",
-          "documentation":"<p>The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is not encoded.</p>"
+          "documentation":"<p>The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>"
         }
       }
     },
@@ -2267,7 +2267,7 @@
       "members":{
         "CiphertextBlob":{
           "shape":"CiphertextType",
-          "documentation":"<p>The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is not encoded.</p>"
+          "documentation":"<p>The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>"
         },
         "SourceKeyId":{
           "shape":"KeyIdType",

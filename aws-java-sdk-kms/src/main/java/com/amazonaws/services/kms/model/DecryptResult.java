@@ -31,7 +31,7 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     private String keyId;
     /**
      * <p>
-     * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it
+     * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it
      * is not encoded.
      * </p>
      */
@@ -85,7 +85,7 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it
+     * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it
      * is not encoded.
      * </p>
      * <p>
@@ -100,7 +100,7 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * 
      * @param plaintext
-     *        Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
+     *        Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
      *        Otherwise, it is not encoded.
      */
 
@@ -110,7 +110,7 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it
+     * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it
      * is not encoded.
      * </p>
      * <p>
@@ -121,7 +121,7 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * {@code position}.
      * </p>
      * 
-     * @return Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
+     * @return Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
      *         Otherwise, it is not encoded.
      */
 
@@ -131,7 +131,7 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it
+     * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it
      * is not encoded.
      * </p>
      * <p>
@@ -146,7 +146,7 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * 
      * @param plaintext
-     *        Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
+     *        Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
      *        Otherwise, it is not encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
