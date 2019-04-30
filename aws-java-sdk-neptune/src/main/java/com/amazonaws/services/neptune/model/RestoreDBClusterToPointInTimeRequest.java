@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterToPointInTime"
  *      target="_top">AWS API Documentation</a>
@@ -54,27 +53,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String dBClusterIdentifier;
     /**
      * <p>
-     * The type of restore to be performed. You can specify one of the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.
-     * </p>
-     * <p>
-     * If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the
-     * source DB cluster.
+     * The type of restore to be performed. The only type of restore currently supported is <code>full-copy</code> (the
+     * default).
      * </p>
      */
     private String restoreType;
@@ -180,7 +160,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private java.util.List<String> vpcSecurityGroupIds;
-
+    /**
+     * <p>
+     * The tags to be applied to the restored DB cluster.
+     * </p>
+     */
     private java.util.List<Tag> tags;
     /**
      * <p>
@@ -228,6 +212,22 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
+    /**
+     * <p>
+     * The name of the DB cluster parameter group to associate with the new DB cluster.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If supplied, must match the name of an existing DBClusterParameterGroup.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String dBClusterParameterGroupName;
 
     /**
      * <p>
@@ -388,50 +388,13 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The type of restore to be performed. You can specify one of the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.
-     * </p>
-     * <p>
-     * If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the
-     * source DB cluster.
+     * The type of restore to be performed. The only type of restore currently supported is <code>full-copy</code> (the
+     * default).
      * </p>
      * 
      * @param restoreType
-     *        The type of restore to be performed. You can specify one of the following values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster
-     *        is earlier than 1.11.
-     *        </p>
-     *        <p>
-     *        If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy
-     *        of the source DB cluster.
+     *        The type of restore to be performed. The only type of restore currently supported is
+     *        <code>full-copy</code> (the default).
      */
 
     public void setRestoreType(String restoreType) {
@@ -440,49 +403,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The type of restore to be performed. You can specify one of the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.
-     * </p>
-     * <p>
-     * If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the
-     * source DB cluster.
+     * The type of restore to be performed. The only type of restore currently supported is <code>full-copy</code> (the
+     * default).
      * </p>
      * 
-     * @return The type of restore to be performed. You can specify one of the following values:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster
-     *         is earlier than 1.11.
-     *         </p>
-     *         <p>
-     *         If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy
-     *         of the source DB cluster.
+     * @return The type of restore to be performed. The only type of restore currently supported is
+     *         <code>full-copy</code> (the default).
      */
 
     public String getRestoreType() {
@@ -491,50 +417,13 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The type of restore to be performed. You can specify one of the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.
-     * </p>
-     * <p>
-     * If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the
-     * source DB cluster.
+     * The type of restore to be performed. The only type of restore currently supported is <code>full-copy</code> (the
+     * default).
      * </p>
      * 
      * @param restoreType
-     *        The type of restore to be performed. You can specify one of the following values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster
-     *        is earlier than 1.11.
-     *        </p>
-     *        <p>
-     *        If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy
-     *        of the source DB cluster.
+     *        The type of restore to be performed. The only type of restore currently supported is
+     *        <code>full-copy</code> (the default).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -877,7 +766,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * 
      * @param useLatestRestorableTime
      *        A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
-     *        and <code>false</code> otherwise. </p>
+     *        and <code>false</code> otherwise.</p>
      *        <p>
      *        Default: <code>false</code>
      *        </p>
@@ -902,7 +791,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @return A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
-     *         and <code>false</code> otherwise. </p>
+     *         and <code>false</code> otherwise.</p>
      *         <p>
      *         Default: <code>false</code>
      *         </p>
@@ -928,7 +817,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * 
      * @param useLatestRestorableTime
      *        A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
-     *        and <code>false</code> otherwise. </p>
+     *        and <code>false</code> otherwise.</p>
      *        <p>
      *        Default: <code>false</code>
      *        </p>
@@ -955,7 +844,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @return A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
-     *         and <code>false</code> otherwise. </p>
+     *         and <code>false</code> otherwise.</p>
      *         <p>
      *         Default: <code>false</code>
      *         </p>
@@ -1224,7 +1113,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * The tags to be applied to the restored DB cluster.
+     * </p>
+     * 
+     * @return The tags to be applied to the restored DB cluster.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1232,7 +1125,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The tags to be applied to the restored DB cluster.
+     * </p>
+     * 
      * @param tags
+     *        The tags to be applied to the restored DB cluster.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1246,12 +1144,16 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
+     * The tags to be applied to the restored DB cluster.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        The tags to be applied to the restored DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1266,7 +1168,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The tags to be applied to the restored DB cluster.
+     * </p>
+     * 
      * @param tags
+     *        The tags to be applied to the restored DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1574,6 +1481,103 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The name of the DB cluster parameter group to associate with the new DB cluster.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If supplied, must match the name of an existing DBClusterParameterGroup.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param dBClusterParameterGroupName
+     *        The name of the DB cluster parameter group to associate with the new DB cluster.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If supplied, must match the name of an existing DBClusterParameterGroup.
+     *        </p>
+     *        </li>
+     */
+
+    public void setDBClusterParameterGroupName(String dBClusterParameterGroupName) {
+        this.dBClusterParameterGroupName = dBClusterParameterGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the DB cluster parameter group to associate with the new DB cluster.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If supplied, must match the name of an existing DBClusterParameterGroup.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The name of the DB cluster parameter group to associate with the new DB cluster.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If supplied, must match the name of an existing DBClusterParameterGroup.
+     *         </p>
+     *         </li>
+     */
+
+    public String getDBClusterParameterGroupName() {
+        return this.dBClusterParameterGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the DB cluster parameter group to associate with the new DB cluster.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If supplied, must match the name of an existing DBClusterParameterGroup.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param dBClusterParameterGroupName
+     *        The name of the DB cluster parameter group to associate with the new DB cluster.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If supplied, must match the name of an existing DBClusterParameterGroup.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterToPointInTimeRequest withDBClusterParameterGroupName(String dBClusterParameterGroupName) {
+        setDBClusterParameterGroupName(dBClusterParameterGroupName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1608,7 +1612,9 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getEnableIAMDatabaseAuthentication() != null)
-            sb.append("EnableIAMDatabaseAuthentication: ").append(getEnableIAMDatabaseAuthentication());
+            sb.append("EnableIAMDatabaseAuthentication: ").append(getEnableIAMDatabaseAuthentication()).append(",");
+        if (getDBClusterParameterGroupName() != null)
+            sb.append("DBClusterParameterGroupName: ").append(getDBClusterParameterGroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -1672,6 +1678,10 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
         if (other.getEnableIAMDatabaseAuthentication() != null
                 && other.getEnableIAMDatabaseAuthentication().equals(this.getEnableIAMDatabaseAuthentication()) == false)
             return false;
+        if (other.getDBClusterParameterGroupName() == null ^ this.getDBClusterParameterGroupName() == null)
+            return false;
+        if (other.getDBClusterParameterGroupName() != null && other.getDBClusterParameterGroupName().equals(this.getDBClusterParameterGroupName()) == false)
+            return false;
         return true;
     }
 
@@ -1692,6 +1702,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
+        hashCode = prime * hashCode + ((getDBClusterParameterGroupName() == null) ? 0 : getDBClusterParameterGroupName().hashCode());
         return hashCode;
     }
 

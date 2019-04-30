@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBInstance" target="_top">AWS API
  *      Documentation</a>
@@ -137,14 +136,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean applyImmediately;
     /**
      * <p>
-     * The new password for the master user. The password can include any printable ASCII character except "/",
-     * """, or "@".
-     * </p>
-     * <p>
      * Not applicable.
-     * </p>
-     * <p>
-     * Default: Uses existing setting
      * </p>
      */
     private String masterUserPassword;
@@ -164,10 +156,6 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      */
     private String dBParameterGroupName;
     /**
-     * <p>
-     * The number of days to retain automated backups. Setting this parameter to a positive number enables backups.
-     * Setting this parameter to 0 disables automated backups.
-     * </p>
      * <p>
      * Not applicable. The retention period for automated backups is managed by the DB cluster. For more information,
      * see <a>ModifyDBCluster</a>.
@@ -279,11 +267,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
-     * The license model for the DB instance.
-     * </p>
-     * <p>
-     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code>
+     * Not supported.
      * </p>
      */
     private String licenseModel;
@@ -348,28 +332,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String newDBInstanceIdentifier;
     /**
      * <p>
-     * Specifies the storage type to be associated with the DB instance.
-     * </p>
-     * <p>
-     * If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the <code>Iops</code>
-     * parameter.
-     * </p>
-     * <p>
-     * If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using
-     * Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on
-     * several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24
-     * hours, but the process can take up to several days in some cases. During the migration, the DB instance is
-     * available for use, but might experience performance degradation. While the migration takes place, nightly backups
-     * for the instance are suspended. No other Amazon Neptune operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating a Read Replica for the instance,
-     * and creating a DB snapshot of the instance.
-     * </p>
-     * <p>
-     * Valid values: <code>standard | gp2 | io1</code>
-     * </p>
-     * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
+     * Not supported.
      * </p>
      */
     private String storageType;
@@ -437,7 +400,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer dBPortNumber;
     /**
      * <p>
-     * This parameter is not supported.
+     * This flag should no longer be used.
      * </p>
      */
     @Deprecated
@@ -491,14 +454,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean enableIAMDatabaseAuthentication;
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance, and otherwise false.
+     * Not supported.
      * </p>
      */
     private Boolean enablePerformanceInsights;
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * Not supported.
      * </p>
      */
     private String performanceInsightsKMSKeyId;
@@ -616,7 +578,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param allocatedStorage
-     *        The new amount of storage (in gibibytes) to allocate for the DB instance. </p>
+     *        The new amount of storage (in gibibytes) to allocate for the DB instance.</p>
      *        <p>
      *        Not applicable. Storage is managed by the DB Cluster.
      */
@@ -633,7 +595,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Not applicable. Storage is managed by the DB Cluster.
      * </p>
      * 
-     * @return The new amount of storage (in gibibytes) to allocate for the DB instance. </p>
+     * @return The new amount of storage (in gibibytes) to allocate for the DB instance.</p>
      *         <p>
      *         Not applicable. Storage is managed by the DB Cluster.
      */
@@ -651,7 +613,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param allocatedStorage
-     *        The new amount of storage (in gibibytes) to allocate for the DB instance. </p>
+     *        The new amount of storage (in gibibytes) to allocate for the DB instance.</p>
      *        <p>
      *        Not applicable. Storage is managed by the DB Cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -677,7 +639,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param dBInstanceClass
      *        The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all AWS Regions. </p>
+     *        instance classes are available in all AWS Regions.</p>
      *        <p>
      *        If you modify the DB instance class, an outage occurs during the change. The change is applied during the
      *        next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -705,7 +667,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *         instance classes are available in all AWS Regions. </p>
+     *         instance classes are available in all AWS Regions.</p>
      *         <p>
      *         If you modify the DB instance class, an outage occurs during the change. The change is applied during the
      *         next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -734,7 +696,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param dBInstanceClass
      *        The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all AWS Regions. </p>
+     *        instance classes are available in all AWS Regions.</p>
      *        <p>
      *        If you modify the DB instance class, an outage occurs during the change. The change is applied during the
      *        next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -768,7 +730,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param dBSubnetGroupName
      *        The new DB subnet group for the DB instance. You can use this parameter to move your DB instance to a
-     *        different VPC. </p>
+     *        different VPC.</p>
      *        <p>
      *        Changing the subnet group causes an outage during the change. The change is applied during the next
      *        maintenance window, unless you specify <code>true</code> for the <code>ApplyImmediately</code> parameter.
@@ -801,7 +763,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return The new DB subnet group for the DB instance. You can use this parameter to move your DB instance to a
-     *         different VPC. </p>
+     *         different VPC.</p>
      *         <p>
      *         Changing the subnet group causes an outage during the change. The change is applied during the next
      *         maintenance window, unless you specify <code>true</code> for the <code>ApplyImmediately</code> parameter.
@@ -835,7 +797,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param dBSubnetGroupName
      *        The new DB subnet group for the DB instance. You can use this parameter to move your DB instance to a
-     *        different VPC. </p>
+     *        different VPC.</p>
      *        <p>
      *        Changing the subnet group causes an outage during the change. The change is applied during the next
      *        maintenance window, unless you specify <code>true</code> for the <code>ApplyImmediately</code> parameter.
@@ -1210,7 +1172,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param applyImmediately
      *        Specifies whether the modifications in this request and any pending modifications are asynchronously
      *        applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB
-     *        instance. </p>
+     *        instance.</p>
      *        <p>
      *        If this parameter is set to <code>false</code>, changes to the DB instance are applied during the next
      *        maintenance window. Some parameter changes can cause an outage and are applied on the next call to
@@ -1240,7 +1202,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return Specifies whether the modifications in this request and any pending modifications are asynchronously
      *         applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB
-     *         instance. </p>
+     *         instance.</p>
      *         <p>
      *         If this parameter is set to <code>false</code>, changes to the DB instance are applied during the next
      *         maintenance window. Some parameter changes can cause an outage and are applied on the next call to
@@ -1271,7 +1233,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param applyImmediately
      *        Specifies whether the modifications in this request and any pending modifications are asynchronously
      *        applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB
-     *        instance. </p>
+     *        instance.</p>
      *        <p>
      *        If this parameter is set to <code>false</code>, changes to the DB instance are applied during the next
      *        maintenance window. Some parameter changes can cause an outage and are applied on the next call to
@@ -1303,7 +1265,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return Specifies whether the modifications in this request and any pending modifications are asynchronously
      *         applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB
-     *         instance. </p>
+     *         instance.</p>
      *         <p>
      *         If this parameter is set to <code>false</code>, changes to the DB instance are applied during the next
      *         maintenance window. Some parameter changes can cause an outage and are applied on the next call to
@@ -1319,24 +1281,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new password for the master user. The password can include any printable ASCII character except "/",
-     * """, or "@".
-     * </p>
-     * <p>
      * Not applicable.
-     * </p>
-     * <p>
-     * Default: Uses existing setting
      * </p>
      * 
      * @param masterUserPassword
-     *        The new password for the master user. The password can include any printable ASCII character except "/",
-     *        """, or "@".</p>
-     *        <p>
      *        Not applicable.
-     *        </p>
-     *        <p>
-     *        Default: Uses existing setting
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -1345,23 +1294,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new password for the master user. The password can include any printable ASCII character except "/",
-     * """, or "@".
-     * </p>
-     * <p>
      * Not applicable.
      * </p>
-     * <p>
-     * Default: Uses existing setting
-     * </p>
      * 
-     * @return The new password for the master user. The password can include any printable ASCII character except "/",
-     *         """, or "@".</p>
-     *         <p>
-     *         Not applicable.
-     *         </p>
-     *         <p>
-     *         Default: Uses existing setting
+     * @return Not applicable.
      */
 
     public String getMasterUserPassword() {
@@ -1370,24 +1306,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new password for the master user. The password can include any printable ASCII character except "/",
-     * """, or "@".
-     * </p>
-     * <p>
      * Not applicable.
-     * </p>
-     * <p>
-     * Default: Uses existing setting
      * </p>
      * 
      * @param masterUserPassword
-     *        The new password for the master user. The password can include any printable ASCII character except "/",
-     *        """, or "@".</p>
-     *        <p>
      *        Not applicable.
-     *        </p>
-     *        <p>
-     *        Default: Uses existing setting
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1489,10 +1412,6 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The number of days to retain automated backups. Setting this parameter to a positive number enables backups.
-     * Setting this parameter to 0 disables automated backups.
-     * </p>
-     * <p>
      * Not applicable. The retention period for automated backups is managed by the DB cluster. For more information,
      * see <a>ModifyDBCluster</a>.
      * </p>
@@ -1501,12 +1420,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param backupRetentionPeriod
-     *        The number of days to retain automated backups. Setting this parameter to a positive number enables
-     *        backups. Setting this parameter to 0 disables automated backups.</p>
-     *        <p>
      *        Not applicable. The retention period for automated backups is managed by the DB cluster. For more
-     *        information, see <a>ModifyDBCluster</a>.
-     *        </p>
+     *        information, see <a>ModifyDBCluster</a>.</p>
      *        <p>
      *        Default: Uses existing setting
      */
@@ -1517,10 +1432,6 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The number of days to retain automated backups. Setting this parameter to a positive number enables backups.
-     * Setting this parameter to 0 disables automated backups.
-     * </p>
-     * <p>
      * Not applicable. The retention period for automated backups is managed by the DB cluster. For more information,
      * see <a>ModifyDBCluster</a>.
      * </p>
@@ -1528,12 +1439,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: Uses existing setting
      * </p>
      * 
-     * @return The number of days to retain automated backups. Setting this parameter to a positive number enables
-     *         backups. Setting this parameter to 0 disables automated backups.</p>
-     *         <p>
-     *         Not applicable. The retention period for automated backups is managed by the DB cluster. For more
-     *         information, see <a>ModifyDBCluster</a>.
-     *         </p>
+     * @return Not applicable. The retention period for automated backups is managed by the DB cluster. For more
+     *         information, see <a>ModifyDBCluster</a>.</p>
      *         <p>
      *         Default: Uses existing setting
      */
@@ -1544,10 +1451,6 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The number of days to retain automated backups. Setting this parameter to a positive number enables backups.
-     * Setting this parameter to 0 disables automated backups.
-     * </p>
-     * <p>
      * Not applicable. The retention period for automated backups is managed by the DB cluster. For more information,
      * see <a>ModifyDBCluster</a>.
      * </p>
@@ -1556,12 +1459,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param backupRetentionPeriod
-     *        The number of days to retain automated backups. Setting this parameter to a positive number enables
-     *        backups. Setting this parameter to 0 disables automated backups.</p>
-     *        <p>
      *        Not applicable. The retention period for automated backups is managed by the DB cluster. For more
-     *        information, see <a>ModifyDBCluster</a>.
-     *        </p>
+     *        information, see <a>ModifyDBCluster</a>.</p>
      *        <p>
      *        Default: Uses existing setting
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1607,7 +1506,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param preferredBackupWindow
-     *        The daily time range during which automated backups are created if automated backups are enabled. </p>
+     *        The daily time range during which automated backups are created if automated backups are enabled.</p>
      *        <p>
      *        Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more
      *        information, see <a>ModifyDBCluster</a>.
@@ -1676,7 +1575,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * 
-     * @return The daily time range during which automated backups are created if automated backups are enabled. </p>
+     * @return The daily time range during which automated backups are created if automated backups are enabled.</p>
      *         <p>
      *         Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For
      *         more information, see <a>ModifyDBCluster</a>.
@@ -1746,7 +1645,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param preferredBackupWindow
-     *        The daily time range during which automated backups are created if automated backups are enabled. </p>
+     *        The daily time range during which automated backups are created if automated backups are enabled.</p>
      *        <p>
      *        Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more
      *        information, see <a>ModifyDBCluster</a>.
@@ -2005,7 +1904,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param engineVersion
      *        The version number of the database engine to upgrade to. Changing this parameter results in an outage and
      *        the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
-     *        parameter is set to <code>true</code> for this request. </p>
+     *        parameter is set to <code>true</code> for this request.</p>
      *        <p>
      *        For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter
      *        group in the DB parameter group family for the new engine version must be specified. The new DB parameter
@@ -2030,7 +1929,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return The version number of the database engine to upgrade to. Changing this parameter results in an outage and
      *         the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
-     *         parameter is set to <code>true</code> for this request. </p>
+     *         parameter is set to <code>true</code> for this request.</p>
      *         <p>
      *         For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter
      *         group in the DB parameter group family for the new engine version must be specified. The new DB parameter
@@ -2056,7 +1955,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param engineVersion
      *        The version number of the database engine to upgrade to. Changing this parameter results in an outage and
      *        the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
-     *        parameter is set to <code>true</code> for this request. </p>
+     *        parameter is set to <code>true</code> for this request.</p>
      *        <p>
      *        For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter
      *        group in the DB parameter group family for the new engine version must be specified. The new DB parameter
@@ -2243,18 +2142,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The license model for the DB instance.
-     * </p>
-     * <p>
-     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code>
+     * Not supported.
      * </p>
      * 
      * @param licenseModel
-     *        The license model for the DB instance.</p>
-     *        <p>
-     *        Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     *        <code>general-public-license</code>
+     *        Not supported.
      */
 
     public void setLicenseModel(String licenseModel) {
@@ -2263,17 +2155,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The license model for the DB instance.
-     * </p>
-     * <p>
-     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code>
+     * Not supported.
      * </p>
      * 
-     * @return The license model for the DB instance.</p>
-     *         <p>
-     *         Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     *         <code>general-public-license</code>
+     * @return Not supported.
      */
 
     public String getLicenseModel() {
@@ -2282,18 +2167,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The license model for the DB instance.
-     * </p>
-     * <p>
-     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code>
+     * Not supported.
      * </p>
      * 
      * @param licenseModel
-     *        The license model for the DB instance.</p>
-     *        <p>
-     *        Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     *        <code>general-public-license</code>
+     *        Not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2315,7 +2193,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param iops
-     *        The new Provisioned IOPS (I/O operations per second) value for the instance. </p>
+     *        The new Provisioned IOPS (I/O operations per second) value for the instance.</p>
      *        <p>
      *        Changing this setting doesn't result in an outage and the change is applied during the next maintenance
      *        window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.
@@ -2340,7 +2218,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: Uses existing setting
      * </p>
      * 
-     * @return The new Provisioned IOPS (I/O operations per second) value for the instance. </p>
+     * @return The new Provisioned IOPS (I/O operations per second) value for the instance.</p>
      *         <p>
      *         Changing this setting doesn't result in an outage and the change is applied during the next maintenance
      *         window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.
@@ -2366,7 +2244,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param iops
-     *        The new Provisioned IOPS (I/O operations per second) value for the instance. </p>
+     *        The new Provisioned IOPS (I/O operations per second) value for the instance.</p>
      *        <p>
      *        Changing this setting doesn't result in an outage and the change is applied during the next maintenance
      *        window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.
@@ -2400,7 +2278,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for
      *        this request. If the parameter change results in an option group that enables OEM, this change can cause a
      *        brief (sub-second) period during which new connections are rejected but existing connections are not
-     *        interrupted. </p>
+     *        interrupted.</p>
      *        <p>
      *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
      *        option group, and that option group can't be removed from a DB instance once it is associated with a DB
@@ -2429,7 +2307,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *         for this request. If the parameter change results in an option group that enables OEM, this change can
      *         cause a brief (sub-second) period during which new connections are rejected but existing connections are
-     *         not interrupted. </p>
+     *         not interrupted.</p>
      *         <p>
      *         Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
      *         option group, and that option group can't be removed from a DB instance once it is associated with a DB
@@ -2459,7 +2337,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for
      *        this request. If the parameter change results in an option group that enables OEM, this change can cause a
      *        brief (sub-second) period during which new connections are rejected but existing connections are not
-     *        interrupted. </p>
+     *        interrupted.</p>
      *        <p>
      *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
      *        option group, and that option group can't be removed from a DB instance once it is associated with a DB
@@ -2507,7 +2385,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB
      *        instance identifier, an instance reboot will occur immediately if you set <code>Apply Immediately</code>
      *        to true, or will occur during the next maintenance window if <code>Apply Immediately</code> to false. This
-     *        value is stored as a lowercase string. </p>
+     *        value is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -2570,7 +2448,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @return The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB
      *         instance identifier, an instance reboot will occur immediately if you set <code>Apply Immediately</code>
      *         to true, or will occur during the next maintenance window if <code>Apply Immediately</code> to false.
-     *         This value is stored as a lowercase string. </p>
+     *         This value is stored as a lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -2634,7 +2512,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB
      *        instance identifier, an instance reboot will occur immediately if you set <code>Apply Immediately</code>
      *        to true, or will occur during the next maintenance window if <code>Apply Immediately</code> to false. This
-     *        value is stored as a lowercase string. </p>
+     *        value is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -2667,52 +2545,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies the storage type to be associated with the DB instance.
-     * </p>
-     * <p>
-     * If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the <code>Iops</code>
-     * parameter.
-     * </p>
-     * <p>
-     * If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using
-     * Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on
-     * several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24
-     * hours, but the process can take up to several days in some cases. During the migration, the DB instance is
-     * available for use, but might experience performance degradation. While the migration takes place, nightly backups
-     * for the instance are suspended. No other Amazon Neptune operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating a Read Replica for the instance,
-     * and creating a DB snapshot of the instance.
-     * </p>
-     * <p>
-     * Valid values: <code>standard | gp2 | io1</code>
-     * </p>
-     * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
+     * Not supported.
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the DB instance. </p>
-     *        <p>
-     *        If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the
-     *        <code>Iops</code> parameter.
-     *        </p>
-     *        <p>
-     *        If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from
-     *        using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration
-     *        depends on several factors such as database load, storage size, storage type (standard or Provisioned
-     *        IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical
-     *        migration times are under 24 hours, but the process can take up to several days in some cases. During the
-     *        migration, the DB instance is available for use, but might experience performance degradation. While the
-     *        migration takes place, nightly backups for the instance are suspended. No other Amazon Neptune operations
-     *        can take place for the instance, including modifying the instance, rebooting the instance, deleting the
-     *        instance, creating a Read Replica for the instance, and creating a DB snapshot of the instance.
-     *        </p>
-     *        <p>
-     *        Valid values: <code>standard | gp2 | io1</code>
-     *        </p>
-     *        <p>
-     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
+     *        Not supported.
      */
 
     public void setStorageType(String storageType) {
@@ -2721,53 +2558,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies the storage type to be associated with the DB instance.
-     * </p>
-     * <p>
-     * If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the <code>Iops</code>
-     * parameter.
-     * </p>
-     * <p>
-     * If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using
-     * Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on
-     * several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24
-     * hours, but the process can take up to several days in some cases. During the migration, the DB instance is
-     * available for use, but might experience performance degradation. While the migration takes place, nightly backups
-     * for the instance are suspended. No other Amazon Neptune operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating a Read Replica for the instance,
-     * and creating a DB snapshot of the instance.
-     * </p>
-     * <p>
-     * Valid values: <code>standard | gp2 | io1</code>
-     * </p>
-     * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
+     * Not supported.
      * </p>
      * 
-     * @return Specifies the storage type to be associated with the DB instance. </p>
-     *         <p>
-     *         If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the
-     *         <code>Iops</code> parameter.
-     *         </p>
-     *         <p>
-     *         If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from
-     *         using Provisioned IOPS to using standard storage, the process can take time. The duration of the
-     *         migration depends on several factors such as database load, storage size, storage type (standard or
-     *         Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations.
-     *         Typical migration times are under 24 hours, but the process can take up to several days in some cases.
-     *         During the migration, the DB instance is available for use, but might experience performance degradation.
-     *         While the migration takes place, nightly backups for the instance are suspended. No other Amazon Neptune
-     *         operations can take place for the instance, including modifying the instance, rebooting the instance,
-     *         deleting the instance, creating a Read Replica for the instance, and creating a DB snapshot of the
-     *         instance.
-     *         </p>
-     *         <p>
-     *         Valid values: <code>standard | gp2 | io1</code>
-     *         </p>
-     *         <p>
-     *         Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-     *         <code>standard</code>
+     * @return Not supported.
      */
 
     public String getStorageType() {
@@ -2776,52 +2570,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies the storage type to be associated with the DB instance.
-     * </p>
-     * <p>
-     * If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the <code>Iops</code>
-     * parameter.
-     * </p>
-     * <p>
-     * If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using
-     * Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on
-     * several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS
-     * provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24
-     * hours, but the process can take up to several days in some cases. During the migration, the DB instance is
-     * available for use, but might experience performance degradation. While the migration takes place, nightly backups
-     * for the instance are suspended. No other Amazon Neptune operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating a Read Replica for the instance,
-     * and creating a DB snapshot of the instance.
-     * </p>
-     * <p>
-     * Valid values: <code>standard | gp2 | io1</code>
-     * </p>
-     * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
+     * Not supported.
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the DB instance. </p>
-     *        <p>
-     *        If you specify Provisioned IOPS (<code>io1</code>), you must also include a value for the
-     *        <code>Iops</code> parameter.
-     *        </p>
-     *        <p>
-     *        If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from
-     *        using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration
-     *        depends on several factors such as database load, storage size, storage type (standard or Provisioned
-     *        IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical
-     *        migration times are under 24 hours, but the process can take up to several days in some cases. During the
-     *        migration, the DB instance is available for use, but might experience performance degradation. While the
-     *        migration takes place, nightly backups for the instance are suspended. No other Amazon Neptune operations
-     *        can take place for the instance, including modifying the instance, rebooting the instance, deleting the
-     *        instance, creating a Read Replica for the instance, and creating a DB snapshot of the instance.
-     *        </p>
-     *        <p>
-     *        Valid values: <code>standard | gp2 | io1</code>
-     *        </p>
-     *        <p>
-     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
+     *        Not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3240,11 +2993,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * This parameter is not supported.
+     * This flag should no longer be used.
      * </p>
      * 
      * @param publiclyAccessible
-     *        This parameter is not supported.
+     *        This flag should no longer be used.
      */
     @Deprecated
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -3253,10 +3006,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * This parameter is not supported.
+     * This flag should no longer be used.
      * </p>
      * 
-     * @return This parameter is not supported.
+     * @return This flag should no longer be used.
      */
     @Deprecated
     public Boolean getPubliclyAccessible() {
@@ -3265,11 +3018,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * This parameter is not supported.
+     * This flag should no longer be used.
      * </p>
      * 
      * @param publiclyAccessible
-     *        This parameter is not supported.
+     *        This flag should no longer be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -3280,10 +3033,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * This parameter is not supported.
+     * This flag should no longer be used.
      * </p>
      * 
-     * @return This parameter is not supported.
+     * @return This flag should no longer be used.
      */
     @Deprecated
     public Boolean isPubliclyAccessible() {
@@ -3302,7 +3055,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param monitoringRoleArn
      *        The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch
-     *        Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. </p>
+     *        Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
      *        <p>
      *        If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
      *        <code>MonitoringRoleArn</code> value.
@@ -3323,7 +3076,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch
-     *         Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. </p>
+     *         Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
      *         <p>
      *         If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
      *         <code>MonitoringRoleArn</code> value.
@@ -3345,7 +3098,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param monitoringRoleArn
      *        The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch
-     *        Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. </p>
+     *        Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
      *        <p>
      *        If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a
      *        <code>MonitoringRoleArn</code> value.
@@ -3411,7 +3164,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param promotionTier
      *        A value that specifies the order in which a Read Replica is promoted to the primary instance after a
-     *        failure of the existing primary instance. </p>
+     *        failure of the existing primary instance.</p>
      *        <p>
      *        Default: 1
      *        </p>
@@ -3436,7 +3189,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return A value that specifies the order in which a Read Replica is promoted to the primary instance after a
-     *         failure of the existing primary instance. </p>
+     *         failure of the existing primary instance.</p>
      *         <p>
      *         Default: 1
      *         </p>
@@ -3462,7 +3215,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param promotionTier
      *        A value that specifies the order in which a Read Replica is promoted to the primary instance after a
-     *        failure of the existing primary instance. </p>
+     *        failure of the existing primary instance.</p>
      *        <p>
      *        Default: 1
      *        </p>
@@ -3614,11 +3367,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance, and otherwise false.
+     * Not supported.
      * </p>
      * 
      * @param enablePerformanceInsights
-     *        True to enable Performance Insights for the DB instance, and otherwise false.
+     *        Not supported.
      */
 
     public void setEnablePerformanceInsights(Boolean enablePerformanceInsights) {
@@ -3627,10 +3380,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance, and otherwise false.
+     * Not supported.
      * </p>
      * 
-     * @return True to enable Performance Insights for the DB instance, and otherwise false.
+     * @return Not supported.
      */
 
     public Boolean getEnablePerformanceInsights() {
@@ -3639,11 +3392,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance, and otherwise false.
+     * Not supported.
      * </p>
      * 
      * @param enablePerformanceInsights
-     *        True to enable Performance Insights for the DB instance, and otherwise false.
+     *        Not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3654,10 +3407,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance, and otherwise false.
+     * Not supported.
      * </p>
      * 
-     * @return True to enable Performance Insights for the DB instance, and otherwise false.
+     * @return Not supported.
      */
 
     public Boolean isEnablePerformanceInsights() {
@@ -3666,13 +3419,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * Not supported.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        Not supported.
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -3681,12 +3432,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * Not supported.
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *         Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * @return Not supported.
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -3695,13 +3444,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * Not supported.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        Not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

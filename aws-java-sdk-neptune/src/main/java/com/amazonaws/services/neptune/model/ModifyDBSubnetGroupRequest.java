@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBSubnetGroup" target="_top">AWS API
  *      Documentation</a>
@@ -66,7 +65,7 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param dBSubnetGroupName
      *        The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default
-     *        subnet group. </p>
+     *        subnet group.</p>
      *        <p>
      *        Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      *        </p>
@@ -91,7 +90,7 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @return The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the
-     *         default subnet group. </p>
+     *         default subnet group.</p>
      *         <p>
      *         Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      *         </p>
@@ -117,7 +116,7 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param dBSubnetGroupName
      *        The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default
-     *        subnet group. </p>
+     *        subnet group.</p>
      *        <p>
      *        Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      *        </p>

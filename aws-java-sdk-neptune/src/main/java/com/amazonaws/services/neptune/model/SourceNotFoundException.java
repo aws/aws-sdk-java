@@ -15,7 +15,9 @@ package com.amazonaws.services.neptune.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The source could not be found.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SourceNotFoundException extends com.amazonaws.services.neptune.model.AmazonNeptuneException {

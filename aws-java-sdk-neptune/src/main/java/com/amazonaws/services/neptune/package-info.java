@@ -14,8 +14,6 @@
 /**
  * <fullname>Amazon Neptune</fullname>
  * <p>
- * </p>
- * <p>
  * Amazon Neptune is a fast, reliable, fully-managed graph database service that makes it easy to build and run
  * applications that work with highly connected datasets. The core of Amazon Neptune is a purpose-built,
  * high-performance graph database engine optimized for storing billions of relationships and querying the graph with
@@ -31,9 +29,6 @@
  * reference, the parameter descriptions indicate whether a command is applied immediately, on the next instance reboot,
  * or during the maintenance window. The reference structure is as follows, and we list following some related topics
  * from the user guide.
- * </p>
- * <p>
- * <b>Amazon Neptune API Reference</b>
  * </p>
  */
 package com.amazonaws.services.neptune;

@@ -425,6 +425,41 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
     }
 
     @Override
+    public java.util.concurrent.Future<AllocateTransitVirtualInterfaceResult> allocateTransitVirtualInterfaceAsync(
+            AllocateTransitVirtualInterfaceRequest request) {
+
+        return allocateTransitVirtualInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AllocateTransitVirtualInterfaceResult> allocateTransitVirtualInterfaceAsync(
+            final AllocateTransitVirtualInterfaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AllocateTransitVirtualInterfaceRequest, AllocateTransitVirtualInterfaceResult> asyncHandler) {
+        final AllocateTransitVirtualInterfaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AllocateTransitVirtualInterfaceResult>() {
+            @Override
+            public AllocateTransitVirtualInterfaceResult call() throws Exception {
+                AllocateTransitVirtualInterfaceResult result = null;
+
+                try {
+                    result = executeAllocateTransitVirtualInterface(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateConnectionWithLagResult> associateConnectionWithLagAsync(AssociateConnectionWithLagRequest request) {
 
         return associateConnectionWithLagAsync(request, null);
@@ -609,6 +644,40 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
 
                 try {
                     result = executeConfirmPublicVirtualInterface(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfirmTransitVirtualInterfaceResult> confirmTransitVirtualInterfaceAsync(ConfirmTransitVirtualInterfaceRequest request) {
+
+        return confirmTransitVirtualInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfirmTransitVirtualInterfaceResult> confirmTransitVirtualInterfaceAsync(
+            final ConfirmTransitVirtualInterfaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ConfirmTransitVirtualInterfaceRequest, ConfirmTransitVirtualInterfaceResult> asyncHandler) {
+        final ConfirmTransitVirtualInterfaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ConfirmTransitVirtualInterfaceResult>() {
+            @Override
+            public ConfirmTransitVirtualInterfaceResult call() throws Exception {
+                ConfirmTransitVirtualInterfaceResult result = null;
+
+                try {
+                    result = executeConfirmTransitVirtualInterface(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -911,6 +980,40 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
 
                 try {
                     result = executeCreatePublicVirtualInterface(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransitVirtualInterfaceResult> createTransitVirtualInterfaceAsync(CreateTransitVirtualInterfaceRequest request) {
+
+        return createTransitVirtualInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransitVirtualInterfaceResult> createTransitVirtualInterfaceAsync(
+            final CreateTransitVirtualInterfaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTransitVirtualInterfaceRequest, CreateTransitVirtualInterfaceResult> asyncHandler) {
+        final CreateTransitVirtualInterfaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTransitVirtualInterfaceResult>() {
+            @Override
+            public CreateTransitVirtualInterfaceResult call() throws Exception {
+                CreateTransitVirtualInterfaceResult result = null;
+
+                try {
+                    result = executeCreateTransitVirtualInterface(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

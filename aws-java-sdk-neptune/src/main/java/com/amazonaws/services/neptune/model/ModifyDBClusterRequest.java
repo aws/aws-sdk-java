@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBCluster" target="_top">AWS API
  *      Documentation</a>
@@ -1042,7 +1041,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *        for this request. If the parameter change results in an option group that enables OEM, this change can
      *        cause a brief (sub-second) period during which new connections are rejected but existing connections are
-     *        not interrupted. </p>
+     *        not interrupted.</p>
      *        <p>
      *        Permanent options can't be removed from an option group. The option group can't be removed from a DB
      *        cluster once it is associated with a DB cluster.
@@ -1070,7 +1069,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      *         <code>true</code> for this request. If the parameter change results in an option group that enables OEM,
      *         this change can cause a brief (sub-second) period during which new connections are rejected but existing
-     *         connections are not interrupted. </p>
+     *         connections are not interrupted.</p>
      *         <p>
      *         Permanent options can't be removed from an option group. The option group can't be removed from a DB
      *         cluster once it is associated with a DB cluster.
@@ -1099,7 +1098,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *        for this request. If the parameter change results in an option group that enables OEM, this change can
      *        cause a brief (sub-second) period during which new connections are rejected but existing connections are
-     *        not interrupted. </p>
+     *        not interrupted.</p>
      *        <p>
      *        Permanent options can't be removed from an option group. The option group can't be removed from a DB
      *        cluster once it is associated with a DB cluster.
@@ -1147,7 +1146,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param preferredBackupWindow
      *        The daily time range during which automated backups are created if automated backups are enabled, using
-     *        the <code>BackupRetentionPeriod</code> parameter. </p>
+     *        the <code>BackupRetentionPeriod</code> parameter.</p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region.
      *        </p>
@@ -1216,7 +1215,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @return The daily time range during which automated backups are created if automated backups are enabled, using
-     *         the <code>BackupRetentionPeriod</code> parameter. </p>
+     *         the <code>BackupRetentionPeriod</code> parameter.</p>
      *         <p>
      *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region.
      *         </p>
@@ -1286,7 +1285,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param preferredBackupWindow
      *        The daily time range during which automated backups are created if automated backups are enabled, using
-     *        the <code>BackupRetentionPeriod</code> parameter. </p>
+     *        the <code>BackupRetentionPeriod</code> parameter.</p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region.
      *        </p>

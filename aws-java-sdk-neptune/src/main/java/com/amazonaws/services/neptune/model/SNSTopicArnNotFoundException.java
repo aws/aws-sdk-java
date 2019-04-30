@@ -15,7 +15,9 @@ package com.amazonaws.services.neptune.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The ARN of the SNS topic could not be found.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SNSTopicArnNotFoundException extends com.amazonaws.services.neptune.model.AmazonNeptuneException {

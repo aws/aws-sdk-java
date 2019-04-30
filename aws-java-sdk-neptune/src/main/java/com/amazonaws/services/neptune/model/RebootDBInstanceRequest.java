@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RebootDBInstance" target="_top">AWS API
  *      Documentation</a>
@@ -158,7 +157,7 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param forceFailover
-     *        When <code>true</code>, the reboot is conducted through a MultiAZ failover. </p>
+     *        When <code>true</code>, the reboot is conducted through a MultiAZ failover.</p>
      *        <p>
      *        Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.
      */
@@ -175,7 +174,7 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.
      * </p>
      * 
-     * @return When <code>true</code>, the reboot is conducted through a MultiAZ failover. </p>
+     * @return When <code>true</code>, the reboot is conducted through a MultiAZ failover.</p>
      *         <p>
      *         Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.
      */
@@ -193,7 +192,7 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param forceFailover
-     *        When <code>true</code>, the reboot is conducted through a MultiAZ failover. </p>
+     *        When <code>true</code>, the reboot is conducted through a MultiAZ failover.</p>
      *        <p>
      *        Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -212,7 +211,7 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.
      * </p>
      * 
-     * @return When <code>true</code>, the reboot is conducted through a MultiAZ failover. </p>
+     * @return When <code>true</code>, the reboot is conducted through a MultiAZ failover.</p>
      *         <p>
      *         Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.
      */

@@ -39,7 +39,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Accepts a proposal request to attach a virtual private gateway to a Direct Connect gateway.
+     * Accepts a proposal request to attach a virtual private gateway or transit gateway to a Direct Connect gateway.
      * </p>
      * 
      * @param acceptDirectConnectGatewayAssociationProposalRequest
@@ -55,7 +55,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Accepts a proposal request to attach a virtual private gateway to a Direct Connect gateway.
+     * Accepts a proposal request to attach a virtual private gateway or transit gateway to a Direct Connect gateway.
      * </p>
      * 
      * @param acceptDirectConnectGatewayAssociationProposalRequest
@@ -291,6 +291,59 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
     java.util.concurrent.Future<AllocatePublicVirtualInterfaceResult> allocatePublicVirtualInterfaceAsync(
             AllocatePublicVirtualInterfaceRequest allocatePublicVirtualInterfaceRequest,
             com.amazonaws.handlers.AsyncHandler<AllocatePublicVirtualInterfaceRequest, AllocatePublicVirtualInterfaceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provisions a transit virtual interface to be owned by the specified AWS account. Use this type of interface to
+     * connect a transit gateway to your Direct Connect gateway.
+     * </p>
+     * <p>
+     * The owner of a connection provisions a transit virtual interface to be owned by the specified AWS account.
+     * </p>
+     * <p>
+     * After you create a transit virtual interface, it must be confirmed by the owner using
+     * <a>ConfirmTransitVirtualInterface</a>. Until this step has been completed, the transit virtual interface is in
+     * the <code>requested</code> state and is not available to handle traffic.
+     * </p>
+     * 
+     * @param allocateTransitVirtualInterfaceRequest
+     * @return A Java Future containing the result of the AllocateTransitVirtualInterface operation returned by the
+     *         service.
+     * @sample AmazonDirectConnectAsync.AllocateTransitVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AllocateTransitVirtualInterfaceResult> allocateTransitVirtualInterfaceAsync(
+            AllocateTransitVirtualInterfaceRequest allocateTransitVirtualInterfaceRequest);
+
+    /**
+     * <p>
+     * Provisions a transit virtual interface to be owned by the specified AWS account. Use this type of interface to
+     * connect a transit gateway to your Direct Connect gateway.
+     * </p>
+     * <p>
+     * The owner of a connection provisions a transit virtual interface to be owned by the specified AWS account.
+     * </p>
+     * <p>
+     * After you create a transit virtual interface, it must be confirmed by the owner using
+     * <a>ConfirmTransitVirtualInterface</a>. Until this step has been completed, the transit virtual interface is in
+     * the <code>requested</code> state and is not available to handle traffic.
+     * </p>
+     * 
+     * @param allocateTransitVirtualInterfaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AllocateTransitVirtualInterface operation returned by the
+     *         service.
+     * @sample AmazonDirectConnectAsyncHandler.AllocateTransitVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AllocateTransitVirtualInterfaceResult> allocateTransitVirtualInterfaceAsync(
+            AllocateTransitVirtualInterfaceRequest allocateTransitVirtualInterfaceRequest,
+            com.amazonaws.handlers.AsyncHandler<AllocateTransitVirtualInterfaceRequest, AllocateTransitVirtualInterfaceResult> asyncHandler);
 
     /**
      * <p>
@@ -584,6 +637,49 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
+     * Accepts ownership of a transit virtual interface created by another AWS account.
+     * </p>
+     * <p>
+     * After the owner of the transit virtual interface makes this call, the specified transit virtual interface is
+     * created and made available to handle traffic.
+     * </p>
+     * 
+     * @param confirmTransitVirtualInterfaceRequest
+     * @return A Java Future containing the result of the ConfirmTransitVirtualInterface operation returned by the
+     *         service.
+     * @sample AmazonDirectConnectAsync.ConfirmTransitVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ConfirmTransitVirtualInterfaceResult> confirmTransitVirtualInterfaceAsync(
+            ConfirmTransitVirtualInterfaceRequest confirmTransitVirtualInterfaceRequest);
+
+    /**
+     * <p>
+     * Accepts ownership of a transit virtual interface created by another AWS account.
+     * </p>
+     * <p>
+     * After the owner of the transit virtual interface makes this call, the specified transit virtual interface is
+     * created and made available to handle traffic.
+     * </p>
+     * 
+     * @param confirmTransitVirtualInterfaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ConfirmTransitVirtualInterface operation returned by the
+     *         service.
+     * @sample AmazonDirectConnectAsyncHandler.ConfirmTransitVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ConfirmTransitVirtualInterfaceResult> confirmTransitVirtualInterfaceAsync(
+            ConfirmTransitVirtualInterfaceRequest confirmTransitVirtualInterfaceRequest,
+            com.amazonaws.handlers.AsyncHandler<ConfirmTransitVirtualInterfaceRequest, ConfirmTransitVirtualInterfaceResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a BGP peer on the specified virtual interface.
      * </p>
      * <p>
@@ -782,11 +878,13 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Creates a proposal to associate the specified virtual private gateway with the specified Direct Connect gateway.
+     * Creates a proposal to associate the specified virtual private gateway or transit gateway with the specified
+     * Direct Connect gateway.
      * </p>
      * <p>
-     * You can only associate a Direct Connect gateway and virtual private gateway when the account that owns the Direct
-     * Connect gateway and the account that owns the virtual private gateway have the same payer ID.
+     * You can only associate a Direct Connect gateway and virtual private gateway or transit gateway when the account
+     * that owns the Direct Connect gateway and the account that owns the virtual private gateway or transit gateway
+     * have the same AWS Payer ID.
      * </p>
      * 
      * @param createDirectConnectGatewayAssociationProposalRequest
@@ -802,11 +900,13 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Creates a proposal to associate the specified virtual private gateway with the specified Direct Connect gateway.
+     * Creates a proposal to associate the specified virtual private gateway or transit gateway with the specified
+     * Direct Connect gateway.
      * </p>
      * <p>
-     * You can only associate a Direct Connect gateway and virtual private gateway when the account that owns the Direct
-     * Connect gateway and the account that owns the virtual private gateway have the same payer ID.
+     * You can only associate a Direct Connect gateway and virtual private gateway or transit gateway when the account
+     * that owns the Direct Connect gateway and the account that owns the virtual private gateway or transit gateway
+     * have the same AWS Payer ID.
      * </p>
      * 
      * @param createDirectConnectGatewayAssociationProposalRequest
@@ -1071,6 +1171,45 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
+     * Creates a transit virtual interface. A transit virtual interface is a VLAN that transports traffic from a Direct
+     * Connect gateway to one or more transit gateways. A transit virtual interface enables the connection of multiple
+     * VPCs attached to a transit gateway to a Direct Connect gateway.
+     * </p>
+     * 
+     * @param createTransitVirtualInterfaceRequest
+     * @return A Java Future containing the result of the CreateTransitVirtualInterface operation returned by the
+     *         service.
+     * @sample AmazonDirectConnectAsync.CreateTransitVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransitVirtualInterfaceResult> createTransitVirtualInterfaceAsync(
+            CreateTransitVirtualInterfaceRequest createTransitVirtualInterfaceRequest);
+
+    /**
+     * <p>
+     * Creates a transit virtual interface. A transit virtual interface is a VLAN that transports traffic from a Direct
+     * Connect gateway to one or more transit gateways. A transit virtual interface enables the connection of multiple
+     * VPCs attached to a transit gateway to a Direct Connect gateway.
+     * </p>
+     * 
+     * @param createTransitVirtualInterfaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTransitVirtualInterface operation returned by the
+     *         service.
+     * @sample AmazonDirectConnectAsyncHandler.CreateTransitVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTransitVirtualInterfaceResult> createTransitVirtualInterfaceAsync(
+            CreateTransitVirtualInterfaceRequest createTransitVirtualInterfaceRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTransitVirtualInterfaceRequest, CreateTransitVirtualInterfaceResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified BGP peer on the specified virtual interface with the specified customer address and ASN.
      * </p>
      * <p>
@@ -1223,8 +1362,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Deletes the association proposal request between the specified Direct Connect gateway and virtual private
-     * gateway.
+     * Deletes the association proposal request between the specified Direct Connect gateway and virtual private gateway
+     * or transit gateway.
      * </p>
      * 
      * @param deleteDirectConnectGatewayAssociationProposalRequest
@@ -1240,8 +1379,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Deletes the association proposal request between the specified Direct Connect gateway and virtual private
-     * gateway.
+     * Deletes the association proposal request between the specified Direct Connect gateway and virtual private gateway
+     * or transit gateway.
      * </p>
      * 
      * @param deleteDirectConnectGatewayAssociationProposalRequest
@@ -1517,8 +1656,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Describes one or more association proposals for connection between a virtual private gateway and a Direct Connect
-     * gateway.
+     * Describes one or more association proposals for connection between a virtual private gateway or transit gateway
+     * and a Direct Connect gateway.
      * </p>
      * 
      * @param describeDirectConnectGatewayAssociationProposalsRequest
@@ -1534,8 +1673,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
-     * Describes one or more association proposals for connection between a virtual private gateway and a Direct Connect
-     * gateway.
+     * Describes one or more association proposals for connection between a virtual private gateway or transit gateway
+     * and a Direct Connect gateway.
      * </p>
      * 
      * @param describeDirectConnectGatewayAssociationProposalsRequest

@@ -17,12 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is used as a request parameter in the <a>ModifyDBParameterGroup</a> and <a>ResetDBParameterGroup</a>
- * actions.
- * </p>
- * <p>
- * This data type is used as a response element in the <a>DescribeEngineDefaultParameters</a> and
- * <a>DescribeDBParameters</a> actions.
+ * Specifies a parameter.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/Parameter" target="_top">AWS API

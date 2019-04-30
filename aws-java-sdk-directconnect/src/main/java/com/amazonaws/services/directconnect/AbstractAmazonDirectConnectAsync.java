@@ -101,6 +101,21 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    public java.util.concurrent.Future<AllocateTransitVirtualInterfaceResult> allocateTransitVirtualInterfaceAsync(
+            AllocateTransitVirtualInterfaceRequest request) {
+
+        return allocateTransitVirtualInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AllocateTransitVirtualInterfaceResult> allocateTransitVirtualInterfaceAsync(
+            AllocateTransitVirtualInterfaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AllocateTransitVirtualInterfaceRequest, AllocateTransitVirtualInterfaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateConnectionWithLagResult> associateConnectionWithLagAsync(AssociateConnectionWithLagRequest request) {
 
         return associateConnectionWithLagAsync(request, null);
@@ -174,6 +189,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     @Override
     public java.util.concurrent.Future<ConfirmPublicVirtualInterfaceResult> confirmPublicVirtualInterfaceAsync(ConfirmPublicVirtualInterfaceRequest request,
             com.amazonaws.handlers.AsyncHandler<ConfirmPublicVirtualInterfaceRequest, ConfirmPublicVirtualInterfaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfirmTransitVirtualInterfaceResult> confirmTransitVirtualInterfaceAsync(ConfirmTransitVirtualInterfaceRequest request) {
+
+        return confirmTransitVirtualInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfirmTransitVirtualInterfaceResult> confirmTransitVirtualInterfaceAsync(ConfirmTransitVirtualInterfaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ConfirmTransitVirtualInterfaceRequest, ConfirmTransitVirtualInterfaceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -295,6 +323,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     @Override
     public java.util.concurrent.Future<CreatePublicVirtualInterfaceResult> createPublicVirtualInterfaceAsync(CreatePublicVirtualInterfaceRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePublicVirtualInterfaceRequest, CreatePublicVirtualInterfaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransitVirtualInterfaceResult> createTransitVirtualInterfaceAsync(CreateTransitVirtualInterfaceRequest request) {
+
+        return createTransitVirtualInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransitVirtualInterfaceResult> createTransitVirtualInterfaceAsync(CreateTransitVirtualInterfaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTransitVirtualInterfaceRequest, CreateTransitVirtualInterfaceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

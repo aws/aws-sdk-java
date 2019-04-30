@@ -17,6 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
+ * Specifies a subnet.
+ * </p>
+ * <p>
  * This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
  * </p>
  * 
@@ -32,7 +35,11 @@ public class Subnet implements Serializable, Cloneable {
      * </p>
      */
     private String subnetIdentifier;
-
+    /**
+     * <p>
+     * Specifies the EC2 Availability Zone that the subnet is in.
+     * </p>
+     */
     private AvailabilityZone subnetAvailabilityZone;
     /**
      * <p>
@@ -82,7 +89,12 @@ public class Subnet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the EC2 Availability Zone that the subnet is in.
+     * </p>
+     * 
      * @param subnetAvailabilityZone
+     *        Specifies the EC2 Availability Zone that the subnet is in.
      */
 
     public void setSubnetAvailabilityZone(AvailabilityZone subnetAvailabilityZone) {
@@ -90,7 +102,11 @@ public class Subnet implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the EC2 Availability Zone that the subnet is in.
+     * </p>
+     * 
+     * @return Specifies the EC2 Availability Zone that the subnet is in.
      */
 
     public AvailabilityZone getSubnetAvailabilityZone() {
@@ -98,7 +114,12 @@ public class Subnet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the EC2 Availability Zone that the subnet is in.
+     * </p>
+     * 
      * @param subnetAvailabilityZone
+     *        Specifies the EC2 Availability Zone that the subnet is in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

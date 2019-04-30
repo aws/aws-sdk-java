@@ -44,6 +44,11 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Represents information about a pipeline to a job worker.
      * </p>
+     * <note>
+     * <p>
+     * Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.
+     * </p>
+     * </note>
      */
     private PipelineContext pipelineContext;
     /**
@@ -168,9 +173,17 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Represents information about a pipeline to a job worker.
      * </p>
+     * <note>
+     * <p>
+     * Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.
+     * </p>
+     * </note>
      * 
      * @param pipelineContext
-     *        Represents information about a pipeline to a job worker.
+     *        Represents information about a pipeline to a job worker.</p> <note>
+     *        <p>
+     *        Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.
+     *        </p>
      */
 
     public void setPipelineContext(PipelineContext pipelineContext) {
@@ -181,8 +194,16 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Represents information about a pipeline to a job worker.
      * </p>
+     * <note>
+     * <p>
+     * Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.
+     * </p>
+     * </note>
      * 
-     * @return Represents information about a pipeline to a job worker.
+     * @return Represents information about a pipeline to a job worker.</p> <note>
+     *         <p>
+     *         Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.
+     *         </p>
      */
 
     public PipelineContext getPipelineContext() {
@@ -193,9 +214,17 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Represents information about a pipeline to a job worker.
      * </p>
+     * <note>
+     * <p>
+     * Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.
+     * </p>
+     * </note>
      * 
      * @param pipelineContext
-     *        Represents information about a pipeline to a job worker.
+     *        Represents information about a pipeline to a job worker.</p> <note>
+     *        <p>
+     *        Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -120,6 +120,28 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Associates the specified budget with the specified resource.
+     * </p>
+     * 
+     * @param associateBudgetWithResourceRequest
+     * @return Result of the AssociateBudgetWithResource operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws DuplicateResourceException
+     *         The specified resource is a duplicate.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
+     *         or increase your service limits and retry the operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.AssociateBudgetWithResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateBudgetWithResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateBudgetWithResourceResult associateBudgetWithResource(AssociateBudgetWithResourceRequest associateBudgetWithResourceRequest);
+
+    /**
+     * <p>
      * Associates the specified principal ARN with the specified portfolio.
      * </p>
      * 
@@ -885,6 +907,21 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Disassociates the specified budget from the specified resource.
+     * </p>
+     * 
+     * @param disassociateBudgetFromResourceRequest
+     * @return Result of the DisassociateBudgetFromResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DisassociateBudgetFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateBudgetFromResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateBudgetFromResourceResult disassociateBudgetFromResource(DisassociateBudgetFromResourceRequest disassociateBudgetFromResourceRequest);
+
+    /**
+     * <p>
      * Disassociates a previously associated principal ARN from a specified portfolio.
      * </p>
      * 
@@ -1059,6 +1096,23 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     ListAcceptedPortfolioSharesResult listAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest listAcceptedPortfolioSharesRequest);
+
+    /**
+     * <p>
+     * Lists all the budgets associated to the specified resource.
+     * </p>
+     * 
+     * @param listBudgetsForResourceRequest
+     * @return Result of the ListBudgetsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @sample AWSServiceCatalog.ListBudgetsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListBudgetsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListBudgetsForResourceResult listBudgetsForResource(ListBudgetsForResourceRequest listBudgetsForResourceRequest);
 
     /**
      * <p>

@@ -89,7 +89,7 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
      * </p>
      * </dd>
-     * <dt>RESOUCE_UPDATE</dt>
+     * <dt>RESOURCE_UPDATE</dt>
      * <dd>
      * <p>
      * Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
@@ -426,7 +426,7 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
      * </p>
      * </dd>
-     * <dt>RESOUCE_UPDATE</dt>
+     * <dt>RESOURCE_UPDATE</dt>
      * <dd>
      * <p>
      * Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
@@ -494,7 +494,7 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
      *        </p>
      *        </dd>
-     *        <dt>RESOUCE_UPDATE</dt>
+     *        <dt>RESOURCE_UPDATE</dt>
      *        <dd>
      *        <p>
      *        Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
@@ -568,7 +568,7 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
      * </p>
      * </dd>
-     * <dt>RESOUCE_UPDATE</dt>
+     * <dt>RESOURCE_UPDATE</dt>
      * <dd>
      * <p>
      * Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
@@ -635,7 +635,7 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *         <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
      *         </p>
      *         </dd>
-     *         <dt>RESOUCE_UPDATE</dt>
+     *         <dt>RESOURCE_UPDATE</dt>
      *         <dd>
      *         <p>
      *         Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
@@ -709,7 +709,7 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
      * </p>
      * </dd>
-     * <dt>RESOUCE_UPDATE</dt>
+     * <dt>RESOURCE_UPDATE</dt>
      * <dd>
      * <p>
      * Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:
@@ -777,7 +777,7 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
      *        </p>
      *        </dd>
-     *        <dt>RESOUCE_UPDATE</dt>
+     *        <dt>RESOURCE_UPDATE</dt>
      *        <dd>
      *        <p>
      *        Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:

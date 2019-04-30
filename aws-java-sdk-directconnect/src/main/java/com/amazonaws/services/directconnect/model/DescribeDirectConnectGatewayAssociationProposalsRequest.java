@@ -40,7 +40,7 @@ public class DescribeDirectConnectGatewayAssociationProposalsRequest extends com
     private String proposalId;
     /**
      * <p>
-     * The ID of the associated virtual private gateway.
+     * The ID of the associated gateway.
      * </p>
      */
     private String associatedGatewayId;
@@ -143,11 +143,11 @@ public class DescribeDirectConnectGatewayAssociationProposalsRequest extends com
 
     /**
      * <p>
-     * The ID of the associated virtual private gateway.
+     * The ID of the associated gateway.
      * </p>
      * 
      * @param associatedGatewayId
-     *        The ID of the associated virtual private gateway.
+     *        The ID of the associated gateway.
      */
 
     public void setAssociatedGatewayId(String associatedGatewayId) {
@@ -156,10 +156,10 @@ public class DescribeDirectConnectGatewayAssociationProposalsRequest extends com
 
     /**
      * <p>
-     * The ID of the associated virtual private gateway.
+     * The ID of the associated gateway.
      * </p>
      * 
-     * @return The ID of the associated virtual private gateway.
+     * @return The ID of the associated gateway.
      */
 
     public String getAssociatedGatewayId() {
@@ -168,11 +168,11 @@ public class DescribeDirectConnectGatewayAssociationProposalsRequest extends com
 
     /**
      * <p>
-     * The ID of the associated virtual private gateway.
+     * The ID of the associated gateway.
      * </p>
      * 
      * @param associatedGatewayId
-     *        The ID of the associated virtual private gateway.
+     *        The ID of the associated gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

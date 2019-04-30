@@ -25,21 +25,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetPublicAccessBlockRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /**
-     * <p>
-     * The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to retrieve.
-     * </p>
-     */
+    /** <p/> */
     private String accountId;
 
     /**
-     * <p>
-     * The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to retrieve.
-     * </p>
+     * <p/>
      * 
      * @param accountId
-     *        The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to
-     *        retrieve.
      */
 
     public void setAccountId(String accountId) {
@@ -47,12 +39,9 @@ public class GetPublicAccessBlockRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p>
-     * The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to retrieve.
-     * </p>
+     * <p/>
      * 
-     * @return The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to
-     *         retrieve.
+     * @return
      */
 
     public String getAccountId() {
@@ -60,13 +49,9 @@ public class GetPublicAccessBlockRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p>
-     * The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to retrieve.
-     * </p>
+     * <p/>
      * 
      * @param accountId
-     *        The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to
-     *        retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

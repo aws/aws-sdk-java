@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBCluster" target="_top">AWS API
  *      Documentation</a>
@@ -209,7 +208,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * @param skipFinalSnapshot
      *        Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If
      *        <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a
-     *        DB cluster snapshot is created before the DB cluster is deleted. </p> <note>
+     *        DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
      *        <p>
      *        You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is
      *        <code>false</code>.
@@ -241,7 +240,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @return Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If
      *         <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a
-     *         DB cluster snapshot is created before the DB cluster is deleted. </p> <note>
+     *         DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
      *         <p>
      *         You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is
      *         <code>false</code>.
@@ -274,7 +273,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * @param skipFinalSnapshot
      *        Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If
      *        <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a
-     *        DB cluster snapshot is created before the DB cluster is deleted. </p> <note>
+     *        DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
      *        <p>
      *        You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is
      *        <code>false</code>.
@@ -308,7 +307,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @return Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If
      *         <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a
-     *         DB cluster snapshot is created before the DB cluster is deleted. </p> <note>
+     *         DB cluster snapshot is created before the DB cluster is deleted.</p> <note>
      *         <p>
      *         You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is
      *         <code>false</code>.
@@ -356,7 +355,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param finalDBSnapshotIdentifier
      *        The DB cluster snapshot identifier of the new DB cluster snapshot created when
-     *        <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
+     *        <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>
      *        <p>
      *        Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in
      *        an error.
@@ -420,7 +419,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @return The DB cluster snapshot identifier of the new DB cluster snapshot created when
-     *         <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
+     *         <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>
      *         <p>
      *         Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results
      *         in an error.
@@ -485,7 +484,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param finalDBSnapshotIdentifier
      *        The DB cluster snapshot identifier of the new DB cluster snapshot created when
-     *        <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
+     *        <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>
      *        <p>
      *        Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in
      *        an error.

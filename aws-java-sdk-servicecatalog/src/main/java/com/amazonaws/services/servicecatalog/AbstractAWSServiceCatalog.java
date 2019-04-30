@@ -43,6 +43,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
     }
 
     @Override
+    public AssociateBudgetWithResourceResult associateBudgetWithResource(AssociateBudgetWithResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociatePrincipalWithPortfolioResult associatePrincipalWithPortfolio(AssociatePrincipalWithPortfolioRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -236,6 +241,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
     }
 
     @Override
+    public DisassociateBudgetFromResourceResult disassociateBudgetFromResource(DisassociateBudgetFromResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociatePrincipalFromPortfolioResult disassociatePrincipalFromPortfolio(DisassociatePrincipalFromPortfolioRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -278,6 +288,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
 
     @Override
     public ListAcceptedPortfolioSharesResult listAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListBudgetsForResourceResult listBudgetsForResource(ListBudgetsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

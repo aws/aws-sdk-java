@@ -40,13 +40,13 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
     private String proposalId;
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private gateway.
+     * The ID of the AWS account that owns the virtual private gateway or transit gateway.
      * </p>
      */
     private String associatedGatewayOwnerAccount;
     /**
      * <p>
-     * Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> overrideAllowedPrefixesToDirectConnectGateway;
@@ -133,11 +133,11 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private gateway.
+     * The ID of the AWS account that owns the virtual private gateway or transit gateway.
      * </p>
      * 
      * @param associatedGatewayOwnerAccount
-     *        The ID of the AWS account that owns the virtual private gateway.
+     *        The ID of the AWS account that owns the virtual private gateway or transit gateway.
      */
 
     public void setAssociatedGatewayOwnerAccount(String associatedGatewayOwnerAccount) {
@@ -146,10 +146,10 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private gateway.
+     * The ID of the AWS account that owns the virtual private gateway or transit gateway.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the virtual private gateway.
+     * @return The ID of the AWS account that owns the virtual private gateway or transit gateway.
      */
 
     public String getAssociatedGatewayOwnerAccount() {
@@ -158,11 +158,11 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * The ID of the AWS account that owns the virtual private gateway.
+     * The ID of the AWS account that owns the virtual private gateway or transit gateway.
      * </p>
      * 
      * @param associatedGatewayOwnerAccount
-     *        The ID of the AWS account that owns the virtual private gateway.
+     *        The ID of the AWS account that owns the virtual private gateway or transit gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,10 +173,10 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
      * </p>
      * 
-     * @return Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * @return Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
      */
 
     public java.util.List<RouteFilterPrefix> getOverrideAllowedPrefixesToDirectConnectGateway() {
@@ -188,11 +188,11 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
      * </p>
      * 
      * @param overrideAllowedPrefixesToDirectConnectGateway
-     *        Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+     *        Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
      */
 
     public void setOverrideAllowedPrefixesToDirectConnectGateway(java.util.Collection<RouteFilterPrefix> overrideAllowedPrefixesToDirectConnectGateway) {
@@ -207,7 +207,7 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -217,7 +217,7 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
      * </p>
      * 
      * @param overrideAllowedPrefixesToDirectConnectGateway
-     *        Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+     *        Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,11 +235,11 @@ public class AcceptDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+     * Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
      * </p>
      * 
      * @param overrideAllowedPrefixesToDirectConnectGateway
-     *        Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
+     *        Overrides the existing Amazon VPC prefixes advertised to the Direct Connect gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -65,6 +65,11 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public AllocateTransitVirtualInterfaceResult allocateTransitVirtualInterface(AllocateTransitVirtualInterfaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateConnectionWithLagResult associateConnectionWithLag(AssociateConnectionWithLagRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -91,6 +96,11 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
 
     @Override
     public ConfirmPublicVirtualInterfaceResult confirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ConfirmTransitVirtualInterfaceResult confirmTransitVirtualInterface(ConfirmTransitVirtualInterfaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -137,6 +147,11 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
 
     @Override
     public CreatePublicVirtualInterfaceResult createPublicVirtualInterface(CreatePublicVirtualInterfaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateTransitVirtualInterfaceResult createTransitVirtualInterface(CreateTransitVirtualInterfaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

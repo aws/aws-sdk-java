@@ -62,6 +62,39 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
     }
 
     @Override
+    public java.util.concurrent.Future<CreateJobResult> createJobAsync(CreateJobRequest request) {
+
+        return createJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateJobResult> createJobAsync(final CreateJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult> asyncHandler) {
+        final CreateJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateJobResult>() {
+            @Override
+            public CreateJobResult call() throws Exception {
+                CreateJobResult result = null;
+
+                try {
+                    result = executeCreateJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeletePublicAccessBlockResult> deletePublicAccessBlockAsync(DeletePublicAccessBlockRequest request) {
 
         return deletePublicAccessBlockAsync(request, null);
@@ -79,6 +112,39 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
 
                 try {
                     result = executeDeletePublicAccessBlock(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeJobResult> describeJobAsync(DescribeJobRequest request) {
+
+        return describeJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeJobResult> describeJobAsync(final DescribeJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeJobRequest, DescribeJobResult> asyncHandler) {
+        final DescribeJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeJobResult>() {
+            @Override
+            public DescribeJobResult call() throws Exception {
+                DescribeJobResult result = null;
+
+                try {
+                    result = executeDescribeJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -128,6 +194,39 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
     }
 
     @Override
+    public java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest request) {
+
+        return listJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJobsResult> listJobsAsync(final ListJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler) {
+        final ListJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListJobsResult>() {
+            @Override
+            public ListJobsResult call() throws Exception {
+                ListJobsResult result = null;
+
+                try {
+                    result = executeListJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutPublicAccessBlockResult> putPublicAccessBlockAsync(PutPublicAccessBlockRequest request) {
 
         return putPublicAccessBlockAsync(request, null);
@@ -145,6 +244,72 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
 
                 try {
                     result = executePutPublicAccessBlock(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJobPriorityResult> updateJobPriorityAsync(UpdateJobPriorityRequest request) {
+
+        return updateJobPriorityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJobPriorityResult> updateJobPriorityAsync(final UpdateJobPriorityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateJobPriorityRequest, UpdateJobPriorityResult> asyncHandler) {
+        final UpdateJobPriorityRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateJobPriorityResult>() {
+            @Override
+            public UpdateJobPriorityResult call() throws Exception {
+                UpdateJobPriorityResult result = null;
+
+                try {
+                    result = executeUpdateJobPriority(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJobStatusResult> updateJobStatusAsync(UpdateJobStatusRequest request) {
+
+        return updateJobStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJobStatusResult> updateJobStatusAsync(final UpdateJobStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateJobStatusRequest, UpdateJobStatusResult> asyncHandler) {
+        final UpdateJobStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateJobStatusResult>() {
+            @Override
+            public UpdateJobStatusResult call() throws Exception {
+                UpdateJobStatusResult result = null;
+
+                try {
+                    result = executeUpdateJobStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the proposal request to attach a virtual private gateway to a DDirect Connect gateway.
+ * Information about the proposal request to attach a virtual private gateway to a Direct Connect gateway.
  * </p>
  * 
  * @see <a
@@ -75,7 +75,7 @@ public class DirectConnectGatewayAssociationProposal implements Serializable, Cl
     private String proposalState;
     /**
      * <p>
-     * Information about the associated virtual private gateway.
+     * Information about the associated gateway.
      * </p>
      */
     private AssociatedGateway associatedGateway;
@@ -429,11 +429,11 @@ public class DirectConnectGatewayAssociationProposal implements Serializable, Cl
 
     /**
      * <p>
-     * Information about the associated virtual private gateway.
+     * Information about the associated gateway.
      * </p>
      * 
      * @param associatedGateway
-     *        Information about the associated virtual private gateway.
+     *        Information about the associated gateway.
      */
 
     public void setAssociatedGateway(AssociatedGateway associatedGateway) {
@@ -442,10 +442,10 @@ public class DirectConnectGatewayAssociationProposal implements Serializable, Cl
 
     /**
      * <p>
-     * Information about the associated virtual private gateway.
+     * Information about the associated gateway.
      * </p>
      * 
-     * @return Information about the associated virtual private gateway.
+     * @return Information about the associated gateway.
      */
 
     public AssociatedGateway getAssociatedGateway() {
@@ -454,11 +454,11 @@ public class DirectConnectGatewayAssociationProposal implements Serializable, Cl
 
     /**
      * <p>
-     * Information about the associated virtual private gateway.
+     * Information about the associated gateway.
      * </p>
      * 
      * @param associatedGateway
-     *        Information about the associated virtual private gateway.
+     *        Information about the associated gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

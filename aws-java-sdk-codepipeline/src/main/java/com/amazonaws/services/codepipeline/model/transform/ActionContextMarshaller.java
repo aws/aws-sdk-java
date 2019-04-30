@@ -29,6 +29,8 @@ public class ActionContextMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> ACTIONEXECUTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("actionExecutionId").build();
 
     private static final ActionContextMarshaller instance = new ActionContextMarshaller();
 
@@ -47,6 +49,7 @@ public class ActionContextMarshaller {
 
         try {
             protocolMarshaller.marshall(actionContext.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(actionContext.getActionExecutionId(), ACTIONEXECUTIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

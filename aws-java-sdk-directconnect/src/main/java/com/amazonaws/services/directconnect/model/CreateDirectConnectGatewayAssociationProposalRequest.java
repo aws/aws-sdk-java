@@ -40,7 +40,7 @@ public class CreateDirectConnectGatewayAssociationProposalRequest extends com.am
     private String directConnectGatewayOwnerAccount;
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway or transit gateway.
      * </p>
      */
     private String gatewayId;
@@ -139,11 +139,11 @@ public class CreateDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway or transit gateway.
      * </p>
      * 
      * @param gatewayId
-     *        The ID of the virtual private gateway.
+     *        The ID of the virtual private gateway or transit gateway.
      */
 
     public void setGatewayId(String gatewayId) {
@@ -152,10 +152,10 @@ public class CreateDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway or transit gateway.
      * </p>
      * 
-     * @return The ID of the virtual private gateway.
+     * @return The ID of the virtual private gateway or transit gateway.
      */
 
     public String getGatewayId() {
@@ -164,11 +164,11 @@ public class CreateDirectConnectGatewayAssociationProposalRequest extends com.am
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway or transit gateway.
      * </p>
      * 
      * @param gatewayId
-     *        The ID of the virtual private gateway.
+     *        The ID of the virtual private gateway or transit gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

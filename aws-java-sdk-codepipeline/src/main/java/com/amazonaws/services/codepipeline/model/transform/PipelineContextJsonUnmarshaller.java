@@ -60,6 +60,14 @@ public class PipelineContextJsonUnmarshaller implements Unmarshaller<PipelineCon
                     context.nextToken();
                     pipelineContext.setAction(ActionContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("pipelineArn", targetDepth)) {
+                    context.nextToken();
+                    pipelineContext.setPipelineArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("pipelineExecutionId", targetDepth)) {
+                    context.nextToken();
+                    pipelineContext.setPipelineExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -297,7 +297,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Accepts a proposal request to attach a virtual private gateway to a Direct Connect gateway.
+     * Accepts a proposal request to attach a virtual private gateway or transit gateway to a Direct Connect gateway.
      * </p>
      * 
      * @param acceptDirectConnectGatewayAssociationProposalRequest
@@ -621,6 +621,74 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<AllocatePublicVirtualInterfaceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AllocatePublicVirtualInterfaceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provisions a transit virtual interface to be owned by the specified AWS account. Use this type of interface to
+     * connect a transit gateway to your Direct Connect gateway.
+     * </p>
+     * <p>
+     * The owner of a connection provisions a transit virtual interface to be owned by the specified AWS account.
+     * </p>
+     * <p>
+     * After you create a transit virtual interface, it must be confirmed by the owner using
+     * <a>ConfirmTransitVirtualInterface</a>. Until this step has been completed, the transit virtual interface is in
+     * the <code>requested</code> state and is not available to handle traffic.
+     * </p>
+     * 
+     * @param allocateTransitVirtualInterfaceRequest
+     * @return Result of the AllocateTransitVirtualInterface operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.AllocateTransitVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AllocateTransitVirtualInterfaceResult allocateTransitVirtualInterface(AllocateTransitVirtualInterfaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAllocateTransitVirtualInterface(request);
+    }
+
+    @SdkInternalApi
+    final AllocateTransitVirtualInterfaceResult executeAllocateTransitVirtualInterface(
+            AllocateTransitVirtualInterfaceRequest allocateTransitVirtualInterfaceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(allocateTransitVirtualInterfaceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AllocateTransitVirtualInterfaceRequest> request = null;
+        Response<AllocateTransitVirtualInterfaceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AllocateTransitVirtualInterfaceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(allocateTransitVirtualInterfaceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AllocateTransitVirtualInterface");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AllocateTransitVirtualInterfaceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AllocateTransitVirtualInterfaceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1024,6 +1092,68 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Accepts ownership of a transit virtual interface created by another AWS account.
+     * </p>
+     * <p>
+     * After the owner of the transit virtual interface makes this call, the specified transit virtual interface is
+     * created and made available to handle traffic.
+     * </p>
+     * 
+     * @param confirmTransitVirtualInterfaceRequest
+     * @return Result of the ConfirmTransitVirtualInterface operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.ConfirmTransitVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ConfirmTransitVirtualInterfaceResult confirmTransitVirtualInterface(ConfirmTransitVirtualInterfaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeConfirmTransitVirtualInterface(request);
+    }
+
+    @SdkInternalApi
+    final ConfirmTransitVirtualInterfaceResult executeConfirmTransitVirtualInterface(ConfirmTransitVirtualInterfaceRequest confirmTransitVirtualInterfaceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(confirmTransitVirtualInterfaceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ConfirmTransitVirtualInterfaceRequest> request = null;
+        Response<ConfirmTransitVirtualInterfaceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ConfirmTransitVirtualInterfaceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(confirmTransitVirtualInterfaceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmTransitVirtualInterface");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ConfirmTransitVirtualInterfaceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ConfirmTransitVirtualInterfaceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a BGP peer on the specified virtual interface.
      * </p>
      * <p>
@@ -1287,11 +1417,13 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a proposal to associate the specified virtual private gateway with the specified Direct Connect gateway.
+     * Creates a proposal to associate the specified virtual private gateway or transit gateway with the specified
+     * Direct Connect gateway.
      * </p>
      * <p>
-     * You can only associate a Direct Connect gateway and virtual private gateway when the account that owns the Direct
-     * Connect gateway and the account that owns the virtual private gateway have the same payer ID.
+     * You can only associate a Direct Connect gateway and virtual private gateway or transit gateway when the account
+     * that owns the Direct Connect gateway and the account that owns the virtual private gateway or transit gateway
+     * have the same AWS Payer ID.
      * </p>
      * 
      * @param createDirectConnectGatewayAssociationProposalRequest
@@ -1636,6 +1768,66 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Creates a transit virtual interface. A transit virtual interface is a VLAN that transports traffic from a Direct
+     * Connect gateway to one or more transit gateways. A transit virtual interface enables the connection of multiple
+     * VPCs attached to a transit gateway to a Direct Connect gateway.
+     * </p>
+     * 
+     * @param createTransitVirtualInterfaceRequest
+     * @return Result of the CreateTransitVirtualInterface operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.CreateTransitVirtualInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateTransitVirtualInterfaceResult createTransitVirtualInterface(CreateTransitVirtualInterfaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTransitVirtualInterface(request);
+    }
+
+    @SdkInternalApi
+    final CreateTransitVirtualInterfaceResult executeCreateTransitVirtualInterface(CreateTransitVirtualInterfaceRequest createTransitVirtualInterfaceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTransitVirtualInterfaceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTransitVirtualInterfaceRequest> request = null;
+        Response<CreateTransitVirtualInterfaceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTransitVirtualInterfaceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createTransitVirtualInterfaceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTransitVirtualInterface");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTransitVirtualInterfaceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateTransitVirtualInterfaceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified BGP peer on the specified virtual interface with the specified customer address and ASN.
      * </p>
      * <p>
@@ -1876,8 +2068,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Deletes the association proposal request between the specified Direct Connect gateway and virtual private
-     * gateway.
+     * Deletes the association proposal request between the specified Direct Connect gateway and virtual private gateway
+     * or transit gateway.
      * </p>
      * 
      * @param deleteDirectConnectGatewayAssociationProposalRequest
@@ -2309,8 +2501,8 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Describes one or more association proposals for connection between a virtual private gateway and a Direct Connect
-     * gateway.
+     * Describes one or more association proposals for connection between a virtual private gateway or transit gateway
+     * and a Direct Connect gateway.
      * </p>
      * 
      * @param describeDirectConnectGatewayAssociationProposalsRequest

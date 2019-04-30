@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about an association between a Direct Connect gateway and a virtual private gateway.
+ * Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DirectConnectGatewayAssociation"
@@ -52,8 +52,8 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      * </li>
      * <li>
      * <p>
-     * <code>associated</code>: The Direct Connect gateway and virtual private gateway are successfully associated and
-     * ready to pass traffic.
+     * <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are
+     * successfully associated and ready to pass traffic.
      * </p>
      * </li>
      * <li>
@@ -63,8 +63,9 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      * </li>
      * <li>
      * <p>
-     * <code>disassociated</code>: The virtual private gateway is disassociated from the Direct Connect gateway. Traffic
-     * flow between the Direct Connect gateway and virtual private gateway is stopped.
+     * <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct
+     * Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway
+     * is stopped.
      * </p>
      * </li>
      * </ul>
@@ -78,7 +79,7 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
     private String stateChangeError;
     /**
      * <p>
-     * Information about the associated virtual private gateway.
+     * Information about the associated gateway.
      * </p>
      */
     private AssociatedGateway associatedGateway;
@@ -205,8 +206,8 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      * </li>
      * <li>
      * <p>
-     * <code>associated</code>: The Direct Connect gateway and virtual private gateway are successfully associated and
-     * ready to pass traffic.
+     * <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are
+     * successfully associated and ready to pass traffic.
      * </p>
      * </li>
      * <li>
@@ -216,8 +217,9 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      * </li>
      * <li>
      * <p>
-     * <code>disassociated</code>: The virtual private gateway is disassociated from the Direct Connect gateway. Traffic
-     * flow between the Direct Connect gateway and virtual private gateway is stopped.
+     * <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct
+     * Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway
+     * is stopped.
      * </p>
      * </li>
      * </ul>
@@ -232,8 +234,8 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      *        </li>
      *        <li>
      *        <p>
-     *        <code>associated</code>: The Direct Connect gateway and virtual private gateway are successfully
-     *        associated and ready to pass traffic.
+     *        <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are
+     *        successfully associated and ready to pass traffic.
      *        </p>
      *        </li>
      *        <li>
@@ -243,8 +245,9 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      *        </li>
      *        <li>
      *        <p>
-     *        <code>disassociated</code>: The virtual private gateway is disassociated from the Direct Connect gateway.
-     *        Traffic flow between the Direct Connect gateway and virtual private gateway is stopped.
+     *        <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the
+     *        Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or
+     *        transit gateway is stopped.
      *        </p>
      *        </li>
      * @see DirectConnectGatewayAssociationState
@@ -266,8 +269,8 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      * </li>
      * <li>
      * <p>
-     * <code>associated</code>: The Direct Connect gateway and virtual private gateway are successfully associated and
-     * ready to pass traffic.
+     * <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are
+     * successfully associated and ready to pass traffic.
      * </p>
      * </li>
      * <li>
@@ -277,8 +280,9 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      * </li>
      * <li>
      * <p>
-     * <code>disassociated</code>: The virtual private gateway is disassociated from the Direct Connect gateway. Traffic
-     * flow between the Direct Connect gateway and virtual private gateway is stopped.
+     * <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct
+     * Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway
+     * is stopped.
      * </p>
      * </li>
      * </ul>
@@ -292,8 +296,8 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      *         </li>
      *         <li>
      *         <p>
-     *         <code>associated</code>: The Direct Connect gateway and virtual private gateway are successfully
-     *         associated and ready to pass traffic.
+     *         <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are
+     *         successfully associated and ready to pass traffic.
      *         </p>
      *         </li>
      *         <li>
@@ -304,8 +308,9 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      *         </li>
      *         <li>
      *         <p>
-     *         <code>disassociated</code>: The virtual private gateway is disassociated from the Direct Connect gateway.
-     *         Traffic flow between the Direct Connect gateway and virtual private gateway is stopped.
+     *         <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the
+     *         Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or
+     *         transit gateway is stopped.
      *         </p>
      *         </li>
      * @see DirectConnectGatewayAssociationState
@@ -327,8 +332,8 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      * </li>
      * <li>
      * <p>
-     * <code>associated</code>: The Direct Connect gateway and virtual private gateway are successfully associated and
-     * ready to pass traffic.
+     * <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are
+     * successfully associated and ready to pass traffic.
      * </p>
      * </li>
      * <li>
@@ -338,8 +343,9 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      * </li>
      * <li>
      * <p>
-     * <code>disassociated</code>: The virtual private gateway is disassociated from the Direct Connect gateway. Traffic
-     * flow between the Direct Connect gateway and virtual private gateway is stopped.
+     * <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct
+     * Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway
+     * is stopped.
      * </p>
      * </li>
      * </ul>
@@ -354,8 +360,8 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      *        </li>
      *        <li>
      *        <p>
-     *        <code>associated</code>: The Direct Connect gateway and virtual private gateway are successfully
-     *        associated and ready to pass traffic.
+     *        <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are
+     *        successfully associated and ready to pass traffic.
      *        </p>
      *        </li>
      *        <li>
@@ -365,8 +371,9 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      *        </li>
      *        <li>
      *        <p>
-     *        <code>disassociated</code>: The virtual private gateway is disassociated from the Direct Connect gateway.
-     *        Traffic flow between the Direct Connect gateway and virtual private gateway is stopped.
+     *        <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the
+     *        Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or
+     *        transit gateway is stopped.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -390,8 +397,8 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      * </li>
      * <li>
      * <p>
-     * <code>associated</code>: The Direct Connect gateway and virtual private gateway are successfully associated and
-     * ready to pass traffic.
+     * <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are
+     * successfully associated and ready to pass traffic.
      * </p>
      * </li>
      * <li>
@@ -401,8 +408,9 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      * </li>
      * <li>
      * <p>
-     * <code>disassociated</code>: The virtual private gateway is disassociated from the Direct Connect gateway. Traffic
-     * flow between the Direct Connect gateway and virtual private gateway is stopped.
+     * <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the Direct
+     * Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or transit gateway
+     * is stopped.
      * </p>
      * </li>
      * </ul>
@@ -417,8 +425,8 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      *        </li>
      *        <li>
      *        <p>
-     *        <code>associated</code>: The Direct Connect gateway and virtual private gateway are successfully
-     *        associated and ready to pass traffic.
+     *        <code>associated</code>: The Direct Connect gateway and virtual private gateway or transit gateway are
+     *        successfully associated and ready to pass traffic.
      *        </p>
      *        </li>
      *        <li>
@@ -428,8 +436,9 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
      *        </li>
      *        <li>
      *        <p>
-     *        <code>disassociated</code>: The virtual private gateway is disassociated from the Direct Connect gateway.
-     *        Traffic flow between the Direct Connect gateway and virtual private gateway is stopped.
+     *        <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated from the
+     *        Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual private gateway or
+     *        transit gateway is stopped.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -483,11 +492,11 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Information about the associated virtual private gateway.
+     * Information about the associated gateway.
      * </p>
      * 
      * @param associatedGateway
-     *        Information about the associated virtual private gateway.
+     *        Information about the associated gateway.
      */
 
     public void setAssociatedGateway(AssociatedGateway associatedGateway) {
@@ -496,10 +505,10 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Information about the associated virtual private gateway.
+     * Information about the associated gateway.
      * </p>
      * 
-     * @return Information about the associated virtual private gateway.
+     * @return Information about the associated gateway.
      */
 
     public AssociatedGateway getAssociatedGateway() {
@@ -508,11 +517,11 @@ public class DirectConnectGatewayAssociation implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Information about the associated virtual private gateway.
+     * Information about the associated gateway.
      * </p>
      * 
      * @param associatedGateway
-     *        Information about the associated virtual private gateway.
+     *        Information about the associated gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

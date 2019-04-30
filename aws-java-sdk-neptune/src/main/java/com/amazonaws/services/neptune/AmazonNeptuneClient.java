@@ -53,8 +53,6 @@ import com.amazonaws.services.neptune.model.transform.*;
  * <p>
  * <fullname>Amazon Neptune</fullname>
  * <p>
- * </p>
- * <p>
  * Amazon Neptune is a fast, reliable, fully-managed graph database service that makes it easy to build and run
  * applications that work with highly connected datasets. The core of Amazon Neptune is a purpose-built,
  * high-performance graph database engine optimized for storing billions of relationships and querying the graph with
@@ -70,9 +68,6 @@ import com.amazonaws.services.neptune.model.transform.*;
  * reference, the parameter descriptions indicate whether a command is applied immediately, on the next instance reboot,
  * or during the maintenance window. The reference structure is as follows, and we list following some related topics
  * from the user guide.
- * </p>
- * <p>
- * <b>Amazon Neptune API Reference</b>
  * </p>
  */
 @ThreadSafe
@@ -274,7 +269,9 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * @param addSourceIdentifierToSubscriptionRequest
      * @return Result of the AddSourceIdentifierToSubscription operation returned by the service.
      * @throws SubscriptionNotFoundException
+     *         The designated subscription could not be found.
      * @throws SourceNotFoundException
+     *         The source could not be found.
      * @sample AmazonNeptune.AddSourceIdentifierToSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/AddSourceIdentifierToSubscription"
      *      target="_top">AWS API Documentation</a>
@@ -501,76 +498,7 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * snapshot.
      * </p>
      * <p>
-     * You can copy an encrypted DB cluster snapshot from another AWS Region. In that case, the AWS Region where you
-     * call the <code>CopyDBClusterSnapshot</code> action is the destination AWS Region for the encrypted DB cluster
-     * snapshot to be copied to. To copy an encrypted DB cluster snapshot from another AWS Region, you must provide the
-     * following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>KmsKeyId</code> - The AWS Key Management System (AWS KMS) key identifier for the key to use to encrypt the
-     * copy of the DB cluster snapshot in the destination AWS Region.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request for the
-     * <code>CopyDBClusterSnapshot</code> action to be called in the source AWS Region where the DB cluster snapshot is
-     * copied from. The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action
-     * that can be executed in the source AWS Region that contains the encrypted DB cluster snapshot to be copied.
-     * </p>
-     * <p>
-     * The pre-signed URL request must contain the following parameter values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster snapshot
-     * in the destination AWS Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> action
-     * that is called in the destination AWS Region, and the action contained in the pre-signed URL.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot will be created in.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster
-     * snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS
-     * Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your
-     * <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example:
-     * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:neptune-cluster1-snapshot-20161115</code>.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
-     * Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
-     * Process</a>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy of the DB cluster snapshot in
-     * the destination AWS Region.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster
-     * snapshot to be copied. This identifier must be in the ARN format for the source AWS Region and is the same value
-     * as the <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To cancel the copy operation once it is in progress, delete the target DB cluster snapshot identified by
-     * <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster snapshot is in "copying" status.
+     * You can't copy from one AWS Region to another.
      * </p>
      * 
      * @param copyDBClusterSnapshotRequest
@@ -694,9 +622,7 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a Read Replica of
-     * another DB cluster or Amazon Neptune DB instance. For cross-region replication where the DB cluster identified by
-     * <code>ReplicationSourceIdentifier</code> is encrypted, you must also specify the <code>PreSignedUrl</code>
-     * parameter.
+     * another DB cluster or Amazon Neptune DB instance.
      * </p>
      * 
      * @param createDBClusterRequest
@@ -951,6 +877,7 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * @throws ProvisionedIopsNotAvailableInAZException
      *         Provisioned IOPS not available in the specified Availability Zone.
      * @throws OptionGroupNotFoundException
+     *         The designated option group could not be found.
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
      * @throws StorageTypeNotSupportedException
@@ -1167,12 +1094,19 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * @param createEventSubscriptionRequest
      * @return Result of the CreateEventSubscription operation returned by the service.
      * @throws EventSubscriptionQuotaExceededException
+     *         You have exceeded the number of events you can subscribe to.
      * @throws SubscriptionAlreadyExistException
+     *         This subscription already exists.
      * @throws SNSInvalidTopicException
+     *         The SNS topic is invalid.
      * @throws SNSNoAuthorizationException
+     *         There is no SNS authorization.
      * @throws SNSTopicArnNotFoundException
+     *         The ARN of the SNS topic could not be found.
      * @throws SubscriptionCategoryNotFoundException
+     *         The designated subscription category could not be found.
      * @throws SourceNotFoundException
+     *         The source could not be found.
      * @sample AmazonNeptune.CreateEventSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateEventSubscription"
      *      target="_top">AWS API Documentation</a>
@@ -1223,7 +1157,6 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the
      * specified DB cluster are not deleted.
      * </p>
-     * <p/>
      * 
      * @param deleteDBClusterRequest
      * @return Result of the DeleteDBCluster operation returned by the service.
@@ -1422,20 +1355,10 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * <ul>
      * <li>
      * <p>
-     * The DB cluster is a Read Replica of another DB cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * The DB instance is the only instance in the DB cluster.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * To delete a DB instance in this case, first call the <a>PromoteReadReplicaDBCluster</a> API action to promote the
-     * DB cluster so it's no longer a Read Replica. After the promotion completes, then call the
-     * <code>DeleteDBInstance</code> API action to delete the final instance in the DB cluster.
-     * </p>
      * 
      * @param deleteDBInstanceRequest
      * @return Result of the DeleteDBInstance operation returned by the service.
@@ -1622,7 +1545,9 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * @param deleteEventSubscriptionRequest
      * @return Result of the DeleteEventSubscription operation returned by the service.
      * @throws SubscriptionNotFoundException
+     *         The designated subscription could not be found.
      * @throws InvalidEventSubscriptionStateException
+     *         The event subscription is in an invalid state.
      * @sample AmazonNeptune.DeleteEventSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteEventSubscription"
      *      target="_top">AWS API Documentation</a>
@@ -2394,6 +2319,7 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * @param describeEventSubscriptionsRequest
      * @return Result of the DescribeEventSubscriptions operation returned by the service.
      * @throws SubscriptionNotFoundException
+     *         The designated subscription could not be found.
      * @sample AmazonNeptune.DescribeEventSubscriptions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEventSubscriptions"
      *      target="_top">AWS API Documentation</a>
@@ -3039,6 +2965,7 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * @throws ProvisionedIopsNotAvailableInAZException
      *         Provisioned IOPS not available in the specified Availability Zone.
      * @throws OptionGroupNotFoundException
+     *         The designated option group could not be found.
      * @throws DBUpgradeDependencyFailureException
      *         The DB upgrade failed because a resource the DB depends on could not be modified.
      * @throws StorageTypeNotSupportedException
@@ -3247,11 +3174,17 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * @param modifyEventSubscriptionRequest
      * @return Result of the ModifyEventSubscription operation returned by the service.
      * @throws EventSubscriptionQuotaExceededException
+     *         You have exceeded the number of events you can subscribe to.
      * @throws SubscriptionNotFoundException
+     *         The designated subscription could not be found.
      * @throws SNSInvalidTopicException
+     *         The SNS topic is invalid.
      * @throws SNSNoAuthorizationException
+     *         There is no SNS authorization.
      * @throws SNSTopicArnNotFoundException
+     *         The ARN of the SNS topic could not be found.
      * @throws SubscriptionCategoryNotFoundException
+     *         The designated subscription category could not be found.
      * @sample AmazonNeptune.ModifyEventSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyEventSubscription"
      *      target="_top">AWS API Documentation</a>
@@ -3298,7 +3231,7 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Promotes a Read Replica DB cluster to a standalone DB cluster.
+     * Not supported.
      * </p>
      * 
      * @param promoteReadReplicaDBClusterRequest
@@ -3478,7 +3411,9 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * @param removeSourceIdentifierFromSubscriptionRequest
      * @return Result of the RemoveSourceIdentifierFromSubscription operation returned by the service.
      * @throws SubscriptionNotFoundException
+     *         The designated subscription could not be found.
      * @throws SourceNotFoundException
+     *         The source could not be found.
      * @sample AmazonNeptune.RemoveSourceIdentifierFromSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveSourceIdentifierFromSubscription"
      *      target="_top">AWS API Documentation</a>
@@ -3760,8 +3695,11 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws OptionGroupNotFoundException
+     *         The designated option group could not be found.
      * @throws KMSKeyNotAccessibleException
      *         Error accessing KMS key.
+     * @throws DBClusterParameterGroupNotFoundException
+     *         <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group.
      * @sample AmazonNeptune.RestoreDBClusterFromSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterFromSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -3855,8 +3793,11 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * @throws KMSKeyNotAccessibleException
      *         Error accessing KMS key.
      * @throws OptionGroupNotFoundException
+     *         The designated option group could not be found.
      * @throws StorageQuotaExceededException
      *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
+     * @throws DBClusterParameterGroupNotFoundException
+     *         <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group.
      * @sample AmazonNeptune.RestoreDBClusterToPointInTime
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterToPointInTime"
      *      target="_top">AWS API Documentation</a>

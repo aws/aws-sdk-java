@@ -27,18 +27,18 @@ public class DeleteDirectConnectGatewayAssociationProposalResult extends com.ama
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the associated gateway.
      * </p>
      */
     private DirectConnectGatewayAssociationProposal directConnectGatewayAssociationProposal;
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the associated gateway.
      * </p>
      * 
      * @param directConnectGatewayAssociationProposal
-     *        The ID of the virtual private gateway.
+     *        The ID of the associated gateway.
      */
 
     public void setDirectConnectGatewayAssociationProposal(DirectConnectGatewayAssociationProposal directConnectGatewayAssociationProposal) {
@@ -47,10 +47,10 @@ public class DeleteDirectConnectGatewayAssociationProposalResult extends com.ama
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the associated gateway.
      * </p>
      * 
-     * @return The ID of the virtual private gateway.
+     * @return The ID of the associated gateway.
      */
 
     public DirectConnectGatewayAssociationProposal getDirectConnectGatewayAssociationProposal() {
@@ -59,11 +59,11 @@ public class DeleteDirectConnectGatewayAssociationProposalResult extends com.ama
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the associated gateway.
      * </p>
      * 
      * @param directConnectGatewayAssociationProposal
-     *        The ID of the virtual private gateway.
+     *        The ID of the associated gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -15,7 +15,9 @@ package com.amazonaws.services.neptune.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * You have exceeded the number of events you can subscribe to.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EventSubscriptionQuotaExceededException extends com.amazonaws.services.neptune.model.AmazonNeptuneException {

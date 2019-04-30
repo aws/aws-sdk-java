@@ -40,9 +40,14 @@ public class ListActionExecutionsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned nextToken value. The action execution history is limited to the most recent 12 months, based on
-     * action execution start times. Default value is 100.
+     * with the returned nextToken value. Action execution history is retained for up to 12 months, based on action
+     * execution start times. Default value is 100.
      * </p>
+     * <note>
+     * <p>
+     * Detailed execution history is available for executions run on or after February 21, 2019.
+     * </p>
+     * </note>
      */
     private Integer maxResults;
     /**
@@ -136,14 +141,22 @@ public class ListActionExecutionsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned nextToken value. The action execution history is limited to the most recent 12 months, based on
-     * action execution start times. Default value is 100.
+     * with the returned nextToken value. Action execution history is retained for up to 12 months, based on action
+     * execution start times. Default value is 100.
      * </p>
+     * <note>
+     * <p>
+     * Detailed execution history is available for executions run on or after February 21, 2019.
+     * </p>
+     * </note>
      * 
      * @param maxResults
      *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned nextToken value. The action execution history is limited to the most recent 12
-     *        months, based on action execution start times. Default value is 100.
+     *        call with the returned nextToken value. Action execution history is retained for up to 12 months, based on
+     *        action execution start times. Default value is 100. </p> <note>
+     *        <p>
+     *        Detailed execution history is available for executions run on or after February 21, 2019.
+     *        </p>
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -153,13 +166,21 @@ public class ListActionExecutionsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned nextToken value. The action execution history is limited to the most recent 12 months, based on
-     * action execution start times. Default value is 100.
+     * with the returned nextToken value. Action execution history is retained for up to 12 months, based on action
+     * execution start times. Default value is 100.
      * </p>
+     * <note>
+     * <p>
+     * Detailed execution history is available for executions run on or after February 21, 2019.
+     * </p>
+     * </note>
      * 
      * @return The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         call with the returned nextToken value. The action execution history is limited to the most recent 12
-     *         months, based on action execution start times. Default value is 100.
+     *         call with the returned nextToken value. Action execution history is retained for up to 12 months, based
+     *         on action execution start times. Default value is 100. </p> <note>
+     *         <p>
+     *         Detailed execution history is available for executions run on or after February 21, 2019.
+     *         </p>
      */
 
     public Integer getMaxResults() {
@@ -169,14 +190,22 @@ public class ListActionExecutionsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned nextToken value. The action execution history is limited to the most recent 12 months, based on
-     * action execution start times. Default value is 100.
+     * with the returned nextToken value. Action execution history is retained for up to 12 months, based on action
+     * execution start times. Default value is 100.
      * </p>
+     * <note>
+     * <p>
+     * Detailed execution history is available for executions run on or after February 21, 2019.
+     * </p>
+     * </note>
      * 
      * @param maxResults
      *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned nextToken value. The action execution history is limited to the most recent 12
-     *        months, based on action execution start times. Default value is 100.
+     *        call with the returned nextToken value. Action execution history is retained for up to 12 months, based on
+     *        action execution start times. Default value is 100. </p> <note>
+     *        <p>
+     *        Detailed execution history is available for executions run on or after February 21, 2019.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

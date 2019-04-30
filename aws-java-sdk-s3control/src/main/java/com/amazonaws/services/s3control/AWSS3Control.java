@@ -43,7 +43,24 @@ public interface AWSS3Control {
 
     /**
      * <p>
-     * Removes the Public Access Block configuration for an Amazon Web Services account.
+     * Creates an Amazon S3 batch operations job.
+     * </p>
+     * 
+     * @param createJobRequest
+     * @return Result of the CreateJob operation returned by the service.
+     * @throws TooManyRequestsException
+     * @throws BadRequestException
+     * @throws IdempotencyException
+     * @throws InternalServiceException
+     * @sample AWSS3Control.CreateJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateJobResult createJob(CreateJobRequest createJobRequest);
+
+    /**
+     * <p>
+     * Deletes the block public access configuration for the specified account.
      * </p>
      * 
      * @param deletePublicAccessBlockRequest
@@ -56,14 +73,27 @@ public interface AWSS3Control {
 
     /**
      * <p>
-     * Retrieves the Public Access Block configuration for an Amazon Web Services account.
+     * Retrieves the configuration parameters and status for a batch operations job.
      * </p>
+     * 
+     * @param describeJobRequest
+     * @return Result of the DescribeJob operation returned by the service.
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @throws NotFoundException
+     * @throws InternalServiceException
+     * @sample AWSS3Control.DescribeJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeJobResult describeJob(DescribeJobRequest describeJobRequest);
+
+    /**
+     * <p/>
      * 
      * @param getPublicAccessBlockRequest
      * @return Result of the GetPublicAccessBlock operation returned by the service.
      * @throws NoSuchPublicAccessBlockConfigurationException
-     *         This exception is thrown if a <code>GetPublicAccessBlock</code> request is made against an account that
-     *         does not have a PublicAccessBlockConfiguration set.
      * @sample AWSS3Control.GetPublicAccessBlock
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock" target="_top">AWS
      *      API Documentation</a>
@@ -72,8 +102,22 @@ public interface AWSS3Control {
 
     /**
      * <p>
-     * Creates or modifies the Public Access Block configuration for an Amazon Web Services account.
+     * Lists current jobs and jobs that have ended within the last 30 days for the AWS account making the request.
      * </p>
+     * 
+     * @param listJobsRequest
+     * @return Result of the ListJobs operation returned by the service.
+     * @throws InvalidRequestException
+     * @throws InternalServiceException
+     * @throws InvalidNextTokenException
+     * @sample AWSS3Control.ListJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListJobsResult listJobs(ListJobsRequest listJobsRequest);
+
+    /**
+     * <p/>
      * 
      * @param putPublicAccessBlockRequest
      * @return Result of the PutPublicAccessBlock operation returned by the service.
@@ -82,6 +126,42 @@ public interface AWSS3Control {
      *      API Documentation</a>
      */
     PutPublicAccessBlockResult putPublicAccessBlock(PutPublicAccessBlockRequest putPublicAccessBlockRequest);
+
+    /**
+     * <p>
+     * Updates an existing job's priority.
+     * </p>
+     * 
+     * @param updateJobPriorityRequest
+     * @return Result of the UpdateJobPriority operation returned by the service.
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @throws NotFoundException
+     * @throws InternalServiceException
+     * @sample AWSS3Control.UpdateJobPriority
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobPriority" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateJobPriorityResult updateJobPriority(UpdateJobPriorityRequest updateJobPriorityRequest);
+
+    /**
+     * <p>
+     * Updates the status for the specified job. Use this operation to confirm that you want to run a job or to cancel
+     * an existing job.
+     * </p>
+     * 
+     * @param updateJobStatusRequest
+     * @return Result of the UpdateJobStatus operation returned by the service.
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @throws NotFoundException
+     * @throws JobStatusException
+     * @throws InternalServiceException
+     * @sample AWSS3Control.UpdateJobStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateJobStatusResult updateJobStatus(UpdateJobStatusRequest updateJobStatusRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

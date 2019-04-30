@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CopyDBParameterGroup" target="_top">AWS API
  *      Documentation</a>
@@ -29,7 +28,7 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -59,22 +58,22 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Cannot be null, empty, or blank.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 letters, numbers, or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * First character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Cannot end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -89,13 +88,17 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String targetDBParameterGroupDescription;
-
+    /**
+     * <p>
+     * The tags to be assigned to the copied DB parameter group.
+     * </p>
+     */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
      * The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -116,8 +119,8 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param sourceDBParameterGroupIdentifier
      *        The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a
-     *        href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     *        Constructing an Amazon Resource Name (ARN)</a>. </p>
+     *        href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     *        Constructing an Amazon Resource Name (ARN)</a>.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -142,7 +145,7 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -162,8 +165,8 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      * 
      * @return The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a
-     *         href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     *         Constructing an Amazon Resource Name (ARN)</a>. </p>
+     *         href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     *         Constructing an Amazon Resource Name (ARN)</a>.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -188,7 +191,7 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      * <p>
@@ -209,8 +212,8 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param sourceDBParameterGroupIdentifier
      *        The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a
-     *        href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
-     *        Constructing an Amazon Resource Name (ARN)</a>. </p>
+     *        href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     *        Constructing an Amazon Resource Name (ARN)</a>.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -244,22 +247,22 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Cannot be null, empty, or blank.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 letters, numbers, or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * First character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Cannot end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -275,22 +278,22 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      *        <ul>
      *        <li>
      *        <p>
-     *        Cannot be null, empty, or blank
+     *        Cannot be null, empty, or blank.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 letters, numbers, or hyphens
+     *        Must contain from 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        First character must be a letter
+     *        First character must be a letter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
      *        </ul>
@@ -312,22 +315,22 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Cannot be null, empty, or blank.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 letters, numbers, or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * First character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Cannot end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -342,22 +345,22 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      *         <ul>
      *         <li>
      *         <p>
-     *         Cannot be null, empty, or blank
+     *         Cannot be null, empty, or blank.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 255 letters, numbers, or hyphens
+     *         Must contain from 1 to 255 letters, numbers, or hyphens.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         First character must be a letter
+     *         First character must be a letter.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
      *         </p>
      *         </li>
      *         </ul>
@@ -379,22 +382,22 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Cannot be null, empty, or blank.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 letters, numbers, or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * First character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Cannot end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -410,22 +413,22 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
      *        <ul>
      *        <li>
      *        <p>
-     *        Cannot be null, empty, or blank
+     *        Cannot be null, empty, or blank.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 letters, numbers, or hyphens
+     *        Must contain from 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        First character must be a letter
+     *        First character must be a letter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
      *        </ul>
@@ -480,7 +483,11 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The tags to be assigned to the copied DB parameter group.
+     * </p>
+     * 
+     * @return The tags to be assigned to the copied DB parameter group.
      */
 
     public java.util.List<Tag> getTags() {
@@ -488,7 +495,12 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The tags to be assigned to the copied DB parameter group.
+     * </p>
+     * 
      * @param tags
+     *        The tags to be assigned to the copied DB parameter group.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -502,12 +514,16 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * The tags to be assigned to the copied DB parameter group.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        The tags to be assigned to the copied DB parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -522,7 +538,12 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The tags to be assigned to the copied DB parameter group.
+     * </p>
+     * 
      * @param tags
+     *        The tags to be assigned to the copied DB parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

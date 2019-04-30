@@ -17,20 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is used as a response element in the following actions:
+ * Specifies membership in a designated DB security group.
  * </p>
- * <ul>
- * <li>
- * <p>
- * <a>ModifyDBInstance</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>RebootDBInstance</a>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DBSecurityGroupMembership" target="_top">AWS
  *      API Documentation</a>

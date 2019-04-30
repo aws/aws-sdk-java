@@ -140,6 +140,10 @@ public class RestoreDBClusterFromSnapshotRequestMarshaller implements
                     StringUtils.fromBoolean(restoreDBClusterFromSnapshotRequest.getEnableIAMDatabaseAuthentication()));
         }
 
+        if (restoreDBClusterFromSnapshotRequest.getDBClusterParameterGroupName() != null) {
+            request.addParameter("DBClusterParameterGroupName", StringUtils.fromString(restoreDBClusterFromSnapshotRequest.getDBClusterParameterGroupName()));
+        }
+
         return request;
     }
 

@@ -37,8 +37,8 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned nextToken value. The available pipeline execution history is limited to the most recent 12
-     * months, based on pipeline execution start times. Default value is 100.
+     * with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline
+     * execution start times. Default value is 100.
      * </p>
      */
     private Integer maxResults;
@@ -93,14 +93,14 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned nextToken value. The available pipeline execution history is limited to the most recent 12
-     * months, based on pipeline execution start times. Default value is 100.
+     * with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline
+     * execution start times. Default value is 100.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned nextToken value. The available pipeline execution history is limited to the most
-     *        recent 12 months, based on pipeline execution start times. Default value is 100.
+     *        call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on
+     *        pipeline execution start times. Default value is 100.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -110,13 +110,13 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned nextToken value. The available pipeline execution history is limited to the most recent 12
-     * months, based on pipeline execution start times. Default value is 100.
+     * with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline
+     * execution start times. Default value is 100.
      * </p>
      * 
      * @return The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         call with the returned nextToken value. The available pipeline execution history is limited to the most
-     *         recent 12 months, based on pipeline execution start times. Default value is 100.
+     *         call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based
+     *         on pipeline execution start times. Default value is 100.
      */
 
     public Integer getMaxResults() {
@@ -126,14 +126,14 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned nextToken value. The available pipeline execution history is limited to the most recent 12
-     * months, based on pipeline execution start times. Default value is 100.
+     * with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline
+     * execution start times. Default value is 100.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned nextToken value. The available pipeline execution history is limited to the most
-     *        recent 12 months, based on pipeline execution start times. Default value is 100.
+     *        call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on
+     *        pipeline execution start times. Default value is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

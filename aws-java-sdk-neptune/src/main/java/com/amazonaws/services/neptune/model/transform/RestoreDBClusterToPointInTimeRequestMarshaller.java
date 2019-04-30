@@ -123,6 +123,10 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
                     StringUtils.fromBoolean(restoreDBClusterToPointInTimeRequest.getEnableIAMDatabaseAuthentication()));
         }
 
+        if (restoreDBClusterToPointInTimeRequest.getDBClusterParameterGroupName() != null) {
+            request.addParameter("DBClusterParameterGroupName", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getDBClusterParameterGroupName()));
+        }
+
         return request;
     }
 

@@ -52,6 +52,10 @@ public class ActionContextJsonUnmarshaller implements Unmarshaller<ActionContext
                     context.nextToken();
                     actionContext.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("actionExecutionId", targetDepth)) {
+                    context.nextToken();
+                    actionContext.setActionExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

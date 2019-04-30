@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Provides details about a DB cluster parameter group including the parameters in the DB cluster parameter group.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterParameters"
  *      target="_top">AWS API Documentation</a>

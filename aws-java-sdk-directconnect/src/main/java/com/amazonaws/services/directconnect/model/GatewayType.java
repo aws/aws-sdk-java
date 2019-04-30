@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum GatewayType {
 
-    VirtualPrivateGateway("virtualPrivateGateway");
+    VirtualPrivateGateway("virtualPrivateGateway"),
+    TransitGateway("transitGateway");
 
     private String value;
 

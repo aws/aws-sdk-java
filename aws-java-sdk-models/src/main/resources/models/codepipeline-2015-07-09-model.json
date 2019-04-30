@@ -701,6 +701,10 @@
         "name":{
           "shape":"ActionName",
           "documentation":"<p>The name of the action within the context of a job.</p>"
+        },
+        "actionExecutionId":{
+          "shape":"ActionExecutionId",
+          "documentation":"<p>The system-generated unique ID that corresponds to an action's execution.</p>"
         }
       },
       "documentation":"<p>Represents the context of an action within the stage of a pipeline to a job worker.</p>"
@@ -849,10 +853,7 @@
       },
       "documentation":"<p>Filter values for the action execution.</p>"
     },
-    "ActionExecutionId":{
-      "type":"string",
-      "documentation":"<p>The system-generated unique ID that corresponds to an action's execution.</p>"
-    },
+    "ActionExecutionId":{"type":"string"},
     "ActionExecutionInput":{
       "type":"structure",
       "members":{
@@ -1943,7 +1944,7 @@
         },
         "pipelineContext":{
           "shape":"PipelineContext",
-          "documentation":"<p>Represents information about a pipeline to a job worker.</p>"
+          "documentation":"<p>Represents information about a pipeline to a job worker.</p> <note> <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for Custom jobs.</p> </note>"
         },
         "inputArtifacts":{
           "shape":"ArtifactList",
@@ -2042,7 +2043,7 @@
         },
         "maxResults":{
           "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. The action execution history is limited to the most recent 12 months, based on action execution start times. Default value is 100. </p>"
+          "documentation":"<p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note> <p>Detailed execution history is available for executions run on or after February 21, 2019.</p> </note>"
         },
         "nextToken":{
           "shape":"NextToken",
@@ -2102,7 +2103,7 @@
         },
         "maxResults":{
           "shape":"MaxResults",
-          "documentation":"<p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. The available pipeline execution history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.</p>"
+          "documentation":"<p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.</p>"
         },
         "nextToken":{
           "shape":"NextToken",
@@ -2293,9 +2294,17 @@
         "action":{
           "shape":"ActionContext",
           "documentation":"<p>The context of an action to a job worker within the stage of a pipeline.</p>"
+        },
+        "pipelineArn":{
+          "shape":"PipelineArn",
+          "documentation":"<p>The pipeline execution ID provided to the job worker.</p>"
+        },
+        "pipelineExecutionId":{
+          "shape":"PipelineExecutionId",
+          "documentation":"<p>The pipeline Amazon Resource Name (ARN) provided to the job worker.</p>"
         }
       },
-      "documentation":"<p>Represents information about a pipeline to a job worker.</p>"
+      "documentation":"<p>Represents information about a pipeline to a job worker.</p> <note> <p>PipelineContext contains <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom action jobs. The <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not populated for ThirdParty action jobs.</p> </note>"
     },
     "PipelineDeclaration":{
       "type":"structure",
@@ -3067,7 +3076,7 @@
         },
         "pipelineContext":{
           "shape":"PipelineContext",
-          "documentation":"<p>Represents information about a pipeline to a job worker.</p>"
+          "documentation":"<p>Represents information about a pipeline to a job worker.</p> <note> <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.</p> </note>"
         },
         "inputArtifacts":{
           "shape":"ArtifactList",

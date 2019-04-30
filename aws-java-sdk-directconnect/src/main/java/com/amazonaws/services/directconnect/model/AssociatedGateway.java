@@ -42,7 +42,7 @@ public class AssociatedGateway implements Serializable, Cloneable, StructuredPoj
     private String type;
     /**
      * <p>
-     * The ID of the AWS account that owns the associated virtual private gateway.
+     * The ID of the AWS account that owns the associated virtual private gateway or transit gateway.
      * </p>
      */
     private String ownerAccount;
@@ -154,11 +154,11 @@ public class AssociatedGateway implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the AWS account that owns the associated virtual private gateway.
+     * The ID of the AWS account that owns the associated virtual private gateway or transit gateway.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account that owns the associated virtual private gateway.
+     *        The ID of the AWS account that owns the associated virtual private gateway or transit gateway.
      */
 
     public void setOwnerAccount(String ownerAccount) {
@@ -167,10 +167,10 @@ public class AssociatedGateway implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the AWS account that owns the associated virtual private gateway.
+     * The ID of the AWS account that owns the associated virtual private gateway or transit gateway.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the associated virtual private gateway.
+     * @return The ID of the AWS account that owns the associated virtual private gateway or transit gateway.
      */
 
     public String getOwnerAccount() {
@@ -179,11 +179,11 @@ public class AssociatedGateway implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the AWS account that owns the associated virtual private gateway.
+     * The ID of the AWS account that owns the associated virtual private gateway or transit gateway.
      * </p>
      * 
      * @param ownerAccount
-     *        The ID of the AWS account that owns the associated virtual private gateway.
+     *        The ID of the AWS account that owns the associated virtual private gateway or transit gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

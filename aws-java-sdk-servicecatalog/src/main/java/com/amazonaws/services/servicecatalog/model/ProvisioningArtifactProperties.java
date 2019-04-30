@@ -72,6 +72,12 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * </ul>
      */
     private String type;
+    /**
+     * <p>
+     * If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.
+     * </p>
+     */
+    private Boolean disableTemplateValidation;
 
     /**
      * <p>
@@ -471,6 +477,62 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.
+     * </p>
+     * 
+     * @param disableTemplateValidation
+     *        If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is
+     *        invalid.
+     */
+
+    public void setDisableTemplateValidation(Boolean disableTemplateValidation) {
+        this.disableTemplateValidation = disableTemplateValidation;
+    }
+
+    /**
+     * <p>
+     * If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.
+     * </p>
+     * 
+     * @return If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is
+     *         invalid.
+     */
+
+    public Boolean getDisableTemplateValidation() {
+        return this.disableTemplateValidation;
+    }
+
+    /**
+     * <p>
+     * If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.
+     * </p>
+     * 
+     * @param disableTemplateValidation
+     *        If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is
+     *        invalid.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisioningArtifactProperties withDisableTemplateValidation(Boolean disableTemplateValidation) {
+        setDisableTemplateValidation(disableTemplateValidation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.
+     * </p>
+     * 
+     * @return If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is
+     *         invalid.
+     */
+
+    public Boolean isDisableTemplateValidation() {
+        return this.disableTemplateValidation;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -489,7 +551,9 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
         if (getInfo() != null)
             sb.append("Info: ").append(getInfo()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getDisableTemplateValidation() != null)
+            sb.append("DisableTemplateValidation: ").append(getDisableTemplateValidation());
         sb.append("}");
         return sb.toString();
     }
@@ -520,6 +584,10 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getDisableTemplateValidation() == null ^ this.getDisableTemplateValidation() == null)
+            return false;
+        if (other.getDisableTemplateValidation() != null && other.getDisableTemplateValidation().equals(this.getDisableTemplateValidation()) == false)
+            return false;
         return true;
     }
 
@@ -532,6 +600,7 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getInfo() == null) ? 0 : getInfo().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getDisableTemplateValidation() == null) ? 0 : getDisableTemplateValidation().hashCode());
         return hashCode;
     }
 

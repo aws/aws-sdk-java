@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>.
+ * Specifies a character set.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CharacterSet" target="_top">AWS API

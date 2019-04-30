@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ListTagsForResource" target="_top">AWS API
  *      Documentation</a>
@@ -30,7 +29,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      */
@@ -46,14 +45,14 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      * 
      * @param resourceName
      *        The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource Name (ARN). For
      *        information about creating an ARN, see <a
-     *        href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     *        href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      *        Constructing an Amazon Resource Name (ARN)</a>.
      */
 
@@ -65,13 +64,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      * 
      * @return The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource Name (ARN). For
      *         information about creating an ARN, see <a
-     *         href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     *         href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      *         Constructing an Amazon Resource Name (ARN)</a>.
      */
 
@@ -83,14 +82,14 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      * Constructing an Amazon Resource Name (ARN)</a>.
      * </p>
      * 
      * @param resourceName
      *        The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource Name (ARN). For
      *        information about creating an ARN, see <a
-     *        href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     *        href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
      *        Constructing an Amazon Resource Name (ARN)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

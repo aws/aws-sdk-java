@@ -44,6 +44,11 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Represents information about a pipeline to a job worker.
      * </p>
+     * <note>
+     * <p>
+     * Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for Custom jobs.
+     * </p>
+     * </note>
      */
     private PipelineContext pipelineContext;
     /**
@@ -165,9 +170,17 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Represents information about a pipeline to a job worker.
      * </p>
+     * <note>
+     * <p>
+     * Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for Custom jobs.
+     * </p>
+     * </note>
      * 
      * @param pipelineContext
-     *        Represents information about a pipeline to a job worker.
+     *        Represents information about a pipeline to a job worker.</p> <note>
+     *        <p>
+     *        Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for Custom jobs.
+     *        </p>
      */
 
     public void setPipelineContext(PipelineContext pipelineContext) {
@@ -178,8 +191,16 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Represents information about a pipeline to a job worker.
      * </p>
+     * <note>
+     * <p>
+     * Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for Custom jobs.
+     * </p>
+     * </note>
      * 
-     * @return Represents information about a pipeline to a job worker.
+     * @return Represents information about a pipeline to a job worker.</p> <note>
+     *         <p>
+     *         Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for Custom jobs.
+     *         </p>
      */
 
     public PipelineContext getPipelineContext() {
@@ -190,9 +211,17 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Represents information about a pipeline to a job worker.
      * </p>
+     * <note>
+     * <p>
+     * Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for Custom jobs.
+     * </p>
+     * </note>
      * 
      * @param pipelineContext
-     *        Represents information about a pipeline to a job worker.
+     *        Represents information about a pipeline to a job worker.</p> <note>
+     *        <p>
+     *        Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for Custom jobs.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -70,6 +70,39 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
+     * Associates the specified budget with the specified resource.
+     * </p>
+     * 
+     * @param associateBudgetWithResourceRequest
+     * @return A Java Future containing the result of the AssociateBudgetWithResource operation returned by the service.
+     * @sample AWSServiceCatalogAsync.AssociateBudgetWithResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateBudgetWithResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateBudgetWithResourceResult> associateBudgetWithResourceAsync(
+            AssociateBudgetWithResourceRequest associateBudgetWithResourceRequest);
+
+    /**
+     * <p>
+     * Associates the specified budget with the specified resource.
+     * </p>
+     * 
+     * @param associateBudgetWithResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateBudgetWithResource operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.AssociateBudgetWithResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateBudgetWithResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateBudgetWithResourceResult> associateBudgetWithResourceAsync(
+            AssociateBudgetWithResourceRequest associateBudgetWithResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateBudgetWithResourceRequest, AssociateBudgetWithResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates the specified principal ARN with the specified portfolio.
      * </p>
      * 
@@ -1420,6 +1453,41 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
+     * Disassociates the specified budget from the specified resource.
+     * </p>
+     * 
+     * @param disassociateBudgetFromResourceRequest
+     * @return A Java Future containing the result of the DisassociateBudgetFromResource operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsync.DisassociateBudgetFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateBudgetFromResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateBudgetFromResourceResult> disassociateBudgetFromResourceAsync(
+            DisassociateBudgetFromResourceRequest disassociateBudgetFromResourceRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified budget from the specified resource.
+     * </p>
+     * 
+     * @param disassociateBudgetFromResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateBudgetFromResource operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsyncHandler.DisassociateBudgetFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateBudgetFromResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateBudgetFromResourceResult> disassociateBudgetFromResourceAsync(
+            DisassociateBudgetFromResourceRequest disassociateBudgetFromResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateBudgetFromResourceRequest, DisassociateBudgetFromResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Disassociates a previously associated principal ARN from a specified portfolio.
      * </p>
      * 
@@ -1750,6 +1818,37 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     java.util.concurrent.Future<ListAcceptedPortfolioSharesResult> listAcceptedPortfolioSharesAsync(
             ListAcceptedPortfolioSharesRequest listAcceptedPortfolioSharesRequest,
             com.amazonaws.handlers.AsyncHandler<ListAcceptedPortfolioSharesRequest, ListAcceptedPortfolioSharesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the budgets associated to the specified resource.
+     * </p>
+     * 
+     * @param listBudgetsForResourceRequest
+     * @return A Java Future containing the result of the ListBudgetsForResource operation returned by the service.
+     * @sample AWSServiceCatalogAsync.ListBudgetsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListBudgetsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBudgetsForResourceResult> listBudgetsForResourceAsync(ListBudgetsForResourceRequest listBudgetsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists all the budgets associated to the specified resource.
+     * </p>
+     * 
+     * @param listBudgetsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBudgetsForResource operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.ListBudgetsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListBudgetsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBudgetsForResourceResult> listBudgetsForResourceAsync(ListBudgetsForResourceRequest listBudgetsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBudgetsForResourceRequest, ListBudgetsForResourceResult> asyncHandler);
 
     /**
      * <p>
