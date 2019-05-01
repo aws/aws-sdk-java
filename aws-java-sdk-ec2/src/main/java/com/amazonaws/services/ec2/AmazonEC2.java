@@ -6273,6 +6273,15 @@ public interface AmazonEC2 {
     ModifyVpcTenancyResult modifyVpcTenancy(ModifyVpcTenancyRequest modifyVpcTenancyRequest);
 
     /**
+     * @param modifyVpnConnectionRequest
+     * @return Result of the ModifyVpnConnection operation returned by the service.
+     * @sample AmazonEC2.ModifyVpnConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ModifyVpnConnectionResult modifyVpnConnection(ModifyVpnConnectionRequest modifyVpnConnectionRequest);
+
+    /**
      * <p>
      * Enables detailed monitoring for a running instance. Otherwise, basic monitoring is enabled. For more information,
      * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring Your Instances

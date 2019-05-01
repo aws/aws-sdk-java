@@ -183,6 +183,19 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetTimeSeriesServiceStatisticsResult> getTimeSeriesServiceStatisticsAsync(GetTimeSeriesServiceStatisticsRequest request) {
+
+        return getTimeSeriesServiceStatisticsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTimeSeriesServiceStatisticsResult> getTimeSeriesServiceStatisticsAsync(GetTimeSeriesServiceStatisticsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTimeSeriesServiceStatisticsRequest, GetTimeSeriesServiceStatisticsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTraceGraphResult> getTraceGraphAsync(GetTraceGraphRequest request) {
 
         return getTraceGraphAsync(request, null);

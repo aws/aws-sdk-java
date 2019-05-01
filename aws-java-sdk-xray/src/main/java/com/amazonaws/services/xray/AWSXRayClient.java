@@ -973,6 +973,64 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
 
     /**
      * <p>
+     * Get an aggregation of service statistics defined by a specific time range.
+     * </p>
+     * 
+     * @param getTimeSeriesServiceStatisticsRequest
+     * @return Result of the GetTimeSeriesServiceStatistics operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetTimeSeriesServiceStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTimeSeriesServiceStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetTimeSeriesServiceStatisticsResult getTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTimeSeriesServiceStatistics(request);
+    }
+
+    @SdkInternalApi
+    final GetTimeSeriesServiceStatisticsResult executeGetTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest getTimeSeriesServiceStatisticsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTimeSeriesServiceStatisticsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTimeSeriesServiceStatisticsRequest> request = null;
+        Response<GetTimeSeriesServiceStatisticsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTimeSeriesServiceStatisticsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getTimeSeriesServiceStatisticsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTimeSeriesServiceStatistics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetTimeSeriesServiceStatisticsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetTimeSeriesServiceStatisticsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a service graph for one or more specific trace IDs.
      * </p>
      * 
@@ -1049,7 +1107,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      * </p>
      * <p>
      * For a full list of indexed fields and keywords that you can use in filter expressions, see <a
-     * href="http://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a> in
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a> in
      * the <i>AWS X-Ray Developer Guide</i>.
      * </p>
      * 

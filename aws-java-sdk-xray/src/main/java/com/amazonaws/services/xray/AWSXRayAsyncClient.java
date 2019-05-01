@@ -642,6 +642,40 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetTimeSeriesServiceStatisticsResult> getTimeSeriesServiceStatisticsAsync(GetTimeSeriesServiceStatisticsRequest request) {
+
+        return getTimeSeriesServiceStatisticsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTimeSeriesServiceStatisticsResult> getTimeSeriesServiceStatisticsAsync(
+            final GetTimeSeriesServiceStatisticsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTimeSeriesServiceStatisticsRequest, GetTimeSeriesServiceStatisticsResult> asyncHandler) {
+        final GetTimeSeriesServiceStatisticsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTimeSeriesServiceStatisticsResult>() {
+            @Override
+            public GetTimeSeriesServiceStatisticsResult call() throws Exception {
+                GetTimeSeriesServiceStatisticsResult result = null;
+
+                try {
+                    result = executeGetTimeSeriesServiceStatistics(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTraceGraphResult> getTraceGraphAsync(GetTraceGraphRequest request) {
 
         return getTraceGraphAsync(request, null);

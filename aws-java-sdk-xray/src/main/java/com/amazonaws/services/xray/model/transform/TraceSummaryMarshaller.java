@@ -67,6 +67,8 @@ public class TraceSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResponseTimeRootCauses").build();
     private static final MarshallingInfo<Integer> REVISION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Revision").build();
+    private static final MarshallingInfo<java.util.Date> MATCHEDEVENTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MatchedEventTime").timestampFormat("unixTimestamp").build();
 
     private static final TraceSummaryMarshaller instance = new TraceSummaryMarshaller();
 
@@ -103,6 +105,7 @@ public class TraceSummaryMarshaller {
             protocolMarshaller.marshall(traceSummary.getErrorRootCauses(), ERRORROOTCAUSES_BINDING);
             protocolMarshaller.marshall(traceSummary.getResponseTimeRootCauses(), RESPONSETIMEROOTCAUSES_BINDING);
             protocolMarshaller.marshall(traceSummary.getRevision(), REVISION_BINDING);
+            protocolMarshaller.marshall(traceSummary.getMatchedEventTime(), MATCHEDEVENTTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

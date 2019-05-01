@@ -427,6 +427,41 @@ public interface AWSXRayAsync extends AWSXRay {
 
     /**
      * <p>
+     * Get an aggregation of service statistics defined by a specific time range.
+     * </p>
+     * 
+     * @param getTimeSeriesServiceStatisticsRequest
+     * @return A Java Future containing the result of the GetTimeSeriesServiceStatistics operation returned by the
+     *         service.
+     * @sample AWSXRayAsync.GetTimeSeriesServiceStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTimeSeriesServiceStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTimeSeriesServiceStatisticsResult> getTimeSeriesServiceStatisticsAsync(
+            GetTimeSeriesServiceStatisticsRequest getTimeSeriesServiceStatisticsRequest);
+
+    /**
+     * <p>
+     * Get an aggregation of service statistics defined by a specific time range.
+     * </p>
+     * 
+     * @param getTimeSeriesServiceStatisticsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTimeSeriesServiceStatistics operation returned by the
+     *         service.
+     * @sample AWSXRayAsyncHandler.GetTimeSeriesServiceStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTimeSeriesServiceStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTimeSeriesServiceStatisticsResult> getTimeSeriesServiceStatisticsAsync(
+            GetTimeSeriesServiceStatisticsRequest getTimeSeriesServiceStatisticsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTimeSeriesServiceStatisticsRequest, GetTimeSeriesServiceStatisticsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a service graph for one or more specific trace IDs.
      * </p>
      * 
@@ -478,7 +513,7 @@ public interface AWSXRayAsync extends AWSXRay {
      * </p>
      * <p>
      * For a full list of indexed fields and keywords that you can use in filter expressions, see <a
-     * href="http://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a> in
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a> in
      * the <i>AWS X-Ray Developer Guide</i>.
      * </p>
      * 
@@ -512,7 +547,7 @@ public interface AWSXRayAsync extends AWSXRay {
      * </p>
      * <p>
      * For a full list of indexed fields and keywords that you can use in filter expressions, see <a
-     * href="http://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a> in
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a> in
      * the <i>AWS X-Ray Developer Guide</i>.
      * </p>
      * 

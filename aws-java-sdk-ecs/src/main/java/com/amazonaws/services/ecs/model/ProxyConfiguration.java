@@ -22,12 +22,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The configuration details for the App Mesh proxy.
  * </p>
  * <p>
- * Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version
- * 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are
- * launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required
- * versions of the container agent and <code>ecs-init</code>. For more information, see <a
+ * For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent
+ * and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container
+ * instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain
+ * the required versions of the container agent and <code>ecs-init</code>. For more information, see <a
  * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized Linux
  * AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+ * </p>
+ * <p>
+ * This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the task
+ * or service requires platform version 1.3.0 or later.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ProxyConfiguration" target="_top">AWS API

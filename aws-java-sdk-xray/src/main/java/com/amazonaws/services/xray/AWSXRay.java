@@ -309,6 +309,23 @@ public interface AWSXRay {
 
     /**
      * <p>
+     * Get an aggregation of service statistics defined by a specific time range.
+     * </p>
+     * 
+     * @param getTimeSeriesServiceStatisticsRequest
+     * @return Result of the GetTimeSeriesServiceStatistics operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetTimeSeriesServiceStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTimeSeriesServiceStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetTimeSeriesServiceStatisticsResult getTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest getTimeSeriesServiceStatisticsRequest);
+
+    /**
+     * <p>
      * Retrieves a service graph for one or more specific trace IDs.
      * </p>
      * 
@@ -346,7 +363,7 @@ public interface AWSXRay {
      * </p>
      * <p>
      * For a full list of indexed fields and keywords that you can use in filter expressions, see <a
-     * href="http://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a> in
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a> in
      * the <i>AWS X-Ray Developer Guide</i>.
      * </p>
      * 

@@ -17533,6 +17533,54 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     }
 
     /**
+     * @param modifyVpnConnectionRequest
+     * @return Result of the ModifyVpnConnection operation returned by the service.
+     * @sample AmazonEC2.ModifyVpnConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ModifyVpnConnectionResult modifyVpnConnection(ModifyVpnConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyVpnConnection(request);
+    }
+
+    @SdkInternalApi
+    final ModifyVpnConnectionResult executeModifyVpnConnection(ModifyVpnConnectionRequest modifyVpnConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyVpnConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyVpnConnectionRequest> request = null;
+        Response<ModifyVpnConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyVpnConnectionRequestMarshaller().marshall(super.beforeMarshalling(modifyVpnConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVpnConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyVpnConnectionResult> responseHandler = new StaxResponseHandler<ModifyVpnConnectionResult>(
+                    new ModifyVpnConnectionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Enables detailed monitoring for a running instance. Otherwise, basic monitoring is enabled. For more information,
      * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring Your Instances

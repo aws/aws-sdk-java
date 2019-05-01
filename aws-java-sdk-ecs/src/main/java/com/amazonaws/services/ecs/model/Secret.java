@@ -19,7 +19,25 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the secret to expose to your container. For more information, see <a
+ * An object representing the secret to expose to your container. Secrets can be exposed to a container in the following
+ * ways:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container
+ * definition parameter.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code>
+ * container definition parameter.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * For more information, see <a
  * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying Sensitive
  * Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
@@ -31,16 +49,14 @@ public class Secret implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value to set as the environment variable on the container.
+     * The name of the secret.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The secret to expose to the container. If your task is using the EC2 launch type, then supported values are
-     * either the full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in the AWS Systems Manager
-     * Parameter Store. If your task is using the Fargate launch type, then the only supported value is the full ARN of
-     * the parameter in the AWS Systems Manager Parameter Store.
+     * The secret to expose to the container. The supported values are either the full ARN of the AWS Secrets Manager
+     * secret or the full ARN of the parameter in the AWS Systems Manager Parameter Store.
      * </p>
      * <note>
      * <p>
@@ -54,11 +70,11 @@ public class Secret implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value to set as the environment variable on the container.
+     * The name of the secret.
      * </p>
      * 
      * @param name
-     *        The value to set as the environment variable on the container.
+     *        The name of the secret.
      */
 
     public void setName(String name) {
@@ -67,10 +83,10 @@ public class Secret implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value to set as the environment variable on the container.
+     * The name of the secret.
      * </p>
      * 
-     * @return The value to set as the environment variable on the container.
+     * @return The name of the secret.
      */
 
     public String getName() {
@@ -79,11 +95,11 @@ public class Secret implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value to set as the environment variable on the container.
+     * The name of the secret.
      * </p>
      * 
      * @param name
-     *        The value to set as the environment variable on the container.
+     *        The name of the secret.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,10 +110,8 @@ public class Secret implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The secret to expose to the container. If your task is using the EC2 launch type, then supported values are
-     * either the full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in the AWS Systems Manager
-     * Parameter Store. If your task is using the Fargate launch type, then the only supported value is the full ARN of
-     * the parameter in the AWS Systems Manager Parameter Store.
+     * The secret to expose to the container. The supported values are either the full ARN of the AWS Secrets Manager
+     * secret or the full ARN of the parameter in the AWS Systems Manager Parameter Store.
      * </p>
      * <note>
      * <p>
@@ -108,10 +122,8 @@ public class Secret implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param valueFrom
-     *        The secret to expose to the container. If your task is using the EC2 launch type, then supported values
-     *        are either the full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in the AWS
-     *        Systems Manager Parameter Store. If your task is using the Fargate launch type, then the only supported
-     *        value is the full ARN of the parameter in the AWS Systems Manager Parameter Store.</p> <note>
+     *        The secret to expose to the container. The supported values are either the full ARN of the AWS Secrets
+     *        Manager secret or the full ARN of the parameter in the AWS Systems Manager Parameter Store.</p> <note>
      *        <p>
      *        If the AWS Systems Manager Parameter Store parameter exists in the same Region as the task you are
      *        launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a
@@ -125,10 +137,8 @@ public class Secret implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The secret to expose to the container. If your task is using the EC2 launch type, then supported values are
-     * either the full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in the AWS Systems Manager
-     * Parameter Store. If your task is using the Fargate launch type, then the only supported value is the full ARN of
-     * the parameter in the AWS Systems Manager Parameter Store.
+     * The secret to expose to the container. The supported values are either the full ARN of the AWS Secrets Manager
+     * secret or the full ARN of the parameter in the AWS Systems Manager Parameter Store.
      * </p>
      * <note>
      * <p>
@@ -138,10 +148,8 @@ public class Secret implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * 
-     * @return The secret to expose to the container. If your task is using the EC2 launch type, then supported values
-     *         are either the full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in the AWS
-     *         Systems Manager Parameter Store. If your task is using the Fargate launch type, then the only supported
-     *         value is the full ARN of the parameter in the AWS Systems Manager Parameter Store.</p> <note>
+     * @return The secret to expose to the container. The supported values are either the full ARN of the AWS Secrets
+     *         Manager secret or the full ARN of the parameter in the AWS Systems Manager Parameter Store.</p> <note>
      *         <p>
      *         If the AWS Systems Manager Parameter Store parameter exists in the same Region as the task you are
      *         launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a
@@ -155,10 +163,8 @@ public class Secret implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The secret to expose to the container. If your task is using the EC2 launch type, then supported values are
-     * either the full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in the AWS Systems Manager
-     * Parameter Store. If your task is using the Fargate launch type, then the only supported value is the full ARN of
-     * the parameter in the AWS Systems Manager Parameter Store.
+     * The secret to expose to the container. The supported values are either the full ARN of the AWS Secrets Manager
+     * secret or the full ARN of the parameter in the AWS Systems Manager Parameter Store.
      * </p>
      * <note>
      * <p>
@@ -169,10 +175,8 @@ public class Secret implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param valueFrom
-     *        The secret to expose to the container. If your task is using the EC2 launch type, then supported values
-     *        are either the full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in the AWS
-     *        Systems Manager Parameter Store. If your task is using the Fargate launch type, then the only supported
-     *        value is the full ARN of the parameter in the AWS Systems Manager Parameter Store.</p> <note>
+     *        The secret to expose to the container. The supported values are either the full ARN of the AWS Secrets
+     *        Manager secret or the full ARN of the parameter in the AWS Systems Manager Parameter Store.</p> <note>
      *        <p>
      *        If the AWS Systems Manager Parameter Store parameter exists in the same Region as the task you are
      *        launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a
