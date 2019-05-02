@@ -35,7 +35,7 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Identifies the AWS CloudHSM cluster for the custom key store. Enter the cluster ID of any active AWS CloudHSM
      * cluster that is not already associated with a custom key store. To find the cluster ID, use the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.
      * </p>
      */
@@ -44,14 +44,14 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Enter the content of the trust anchor certificate for the cluster. This is the content of the
      * <code>customerCA.crt</code> file that you created when you <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the cluster</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the cluster</a>.
      * </p>
      */
     private String trustAnchorCertificate;
     /**
      * <p>
      * Enter the password of the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM cluster. AWS KMS logs into the
      * cluster as this user to manage key material on your behalf.
      * </p>
@@ -106,14 +106,14 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Identifies the AWS CloudHSM cluster for the custom key store. Enter the cluster ID of any active AWS CloudHSM
      * cluster that is not already associated with a custom key store. To find the cluster ID, use the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.
      * </p>
      * 
      * @param cloudHsmClusterId
      *        Identifies the AWS CloudHSM cluster for the custom key store. Enter the cluster ID of any active AWS
      *        CloudHSM cluster that is not already associated with a custom key store. To find the cluster ID, use the
-     *        <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">
+     *        <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">
      *        DescribeClusters</a> operation.
      */
 
@@ -125,13 +125,13 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Identifies the AWS CloudHSM cluster for the custom key store. Enter the cluster ID of any active AWS CloudHSM
      * cluster that is not already associated with a custom key store. To find the cluster ID, use the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.
      * </p>
      * 
      * @return Identifies the AWS CloudHSM cluster for the custom key store. Enter the cluster ID of any active AWS
      *         CloudHSM cluster that is not already associated with a custom key store. To find the cluster ID, use the
-     *         <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">
+     *         <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">
      *         DescribeClusters</a> operation.
      */
 
@@ -143,14 +143,14 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Identifies the AWS CloudHSM cluster for the custom key store. Enter the cluster ID of any active AWS CloudHSM
      * cluster that is not already associated with a custom key store. To find the cluster ID, use the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.
      * </p>
      * 
      * @param cloudHsmClusterId
      *        Identifies the AWS CloudHSM cluster for the custom key store. Enter the cluster ID of any active AWS
      *        CloudHSM cluster that is not already associated with a custom key store. To find the cluster ID, use the
-     *        <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">
+     *        <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">
      *        DescribeClusters</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -164,13 +164,13 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Enter the content of the trust anchor certificate for the cluster. This is the content of the
      * <code>customerCA.crt</code> file that you created when you <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the cluster</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the cluster</a>.
      * </p>
      * 
      * @param trustAnchorCertificate
      *        Enter the content of the trust anchor certificate for the cluster. This is the content of the
      *        <code>customerCA.crt</code> file that you created when you <a
-     *        href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the
+     *        href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the
      *        cluster</a>.
      */
 
@@ -182,12 +182,12 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Enter the content of the trust anchor certificate for the cluster. This is the content of the
      * <code>customerCA.crt</code> file that you created when you <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the cluster</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the cluster</a>.
      * </p>
      * 
      * @return Enter the content of the trust anchor certificate for the cluster. This is the content of the
      *         <code>customerCA.crt</code> file that you created when you <a
-     *         href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the
+     *         href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the
      *         cluster</a>.
      */
 
@@ -199,13 +199,13 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Enter the content of the trust anchor certificate for the cluster. This is the content of the
      * <code>customerCA.crt</code> file that you created when you <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the cluster</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the cluster</a>.
      * </p>
      * 
      * @param trustAnchorCertificate
      *        Enter the content of the trust anchor certificate for the cluster. This is the content of the
      *        <code>customerCA.crt</code> file that you created when you <a
-     *        href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the
+     *        href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the
      *        cluster</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -218,7 +218,7 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Enter the password of the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM cluster. AWS KMS logs into the
      * cluster as this user to manage key material on your behalf.
      * </p>
@@ -229,7 +229,7 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param keyStorePassword
      *        Enter the password of the <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      *        <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM cluster. AWS KMS logs into
      *        the cluster as this user to manage key material on your behalf.</p>
      *        <p>
@@ -244,7 +244,7 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Enter the password of the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM cluster. AWS KMS logs into the
      * cluster as this user to manage key material on your behalf.
      * </p>
@@ -254,7 +254,7 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @return Enter the password of the <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      *         <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM cluster. AWS KMS logs
      *         into the cluster as this user to manage key material on your behalf.</p>
      *         <p>
@@ -269,7 +269,7 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Enter the password of the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM cluster. AWS KMS logs into the
      * cluster as this user to manage key material on your behalf.
      * </p>
@@ -280,7 +280,7 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param keyStorePassword
      *        Enter the password of the <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      *        <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM cluster. AWS KMS logs into
      *        the cluster as this user to manage key material on your behalf.</p>
      *        <p>

@@ -62,7 +62,7 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
      * value, it defaults to 100.
      * </p>
      * <p>
-     * Currently only 1 policy can be attached to a key.
+     * Only one policy can be attached to a key.
      * </p>
      */
     private Integer limit;
@@ -247,7 +247,7 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
      * value, it defaults to 100.
      * </p>
      * <p>
-     * Currently only 1 policy can be attached to a key.
+     * Only one policy can be attached to a key.
      * </p>
      * 
      * @param limit
@@ -258,7 +258,7 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
      *        include a value, it defaults to 100.
      *        </p>
      *        <p>
-     *        Currently only 1 policy can be attached to a key.
+     *        Only one policy can be attached to a key.
      */
 
     public void setLimit(Integer limit) {
@@ -275,7 +275,7 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
      * value, it defaults to 100.
      * </p>
      * <p>
-     * Currently only 1 policy can be attached to a key.
+     * Only one policy can be attached to a key.
      * </p>
      * 
      * @return Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS
@@ -285,7 +285,7 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
      *         include a value, it defaults to 100.
      *         </p>
      *         <p>
-     *         Currently only 1 policy can be attached to a key.
+     *         Only one policy can be attached to a key.
      */
 
     public Integer getLimit() {
@@ -302,7 +302,7 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
      * value, it defaults to 100.
      * </p>
      * <p>
-     * Currently only 1 policy can be attached to a key.
+     * Only one policy can be attached to a key.
      * </p>
      * 
      * @param limit
@@ -313,7 +313,7 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
      *        include a value, it defaults to 100.
      *        </p>
      *        <p>
-     *        Currently only 1 policy can be attached to a key.
+     *        Only one policy can be attached to a key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The request was rejected because a limit was exceeded. For more information, see <a
- * href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a> in the <i>AWS Key Management
+ * href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a> in the <i>AWS Key Management
  * Service Developer Guide</i>.
  * </p>
  */

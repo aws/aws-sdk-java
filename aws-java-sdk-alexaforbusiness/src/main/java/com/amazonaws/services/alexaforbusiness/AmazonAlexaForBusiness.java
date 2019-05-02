@@ -1161,6 +1161,24 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Triggers an asynchronous flow to send text, SSML, or audio announcements to multiple rooms, identified by a
+     * search, such as filter.
+     * </p>
+     * 
+     * @param sendAnnouncementRequest
+     * @return Result of the SendAnnouncement operation returned by the service.
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits.
+     * @throws AlreadyExistsException
+     *         The resource being created already exists.
+     * @sample AmazonAlexaForBusiness.SendAnnouncement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendAnnouncement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SendAnnouncementResult sendAnnouncement(SendAnnouncementRequest sendAnnouncementRequest);
+
+    /**
+     * <p>
      * Sends an enrollment invitation email with a URL to a user. The URL is valid for 72 hours or until you call this
      * operation again, whichever comes first.
      * </p>

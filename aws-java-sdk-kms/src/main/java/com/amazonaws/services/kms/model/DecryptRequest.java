@@ -34,7 +34,8 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The encryption context. If this was specified in the <a>Encrypt</a> function, it must be specified here or the
      * decryption operation will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * Context</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> encryptionContext;
@@ -44,7 +45,7 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
@@ -121,12 +122,13 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The encryption context. If this was specified in the <a>Encrypt</a> function, it must be specified here or the
      * decryption operation will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * Context</a>.
      * </p>
      * 
      * @return The encryption context. If this was specified in the <a>Encrypt</a> function, it must be specified here
      *         or the decryption operation will fail. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      *         Context</a>.
      */
 
@@ -141,13 +143,14 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The encryption context. If this was specified in the <a>Encrypt</a> function, it must be specified here or the
      * decryption operation will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * Context</a>.
      * </p>
      * 
      * @param encryptionContext
      *        The encryption context. If this was specified in the <a>Encrypt</a> function, it must be specified here or
      *        the decryption operation will fail. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      *        Context</a>.
      */
 
@@ -159,13 +162,14 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The encryption context. If this was specified in the <a>Encrypt</a> function, it must be specified here or the
      * decryption operation will fail. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * Context</a>.
      * </p>
      * 
      * @param encryptionContext
      *        The encryption context. If this was specified in the <a>Encrypt</a> function, it must be specified here or
      *        the decryption operation will fail. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      *        Context</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -202,15 +206,15 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @return A list of grant tokens.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
-     *         the <i>AWS Key Management Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>
+     *         in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public java.util.List<String> getGrantTokens() {
@@ -226,7 +230,7 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -234,7 +238,7 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        A list of grant tokens.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
      *        the <i>AWS Key Management Service Developer Guide</i>.
      */
 
@@ -253,7 +257,7 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * <p>
@@ -266,7 +270,7 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        A list of grant tokens.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
      *        the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -287,7 +291,7 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -295,7 +299,7 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        A list of grant tokens.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
      *        the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -24,7 +24,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * For information about the rules that apply to tag keys and tag values, see <a
- * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag
+ * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag
  * Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
  * </p>
  * 

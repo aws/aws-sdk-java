@@ -4072,6 +4072,63 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Triggers an asynchronous flow to send text, SSML, or audio announcements to multiple rooms, identified by a
+     * search, such as filter.
+     * </p>
+     * 
+     * @param sendAnnouncementRequest
+     * @return Result of the SendAnnouncement operation returned by the service.
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits.
+     * @throws AlreadyExistsException
+     *         The resource being created already exists.
+     * @sample AmazonAlexaForBusiness.SendAnnouncement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendAnnouncement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SendAnnouncementResult sendAnnouncement(SendAnnouncementRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendAnnouncement(request);
+    }
+
+    @SdkInternalApi
+    final SendAnnouncementResult executeSendAnnouncement(SendAnnouncementRequest sendAnnouncementRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendAnnouncementRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendAnnouncementRequest> request = null;
+        Response<SendAnnouncementResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendAnnouncementRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendAnnouncementRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendAnnouncement");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SendAnnouncementResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendAnnouncementResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sends an enrollment invitation email with a URL to a user. The URL is valid for 72 hours or until you call this
      * operation again, whichever comes first.
      * </p>

@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * the specified AWS CloudHSM cluster.
  * </p>
  * <p>
- * When you <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize
+ * When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize
  * the cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code> file.
  * </p>
  */

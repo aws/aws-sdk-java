@@ -2388,6 +2388,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<SendAnnouncementResult> sendAnnouncementAsync(SendAnnouncementRequest request) {
+
+        return sendAnnouncementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendAnnouncementResult> sendAnnouncementAsync(final SendAnnouncementRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendAnnouncementRequest, SendAnnouncementResult> asyncHandler) {
+        final SendAnnouncementRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendAnnouncementResult>() {
+            @Override
+            public SendAnnouncementResult call() throws Exception {
+                SendAnnouncementResult result = null;
+
+                try {
+                    result = executeSendAnnouncement(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SendInvitationResult> sendInvitationAsync(SendInvitationRequest request) {
 
         return sendInvitationAsync(request, null);

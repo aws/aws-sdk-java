@@ -46,7 +46,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
      * Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      * </p>
      */
@@ -72,9 +72,8 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     * <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     * operations.
+     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
+     * which means you can use the CMK to encrypt and decrypt data.
      * </p>
      */
     private String keyUsage;
@@ -84,7 +83,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
      * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
@@ -117,17 +116,17 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique identifier for the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> that
-     * contains the CMK. This value is present only when the CMK is created in a custom key store.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
+     * that contains the CMK. This value is present only when the CMK is created in a custom key store.
      * </p>
      */
     private String customKeyStoreId;
     /**
      * <p>
      * The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a CMK in a
-     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>, AWS
-     * KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is present only when
-     * the CMK is created in a custom key store.
+     * <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     * store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is
+     * present only when the CMK is created in a custom key store.
      * </p>
      */
     private String cloudHsmClusterId;
@@ -140,9 +139,10 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     private String expirationModel;
     /**
      * <p>
-     * The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference,
-     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
-     * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more information
+     * about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
     private String keyManager;
@@ -230,13 +230,13 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
      * Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
      *        Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      */
 
@@ -247,12 +247,12 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
      * Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
      *         Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      */
 
@@ -263,13 +263,13 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
      * Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
      *        Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -421,15 +421,13 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     * <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     * operations.
+     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
+     * which means you can use the CMK to encrypt and decrypt data.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     *        operations.
+     *        The cryptographic operations for which you can use the CMK. The only valid value is
+     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt data.
      * @see KeyUsageType
      */
 
@@ -439,14 +437,12 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     * <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     * operations.
+     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
+     * which means you can use the CMK to encrypt and decrypt data.
      * </p>
      * 
-     * @return The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     *         <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     *         operations.
+     * @return The cryptographic operations for which you can use the CMK. The only valid value is
+     *         <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt data.
      * @see KeyUsageType
      */
 
@@ -456,15 +452,13 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     * <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     * operations.
+     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
+     * which means you can use the CMK to encrypt and decrypt data.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     *        operations.
+     *        The cryptographic operations for which you can use the CMK. The only valid value is
+     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyUsageType
      */
@@ -476,15 +470,13 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     * <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     * operations.
+     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
+     * which means you can use the CMK to encrypt and decrypt data.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     *        operations.
+     *        The cryptographic operations for which you can use the CMK. The only valid value is
+     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt data.
      * @see KeyUsageType
      */
 
@@ -494,15 +486,13 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     * <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     * operations.
+     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
+     * which means you can use the CMK to encrypt and decrypt data.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     *        operations.
+     *        The cryptographic operations for which you can use the CMK. The only valid value is
+     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyUsageType
      */
@@ -518,7 +508,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
      * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -526,7 +516,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      *        The state of the CMK.</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
      *        of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @see KeyState
      */
@@ -541,14 +531,14 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
      * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @return The state of the CMK.</p>
      *         <p>
      *         For more information about how key state affects the use of a CMK, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
      *         of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @see KeyState
      */
@@ -563,7 +553,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
      * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -571,7 +561,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      *        The state of the CMK.</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
      *        of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyState
@@ -588,7 +578,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
      * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -596,7 +586,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      *        The state of the CMK.</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
      *        of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @see KeyState
      */
@@ -611,7 +601,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
      * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -619,7 +609,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      *        The state of the CMK.</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
      *        of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyState
@@ -840,14 +830,14 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique identifier for the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> that
-     * contains the CMK. This value is present only when the CMK is created in a custom key store.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
+     * that contains the CMK. This value is present only when the CMK is created in a custom key store.
      * </p>
      * 
      * @param customKeyStoreId
      *        A unique identifier for the <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>
-     *        that contains the CMK. This value is present only when the CMK is created in a custom key store.
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     *        store</a> that contains the CMK. This value is present only when the CMK is created in a custom key store.
      */
 
     public void setCustomKeyStoreId(String customKeyStoreId) {
@@ -857,13 +847,14 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique identifier for the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> that
-     * contains the CMK. This value is present only when the CMK is created in a custom key store.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
+     * that contains the CMK. This value is present only when the CMK is created in a custom key store.
      * </p>
      * 
      * @return A unique identifier for the <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>
-     *         that contains the CMK. This value is present only when the CMK is created in a custom key store.
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     *         store</a> that contains the CMK. This value is present only when the CMK is created in a custom key
+     *         store.
      */
 
     public String getCustomKeyStoreId() {
@@ -873,14 +864,14 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique identifier for the <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> that
-     * contains the CMK. This value is present only when the CMK is created in a custom key store.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
+     * that contains the CMK. This value is present only when the CMK is created in a custom key store.
      * </p>
      * 
      * @param customKeyStoreId
      *        A unique identifier for the <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>
-     *        that contains the CMK. This value is present only when the CMK is created in a custom key store.
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     *        store</a> that contains the CMK. This value is present only when the CMK is created in a custom key store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -892,14 +883,15 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a CMK in a
-     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>, AWS
-     * KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is present only when
-     * the CMK is created in a custom key store.
+     * <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     * store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is
+     * present only when the CMK is created in a custom key store.
      * </p>
      * 
      * @param cloudHsmClusterId
      *        The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a
-     *        CMK in a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key
+     *        CMK in a <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
      *        store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value
      *        is present only when the CMK is created in a custom key store.
      */
@@ -911,14 +903,15 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a CMK in a
-     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>, AWS
-     * KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is present only when
-     * the CMK is created in a custom key store.
+     * <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     * store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is
+     * present only when the CMK is created in a custom key store.
      * </p>
      * 
      * @return The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a
-     *         CMK in a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
-     *         key store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This
+     *         CMK in a <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     *         store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This
      *         value is present only when the CMK is created in a custom key store.
      */
 
@@ -929,14 +922,15 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a CMK in a
-     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>, AWS
-     * KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is present only when
-     * the CMK is created in a custom key store.
+     * <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     * store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is
+     * present only when the CMK is created in a custom key store.
      * </p>
      * 
      * @param cloudHsmClusterId
      *        The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a
-     *        CMK in a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key
+     *        CMK in a <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
      *        store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value
      *        is present only when the CMK is created in a custom key store.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1032,15 +1026,16 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference,
-     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
-     * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more information
+     * about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyManager
-     *        The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the
-     *        difference, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
+     *        The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more
+     *        information about the difference, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @see KeyManagerType
      */
@@ -1051,14 +1046,15 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference,
-     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
-     * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more information
+     * about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the
-     *         difference, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
+     * @return The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more
+     *         information about the difference, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *         Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @see KeyManagerType
      */
@@ -1069,15 +1065,16 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference,
-     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
-     * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more information
+     * about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyManager
-     *        The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the
-     *        difference, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
+     *        The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more
+     *        information about the difference, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyManagerType
@@ -1090,15 +1087,16 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference,
-     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
-     * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more information
+     * about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyManager
-     *        The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the
-     *        difference, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
+     *        The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more
+     *        information about the difference, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @see KeyManagerType
      */
@@ -1109,15 +1107,16 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference,
-     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
-     * Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more information
+     * about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyManager
-     *        The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the
-     *        difference, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
+     *        The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more
+     *        information about the difference, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyManagerType

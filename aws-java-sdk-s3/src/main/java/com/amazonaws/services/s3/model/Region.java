@@ -158,6 +158,18 @@ public enum Region {
     EU_North_1("eu-north-1"),
 
     /**
+     * The Asia Pacific (Hong Kong) Region. This region uses Amazon S3 servers located
+     * in Hong Kong.
+     * <p>
+     * When using buckets in this region, set the client
+     * endpoint to <code>s3.ap-east-1.amazonaws.com</code> on all requests to these buckets
+     * to reduce any latency experienced after the first hour of
+     * creating a bucket in this region.
+     * </p>
+     */
+    AP_HongKong("ap-east-1"),
+
+    /**
      * The Asia Pacific (Singapore) Region. This region uses Amazon S3 servers located
      * in Singapore.
      * <p>

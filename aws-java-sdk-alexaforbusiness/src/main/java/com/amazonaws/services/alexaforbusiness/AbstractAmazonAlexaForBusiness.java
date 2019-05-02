@@ -378,6 +378,11 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
     }
 
     @Override
+    public SendAnnouncementResult sendAnnouncement(SendAnnouncementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SendInvitationResult sendInvitation(SendInvitationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

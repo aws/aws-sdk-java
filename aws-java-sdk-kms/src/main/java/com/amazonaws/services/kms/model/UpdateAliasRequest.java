@@ -27,14 +27,15 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * String that contains the name of the alias to be modified. The name must start with the word "alias" followed by
-     * a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.
+     * Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the alias
+     * name, such as <code>alias/ExampleAlias</code>.
      * </p>
      */
     private String aliasName;
     /**
      * <p>
-     * Unique identifier of the customer master key to be mapped to the alias.
+     * Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
+     * completes, the alias will point to this CMK.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -65,13 +66,13 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * String that contains the name of the alias to be modified. The name must start with the word "alias" followed by
-     * a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.
+     * Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the alias
+     * name, such as <code>alias/ExampleAlias</code>.
      * </p>
      * 
      * @param aliasName
-     *        String that contains the name of the alias to be modified. The name must start with the word "alias"
-     *        followed by a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.
+     *        Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the
+     *        alias name, such as <code>alias/ExampleAlias</code>.
      */
 
     public void setAliasName(String aliasName) {
@@ -80,12 +81,12 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * String that contains the name of the alias to be modified. The name must start with the word "alias" followed by
-     * a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.
+     * Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the alias
+     * name, such as <code>alias/ExampleAlias</code>.
      * </p>
      * 
-     * @return String that contains the name of the alias to be modified. The name must start with the word "alias"
-     *         followed by a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.
+     * @return Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the
+     *         alias name, such as <code>alias/ExampleAlias</code>.
      */
 
     public String getAliasName() {
@@ -94,13 +95,13 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * String that contains the name of the alias to be modified. The name must start with the word "alias" followed by
-     * a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.
+     * Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the alias
+     * name, such as <code>alias/ExampleAlias</code>.
      * </p>
      * 
      * @param aliasName
-     *        String that contains the name of the alias to be modified. The name must start with the word "alias"
-     *        followed by a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.
+     *        Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the
+     *        alias name, such as <code>alias/ExampleAlias</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,7 +112,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the customer master key to be mapped to the alias.
+     * Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
+     * completes, the alias will point to this CMK.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -139,7 +141,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param targetKeyId
-     *        Unique identifier of the customer master key to be mapped to the alias.</p>
+     *        Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
+     *        completes, the alias will point to this CMK.</p>
      *        <p>
      *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
      *        </p>
@@ -171,7 +174,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the customer master key to be mapped to the alias.
+     * Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
+     * completes, the alias will point to this CMK.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -198,7 +202,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      * </p>
      * 
-     * @return Unique identifier of the customer master key to be mapped to the alias.</p>
+     * @return Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
+     *         completes, the alias will point to this CMK.</p>
      *         <p>
      *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
      *         </p>
@@ -230,7 +235,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the customer master key to be mapped to the alias.
+     * Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
+     * completes, the alias will point to this CMK.
      * </p>
      * <p>
      * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
@@ -258,7 +264,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param targetKeyId
-     *        Unique identifier of the customer master key to be mapped to the alias.</p>
+     *        Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
+     *        completes, the alias will point to this CMK.</p>
      *        <p>
      *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
      *        </p>

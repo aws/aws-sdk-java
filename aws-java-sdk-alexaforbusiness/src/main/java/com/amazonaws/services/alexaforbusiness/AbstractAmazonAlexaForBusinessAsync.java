@@ -946,6 +946,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<SendAnnouncementResult> sendAnnouncementAsync(SendAnnouncementRequest request) {
+
+        return sendAnnouncementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendAnnouncementResult> sendAnnouncementAsync(SendAnnouncementRequest request,
+            com.amazonaws.handlers.AsyncHandler<SendAnnouncementRequest, SendAnnouncementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SendInvitationResult> sendInvitationAsync(SendInvitationRequest request) {
 
         return sendInvitationAsync(request, null);

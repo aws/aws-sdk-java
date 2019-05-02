@@ -2292,6 +2292,39 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Triggers an asynchronous flow to send text, SSML, or audio announcements to multiple rooms, identified by a
+     * search, such as filter.
+     * </p>
+     * 
+     * @param sendAnnouncementRequest
+     * @return A Java Future containing the result of the SendAnnouncement operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.SendAnnouncement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendAnnouncement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendAnnouncementResult> sendAnnouncementAsync(SendAnnouncementRequest sendAnnouncementRequest);
+
+    /**
+     * <p>
+     * Triggers an asynchronous flow to send text, SSML, or audio announcements to multiple rooms, identified by a
+     * search, such as filter.
+     * </p>
+     * 
+     * @param sendAnnouncementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendAnnouncement operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.SendAnnouncement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendAnnouncement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendAnnouncementResult> sendAnnouncementAsync(SendAnnouncementRequest sendAnnouncementRequest,
+            com.amazonaws.handlers.AsyncHandler<SendAnnouncementRequest, SendAnnouncementResult> asyncHandler);
+
+    /**
+     * <p>
      * Sends an enrollment invitation email with a URL to a user. The URL is valid for 72 hours or until you call this
      * operation again, whichever comes first.
      * </p>
