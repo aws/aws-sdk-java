@@ -568,6 +568,26 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Requests a user's mailbox details for a specified organization and user.
+     * </p>
+     * 
+     * @param getMailboxDetailsRequest
+     * @return Result of the GetMailboxDetails operation returned by the service.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @sample AmazonWorkMail.GetMailboxDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetMailboxDetailsResult getMailboxDetails(GetMailboxDetailsRequest getMailboxDetailsRequest);
+
+    /**
+     * <p>
      * Creates a paginated call to list the aliases associated with a given entity.
      * </p>
      * 
@@ -846,6 +866,31 @@ public interface AmazonWorkMail {
      *      Documentation</a>
      */
     ResetPasswordResult resetPassword(ResetPasswordRequest resetPasswordRequest);
+
+    /**
+     * <p>
+     * Updates a user's current mailbox quota for a specified organization and user.
+     * </p>
+     * 
+     * @param updateMailboxQuotaRequest
+     * @return Result of the UpdateMailboxQuota operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws EntityStateException
+     *         You are performing an operation on a user, group, or resource that isn't in the expected state, such as
+     *         trying to delete an active user.
+     * @sample AmazonWorkMail.UpdateMailboxQuota
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateMailboxQuotaResult updateMailboxQuota(UpdateMailboxQuotaRequest updateMailboxQuotaRequest);
 
     /**
      * <p>

@@ -28,7 +28,9 @@ public enum ChannelState {
     RECOVERING("RECOVERING"),
     STOPPING("STOPPING"),
     DELETING("DELETING"),
-    DELETED("DELETED");
+    DELETED("DELETED"),
+    UPDATING("UPDATING"),
+    UPDATE_FAILED("UPDATE_FAILED");
 
     private String value;
 

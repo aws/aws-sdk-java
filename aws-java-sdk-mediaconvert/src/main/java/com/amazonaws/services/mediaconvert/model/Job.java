@@ -27,7 +27,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Job implements Serializable, Cloneable, StructuredPojo {
 
-    /** Accelerated transcoding is currently in private preview. Contact AWS for more information. */
+    /** Accelerated transcoding can significantly speed up jobs with long, visually complex content. */
     private AccelerationSettings accelerationSettings;
     /** An identifier for this resource that is unique within all of AWS. */
     private String arn;
@@ -93,10 +93,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> userMetadata;
 
     /**
-     * Accelerated transcoding is currently in private preview. Contact AWS for more information.
+     * Accelerated transcoding can significantly speed up jobs with long, visually complex content.
      * 
      * @param accelerationSettings
-     *        Accelerated transcoding is currently in private preview. Contact AWS for more information.
+     *        Accelerated transcoding can significantly speed up jobs with long, visually complex content.
      */
 
     public void setAccelerationSettings(AccelerationSettings accelerationSettings) {
@@ -104,9 +104,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Accelerated transcoding is currently in private preview. Contact AWS for more information.
+     * Accelerated transcoding can significantly speed up jobs with long, visually complex content.
      * 
-     * @return Accelerated transcoding is currently in private preview. Contact AWS for more information.
+     * @return Accelerated transcoding can significantly speed up jobs with long, visually complex content.
      */
 
     public AccelerationSettings getAccelerationSettings() {
@@ -114,10 +114,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Accelerated transcoding is currently in private preview. Contact AWS for more information.
+     * Accelerated transcoding can significantly speed up jobs with long, visually complex content.
      * 
      * @param accelerationSettings
-     *        Accelerated transcoding is currently in private preview. Contact AWS for more information.
+     *        Accelerated transcoding can significantly speed up jobs with long, visually complex content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -26,8 +26,94 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DashIsoEncryptionSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * This setting can improve the compatibility of your output with video players on obsolete devices. It applies only
+     * to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with
+     * playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI,
+     * for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+     */
+    private String playbackDeviceCompatibility;
     /** Settings for use with a SPEKE key provider */
     private SpekeKeyProvider spekeKeyProvider;
+
+    /**
+     * This setting can improve the compatibility of your output with video players on obsolete devices. It applies only
+     * to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with
+     * playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI,
+     * for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+     * 
+     * @param playbackDeviceCompatibility
+     *        This setting can improve the compatibility of your output with video players on obsolete devices. It
+     *        applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to
+     *        correct problems with playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If
+     *        you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will
+     *        leave the SEI NAL units unencrypted.
+     * @see DashIsoPlaybackDeviceCompatibility
+     */
+
+    public void setPlaybackDeviceCompatibility(String playbackDeviceCompatibility) {
+        this.playbackDeviceCompatibility = playbackDeviceCompatibility;
+    }
+
+    /**
+     * This setting can improve the compatibility of your output with video players on obsolete devices. It applies only
+     * to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with
+     * playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI,
+     * for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+     * 
+     * @return This setting can improve the compatibility of your output with video players on obsolete devices. It
+     *         applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to
+     *         correct problems with playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1).
+     *         If you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and
+     *         will leave the SEI NAL units unencrypted.
+     * @see DashIsoPlaybackDeviceCompatibility
+     */
+
+    public String getPlaybackDeviceCompatibility() {
+        return this.playbackDeviceCompatibility;
+    }
+
+    /**
+     * This setting can improve the compatibility of your output with video players on obsolete devices. It applies only
+     * to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with
+     * playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI,
+     * for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+     * 
+     * @param playbackDeviceCompatibility
+     *        This setting can improve the compatibility of your output with video players on obsolete devices. It
+     *        applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to
+     *        correct problems with playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If
+     *        you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will
+     *        leave the SEI NAL units unencrypted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DashIsoPlaybackDeviceCompatibility
+     */
+
+    public DashIsoEncryptionSettings withPlaybackDeviceCompatibility(String playbackDeviceCompatibility) {
+        setPlaybackDeviceCompatibility(playbackDeviceCompatibility);
+        return this;
+    }
+
+    /**
+     * This setting can improve the compatibility of your output with video players on obsolete devices. It applies only
+     * to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with
+     * playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI,
+     * for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+     * 
+     * @param playbackDeviceCompatibility
+     *        This setting can improve the compatibility of your output with video players on obsolete devices. It
+     *        applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to
+     *        correct problems with playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If
+     *        you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will
+     *        leave the SEI NAL units unencrypted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DashIsoPlaybackDeviceCompatibility
+     */
+
+    public DashIsoEncryptionSettings withPlaybackDeviceCompatibility(DashIsoPlaybackDeviceCompatibility playbackDeviceCompatibility) {
+        this.playbackDeviceCompatibility = playbackDeviceCompatibility.toString();
+        return this;
+    }
 
     /**
      * Settings for use with a SPEKE key provider
@@ -75,6 +161,8 @@ public class DashIsoEncryptionSettings implements Serializable, Cloneable, Struc
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getPlaybackDeviceCompatibility() != null)
+            sb.append("PlaybackDeviceCompatibility: ").append(getPlaybackDeviceCompatibility()).append(",");
         if (getSpekeKeyProvider() != null)
             sb.append("SpekeKeyProvider: ").append(getSpekeKeyProvider());
         sb.append("}");
@@ -91,6 +179,10 @@ public class DashIsoEncryptionSettings implements Serializable, Cloneable, Struc
         if (obj instanceof DashIsoEncryptionSettings == false)
             return false;
         DashIsoEncryptionSettings other = (DashIsoEncryptionSettings) obj;
+        if (other.getPlaybackDeviceCompatibility() == null ^ this.getPlaybackDeviceCompatibility() == null)
+            return false;
+        if (other.getPlaybackDeviceCompatibility() != null && other.getPlaybackDeviceCompatibility().equals(this.getPlaybackDeviceCompatibility()) == false)
+            return false;
         if (other.getSpekeKeyProvider() == null ^ this.getSpekeKeyProvider() == null)
             return false;
         if (other.getSpekeKeyProvider() != null && other.getSpekeKeyProvider().equals(this.getSpekeKeyProvider()) == false)
@@ -103,6 +195,7 @@ public class DashIsoEncryptionSettings implements Serializable, Cloneable, Struc
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getPlaybackDeviceCompatibility() == null) ? 0 : getPlaybackDeviceCompatibility().hashCode());
         hashCode = prime * hashCode + ((getSpekeKeyProvider() == null) ? 0 : getSpekeKeyProvider().hashCode());
         return hashCode;
     }

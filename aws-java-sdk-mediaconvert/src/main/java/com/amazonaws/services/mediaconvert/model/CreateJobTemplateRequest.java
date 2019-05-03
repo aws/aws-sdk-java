@@ -25,7 +25,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** This is a beta feature. If you are interested in using this feature please contact AWS customer support. */
+    /**
+     * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use
+     * this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     * MediaConvert User Guide.
+     */
     private AccelerationSettings accelerationSettings;
     /** Optional. A category for the job template you are creating */
     private String category;
@@ -53,10 +57,14 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.Map<String, String> tags;
 
     /**
-     * This is a beta feature. If you are interested in using this feature please contact AWS customer support.
+     * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use
+     * this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     * MediaConvert User Guide.
      * 
      * @param accelerationSettings
-     *        This is a beta feature. If you are interested in using this feature please contact AWS customer support.
+     *        Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that
+     *        use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     *        MediaConvert User Guide.
      */
 
     public void setAccelerationSettings(AccelerationSettings accelerationSettings) {
@@ -64,9 +72,13 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * This is a beta feature. If you are interested in using this feature please contact AWS customer support.
+     * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use
+     * this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     * MediaConvert User Guide.
      * 
-     * @return This is a beta feature. If you are interested in using this feature please contact AWS customer support.
+     * @return Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that
+     *         use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     *         MediaConvert User Guide.
      */
 
     public AccelerationSettings getAccelerationSettings() {
@@ -74,10 +86,14 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * This is a beta feature. If you are interested in using this feature please contact AWS customer support.
+     * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use
+     * this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     * MediaConvert User Guide.
      * 
      * @param accelerationSettings
-     *        This is a beta feature. If you are interested in using this feature please contact AWS customer support.
+     *        Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that
+     *        use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     *        MediaConvert User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

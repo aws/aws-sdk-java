@@ -894,6 +894,29 @@ public interface AWSCognitoIdentityProvider {
     AdminSetUserMFAPreferenceResult adminSetUserMFAPreference(AdminSetUserMFAPreferenceRequest adminSetUserMFAPreferenceRequest);
 
     /**
+     * @param adminSetUserPasswordRequest
+     * @return Result of the AdminSetUserPassword operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws InvalidPasswordException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid password.
+     * @sample AWSCognitoIdentityProvider.AdminSetUserPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserPassword"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AdminSetUserPasswordResult adminSetUserPassword(AdminSetUserPasswordRequest adminSetUserPasswordRequest);
+
+    /**
      * <p>
      * Sets all the user settings for a specified user name. Works on any user.
      * </p>

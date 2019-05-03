@@ -657,6 +657,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Requests a user's mailbox details for a specified organization and user.
+     * </p>
+     * 
+     * @param getMailboxDetailsRequest
+     * @return A Java Future containing the result of the GetMailboxDetails operation returned by the service.
+     * @sample AmazonWorkMailAsync.GetMailboxDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMailboxDetailsResult> getMailboxDetailsAsync(GetMailboxDetailsRequest getMailboxDetailsRequest);
+
+    /**
+     * <p>
+     * Requests a user's mailbox details for a specified organization and user.
+     * </p>
+     * 
+     * @param getMailboxDetailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMailboxDetails operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.GetMailboxDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMailboxDetailsResult> getMailboxDetailsAsync(GetMailboxDetailsRequest getMailboxDetailsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMailboxDetailsRequest, GetMailboxDetailsResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a paginated call to list the aliases associated with a given entity.
      * </p>
      * 
@@ -1013,6 +1044,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<ResetPasswordResult> resetPasswordAsync(ResetPasswordRequest resetPasswordRequest,
             com.amazonaws.handlers.AsyncHandler<ResetPasswordRequest, ResetPasswordResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a user's current mailbox quota for a specified organization and user.
+     * </p>
+     * 
+     * @param updateMailboxQuotaRequest
+     * @return A Java Future containing the result of the UpdateMailboxQuota operation returned by the service.
+     * @sample AmazonWorkMailAsync.UpdateMailboxQuota
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMailboxQuotaResult> updateMailboxQuotaAsync(UpdateMailboxQuotaRequest updateMailboxQuotaRequest);
+
+    /**
+     * <p>
+     * Updates a user's current mailbox quota for a specified organization and user.
+     * </p>
+     * 
+     * @param updateMailboxQuotaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMailboxQuota operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.UpdateMailboxQuota
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMailboxQuotaResult> updateMailboxQuotaAsync(UpdateMailboxQuotaRequest updateMailboxQuotaRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMailboxQuotaRequest, UpdateMailboxQuotaResult> asyncHandler);
 
     /**
      * <p>

@@ -701,6 +701,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetMailboxDetailsResult> getMailboxDetailsAsync(GetMailboxDetailsRequest request) {
+
+        return getMailboxDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMailboxDetailsResult> getMailboxDetailsAsync(final GetMailboxDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMailboxDetailsRequest, GetMailboxDetailsResult> asyncHandler) {
+        final GetMailboxDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMailboxDetailsResult>() {
+            @Override
+            public GetMailboxDetailsResult call() throws Exception {
+                GetMailboxDetailsResult result = null;
+
+                try {
+                    result = executeGetMailboxDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(ListAliasesRequest request) {
 
         return listAliasesAsync(request, null);
@@ -1048,6 +1081,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executeResetPassword(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMailboxQuotaResult> updateMailboxQuotaAsync(UpdateMailboxQuotaRequest request) {
+
+        return updateMailboxQuotaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMailboxQuotaResult> updateMailboxQuotaAsync(final UpdateMailboxQuotaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateMailboxQuotaRequest, UpdateMailboxQuotaResult> asyncHandler) {
+        final UpdateMailboxQuotaRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateMailboxQuotaResult>() {
+            @Override
+            public UpdateMailboxQuotaResult call() throws Exception {
+                UpdateMailboxQuotaResult result = null;
+
+                try {
+                    result = executeUpdateMailboxQuota(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

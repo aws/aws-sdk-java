@@ -1,3 +1,20 @@
+# __1.11.546__ __2019-05-03__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - DASH output groups using DRM encryption can now enable a playback device compatibility mode to correct problems with playback on older devices. 
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - You can now switch the channel mode of your channels from standard to single pipeline and from single pipeline to standard. In order to switch a channel from single pipeline to standard all inputs attached to the channel must support two encoder pipelines.
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - This release of Amazon Cognito User Pools introduces the new AdminSetUserPassword API that allows administrators of a user pool to change a user's password. The new password can be temporary or permanent.
+
+## __Amazon WorkMail__
+  - ### Features
+    - Amazon WorkMail is releasing two new actions: 'GetMailboxDetails' and 'UpdateMailboxQuota'. They add insight into how much space is used by a given mailbox (size) and what its limit is (quota). A mailbox quota can be updated, but lowering the value will not influence WorkMail per user charges. For a closer look at the actions please visit https://docs.aws.amazon.com/workmail/latest/APIReference/API_Operations.html
+
 # __1.11.545__ __2019-05-02__
 ## __AWS Key Management Service__
   - ### Features

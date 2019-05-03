@@ -946,6 +946,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<AdminSetUserPasswordResult> adminSetUserPasswordAsync(AdminSetUserPasswordRequest request) {
+
+        return adminSetUserPasswordAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminSetUserPasswordResult> adminSetUserPasswordAsync(final AdminSetUserPasswordRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminSetUserPasswordRequest, AdminSetUserPasswordResult> asyncHandler) {
+        final AdminSetUserPasswordRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AdminSetUserPasswordResult>() {
+            @Override
+            public AdminSetUserPasswordResult call() throws Exception {
+                AdminSetUserPasswordResult result = null;
+
+                try {
+                    result = executeAdminSetUserPassword(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AdminSetUserSettingsResult> adminSetUserSettingsAsync(AdminSetUserSettingsRequest request) {
 
         return adminSetUserSettingsAsync(request, null);

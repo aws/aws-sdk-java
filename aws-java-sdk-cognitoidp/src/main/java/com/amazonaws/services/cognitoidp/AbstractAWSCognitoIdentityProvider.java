@@ -143,6 +143,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public AdminSetUserPasswordResult adminSetUserPassword(AdminSetUserPasswordRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AdminSetUserSettingsResult adminSetUserSettings(AdminSetUserSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

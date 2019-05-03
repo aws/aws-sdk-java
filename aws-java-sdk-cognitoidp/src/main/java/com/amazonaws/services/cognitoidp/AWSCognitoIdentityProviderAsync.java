@@ -971,6 +971,29 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
             com.amazonaws.handlers.AsyncHandler<AdminSetUserMFAPreferenceRequest, AdminSetUserMFAPreferenceResult> asyncHandler);
 
     /**
+     * @param adminSetUserPasswordRequest
+     * @return A Java Future containing the result of the AdminSetUserPassword operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminSetUserPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserPassword"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AdminSetUserPasswordResult> adminSetUserPasswordAsync(AdminSetUserPasswordRequest adminSetUserPasswordRequest);
+
+    /**
+     * @param adminSetUserPasswordRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminSetUserPassword operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminSetUserPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserPassword"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AdminSetUserPasswordResult> adminSetUserPasswordAsync(AdminSetUserPasswordRequest adminSetUserPasswordRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminSetUserPasswordRequest, AdminSetUserPasswordResult> asyncHandler);
+
+    /**
      * <p>
      * Sets all the user settings for a specified user name. Works on any user.
      * </p>

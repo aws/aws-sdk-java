@@ -34,8 +34,8 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
      */
     private String afdSignaling;
     /**
-     * The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED
-     * for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     * The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the value
+     * DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
      */
     private String antiAlias;
     /**
@@ -202,12 +202,12 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED
-     * for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     * The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the value
+     * DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * 
      * @param antiAlias
-     *        The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value
-     *        DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     *        The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the
+     *        value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * @see AntiAlias
      */
 
@@ -216,11 +216,11 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED
-     * for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     * The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the value
+     * DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * 
-     * @return The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value
-     *         DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     * @return The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the
+     *         value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * @see AntiAlias
      */
 
@@ -229,12 +229,12 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED
-     * for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     * The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the value
+     * DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * 
      * @param antiAlias
-     *        The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value
-     *        DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     *        The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the
+     *        value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AntiAlias
      */
@@ -245,12 +245,12 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED
-     * for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     * The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the value
+     * DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * 
      * @param antiAlias
-     *        The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value
-     *        DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
+     *        The service automatically applies the anti-alias filter to all outputs. The service no longer accepts the
+     *        value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AntiAlias
      */

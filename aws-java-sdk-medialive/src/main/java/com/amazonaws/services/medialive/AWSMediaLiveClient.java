@@ -740,6 +740,71 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Delete all schedule actions on a channel.
+     * 
+     * @param deleteScheduleRequest
+     *        Placeholder documentation for DeleteScheduleRequest
+     * @return Result of the DeleteSchedule operation returned by the service.
+     * @throws BadRequestException
+     *         This request to delete the schedule on this channel was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to delete the channel schedule.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The specified channel does not exist to have its schedule deleted.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on delete schedule calls.
+     * @sample AWSMediaLive.DeleteSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSchedule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteScheduleResult deleteSchedule(DeleteScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSchedule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteScheduleResult executeDeleteSchedule(DeleteScheduleRequest deleteScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteScheduleRequest> request = null;
+        Response<DeleteScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteScheduleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Removes tags for a resource
      * 
      * @param deleteTagsRequest
@@ -1822,6 +1887,75 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateChannelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Changes the class of the channel.
+     * 
+     * @param updateChannelClassRequest
+     *        Channel class that the channel should be updated to.
+     * @return Result of the UpdateChannelClass operation returned by the service.
+     * @throws BadRequestException
+     *         This request to update the channel class was invalid.
+     * @throws UnprocessableEntityException
+     *         The channel configuration failed validation when attempting to update the channel class.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to update the class of this channel.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The channel you're trying to update the class on does not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on update channel class calls.
+     * @throws ConflictException
+     *         The channel class cannot be updated due to an issue with channel resources.
+     * @sample AWSMediaLive.UpdateChannelClass
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannelClass" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateChannelClassResult updateChannelClass(UpdateChannelClassRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateChannelClass(request);
+    }
+
+    @SdkInternalApi
+    final UpdateChannelClassResult executeUpdateChannelClass(UpdateChannelClassRequest updateChannelClassRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateChannelClassRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateChannelClassRequest> request = null;
+        Response<UpdateChannelClassResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateChannelClassRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateChannelClassRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannelClass");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateChannelClassResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateChannelClassResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

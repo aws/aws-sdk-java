@@ -73,6 +73,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public DeleteScheduleResult deleteSchedule(DeleteScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,6 +159,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public UpdateChannelResult updateChannel(UpdateChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateChannelClassResult updateChannelClass(UpdateChannelClassRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

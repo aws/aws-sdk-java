@@ -274,6 +274,32 @@ public interface AWSMediaLive {
     DeleteReservationResult deleteReservation(DeleteReservationRequest deleteReservationRequest);
 
     /**
+     * Delete all schedule actions on a channel.
+     * 
+     * @param deleteScheduleRequest
+     *        Placeholder documentation for DeleteScheduleRequest
+     * @return Result of the DeleteSchedule operation returned by the service.
+     * @throws BadRequestException
+     *         This request to delete the schedule on this channel was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to delete the channel schedule.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The specified channel does not exist to have its schedule deleted.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on delete schedule calls.
+     * @sample AWSMediaLive.DeleteSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSchedule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteScheduleResult deleteSchedule(DeleteScheduleRequest deleteScheduleRequest);
+
+    /**
      * Removes tags for a resource
      * 
      * @param deleteTagsRequest
@@ -698,6 +724,36 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     UpdateChannelResult updateChannel(UpdateChannelRequest updateChannelRequest);
+
+    /**
+     * Changes the class of the channel.
+     * 
+     * @param updateChannelClassRequest
+     *        Channel class that the channel should be updated to.
+     * @return Result of the UpdateChannelClass operation returned by the service.
+     * @throws BadRequestException
+     *         This request to update the channel class was invalid.
+     * @throws UnprocessableEntityException
+     *         The channel configuration failed validation when attempting to update the channel class.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to update the class of this channel.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The channel you're trying to update the class on does not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on update channel class calls.
+     * @throws ConflictException
+     *         The channel class cannot be updated due to an issue with channel resources.
+     * @sample AWSMediaLive.UpdateChannelClass
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannelClass" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateChannelClassResult updateChannelClass(UpdateChannelClassRequest updateChannelClassRequest);
 
     /**
      * Updates an input.

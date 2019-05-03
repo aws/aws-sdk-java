@@ -301,6 +301,19 @@ public class AbstractAWSCognitoIdentityProviderAsync extends AbstractAWSCognitoI
     }
 
     @Override
+    public java.util.concurrent.Future<AdminSetUserPasswordResult> adminSetUserPasswordAsync(AdminSetUserPasswordRequest request) {
+
+        return adminSetUserPasswordAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminSetUserPasswordResult> adminSetUserPasswordAsync(AdminSetUserPasswordRequest request,
+            com.amazonaws.handlers.AsyncHandler<AdminSetUserPasswordRequest, AdminSetUserPasswordResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AdminSetUserSettingsResult> adminSetUserSettingsAsync(AdminSetUserSettingsRequest request) {
 
         return adminSetUserSettingsAsync(request, null);

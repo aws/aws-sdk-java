@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Acceleration configuration for the job.
+ * Enable Acceleration (AccelerationMode) on any job that you want processed with accelerated transcoding.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AccelerationMode {
