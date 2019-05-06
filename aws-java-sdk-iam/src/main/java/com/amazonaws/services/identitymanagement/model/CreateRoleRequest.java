@@ -47,19 +47,19 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
-     * </p>
-     * <p>
-     * Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
-     * "prodrole".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      */
     private String roleName;
     /**
      * <p>
      * The trust relationship policy document that grants an entity permission to assume the role.
+     * </p>
+     * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -238,25 +238,15 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
-     * </p>
-     * <p>
-     * Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
-     * "prodrole".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @param roleName
      *        The name of the role to create.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-
-     *        </p>
-     *        <p>
-     *        Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
-     *        "prodrole".
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
 
     public void setRoleName(String roleName) {
@@ -268,24 +258,14 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
-     * </p>
-     * <p>
-     * Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
-     * "prodrole".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @return The name of the role to create.</p>
      *         <p>
-     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *         include any of the following characters: _+=,.@-
-     *         </p>
-     *         <p>
-     *         Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
-     *         "prodrole".
+     *         IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *         case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
 
     public String getRoleName() {
@@ -297,25 +277,15 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-
-     * </p>
-     * <p>
-     * Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
-     * "prodrole".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @param roleName
      *        The name of the role to create.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-
-     *        </p>
-     *        <p>
-     *        Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
-     *        "prodrole".
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,6 +297,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The trust relationship policy document that grants an entity permission to assume the role.
+     * </p>
+     * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -352,6 +327,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
+     *        <p>
+     *        You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
+     *        YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
+     *        to JSON format before submitting it to IAM.
+     *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *        string of characters consisting of the following:
@@ -384,6 +364,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -406,6 +391,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * 
      * @return The trust relationship policy document that grants an entity permission to assume the role.</p>
+     *         <p>
+     *         You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
+     *         YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
+     *         to JSON format before submitting it to IAM.
+     *         </p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *         string of characters consisting of the following:
@@ -438,6 +428,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -461,6 +456,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
+     *        <p>
+     *        You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
+     *        YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
+     *        to JSON format before submitting it to IAM.
+     *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *        string of characters consisting of the following:

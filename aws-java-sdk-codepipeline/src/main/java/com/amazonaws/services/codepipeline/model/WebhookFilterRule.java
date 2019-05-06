@@ -30,20 +30,22 @@ public class WebhookFilterRule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A JsonPath expression that will be applied to the body/payload of the webhook. The value selected by JsonPath
-     * expression must match the value specified in the matchEquals field, otherwise the request will be ignored. More
-     * information on JsonPath expressions can be found here: https://github.com/json-path/JsonPath.
+     * A JsonPath expression that will be applied to the body/payload of the webhook. The value selected by the JsonPath
+     * expression must match the value specified in the <code>MatchEquals</code> field, otherwise the request will be
+     * ignored. For more information about JsonPath expressions, see <a
+     * href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a> in GitHub.
      * </p>
      */
     private String jsonPath;
     /**
      * <p>
-     * The value selected by the JsonPath expression must match what is supplied in the MatchEquals field, otherwise the
-     * request will be ignored. Properties from the target action configuration can be included as placeholders in this
-     * value by surrounding the action configuration key with curly braces. For example, if the value supplied here is
-     * "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of
-     * "master", the MatchEquals value will be evaluated as "refs/heads/master". A list of action configuration
-     * properties for built-in action types can be found here: <a href=
+     * The value selected by the <code>JsonPath</code> expression must match what is supplied in the
+     * <code>MatchEquals</code> field, otherwise the request will be ignored. Properties from the target action
+     * configuration can be included as placeholders in this value by surrounding the action configuration key with
+     * curly braces. For example, if the value supplied here is "refs/heads/{Branch}" and the target action has an
+     * action configuration property called "Branch" with a value of "master", the <code>MatchEquals</code> value will
+     * be evaluated as "refs/heads/master". For a list of action configuration properties for built-in action types, see
+     * <a href=
      * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
      * >Pipeline Structure Reference Action Requirements</a>.
      * </p>
@@ -52,16 +54,17 @@ public class WebhookFilterRule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A JsonPath expression that will be applied to the body/payload of the webhook. The value selected by JsonPath
-     * expression must match the value specified in the matchEquals field, otherwise the request will be ignored. More
-     * information on JsonPath expressions can be found here: https://github.com/json-path/JsonPath.
+     * A JsonPath expression that will be applied to the body/payload of the webhook. The value selected by the JsonPath
+     * expression must match the value specified in the <code>MatchEquals</code> field, otherwise the request will be
+     * ignored. For more information about JsonPath expressions, see <a
+     * href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a> in GitHub.
      * </p>
      * 
      * @param jsonPath
-     *        A JsonPath expression that will be applied to the body/payload of the webhook. The value selected by
-     *        JsonPath expression must match the value specified in the matchEquals field, otherwise the request will be
-     *        ignored. More information on JsonPath expressions can be found here:
-     *        https://github.com/json-path/JsonPath.
+     *        A JsonPath expression that will be applied to the body/payload of the webhook. The value selected by the
+     *        JsonPath expression must match the value specified in the <code>MatchEquals</code> field, otherwise the
+     *        request will be ignored. For more information about JsonPath expressions, see <a
+     *        href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a> in GitHub.
      */
 
     public void setJsonPath(String jsonPath) {
@@ -70,15 +73,16 @@ public class WebhookFilterRule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A JsonPath expression that will be applied to the body/payload of the webhook. The value selected by JsonPath
-     * expression must match the value specified in the matchEquals field, otherwise the request will be ignored. More
-     * information on JsonPath expressions can be found here: https://github.com/json-path/JsonPath.
+     * A JsonPath expression that will be applied to the body/payload of the webhook. The value selected by the JsonPath
+     * expression must match the value specified in the <code>MatchEquals</code> field, otherwise the request will be
+     * ignored. For more information about JsonPath expressions, see <a
+     * href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a> in GitHub.
      * </p>
      * 
-     * @return A JsonPath expression that will be applied to the body/payload of the webhook. The value selected by
-     *         JsonPath expression must match the value specified in the matchEquals field, otherwise the request will
-     *         be ignored. More information on JsonPath expressions can be found here:
-     *         https://github.com/json-path/JsonPath.
+     * @return A JsonPath expression that will be applied to the body/payload of the webhook. The value selected by the
+     *         JsonPath expression must match the value specified in the <code>MatchEquals</code> field, otherwise the
+     *         request will be ignored. For more information about JsonPath expressions, see <a
+     *         href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a> in GitHub.
      */
 
     public String getJsonPath() {
@@ -87,16 +91,17 @@ public class WebhookFilterRule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A JsonPath expression that will be applied to the body/payload of the webhook. The value selected by JsonPath
-     * expression must match the value specified in the matchEquals field, otherwise the request will be ignored. More
-     * information on JsonPath expressions can be found here: https://github.com/json-path/JsonPath.
+     * A JsonPath expression that will be applied to the body/payload of the webhook. The value selected by the JsonPath
+     * expression must match the value specified in the <code>MatchEquals</code> field, otherwise the request will be
+     * ignored. For more information about JsonPath expressions, see <a
+     * href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a> in GitHub.
      * </p>
      * 
      * @param jsonPath
-     *        A JsonPath expression that will be applied to the body/payload of the webhook. The value selected by
-     *        JsonPath expression must match the value specified in the matchEquals field, otherwise the request will be
-     *        ignored. More information on JsonPath expressions can be found here:
-     *        https://github.com/json-path/JsonPath.
+     *        A JsonPath expression that will be applied to the body/payload of the webhook. The value selected by the
+     *        JsonPath expression must match the value specified in the <code>MatchEquals</code> field, otherwise the
+     *        request will be ignored. For more information about JsonPath expressions, see <a
+     *        href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a> in GitHub.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,24 +112,25 @@ public class WebhookFilterRule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The value selected by the JsonPath expression must match what is supplied in the MatchEquals field, otherwise the
-     * request will be ignored. Properties from the target action configuration can be included as placeholders in this
-     * value by surrounding the action configuration key with curly braces. For example, if the value supplied here is
-     * "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of
-     * "master", the MatchEquals value will be evaluated as "refs/heads/master". A list of action configuration
-     * properties for built-in action types can be found here: <a href=
+     * The value selected by the <code>JsonPath</code> expression must match what is supplied in the
+     * <code>MatchEquals</code> field, otherwise the request will be ignored. Properties from the target action
+     * configuration can be included as placeholders in this value by surrounding the action configuration key with
+     * curly braces. For example, if the value supplied here is "refs/heads/{Branch}" and the target action has an
+     * action configuration property called "Branch" with a value of "master", the <code>MatchEquals</code> value will
+     * be evaluated as "refs/heads/master". For a list of action configuration properties for built-in action types, see
+     * <a href=
      * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
      * >Pipeline Structure Reference Action Requirements</a>.
      * </p>
      * 
      * @param matchEquals
-     *        The value selected by the JsonPath expression must match what is supplied in the MatchEquals field,
-     *        otherwise the request will be ignored. Properties from the target action configuration can be included as
-     *        placeholders in this value by surrounding the action configuration key with curly braces. For example, if
-     *        the value supplied here is "refs/heads/{Branch}" and the target action has an action configuration
-     *        property called "Branch" with a value of "master", the MatchEquals value will be evaluated as
-     *        "refs/heads/master". A list of action configuration properties for built-in action types can be found
-     *        here: <a href=
+     *        The value selected by the <code>JsonPath</code> expression must match what is supplied in the
+     *        <code>MatchEquals</code> field, otherwise the request will be ignored. Properties from the target action
+     *        configuration can be included as placeholders in this value by surrounding the action configuration key
+     *        with curly braces. For example, if the value supplied here is "refs/heads/{Branch}" and the target action
+     *        has an action configuration property called "Branch" with a value of "master", the
+     *        <code>MatchEquals</code> value will be evaluated as "refs/heads/master". For a list of action
+     *        configuration properties for built-in action types, see <a href=
      *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
      *        >Pipeline Structure Reference Action Requirements</a>.
      */
@@ -135,23 +141,24 @@ public class WebhookFilterRule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The value selected by the JsonPath expression must match what is supplied in the MatchEquals field, otherwise the
-     * request will be ignored. Properties from the target action configuration can be included as placeholders in this
-     * value by surrounding the action configuration key with curly braces. For example, if the value supplied here is
-     * "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of
-     * "master", the MatchEquals value will be evaluated as "refs/heads/master". A list of action configuration
-     * properties for built-in action types can be found here: <a href=
+     * The value selected by the <code>JsonPath</code> expression must match what is supplied in the
+     * <code>MatchEquals</code> field, otherwise the request will be ignored. Properties from the target action
+     * configuration can be included as placeholders in this value by surrounding the action configuration key with
+     * curly braces. For example, if the value supplied here is "refs/heads/{Branch}" and the target action has an
+     * action configuration property called "Branch" with a value of "master", the <code>MatchEquals</code> value will
+     * be evaluated as "refs/heads/master". For a list of action configuration properties for built-in action types, see
+     * <a href=
      * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
      * >Pipeline Structure Reference Action Requirements</a>.
      * </p>
      * 
-     * @return The value selected by the JsonPath expression must match what is supplied in the MatchEquals field,
-     *         otherwise the request will be ignored. Properties from the target action configuration can be included as
-     *         placeholders in this value by surrounding the action configuration key with curly braces. For example, if
-     *         the value supplied here is "refs/heads/{Branch}" and the target action has an action configuration
-     *         property called "Branch" with a value of "master", the MatchEquals value will be evaluated as
-     *         "refs/heads/master". A list of action configuration properties for built-in action types can be found
-     *         here: <a href=
+     * @return The value selected by the <code>JsonPath</code> expression must match what is supplied in the
+     *         <code>MatchEquals</code> field, otherwise the request will be ignored. Properties from the target action
+     *         configuration can be included as placeholders in this value by surrounding the action configuration key
+     *         with curly braces. For example, if the value supplied here is "refs/heads/{Branch}" and the target action
+     *         has an action configuration property called "Branch" with a value of "master", the
+     *         <code>MatchEquals</code> value will be evaluated as "refs/heads/master". For a list of action
+     *         configuration properties for built-in action types, see <a href=
      *         "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
      *         >Pipeline Structure Reference Action Requirements</a>.
      */
@@ -162,24 +169,25 @@ public class WebhookFilterRule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The value selected by the JsonPath expression must match what is supplied in the MatchEquals field, otherwise the
-     * request will be ignored. Properties from the target action configuration can be included as placeholders in this
-     * value by surrounding the action configuration key with curly braces. For example, if the value supplied here is
-     * "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of
-     * "master", the MatchEquals value will be evaluated as "refs/heads/master". A list of action configuration
-     * properties for built-in action types can be found here: <a href=
+     * The value selected by the <code>JsonPath</code> expression must match what is supplied in the
+     * <code>MatchEquals</code> field, otherwise the request will be ignored. Properties from the target action
+     * configuration can be included as placeholders in this value by surrounding the action configuration key with
+     * curly braces. For example, if the value supplied here is "refs/heads/{Branch}" and the target action has an
+     * action configuration property called "Branch" with a value of "master", the <code>MatchEquals</code> value will
+     * be evaluated as "refs/heads/master". For a list of action configuration properties for built-in action types, see
+     * <a href=
      * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
      * >Pipeline Structure Reference Action Requirements</a>.
      * </p>
      * 
      * @param matchEquals
-     *        The value selected by the JsonPath expression must match what is supplied in the MatchEquals field,
-     *        otherwise the request will be ignored. Properties from the target action configuration can be included as
-     *        placeholders in this value by surrounding the action configuration key with curly braces. For example, if
-     *        the value supplied here is "refs/heads/{Branch}" and the target action has an action configuration
-     *        property called "Branch" with a value of "master", the MatchEquals value will be evaluated as
-     *        "refs/heads/master". A list of action configuration properties for built-in action types can be found
-     *        here: <a href=
+     *        The value selected by the <code>JsonPath</code> expression must match what is supplied in the
+     *        <code>MatchEquals</code> field, otherwise the request will be ignored. Properties from the target action
+     *        configuration can be included as placeholders in this value by surrounding the action configuration key
+     *        with curly braces. For example, if the value supplied here is "refs/heads/{Branch}" and the target action
+     *        has an action configuration property called "Branch" with a value of "master", the
+     *        <code>MatchEquals</code> value will be evaluated as "refs/heads/master". For a list of action
+     *        configuration properties for built-in action types, see <a href=
      *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
      *        >Pipeline Structure Reference Action Requirements</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

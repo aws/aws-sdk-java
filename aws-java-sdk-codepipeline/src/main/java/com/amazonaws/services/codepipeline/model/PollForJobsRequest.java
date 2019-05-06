@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a PollForJobs action.
+ * Represents the input of a <code>PollForJobs</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs" target="_top">AWS API

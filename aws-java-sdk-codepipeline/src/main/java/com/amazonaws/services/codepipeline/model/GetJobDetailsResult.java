@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a GetJobDetails action.
+ * Represents the output of a <code>GetJobDetails</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails" target="_top">AWS API
@@ -32,7 +32,8 @@ public class GetJobDetailsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * <note>
      * <p>
-     * If AWSSessionCredentials is used, a long-running job can call GetJobDetails again to obtain new credentials.
+     * If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new
+     * credentials.
      * </p>
      * </note>
      */
@@ -44,15 +45,16 @@ public class GetJobDetailsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * <note>
      * <p>
-     * If AWSSessionCredentials is used, a long-running job can call GetJobDetails again to obtain new credentials.
+     * If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new
+     * credentials.
      * </p>
      * </note>
      * 
      * @param jobDetails
      *        The details of the job.</p> <note>
      *        <p>
-     *        If AWSSessionCredentials is used, a long-running job can call GetJobDetails again to obtain new
-     *        credentials.
+     *        If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain
+     *        new credentials.
      *        </p>
      */
 
@@ -66,14 +68,15 @@ public class GetJobDetailsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * <note>
      * <p>
-     * If AWSSessionCredentials is used, a long-running job can call GetJobDetails again to obtain new credentials.
+     * If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new
+     * credentials.
      * </p>
      * </note>
      * 
      * @return The details of the job.</p> <note>
      *         <p>
-     *         If AWSSessionCredentials is used, a long-running job can call GetJobDetails again to obtain new
-     *         credentials.
+     *         If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain
+     *         new credentials.
      *         </p>
      */
 
@@ -87,15 +90,16 @@ public class GetJobDetailsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * <note>
      * <p>
-     * If AWSSessionCredentials is used, a long-running job can call GetJobDetails again to obtain new credentials.
+     * If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new
+     * credentials.
      * </p>
      * </note>
      * 
      * @param jobDetails
      *        The details of the job.</p> <note>
      *        <p>
-     *        If AWSSessionCredentials is used, a long-running job can call GetJobDetails again to obtain new
-     *        credentials.
+     *        If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain
+     *        new credentials.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

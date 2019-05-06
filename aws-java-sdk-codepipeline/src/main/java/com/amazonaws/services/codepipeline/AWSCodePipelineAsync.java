@@ -74,6 +74,13 @@ import com.amazonaws.services.codepipeline.model.*;
  * </li>
  * <li>
  * <p>
+ * <a>ListActionExecutions</a>, which returns action-level details for past executions. The details include full stage
+ * and action-level details, including individual action duration, status, any errors which occurred during the
+ * execution, and input and output artifact location details.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>ListPipelines</a>, which gets a summary of all of the pipelines associated with your account.
  * </p>
  * </li>
@@ -351,7 +358,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param createPipelineRequest
-     *        Represents the input of a CreatePipeline action.
+     *        Represents the input of a <code>CreatePipeline</code> action.
      * @return A Java Future containing the result of the CreatePipeline operation returned by the service.
      * @sample AWSCodePipelineAsync.CreatePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline" target="_top">AWS
@@ -365,7 +372,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param createPipelineRequest
-     *        Represents the input of a CreatePipeline action.
+     *        Represents the input of a <code>CreatePipeline</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -380,8 +387,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Marks a custom action as deleted. PollForJobs for the custom action will fail after the action is marked for
-     * deletion. Only used for custom actions.
+     * Marks a custom action as deleted. <code>PollForJobs</code> for the custom action will fail after the action is
+     * marked for deletion. Only used for custom actions.
      * </p>
      * <important>
      * <p>
@@ -393,7 +400,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </important>
      * 
      * @param deleteCustomActionTypeRequest
-     *        Represents the input of a DeleteCustomActionType operation. The custom action will be marked as deleted.
+     *        Represents the input of a <code>DeleteCustomActionType</code> operation. The custom action will be marked
+     *        as deleted.
      * @return A Java Future containing the result of the DeleteCustomActionType operation returned by the service.
      * @sample AWSCodePipelineAsync.DeleteCustomActionType
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType"
@@ -403,8 +411,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Marks a custom action as deleted. PollForJobs for the custom action will fail after the action is marked for
-     * deletion. Only used for custom actions.
+     * Marks a custom action as deleted. <code>PollForJobs</code> for the custom action will fail after the action is
+     * marked for deletion. Only used for custom actions.
      * </p>
      * <important>
      * <p>
@@ -416,7 +424,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </important>
      * 
      * @param deleteCustomActionTypeRequest
-     *        Represents the input of a DeleteCustomActionType operation. The custom action will be marked as deleted.
+     *        Represents the input of a <code>DeleteCustomActionType</code> operation. The custom action will be marked
+     *        as deleted.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -435,7 +444,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param deletePipelineRequest
-     *        Represents the input of a DeletePipeline action.
+     *        Represents the input of a <code>DeletePipeline</code> action.
      * @return A Java Future containing the result of the DeletePipeline operation returned by the service.
      * @sample AWSCodePipelineAsync.DeletePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline" target="_top">AWS
@@ -449,7 +458,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param deletePipelineRequest
-     *        Represents the input of a DeletePipeline action.
+     *        Represents the input of a <code>DeletePipeline</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -542,7 +551,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param disableStageTransitionRequest
-     *        Represents the input of a DisableStageTransition action.
+     *        Represents the input of a <code>DisableStageTransition</code> action.
      * @return A Java Future containing the result of the DisableStageTransition operation returned by the service.
      * @sample AWSCodePipelineAsync.DisableStageTransition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DisableStageTransition"
@@ -556,7 +565,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param disableStageTransitionRequest
-     *        Represents the input of a DisableStageTransition action.
+     *        Represents the input of a <code>DisableStageTransition</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -575,7 +584,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param enableStageTransitionRequest
-     *        Represents the input of an EnableStageTransition action.
+     *        Represents the input of an <code>EnableStageTransition</code> action.
      * @return A Java Future containing the result of the EnableStageTransition operation returned by the service.
      * @sample AWSCodePipelineAsync.EnableStageTransition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EnableStageTransition"
@@ -589,7 +598,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param enableStageTransitionRequest
-     *        Represents the input of an EnableStageTransition action.
+     *        Represents the input of an <code>EnableStageTransition</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -615,7 +624,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </important>
      * 
      * @param getJobDetailsRequest
-     *        Represents the input of a GetJobDetails action.
+     *        Represents the input of a <code>GetJobDetails</code> action.
      * @return A Java Future containing the result of the GetJobDetails operation returned by the service.
      * @sample AWSCodePipelineAsync.GetJobDetails
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails" target="_top">AWS API
@@ -636,7 +645,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </important>
      * 
      * @param getJobDetailsRequest
-     *        Represents the input of a GetJobDetails action.
+     *        Represents the input of a <code>GetJobDetails</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -657,7 +666,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param getPipelineRequest
-     *        Represents the input of a GetPipeline action.
+     *        Represents the input of a <code>GetPipeline</code> action.
      * @return A Java Future containing the result of the GetPipeline operation returned by the service.
      * @sample AWSCodePipelineAsync.GetPipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline" target="_top">AWS API
@@ -673,7 +682,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param getPipelineRequest
-     *        Represents the input of a GetPipeline action.
+     *        Represents the input of a <code>GetPipeline</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -693,7 +702,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param getPipelineExecutionRequest
-     *        Represents the input of a GetPipelineExecution action.
+     *        Represents the input of a <code>GetPipelineExecution</code> action.
      * @return A Java Future containing the result of the GetPipelineExecution operation returned by the service.
      * @sample AWSCodePipelineAsync.GetPipelineExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineExecution"
@@ -708,7 +717,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param getPipelineExecutionRequest
-     *        Represents the input of a GetPipelineExecution action.
+     *        Represents the input of a <code>GetPipelineExecution</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -727,13 +736,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * <note>
      * <p>
-     * Values returned in the revisionId and revisionUrl fields indicate the source revision information, such as the
-     * commit ID, for the current state.
+     * Values returned in the <code>revisionId</code> and <code>revisionUrl</code> fields indicate the source revision
+     * information, such as the commit ID, for the current state.
      * </p>
      * </note>
      * 
      * @param getPipelineStateRequest
-     *        Represents the input of a GetPipelineState action.
+     *        Represents the input of a <code>GetPipelineState</code> action.
      * @return A Java Future containing the result of the GetPipelineState operation returned by the service.
      * @sample AWSCodePipelineAsync.GetPipelineState
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState" target="_top">AWS
@@ -747,13 +756,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * <note>
      * <p>
-     * Values returned in the revisionId and revisionUrl fields indicate the source revision information, such as the
-     * commit ID, for the current state.
+     * Values returned in the <code>revisionId</code> and <code>revisionUrl</code> fields indicate the source revision
+     * information, such as the commit ID, for the current state.
      * </p>
      * </note>
      * 
      * @param getPipelineStateRequest
-     *        Represents the input of a GetPipelineState action.
+     *        Represents the input of a <code>GetPipelineState</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -779,7 +788,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </important>
      * 
      * @param getThirdPartyJobDetailsRequest
-     *        Represents the input of a GetThirdPartyJobDetails action.
+     *        Represents the input of a <code>GetThirdPartyJobDetails</code> action.
      * @return A Java Future containing the result of the GetThirdPartyJobDetails operation returned by the service.
      * @sample AWSCodePipelineAsync.GetThirdPartyJobDetails
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails"
@@ -800,7 +809,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </important>
      * 
      * @param getThirdPartyJobDetailsRequest
-     *        Represents the input of a GetThirdPartyJobDetails action.
+     *        Represents the input of a <code>GetThirdPartyJobDetails</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -850,7 +859,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param listActionTypesRequest
-     *        Represents the input of a ListActionTypes action.
+     *        Represents the input of a <code>ListActionTypes</code> action.
      * @return A Java Future containing the result of the ListActionTypes operation returned by the service.
      * @sample AWSCodePipelineAsync.ListActionTypes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes" target="_top">AWS
@@ -864,7 +873,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param listActionTypesRequest
-     *        Represents the input of a ListActionTypes action.
+     *        Represents the input of a <code>ListActionTypes</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -883,7 +892,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param listPipelineExecutionsRequest
-     *        Represents the input of a ListPipelineExecutions action.
+     *        Represents the input of a <code>ListPipelineExecutions</code> action.
      * @return A Java Future containing the result of the ListPipelineExecutions operation returned by the service.
      * @sample AWSCodePipelineAsync.ListPipelineExecutions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions"
@@ -897,7 +906,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param listPipelineExecutionsRequest
-     *        Represents the input of a ListPipelineExecutions action.
+     *        Represents the input of a <code>ListPipelineExecutions</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -916,7 +925,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param listPipelinesRequest
-     *        Represents the input of a ListPipelines action.
+     *        Represents the input of a <code>ListPipelines</code> action.
      * @return A Java Future containing the result of the ListPipelines operation returned by the service.
      * @sample AWSCodePipelineAsync.ListPipelines
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines" target="_top">AWS API
@@ -930,7 +939,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param listPipelinesRequest
-     *        Represents the input of a ListPipelines action.
+     *        Represents the input of a <code>ListPipelines</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -978,9 +987,9 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Returns information about any jobs for AWS CodePipeline to act upon. PollForJobs is only valid for action types
-     * with "Custom" in the owner field. If the action type contains "AWS" or "ThirdParty" in the owner field, the
-     * PollForJobs action returns an error.
+     * Returns information about any jobs for AWS CodePipeline to act upon. <code>PollForJobs</code> is only valid for
+     * action types with "Custom" in the owner field. If the action type contains "AWS" or "ThirdParty" in the owner
+     * field, the <code>PollForJobs</code> action returns an error.
      * </p>
      * <important>
      * <p>
@@ -991,7 +1000,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </important>
      * 
      * @param pollForJobsRequest
-     *        Represents the input of a PollForJobs action.
+     *        Represents the input of a <code>PollForJobs</code> action.
      * @return A Java Future containing the result of the PollForJobs operation returned by the service.
      * @sample AWSCodePipelineAsync.PollForJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs" target="_top">AWS API
@@ -1001,9 +1010,9 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Returns information about any jobs for AWS CodePipeline to act upon. PollForJobs is only valid for action types
-     * with "Custom" in the owner field. If the action type contains "AWS" or "ThirdParty" in the owner field, the
-     * PollForJobs action returns an error.
+     * Returns information about any jobs for AWS CodePipeline to act upon. <code>PollForJobs</code> is only valid for
+     * action types with "Custom" in the owner field. If the action type contains "AWS" or "ThirdParty" in the owner
+     * field, the <code>PollForJobs</code> action returns an error.
      * </p>
      * <important>
      * <p>
@@ -1014,7 +1023,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </important>
      * 
      * @param pollForJobsRequest
-     *        Represents the input of a PollForJobs action.
+     *        Represents the input of a <code>PollForJobs</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1039,7 +1048,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </important>
      * 
      * @param pollForThirdPartyJobsRequest
-     *        Represents the input of a PollForThirdPartyJobs action.
+     *        Represents the input of a <code>PollForThirdPartyJobs</code> action.
      * @return A Java Future containing the result of the PollForThirdPartyJobs operation returned by the service.
      * @sample AWSCodePipelineAsync.PollForThirdPartyJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs"
@@ -1059,7 +1068,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </important>
      * 
      * @param pollForThirdPartyJobsRequest
-     *        Represents the input of a PollForThirdPartyJobs action.
+     *        Represents the input of a <code>PollForThirdPartyJobs</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1078,7 +1087,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param putActionRevisionRequest
-     *        Represents the input of a PutActionRevision action.
+     *        Represents the input of a <code>PutActionRevision</code> action.
      * @return A Java Future containing the result of the PutActionRevision operation returned by the service.
      * @sample AWSCodePipelineAsync.PutActionRevision
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutActionRevision" target="_top">AWS
@@ -1092,7 +1101,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param putActionRevisionRequest
-     *        Represents the input of a PutActionRevision action.
+     *        Represents the input of a <code>PutActionRevision</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1112,7 +1121,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param putApprovalResultRequest
-     *        Represents the input of a PutApprovalResult action.
+     *        Represents the input of a <code>PutApprovalResult</code> action.
      * @return A Java Future containing the result of the PutApprovalResult operation returned by the service.
      * @sample AWSCodePipelineAsync.PutApprovalResult
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutApprovalResult" target="_top">AWS
@@ -1127,7 +1136,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param putApprovalResultRequest
-     *        Represents the input of a PutApprovalResult action.
+     *        Represents the input of a <code>PutApprovalResult</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1146,7 +1155,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param putJobFailureResultRequest
-     *        Represents the input of a PutJobFailureResult action.
+     *        Represents the input of a <code>PutJobFailureResult</code> action.
      * @return A Java Future containing the result of the PutJobFailureResult operation returned by the service.
      * @sample AWSCodePipelineAsync.PutJobFailureResult
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult"
@@ -1160,7 +1169,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param putJobFailureResultRequest
-     *        Represents the input of a PutJobFailureResult action.
+     *        Represents the input of a <code>PutJobFailureResult</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1179,7 +1188,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param putJobSuccessResultRequest
-     *        Represents the input of a PutJobSuccessResult action.
+     *        Represents the input of a <code>PutJobSuccessResult</code> action.
      * @return A Java Future containing the result of the PutJobSuccessResult operation returned by the service.
      * @sample AWSCodePipelineAsync.PutJobSuccessResult
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobSuccessResult"
@@ -1193,7 +1202,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param putJobSuccessResultRequest
-     *        Represents the input of a PutJobSuccessResult action.
+     *        Represents the input of a <code>PutJobSuccessResult</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1213,7 +1222,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param putThirdPartyJobFailureResultRequest
-     *        Represents the input of a PutThirdPartyJobFailureResult action.
+     *        Represents the input of a <code>PutThirdPartyJobFailureResult</code> action.
      * @return A Java Future containing the result of the PutThirdPartyJobFailureResult operation returned by the
      *         service.
      * @sample AWSCodePipelineAsync.PutThirdPartyJobFailureResult
@@ -1230,7 +1239,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param putThirdPartyJobFailureResultRequest
-     *        Represents the input of a PutThirdPartyJobFailureResult action.
+     *        Represents the input of a <code>PutThirdPartyJobFailureResult</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1252,7 +1261,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param putThirdPartyJobSuccessResultRequest
-     *        Represents the input of a PutThirdPartyJobSuccessResult action.
+     *        Represents the input of a <code>PutThirdPartyJobSuccessResult</code> action.
      * @return A Java Future containing the result of the PutThirdPartyJobSuccessResult operation returned by the
      *         service.
      * @sample AWSCodePipelineAsync.PutThirdPartyJobSuccessResult
@@ -1269,7 +1278,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param putThirdPartyJobSuccessResultRequest
-     *        Represents the input of a PutThirdPartyJobSuccessResult action.
+     *        Represents the input of a <code>PutThirdPartyJobSuccessResult</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1366,7 +1375,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param retryStageExecutionRequest
-     *        Represents the input of a RetryStageExecution action.
+     *        Represents the input of a <code>RetryStageExecution</code> action.
      * @return A Java Future containing the result of the RetryStageExecution operation returned by the service.
      * @sample AWSCodePipelineAsync.RetryStageExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution"
@@ -1380,7 +1389,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param retryStageExecutionRequest
-     *        Represents the input of a RetryStageExecution action.
+     *        Represents the input of a <code>RetryStageExecution</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1400,7 +1409,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param startPipelineExecutionRequest
-     *        Represents the input of a StartPipelineExecution action.
+     *        Represents the input of a <code>StartPipelineExecution</code> action.
      * @return A Java Future containing the result of the StartPipelineExecution operation returned by the service.
      * @sample AWSCodePipelineAsync.StartPipelineExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution"
@@ -1415,7 +1424,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param startPipelineExecutionRequest
-     *        Represents the input of a StartPipelineExecution action.
+     *        Represents the input of a <code>StartPipelineExecution</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1431,12 +1440,12 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
     /**
      * <p>
      * Updates a specified pipeline with edits or changes to its structure. Use a JSON file with the pipeline structure
-     * in conjunction with UpdatePipeline to provide the full structure of the pipeline. Updating the pipeline increases
-     * the version number of the pipeline by 1.
+     * in conjunction with <code>UpdatePipeline</code> to provide the full structure of the pipeline. Updating the
+     * pipeline increases the version number of the pipeline by 1.
      * </p>
      * 
      * @param updatePipelineRequest
-     *        Represents the input of an UpdatePipeline action.
+     *        Represents the input of an <code>UpdatePipeline</code> action.
      * @return A Java Future containing the result of the UpdatePipeline operation returned by the service.
      * @sample AWSCodePipelineAsync.UpdatePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline" target="_top">AWS
@@ -1447,12 +1456,12 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
     /**
      * <p>
      * Updates a specified pipeline with edits or changes to its structure. Use a JSON file with the pipeline structure
-     * in conjunction with UpdatePipeline to provide the full structure of the pipeline. Updating the pipeline increases
-     * the version number of the pipeline by 1.
+     * in conjunction with <code>UpdatePipeline</code> to provide the full structure of the pipeline. Updating the
+     * pipeline increases the version number of the pipeline by 1.
      * </p>
      * 
      * @param updatePipelineRequest
-     *        Represents the input of an UpdatePipeline action.
+     *        Represents the input of an <code>UpdatePipeline</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

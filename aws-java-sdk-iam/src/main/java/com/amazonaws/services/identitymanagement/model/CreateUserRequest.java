@@ -47,10 +47,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the user to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-. User names are not distinguished by case. For example, you cannot create users
-     * named both "TESTUSER" and "testuser".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      */
     private String userName;
@@ -90,10 +88,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param userName
      *        The name of the user to create.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-. User names are not distinguished by case. For example,
-     *        you cannot create users named both "TESTUSER" and "testuser".
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
     public CreateUserRequest(String userName) {
         setUserName(userName);
@@ -207,19 +203,15 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the user to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-. User names are not distinguished by case. For example, you cannot create users
-     * named both "TESTUSER" and "testuser".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @param userName
      *        The name of the user to create.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-. User names are not distinguished by case. For example,
-     *        you cannot create users named both "TESTUSER" and "testuser".
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
 
     public void setUserName(String userName) {
@@ -231,18 +223,14 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the user to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-. User names are not distinguished by case. For example, you cannot create users
-     * named both "TESTUSER" and "testuser".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @return The name of the user to create.</p>
      *         <p>
-     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *         include any of the following characters: _+=,.@-. User names are not distinguished by case. For example,
-     *         you cannot create users named both "TESTUSER" and "testuser".
+     *         IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *         case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
 
     public String getUserName() {
@@ -254,19 +242,15 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the user to create.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-. User names are not distinguished by case. For example, you cannot create users
-     * named both "TESTUSER" and "testuser".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @param userName
      *        The name of the user to create.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-. User names are not distinguished by case. For example,
-     *        you cannot create users named both "TESTUSER" and "testuser".
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

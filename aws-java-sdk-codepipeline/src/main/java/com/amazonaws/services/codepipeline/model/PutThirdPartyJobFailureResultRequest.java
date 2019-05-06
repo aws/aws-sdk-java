@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a PutThirdPartyJobFailureResult action.
+ * Represents the input of a <code>PutThirdPartyJobFailureResult</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult"
@@ -30,7 +30,7 @@ public class PutThirdPartyJobFailureResultRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
+     * The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.
      * </p>
      */
     private String jobId;
@@ -50,11 +50,11 @@ public class PutThirdPartyJobFailureResultRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
+     * The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.
      * </p>
      * 
      * @param jobId
-     *        The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
+     *        The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.
      */
 
     public void setJobId(String jobId) {
@@ -63,10 +63,10 @@ public class PutThirdPartyJobFailureResultRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
+     * The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.
      * </p>
      * 
-     * @return The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
+     * @return The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.
      */
 
     public String getJobId() {
@@ -75,11 +75,11 @@ public class PutThirdPartyJobFailureResultRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
+     * The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.
      * </p>
      * 
      * @param jobId
-     *        The ID of the job that failed. This is the same ID returned from PollForThirdPartyJobs.
+     *        The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

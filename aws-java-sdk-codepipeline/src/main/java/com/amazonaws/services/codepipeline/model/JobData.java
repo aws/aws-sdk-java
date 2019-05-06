@@ -67,7 +67,7 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
      * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
-     * store artifact for the pipeline in AWS CodePipeline.
+     * store artifacts for the pipeline in AWS CodePipeline.
      * </p>
      */
     private AWSSessionCredentials artifactCredentials;
@@ -374,13 +374,13 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
      * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
-     * store artifact for the pipeline in AWS CodePipeline.
+     * store artifacts for the pipeline in AWS CodePipeline.
      * </p>
      * 
      * @param artifactCredentials
      *        Represents an AWS session credentials object. These credentials are temporary credentials that are issued
      *        by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3
-     *        bucket used to store artifact for the pipeline in AWS CodePipeline.
+     *        bucket used to store artifacts for the pipeline in AWS CodePipeline.
      */
 
     public void setArtifactCredentials(AWSSessionCredentials artifactCredentials) {
@@ -391,12 +391,12 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
      * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
-     * store artifact for the pipeline in AWS CodePipeline.
+     * store artifacts for the pipeline in AWS CodePipeline.
      * </p>
      * 
      * @return Represents an AWS session credentials object. These credentials are temporary credentials that are issued
      *         by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3
-     *         bucket used to store artifact for the pipeline in AWS CodePipeline.
+     *         bucket used to store artifacts for the pipeline in AWS CodePipeline.
      */
 
     public AWSSessionCredentials getArtifactCredentials() {
@@ -407,13 +407,13 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
      * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
-     * store artifact for the pipeline in AWS CodePipeline.
+     * store artifacts for the pipeline in AWS CodePipeline.
      * </p>
      * 
      * @param artifactCredentials
      *        Represents an AWS session credentials object. These credentials are temporary credentials that are issued
      *        by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3
-     *        bucket used to store artifact for the pipeline in AWS CodePipeline.
+     *        bucket used to store artifacts for the pipeline in AWS CodePipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -22,12 +22,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Provides options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket in your delivery
  * channel.
  * </p>
- * <note>
- * <p>
- * If you want to create a rule that triggers evaluations for your resources when AWS Config delivers the configuration
- * snapshot, see the following:
- * </p>
- * </note>
  * <p>
  * The frequency for a rule that triggers evaluations for your resources when AWS Config delivers the configuration
  * snapshot is set by one of two values, depending on which is less frequent:

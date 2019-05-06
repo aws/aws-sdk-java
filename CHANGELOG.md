@@ -1,3 +1,20 @@
+# __1.11.547__ __2019-05-06__
+## __AWS CodePipeline__
+  - ### Features
+    - Documentation updates for codepipeline
+
+## __AWS Config__
+  - ### Features
+    - AWS Config now supports tagging on PutConfigRule, PutConfigurationAggregator and PutAggregationAuthorization APIs.
+
+## __AWS Identity and Access Management__
+  - ### Features
+    - Documentation updates for iam
+
+## __AWS Security Token Service__
+  - ### Features
+    - Documentation updates for sts
+
 # __1.11.546__ __2019-05-03__
 ## __AWS Elemental MediaConvert__
   - ### Features

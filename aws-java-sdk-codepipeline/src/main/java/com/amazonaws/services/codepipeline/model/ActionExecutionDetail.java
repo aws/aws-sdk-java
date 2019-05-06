@@ -73,7 +73,8 @@ public class ActionExecutionDetail implements Serializable, Cloneable, Structure
     private java.util.Date lastUpdateTime;
     /**
      * <p>
-     * The status of the action execution. Status categories are InProgress, Succeeded, and Failed.
+     * The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and
+     * <code>Failed</code>.
      * </p>
      */
     private String status;
@@ -372,11 +373,13 @@ public class ActionExecutionDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the action execution. Status categories are InProgress, Succeeded, and Failed.
+     * The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and
+     * <code>Failed</code>.
      * </p>
      * 
      * @param status
-     *        The status of the action execution. Status categories are InProgress, Succeeded, and Failed.
+     *        The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>,
+     *        and <code>Failed</code>.
      * @see ActionExecutionStatus
      */
 
@@ -386,10 +389,12 @@ public class ActionExecutionDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the action execution. Status categories are InProgress, Succeeded, and Failed.
+     * The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and
+     * <code>Failed</code>.
      * </p>
      * 
-     * @return The status of the action execution. Status categories are InProgress, Succeeded, and Failed.
+     * @return The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>
+     *         , and <code>Failed</code>.
      * @see ActionExecutionStatus
      */
 
@@ -399,11 +404,13 @@ public class ActionExecutionDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the action execution. Status categories are InProgress, Succeeded, and Failed.
+     * The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and
+     * <code>Failed</code>.
      * </p>
      * 
      * @param status
-     *        The status of the action execution. Status categories are InProgress, Succeeded, and Failed.
+     *        The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>,
+     *        and <code>Failed</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionExecutionStatus
      */
@@ -415,11 +422,13 @@ public class ActionExecutionDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the action execution. Status categories are InProgress, Succeeded, and Failed.
+     * The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and
+     * <code>Failed</code>.
      * </p>
      * 
      * @param status
-     *        The status of the action execution. Status categories are InProgress, Succeeded, and Failed.
+     *        The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>,
+     *        and <code>Failed</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionExecutionStatus
      */

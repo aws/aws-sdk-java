@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a RetryStageExecution action.
+ * Represents the output of a <code>RetryStageExecution</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution" target="_top">AWS

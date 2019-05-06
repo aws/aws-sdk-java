@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The details of a job sent in response to a GetThirdPartyJobDetails request.
+ * The details of a job sent in response to a <code>GetThirdPartyJobDetails</code> request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ThirdPartyJobDetails" target="_top">AWS

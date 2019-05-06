@@ -32,7 +32,7 @@ public class ListActionExecutionsResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If the amount of returned information is significantly large, an identifier is also returned and can be used in a
-     * subsequent ListActionExecutions call to return the next set of action executions in the list.
+     * subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.
      * </p>
      */
     private String nextToken;
@@ -110,12 +110,13 @@ public class ListActionExecutionsResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If the amount of returned information is significantly large, an identifier is also returned and can be used in a
-     * subsequent ListActionExecutions call to return the next set of action executions in the list.
+     * subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.
      * </p>
      * 
      * @param nextToken
      *        If the amount of returned information is significantly large, an identifier is also returned and can be
-     *        used in a subsequent ListActionExecutions call to return the next set of action executions in the list.
+     *        used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in
+     *        the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -125,11 +126,12 @@ public class ListActionExecutionsResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If the amount of returned information is significantly large, an identifier is also returned and can be used in a
-     * subsequent ListActionExecutions call to return the next set of action executions in the list.
+     * subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.
      * </p>
      * 
      * @return If the amount of returned information is significantly large, an identifier is also returned and can be
-     *         used in a subsequent ListActionExecutions call to return the next set of action executions in the list.
+     *         used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions
+     *         in the list.
      */
 
     public String getNextToken() {
@@ -139,12 +141,13 @@ public class ListActionExecutionsResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If the amount of returned information is significantly large, an identifier is also returned and can be used in a
-     * subsequent ListActionExecutions call to return the next set of action executions in the list.
+     * subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.
      * </p>
      * 
      * @param nextToken
      *        If the amount of returned information is significantly large, an identifier is also returned and can be
-     *        used in a subsequent ListActionExecutions call to return the next set of action executions in the list.
+     *        used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in
+     *        the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a GetPipelineExecution action.
+ * Represents the input of a <code>GetPipelineExecution</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineExecution" target="_top">AWS

@@ -43,8 +43,8 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying
-     * Party and Adding Claims</a> in the <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying
+     * Party and Adding Claims</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private String sAMLAssertion;
@@ -53,13 +53,13 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * An IAM policy in JSON format.
      * </p>
      * <p>
-     * The policy parameter is optional. If you pass a policy, the temporary security credentials that are returned by
-     * the operation have the permissions that are allowed by both the access policy of the role that is being assumed,
-     * <i> <b>and</b> </i> the policy that you pass. This gives you a way to further restrict the permissions for the
-     * resulting temporary security credentials. You cannot use the passed policy to grant permissions that are in
-     * excess of those allowed by the access policy of the role that is being assumed. For more information, <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     * >Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
+     * The policy parameter is optional. If you pass a policy to this operation, the resulting temporary credentials
+     * have the permissions of the assumed role <i>and</i> the policy that you pass. This gives you a way to further
+     * restrict the permissions for the resulting temporary security credentials. You cannot use the passed policy to
+     * grant permissions that are in excess of those allowed by the permissions policy of the role that is being
+     * assumed. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">
+     * Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The format for this parameter, as described by its regex pattern, is a string of characters up to 2048 characters
@@ -68,9 +68,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * The policy plain text must be 2048 bytes or shorter. However, an internal conversion compresses it into a packed
-     * binary format with a separate limit. The PackedPolicySize response element indicates by percentage how close to
-     * the upper size limit the policy is, with 100% equaling the maximum allowed size.
+     * The policy plaintext must be 2048 bytes or shorter. However, an internal conversion compresses it into a packed
+     * binary format with a separate limit. The <code>PackedPolicySize</code> response element indicates by percentage
+     * how close to the upper size limit the policy is, where 100 percent is the maximum allowed size.
      * </p>
      * </note>
      */
@@ -84,11 +84,11 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * have a value from 1 hour to 12 hours. If you specify a value higher than this setting, the operation fails. For
      * example, if you specify a session duration of 12 hours, but your administrator set the maximum session duration
      * to 6 hours, your operation fails. To learn how to view the maximum value for your role, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * By default, the value is set to 3600 seconds.
+     * By default, the value is set to <code>3600</code> seconds.
      * </p>
      * <note>
      * <p>
@@ -96,8 +96,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * request using the returned credentials. The request to the federation endpoint for a console sign-in token takes
      * a <code>SessionDuration</code> parameter that specifies the maximum length of the console session. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
+     * >Creating a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * </note>
      */
@@ -189,16 +190,16 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying
-     * Party and Adding Claims</a> in the <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying
+     * Party and Adding Claims</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param sAMLAssertion
      *        The base-64 encoded SAML authentication response provided by the IdP.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a
-     *        Relying Party and Adding Claims</a> in the <i>Using IAM</i> guide.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a
+     *        Relying Party and Adding Claims</a> in the <i>IAM User Guide</i>.
      */
 
     public void setSAMLAssertion(String sAMLAssertion) {
@@ -211,15 +212,15 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying
-     * Party and Adding Claims</a> in the <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying
+     * Party and Adding Claims</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The base-64 encoded SAML authentication response provided by the IdP.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a
-     *         Relying Party and Adding Claims</a> in the <i>Using IAM</i> guide.
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a
+     *         Relying Party and Adding Claims</a> in the <i>IAM User Guide</i>.
      */
 
     public String getSAMLAssertion() {
@@ -232,16 +233,16 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying
-     * Party and Adding Claims</a> in the <i>Using IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a Relying
+     * Party and Adding Claims</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param sAMLAssertion
      *        The base-64 encoded SAML authentication response provided by the IdP.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a
-     *        Relying Party and Adding Claims</a> in the <i>Using IAM</i> guide.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a
+     *        Relying Party and Adding Claims</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,13 +256,13 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * An IAM policy in JSON format.
      * </p>
      * <p>
-     * The policy parameter is optional. If you pass a policy, the temporary security credentials that are returned by
-     * the operation have the permissions that are allowed by both the access policy of the role that is being assumed,
-     * <i> <b>and</b> </i> the policy that you pass. This gives you a way to further restrict the permissions for the
-     * resulting temporary security credentials. You cannot use the passed policy to grant permissions that are in
-     * excess of those allowed by the access policy of the role that is being assumed. For more information, <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     * >Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
+     * The policy parameter is optional. If you pass a policy to this operation, the resulting temporary credentials
+     * have the permissions of the assumed role <i>and</i> the policy that you pass. This gives you a way to further
+     * restrict the permissions for the resulting temporary security credentials. You cannot use the passed policy to
+     * grant permissions that are in excess of those allowed by the permissions policy of the role that is being
+     * assumed. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">
+     * Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The format for this parameter, as described by its regex pattern, is a string of characters up to 2048 characters
@@ -270,23 +271,22 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * The policy plain text must be 2048 bytes or shorter. However, an internal conversion compresses it into a packed
-     * binary format with a separate limit. The PackedPolicySize response element indicates by percentage how close to
-     * the upper size limit the policy is, with 100% equaling the maximum allowed size.
+     * The policy plaintext must be 2048 bytes or shorter. However, an internal conversion compresses it into a packed
+     * binary format with a separate limit. The <code>PackedPolicySize</code> response element indicates by percentage
+     * how close to the upper size limit the policy is, where 100 percent is the maximum allowed size.
      * </p>
      * </note>
      * 
      * @param policy
      *        An IAM policy in JSON format.</p>
      *        <p>
-     *        The policy parameter is optional. If you pass a policy, the temporary security credentials that are
-     *        returned by the operation have the permissions that are allowed by both the access policy of the role that
-     *        is being assumed, <i> <b>and</b> </i> the policy that you pass. This gives you a way to further restrict
-     *        the permissions for the resulting temporary security credentials. You cannot use the passed policy to
-     *        grant permissions that are in excess of those allowed by the access policy of the role that is being
-     *        assumed. For more information, <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     *        >Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>IAM User
+     *        The policy parameter is optional. If you pass a policy to this operation, the resulting temporary
+     *        credentials have the permissions of the assumed role <i>and</i> the policy that you pass. This gives you a
+     *        way to further restrict the permissions for the resulting temporary security credentials. You cannot use
+     *        the passed policy to grant permissions that are in excess of those allowed by the permissions policy of
+     *        the role that is being assumed. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">
+     *        Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a> in the <i>IAM User
      *        Guide</i>.
      *        </p>
      *        <p>
@@ -297,9 +297,10 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <note>
      *        <p>
-     *        The policy plain text must be 2048 bytes or shorter. However, an internal conversion compresses it into a
-     *        packed binary format with a separate limit. The PackedPolicySize response element indicates by percentage
-     *        how close to the upper size limit the policy is, with 100% equaling the maximum allowed size.
+     *        The policy plaintext must be 2048 bytes or shorter. However, an internal conversion compresses it into a
+     *        packed binary format with a separate limit. The <code>PackedPolicySize</code> response element indicates
+     *        by percentage how close to the upper size limit the policy is, where 100 percent is the maximum allowed
+     *        size.
      *        </p>
      */
 
@@ -312,13 +313,13 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * An IAM policy in JSON format.
      * </p>
      * <p>
-     * The policy parameter is optional. If you pass a policy, the temporary security credentials that are returned by
-     * the operation have the permissions that are allowed by both the access policy of the role that is being assumed,
-     * <i> <b>and</b> </i> the policy that you pass. This gives you a way to further restrict the permissions for the
-     * resulting temporary security credentials. You cannot use the passed policy to grant permissions that are in
-     * excess of those allowed by the access policy of the role that is being assumed. For more information, <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     * >Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
+     * The policy parameter is optional. If you pass a policy to this operation, the resulting temporary credentials
+     * have the permissions of the assumed role <i>and</i> the policy that you pass. This gives you a way to further
+     * restrict the permissions for the resulting temporary security credentials. You cannot use the passed policy to
+     * grant permissions that are in excess of those allowed by the permissions policy of the role that is being
+     * assumed. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">
+     * Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The format for this parameter, as described by its regex pattern, is a string of characters up to 2048 characters
@@ -327,22 +328,21 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * The policy plain text must be 2048 bytes or shorter. However, an internal conversion compresses it into a packed
-     * binary format with a separate limit. The PackedPolicySize response element indicates by percentage how close to
-     * the upper size limit the policy is, with 100% equaling the maximum allowed size.
+     * The policy plaintext must be 2048 bytes or shorter. However, an internal conversion compresses it into a packed
+     * binary format with a separate limit. The <code>PackedPolicySize</code> response element indicates by percentage
+     * how close to the upper size limit the policy is, where 100 percent is the maximum allowed size.
      * </p>
      * </note>
      * 
      * @return An IAM policy in JSON format.</p>
      *         <p>
-     *         The policy parameter is optional. If you pass a policy, the temporary security credentials that are
-     *         returned by the operation have the permissions that are allowed by both the access policy of the role
-     *         that is being assumed, <i> <b>and</b> </i> the policy that you pass. This gives you a way to further
-     *         restrict the permissions for the resulting temporary security credentials. You cannot use the passed
-     *         policy to grant permissions that are in excess of those allowed by the access policy of the role that is
-     *         being assumed. For more information, <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     *         >Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>IAM User
+     *         The policy parameter is optional. If you pass a policy to this operation, the resulting temporary
+     *         credentials have the permissions of the assumed role <i>and</i> the policy that you pass. This gives you
+     *         a way to further restrict the permissions for the resulting temporary security credentials. You cannot
+     *         use the passed policy to grant permissions that are in excess of those allowed by the permissions policy
+     *         of the role that is being assumed. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">
+     *         Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a> in the <i>IAM User
      *         Guide</i>.
      *         </p>
      *         <p>
@@ -353,9 +353,10 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *         </p>
      *         <note>
      *         <p>
-     *         The policy plain text must be 2048 bytes or shorter. However, an internal conversion compresses it into a
-     *         packed binary format with a separate limit. The PackedPolicySize response element indicates by percentage
-     *         how close to the upper size limit the policy is, with 100% equaling the maximum allowed size.
+     *         The policy plaintext must be 2048 bytes or shorter. However, an internal conversion compresses it into a
+     *         packed binary format with a separate limit. The <code>PackedPolicySize</code> response element indicates
+     *         by percentage how close to the upper size limit the policy is, where 100 percent is the maximum allowed
+     *         size.
      *         </p>
      */
 
@@ -368,13 +369,13 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * An IAM policy in JSON format.
      * </p>
      * <p>
-     * The policy parameter is optional. If you pass a policy, the temporary security credentials that are returned by
-     * the operation have the permissions that are allowed by both the access policy of the role that is being assumed,
-     * <i> <b>and</b> </i> the policy that you pass. This gives you a way to further restrict the permissions for the
-     * resulting temporary security credentials. You cannot use the passed policy to grant permissions that are in
-     * excess of those allowed by the access policy of the role that is being assumed. For more information, <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     * >Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
+     * The policy parameter is optional. If you pass a policy to this operation, the resulting temporary credentials
+     * have the permissions of the assumed role <i>and</i> the policy that you pass. This gives you a way to further
+     * restrict the permissions for the resulting temporary security credentials. You cannot use the passed policy to
+     * grant permissions that are in excess of those allowed by the permissions policy of the role that is being
+     * assumed. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">
+     * Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The format for this parameter, as described by its regex pattern, is a string of characters up to 2048 characters
@@ -383,23 +384,22 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * The policy plain text must be 2048 bytes or shorter. However, an internal conversion compresses it into a packed
-     * binary format with a separate limit. The PackedPolicySize response element indicates by percentage how close to
-     * the upper size limit the policy is, with 100% equaling the maximum allowed size.
+     * The policy plaintext must be 2048 bytes or shorter. However, an internal conversion compresses it into a packed
+     * binary format with a separate limit. The <code>PackedPolicySize</code> response element indicates by percentage
+     * how close to the upper size limit the policy is, where 100 percent is the maximum allowed size.
      * </p>
      * </note>
      * 
      * @param policy
      *        An IAM policy in JSON format.</p>
      *        <p>
-     *        The policy parameter is optional. If you pass a policy, the temporary security credentials that are
-     *        returned by the operation have the permissions that are allowed by both the access policy of the role that
-     *        is being assumed, <i> <b>and</b> </i> the policy that you pass. This gives you a way to further restrict
-     *        the permissions for the resulting temporary security credentials. You cannot use the passed policy to
-     *        grant permissions that are in excess of those allowed by the access policy of the role that is being
-     *        assumed. For more information, <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     *        >Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the <i>IAM User
+     *        The policy parameter is optional. If you pass a policy to this operation, the resulting temporary
+     *        credentials have the permissions of the assumed role <i>and</i> the policy that you pass. This gives you a
+     *        way to further restrict the permissions for the resulting temporary security credentials. You cannot use
+     *        the passed policy to grant permissions that are in excess of those allowed by the permissions policy of
+     *        the role that is being assumed. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">
+     *        Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity </a> in the <i>IAM User
      *        Guide</i>.
      *        </p>
      *        <p>
@@ -410,9 +410,10 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <note>
      *        <p>
-     *        The policy plain text must be 2048 bytes or shorter. However, an internal conversion compresses it into a
-     *        packed binary format with a separate limit. The PackedPolicySize response element indicates by percentage
-     *        how close to the upper size limit the policy is, with 100% equaling the maximum allowed size.
+     *        The policy plaintext must be 2048 bytes or shorter. However, an internal conversion compresses it into a
+     *        packed binary format with a separate limit. The <code>PackedPolicySize</code> response element indicates
+     *        by percentage how close to the upper size limit the policy is, where 100 percent is the maximum allowed
+     *        size.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -431,11 +432,11 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * have a value from 1 hour to 12 hours. If you specify a value higher than this setting, the operation fails. For
      * example, if you specify a session duration of 12 hours, but your administrator set the maximum session duration
      * to 6 hours, your operation fails. To learn how to view the maximum value for your role, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * By default, the value is set to 3600 seconds.
+     * By default, the value is set to <code>3600</code> seconds.
      * </p>
      * <note>
      * <p>
@@ -443,8 +444,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * request using the returned credentials. The request to the federation endpoint for a console sign-in token takes
      * a <code>SessionDuration</code> parameter that specifies the maximum length of the console session. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
+     * >Creating a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * </note>
      * 
@@ -457,18 +459,18 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        than this setting, the operation fails. For example, if you specify a session duration of 12 hours, but
      *        your administrator set the maximum session duration to 6 hours, your operation fails. To learn how to view
      *        the maximum value for your role, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session"
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session"
      *        >View the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.</p>
      *        <p>
-     *        By default, the value is set to 3600 seconds.
+     *        By default, the value is set to <code>3600</code> seconds.
      *        </p>
      *        <note>
      *        <p>
      *        The <code>DurationSeconds</code> parameter is separate from the duration of a console session that you
      *        might request using the returned credentials. The request to the federation endpoint for a console sign-in
      *        token takes a <code>SessionDuration</code> parameter that specifies the maximum length of the console
-     *        session. For more information, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
+     *        session. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
      *        >Creating a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User
      *        Guide</i>.
      *        </p>
@@ -487,11 +489,11 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * have a value from 1 hour to 12 hours. If you specify a value higher than this setting, the operation fails. For
      * example, if you specify a session duration of 12 hours, but your administrator set the maximum session duration
      * to 6 hours, your operation fails. To learn how to view the maximum value for your role, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * By default, the value is set to 3600 seconds.
+     * By default, the value is set to <code>3600</code> seconds.
      * </p>
      * <note>
      * <p>
@@ -499,8 +501,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * request using the returned credentials. The request to the federation endpoint for a console sign-in token takes
      * a <code>SessionDuration</code> parameter that specifies the maximum length of the console session. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
+     * >Creating a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * </note>
      * 
@@ -512,10 +515,10 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *         higher than this setting, the operation fails. For example, if you specify a session duration of 12
      *         hours, but your administrator set the maximum session duration to 6 hours, your operation fails. To learn
      *         how to view the maximum value for your role, see <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session"
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session"
      *         >View the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.</p>
      *         <p>
-     *         By default, the value is set to 3600 seconds.
+     *         By default, the value is set to <code>3600</code> seconds.
      *         </p>
      *         <note>
      *         <p>
@@ -523,7 +526,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *         might request using the returned credentials. The request to the federation endpoint for a console
      *         sign-in token takes a <code>SessionDuration</code> parameter that specifies the maximum length of the
      *         console session. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
      *         >Creating a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User
      *         Guide</i>.
      *         </p>
@@ -542,11 +545,11 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * have a value from 1 hour to 12 hours. If you specify a value higher than this setting, the operation fails. For
      * example, if you specify a session duration of 12 hours, but your administrator set the maximum session duration
      * to 6 hours, your operation fails. To learn how to view the maximum value for your role, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * By default, the value is set to 3600 seconds.
+     * By default, the value is set to <code>3600</code> seconds.
      * </p>
      * <note>
      * <p>
@@ -554,8 +557,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * request using the returned credentials. The request to the federation endpoint for a console sign-in token takes
      * a <code>SessionDuration</code> parameter that specifies the maximum length of the console session. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
-     * a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
+     * >Creating a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * </note>
      * 
@@ -568,18 +572,18 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        than this setting, the operation fails. For example, if you specify a session duration of 12 hours, but
      *        your administrator set the maximum session duration to 6 hours, your operation fails. To learn how to view
      *        the maximum value for your role, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session"
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session"
      *        >View the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.</p>
      *        <p>
-     *        By default, the value is set to 3600 seconds.
+     *        By default, the value is set to <code>3600</code> seconds.
      *        </p>
      *        <note>
      *        <p>
      *        The <code>DurationSeconds</code> parameter is separate from the duration of a console session that you
      *        might request using the returned credentials. The request to the federation endpoint for a console sign-in
      *        token takes a <code>SessionDuration</code> parameter that specifies the maximum length of the console
-     *        session. For more information, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
+     *        session. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
      *        >Creating a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User
      *        Guide</i>.
      *        </p>

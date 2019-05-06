@@ -99,6 +99,13 @@ import com.amazonaws.services.codepipeline.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <a>ListActionExecutions</a>, which returns action-level details for past executions. The details include full stage
+ * and action-level details, including individual action duration, status, any errors which occurred during the
+ * execution, and input and output artifact location details.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>ListPipelines</a>, which gets a summary of all of the pipelines associated with your account.
  * </p>
  * </li>
@@ -753,7 +760,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param createPipelineRequest
-     *        Represents the input of a CreatePipeline action.
+     *        Represents the input of a <code>CreatePipeline</code> action.
      * @return Result of the CreatePipeline operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -816,8 +823,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Marks a custom action as deleted. PollForJobs for the custom action will fail after the action is marked for
-     * deletion. Only used for custom actions.
+     * Marks a custom action as deleted. <code>PollForJobs</code> for the custom action will fail after the action is
+     * marked for deletion. Only used for custom actions.
      * </p>
      * <important>
      * <p>
@@ -829,7 +836,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </important>
      * 
      * @param deleteCustomActionTypeRequest
-     *        Represents the input of a DeleteCustomActionType operation. The custom action will be marked as deleted.
+     *        Represents the input of a <code>DeleteCustomActionType</code> operation. The custom action will be marked
+     *        as deleted.
      * @return Result of the DeleteCustomActionType operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -885,7 +893,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param deletePipelineRequest
-     *        Represents the input of a DeletePipeline action.
+     *        Represents the input of a <code>DeletePipeline</code> action.
      * @return Result of the DeletePipeline operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -1057,7 +1065,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param disableStageTransitionRequest
-     *        Represents the input of a DisableStageTransition action.
+     *        Represents the input of a <code>DisableStageTransition</code> action.
      * @return Result of the DisableStageTransition operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -1117,7 +1125,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param enableStageTransitionRequest
-     *        Represents the input of an EnableStageTransition action.
+     *        Represents the input of an <code>EnableStageTransition</code> action.
      * @return Result of the EnableStageTransition operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -1184,7 +1192,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </important>
      * 
      * @param getJobDetailsRequest
-     *        Represents the input of a GetJobDetails action.
+     *        Represents the input of a <code>GetJobDetails</code> action.
      * @return Result of the GetJobDetails operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -1243,7 +1251,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param getPipelineRequest
-     *        Represents the input of a GetPipeline action.
+     *        Represents the input of a <code>GetPipeline</code> action.
      * @return Result of the GetPipeline operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -1303,7 +1311,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param getPipelineExecutionRequest
-     *        Represents the input of a GetPipelineExecution action.
+     *        Represents the input of a <code>GetPipelineExecution</code> action.
      * @return Result of the GetPipelineExecution operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -1363,13 +1371,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * <note>
      * <p>
-     * Values returned in the revisionId and revisionUrl fields indicate the source revision information, such as the
-     * commit ID, for the current state.
+     * Values returned in the <code>revisionId</code> and <code>revisionUrl</code> fields indicate the source revision
+     * information, such as the commit ID, for the current state.
      * </p>
      * </note>
      * 
      * @param getPipelineStateRequest
-     *        Represents the input of a GetPipelineState action.
+     *        Represents the input of a <code>GetPipelineState</code> action.
      * @return Result of the GetPipelineState operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -1433,7 +1441,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </important>
      * 
      * @param getThirdPartyJobDetailsRequest
-     *        Represents the input of a GetThirdPartyJobDetails action.
+     *        Represents the input of a <code>GetThirdPartyJobDetails</code> action.
      * @return Result of the GetThirdPartyJobDetails operation returned by the service.
      * @throws JobNotFoundException
      *         The specified job was specified in an invalid format or cannot be found.
@@ -1558,7 +1566,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param listActionTypesRequest
-     *        Represents the input of a ListActionTypes action.
+     *        Represents the input of a <code>ListActionTypes</code> action.
      * @return Result of the ListActionTypes operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -1616,7 +1624,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param listPipelineExecutionsRequest
-     *        Represents the input of a ListPipelineExecutions action.
+     *        Represents the input of a <code>ListPipelineExecutions</code> action.
      * @return Result of the ListPipelineExecutions operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -1677,7 +1685,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param listPipelinesRequest
-     *        Represents the input of a ListPipelines action.
+     *        Represents the input of a <code>ListPipelines</code> action.
      * @return Result of the ListPipelines operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -1789,9 +1797,9 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns information about any jobs for AWS CodePipeline to act upon. PollForJobs is only valid for action types
-     * with "Custom" in the owner field. If the action type contains "AWS" or "ThirdParty" in the owner field, the
-     * PollForJobs action returns an error.
+     * Returns information about any jobs for AWS CodePipeline to act upon. <code>PollForJobs</code> is only valid for
+     * action types with "Custom" in the owner field. If the action type contains "AWS" or "ThirdParty" in the owner
+     * field, the <code>PollForJobs</code> action returns an error.
      * </p>
      * <important>
      * <p>
@@ -1802,7 +1810,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </important>
      * 
      * @param pollForJobsRequest
-     *        Represents the input of a PollForJobs action.
+     *        Represents the input of a <code>PollForJobs</code> action.
      * @return Result of the PollForJobs operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -1865,7 +1873,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </important>
      * 
      * @param pollForThirdPartyJobsRequest
-     *        Represents the input of a PollForThirdPartyJobs action.
+     *        Represents the input of a <code>PollForThirdPartyJobs</code> action.
      * @return Result of the PollForThirdPartyJobs operation returned by the service.
      * @throws ActionTypeNotFoundException
      *         The specified action type cannot be found.
@@ -1923,7 +1931,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param putActionRevisionRequest
-     *        Represents the input of a PutActionRevision action.
+     *        Represents the input of a <code>PutActionRevision</code> action.
      * @return Result of the PutActionRevision operation returned by the service.
      * @throws PipelineNotFoundException
      *         The specified pipeline was specified in an invalid format or cannot be found.
@@ -1985,7 +1993,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param putApprovalResultRequest
-     *        Represents the input of a PutApprovalResult action.
+     *        Represents the input of a <code>PutApprovalResult</code> action.
      * @return Result of the PutApprovalResult operation returned by the service.
      * @throws InvalidApprovalTokenException
      *         The approval request already received a response or has expired.
@@ -2050,7 +2058,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param putJobFailureResultRequest
-     *        Represents the input of a PutJobFailureResult action.
+     *        Represents the input of a <code>PutJobFailureResult</code> action.
      * @return Result of the PutJobFailureResult operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -2109,7 +2117,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param putJobSuccessResultRequest
-     *        Represents the input of a PutJobSuccessResult action.
+     *        Represents the input of a <code>PutJobSuccessResult</code> action.
      * @return Result of the PutJobSuccessResult operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -2169,7 +2177,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param putThirdPartyJobFailureResultRequest
-     *        Represents the input of a PutThirdPartyJobFailureResult action.
+     *        Represents the input of a <code>PutThirdPartyJobFailureResult</code> action.
      * @return Result of the PutThirdPartyJobFailureResult operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -2233,7 +2241,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param putThirdPartyJobSuccessResultRequest
-     *        Represents the input of a PutThirdPartyJobSuccessResult action.
+     *        Represents the input of a <code>PutThirdPartyJobSuccessResult</code> action.
      * @return Result of the PutThirdPartyJobSuccessResult operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -2421,7 +2429,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param retryStageExecutionRequest
-     *        Represents the input of a RetryStageExecution action.
+     *        Represents the input of a <code>RetryStageExecution</code> action.
      * @return Result of the RetryStageExecution operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -2488,7 +2496,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param startPipelineExecutionRequest
-     *        Represents the input of a StartPipelineExecution action.
+     *        Represents the input of a <code>StartPipelineExecution</code> action.
      * @return Result of the StartPipelineExecution operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -2543,12 +2551,12 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
     /**
      * <p>
      * Updates a specified pipeline with edits or changes to its structure. Use a JSON file with the pipeline structure
-     * in conjunction with UpdatePipeline to provide the full structure of the pipeline. Updating the pipeline increases
-     * the version number of the pipeline by 1.
+     * in conjunction with <code>UpdatePipeline</code> to provide the full structure of the pipeline. Updating the
+     * pipeline increases the version number of the pipeline by 1.
      * </p>
      * 
      * @param updatePipelineRequest
-     *        Represents the input of an UpdatePipeline action.
+     *        Represents the input of an <code>UpdatePipeline</code> action.
      * @return Result of the UpdatePipeline operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.

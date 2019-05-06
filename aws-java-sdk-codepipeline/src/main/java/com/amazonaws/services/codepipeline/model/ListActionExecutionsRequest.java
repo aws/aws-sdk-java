@@ -52,8 +52,8 @@ public class ListActionExecutionsRequest extends com.amazonaws.AmazonWebServiceR
     private Integer maxResults;
     /**
      * <p>
-     * The token that was returned from the previous ListActionExecutions call, which can be used to return the next set
-     * of action executions in the list.
+     * The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return
+     * the next set of action executions in the list.
      * </p>
      */
     private String nextToken;
@@ -216,13 +216,13 @@ public class ListActionExecutionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The token that was returned from the previous ListActionExecutions call, which can be used to return the next set
-     * of action executions in the list.
+     * The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return
+     * the next set of action executions in the list.
      * </p>
      * 
      * @param nextToken
-     *        The token that was returned from the previous ListActionExecutions call, which can be used to return the
-     *        next set of action executions in the list.
+     *        The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to
+     *        return the next set of action executions in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -231,12 +231,12 @@ public class ListActionExecutionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The token that was returned from the previous ListActionExecutions call, which can be used to return the next set
-     * of action executions in the list.
+     * The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return
+     * the next set of action executions in the list.
      * </p>
      * 
-     * @return The token that was returned from the previous ListActionExecutions call, which can be used to return the
-     *         next set of action executions in the list.
+     * @return The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used
+     *         to return the next set of action executions in the list.
      */
 
     public String getNextToken() {
@@ -245,13 +245,13 @@ public class ListActionExecutionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The token that was returned from the previous ListActionExecutions call, which can be used to return the next set
-     * of action executions in the list.
+     * The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return
+     * the next set of action executions in the list.
      * </p>
      * 
      * @param nextToken
-     *        The token that was returned from the previous ListActionExecutions call, which can be used to return the
-     *        next set of action executions in the list.
+     *        The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to
+     *        return the next set of action executions in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a ListPipelineExecutions action.
+ * Represents the input of a <code>ListPipelineExecutions</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions"
@@ -44,8 +44,8 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
     private Integer maxResults;
     /**
      * <p>
-     * The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next
-     * set of pipeline executions in the list.
+     * The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to
+     * return the next set of pipeline executions in the list.
      * </p>
      */
     private String nextToken;
@@ -144,13 +144,13 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next
-     * set of pipeline executions in the list.
+     * The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to
+     * return the next set of pipeline executions in the list.
      * </p>
      * 
      * @param nextToken
-     *        The token that was returned from the previous ListPipelineExecutions call, which can be used to return the
-     *        next set of pipeline executions in the list.
+     *        The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used
+     *        to return the next set of pipeline executions in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -159,12 +159,12 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next
-     * set of pipeline executions in the list.
+     * The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to
+     * return the next set of pipeline executions in the list.
      * </p>
      * 
-     * @return The token that was returned from the previous ListPipelineExecutions call, which can be used to return
-     *         the next set of pipeline executions in the list.
+     * @return The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used
+     *         to return the next set of pipeline executions in the list.
      */
 
     public String getNextToken() {
@@ -173,13 +173,13 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next
-     * set of pipeline executions in the list.
+     * The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to
+     * return the next set of pipeline executions in the list.
      * </p>
      * 
      * @param nextToken
-     *        The token that was returned from the previous ListPipelineExecutions call, which can be used to return the
-     *        next set of pipeline executions in the list.
+     *        The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used
+     *        to return the next set of pipeline executions in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

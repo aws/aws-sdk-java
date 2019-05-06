@@ -41,6 +41,11 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The JSON policy document that you want to use as the content for this new version of the policy.
      * </p>
      * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -151,6 +156,11 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The JSON policy document that you want to use as the content for this new version of the policy.
      * </p>
      * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -174,6 +184,11 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param policyDocument
      *        The JSON policy document that you want to use as the content for this new version of the policy.</p>
+     *        <p>
+     *        You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
+     *        YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
+     *        to JSON format before submitting it to IAM.
+     *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *        string of characters consisting of the following:
@@ -206,6 +221,11 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The JSON policy document that you want to use as the content for this new version of the policy.
      * </p>
      * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -228,6 +248,11 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      * 
      * @return The JSON policy document that you want to use as the content for this new version of the policy.</p>
+     *         <p>
+     *         You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
+     *         YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
+     *         to JSON format before submitting it to IAM.
+     *         </p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *         string of characters consisting of the following:
@@ -260,6 +285,11 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The JSON policy document that you want to use as the content for this new version of the policy.
      * </p>
      * <p>
+     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
+     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.
+     * </p>
+     * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
      * characters consisting of the following:
      * </p>
@@ -283,6 +313,11 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param policyDocument
      *        The JSON policy document that you want to use as the content for this new version of the policy.</p>
+     *        <p>
+     *        You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
+     *        YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
+     *        to JSON format before submitting it to IAM.
+     *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
      *        string of characters consisting of the following:

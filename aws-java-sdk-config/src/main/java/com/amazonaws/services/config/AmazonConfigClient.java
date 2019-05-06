@@ -3344,7 +3344,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws MaxNumberOfConfigRulesExceededException
-     *         Failed to add the AWS Config rule because the account already contains the maximum number of 50 rules.
+     *         Failed to add the AWS Config rule because the account already contains the maximum number of 150 rules.
      *         Consider deleting any deactivated rules before you add new rules.
      * @throws ResourceInUseException
      *         The rule is currently being deleted or the rule is deleting your evaluation results. Try your request

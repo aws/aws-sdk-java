@@ -47,10 +47,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The name of the group to create. Do not include the path in this value.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-. The group name must be unique within the account. Group names are not
-     * distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      */
     private String groupName;
@@ -69,11 +67,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param groupName
      *        The name of the group to create. Do not include the path in this value.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-. The group name must be unique within the account. Group
-     *        names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and
-     *        "admins".
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
     public CreateGroupRequest(String groupName) {
         setGroupName(groupName);
@@ -187,20 +182,15 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The name of the group to create. Do not include the path in this value.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-. The group name must be unique within the account. Group names are not
-     * distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @param groupName
      *        The name of the group to create. Do not include the path in this value.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-. The group name must be unique within the account. Group
-     *        names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and
-     *        "admins".
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
 
     public void setGroupName(String groupName) {
@@ -212,19 +202,14 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The name of the group to create. Do not include the path in this value.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-. The group name must be unique within the account. Group names are not
-     * distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @return The name of the group to create. Do not include the path in this value.</p>
      *         <p>
-     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *         include any of the following characters: _+=,.@-. The group name must be unique within the account. Group
-     *         names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and
-     *         "admins".
+     *         IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *         case. For example, you cannot create resources named both "MyResource" and "myresource".
      */
 
     public String getGroupName() {
@@ -236,20 +221,15 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The name of the group to create. Do not include the path in this value.
      * </p>
      * <p>
-     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: _+=,.@-. The group name must be unique within the account. Group names are not
-     * distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".
+     * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
+     * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
      * 
      * @param groupName
      *        The name of the group to create. Do not include the path in this value.</p>
      *        <p>
-     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: _+=,.@-. The group name must be unique within the account. Group
-     *        names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and
-     *        "admins".
+     *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
+     *        case. For example, you cannot create resources named both "MyResource" and "myresource".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a CreatePipeline action.
+ * Represents the input of a <code>CreatePipeline</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline" target="_top">AWS API

@@ -55,13 +55,13 @@ public class PipelineContext implements Serializable, Cloneable, StructuredPojo 
     private ActionContext action;
     /**
      * <p>
-     * The pipeline execution ID provided to the job worker.
+     * The Amazon Resource Name (ARN) of the pipeline.
      * </p>
      */
     private String pipelineArn;
     /**
      * <p>
-     * The pipeline Amazon Resource Name (ARN) provided to the job worker.
+     * The execution ID of the pipeline.
      * </p>
      */
     private String pipelineExecutionId;
@@ -194,11 +194,11 @@ public class PipelineContext implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The pipeline execution ID provided to the job worker.
+     * The Amazon Resource Name (ARN) of the pipeline.
      * </p>
      * 
      * @param pipelineArn
-     *        The pipeline execution ID provided to the job worker.
+     *        The Amazon Resource Name (ARN) of the pipeline.
      */
 
     public void setPipelineArn(String pipelineArn) {
@@ -207,10 +207,10 @@ public class PipelineContext implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The pipeline execution ID provided to the job worker.
+     * The Amazon Resource Name (ARN) of the pipeline.
      * </p>
      * 
-     * @return The pipeline execution ID provided to the job worker.
+     * @return The Amazon Resource Name (ARN) of the pipeline.
      */
 
     public String getPipelineArn() {
@@ -219,11 +219,11 @@ public class PipelineContext implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The pipeline execution ID provided to the job worker.
+     * The Amazon Resource Name (ARN) of the pipeline.
      * </p>
      * 
      * @param pipelineArn
-     *        The pipeline execution ID provided to the job worker.
+     *        The Amazon Resource Name (ARN) of the pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,11 +234,11 @@ public class PipelineContext implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The pipeline Amazon Resource Name (ARN) provided to the job worker.
+     * The execution ID of the pipeline.
      * </p>
      * 
      * @param pipelineExecutionId
-     *        The pipeline Amazon Resource Name (ARN) provided to the job worker.
+     *        The execution ID of the pipeline.
      */
 
     public void setPipelineExecutionId(String pipelineExecutionId) {
@@ -247,10 +247,10 @@ public class PipelineContext implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The pipeline Amazon Resource Name (ARN) provided to the job worker.
+     * The execution ID of the pipeline.
      * </p>
      * 
-     * @return The pipeline Amazon Resource Name (ARN) provided to the job worker.
+     * @return The execution ID of the pipeline.
      */
 
     public String getPipelineExecutionId() {
@@ -259,11 +259,11 @@ public class PipelineContext implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The pipeline Amazon Resource Name (ARN) provided to the job worker.
+     * The execution ID of the pipeline.
      * </p>
      * 
      * @param pipelineExecutionId
-     *        The pipeline Amazon Resource Name (ARN) provided to the job worker.
+     *        The execution ID of the pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

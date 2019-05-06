@@ -45,7 +45,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * The number of rule evaluation results that you want returned.
      * </p>
      * <p>
-     * This parameter is required if the rule limit for your account is more than the default of 50 rules.
+     * This parameter is required if the rule limit for your account is more than the default of 150 rules.
      * </p>
      * <p>
      * For information about requesting a rule limit increase, see <a
@@ -187,7 +187,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * The number of rule evaluation results that you want returned.
      * </p>
      * <p>
-     * This parameter is required if the rule limit for your account is more than the default of 50 rules.
+     * This parameter is required if the rule limit for your account is more than the default of 150 rules.
      * </p>
      * <p>
      * For information about requesting a rule limit increase, see <a
@@ -198,7 +198,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * @param limit
      *        The number of rule evaluation results that you want returned.</p>
      *        <p>
-     *        This parameter is required if the rule limit for your account is more than the default of 50 rules.
+     *        This parameter is required if the rule limit for your account is more than the default of 150 rules.
      *        </p>
      *        <p>
      *        For information about requesting a rule limit increase, see <a
@@ -215,7 +215,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * The number of rule evaluation results that you want returned.
      * </p>
      * <p>
-     * This parameter is required if the rule limit for your account is more than the default of 50 rules.
+     * This parameter is required if the rule limit for your account is more than the default of 150 rules.
      * </p>
      * <p>
      * For information about requesting a rule limit increase, see <a
@@ -225,7 +225,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * 
      * @return The number of rule evaluation results that you want returned.</p>
      *         <p>
-     *         This parameter is required if the rule limit for your account is more than the default of 50 rules.
+     *         This parameter is required if the rule limit for your account is more than the default of 150 rules.
      *         </p>
      *         <p>
      *         For information about requesting a rule limit increase, see <a
@@ -242,7 +242,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * The number of rule evaluation results that you want returned.
      * </p>
      * <p>
-     * This parameter is required if the rule limit for your account is more than the default of 50 rules.
+     * This parameter is required if the rule limit for your account is more than the default of 150 rules.
      * </p>
      * <p>
      * For information about requesting a rule limit increase, see <a
@@ -253,7 +253,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * @param limit
      *        The number of rule evaluation results that you want returned.</p>
      *        <p>
-     *        This parameter is required if the rule limit for your account is more than the default of 50 rules.
+     *        This parameter is required if the rule limit for your account is more than the default of 150 rules.
      *        </p>
      *        <p>
      *        For information about requesting a rule limit increase, see <a

@@ -34,6 +34,8 @@ public class PutConfigurationAggregatorRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccountAggregationSources").build();
     private static final MarshallingInfo<StructuredPojo> ORGANIZATIONAGGREGATIONSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationAggregationSource").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final PutConfigurationAggregatorRequestMarshaller instance = new PutConfigurationAggregatorRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class PutConfigurationAggregatorRequestMarshaller {
             protocolMarshaller.marshall(putConfigurationAggregatorRequest.getConfigurationAggregatorName(), CONFIGURATIONAGGREGATORNAME_BINDING);
             protocolMarshaller.marshall(putConfigurationAggregatorRequest.getAccountAggregationSources(), ACCOUNTAGGREGATIONSOURCES_BINDING);
             protocolMarshaller.marshall(putConfigurationAggregatorRequest.getOrganizationAggregationSource(), ORGANIZATIONAGGREGATIONSOURCE_BINDING);
+            protocolMarshaller.marshall(putConfigurationAggregatorRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
