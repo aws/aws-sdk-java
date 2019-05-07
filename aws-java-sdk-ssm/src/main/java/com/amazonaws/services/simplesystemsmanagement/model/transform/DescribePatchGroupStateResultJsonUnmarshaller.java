@@ -76,6 +76,10 @@ public class DescribePatchGroupStateResultJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     describePatchGroupStateResult.setInstancesWithNotApplicablePatches(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("InstancesWithUnreportedNotApplicablePatches", targetDepth)) {
+                    context.nextToken();
+                    describePatchGroupStateResult.setInstancesWithUnreportedNotApplicablePatches(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

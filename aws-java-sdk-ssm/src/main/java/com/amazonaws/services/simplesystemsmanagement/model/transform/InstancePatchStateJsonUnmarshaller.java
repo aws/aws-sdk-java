@@ -92,6 +92,10 @@ public class InstancePatchStateJsonUnmarshaller implements Unmarshaller<Instance
                     context.nextToken();
                     instancePatchState.setFailedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("UnreportedNotApplicableCount", targetDepth)) {
+                    context.nextToken();
+                    instancePatchState.setUnreportedNotApplicableCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("NotApplicableCount", targetDepth)) {
                     context.nextToken();
                     instancePatchState.setNotApplicableCount(context.getUnmarshaller(Integer.class).unmarshall(context));

@@ -1320,6 +1320,68 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * When this action is called for a specified shared device, it allows authorized users to delete the device's
+     * entire previous history of voice input data and associated response data. This action can be called once every 24
+     * hours for a specific shared device.
+     * </p>
+     * 
+     * @param deleteDeviceUsageDataRequest
+     * @return Result of the DeleteDeviceUsageData operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws DeviceNotRegisteredException
+     *         The request failed because this device is no longer registered and therefore no longer managed by this
+     *         account.
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits.
+     * @sample AmazonAlexaForBusiness.DeleteDeviceUsageData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteDeviceUsageDataResult deleteDeviceUsageData(DeleteDeviceUsageDataRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDeviceUsageData(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDeviceUsageDataResult executeDeleteDeviceUsageData(DeleteDeviceUsageDataRequest deleteDeviceUsageDataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDeviceUsageDataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDeviceUsageDataRequest> request = null;
+        Response<DeleteDeviceUsageDataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDeviceUsageDataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeviceUsageDataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeviceUsageData");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDeviceUsageDataResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteDeviceUsageDataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a gateway group.
      * </p>
      * 
@@ -4072,8 +4134,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Triggers an asynchronous flow to send text, SSML, or audio announcements to multiple rooms, identified by a
-     * search, such as filter.
+     * Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms that are identified by a search
+     * or filter.
      * </p>
      * 
      * @param sendAnnouncementRequest

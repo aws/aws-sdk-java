@@ -688,6 +688,41 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * When this action is called for a specified shared device, it allows authorized users to delete the device's
+     * entire previous history of voice input data and associated response data. This action can be called once every 24
+     * hours for a specific shared device.
+     * </p>
+     * 
+     * @param deleteDeviceUsageDataRequest
+     * @return A Java Future containing the result of the DeleteDeviceUsageData operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.DeleteDeviceUsageData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDeviceUsageDataResult> deleteDeviceUsageDataAsync(DeleteDeviceUsageDataRequest deleteDeviceUsageDataRequest);
+
+    /**
+     * <p>
+     * When this action is called for a specified shared device, it allows authorized users to delete the device's
+     * entire previous history of voice input data and associated response data. This action can be called once every 24
+     * hours for a specific shared device.
+     * </p>
+     * 
+     * @param deleteDeviceUsageDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDeviceUsageData operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.DeleteDeviceUsageData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDeviceUsageDataResult> deleteDeviceUsageDataAsync(DeleteDeviceUsageDataRequest deleteDeviceUsageDataRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDeviceUsageDataRequest, DeleteDeviceUsageDataResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a gateway group.
      * </p>
      * 
@@ -2292,8 +2327,8 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Triggers an asynchronous flow to send text, SSML, or audio announcements to multiple rooms, identified by a
-     * search, such as filter.
+     * Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms that are identified by a search
+     * or filter.
      * </p>
      * 
      * @param sendAnnouncementRequest
@@ -2306,8 +2341,8 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Triggers an asynchronous flow to send text, SSML, or audio announcements to multiple rooms, identified by a
-     * search, such as filter.
+     * Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms that are identified by a search
+     * or filter.
      * </p>
      * 
      * @param sendAnnouncementRequest

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.appsync.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +40,8 @@ public class UpdateGraphqlApiRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userPoolConfig").build();
     private static final MarshallingInfo<StructuredPojo> OPENIDCONNECTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("openIDConnectConfig").build();
+    private static final MarshallingInfo<List> ADDITIONALAUTHENTICATIONPROVIDERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalAuthenticationProviders").build();
 
     private static final UpdateGraphqlApiRequestMarshaller instance = new UpdateGraphqlApiRequestMarshaller();
 
@@ -62,6 +65,7 @@ public class UpdateGraphqlApiRequestMarshaller {
             protocolMarshaller.marshall(updateGraphqlApiRequest.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
             protocolMarshaller.marshall(updateGraphqlApiRequest.getUserPoolConfig(), USERPOOLCONFIG_BINDING);
             protocolMarshaller.marshall(updateGraphqlApiRequest.getOpenIDConnectConfig(), OPENIDCONNECTCONFIG_BINDING);
+            protocolMarshaller.marshall(updateGraphqlApiRequest.getAdditionalAuthenticationProviders(), ADDITIONALAUTHENTICATIONPROVIDERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

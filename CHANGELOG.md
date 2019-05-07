@@ -1,3 +1,20 @@
+# __1.11.548__ __2019-05-07__
+## __AWS AppSync__
+  - ### Features
+    - AWS AppSync now supports the ability to add additional authentication providers to your AWS AppSync GraphQL API as well as the ability to retrieve directives configured against fields or object type definitions during schema introspection.
+
+## __AWS Storage Gateway__
+  - ### Features
+    - Add optional field AdminUserList to CreateSMBFileShare and UpdateSMBFileShare APIs.
+
+## __Alexa For Business__
+  - ### Features
+    - This release adds an API allowing authorized users to delete a shared device's history of voice recordings and associated response data.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Patch Manager adds support for Microsoft Application Patching.
+
 # __1.11.547__ __2019-05-06__
 ## __AWS CodePipeline__
   - ### Features

@@ -153,12 +153,27 @@ public class AbstractAWSAppSync implements AWSAppSync {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTypesResult listTypes(ListTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public StartSchemaCreationResult startSchemaCreation(StartSchemaCreationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

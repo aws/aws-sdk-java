@@ -736,6 +736,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     }
 
     @Override
+    public java.util.concurrent.Future<DescribePatchPropertiesResult> describePatchPropertiesAsync(DescribePatchPropertiesRequest request) {
+
+        return describePatchPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePatchPropertiesResult> describePatchPropertiesAsync(DescribePatchPropertiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribePatchPropertiesRequest, DescribePatchPropertiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSessionsResult> describeSessionsAsync(DescribeSessionsRequest request) {
 
         return describeSessionsAsync(request, null);

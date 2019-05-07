@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The content definition. It can contain only one text, SSML, or audio list object.
+ * The content definition. This can contain only one text, SSML, or audio list object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/Content" target="_top">AWS API

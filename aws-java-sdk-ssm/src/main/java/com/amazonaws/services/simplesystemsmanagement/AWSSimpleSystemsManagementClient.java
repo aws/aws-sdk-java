@@ -190,6 +190,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("InvalidResourceType").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceTypeException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedFeatureRequiredException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.UnsupportedFeatureRequiredException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AutomationDefinitionNotFoundException").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionNotFoundException.class))
                     .addErrorMetadata(
@@ -4045,6 +4048,112 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Lists the properties of available patches organized by product, product family, classification, severity, and
+     * other properties of available patches. You can use the reported properties in the filters you specify in requests
+     * for actions such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>, <a>DescribeAvailablePatches</a>, and
+     * <a>DescribePatchBaselines</a>.
+     * </p>
+     * <p>
+     * The following section lists the properties that can be used in filters for each major operating system type:
+     * </p>
+     * <dl>
+     * <dt>WINDOWS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
+     * </p>
+     * </dd>
+     * <dt>AMAZON_LINUX</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * <dt>AMAZON_LINUX_2</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * <dt>UBUNTU</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, PRIORITY
+     * </p>
+     * </dd>
+     * <dt>REDHAT_ENTERPRISE_LINUX</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * <dt>SUSE</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * <dt>CENTOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param describePatchPropertiesRequest
+     * @return Result of the DescribePatchProperties operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribePatchProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchProperties" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribePatchPropertiesResult describePatchProperties(DescribePatchPropertiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePatchProperties(request);
+    }
+
+    @SdkInternalApi
+    final DescribePatchPropertiesResult executeDescribePatchProperties(DescribePatchPropertiesRequest describePatchPropertiesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePatchPropertiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePatchPropertiesRequest> request = null;
+        Response<DescribePatchPropertiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePatchPropertiesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describePatchPropertiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePatchProperties");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePatchPropertiesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribePatchPropertiesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a list of all active sessions (both connected and disconnected) or terminated sessions from the past 30
      * days.
      * </p>
@@ -4363,6 +4472,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws UnsupportedOperatingSystemException
      *         The operating systems you specified is not supported, or the operation is not supported for the operating
      *         system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux, and Ubuntu.
+     * @throws UnsupportedFeatureRequiredException
      * @sample AWSSimpleSystemsManagement.GetDeployablePatchSnapshotForInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance"
      *      target="_top">AWS API Documentation</a>

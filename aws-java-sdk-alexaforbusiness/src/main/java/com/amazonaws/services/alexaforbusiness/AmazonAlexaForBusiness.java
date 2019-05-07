@@ -399,6 +399,28 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * When this action is called for a specified shared device, it allows authorized users to delete the device's
+     * entire previous history of voice input data and associated response data. This action can be called once every 24
+     * hours for a specific shared device.
+     * </p>
+     * 
+     * @param deleteDeviceUsageDataRequest
+     * @return Result of the DeleteDeviceUsageData operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws DeviceNotRegisteredException
+     *         The request failed because this device is no longer registered and therefore no longer managed by this
+     *         account.
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits.
+     * @sample AmazonAlexaForBusiness.DeleteDeviceUsageData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteDeviceUsageDataResult deleteDeviceUsageData(DeleteDeviceUsageDataRequest deleteDeviceUsageDataRequest);
+
+    /**
+     * <p>
      * Deletes a gateway group.
      * </p>
      * 
@@ -1161,8 +1183,8 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Triggers an asynchronous flow to send text, SSML, or audio announcements to multiple rooms, identified by a
-     * search, such as filter.
+     * Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms that are identified by a search
+     * or filter.
      * </p>
      * 
      * @param sendAnnouncementRequest

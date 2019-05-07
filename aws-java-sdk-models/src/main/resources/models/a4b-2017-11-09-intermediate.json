@@ -892,6 +892,50 @@
       },
       "syncReturnType" : "DeleteDeviceResult"
     },
+    "DeleteDeviceUsageData" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteDeviceUsageDataResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteDeviceUsageDataResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDeviceUsageDataRequest, DeleteDeviceUsageDataResult>",
+      "asyncReturnType" : "DeleteDeviceUsageDataResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>When this action is called for a specified shared device, it allows authorized users to delete the device's entire previous history of voice input data and associated response data. This action can be called once every 24 hours for a specific shared device.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "NotFoundException",
+        "documentation" : "<p>The resource is not found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "DeviceNotRegisteredException",
+        "documentation" : "<p>The request failed because this device is no longer registered and therefore no longer managed by this account.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "LimitExceededException",
+        "documentation" : "<p>You are performing an action that would put you beyond your account's limits.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteDeviceUsageDataRequest",
+        "variableName" : "deleteDeviceUsageDataRequest",
+        "variableType" : "DeleteDeviceUsageDataRequest",
+        "documentation" : "",
+        "simpleType" : "DeleteDeviceUsageDataRequest",
+        "variableSetterType" : "DeleteDeviceUsageDataRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "deleteDeviceUsageData",
+      "operationName" : "DeleteDeviceUsageData",
+      "returnType" : {
+        "returnType" : "DeleteDeviceUsageDataResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DeleteDeviceUsageDataResult"
+    },
     "DeleteGatewayGroup" : {
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteGatewayGroupResult>",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteGatewayGroupResult>",
@@ -2695,7 +2739,7 @@
       "asyncReturnType" : "SendAnnouncementResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Triggers an asynchronous flow to send text, SSML, or audio announcements to multiple rooms, identified by a search, such as filter. </p>",
+      "documentation" : "<p>Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms that are identified by a search or filter. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -6096,7 +6140,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The audio message. There is a 1 MB limit on the audio file input, and the only supported format is MP3. You must convert audio files to an Alexa-friendly format. </p> <p>You might need to use converter software to convert your MP3 files to the required codec version (MPEG version 2) and bit rate (48 kbps). One option for this is a command-line tool, FFmpeg. For more information, see <a href=\"https://www.ffmpeg.org/\">FFmpeg</a>. The following command converts the provided &lt;input-file&gt; to an MP3 file that will be played in the announcement:</p> <p> <code>ffmpeg -i &lt;input-file&gt; -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 &lt;output-file.mp3&gt;</code> </p>",
+      "documentation" : "<p>The audio message. There is a 1 MB limit on the audio file input and the only supported format is MP3. To convert your MP3 audio files to an Alexa-friendly, </p> <p>required codec version (MPEG version 2) and bit rate (48 kbps), you might use converter software. One option for this is a command-line tool, FFmpeg. For more information, see <a href=\"https://www.ffmpeg.org/\">FFmpeg</a>. The following command converts the provided &lt;input-file&gt; to an MP3 file that is played in the announcement:</p> <p> <code>ffmpeg -i &lt;input-file&gt; -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 &lt;output-file.mp3&gt;</code> </p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -6174,11 +6218,11 @@
         "c2jName" : "Location",
         "c2jShape" : "AudioLocation",
         "deprecated" : false,
-        "documentation" : "<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>",
+        "documentation" : "<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@param location The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@param location The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withLocation",
-        "getterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@return The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.*/",
+        "getterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@return The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.*/",
         "getterMethodName" : "getLocation",
         "getterModel" : {
           "returnType" : "String",
@@ -6211,7 +6255,7 @@
         "marshallingType" : "STRING",
         "name" : "Location",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@param location The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.*/",
+        "setterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@param location The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.*/",
         "setterMethodName" : "setLocation",
         "setterModel" : {
           "timestampFormat" : null,
@@ -6225,13 +6269,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@param location The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@param location The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "location",
           "variableType" : "String",
-          "documentation" : "<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>",
+          "documentation" : "<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6309,11 +6353,11 @@
           "c2jName" : "Location",
           "c2jShape" : "AudioLocation",
           "deprecated" : false,
-          "documentation" : "<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>",
+          "documentation" : "<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@param location The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@param location The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withLocation",
-          "getterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@return The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.*/",
+          "getterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@return The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.*/",
           "getterMethodName" : "getLocation",
           "getterModel" : {
             "returnType" : "String",
@@ -6346,7 +6390,7 @@
           "marshallingType" : "STRING",
           "name" : "Location",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@param location The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.*/",
+          "setterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@param location The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.*/",
           "setterMethodName" : "setLocation",
           "setterModel" : {
             "timestampFormat" : null,
@@ -6360,13 +6404,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@param location The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>\n@param location The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "location",
             "variableType" : "String",
-            "documentation" : "<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>",
+            "documentation" : "<p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters\">Safe Characters</a>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -11993,7 +12037,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The content definition. It can contain only one text, SSML, or audio list object.</p>",
+      "documentation" : "<p>The content definition. This can contain only one text, SSML, or audio list object.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -22812,6 +22856,357 @@
       },
       "wrapper" : false
     },
+    "DeleteDeviceUsageDataRequest" : {
+      "c2jName" : "DeleteDeviceUsageDataRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DeleteDeviceUsageData",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "AlexaForBusiness.DeleteDeviceUsageData",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "DeviceArn",
+        "c2jShape" : "Arn",
+        "deprecated" : false,
+        "documentation" : "<p>The ARN of the device.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The ARN of the device.</p>\n@param deviceArn The ARN of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDeviceArn",
+        "getterDocumentation" : "/**<p>The ARN of the device.</p>\n@return The ARN of the device.*/",
+        "getterMethodName" : "getDeviceArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "DeviceArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DeviceArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "DeviceArn",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The ARN of the device.</p>\n@param deviceArn The ARN of the device.*/",
+        "setterMethodName" : "setDeviceArn",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "deviceArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The ARN of the device.</p>\n@param deviceArn The ARN of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "deviceArn",
+          "variableType" : "String",
+          "documentation" : "<p>The ARN of the device.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "DeviceUsageType",
+        "c2jShape" : "DeviceUsageType",
+        "deprecated" : false,
+        "documentation" : "<p>The type of usage data to delete.</p>",
+        "enumType" : "DeviceUsageType",
+        "fluentSetterDocumentation" : "/**<p>The type of usage data to delete.</p>\n@param deviceUsageType The type of usage data to delete.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DeviceUsageType*/",
+        "fluentSetterMethodName" : "withDeviceUsageType",
+        "getterDocumentation" : "/**<p>The type of usage data to delete.</p>\n@return The type of usage data to delete.\n@see DeviceUsageType*/",
+        "getterMethodName" : "getDeviceUsageType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "DeviceUsageType",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DeviceUsageType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "DeviceUsageType",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The type of usage data to delete.</p>\n@param deviceUsageType The type of usage data to delete.\n@see DeviceUsageType*/",
+        "setterMethodName" : "setDeviceUsageType",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "deviceUsageType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The type of usage data to delete.</p>\n@param deviceUsageType The type of usage data to delete.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DeviceUsageType*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "deviceUsageType",
+          "variableType" : "String",
+          "documentation" : "<p>The type of usage data to delete.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "DeviceArn" : {
+          "c2jName" : "DeviceArn",
+          "c2jShape" : "Arn",
+          "deprecated" : false,
+          "documentation" : "<p>The ARN of the device.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The ARN of the device.</p>\n@param deviceArn The ARN of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDeviceArn",
+          "getterDocumentation" : "/**<p>The ARN of the device.</p>\n@return The ARN of the device.*/",
+          "getterMethodName" : "getDeviceArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "DeviceArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DeviceArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "DeviceArn",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The ARN of the device.</p>\n@param deviceArn The ARN of the device.*/",
+          "setterMethodName" : "setDeviceArn",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "deviceArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The ARN of the device.</p>\n@param deviceArn The ARN of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "deviceArn",
+            "variableType" : "String",
+            "documentation" : "<p>The ARN of the device.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DeviceUsageType" : {
+          "c2jName" : "DeviceUsageType",
+          "c2jShape" : "DeviceUsageType",
+          "deprecated" : false,
+          "documentation" : "<p>The type of usage data to delete.</p>",
+          "enumType" : "DeviceUsageType",
+          "fluentSetterDocumentation" : "/**<p>The type of usage data to delete.</p>\n@param deviceUsageType The type of usage data to delete.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DeviceUsageType*/",
+          "fluentSetterMethodName" : "withDeviceUsageType",
+          "getterDocumentation" : "/**<p>The type of usage data to delete.</p>\n@return The type of usage data to delete.\n@see DeviceUsageType*/",
+          "getterMethodName" : "getDeviceUsageType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "DeviceUsageType",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DeviceUsageType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "DeviceUsageType",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The type of usage data to delete.</p>\n@param deviceUsageType The type of usage data to delete.\n@see DeviceUsageType*/",
+          "setterMethodName" : "setDeviceUsageType",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "deviceUsageType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The type of usage data to delete.</p>\n@param deviceUsageType The type of usage data to delete.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DeviceUsageType*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "deviceUsageType",
+            "variableType" : "String",
+            "documentation" : "<p>The type of usage data to delete.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "DeviceArn", "DeviceUsageType" ],
+      "shapeName" : "DeleteDeviceUsageDataRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteDeviceUsageDataRequest",
+        "variableName" : "deleteDeviceUsageDataRequest",
+        "variableType" : "DeleteDeviceUsageDataRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteDeviceUsageDataRequest",
+        "variableSetterType" : "DeleteDeviceUsageDataRequest"
+      },
+      "wrapper" : false
+    },
+    "DeleteDeviceUsageDataResult" : {
+      "c2jName" : "DeleteDeviceUsageDataResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DeleteDeviceUsageDataResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteDeviceUsageDataResult",
+        "variableName" : "deleteDeviceUsageDataResult",
+        "variableType" : "DeleteDeviceUsageDataResult",
+        "documentation" : null,
+        "simpleType" : "DeleteDeviceUsageDataResult",
+        "variableSetterType" : "DeleteDeviceUsageDataResult"
+      },
+      "wrapper" : false
+    },
     "DeleteGatewayGroupRequest" : {
       "c2jName" : "DeleteGatewayGroupRequest",
       "customization" : {
@@ -28817,6 +29212,45 @@
       }, {
         "name" : "DEVICE_WAS_OFFLINE",
         "value" : "DEVICE_WAS_OFFLINE"
+      }, {
+        "name" : "CREDENTIALS_ACCESS_FAILURE",
+        "value" : "CREDENTIALS_ACCESS_FAILURE"
+      }, {
+        "name" : "TLS_VERSION_MISMATCH",
+        "value" : "TLS_VERSION_MISMATCH"
+      }, {
+        "name" : "ASSOCIATION_REJECTION",
+        "value" : "ASSOCIATION_REJECTION"
+      }, {
+        "name" : "AUTHENTICATION_FAILURE",
+        "value" : "AUTHENTICATION_FAILURE"
+      }, {
+        "name" : "DHCP_FAILURE",
+        "value" : "DHCP_FAILURE"
+      }, {
+        "name" : "INTERNET_UNAVAILABLE",
+        "value" : "INTERNET_UNAVAILABLE"
+      }, {
+        "name" : "DNS_FAILURE",
+        "value" : "DNS_FAILURE"
+      }, {
+        "name" : "UNKNOWN_FAILURE",
+        "value" : "UNKNOWN_FAILURE"
+      }, {
+        "name" : "CERTIFICATE_ISSUING_LIMIT_EXCEEDED",
+        "value" : "CERTIFICATE_ISSUING_LIMIT_EXCEEDED"
+      }, {
+        "name" : "INVALID_CERTIFICATE_AUTHORITY",
+        "value" : "INVALID_CERTIFICATE_AUTHORITY"
+      }, {
+        "name" : "NETWORK_PROFILE_NOT_FOUND",
+        "value" : "NETWORK_PROFILE_NOT_FOUND"
+      }, {
+        "name" : "INVALID_PASSWORD_STATE",
+        "value" : "INVALID_PASSWORD_STATE"
+      }, {
+        "name" : "PASSWORD_NOT_FOUND",
+        "value" : "PASSWORD_NOT_FOUND"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -29313,6 +29747,49 @@
         "documentation" : null,
         "simpleType" : "DeviceStatusInfo",
         "variableSetterType" : "DeviceStatusInfo"
+      },
+      "wrapper" : false
+    },
+    "DeviceUsageType" : {
+      "c2jName" : "DeviceUsageType",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "VOICE",
+        "value" : "VOICE"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DeviceUsageType",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeviceUsageType",
+        "variableName" : "deviceUsageType",
+        "variableType" : "DeviceUsageType",
+        "documentation" : null,
+        "simpleType" : "DeviceUsageType",
+        "variableSetterType" : "DeviceUsageType"
       },
       "wrapper" : false
     },
@@ -68974,11 +69451,11 @@
         "c2jName" : "TimeToLiveInSeconds",
         "c2jShape" : "TimeToLiveInSeconds",
         "deprecated" : false,
-        "documentation" : "<p>The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.</p>",
+        "documentation" : "<p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.</p>\n@param timeToLiveInSeconds The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>\n@param timeToLiveInSeconds The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTimeToLiveInSeconds",
-        "getterDocumentation" : "/**<p>The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.</p>\n@return The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.*/",
+        "getterDocumentation" : "/**<p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>\n@return The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.*/",
         "getterMethodName" : "getTimeToLiveInSeconds",
         "getterModel" : {
           "returnType" : "Integer",
@@ -69011,7 +69488,7 @@
         "marshallingType" : "INTEGER",
         "name" : "TimeToLiveInSeconds",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.</p>\n@param timeToLiveInSeconds The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.*/",
+        "setterDocumentation" : "/**<p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>\n@param timeToLiveInSeconds The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.*/",
         "setterMethodName" : "setTimeToLiveInSeconds",
         "setterModel" : {
           "timestampFormat" : null,
@@ -69025,13 +69502,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.</p>\n@param timeToLiveInSeconds The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>\n@param timeToLiveInSeconds The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "timeToLiveInSeconds",
           "variableType" : "Integer",
-          "documentation" : "<p>The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.</p>",
+          "documentation" : "<p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -69390,11 +69867,11 @@
           "c2jName" : "TimeToLiveInSeconds",
           "c2jShape" : "TimeToLiveInSeconds",
           "deprecated" : false,
-          "documentation" : "<p>The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.</p>",
+          "documentation" : "<p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.</p>\n@param timeToLiveInSeconds The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>\n@param timeToLiveInSeconds The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTimeToLiveInSeconds",
-          "getterDocumentation" : "/**<p>The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.</p>\n@return The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.*/",
+          "getterDocumentation" : "/**<p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>\n@return The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.*/",
           "getterMethodName" : "getTimeToLiveInSeconds",
           "getterModel" : {
             "returnType" : "Integer",
@@ -69427,7 +69904,7 @@
           "marshallingType" : "INTEGER",
           "name" : "TimeToLiveInSeconds",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.</p>\n@param timeToLiveInSeconds The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.*/",
+          "setterDocumentation" : "/**<p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>\n@param timeToLiveInSeconds The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.*/",
           "setterMethodName" : "setTimeToLiveInSeconds",
           "setterModel" : {
             "timestampFormat" : null,
@@ -69441,13 +69918,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.</p>\n@param timeToLiveInSeconds The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>\n@param timeToLiveInSeconds The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "timeToLiveInSeconds",
             "variableType" : "Integer",
-            "documentation" : "<p>The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be delivered.</p>",
+            "documentation" : "<p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },

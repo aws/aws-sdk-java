@@ -46,6 +46,8 @@ public class UpdateSMBFileShareRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequesterPays").build();
     private static final MarshallingInfo<Boolean> SMBACLENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SMBACLEnabled").build();
+    private static final MarshallingInfo<List> ADMINUSERLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AdminUserList").build();
     private static final MarshallingInfo<List> VALIDUSERLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ValidUserList").build();
     private static final MarshallingInfo<List> INVALIDUSERLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -76,6 +78,7 @@ public class UpdateSMBFileShareRequestMarshaller {
             protocolMarshaller.marshall(updateSMBFileShareRequest.getGuessMIMETypeEnabled(), GUESSMIMETYPEENABLED_BINDING);
             protocolMarshaller.marshall(updateSMBFileShareRequest.getRequesterPays(), REQUESTERPAYS_BINDING);
             protocolMarshaller.marshall(updateSMBFileShareRequest.getSMBACLEnabled(), SMBACLENABLED_BINDING);
+            protocolMarshaller.marshall(updateSMBFileShareRequest.getAdminUserList(), ADMINUSERLIST_BINDING);
             protocolMarshaller.marshall(updateSMBFileShareRequest.getValidUserList(), VALIDUSERLIST_BINDING);
             protocolMarshaller.marshall(updateSMBFileShareRequest.getInvalidUserList(), INVALIDUSERLIST_BINDING);
         } catch (Exception e) {

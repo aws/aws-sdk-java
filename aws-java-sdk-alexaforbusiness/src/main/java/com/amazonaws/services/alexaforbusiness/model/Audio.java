@@ -19,14 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The audio message. There is a 1 MB limit on the audio file input, and the only supported format is MP3. You must
- * convert audio files to an Alexa-friendly format.
+ * The audio message. There is a 1 MB limit on the audio file input and the only supported format is MP3. To convert
+ * your MP3 audio files to an Alexa-friendly,
  * </p>
  * <p>
- * You might need to use converter software to convert your MP3 files to the required codec version (MPEG version 2) and
- * bit rate (48 kbps). One option for this is a command-line tool, FFmpeg. For more information, see <a
- * href="https://www.ffmpeg.org/">FFmpeg</a>. The following command converts the provided &lt;input-file&gt; to an MP3
- * file that will be played in the announcement:
+ * required codec version (MPEG version 2) and bit rate (48 kbps), you might use converter software. One option for this
+ * is a command-line tool, FFmpeg. For more information, see <a href="https://www.ffmpeg.org/">FFmpeg</a>. The following
+ * command converts the provided &lt;input-file&gt; to an MP3 file that is played in the announcement:
  * </p>
  * <p>
  * <code>ffmpeg -i &lt;input-file&gt; -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 &lt;output-file.mp3&gt;</code>
@@ -46,7 +45,7 @@ public class Audio implements Serializable, Cloneable, StructuredPojo {
     private String locale;
     /**
      * <p>
-     * The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character
+     * The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters
      * are valid. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.
      * </p>
@@ -114,14 +113,14 @@ public class Audio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character
+     * The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters
      * are valid. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.
      * </p>
      * 
      * @param location
      *        The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe
-     *        character are valid. For more information, see <a
+     *        characters are valid. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe
      *        Characters</a>.
      */
@@ -132,13 +131,13 @@ public class Audio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character
+     * The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters
      * are valid. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.
      * </p>
      * 
      * @return The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe
-     *         character are valid. For more information, see <a
+     *         characters are valid. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe
      *         Characters</a>.
      */
@@ -149,14 +148,14 @@ public class Audio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe character
+     * The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters
      * are valid. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.
      * </p>
      * 
      * @param location
      *        The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe
-     *        character are valid. For more information, see <a
+     *        characters are valid. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe
      *        Characters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

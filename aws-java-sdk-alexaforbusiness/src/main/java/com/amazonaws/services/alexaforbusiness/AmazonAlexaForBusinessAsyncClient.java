@@ -731,6 +731,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDeviceUsageDataResult> deleteDeviceUsageDataAsync(DeleteDeviceUsageDataRequest request) {
+
+        return deleteDeviceUsageDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeviceUsageDataResult> deleteDeviceUsageDataAsync(final DeleteDeviceUsageDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDeviceUsageDataRequest, DeleteDeviceUsageDataResult> asyncHandler) {
+        final DeleteDeviceUsageDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDeviceUsageDataResult>() {
+            @Override
+            public DeleteDeviceUsageDataResult call() throws Exception {
+                DeleteDeviceUsageDataResult result = null;
+
+                try {
+                    result = executeDeleteDeviceUsageData(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteGatewayGroupResult> deleteGatewayGroupAsync(DeleteGatewayGroupRequest request) {
 
         return deleteGatewayGroupAsync(request, null);

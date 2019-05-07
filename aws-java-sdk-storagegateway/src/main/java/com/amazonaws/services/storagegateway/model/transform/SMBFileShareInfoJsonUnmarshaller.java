@@ -108,6 +108,10 @@ public class SMBFileShareInfoJsonUnmarshaller implements Unmarshaller<SMBFileSha
                     context.nextToken();
                     sMBFileShareInfo.setSMBACLEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("AdminUserList", targetDepth)) {
+                    context.nextToken();
+                    sMBFileShareInfo.setAdminUserList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("ValidUserList", targetDepth)) {
                     context.nextToken();
                     sMBFileShareInfo.setValidUserList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));

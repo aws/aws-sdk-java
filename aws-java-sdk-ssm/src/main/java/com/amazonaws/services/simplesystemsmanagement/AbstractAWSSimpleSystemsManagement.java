@@ -299,6 +299,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DescribePatchPropertiesResult describePatchProperties(DescribePatchPropertiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSessionsResult describeSessions(DescribeSessionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

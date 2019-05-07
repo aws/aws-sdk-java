@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PatchFilterKey {
 
+    PATCH_SET("PATCH_SET"),
     PRODUCT("PRODUCT"),
+    PRODUCT_FAMILY("PRODUCT_FAMILY"),
     CLASSIFICATION("CLASSIFICATION"),
     MSRC_SEVERITY("MSRC_SEVERITY"),
     PATCH_ID("PATCH_ID"),

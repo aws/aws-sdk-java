@@ -119,6 +119,14 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private Boolean sMBACLEnabled;
     /**
      * <p>
+     * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
+     * be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> adminUserList;
+    /**
+     * <p>
      * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
      * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
@@ -841,6 +849,95 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
+     * be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
+     * </p>
+     * 
+     * @return A list of users or groups in the Active Directory that have administrator rights to the file share. A
+     *         group must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
+     *         Authentication is set to <code>ActiveDirectory</code>.
+     */
+
+    public java.util.List<String> getAdminUserList() {
+        if (adminUserList == null) {
+            adminUserList = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return adminUserList;
+    }
+
+    /**
+     * <p>
+     * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
+     * be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
+     * </p>
+     * 
+     * @param adminUserList
+     *        A list of users or groups in the Active Directory that have administrator rights to the file share. A
+     *        group must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
+     */
+
+    public void setAdminUserList(java.util.Collection<String> adminUserList) {
+        if (adminUserList == null) {
+            this.adminUserList = null;
+            return;
+        }
+
+        this.adminUserList = new com.amazonaws.internal.SdkInternalList<String>(adminUserList);
+    }
+
+    /**
+     * <p>
+     * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
+     * be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdminUserList(java.util.Collection)} or {@link #withAdminUserList(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param adminUserList
+     *        A list of users or groups in the Active Directory that have administrator rights to the file share. A
+     *        group must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSMBFileShareRequest withAdminUserList(String... adminUserList) {
+        if (this.adminUserList == null) {
+            setAdminUserList(new com.amazonaws.internal.SdkInternalList<String>(adminUserList.length));
+        }
+        for (String ele : adminUserList) {
+            this.adminUserList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
+     * be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.
+     * </p>
+     * 
+     * @param adminUserList
+     *        A list of users or groups in the Active Directory that have administrator rights to the file share. A
+     *        group must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSMBFileShareRequest withAdminUserList(java.util.Collection<String> adminUserList) {
+        setAdminUserList(adminUserList);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
      * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
@@ -1239,6 +1336,8 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("RequesterPays: ").append(getRequesterPays()).append(",");
         if (getSMBACLEnabled() != null)
             sb.append("SMBACLEnabled: ").append(getSMBACLEnabled()).append(",");
+        if (getAdminUserList() != null)
+            sb.append("AdminUserList: ").append(getAdminUserList()).append(",");
         if (getValidUserList() != null)
             sb.append("ValidUserList: ").append(getValidUserList()).append(",");
         if (getInvalidUserList() != null)
@@ -1309,6 +1408,10 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getSMBACLEnabled() != null && other.getSMBACLEnabled().equals(this.getSMBACLEnabled()) == false)
             return false;
+        if (other.getAdminUserList() == null ^ this.getAdminUserList() == null)
+            return false;
+        if (other.getAdminUserList() != null && other.getAdminUserList().equals(this.getAdminUserList()) == false)
+            return false;
         if (other.getValidUserList() == null ^ this.getValidUserList() == null)
             return false;
         if (other.getValidUserList() != null && other.getValidUserList().equals(this.getValidUserList()) == false)
@@ -1345,6 +1448,7 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getGuessMIMETypeEnabled() == null) ? 0 : getGuessMIMETypeEnabled().hashCode());
         hashCode = prime * hashCode + ((getRequesterPays() == null) ? 0 : getRequesterPays().hashCode());
         hashCode = prime * hashCode + ((getSMBACLEnabled() == null) ? 0 : getSMBACLEnabled().hashCode());
+        hashCode = prime * hashCode + ((getAdminUserList() == null) ? 0 : getAdminUserList().hashCode());
         hashCode = prime * hashCode + ((getValidUserList() == null) ? 0 : getValidUserList().hashCode());
         hashCode = prime * hashCode + ((getInvalidUserList() == null) ? 0 : getInvalidUserList().hashCode());
         hashCode = prime * hashCode + ((getAuthentication() == null) ? 0 : getAuthentication().hashCode());

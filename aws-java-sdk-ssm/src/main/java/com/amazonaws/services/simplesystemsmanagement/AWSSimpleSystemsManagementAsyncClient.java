@@ -2015,6 +2015,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<DescribePatchPropertiesResult> describePatchPropertiesAsync(DescribePatchPropertiesRequest request) {
+
+        return describePatchPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePatchPropertiesResult> describePatchPropertiesAsync(final DescribePatchPropertiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePatchPropertiesRequest, DescribePatchPropertiesResult> asyncHandler) {
+        final DescribePatchPropertiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePatchPropertiesResult>() {
+            @Override
+            public DescribePatchPropertiesResult call() throws Exception {
+                DescribePatchPropertiesResult result = null;
+
+                try {
+                    result = executeDescribePatchProperties(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSessionsResult> describeSessionsAsync(DescribeSessionsRequest request) {
 
         return describeSessionsAsync(request, null);

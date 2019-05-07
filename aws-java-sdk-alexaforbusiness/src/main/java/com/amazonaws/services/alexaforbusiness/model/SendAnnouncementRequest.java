@@ -41,8 +41,8 @@ public class SendAnnouncementRequest extends com.amazonaws.AmazonWebServiceReque
     private Content content;
     /**
      * <p>
-     * The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be
-     * delivered.
+     * The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
+     * announcement is not delivered.
      * </p>
      */
     private Integer timeToLiveInSeconds;
@@ -179,13 +179,13 @@ public class SendAnnouncementRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be
-     * delivered.
+     * The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
+     * announcement is not delivered.
      * </p>
      * 
      * @param timeToLiveInSeconds
-     *        The time to live for an announcement. If delivery doesn't occur within this time, the announcement will
-     *        not be delivered.
+     *        The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
+     *        announcement is not delivered.
      */
 
     public void setTimeToLiveInSeconds(Integer timeToLiveInSeconds) {
@@ -194,12 +194,12 @@ public class SendAnnouncementRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be
-     * delivered.
+     * The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
+     * announcement is not delivered.
      * </p>
      * 
-     * @return The time to live for an announcement. If delivery doesn't occur within this time, the announcement will
-     *         not be delivered.
+     * @return The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
+     *         announcement is not delivered.
      */
 
     public Integer getTimeToLiveInSeconds() {
@@ -208,13 +208,13 @@ public class SendAnnouncementRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The time to live for an announcement. If delivery doesn't occur within this time, the announcement will not be
-     * delivered.
+     * The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
+     * announcement is not delivered.
      * </p>
      * 
      * @param timeToLiveInSeconds
-     *        The time to live for an announcement. If delivery doesn't occur within this time, the announcement will
-     *        not be delivered.
+     *        The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
+     *        announcement is not delivered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

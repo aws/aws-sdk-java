@@ -290,6 +290,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDeviceUsageDataResult> deleteDeviceUsageDataAsync(DeleteDeviceUsageDataRequest request) {
+
+        return deleteDeviceUsageDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeviceUsageDataResult> deleteDeviceUsageDataAsync(DeleteDeviceUsageDataRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDeviceUsageDataRequest, DeleteDeviceUsageDataResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteGatewayGroupResult> deleteGatewayGroupAsync(DeleteGatewayGroupRequest request) {
 
         return deleteGatewayGroupAsync(request, null);

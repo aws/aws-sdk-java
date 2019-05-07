@@ -49,6 +49,8 @@ public class InstancePatchStateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MissingCount").build();
     private static final MarshallingInfo<Integer> FAILEDCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailedCount").build();
+    private static final MarshallingInfo<Integer> UNREPORTEDNOTAPPLICABLECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UnreportedNotApplicableCount").build();
     private static final MarshallingInfo<Integer> NOTAPPLICABLECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotApplicableCount").build();
     private static final MarshallingInfo<java.util.Date> OPERATIONSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -85,6 +87,7 @@ public class InstancePatchStateMarshaller {
             protocolMarshaller.marshall(instancePatchState.getInstalledRejectedCount(), INSTALLEDREJECTEDCOUNT_BINDING);
             protocolMarshaller.marshall(instancePatchState.getMissingCount(), MISSINGCOUNT_BINDING);
             protocolMarshaller.marshall(instancePatchState.getFailedCount(), FAILEDCOUNT_BINDING);
+            protocolMarshaller.marshall(instancePatchState.getUnreportedNotApplicableCount(), UNREPORTEDNOTAPPLICABLECOUNT_BINDING);
             protocolMarshaller.marshall(instancePatchState.getNotApplicableCount(), NOTAPPLICABLECOUNT_BINDING);
             protocolMarshaller.marshall(instancePatchState.getOperationStartTime(), OPERATIONSTARTTIME_BINDING);
             protocolMarshaller.marshall(instancePatchState.getOperationEndTime(), OPERATIONENDTIME_BINDING);

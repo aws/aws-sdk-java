@@ -128,6 +128,11 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
     }
 
     @Override
+    public DeleteDeviceUsageDataResult deleteDeviceUsageData(DeleteDeviceUsageDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteGatewayGroupResult deleteGatewayGroup(DeleteGatewayGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

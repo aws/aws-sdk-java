@@ -1448,6 +1448,71 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Lists the properties of available patches organized by product, product family, classification, severity, and
+     * other properties of available patches. You can use the reported properties in the filters you specify in requests
+     * for actions such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>, <a>DescribeAvailablePatches</a>, and
+     * <a>DescribePatchBaselines</a>.
+     * </p>
+     * <p>
+     * The following section lists the properties that can be used in filters for each major operating system type:
+     * </p>
+     * <dl>
+     * <dt>WINDOWS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
+     * </p>
+     * </dd>
+     * <dt>AMAZON_LINUX</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * <dt>AMAZON_LINUX_2</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * <dt>UBUNTU</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, PRIORITY
+     * </p>
+     * </dd>
+     * <dt>REDHAT_ENTERPRISE_LINUX</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * <dt>SUSE</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * <dt>CENTOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param describePatchPropertiesRequest
+     * @return Result of the DescribePatchProperties operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribePatchProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchProperties" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribePatchPropertiesResult describePatchProperties(DescribePatchPropertiesRequest describePatchPropertiesRequest);
+
+    /**
+     * <p>
      * Retrieves a list of all active sessions (both connected and disconnected) or terminated sessions from the past 30
      * days.
      * </p>
@@ -1568,6 +1633,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws UnsupportedOperatingSystemException
      *         The operating systems you specified is not supported, or the operation is not supported for the operating
      *         system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux, and Ubuntu.
+     * @throws UnsupportedFeatureRequiredException
      * @sample AWSSimpleSystemsManagement.GetDeployablePatchSnapshotForInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance"
      *      target="_top">AWS API Documentation</a>
