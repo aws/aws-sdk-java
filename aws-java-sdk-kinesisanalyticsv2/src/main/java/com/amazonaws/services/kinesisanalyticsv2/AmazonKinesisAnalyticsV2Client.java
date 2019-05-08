@@ -51,7 +51,9 @@ import com.amazonaws.services.kinesisanalyticsv2.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * Documentation for Kinesis Data Analytics API v2
+ * Amazon Kinesis Data Analytics is a fully managed service that you can use to process and analyze streaming data using
+ * SQL or Java. The service enables you to quickly author and run SQL or Java code against streaming sources to perform
+ * time series analytics, feed real-time dashboards, and create real-time metrics.
  * </p>
  */
 @ThreadSafe
@@ -97,6 +99,9 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidApplicationConfigurationException").withModeledClass(
                                     com.amazonaws.services.kinesisanalyticsv2.model.InvalidApplicationConfigurationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.TooManyTagsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CodeValidationException").withModeledClass(
                                     com.amazonaws.services.kinesisanalyticsv2.model.CodeValidationException.class))
@@ -178,6 +183,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      *         of attempting to modify an application without using the current application ID.
      * @throws InvalidRequestException
      *         The request JSON is not valid for the operation.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.AddApplicationCloudWatchLoggingOption
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationCloudWatchLoggingOption"
@@ -523,15 +530,9 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
     /**
      * <p>
      * Creates an Amazon Kinesis Data Analytics application. For information about creating a Kinesis Data Analytics
-     * application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/Java/creating-app.html">Creating an
-     * Application</a>.
+     * application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
+     * an Application</a>.
      * </p>
-     * <note>
-     * <p>
-     * SQL is not enabled for this private beta release. Using SQL parameters (such as
-     * <a>SqlApplicationConfiguration</a>) will result in an error.
-     * </p>
-     * </note>
      * 
      * @param createApplicationRequest
      * @return Result of the CreateApplication operation returned by the service.
@@ -545,6 +546,13 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      *         The specified input parameter value is not valid.
      * @throws InvalidRequestException
      *         The request JSON is not valid for the operation.
+     * @throws TooManyTagsException
+     *         Application created with too many tags, or too many tags added to an application. Note that the maximum
+     *         number of application tags includes system tags. The maximum number of user-defined application tags is
+     *         50.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
      * @sample AmazonKinesisAnalyticsV2.CreateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplication"
      *      target="_top">AWS API Documentation</a>
@@ -676,6 +684,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      *         The specified input parameter value is not valid.
      * @throws InvalidRequestException
      *         The request JSON is not valid for the operation.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.DeleteApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplication"
      *      target="_top">AWS API Documentation</a>
@@ -739,6 +749,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      *         of attempting to modify an application without using the current application ID.
      * @throws InvalidRequestException
      *         The request JSON is not valid for the operation.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.DeleteApplicationCloudWatchLoggingOption
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationCloudWatchLoggingOption"
@@ -1375,15 +1387,68 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Retrieves the list of key-value tags assigned to the application.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
+     * @sample AmazonKinesisAnalyticsV2.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts the specified Amazon Kinesis Data Analytics application. After creating an application, you must
      * exclusively call this operation to start your application.
      * </p>
-     * <note>
-     * <p>
-     * SQL is not enabled for this private beta. Using SQL parameters (such as
-     * <a>RunConfiguration$SqlRunConfigurations</a>) will result in an error.
-     * </p>
-     * </note>
      * 
      * @param startApplicationRequest
      * @return Result of the StartApplication operation returned by the service.
@@ -1458,6 +1523,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      *         The specified input parameter value is not valid.
      * @throws InvalidRequestException
      *         The request JSON is not valid for the operation.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.StopApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication"
      *      target="_top">AWS API Documentation</a>
@@ -1505,18 +1572,143 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Adds one or more key-value tags to a Kinesis Analytics application. Note that the maximum number of application
+     * tags includes system tags. The maximum number of user-defined application tags is 50.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         The application is not available for this operation.
+     * @throws TooManyTagsException
+     *         Application created with too many tags, or too many tags added to an application. Note that the maximum
+     *         number of application tags includes system tags. The maximum number of user-defined application tags is
+     *         50.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
+     * @sample AmazonKinesisAnalyticsV2.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes one or more tags from a Kinesis Analytics application.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         The application is not available for this operation.
+     * @throws TooManyTagsException
+     *         Application created with too many tags, or too many tags added to an application. Note that the maximum
+     *         number of application tags includes system tags. The maximum number of user-defined application tags is
+     *         50.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
+     * @sample AmazonKinesisAnalyticsV2.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates an existing Amazon Kinesis Data Analytics application. Using this operation, you can update application
      * code, input configuration, and output configuration.
      * </p>
      * <p>
      * Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update your application.
      * </p>
-     * <note>
-     * <p>
-     * SQL is not enabled for this private beta. Using SQL parameters (such as <a>SqlApplicationConfigurationUpdate</a>)
-     * will result in an error.
-     * </p>
-     * </note>
      * 
      * @param updateApplicationRequest
      * @return Result of the UpdateApplication operation returned by the service.
@@ -1533,6 +1725,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      *         of attempting to modify an application without using the current application ID.
      * @throws InvalidRequestException
      *         The request JSON is not valid for the operation.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.UpdateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication"
      *      target="_top">AWS API Documentation</a>

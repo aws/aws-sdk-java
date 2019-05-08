@@ -34,8 +34,9 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
     private String applicationName;
     /**
      * <p>
-     * Version of the application to which you want to add the input processing configuration. You can use the
-     * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * Version of the application to which you want to add the input processing configuration. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      */
@@ -43,13 +44,16 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
     /**
      * <p>
      * The ID of the input configuration to add the input processing configuration to. You can get a list of the input
-     * IDs for an application using the <a>DescribeApplication</a> operation.
+     * IDs for an application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation.
      * </p>
      */
     private String inputId;
     /**
      * <p>
-     * The <a>InputProcessingConfiguration</a> to add to the application.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">
+     * InputProcessingConfiguration</a> to add to the application.
      * </p>
      */
     private InputProcessingConfiguration inputProcessingConfiguration;
@@ -96,15 +100,17 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * Version of the application to which you want to add the input processing configuration. You can use the
-     * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * Version of the application to which you want to add the input processing configuration. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        Version of the application to which you want to add the input processing configuration. You can use the
-     *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
-     *        not the current version, the <code>ConcurrentModificationException</code> is returned.
+     *        Version of the application to which you want to add the input processing configuration. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">
+     *        DescribeApplication</a> operation to get the current application version. If the version specified is not
+     *        the current version, the <code>ConcurrentModificationException</code> is returned.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -113,14 +119,16 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * Version of the application to which you want to add the input processing configuration. You can use the
-     * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * Version of the application to which you want to add the input processing configuration. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @return Version of the application to which you want to add the input processing configuration. You can use the
-     *         <a>DescribeApplication</a> operation to get the current application version. If the version specified is
-     *         not the current version, the <code>ConcurrentModificationException</code> is returned.
+     *         <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">
+     *         DescribeApplication</a> operation to get the current application version. If the version specified is not
+     *         the current version, the <code>ConcurrentModificationException</code> is returned.
      */
 
     public Long getCurrentApplicationVersionId() {
@@ -129,15 +137,17 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * Version of the application to which you want to add the input processing configuration. You can use the
-     * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * Version of the application to which you want to add the input processing configuration. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        Version of the application to which you want to add the input processing configuration. You can use the
-     *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
-     *        not the current version, the <code>ConcurrentModificationException</code> is returned.
+     *        Version of the application to which you want to add the input processing configuration. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">
+     *        DescribeApplication</a> operation to get the current application version. If the version specified is not
+     *        the current version, the <code>ConcurrentModificationException</code> is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,12 +159,16 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
     /**
      * <p>
      * The ID of the input configuration to add the input processing configuration to. You can get a list of the input
-     * IDs for an application using the <a>DescribeApplication</a> operation.
+     * IDs for an application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation.
      * </p>
      * 
      * @param inputId
      *        The ID of the input configuration to add the input processing configuration to. You can get a list of the
-     *        input IDs for an application using the <a>DescribeApplication</a> operation.
+     *        input IDs for an application using the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation.
      */
 
     public void setInputId(String inputId) {
@@ -164,11 +178,15 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
     /**
      * <p>
      * The ID of the input configuration to add the input processing configuration to. You can get a list of the input
-     * IDs for an application using the <a>DescribeApplication</a> operation.
+     * IDs for an application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation.
      * </p>
      * 
      * @return The ID of the input configuration to add the input processing configuration to. You can get a list of the
-     *         input IDs for an application using the <a>DescribeApplication</a> operation.
+     *         input IDs for an application using the <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *         >DescribeApplication</a> operation.
      */
 
     public String getInputId() {
@@ -178,12 +196,16 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
     /**
      * <p>
      * The ID of the input configuration to add the input processing configuration to. You can get a list of the input
-     * IDs for an application using the <a>DescribeApplication</a> operation.
+     * IDs for an application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation.
      * </p>
      * 
      * @param inputId
      *        The ID of the input configuration to add the input processing configuration to. You can get a list of the
-     *        input IDs for an application using the <a>DescribeApplication</a> operation.
+     *        input IDs for an application using the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,11 +216,14 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * The <a>InputProcessingConfiguration</a> to add to the application.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">
+     * InputProcessingConfiguration</a> to add to the application.
      * </p>
      * 
      * @param inputProcessingConfiguration
-     *        The <a>InputProcessingConfiguration</a> to add to the application.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html"
+     *        >InputProcessingConfiguration</a> to add to the application.
      */
 
     public void setInputProcessingConfiguration(InputProcessingConfiguration inputProcessingConfiguration) {
@@ -207,10 +232,13 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * The <a>InputProcessingConfiguration</a> to add to the application.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">
+     * InputProcessingConfiguration</a> to add to the application.
      * </p>
      * 
-     * @return The <a>InputProcessingConfiguration</a> to add to the application.
+     * @return The <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html"
+     *         >InputProcessingConfiguration</a> to add to the application.
      */
 
     public InputProcessingConfiguration getInputProcessingConfiguration() {
@@ -219,11 +247,14 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * The <a>InputProcessingConfiguration</a> to add to the application.
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">
+     * InputProcessingConfiguration</a> to add to the application.
      * </p>
      * 
      * @param inputProcessingConfiguration
-     *        The <a>InputProcessingConfiguration</a> to add to the application.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html"
+     *        >InputProcessingConfiguration</a> to add to the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -20,8 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes the number of in-application streams to create for a given streaming source. For information about
- * parallelism, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
- * Application Input</a>.
+ * parallelism, see <a
+ * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+ * Input</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputParallelism" target="_top">AWS
@@ -33,7 +34,7 @@ public class InputParallelism implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Number of in-application streams to create. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      * </p>
      */
     private Integer count;
@@ -41,12 +42,12 @@ public class InputParallelism implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Number of in-application streams to create. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      * </p>
      * 
      * @param count
      *        Number of in-application streams to create. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      */
 
     public void setCount(Integer count) {
@@ -56,11 +57,11 @@ public class InputParallelism implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Number of in-application streams to create. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      * </p>
      * 
      * @return Number of in-application streams to create. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      */
 
     public Integer getCount() {
@@ -70,12 +71,12 @@ public class InputParallelism implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Number of in-application streams to create. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      * </p>
      * 
      * @param count
      *        Number of in-application streams to create. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

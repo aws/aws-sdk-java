@@ -13,7 +13,9 @@
 
 /**
  * <p>
- * Documentation for Kinesis Data Analytics API v2
+ * Amazon Kinesis Data Analytics is a fully managed service that you can use to process and analyze streaming data using
+ * SQL or Java. The service enables you to quickly author and run SQL or Java code against streaming sources to perform
+ * time series analytics, feed real-time dashboards, and create real-time metrics.
  * </p>
  */
 package com.amazonaws.services.kinesisanalyticsv2;

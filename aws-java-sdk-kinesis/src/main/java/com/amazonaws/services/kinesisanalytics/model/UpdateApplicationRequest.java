@@ -33,7 +33,9 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String applicationName;
     /**
      * <p>
-     * The current application version ID. You can use the <a>DescribeApplication</a> operation to get this value.
+     * The current application version ID. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get this value.
      * </p>
      */
     private Long currentApplicationVersionId;
@@ -86,12 +88,15 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The current application version ID. You can use the <a>DescribeApplication</a> operation to get this value.
+     * The current application version ID. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get this value.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The current application version ID. You can use the <a>DescribeApplication</a> operation to get this
-     *        value.
+     *        The current application version ID. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get this value.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -100,11 +105,14 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The current application version ID. You can use the <a>DescribeApplication</a> operation to get this value.
+     * The current application version ID. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get this value.
      * </p>
      * 
-     * @return The current application version ID. You can use the <a>DescribeApplication</a> operation to get this
-     *         value.
+     * @return The current application version ID. You can use the <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *         >DescribeApplication</a> operation to get this value.
      */
 
     public Long getCurrentApplicationVersionId() {
@@ -113,12 +121,15 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The current application version ID. You can use the <a>DescribeApplication</a> operation to get this value.
+     * The current application version ID. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get this value.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The current application version ID. You can use the <a>DescribeApplication</a> operation to get this
-     *        value.
+     *        The current application version ID. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get this value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

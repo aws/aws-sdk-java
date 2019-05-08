@@ -35,7 +35,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Adds or overwrites one or more tags for the specified Amazon SageMaker resource. You can add tags to notebook
-     * instances, training jobs, hyperparameter tuning jobs, models, endpoint configurations, and endpoints.
+     * instances, training jobs, hyperparameter tuning jobs, batch transform jobs, models, labeling jobs, work teams,
+     * endpoint configurations, and endpoints.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information
@@ -64,7 +65,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Adds or overwrites one or more tags for the specified Amazon SageMaker resource. You can add tags to notebook
-     * instances, training jobs, hyperparameter tuning jobs, models, endpoint configurations, and endpoints.
+     * instances, training jobs, hyperparameter tuning jobs, batch transform jobs, models, labeling jobs, work teams,
+     * endpoint configurations, and endpoints.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information
@@ -295,6 +297,11 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * Use this API only for hosting models using Amazon SageMaker hosting services.
      * </p>
+     * <p>
+     * You must not delete an <code>EndpointConfig</code> in use by an endpoint that is live or while the
+     * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being performed on the endpoint. To
+     * update an endpoint, you must create a new <code>EndpointConfig</code>.
+     * </p>
      * </note>
      * <p>
      * The endpoint name must be unique within an AWS Region in your AWS account.
@@ -340,6 +347,11 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <note>
      * <p>
      * Use this API only for hosting models using Amazon SageMaker hosting services.
+     * </p>
+     * <p>
+     * You must not delete an <code>EndpointConfig</code> in use by an endpoint that is live or while the
+     * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being performed on the endpoint. To
+     * update an endpoint, you must create a new <code>EndpointConfig</code>.
      * </p>
      * </note>
      * <p>
@@ -946,6 +958,12 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-ip-filter.html">Limit Access to a
      * Notebook Instance by IP Address</a>.
      * </p>
+     * <note>
+     * <p>
+     * The URL that you get from a call to is valid only for 5 minutes. If you try to use the URL after the 5-minute
+     * limit expires, you are directed to the AWS console sign-in page.
+     * </p>
+     * </note>
      * 
      * @param createPresignedNotebookInstanceUrlRequest
      * @return A Java Future containing the result of the CreatePresignedNotebookInstanceUrl operation returned by the
@@ -973,6 +991,12 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-ip-filter.html">Limit Access to a
      * Notebook Instance by IP Address</a>.
      * </p>
+     * <note>
+     * <p>
+     * The URL that you get from a call to is valid only for 5 minutes. If you try to use the URL after the 5-minute
+     * limit expires, you are directed to the AWS console sign-in page.
+     * </p>
+     * </note>
      * 
      * @param createPresignedNotebookInstanceUrlRequest
      * @param asyncHandler
@@ -3033,7 +3057,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Terminates the ML compute instance. Before terminating the instance, Amazon SageMaker disconnects the ML storage
-     * volume from it. Amazon SageMaker preserves the ML storage volume.
+     * volume from it. Amazon SageMaker preserves the ML storage volume. Amazon SageMaker stops charging you for the ML
+     * compute instance when you call <code>StopNotebookInstance</code>.
      * </p>
      * <p>
      * To access data on the ML storage volume for a notebook instance that has been terminated, call the
@@ -3052,7 +3077,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Terminates the ML compute instance. Before terminating the instance, Amazon SageMaker disconnects the ML storage
-     * volume from it. Amazon SageMaker preserves the ML storage volume.
+     * volume from it. Amazon SageMaker preserves the ML storage volume. Amazon SageMaker stops charging you for the ML
+     * compute instance when you call <code>StopNotebookInstance</code>.
      * </p>
      * <p>
      * To access data on the ML storage volume for a notebook instance that has been terminated, call the
@@ -3201,8 +3227,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * <note>
      * <p>
-     * You cannot update an endpoint with the current <code>EndpointConfig</code>. To update an endpoint, you must
-     * create a new <code>EndpointConfig</code>.
+     * You must not delete an <code>EndpointConfig</code> in use by an endpoint that is live or while the
+     * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being performed on the endpoint. To
+     * update an endpoint, you must create a new <code>EndpointConfig</code>.
      * </p>
      * </note>
      * 
@@ -3227,8 +3254,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * <note>
      * <p>
-     * You cannot update an endpoint with the current <code>EndpointConfig</code>. To update an endpoint, you must
-     * create a new <code>EndpointConfig</code>.
+     * You must not delete an <code>EndpointConfig</code> in use by an endpoint that is live or while the
+     * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being performed on the endpoint. To
+     * update an endpoint, you must create a new <code>EndpointConfig</code>.
      * </p>
      * </note>
      * 
@@ -3291,8 +3319,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Updates a notebook instance. NotebookInstance updates include upgrading or downgrading the ML compute instance
-     * used for your notebook instance to accommodate changes in your workload requirements. You can also update the VPC
-     * security groups.
+     * used for your notebook instance to accommodate changes in your workload requirements.
      * </p>
      * 
      * @param updateNotebookInstanceRequest
@@ -3306,8 +3333,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Updates a notebook instance. NotebookInstance updates include upgrading or downgrading the ML compute instance
-     * used for your notebook instance to accommodate changes in your workload requirements. You can also update the VPC
-     * security groups.
+     * used for your notebook instance to accommodate changes in your workload requirements.
      * </p>
      * 
      * @param updateNotebookInstanceRequest

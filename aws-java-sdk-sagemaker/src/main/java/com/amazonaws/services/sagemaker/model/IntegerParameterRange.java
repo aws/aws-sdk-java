@@ -51,7 +51,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
      * hyperparameter scale, see <a
      * href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     * >Hyperparameter Range Scaling</a>. One of the following values:
+     * >Hyperparameter Scaling</a>. One of the following values:
      * </p>
      * <dl>
      * <dt>Auto</dt>
@@ -204,7 +204,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
      * hyperparameter scale, see <a
      * href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     * >Hyperparameter Range Scaling</a>. One of the following values:
+     * >Hyperparameter Scaling</a>. One of the following values:
      * </p>
      * <dl>
      * <dt>Auto</dt>
@@ -234,7 +234,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *        The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
      *        choosing a hyperparameter scale, see <a href=
      *        "http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     *        >Hyperparameter Range Scaling</a>. One of the following values:</p>
+     *        >Hyperparameter Scaling</a>. One of the following values:</p>
      *        <dl>
      *        <dt>Auto</dt>
      *        <dd>
@@ -269,7 +269,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
      * hyperparameter scale, see <a
      * href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     * >Hyperparameter Range Scaling</a>. One of the following values:
+     * >Hyperparameter Scaling</a>. One of the following values:
      * </p>
      * <dl>
      * <dt>Auto</dt>
@@ -298,7 +298,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * @return The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
      *         choosing a hyperparameter scale, see <a href=
      *         "http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     *         >Hyperparameter Range Scaling</a>. One of the following values:</p>
+     *         >Hyperparameter Scaling</a>. One of the following values:</p>
      *         <dl>
      *         <dt>Auto</dt>
      *         <dd>
@@ -333,7 +333,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
      * hyperparameter scale, see <a
      * href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     * >Hyperparameter Range Scaling</a>. One of the following values:
+     * >Hyperparameter Scaling</a>. One of the following values:
      * </p>
      * <dl>
      * <dt>Auto</dt>
@@ -363,7 +363,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *        The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
      *        choosing a hyperparameter scale, see <a href=
      *        "http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     *        >Hyperparameter Range Scaling</a>. One of the following values:</p>
+     *        >Hyperparameter Scaling</a>. One of the following values:</p>
      *        <dl>
      *        <dt>Auto</dt>
      *        <dd>
@@ -400,7 +400,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
      * hyperparameter scale, see <a
      * href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     * >Hyperparameter Range Scaling</a>. One of the following values:
+     * >Hyperparameter Scaling</a>. One of the following values:
      * </p>
      * <dl>
      * <dt>Auto</dt>
@@ -430,7 +430,7 @@ public class IntegerParameterRange implements Serializable, Cloneable, Structure
      *        The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
      *        choosing a hyperparameter scale, see <a href=
      *        "http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
-     *        >Hyperparameter Range Scaling</a>. One of the following values:</p>
+     *        >Hyperparameter Scaling</a>. One of the following values:</p>
      *        <dl>
      *        <dt>Auto</dt>
      *        <dd>

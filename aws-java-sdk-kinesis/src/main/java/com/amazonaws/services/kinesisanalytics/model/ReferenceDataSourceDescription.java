@@ -31,7 +31,9 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable, 
     /**
      * <p>
      * ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference
-     * data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
+     * data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     * >AddApplicationReferenceDataSource</a> operation.
      * </p>
      */
     private String referenceId;
@@ -60,12 +62,16 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable, 
     /**
      * <p>
      * ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference
-     * data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
+     * data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     * >AddApplicationReferenceDataSource</a> operation.
      * </p>
      * 
      * @param referenceId
      *        ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the
-     *        reference data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
+     *        reference data source to your application using the <a href=
+     *        "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     *        >AddApplicationReferenceDataSource</a> operation.
      */
 
     public void setReferenceId(String referenceId) {
@@ -75,11 +81,15 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable, 
     /**
      * <p>
      * ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference
-     * data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
+     * data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     * >AddApplicationReferenceDataSource</a> operation.
      * </p>
      * 
      * @return ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the
-     *         reference data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
+     *         reference data source to your application using the <a href=
+     *         "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     *         >AddApplicationReferenceDataSource</a> operation.
      */
 
     public String getReferenceId() {
@@ -89,12 +99,16 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable, 
     /**
      * <p>
      * ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference
-     * data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
+     * data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     * >AddApplicationReferenceDataSource</a> operation.
      * </p>
      * 
      * @param referenceId
      *        ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the
-     *        reference data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
+     *        reference data source to your application using the <a href=
+     *        "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     *        >AddApplicationReferenceDataSource</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

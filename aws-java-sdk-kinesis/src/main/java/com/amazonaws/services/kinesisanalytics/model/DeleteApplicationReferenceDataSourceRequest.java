@@ -34,17 +34,20 @@ public class DeleteApplicationReferenceDataSourceRequest extends com.amazonaws.A
     private String applicationName;
     /**
      * <p>
-     * Version of the application. You can use the <a>DescribeApplication</a> operation to get the current application
-     * version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is
-     * returned.
+     * Version of the application. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      */
     private Long currentApplicationVersionId;
     /**
      * <p>
-     * ID of the reference data source. When you add a reference data source to your application using the
-     * <a>AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the
-     * <a>DescribeApplication</a> operation to get the reference ID.
+     * ID of the reference data source. When you add a reference data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     * >AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the reference ID.
      * </p>
      */
     private String referenceId;
@@ -91,15 +94,17 @@ public class DeleteApplicationReferenceDataSourceRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Version of the application. You can use the <a>DescribeApplication</a> operation to get the current application
-     * version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is
-     * returned.
+     * Version of the application. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        Version of the application. You can use the <a>DescribeApplication</a> operation to get the current
-     *        application version. If the version specified is not the current version, the
-     *        <code>ConcurrentModificationException</code> is returned.
+     *        Version of the application. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get the current application version. If the version specified is not
+     *        the current version, the <code>ConcurrentModificationException</code> is returned.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -108,14 +113,16 @@ public class DeleteApplicationReferenceDataSourceRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Version of the application. You can use the <a>DescribeApplication</a> operation to get the current application
-     * version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is
-     * returned.
+     * Version of the application. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
-     * @return Version of the application. You can use the <a>DescribeApplication</a> operation to get the current
-     *         application version. If the version specified is not the current version, the
-     *         <code>ConcurrentModificationException</code> is returned.
+     * @return Version of the application. You can use the <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *         >DescribeApplication</a> operation to get the current application version. If the version specified is
+     *         not the current version, the <code>ConcurrentModificationException</code> is returned.
      */
 
     public Long getCurrentApplicationVersionId() {
@@ -124,15 +131,17 @@ public class DeleteApplicationReferenceDataSourceRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Version of the application. You can use the <a>DescribeApplication</a> operation to get the current application
-     * version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is
-     * returned.
+     * Version of the application. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        Version of the application. You can use the <a>DescribeApplication</a> operation to get the current
-     *        application version. If the version specified is not the current version, the
-     *        <code>ConcurrentModificationException</code> is returned.
+     *        Version of the application. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get the current application version. If the version specified is not
+     *        the current version, the <code>ConcurrentModificationException</code> is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,15 +152,19 @@ public class DeleteApplicationReferenceDataSourceRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * ID of the reference data source. When you add a reference data source to your application using the
-     * <a>AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the
-     * <a>DescribeApplication</a> operation to get the reference ID.
+     * ID of the reference data source. When you add a reference data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     * >AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the reference ID.
      * </p>
      * 
      * @param referenceId
-     *        ID of the reference data source. When you add a reference data source to your application using the
-     *        <a>AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the
-     *        <a>DescribeApplication</a> operation to get the reference ID.
+     *        ID of the reference data source. When you add a reference data source to your application using the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">
+     *        AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get the reference ID.
      */
 
     public void setReferenceId(String referenceId) {
@@ -160,14 +173,19 @@ public class DeleteApplicationReferenceDataSourceRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * ID of the reference data source. When you add a reference data source to your application using the
-     * <a>AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the
-     * <a>DescribeApplication</a> operation to get the reference ID.
+     * ID of the reference data source. When you add a reference data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     * >AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the reference ID.
      * </p>
      * 
-     * @return ID of the reference data source. When you add a reference data source to your application using the
-     *         <a>AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the
-     *         <a>DescribeApplication</a> operation to get the reference ID.
+     * @return ID of the reference data source. When you add a reference data source to your application using the <a
+     *         href
+     *         ="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">
+     *         AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *         >DescribeApplication</a> operation to get the reference ID.
      */
 
     public String getReferenceId() {
@@ -176,15 +194,19 @@ public class DeleteApplicationReferenceDataSourceRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * ID of the reference data source. When you add a reference data source to your application using the
-     * <a>AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the
-     * <a>DescribeApplication</a> operation to get the reference ID.
+     * ID of the reference data source. When you add a reference data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     * >AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the reference ID.
      * </p>
      * 
      * @param referenceId
-     *        ID of the reference data source. When you add a reference data source to your application using the
-     *        <a>AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the
-     *        <a>DescribeApplication</a> operation to get the reference ID.
+     *        ID of the reference data source. When you add a reference data source to your application using the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">
+     *        AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get the reference ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes updates to an <a>InputProcessingConfiguration</a>.
+ * Describes updates to an <a
+ * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html"
+ * >InputProcessingConfiguration</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputProcessingConfigurationUpdate"
@@ -30,18 +32,24 @@ public class InputProcessingConfigurationUpdate implements Serializable, Cloneab
 
     /**
      * <p>
-     * Provides update information for an <a>InputLambdaProcessor</a>.
+     * Provides update information for an <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html"
+     * >InputLambdaProcessor</a>.
      * </p>
      */
     private InputLambdaProcessorUpdate inputLambdaProcessorUpdate;
 
     /**
      * <p>
-     * Provides update information for an <a>InputLambdaProcessor</a>.
+     * Provides update information for an <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html"
+     * >InputLambdaProcessor</a>.
      * </p>
      * 
      * @param inputLambdaProcessorUpdate
-     *        Provides update information for an <a>InputLambdaProcessor</a>.
+     *        Provides update information for an <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html"
+     *        >InputLambdaProcessor</a>.
      */
 
     public void setInputLambdaProcessorUpdate(InputLambdaProcessorUpdate inputLambdaProcessorUpdate) {
@@ -50,10 +58,14 @@ public class InputProcessingConfigurationUpdate implements Serializable, Cloneab
 
     /**
      * <p>
-     * Provides update information for an <a>InputLambdaProcessor</a>.
+     * Provides update information for an <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html"
+     * >InputLambdaProcessor</a>.
      * </p>
      * 
-     * @return Provides update information for an <a>InputLambdaProcessor</a>.
+     * @return Provides update information for an <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html"
+     *         >InputLambdaProcessor</a>.
      */
 
     public InputLambdaProcessorUpdate getInputLambdaProcessorUpdate() {
@@ -62,11 +74,15 @@ public class InputProcessingConfigurationUpdate implements Serializable, Cloneab
 
     /**
      * <p>
-     * Provides update information for an <a>InputLambdaProcessor</a>.
+     * Provides update information for an <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html"
+     * >InputLambdaProcessor</a>.
      * </p>
      * 
      * @param inputLambdaProcessorUpdate
-     *        Provides update information for an <a>InputLambdaProcessor</a>.
+     *        Provides update information for an <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputLambdaProcessor.html"
+     *        >InputLambdaProcessor</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

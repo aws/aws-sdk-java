@@ -37,6 +37,12 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      * If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
      * containing a list of object keys that you want Amazon SageMaker to use for batch transform.
      * </p>
+     * <p>
+     * The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code>
+     * </p>
+     * <p>
+     * The following value is not compatible: <code>AugmentedManifestFile</code>
+     * </p>
      */
     private String s3DataType;
     /**
@@ -106,6 +112,12 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      * If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
      * containing a list of object keys that you want Amazon SageMaker to use for batch transform.
      * </p>
+     * <p>
+     * The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code>
+     * </p>
+     * <p>
+     * The following value is not compatible: <code>AugmentedManifestFile</code>
+     * </p>
      * 
      * @param s3DataType
      *        If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker
@@ -113,6 +125,12 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      *        <p>
      *        If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
      *        containing a list of object keys that you want Amazon SageMaker to use for batch transform.
+     *        </p>
+     *        <p>
+     *        The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code>
+     *        </p>
+     *        <p>
+     *        The following value is not compatible: <code>AugmentedManifestFile</code>
      * @see S3DataType
      */
 
@@ -129,12 +147,24 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      * If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
      * containing a list of object keys that you want Amazon SageMaker to use for batch transform.
      * </p>
+     * <p>
+     * The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code>
+     * </p>
+     * <p>
+     * The following value is not compatible: <code>AugmentedManifestFile</code>
+     * </p>
      * 
      * @return If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker
      *         uses all objects with the specified key name prefix for batch transform. </p>
      *         <p>
      *         If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
      *         containing a list of object keys that you want Amazon SageMaker to use for batch transform.
+     *         </p>
+     *         <p>
+     *         The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code>
+     *         </p>
+     *         <p>
+     *         The following value is not compatible: <code>AugmentedManifestFile</code>
      * @see S3DataType
      */
 
@@ -151,6 +181,12 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      * If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
      * containing a list of object keys that you want Amazon SageMaker to use for batch transform.
      * </p>
+     * <p>
+     * The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code>
+     * </p>
+     * <p>
+     * The following value is not compatible: <code>AugmentedManifestFile</code>
+     * </p>
      * 
      * @param s3DataType
      *        If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker
@@ -158,6 +194,12 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      *        <p>
      *        If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
      *        containing a list of object keys that you want Amazon SageMaker to use for batch transform.
+     *        </p>
+     *        <p>
+     *        The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code>
+     *        </p>
+     *        <p>
+     *        The following value is not compatible: <code>AugmentedManifestFile</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3DataType
      */
@@ -176,6 +218,12 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      * If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
      * containing a list of object keys that you want Amazon SageMaker to use for batch transform.
      * </p>
+     * <p>
+     * The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code>
+     * </p>
+     * <p>
+     * The following value is not compatible: <code>AugmentedManifestFile</code>
+     * </p>
      * 
      * @param s3DataType
      *        If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. Amazon SageMaker
@@ -183,6 +231,12 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      *        <p>
      *        If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
      *        containing a list of object keys that you want Amazon SageMaker to use for batch transform.
+     *        </p>
+     *        <p>
+     *        The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code>
+     *        </p>
+     *        <p>
+     *        The following value is not compatible: <code>AugmentedManifestFile</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3DataType
      */

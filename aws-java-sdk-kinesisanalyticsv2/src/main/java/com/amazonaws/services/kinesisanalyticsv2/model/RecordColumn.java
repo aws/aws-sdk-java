@@ -40,7 +40,7 @@ public class RecordColumn implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * A reference to the data element in the streaming input of the reference data source.
+     * A reference to the data element in the streaming input or the reference data source.
      * </p>
      */
     private String mapping;
@@ -93,11 +93,11 @@ public class RecordColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A reference to the data element in the streaming input of the reference data source.
+     * A reference to the data element in the streaming input or the reference data source.
      * </p>
      * 
      * @param mapping
-     *        A reference to the data element in the streaming input of the reference data source.
+     *        A reference to the data element in the streaming input or the reference data source.
      */
 
     public void setMapping(String mapping) {
@@ -106,10 +106,10 @@ public class RecordColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A reference to the data element in the streaming input of the reference data source.
+     * A reference to the data element in the streaming input or the reference data source.
      * </p>
      * 
-     * @return A reference to the data element in the streaming input of the reference data source.
+     * @return A reference to the data element in the streaming input or the reference data source.
      */
 
     public String getMapping() {
@@ -118,11 +118,11 @@ public class RecordColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A reference to the data element in the streaming input of the reference data source.
+     * A reference to the data element in the streaming input or the reference data source.
      * </p>
      * 
      * @param mapping
-     *        A reference to the data element in the streaming input of the reference data source.
+     *        A reference to the data element in the streaming input or the reference data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

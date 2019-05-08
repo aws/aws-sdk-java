@@ -30,7 +30,7 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The base64 encoded certificate data required to communicate with your cluster. Add this to the
+     * The Base64-encoded certificate data required to communicate with your cluster. Add this to the
      * <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.
      * </p>
      */
@@ -38,12 +38,12 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The base64 encoded certificate data required to communicate with your cluster. Add this to the
+     * The Base64-encoded certificate data required to communicate with your cluster. Add this to the
      * <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.
      * </p>
      * 
      * @param data
-     *        The base64 encoded certificate data required to communicate with your cluster. Add this to the
+     *        The Base64-encoded certificate data required to communicate with your cluster. Add this to the
      *        <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.
      */
 
@@ -53,11 +53,11 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The base64 encoded certificate data required to communicate with your cluster. Add this to the
+     * The Base64-encoded certificate data required to communicate with your cluster. Add this to the
      * <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.
      * </p>
      * 
-     * @return The base64 encoded certificate data required to communicate with your cluster. Add this to the
+     * @return The Base64-encoded certificate data required to communicate with your cluster. Add this to the
      *         <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.
      */
 
@@ -67,12 +67,12 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The base64 encoded certificate data required to communicate with your cluster. Add this to the
+     * The Base64-encoded certificate data required to communicate with your cluster. Add this to the
      * <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.
      * </p>
      * 
      * @param data
-     *        The base64 encoded certificate data required to communicate with your cluster. Add this to the
+     *        The Base64-encoded certificate data required to communicate with your cluster. Add this to the
      *        <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

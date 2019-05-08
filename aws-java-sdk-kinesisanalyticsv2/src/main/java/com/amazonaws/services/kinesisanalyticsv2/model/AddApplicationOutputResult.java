@@ -38,7 +38,7 @@ public class AddApplicationOutputResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      */
@@ -130,12 +130,12 @@ public class AddApplicationOutputResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * 
      * @return Describes the application output configuration. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *         Application Output</a>.
      */
 
@@ -146,13 +146,13 @@ public class AddApplicationOutputResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * 
      * @param outputDescriptions
      *        Describes the application output configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *        Application Output</a>.
      */
 
@@ -168,7 +168,7 @@ public class AddApplicationOutputResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * <p>
@@ -179,7 +179,7 @@ public class AddApplicationOutputResult extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param outputDescriptions
      *        Describes the application output configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *        Application Output</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -197,13 +197,13 @@ public class AddApplicationOutputResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * 
      * @param outputDescriptions
      *        Describes the application output configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *        Application Output</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

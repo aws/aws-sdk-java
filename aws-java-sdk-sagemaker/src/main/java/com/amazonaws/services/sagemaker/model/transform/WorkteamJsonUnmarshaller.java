@@ -80,6 +80,10 @@ public class WorkteamJsonUnmarshaller implements Unmarshaller<Workteam, JsonUnma
                     context.nextToken();
                     workteam.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("NotificationConfiguration", targetDepth)) {
+                    context.nextToken();
+                    workteam.setNotificationConfiguration(NotificationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

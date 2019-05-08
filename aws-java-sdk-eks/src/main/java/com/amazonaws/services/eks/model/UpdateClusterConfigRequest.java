@@ -36,7 +36,7 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default,
-     * cluster control plane logs are not exported to CloudWatch Logs. For more information, see <a
+     * cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane
      * Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
@@ -124,7 +124,7 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default,
-     * cluster control plane logs are not exported to CloudWatch Logs. For more information, see <a
+     * cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane
      * Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
@@ -137,7 +137,7 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param logging
      *        Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By
-     *        default, cluster control plane logs are not exported to CloudWatch Logs. For more information, see <a
+     *        default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control
      *        Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
      *        <p>
@@ -154,7 +154,7 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default,
-     * cluster control plane logs are not exported to CloudWatch Logs. For more information, see <a
+     * cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane
      * Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
@@ -166,7 +166,7 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
      * </note>
      * 
      * @return Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By
-     *         default, cluster control plane logs are not exported to CloudWatch Logs. For more information, see <a
+     *         default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster
      *         Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
      *         <p>
@@ -183,7 +183,7 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default,
-     * cluster control plane logs are not exported to CloudWatch Logs. For more information, see <a
+     * cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane
      * Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
@@ -196,7 +196,7 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param logging
      *        Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By
-     *        default, cluster control plane logs are not exported to CloudWatch Logs. For more information, see <a
+     *        default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control
      *        Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
      *        <p>

@@ -50,7 +50,7 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If the Amazon EKS public
-     * API server endpoint is disabled, your cluster's Kubernetes API server can only receive requests that originate
+     * API server endpoint is disabled, your cluster's Kubernetes API server can receive only requests that originate
      * from within the cluster VPC.
      * </p>
      */
@@ -58,8 +58,8 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS private
-     * API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC will use
-     * the private VPC endpoint instead of traversing the internet.
+     * API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC use the
+     * private VPC endpoint instead of traversing the internet.
      * </p>
      */
     private Boolean endpointPrivateAccess;
@@ -255,13 +255,13 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If the Amazon EKS public
-     * API server endpoint is disabled, your cluster's Kubernetes API server can only receive requests that originate
+     * API server endpoint is disabled, your cluster's Kubernetes API server can receive only requests that originate
      * from within the cluster VPC.
      * </p>
      * 
      * @param endpointPublicAccess
      *        This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If the Amazon EKS
-     *        public API server endpoint is disabled, your cluster's Kubernetes API server can only receive requests
+     *        public API server endpoint is disabled, your cluster's Kubernetes API server can receive only requests
      *        that originate from within the cluster VPC.
      */
 
@@ -272,12 +272,12 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If the Amazon EKS public
-     * API server endpoint is disabled, your cluster's Kubernetes API server can only receive requests that originate
+     * API server endpoint is disabled, your cluster's Kubernetes API server can receive only requests that originate
      * from within the cluster VPC.
      * </p>
      * 
      * @return This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If the Amazon EKS
-     *         public API server endpoint is disabled, your cluster's Kubernetes API server can only receive requests
+     *         public API server endpoint is disabled, your cluster's Kubernetes API server can receive only requests
      *         that originate from within the cluster VPC.
      */
 
@@ -288,13 +288,13 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If the Amazon EKS public
-     * API server endpoint is disabled, your cluster's Kubernetes API server can only receive requests that originate
+     * API server endpoint is disabled, your cluster's Kubernetes API server can receive only requests that originate
      * from within the cluster VPC.
      * </p>
      * 
      * @param endpointPublicAccess
      *        This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If the Amazon EKS
-     *        public API server endpoint is disabled, your cluster's Kubernetes API server can only receive requests
+     *        public API server endpoint is disabled, your cluster's Kubernetes API server can receive only requests
      *        that originate from within the cluster VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -307,12 +307,12 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If the Amazon EKS public
-     * API server endpoint is disabled, your cluster's Kubernetes API server can only receive requests that originate
+     * API server endpoint is disabled, your cluster's Kubernetes API server can receive only requests that originate
      * from within the cluster VPC.
      * </p>
      * 
      * @return This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If the Amazon EKS
-     *         public API server endpoint is disabled, your cluster's Kubernetes API server can only receive requests
+     *         public API server endpoint is disabled, your cluster's Kubernetes API server can receive only requests
      *         that originate from within the cluster VPC.
      */
 
@@ -323,14 +323,14 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS private
-     * API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC will use
-     * the private VPC endpoint instead of traversing the internet.
+     * API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC use the
+     * private VPC endpoint instead of traversing the internet.
      * </p>
      * 
      * @param endpointPrivateAccess
      *        This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS
      *        private API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's
-     *        VPC will use the private VPC endpoint instead of traversing the internet.
+     *        VPC use the private VPC endpoint instead of traversing the internet.
      */
 
     public void setEndpointPrivateAccess(Boolean endpointPrivateAccess) {
@@ -340,13 +340,13 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS private
-     * API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC will use
-     * the private VPC endpoint instead of traversing the internet.
+     * API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC use the
+     * private VPC endpoint instead of traversing the internet.
      * </p>
      * 
      * @return This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS
      *         private API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's
-     *         VPC will use the private VPC endpoint instead of traversing the internet.
+     *         VPC use the private VPC endpoint instead of traversing the internet.
      */
 
     public Boolean getEndpointPrivateAccess() {
@@ -356,14 +356,14 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS private
-     * API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC will use
-     * the private VPC endpoint instead of traversing the internet.
+     * API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC use the
+     * private VPC endpoint instead of traversing the internet.
      * </p>
      * 
      * @param endpointPrivateAccess
      *        This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS
      *        private API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's
-     *        VPC will use the private VPC endpoint instead of traversing the internet.
+     *        VPC use the private VPC endpoint instead of traversing the internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,13 +375,13 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS private
-     * API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC will use
-     * the private VPC endpoint instead of traversing the internet.
+     * API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC use the
+     * private VPC endpoint instead of traversing the internet.
      * </p>
      * 
      * @return This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS
      *         private API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's
-     *         VPC will use the private VPC endpoint instead of traversing the internet.
+     *         VPC use the private VPC endpoint instead of traversing the internet.
      */
 
     public Boolean isEndpointPrivateAccess() {

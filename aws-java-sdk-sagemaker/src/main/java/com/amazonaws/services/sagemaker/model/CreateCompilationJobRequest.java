@@ -33,7 +33,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
     private String compilationJobName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon SageMaker to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.
      * </p>
      * <p>
      * During model compilation, Amazon SageMaker needs your permission to:
@@ -132,7 +132,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon SageMaker to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.
      * </p>
      * <p>
      * During model compilation, Amazon SageMaker needs your permission to:
@@ -166,7 +166,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon SageMaker to perform tasks on your
+     *        The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your
      *        behalf. </p>
      *        <p>
      *        During model compilation, Amazon SageMaker needs your permission to:
@@ -205,7 +205,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon SageMaker to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.
      * </p>
      * <p>
      * During model compilation, Amazon SageMaker needs your permission to:
@@ -238,7 +238,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a>
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon SageMaker to perform tasks on your
+     * @return The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your
      *         behalf. </p>
      *         <p>
      *         During model compilation, Amazon SageMaker needs your permission to:
@@ -277,7 +277,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon SageMaker to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.
      * </p>
      * <p>
      * During model compilation, Amazon SageMaker needs your permission to:
@@ -311,7 +311,7 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon SageMaker to perform tasks on your
+     *        The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your
      *        behalf. </p>
      *        <p>
      *        During model compilation, Amazon SageMaker needs your permission to:

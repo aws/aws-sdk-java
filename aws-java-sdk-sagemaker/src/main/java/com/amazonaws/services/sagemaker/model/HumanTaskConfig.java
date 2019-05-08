@@ -174,6 +174,31 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Asia Pacific (Sydney (ap-southeast-1):</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String preHumanTaskLambdaArn;
     /**
@@ -446,6 +471,31 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Asia Pacific (Sydney (ap-southeast-1):</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param preHumanTaskLambdaArn
      *        The Amazon Resource Name (ARN) of a Lambda function that is run before a data object is sent to a human
@@ -576,6 +626,31 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Asia Pacific (Sydney (ap-southeast-1):</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
      *        </p>
      *        </li>
      */
@@ -718,6 +793,31 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Asia Pacific (Sydney (ap-southeast-1):</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The Amazon Resource Name (ARN) of a Lambda function that is run before a data object is sent to a human
      *         worker. Use this function to provide input to a custom labeling job.</p>
@@ -847,6 +947,31 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Asia Pacific (Sydney (ap-southeast-1):</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
      *         </p>
      *         </li>
      */
@@ -989,6 +1114,31 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Asia Pacific (Sydney (ap-southeast-1):</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param preHumanTaskLambdaArn
      *        The Amazon Resource Name (ARN) of a Lambda function that is run before a data object is sent to a human
@@ -1119,6 +1269,31 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Asia Pacific (Sydney (ap-southeast-1):</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

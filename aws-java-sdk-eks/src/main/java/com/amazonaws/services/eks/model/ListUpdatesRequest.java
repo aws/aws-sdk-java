@@ -27,7 +27,7 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster for which to list updates.
+     * The name of the Amazon EKS cluster to list updates for.
      * </p>
      */
     private String name;
@@ -41,23 +41,23 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String nextToken;
     /**
      * <p>
-     * The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When this
-     * parameter is used, <code>ListUpdates</code> only returns <code>maxResults</code> results in a single page along
-     * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can
-     * be between 1 and 100. If this parameter is not used, then <code>ListUpdates</code> returns up to 100 results and
-     * a <code>nextToken</code> value if applicable.
+     * The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When you use this
+     * parameter, <code>ListUpdates</code> returns only <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of the initial request by sending
+     * another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If you don't use this parameter, <code>ListUpdates</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster for which to list updates.
+     * The name of the Amazon EKS cluster to list updates for.
      * </p>
      * 
      * @param name
-     *        The name of the Amazon EKS cluster for which to list updates.
+     *        The name of the Amazon EKS cluster to list updates for.
      */
 
     public void setName(String name) {
@@ -66,10 +66,10 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster for which to list updates.
+     * The name of the Amazon EKS cluster to list updates for.
      * </p>
      * 
-     * @return The name of the Amazon EKS cluster for which to list updates.
+     * @return The name of the Amazon EKS cluster to list updates for.
      */
 
     public String getName() {
@@ -78,11 +78,11 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster for which to list updates.
+     * The name of the Amazon EKS cluster to list updates for.
      * </p>
      * 
      * @param name
-     *        The name of the Amazon EKS cluster for which to list updates.
+     *        The name of the Amazon EKS cluster to list updates for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,21 +145,21 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When this
-     * parameter is used, <code>ListUpdates</code> only returns <code>maxResults</code> results in a single page along
-     * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can
-     * be between 1 and 100. If this parameter is not used, then <code>ListUpdates</code> returns up to 100 results and
-     * a <code>nextToken</code> value if applicable.
+     * The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When you use this
+     * parameter, <code>ListUpdates</code> returns only <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of the initial request by sending
+     * another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If you don't use this parameter, <code>ListUpdates</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When this
-     *        parameter is used, <code>ListUpdates</code> only returns <code>maxResults</code> results in a single page
-     *        along with a <code>nextToken</code> response element. The remaining results of the initial request can be
-     *        seen by sending another <code>ListUpdates</code> request with the returned <code>nextToken</code> value.
-     *        This value can be between 1 and 100. If this parameter is not used, then <code>ListUpdates</code> returns
-     *        up to 100 results and a <code>nextToken</code> value if applicable.
+     *        The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When you
+     *        use this parameter, <code>ListUpdates</code> returns only <code>maxResults</code> results in a single page
+     *        along with a <code>nextToken</code> response element. You can see the remaining results of the initial
+     *        request by sending another <code>ListUpdates</code> request with the returned <code>nextToken</code>
+     *        value. This value can be between 1 and 100. If you don't use this parameter, <code>ListUpdates</code>
+     *        returns up to 100 results and a <code>nextToken</code> value if applicable.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -168,20 +168,20 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When this
-     * parameter is used, <code>ListUpdates</code> only returns <code>maxResults</code> results in a single page along
-     * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can
-     * be between 1 and 100. If this parameter is not used, then <code>ListUpdates</code> returns up to 100 results and
-     * a <code>nextToken</code> value if applicable.
+     * The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When you use this
+     * parameter, <code>ListUpdates</code> returns only <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of the initial request by sending
+     * another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If you don't use this parameter, <code>ListUpdates</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.
      * </p>
      * 
-     * @return The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When this
-     *         parameter is used, <code>ListUpdates</code> only returns <code>maxResults</code> results in a single page
-     *         along with a <code>nextToken</code> response element. The remaining results of the initial request can be
-     *         seen by sending another <code>ListUpdates</code> request with the returned <code>nextToken</code> value.
-     *         This value can be between 1 and 100. If this parameter is not used, then <code>ListUpdates</code> returns
-     *         up to 100 results and a <code>nextToken</code> value if applicable.
+     * @return The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When you
+     *         use this parameter, <code>ListUpdates</code> returns only <code>maxResults</code> results in a single
+     *         page along with a <code>nextToken</code> response element. You can see the remaining results of the
+     *         initial request by sending another <code>ListUpdates</code> request with the returned
+     *         <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter,
+     *         <code>ListUpdates</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
      */
 
     public Integer getMaxResults() {
@@ -190,21 +190,21 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When this
-     * parameter is used, <code>ListUpdates</code> only returns <code>maxResults</code> results in a single page along
-     * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can
-     * be between 1 and 100. If this parameter is not used, then <code>ListUpdates</code> returns up to 100 results and
-     * a <code>nextToken</code> value if applicable.
+     * The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When you use this
+     * parameter, <code>ListUpdates</code> returns only <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. You can see the remaining results of the initial request by sending
+     * another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If you don't use this parameter, <code>ListUpdates</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When this
-     *        parameter is used, <code>ListUpdates</code> only returns <code>maxResults</code> results in a single page
-     *        along with a <code>nextToken</code> response element. The remaining results of the initial request can be
-     *        seen by sending another <code>ListUpdates</code> request with the returned <code>nextToken</code> value.
-     *        This value can be between 1 and 100. If this parameter is not used, then <code>ListUpdates</code> returns
-     *        up to 100 results and a <code>nextToken</code> value if applicable.
+     *        The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When you
+     *        use this parameter, <code>ListUpdates</code> returns only <code>maxResults</code> results in a single page
+     *        along with a <code>nextToken</code> response element. You can see the remaining results of the initial
+     *        request by sending another <code>ListUpdates</code> request with the returned <code>nextToken</code>
+     *        value. This value can be between 1 and 100. If you don't use this parameter, <code>ListUpdates</code>
+     *        returns up to 100 results and a <code>nextToken</code> value if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

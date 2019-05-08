@@ -54,6 +54,12 @@ public class LabelingJobForWorkteamSummary implements Serializable, Cloneable, S
      * </p>
      */
     private LabelCountersForWorkteam labelCounters;
+    /**
+     * <p>
+     * The configured number of workers per data object.
+     * </p>
+     */
+    private Integer numberOfHumanWorkersPerDataObject;
 
     /**
      * <p>
@@ -248,6 +254,46 @@ public class LabelingJobForWorkteamSummary implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The configured number of workers per data object.
+     * </p>
+     * 
+     * @param numberOfHumanWorkersPerDataObject
+     *        The configured number of workers per data object.
+     */
+
+    public void setNumberOfHumanWorkersPerDataObject(Integer numberOfHumanWorkersPerDataObject) {
+        this.numberOfHumanWorkersPerDataObject = numberOfHumanWorkersPerDataObject;
+    }
+
+    /**
+     * <p>
+     * The configured number of workers per data object.
+     * </p>
+     * 
+     * @return The configured number of workers per data object.
+     */
+
+    public Integer getNumberOfHumanWorkersPerDataObject() {
+        return this.numberOfHumanWorkersPerDataObject;
+    }
+
+    /**
+     * <p>
+     * The configured number of workers per data object.
+     * </p>
+     * 
+     * @param numberOfHumanWorkersPerDataObject
+     *        The configured number of workers per data object.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LabelingJobForWorkteamSummary withNumberOfHumanWorkersPerDataObject(Integer numberOfHumanWorkersPerDataObject) {
+        setNumberOfHumanWorkersPerDataObject(numberOfHumanWorkersPerDataObject);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -268,7 +314,9 @@ public class LabelingJobForWorkteamSummary implements Serializable, Cloneable, S
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLabelCounters() != null)
-            sb.append("LabelCounters: ").append(getLabelCounters());
+            sb.append("LabelCounters: ").append(getLabelCounters()).append(",");
+        if (getNumberOfHumanWorkersPerDataObject() != null)
+            sb.append("NumberOfHumanWorkersPerDataObject: ").append(getNumberOfHumanWorkersPerDataObject());
         sb.append("}");
         return sb.toString();
     }
@@ -303,6 +351,11 @@ public class LabelingJobForWorkteamSummary implements Serializable, Cloneable, S
             return false;
         if (other.getLabelCounters() != null && other.getLabelCounters().equals(this.getLabelCounters()) == false)
             return false;
+        if (other.getNumberOfHumanWorkersPerDataObject() == null ^ this.getNumberOfHumanWorkersPerDataObject() == null)
+            return false;
+        if (other.getNumberOfHumanWorkersPerDataObject() != null
+                && other.getNumberOfHumanWorkersPerDataObject().equals(this.getNumberOfHumanWorkersPerDataObject()) == false)
+            return false;
         return true;
     }
 
@@ -316,6 +369,7 @@ public class LabelingJobForWorkteamSummary implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getWorkRequesterAccountId() == null) ? 0 : getWorkRequesterAccountId().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLabelCounters() == null) ? 0 : getLabelCounters().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfHumanWorkersPerDataObject() == null) ? 0 : getNumberOfHumanWorkersPerDataObject().hashCode());
         return hashCode;
     }
 

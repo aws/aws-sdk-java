@@ -62,7 +62,8 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the
-     * notebook instance.
+     * notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not associated
+     * with the notebook instance when you call this method, it does not throw an error.
      * </p>
      */
     private Boolean disassociateLifecycleConfig;
@@ -104,19 +105,25 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     private java.util.List<String> acceleratorTypes;
     /**
      * <p>
-     * A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     * A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is
+     * idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call
+     * this method, it does not throw an error.
      * </p>
      */
     private Boolean disassociateAcceleratorTypes;
     /**
      * <p>
-     * The name or URL of the default Git repository to remove from this notebook instance.
+     * The name or URL of the default Git repository to remove from this notebook instance. This operation is
+     * idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this
+     * method, it does not throw an error.
      * </p>
      */
     private Boolean disassociateDefaultCodeRepository;
     /**
      * <p>
-     * A list of names or URLs of the default Git repositories to remove from this notebook instance.
+     * A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is
+     * idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this
+     * method, it does not throw an error.
      * </p>
      */
     private Boolean disassociateAdditionalCodeRepositories;
@@ -376,12 +383,14 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the
-     * notebook instance.
+     * notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not associated
+     * with the notebook instance when you call this method, it does not throw an error.
      * </p>
      * 
      * @param disassociateLifecycleConfig
      *        Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with
-     *        the notebook instance.
+     *        the notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not
+     *        associated with the notebook instance when you call this method, it does not throw an error.
      */
 
     public void setDisassociateLifecycleConfig(Boolean disassociateLifecycleConfig) {
@@ -391,11 +400,13 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the
-     * notebook instance.
+     * notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not associated
+     * with the notebook instance when you call this method, it does not throw an error.
      * </p>
      * 
      * @return Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated
-     *         with the notebook instance.
+     *         with the notebook instance. This operation is idempotent. If you specify a lifecycle configuration that
+     *         is not associated with the notebook instance when you call this method, it does not throw an error.
      */
 
     public Boolean getDisassociateLifecycleConfig() {
@@ -405,12 +416,14 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the
-     * notebook instance.
+     * notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not associated
+     * with the notebook instance when you call this method, it does not throw an error.
      * </p>
      * 
      * @param disassociateLifecycleConfig
      *        Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with
-     *        the notebook instance.
+     *        the notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not
+     *        associated with the notebook instance when you call this method, it does not throw an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -422,11 +435,13 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the
-     * notebook instance.
+     * notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not associated
+     * with the notebook instance when you call this method, it does not throw an error.
      * </p>
      * 
      * @return Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated
-     *         with the notebook instance.
+     *         with the notebook instance. This operation is idempotent. If you specify a lifecycle configuration that
+     *         is not associated with the notebook instance when you call this method, it does not throw an error.
      */
 
     public Boolean isDisassociateLifecycleConfig() {
@@ -785,11 +800,15 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     * A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is
+     * idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call
+     * this method, it does not throw an error.
      * </p>
      * 
      * @param disassociateAcceleratorTypes
-     *        A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     *        A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation
+     *        is idempotent. If you specify an accelerator type that is not associated with the notebook instance when
+     *        you call this method, it does not throw an error.
      */
 
     public void setDisassociateAcceleratorTypes(Boolean disassociateAcceleratorTypes) {
@@ -798,10 +817,14 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     * A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is
+     * idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call
+     * this method, it does not throw an error.
      * </p>
      * 
-     * @return A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     * @return A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation
+     *         is idempotent. If you specify an accelerator type that is not associated with the notebook instance when
+     *         you call this method, it does not throw an error.
      */
 
     public Boolean getDisassociateAcceleratorTypes() {
@@ -810,11 +833,15 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     * A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is
+     * idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call
+     * this method, it does not throw an error.
      * </p>
      * 
      * @param disassociateAcceleratorTypes
-     *        A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     *        A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation
+     *        is idempotent. If you specify an accelerator type that is not associated with the notebook instance when
+     *        you call this method, it does not throw an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -825,10 +852,14 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     * A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is
+     * idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call
+     * this method, it does not throw an error.
      * </p>
      * 
-     * @return A list of the Elastic Inference (EI) instance types to remove from this notebook instance.
+     * @return A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation
+     *         is idempotent. If you specify an accelerator type that is not associated with the notebook instance when
+     *         you call this method, it does not throw an error.
      */
 
     public Boolean isDisassociateAcceleratorTypes() {
@@ -837,11 +868,15 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name or URL of the default Git repository to remove from this notebook instance.
+     * The name or URL of the default Git repository to remove from this notebook instance. This operation is
+     * idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this
+     * method, it does not throw an error.
      * </p>
      * 
      * @param disassociateDefaultCodeRepository
-     *        The name or URL of the default Git repository to remove from this notebook instance.
+     *        The name or URL of the default Git repository to remove from this notebook instance. This operation is
+     *        idempotent. If you specify a Git repository that is not associated with the notebook instance when you
+     *        call this method, it does not throw an error.
      */
 
     public void setDisassociateDefaultCodeRepository(Boolean disassociateDefaultCodeRepository) {
@@ -850,10 +885,14 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name or URL of the default Git repository to remove from this notebook instance.
+     * The name or URL of the default Git repository to remove from this notebook instance. This operation is
+     * idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this
+     * method, it does not throw an error.
      * </p>
      * 
-     * @return The name or URL of the default Git repository to remove from this notebook instance.
+     * @return The name or URL of the default Git repository to remove from this notebook instance. This operation is
+     *         idempotent. If you specify a Git repository that is not associated with the notebook instance when you
+     *         call this method, it does not throw an error.
      */
 
     public Boolean getDisassociateDefaultCodeRepository() {
@@ -862,11 +901,15 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name or URL of the default Git repository to remove from this notebook instance.
+     * The name or URL of the default Git repository to remove from this notebook instance. This operation is
+     * idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this
+     * method, it does not throw an error.
      * </p>
      * 
      * @param disassociateDefaultCodeRepository
-     *        The name or URL of the default Git repository to remove from this notebook instance.
+     *        The name or URL of the default Git repository to remove from this notebook instance. This operation is
+     *        idempotent. If you specify a Git repository that is not associated with the notebook instance when you
+     *        call this method, it does not throw an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -877,10 +920,14 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name or URL of the default Git repository to remove from this notebook instance.
+     * The name or URL of the default Git repository to remove from this notebook instance. This operation is
+     * idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this
+     * method, it does not throw an error.
      * </p>
      * 
-     * @return The name or URL of the default Git repository to remove from this notebook instance.
+     * @return The name or URL of the default Git repository to remove from this notebook instance. This operation is
+     *         idempotent. If you specify a Git repository that is not associated with the notebook instance when you
+     *         call this method, it does not throw an error.
      */
 
     public Boolean isDisassociateDefaultCodeRepository() {
@@ -889,11 +936,15 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of names or URLs of the default Git repositories to remove from this notebook instance.
+     * A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is
+     * idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this
+     * method, it does not throw an error.
      * </p>
      * 
      * @param disassociateAdditionalCodeRepositories
-     *        A list of names or URLs of the default Git repositories to remove from this notebook instance.
+     *        A list of names or URLs of the default Git repositories to remove from this notebook instance. This
+     *        operation is idempotent. If you specify a Git repository that is not associated with the notebook instance
+     *        when you call this method, it does not throw an error.
      */
 
     public void setDisassociateAdditionalCodeRepositories(Boolean disassociateAdditionalCodeRepositories) {
@@ -902,10 +953,14 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of names or URLs of the default Git repositories to remove from this notebook instance.
+     * A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is
+     * idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this
+     * method, it does not throw an error.
      * </p>
      * 
-     * @return A list of names or URLs of the default Git repositories to remove from this notebook instance.
+     * @return A list of names or URLs of the default Git repositories to remove from this notebook instance. This
+     *         operation is idempotent. If you specify a Git repository that is not associated with the notebook
+     *         instance when you call this method, it does not throw an error.
      */
 
     public Boolean getDisassociateAdditionalCodeRepositories() {
@@ -914,11 +969,15 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of names or URLs of the default Git repositories to remove from this notebook instance.
+     * A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is
+     * idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this
+     * method, it does not throw an error.
      * </p>
      * 
      * @param disassociateAdditionalCodeRepositories
-     *        A list of names or URLs of the default Git repositories to remove from this notebook instance.
+     *        A list of names or URLs of the default Git repositories to remove from this notebook instance. This
+     *        operation is idempotent. If you specify a Git repository that is not associated with the notebook instance
+     *        when you call this method, it does not throw an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -929,10 +988,14 @@ public class UpdateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of names or URLs of the default Git repositories to remove from this notebook instance.
+     * A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is
+     * idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this
+     * method, it does not throw an error.
      * </p>
      * 
-     * @return A list of names or URLs of the default Git repositories to remove from this notebook instance.
+     * @return A list of names or URLs of the default Git repositories to remove from this notebook instance. This
+     *         operation is idempotent. If you specify a Git repository that is not associated with the notebook
+     *         instance when you call this method, it does not throw an error.
      */
 
     public Boolean isDisassociateAdditionalCodeRepositories() {

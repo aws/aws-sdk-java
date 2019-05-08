@@ -85,7 +85,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more
-     * information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
      * with Amazon CloudWatch Logs</a>.
      * </p>
      */
@@ -96,7 +96,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * SQL statement that reads data from one in-application stream, generates a running average of the number of
      * advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more
      * information about the typical pattern, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
      * </p>
      * <p>
      * You can provide such series of SQL statements, where output of one statement can be used as the input for the
@@ -109,6 +109,16 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String applicationCode;
+    /**
+     * <p>
+     * A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     * application. Note that the maximum number of application tags includes system tags. The maximum number of
+     * user-defined application tags is 50. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -574,13 +584,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more
-     * information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
      * with Amazon CloudWatch Logs</a>.
      * </p>
      * 
      * @return Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For
      *         more information, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
      *         CloudWatch Logs</a>.
      */
 
@@ -591,14 +601,14 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more
-     * information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
      * with Amazon CloudWatch Logs</a>.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
      *        Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
      *        CloudWatch Logs</a>.
      */
 
@@ -614,7 +624,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more
-     * information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
      * with Amazon CloudWatch Logs</a>.
      * </p>
      * <p>
@@ -626,7 +636,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param cloudWatchLoggingOptions
      *        Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
      *        CloudWatch Logs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -644,14 +654,14 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more
-     * information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
      * with Amazon CloudWatch Logs</a>.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
      *        Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
      *        CloudWatch Logs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -667,7 +677,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * SQL statement that reads data from one in-application stream, generates a running average of the number of
      * advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more
      * information about the typical pattern, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
      * </p>
      * <p>
      * You can provide such series of SQL statements, where output of one statement can be used as the input for the
@@ -684,7 +694,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        write a SQL statement that reads data from one in-application stream, generates a running average of the
      *        number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using
      *        pumps. For more information about the typical pattern, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
      *        Code</a>. </p>
      *        <p>
      *        You can provide such series of SQL statements, where output of one statement can be used as the input for
@@ -706,7 +716,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * SQL statement that reads data from one in-application stream, generates a running average of the number of
      * advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more
      * information about the typical pattern, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
      * </p>
      * <p>
      * You can provide such series of SQL statements, where output of one statement can be used as the input for the
@@ -722,7 +732,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      *         write a SQL statement that reads data from one in-application stream, generates a running average of the
      *         number of advertisement clicks by vendor, and insert resulting rows in another in-application stream
      *         using pumps. For more information about the typical pattern, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
      *         Code</a>. </p>
      *         <p>
      *         You can provide such series of SQL statements, where output of one statement can be used as the input for
@@ -744,7 +754,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * SQL statement that reads data from one in-application stream, generates a running average of the number of
      * advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more
      * information about the typical pattern, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
      * </p>
      * <p>
      * You can provide such series of SQL statements, where output of one statement can be used as the input for the
@@ -761,7 +771,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        write a SQL statement that reads data from one in-application stream, generates a running average of the
      *        number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using
      *        pumps. For more information about the typical pattern, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
      *        Code</a>. </p>
      *        <p>
      *        You can provide such series of SQL statements, where output of one statement can be used as the input for
@@ -776,6 +786,108 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public CreateApplicationRequest withApplicationCode(String applicationCode) {
         setApplicationCode(applicationCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     * application. Note that the maximum number of application tags includes system tags. The maximum number of
+     * user-defined application tags is 50. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * </p>
+     * 
+     * @return A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     *         application. Note that the maximum number of application tags includes system tags. The maximum number of
+     *         user-defined application tags is 50. For more information, see <a
+     *         href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *         Allocation Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     * application. Note that the maximum number of application tags includes system tags. The maximum number of
+     * user-defined application tags is 50. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     *        application. Note that the maximum number of application tags includes system tags. The maximum number of
+     *        user-defined application tags is 50. For more information, see <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     * application. Note that the maximum number of application tags includes system tags. The maximum number of
+     * user-defined application tags is 50. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     *        application. Note that the maximum number of application tags includes system tags. The maximum number of
+     *        user-defined application tags is 50. For more information, see <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     * application. Note that the maximum number of application tags includes system tags. The maximum number of
+     * user-defined application tags is 50. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
+     *        application. Note that the maximum number of application tags includes system tags. The maximum number of
+     *        user-defined application tags is 50. For more information, see <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -802,7 +914,9 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getCloudWatchLoggingOptions() != null)
             sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions()).append(",");
         if (getApplicationCode() != null)
-            sb.append("ApplicationCode: ").append(getApplicationCode());
+            sb.append("ApplicationCode: ").append(getApplicationCode()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -841,6 +955,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getApplicationCode() != null && other.getApplicationCode().equals(this.getApplicationCode()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -855,6 +973,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptions() == null) ? 0 : getCloudWatchLoggingOptions().hashCode());
         hashCode = prime * hashCode + ((getApplicationCode() == null) ? 0 : getApplicationCode().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -1,3 +1,24 @@
+# __1.11.549__ __2019-05-08__
+## __AWS IoT 1-Click Projects Service__
+  - ### Features
+    - Added automatic pagination support for ListProjects and ListPlacements APIs.
+
+## __AWS Service Catalog__
+  - ### Features
+    - Adds "Parameters" field in UpdateConstraint API, which will allow Admin user to update "Parameters" in created Constraints.
+
+## __Amazon Elastic Container Service for Kubernetes__
+  - ### Features
+    - Documentation update for Amazon EKS to clarify allowed parameters in update-cluster-config.
+
+## __Amazon Kinesis Analytics__
+  - ### Features
+    - Kinesis Data Analytics APIs now support tagging on applications.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Workteams now supports notification configurations. Neo now supports Jetson Nano as a target device and NumberOfHumanWorkersPerDataObject is now included in the ListLabelingJobsForWorkteam response.
+
 # __1.11.548__ __2019-05-07__
 ## __AWS AppSync__
   - ### Features

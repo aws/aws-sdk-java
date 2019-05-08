@@ -33,6 +33,8 @@ public class UpdateConstraintRequestMarshaller {
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Parameters").build();
 
     private static final UpdateConstraintRequestMarshaller instance = new UpdateConstraintRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class UpdateConstraintRequestMarshaller {
             protocolMarshaller.marshall(updateConstraintRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
             protocolMarshaller.marshall(updateConstraintRequest.getId(), ID_BINDING);
             protocolMarshaller.marshall(updateConstraintRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateConstraintRequest.getParameters(), PARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -43,6 +43,12 @@ public class UpdateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * Configures SNS topic notifications for available or expiring work items
+     * </p>
+     */
+    private NotificationConfiguration notificationConfiguration;
 
     /**
      * <p>
@@ -195,6 +201,46 @@ public class UpdateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Configures SNS topic notifications for available or expiring work items
+     * </p>
+     * 
+     * @param notificationConfiguration
+     *        Configures SNS topic notifications for available or expiring work items
+     */
+
+    public void setNotificationConfiguration(NotificationConfiguration notificationConfiguration) {
+        this.notificationConfiguration = notificationConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configures SNS topic notifications for available or expiring work items
+     * </p>
+     * 
+     * @return Configures SNS topic notifications for available or expiring work items
+     */
+
+    public NotificationConfiguration getNotificationConfiguration() {
+        return this.notificationConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configures SNS topic notifications for available or expiring work items
+     * </p>
+     * 
+     * @param notificationConfiguration
+     *        Configures SNS topic notifications for available or expiring work items
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkteamRequest withNotificationConfiguration(NotificationConfiguration notificationConfiguration) {
+        setNotificationConfiguration(notificationConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -211,7 +257,9 @@ public class UpdateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getMemberDefinitions() != null)
             sb.append("MemberDefinitions: ").append(getMemberDefinitions()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getNotificationConfiguration() != null)
+            sb.append("NotificationConfiguration: ").append(getNotificationConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -238,6 +286,10 @@ public class UpdateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getNotificationConfiguration() == null ^ this.getNotificationConfiguration() == null)
+            return false;
+        if (other.getNotificationConfiguration() != null && other.getNotificationConfiguration().equals(this.getNotificationConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -249,6 +301,7 @@ public class UpdateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getWorkteamName() == null) ? 0 : getWorkteamName().hashCode());
         hashCode = prime * hashCode + ((getMemberDefinitions() == null) ? 0 : getMemberDefinitions().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getNotificationConfiguration() == null) ? 0 : getNotificationConfiguration().hashCode());
         return hashCode;
     }
 

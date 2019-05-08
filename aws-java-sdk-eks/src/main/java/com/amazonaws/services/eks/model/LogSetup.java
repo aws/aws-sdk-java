@@ -35,9 +35,9 @@ public class LogSetup implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> types;
     /**
      * <p>
-     * If a log type is enabled, then that log type exports its control plane logs to CloudWatch Logs. If a log type is
-     * not enabled, then that log type does not export its control plane logs. Each individual log type can be enabled
-     * or disabled independently.
+     * If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't
+     * enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled
+     * independently.
      * </p>
      */
     private Boolean enabled;
@@ -142,15 +142,15 @@ public class LogSetup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If a log type is enabled, then that log type exports its control plane logs to CloudWatch Logs. If a log type is
-     * not enabled, then that log type does not export its control plane logs. Each individual log type can be enabled
-     * or disabled independently.
+     * If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't
+     * enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled
+     * independently.
      * </p>
      * 
      * @param enabled
-     *        If a log type is enabled, then that log type exports its control plane logs to CloudWatch Logs. If a log
-     *        type is not enabled, then that log type does not export its control plane logs. Each individual log type
-     *        can be enabled or disabled independently.
+     *        If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type
+     *        isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be
+     *        enabled or disabled independently.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -159,14 +159,14 @@ public class LogSetup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If a log type is enabled, then that log type exports its control plane logs to CloudWatch Logs. If a log type is
-     * not enabled, then that log type does not export its control plane logs. Each individual log type can be enabled
-     * or disabled independently.
+     * If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't
+     * enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled
+     * independently.
      * </p>
      * 
-     * @return If a log type is enabled, then that log type exports its control plane logs to CloudWatch Logs. If a log
-     *         type is not enabled, then that log type does not export its control plane logs. Each individual log type
-     *         can be enabled or disabled independently.
+     * @return If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type
+     *         isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be
+     *         enabled or disabled independently.
      */
 
     public Boolean getEnabled() {
@@ -175,15 +175,15 @@ public class LogSetup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If a log type is enabled, then that log type exports its control plane logs to CloudWatch Logs. If a log type is
-     * not enabled, then that log type does not export its control plane logs. Each individual log type can be enabled
-     * or disabled independently.
+     * If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't
+     * enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled
+     * independently.
      * </p>
      * 
      * @param enabled
-     *        If a log type is enabled, then that log type exports its control plane logs to CloudWatch Logs. If a log
-     *        type is not enabled, then that log type does not export its control plane logs. Each individual log type
-     *        can be enabled or disabled independently.
+     *        If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type
+     *        isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be
+     *        enabled or disabled independently.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,14 +194,14 @@ public class LogSetup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If a log type is enabled, then that log type exports its control plane logs to CloudWatch Logs. If a log type is
-     * not enabled, then that log type does not export its control plane logs. Each individual log type can be enabled
-     * or disabled independently.
+     * If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't
+     * enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled
+     * independently.
      * </p>
      * 
-     * @return If a log type is enabled, then that log type exports its control plane logs to CloudWatch Logs. If a log
-     *         type is not enabled, then that log type does not export its control plane logs. Each individual log type
-     *         can be enabled or disabled independently.
+     * @return If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type
+     *         isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be
+     *         enabled or disabled independently.
      */
 
     public Boolean isEnabled() {

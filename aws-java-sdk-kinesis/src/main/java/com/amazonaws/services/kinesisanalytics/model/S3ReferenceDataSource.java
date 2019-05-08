@@ -23,8 +23,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Analytics can assume to read this object on your behalf.
  * </p>
  * <p>
- * An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the
- * <a>UpdateApplication</a> operation to trigger reloading of data into your application.
+ * An Amazon Kinesis Analytics application loads reference data only once. If the data changes, you call the <a
+ * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a>
+ * operation to trigger reloading of data into your application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/S3ReferenceDataSource"

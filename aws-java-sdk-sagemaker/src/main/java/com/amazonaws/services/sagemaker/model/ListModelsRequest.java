@@ -65,7 +65,7 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.Date creationTimeBefore;
     /**
      * <p>
-     * A filter that returns only models created after the specified time (timestamp).
+     * A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).
      * </p>
      */
     private java.util.Date creationTimeAfter;
@@ -362,11 +362,12 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A filter that returns only models created after the specified time (timestamp).
+     * A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).
      * </p>
      * 
      * @param creationTimeAfter
-     *        A filter that returns only models created after the specified time (timestamp).
+     *        A filter that returns only models with a creation time greater than or equal to the specified time
+     *        (timestamp).
      */
 
     public void setCreationTimeAfter(java.util.Date creationTimeAfter) {
@@ -375,10 +376,11 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A filter that returns only models created after the specified time (timestamp).
+     * A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).
      * </p>
      * 
-     * @return A filter that returns only models created after the specified time (timestamp).
+     * @return A filter that returns only models with a creation time greater than or equal to the specified time
+     *         (timestamp).
      */
 
     public java.util.Date getCreationTimeAfter() {
@@ -387,11 +389,12 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A filter that returns only models created after the specified time (timestamp).
+     * A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).
      * </p>
      * 
      * @param creationTimeAfter
-     *        A filter that returns only models created after the specified time (timestamp).
+     *        A filter that returns only models with a creation time greater than or equal to the specified time
+     *        (timestamp).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

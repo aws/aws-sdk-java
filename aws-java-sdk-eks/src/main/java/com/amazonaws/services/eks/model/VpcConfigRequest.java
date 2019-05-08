@@ -38,7 +38,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
-     * use to allow communication between your worker nodes and the Kubernetes control plane. If you do not specify a
+     * use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify a
      * security group, the default security group for your VPC is used.
      * </p>
      */
@@ -46,7 +46,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server endpoint.
-     * If you disable public access, your cluster's Kubernetes API server can only receive requests from within the
+     * If you disable public access, your cluster's Kubernetes API server can receive only requests from within the
      * cluster VPC. The default value for this parameter is <code>true</code>, which enables public access for your
      * Kubernetes API server. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
@@ -57,7 +57,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server endpoint.
-     * If you enable private access, Kubernetes API requests from within your cluster's VPC will use the private VPC
+     * If you enable private access, Kubernetes API requests from within your cluster's VPC use the private VPC
      * endpoint. The default value for this parameter is <code>false</code>, which disables private access for your
      * Kubernetes API server. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
@@ -151,13 +151,13 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
-     * use to allow communication between your worker nodes and the Kubernetes control plane. If you do not specify a
+     * use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify a
      * security group, the default security group for your VPC is used.
      * </p>
      * 
      * @return Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
      *         creates to use to allow communication between your worker nodes and the Kubernetes control plane. If you
-     *         do not specify a security group, the default security group for your VPC is used.
+     *         don't specify a security group, the default security group for your VPC is used.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -167,14 +167,14 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
-     * use to allow communication between your worker nodes and the Kubernetes control plane. If you do not specify a
+     * use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify a
      * security group, the default security group for your VPC is used.
      * </p>
      * 
      * @param securityGroupIds
      *        Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
      *        creates to use to allow communication between your worker nodes and the Kubernetes control plane. If you
-     *        do not specify a security group, the default security group for your VPC is used.
+     *        don't specify a security group, the default security group for your VPC is used.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -189,7 +189,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
-     * use to allow communication between your worker nodes and the Kubernetes control plane. If you do not specify a
+     * use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify a
      * security group, the default security group for your VPC is used.
      * </p>
      * <p>
@@ -201,7 +201,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * @param securityGroupIds
      *        Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
      *        creates to use to allow communication between your worker nodes and the Kubernetes control plane. If you
-     *        do not specify a security group, the default security group for your VPC is used.
+     *        don't specify a security group, the default security group for your VPC is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,14 +218,14 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
-     * use to allow communication between your worker nodes and the Kubernetes control plane. If you do not specify a
+     * use to allow communication between your worker nodes and the Kubernetes control plane. If you don't specify a
      * security group, the default security group for your VPC is used.
      * </p>
      * 
      * @param securityGroupIds
      *        Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
      *        creates to use to allow communication between your worker nodes and the Kubernetes control plane. If you
-     *        do not specify a security group, the default security group for your VPC is used.
+     *        don't specify a security group, the default security group for your VPC is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,7 +237,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server endpoint.
-     * If you disable public access, your cluster's Kubernetes API server can only receive requests from within the
+     * If you disable public access, your cluster's Kubernetes API server can receive only requests from within the
      * cluster VPC. The default value for this parameter is <code>true</code>, which enables public access for your
      * Kubernetes API server. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
@@ -246,7 +246,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * 
      * @param endpointPublicAccess
      *        Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server
-     *        endpoint. If you disable public access, your cluster's Kubernetes API server can only receive requests
+     *        endpoint. If you disable public access, your cluster's Kubernetes API server can receive only requests
      *        from within the cluster VPC. The default value for this parameter is <code>true</code>, which enables
      *        public access for your Kubernetes API server. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
@@ -260,7 +260,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server endpoint.
-     * If you disable public access, your cluster's Kubernetes API server can only receive requests from within the
+     * If you disable public access, your cluster's Kubernetes API server can receive only requests from within the
      * cluster VPC. The default value for this parameter is <code>true</code>, which enables public access for your
      * Kubernetes API server. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
@@ -268,7 +268,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @return Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server
-     *         endpoint. If you disable public access, your cluster's Kubernetes API server can only receive requests
+     *         endpoint. If you disable public access, your cluster's Kubernetes API server can receive only requests
      *         from within the cluster VPC. The default value for this parameter is <code>true</code>, which enables
      *         public access for your Kubernetes API server. For more information, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
@@ -282,7 +282,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server endpoint.
-     * If you disable public access, your cluster's Kubernetes API server can only receive requests from within the
+     * If you disable public access, your cluster's Kubernetes API server can receive only requests from within the
      * cluster VPC. The default value for this parameter is <code>true</code>, which enables public access for your
      * Kubernetes API server. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
@@ -291,7 +291,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * 
      * @param endpointPublicAccess
      *        Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server
-     *        endpoint. If you disable public access, your cluster's Kubernetes API server can only receive requests
+     *        endpoint. If you disable public access, your cluster's Kubernetes API server can receive only requests
      *        from within the cluster VPC. The default value for this parameter is <code>true</code>, which enables
      *        public access for your Kubernetes API server. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
@@ -307,7 +307,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server endpoint.
-     * If you disable public access, your cluster's Kubernetes API server can only receive requests from within the
+     * If you disable public access, your cluster's Kubernetes API server can receive only requests from within the
      * cluster VPC. The default value for this parameter is <code>true</code>, which enables public access for your
      * Kubernetes API server. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
@@ -315,7 +315,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @return Set this value to <code>false</code> to disable public access for your cluster's Kubernetes API server
-     *         endpoint. If you disable public access, your cluster's Kubernetes API server can only receive requests
+     *         endpoint. If you disable public access, your cluster's Kubernetes API server can receive only requests
      *         from within the cluster VPC. The default value for this parameter is <code>true</code>, which enables
      *         public access for your Kubernetes API server. For more information, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
@@ -329,7 +329,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server endpoint.
-     * If you enable private access, Kubernetes API requests from within your cluster's VPC will use the private VPC
+     * If you enable private access, Kubernetes API requests from within your cluster's VPC use the private VPC
      * endpoint. The default value for this parameter is <code>false</code>, which disables private access for your
      * Kubernetes API server. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
@@ -338,9 +338,9 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * 
      * @param endpointPrivateAccess
      *        Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server
-     *        endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC will use
-     *        the private VPC endpoint. The default value for this parameter is <code>false</code>, which disables
-     *        private access for your Kubernetes API server. For more information, see <a
+     *        endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC use the
+     *        private VPC endpoint. The default value for this parameter is <code>false</code>, which disables private
+     *        access for your Kubernetes API server. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
      *        Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
@@ -352,7 +352,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server endpoint.
-     * If you enable private access, Kubernetes API requests from within your cluster's VPC will use the private VPC
+     * If you enable private access, Kubernetes API requests from within your cluster's VPC use the private VPC
      * endpoint. The default value for this parameter is <code>false</code>, which disables private access for your
      * Kubernetes API server. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
@@ -360,9 +360,9 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @return Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server
-     *         endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC will use
-     *         the private VPC endpoint. The default value for this parameter is <code>false</code>, which disables
-     *         private access for your Kubernetes API server. For more information, see <a
+     *         endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC use the
+     *         private VPC endpoint. The default value for this parameter is <code>false</code>, which disables private
+     *         access for your Kubernetes API server. For more information, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
      *         Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
@@ -374,7 +374,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server endpoint.
-     * If you enable private access, Kubernetes API requests from within your cluster's VPC will use the private VPC
+     * If you enable private access, Kubernetes API requests from within your cluster's VPC use the private VPC
      * endpoint. The default value for this parameter is <code>false</code>, which disables private access for your
      * Kubernetes API server. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
@@ -383,9 +383,9 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * 
      * @param endpointPrivateAccess
      *        Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server
-     *        endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC will use
-     *        the private VPC endpoint. The default value for this parameter is <code>false</code>, which disables
-     *        private access for your Kubernetes API server. For more information, see <a
+     *        endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC use the
+     *        private VPC endpoint. The default value for this parameter is <code>false</code>, which disables private
+     *        access for your Kubernetes API server. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
      *        Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -399,7 +399,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server endpoint.
-     * If you enable private access, Kubernetes API requests from within your cluster's VPC will use the private VPC
+     * If you enable private access, Kubernetes API requests from within your cluster's VPC use the private VPC
      * endpoint. The default value for this parameter is <code>false</code>, which disables private access for your
      * Kubernetes API server. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
@@ -407,9 +407,9 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @return Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server
-     *         endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC will use
-     *         the private VPC endpoint. The default value for this parameter is <code>false</code>, which disables
-     *         private access for your Kubernetes API server. For more information, see <a
+     *         endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC use the
+     *         private VPC endpoint. The default value for this parameter is <code>false</code>, which disables private
+     *         access for your Kubernetes API server. For more information, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint
      *         Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
