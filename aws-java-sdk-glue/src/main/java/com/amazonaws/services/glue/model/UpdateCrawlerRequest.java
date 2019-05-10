@@ -33,7 +33,8 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String name;
     /**
      * <p>
-     * The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
+     * The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer
+     * resources.
      * </p>
      */
     private String role;
@@ -58,9 +59,9 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private CrawlerTargets targets;
     /**
      * <p>
-     * A <code>cron</code> expression used to specify the schedule (see <a
+     * A <code>cron</code> expression used to specify the schedule. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
-     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
      */
@@ -80,13 +81,13 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String tablePrefix;
     /**
      * <p>
-     * Policy for the crawler's update and deletion behavior.
+     * The policy for the crawler's update and deletion behavior.
      * </p>
      */
     private SchemaChangePolicy schemaChangePolicy;
     /**
      * <p>
-     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
+     * The crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
      * </p>
@@ -94,7 +95,7 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String configuration;
     /**
      * <p>
-     * The name of the SecurityConfiguration structure to be used by this Crawler.
+     * The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.
      * </p>
      */
     private String crawlerSecurityConfiguration;
@@ -141,11 +142,13 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
+     * The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer
+     * resources.
      * </p>
      * 
      * @param role
-     *        The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
+     *        The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access
+     *        customer resources.
      */
 
     public void setRole(String role) {
@@ -154,10 +157,12 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
+     * The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer
+     * resources.
      * </p>
      * 
-     * @return The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
+     * @return The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access
+     *         customer resources.
      */
 
     public String getRole() {
@@ -166,11 +171,13 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
+     * The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer
+     * resources.
      * </p>
      * 
      * @param role
-     *        The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
+     *        The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access
+     *        customer resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,16 +314,16 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A <code>cron</code> expression used to specify the schedule (see <a
+     * A <code>cron</code> expression used to specify the schedule. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
-     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
      * @param schedule
-     *        A <code>cron</code> expression used to specify the schedule (see <a
+     *        A <code>cron</code> expression used to specify the schedule. For more information, see <a
      *        href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules
-     *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify
      *        <code>cron(15 12 * * ? *)</code>.
      */
 
@@ -326,16 +333,16 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A <code>cron</code> expression used to specify the schedule (see <a
+     * A <code>cron</code> expression used to specify the schedule. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
-     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
-     * @return A <code>cron</code> expression used to specify the schedule (see <a
+     * @return A <code>cron</code> expression used to specify the schedule. For more information, see <a
      *         href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-     *         Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would
-     *         specify: <code>cron(15 12 * * ? *)</code>.
+     *         Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify
+     *         <code>cron(15 12 * * ? *)</code>.
      */
 
     public String getSchedule() {
@@ -344,16 +351,16 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A <code>cron</code> expression used to specify the schedule (see <a
+     * A <code>cron</code> expression used to specify the schedule. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
-     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
      * @param schedule
-     *        A <code>cron</code> expression used to specify the schedule (see <a
+     *        A <code>cron</code> expression used to specify the schedule. For more information, see <a
      *        href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules
-     *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify
      *        <code>cron(15 12 * * ? *)</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -487,11 +494,11 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Policy for the crawler's update and deletion behavior.
+     * The policy for the crawler's update and deletion behavior.
      * </p>
      * 
      * @param schemaChangePolicy
-     *        Policy for the crawler's update and deletion behavior.
+     *        The policy for the crawler's update and deletion behavior.
      */
 
     public void setSchemaChangePolicy(SchemaChangePolicy schemaChangePolicy) {
@@ -500,10 +507,10 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Policy for the crawler's update and deletion behavior.
+     * The policy for the crawler's update and deletion behavior.
      * </p>
      * 
-     * @return Policy for the crawler's update and deletion behavior.
+     * @return The policy for the crawler's update and deletion behavior.
      */
 
     public SchemaChangePolicy getSchemaChangePolicy() {
@@ -512,11 +519,11 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Policy for the crawler's update and deletion behavior.
+     * The policy for the crawler's update and deletion behavior.
      * </p>
      * 
      * @param schemaChangePolicy
-     *        Policy for the crawler's update and deletion behavior.
+     *        The policy for the crawler's update and deletion behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -527,13 +534,13 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
+     * The crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
      * </p>
      * 
      * @param configuration
-     *        Crawler configuration information. This versioned JSON string allows users to specify aspects of a
+     *        The crawler configuration information. This versioned JSON string allows users to specify aspects of a
      *        crawler's behavior. For more information, see <a
      *        href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
      */
@@ -544,12 +551,12 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
+     * The crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
      * </p>
      * 
-     * @return Crawler configuration information. This versioned JSON string allows users to specify aspects of a
+     * @return The crawler configuration information. This versioned JSON string allows users to specify aspects of a
      *         crawler's behavior. For more information, see <a
      *         href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
      */
@@ -560,13 +567,13 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
+     * The crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
      * </p>
      * 
      * @param configuration
-     *        Crawler configuration information. This versioned JSON string allows users to specify aspects of a
+     *        The crawler configuration information. This versioned JSON string allows users to specify aspects of a
      *        crawler's behavior. For more information, see <a
      *        href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -579,11 +586,11 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the SecurityConfiguration structure to be used by this Crawler.
+     * The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.
      * </p>
      * 
      * @param crawlerSecurityConfiguration
-     *        The name of the SecurityConfiguration structure to be used by this Crawler.
+     *        The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.
      */
 
     public void setCrawlerSecurityConfiguration(String crawlerSecurityConfiguration) {
@@ -592,10 +599,10 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the SecurityConfiguration structure to be used by this Crawler.
+     * The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.
      * </p>
      * 
-     * @return The name of the SecurityConfiguration structure to be used by this Crawler.
+     * @return The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.
      */
 
     public String getCrawlerSecurityConfiguration() {
@@ -604,11 +611,11 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the SecurityConfiguration structure to be used by this Crawler.
+     * The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.
      * </p>
      * 
      * @param crawlerSecurityConfiguration
-     *        The name of the SecurityConfiguration structure to be used by this Crawler.
+     *        The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

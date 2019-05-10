@@ -27,7 +27,7 @@ public class GetClassifiersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Size of the list to return (optional).
+     * The size of the list to return (optional).
      * </p>
      */
     private Integer maxResults;
@@ -40,11 +40,11 @@ public class GetClassifiersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Size of the list to return (optional).
+     * The size of the list to return (optional).
      * </p>
      * 
      * @param maxResults
-     *        Size of the list to return (optional).
+     *        The size of the list to return (optional).
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -53,10 +53,10 @@ public class GetClassifiersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Size of the list to return (optional).
+     * The size of the list to return (optional).
      * </p>
      * 
-     * @return Size of the list to return (optional).
+     * @return The size of the list to return (optional).
      */
 
     public Integer getMaxResults() {
@@ -65,11 +65,11 @@ public class GetClassifiersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Size of the list to return (optional).
+     * The size of the list to return (optional).
      * </p>
      * 
      * @param maxResults
-     *        Size of the list to return (optional).
+     *        The size of the list to return (optional).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

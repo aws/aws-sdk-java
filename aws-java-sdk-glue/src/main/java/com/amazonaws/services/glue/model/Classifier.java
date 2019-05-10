@@ -19,14 +19,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle,
- * and if it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data
+ * Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle.
+ * If it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data
  * format.
  * </p>
  * <p>
- * You can use the standard classifiers that AWS Glue supplies, or you can write your own classifiers to best categorize
+ * You can use the standard classifiers that AWS Glue provides, or you can write your own classifiers to best categorize
  * your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code>
- * classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier
+ * classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier,
  * as specified in one of the fields in the <code>Classifier</code> object.
  * </p>
  * 
@@ -38,36 +38,36 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>GrokClassifier</code> object.
+     * A classifier that uses <code>grok</code>.
      * </p>
      */
     private GrokClassifier grokClassifier;
     /**
      * <p>
-     * An <code>XMLClassifier</code> object.
+     * A classifier for XML content.
      * </p>
      */
     private XMLClassifier xMLClassifier;
     /**
      * <p>
-     * A <code>JsonClassifier</code> object.
+     * A classifier for JSON content.
      * </p>
      */
     private JsonClassifier jsonClassifier;
     /**
      * <p>
-     * A <code>CSVClassifier</code> object.
+     * A classifier for comma-separated values (CSV).
      * </p>
      */
     private CsvClassifier csvClassifier;
 
     /**
      * <p>
-     * A <code>GrokClassifier</code> object.
+     * A classifier that uses <code>grok</code>.
      * </p>
      * 
      * @param grokClassifier
-     *        A <code>GrokClassifier</code> object.
+     *        A classifier that uses <code>grok</code>.
      */
 
     public void setGrokClassifier(GrokClassifier grokClassifier) {
@@ -76,10 +76,10 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>GrokClassifier</code> object.
+     * A classifier that uses <code>grok</code>.
      * </p>
      * 
-     * @return A <code>GrokClassifier</code> object.
+     * @return A classifier that uses <code>grok</code>.
      */
 
     public GrokClassifier getGrokClassifier() {
@@ -88,11 +88,11 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>GrokClassifier</code> object.
+     * A classifier that uses <code>grok</code>.
      * </p>
      * 
      * @param grokClassifier
-     *        A <code>GrokClassifier</code> object.
+     *        A classifier that uses <code>grok</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,11 +103,11 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An <code>XMLClassifier</code> object.
+     * A classifier for XML content.
      * </p>
      * 
      * @param xMLClassifier
-     *        An <code>XMLClassifier</code> object.
+     *        A classifier for XML content.
      */
 
     public void setXMLClassifier(XMLClassifier xMLClassifier) {
@@ -116,10 +116,10 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An <code>XMLClassifier</code> object.
+     * A classifier for XML content.
      * </p>
      * 
-     * @return An <code>XMLClassifier</code> object.
+     * @return A classifier for XML content.
      */
 
     public XMLClassifier getXMLClassifier() {
@@ -128,11 +128,11 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An <code>XMLClassifier</code> object.
+     * A classifier for XML content.
      * </p>
      * 
      * @param xMLClassifier
-     *        An <code>XMLClassifier</code> object.
+     *        A classifier for XML content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +143,11 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>JsonClassifier</code> object.
+     * A classifier for JSON content.
      * </p>
      * 
      * @param jsonClassifier
-     *        A <code>JsonClassifier</code> object.
+     *        A classifier for JSON content.
      */
 
     public void setJsonClassifier(JsonClassifier jsonClassifier) {
@@ -156,10 +156,10 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>JsonClassifier</code> object.
+     * A classifier for JSON content.
      * </p>
      * 
-     * @return A <code>JsonClassifier</code> object.
+     * @return A classifier for JSON content.
      */
 
     public JsonClassifier getJsonClassifier() {
@@ -168,11 +168,11 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>JsonClassifier</code> object.
+     * A classifier for JSON content.
      * </p>
      * 
      * @param jsonClassifier
-     *        A <code>JsonClassifier</code> object.
+     *        A classifier for JSON content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,11 +183,11 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>CSVClassifier</code> object.
+     * A classifier for comma-separated values (CSV).
      * </p>
      * 
      * @param csvClassifier
-     *        A <code>CSVClassifier</code> object.
+     *        A classifier for comma-separated values (CSV).
      */
 
     public void setCsvClassifier(CsvClassifier csvClassifier) {
@@ -196,10 +196,10 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>CSVClassifier</code> object.
+     * A classifier for comma-separated values (CSV).
      * </p>
      * 
-     * @return A <code>CSVClassifier</code> object.
+     * @return A classifier for comma-separated values (CSV).
      */
 
     public CsvClassifier getCsvClassifier() {
@@ -208,11 +208,11 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>CSVClassifier</code> object.
+     * A classifier for comma-separated values (CSV).
      * </p>
      * 
      * @param csvClassifier
-     *        A <code>CSVClassifier</code> object.
+     *        A classifier for comma-separated values (CSV).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

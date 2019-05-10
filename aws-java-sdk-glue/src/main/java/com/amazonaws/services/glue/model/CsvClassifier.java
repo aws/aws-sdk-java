@@ -36,13 +36,13 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The time this classifier was registered.
+     * The time that this classifier was registered.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The time this classifier was last updated.
+     * The time that this classifier was last updated.
      * </p>
      */
     private java.util.Date lastUpdated;
@@ -60,7 +60,7 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
     private String delimiter;
     /**
      * <p>
-     * A custom symbol to denote what combines content into a single column value. Must be different from the column
+     * A custom symbol to denote what combines content into a single column value. It must be different from the column
      * delimiter.
      * </p>
      */
@@ -79,7 +79,8 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> header;
     /**
      * <p>
-     * Specifies not to trim values before identifying the type of column values. The default value is true.
+     * Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>
+     * .
      * </p>
      */
     private Boolean disableValueTrimming;
@@ -132,11 +133,11 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was registered.
+     * The time that this classifier was registered.
      * </p>
      * 
      * @param creationTime
-     *        The time this classifier was registered.
+     *        The time that this classifier was registered.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -145,10 +146,10 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was registered.
+     * The time that this classifier was registered.
      * </p>
      * 
-     * @return The time this classifier was registered.
+     * @return The time that this classifier was registered.
      */
 
     public java.util.Date getCreationTime() {
@@ -157,11 +158,11 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was registered.
+     * The time that this classifier was registered.
      * </p>
      * 
      * @param creationTime
-     *        The time this classifier was registered.
+     *        The time that this classifier was registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +173,11 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was last updated.
+     * The time that this classifier was last updated.
      * </p>
      * 
      * @param lastUpdated
-     *        The time this classifier was last updated.
+     *        The time that this classifier was last updated.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -185,10 +186,10 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was last updated.
+     * The time that this classifier was last updated.
      * </p>
      * 
-     * @return The time this classifier was last updated.
+     * @return The time that this classifier was last updated.
      */
 
     public java.util.Date getLastUpdated() {
@@ -197,11 +198,11 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this classifier was last updated.
+     * The time that this classifier was last updated.
      * </p>
      * 
      * @param lastUpdated
-     *        The time this classifier was last updated.
+     *        The time that this classifier was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,12 +293,12 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A custom symbol to denote what combines content into a single column value. Must be different from the column
+     * A custom symbol to denote what combines content into a single column value. It must be different from the column
      * delimiter.
      * </p>
      * 
      * @param quoteSymbol
-     *        A custom symbol to denote what combines content into a single column value. Must be different from the
+     *        A custom symbol to denote what combines content into a single column value. It must be different from the
      *        column delimiter.
      */
 
@@ -307,11 +308,11 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A custom symbol to denote what combines content into a single column value. Must be different from the column
+     * A custom symbol to denote what combines content into a single column value. It must be different from the column
      * delimiter.
      * </p>
      * 
-     * @return A custom symbol to denote what combines content into a single column value. Must be different from the
+     * @return A custom symbol to denote what combines content into a single column value. It must be different from the
      *         column delimiter.
      */
 
@@ -321,12 +322,12 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A custom symbol to denote what combines content into a single column value. Must be different from the column
+     * A custom symbol to denote what combines content into a single column value. It must be different from the column
      * delimiter.
      * </p>
      * 
      * @param quoteSymbol
-     *        A custom symbol to denote what combines content into a single column value. Must be different from the
+     *        A custom symbol to denote what combines content into a single column value. It must be different from the
      *        column delimiter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -467,11 +468,13 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies not to trim values before identifying the type of column values. The default value is true.
+     * Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>
+     * .
      * </p>
      * 
      * @param disableValueTrimming
-     *        Specifies not to trim values before identifying the type of column values. The default value is true.
+     *        Specifies not to trim values before identifying the type of column values. The default value is
+     *        <code>true</code>.
      */
 
     public void setDisableValueTrimming(Boolean disableValueTrimming) {
@@ -480,10 +483,12 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies not to trim values before identifying the type of column values. The default value is true.
+     * Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>
+     * .
      * </p>
      * 
-     * @return Specifies not to trim values before identifying the type of column values. The default value is true.
+     * @return Specifies not to trim values before identifying the type of column values. The default value is
+     *         <code>true</code>.
      */
 
     public Boolean getDisableValueTrimming() {
@@ -492,11 +497,13 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies not to trim values before identifying the type of column values. The default value is true.
+     * Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>
+     * .
      * </p>
      * 
      * @param disableValueTrimming
-     *        Specifies not to trim values before identifying the type of column values. The default value is true.
+     *        Specifies not to trim values before identifying the type of column values. The default value is
+     *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,10 +514,12 @@ public class CsvClassifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies not to trim values before identifying the type of column values. The default value is true.
+     * Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>
+     * .
      * </p>
      * 
-     * @return Specifies not to trim values before identifying the type of column values. The default value is true.
+     * @return Specifies not to trim values before identifying the type of column values. The default value is
+     *         <code>true</code>.
      */
 
     public Boolean isDisableValueTrimming() {

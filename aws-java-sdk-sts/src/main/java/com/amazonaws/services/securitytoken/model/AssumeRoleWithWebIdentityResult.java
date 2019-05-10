@@ -34,8 +34,7 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
      * <note>
      * <p>
      * The size of the security token that STS API operations return is not fixed. We strongly recommend that you make
-     * no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes, but that can
-     * vary. Also, future updates to AWS might require larger sizes.
+     * no assumptions about the maximum size.
      * </p>
      * </note>
      */
@@ -89,8 +88,7 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
      * <note>
      * <p>
      * The size of the security token that STS API operations return is not fixed. We strongly recommend that you make
-     * no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes, but that can
-     * vary. Also, future updates to AWS might require larger sizes.
+     * no assumptions about the maximum size.
      * </p>
      * </note>
      * 
@@ -99,8 +97,7 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
      *        token.</p> <note>
      *        <p>
      *        The size of the security token that STS API operations return is not fixed. We strongly recommend that you
-     *        make no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes,
-     *        but that can vary. Also, future updates to AWS might require larger sizes.
+     *        make no assumptions about the maximum size.
      *        </p>
      */
 
@@ -115,8 +112,7 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
      * <note>
      * <p>
      * The size of the security token that STS API operations return is not fixed. We strongly recommend that you make
-     * no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes, but that can
-     * vary. Also, future updates to AWS might require larger sizes.
+     * no assumptions about the maximum size.
      * </p>
      * </note>
      * 
@@ -124,8 +120,7 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
      *         token.</p> <note>
      *         <p>
      *         The size of the security token that STS API operations return is not fixed. We strongly recommend that
-     *         you make no assumptions about the maximum size. As of this writing, the typical size is less than 4096
-     *         bytes, but that can vary. Also, future updates to AWS might require larger sizes.
+     *         you make no assumptions about the maximum size.
      *         </p>
      */
 
@@ -140,8 +135,7 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
      * <note>
      * <p>
      * The size of the security token that STS API operations return is not fixed. We strongly recommend that you make
-     * no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes, but that can
-     * vary. Also, future updates to AWS might require larger sizes.
+     * no assumptions about the maximum size.
      * </p>
      * </note>
      * 
@@ -150,8 +144,7 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
      *        token.</p> <note>
      *        <p>
      *        The size of the security token that STS API operations return is not fixed. We strongly recommend that you
-     *        make no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes,
-     *        but that can vary. Also, future updates to AWS might require larger sizes.
+     *        make no assumptions about the maximum size.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

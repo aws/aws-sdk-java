@@ -36,7 +36,7 @@ public class CodeGenNode implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The type of node this is.
+     * The type of node that this is.
      * </p>
      */
     private String nodeType;
@@ -95,11 +95,11 @@ public class CodeGenNode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of node this is.
+     * The type of node that this is.
      * </p>
      * 
      * @param nodeType
-     *        The type of node this is.
+     *        The type of node that this is.
      */
 
     public void setNodeType(String nodeType) {
@@ -108,10 +108,10 @@ public class CodeGenNode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of node this is.
+     * The type of node that this is.
      * </p>
      * 
-     * @return The type of node this is.
+     * @return The type of node that this is.
      */
 
     public String getNodeType() {
@@ -120,11 +120,11 @@ public class CodeGenNode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of node this is.
+     * The type of node that this is.
      * </p>
      * 
      * @param nodeType
-     *        The type of node this is.
+     *        The type of node that this is.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

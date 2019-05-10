@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a DynamoDB table to crawl.
+ * Specifies an Amazon DynamoDB table to crawl.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DynamoDBTarget" target="_top">AWS API

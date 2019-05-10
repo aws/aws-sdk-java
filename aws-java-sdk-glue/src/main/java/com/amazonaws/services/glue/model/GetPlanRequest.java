@@ -44,7 +44,7 @@ public class GetPlanRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private java.util.List<CatalogEntry> sinks;
     /**
      * <p>
-     * Parameters for the mapping.
+     * The parameters for the mapping.
      * </p>
      */
     private Location location;
@@ -237,11 +237,11 @@ public class GetPlanRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Parameters for the mapping.
+     * The parameters for the mapping.
      * </p>
      * 
      * @param location
-     *        Parameters for the mapping.
+     *        The parameters for the mapping.
      */
 
     public void setLocation(Location location) {
@@ -250,10 +250,10 @@ public class GetPlanRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Parameters for the mapping.
+     * The parameters for the mapping.
      * </p>
      * 
-     * @return Parameters for the mapping.
+     * @return The parameters for the mapping.
      */
 
     public Location getLocation() {
@@ -262,11 +262,11 @@ public class GetPlanRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Parameters for the mapping.
+     * The parameters for the mapping.
      * </p>
      * 
      * @param location
-     *        Parameters for the mapping.
+     *        The parameters for the mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

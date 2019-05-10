@@ -289,7 +289,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Creates a classifier in the user's account. This may be a <code>GrokClassifier</code>, an
+     * Creates a classifier in the user's account. This can be a <code>GrokClassifier</code>, an
      * <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which
      * field of the request is present.
      * </p>
@@ -334,8 +334,8 @@ public interface AWSGlue {
     /**
      * <p>
      * Creates a new crawler with specified targets, role, configuration, and optional schedule. At least one crawl
-     * target must be specified, in the <i>s3Targets</i> field, the <i>jdbcTargets</i> field, or the
-     * <i>DynamoDBTargets</i> field.
+     * target must be specified, in the <code>s3Targets</code> field, the <code>jdbcTargets</code> field, or the
+     * <code>DynamoDBTargets</code> field.
      * </p>
      * 
      * @param createCrawlerRequest
@@ -621,7 +621,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Removes a specified crawler from the Data Catalog, unless the crawler state is <code>RUNNING</code>.
+     * Removes a specified crawler from the AWS Glue Data Catalog, unless the crawler state is <code>RUNNING</code>.
      * </p>
      * 
      * @param deleteCrawlerRequest

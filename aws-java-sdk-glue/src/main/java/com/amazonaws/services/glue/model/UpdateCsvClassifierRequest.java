@@ -42,7 +42,7 @@ public class UpdateCsvClassifierRequest implements Serializable, Cloneable, Stru
     private String delimiter;
     /**
      * <p>
-     * A custom symbol to denote what combines content into a single column value. Must be different from the column
+     * A custom symbol to denote what combines content into a single column value. It must be different from the column
      * delimiter.
      * </p>
      */
@@ -154,12 +154,12 @@ public class UpdateCsvClassifierRequest implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A custom symbol to denote what combines content into a single column value. Must be different from the column
+     * A custom symbol to denote what combines content into a single column value. It must be different from the column
      * delimiter.
      * </p>
      * 
      * @param quoteSymbol
-     *        A custom symbol to denote what combines content into a single column value. Must be different from the
+     *        A custom symbol to denote what combines content into a single column value. It must be different from the
      *        column delimiter.
      */
 
@@ -169,11 +169,11 @@ public class UpdateCsvClassifierRequest implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A custom symbol to denote what combines content into a single column value. Must be different from the column
+     * A custom symbol to denote what combines content into a single column value. It must be different from the column
      * delimiter.
      * </p>
      * 
-     * @return A custom symbol to denote what combines content into a single column value. Must be different from the
+     * @return A custom symbol to denote what combines content into a single column value. It must be different from the
      *         column delimiter.
      */
 
@@ -183,12 +183,12 @@ public class UpdateCsvClassifierRequest implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A custom symbol to denote what combines content into a single column value. Must be different from the column
+     * A custom symbol to denote what combines content into a single column value. It must be different from the column
      * delimiter.
      * </p>
      * 
      * @param quoteSymbol
-     *        A custom symbol to denote what combines content into a single column value. Must be different from the
+     *        A custom symbol to denote what combines content into a single column value. It must be different from the
      *        column delimiter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

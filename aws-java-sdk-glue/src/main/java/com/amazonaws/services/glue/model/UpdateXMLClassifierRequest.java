@@ -42,8 +42,8 @@ public class UpdateXMLClassifierRequest implements Serializable, Cloneable, Stru
     private String classification;
     /**
      * <p>
-     * The XML tag designating the element that contains each record in an XML document being parsed. Note that this
-     * cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     * The XML tag designating the element that contains each record in an XML document being parsed. This cannot
+     * identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
      * attributes can be parsed as long as it ends with a closing tag (for example,
      * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
      * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
@@ -133,17 +133,17 @@ public class UpdateXMLClassifierRequest implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The XML tag designating the element that contains each record in an XML document being parsed. Note that this
-     * cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     * The XML tag designating the element that contains each record in an XML document being parsed. This cannot
+     * identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
      * attributes can be parsed as long as it ends with a closing tag (for example,
      * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
      * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      * </p>
      * 
      * @param rowTag
-     *        The XML tag designating the element that contains each record in an XML document being parsed. Note that
-     *        this cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that
-     *        contains only attributes can be parsed as long as it ends with a closing tag (for example,
+     *        The XML tag designating the element that contains each record in an XML document being parsed. This cannot
+     *        identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     *        attributes can be parsed as long as it ends with a closing tag (for example,
      *        <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
      *        <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      */
@@ -154,16 +154,16 @@ public class UpdateXMLClassifierRequest implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The XML tag designating the element that contains each record in an XML document being parsed. Note that this
-     * cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     * The XML tag designating the element that contains each record in an XML document being parsed. This cannot
+     * identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
      * attributes can be parsed as long as it ends with a closing tag (for example,
      * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
      * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      * </p>
      * 
-     * @return The XML tag designating the element that contains each record in an XML document being parsed. Note that
-     *         this cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that
-     *         contains only attributes can be parsed as long as it ends with a closing tag (for example,
+     * @return The XML tag designating the element that contains each record in an XML document being parsed. This
+     *         cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains
+     *         only attributes can be parsed as long as it ends with a closing tag (for example,
      *         <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
      *         <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      */
@@ -174,17 +174,17 @@ public class UpdateXMLClassifierRequest implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The XML tag designating the element that contains each record in an XML document being parsed. Note that this
-     * cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     * The XML tag designating the element that contains each record in an XML document being parsed. This cannot
+     * identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
      * attributes can be parsed as long as it ends with a closing tag (for example,
      * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
      * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      * </p>
      * 
      * @param rowTag
-     *        The XML tag designating the element that contains each record in an XML document being parsed. Note that
-     *        this cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that
-     *        contains only attributes can be parsed as long as it ends with a closing tag (for example,
+     *        The XML tag designating the element that contains each record in an XML document being parsed. This cannot
+     *        identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     *        attributes can be parsed as long as it ends with a closing tag (for example,
      *        <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
      *        <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      * @return Returns a reference to this object so that method calls can be chained together.

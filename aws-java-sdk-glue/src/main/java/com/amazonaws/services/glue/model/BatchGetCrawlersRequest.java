@@ -27,17 +27,17 @@ public class BatchGetCrawlersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of crawler names, which may be the names returned from the <code>ListCrawlers</code> operation.
+     * A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.
      * </p>
      */
     private java.util.List<String> crawlerNames;
 
     /**
      * <p>
-     * A list of crawler names, which may be the names returned from the <code>ListCrawlers</code> operation.
+     * A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.
      * </p>
      * 
-     * @return A list of crawler names, which may be the names returned from the <code>ListCrawlers</code> operation.
+     * @return A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.
      */
 
     public java.util.List<String> getCrawlerNames() {
@@ -46,11 +46,11 @@ public class BatchGetCrawlersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of crawler names, which may be the names returned from the <code>ListCrawlers</code> operation.
+     * A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.
      * </p>
      * 
      * @param crawlerNames
-     *        A list of crawler names, which may be the names returned from the <code>ListCrawlers</code> operation.
+     *        A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.
      */
 
     public void setCrawlerNames(java.util.Collection<String> crawlerNames) {
@@ -64,7 +64,7 @@ public class BatchGetCrawlersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of crawler names, which may be the names returned from the <code>ListCrawlers</code> operation.
+     * A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class BatchGetCrawlersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param crawlerNames
-     *        A list of crawler names, which may be the names returned from the <code>ListCrawlers</code> operation.
+     *        A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class BatchGetCrawlersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of crawler names, which may be the names returned from the <code>ListCrawlers</code> operation.
+     * A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.
      * </p>
      * 
      * @param crawlerNames
-     *        A list of crawler names, which may be the names returned from the <code>ListCrawlers</code> operation.
+     *        A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
