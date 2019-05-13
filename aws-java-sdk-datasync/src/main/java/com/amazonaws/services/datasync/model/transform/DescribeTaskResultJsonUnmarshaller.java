@@ -80,6 +80,10 @@ public class DescribeTaskResultJsonUnmarshaller implements Unmarshaller<Describe
                     context.nextToken();
                     describeTaskResult.setOptions(OptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Excludes", targetDepth)) {
+                    context.nextToken();
+                    describeTaskResult.setExcludes(new ListUnmarshaller<FilterRule>(FilterRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("ErrorCode", targetDepth)) {
                     context.nextToken();
                     describeTaskResult.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));

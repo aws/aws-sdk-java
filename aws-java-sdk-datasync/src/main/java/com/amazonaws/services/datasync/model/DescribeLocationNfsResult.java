@@ -42,6 +42,12 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
     private OnPremConfig onPremConfig;
     /**
      * <p>
+     * The NFS mount options that DataSync used to mount your NFS share.
+     * </p>
+     */
+    private NfsMountOptions mountOptions;
+    /**
+     * <p>
      * The time that the NFS location was created.
      * </p>
      */
@@ -155,6 +161,46 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * The NFS mount options that DataSync used to mount your NFS share.
+     * </p>
+     * 
+     * @param mountOptions
+     *        The NFS mount options that DataSync used to mount your NFS share.
+     */
+
+    public void setMountOptions(NfsMountOptions mountOptions) {
+        this.mountOptions = mountOptions;
+    }
+
+    /**
+     * <p>
+     * The NFS mount options that DataSync used to mount your NFS share.
+     * </p>
+     * 
+     * @return The NFS mount options that DataSync used to mount your NFS share.
+     */
+
+    public NfsMountOptions getMountOptions() {
+        return this.mountOptions;
+    }
+
+    /**
+     * <p>
+     * The NFS mount options that DataSync used to mount your NFS share.
+     * </p>
+     * 
+     * @param mountOptions
+     *        The NFS mount options that DataSync used to mount your NFS share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeLocationNfsResult withMountOptions(NfsMountOptions mountOptions) {
+        setMountOptions(mountOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * The time that the NFS location was created.
      * </p>
      * 
@@ -211,6 +257,8 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("LocationUri: ").append(getLocationUri()).append(",");
         if (getOnPremConfig() != null)
             sb.append("OnPremConfig: ").append(getOnPremConfig()).append(",");
+        if (getMountOptions() != null)
+            sb.append("MountOptions: ").append(getMountOptions()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
@@ -239,6 +287,10 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getOnPremConfig() != null && other.getOnPremConfig().equals(this.getOnPremConfig()) == false)
             return false;
+        if (other.getMountOptions() == null ^ this.getMountOptions() == null)
+            return false;
+        if (other.getMountOptions() != null && other.getMountOptions().equals(this.getMountOptions()) == false)
+            return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
@@ -254,6 +306,7 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getLocationArn() == null) ? 0 : getLocationArn().hashCode());
         hashCode = prime * hashCode + ((getLocationUri() == null) ? 0 : getLocationUri().hashCode());
         hashCode = prime * hashCode + ((getOnPremConfig() == null) ? 0 : getOnPremConfig().hashCode());
+        hashCode = prime * hashCode + ((getMountOptions() == null) ? 0 : getMountOptions().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }

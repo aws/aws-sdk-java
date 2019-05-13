@@ -38,6 +38,8 @@ public class CreateTaskRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<StructuredPojo> OPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Options").build();
+    private static final MarshallingInfo<List> EXCLUDES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Excludes").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -62,6 +64,7 @@ public class CreateTaskRequestMarshaller {
             protocolMarshaller.marshall(createTaskRequest.getCloudWatchLogGroupArn(), CLOUDWATCHLOGGROUPARN_BINDING);
             protocolMarshaller.marshall(createTaskRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createTaskRequest.getOptions(), OPTIONS_BINDING);
+            protocolMarshaller.marshall(createTaskRequest.getExcludes(), EXCLUDES_BINDING);
             protocolMarshaller.marshall(createTaskRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

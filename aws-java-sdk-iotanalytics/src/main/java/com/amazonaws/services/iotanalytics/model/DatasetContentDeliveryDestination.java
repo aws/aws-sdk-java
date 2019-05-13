@@ -34,6 +34,12 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
      * </p>
      */
     private IotEventsDestinationConfiguration iotEventsDestinationConfiguration;
+    /**
+     * <p>
+     * Configuration information for delivery of data set contents to Amazon S3.
+     * </p>
+     */
+    private S3DestinationConfiguration s3DestinationConfiguration;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * Configuration information for delivery of data set contents to Amazon S3.
+     * </p>
+     * 
+     * @param s3DestinationConfiguration
+     *        Configuration information for delivery of data set contents to Amazon S3.
+     */
+
+    public void setS3DestinationConfiguration(S3DestinationConfiguration s3DestinationConfiguration) {
+        this.s3DestinationConfiguration = s3DestinationConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information for delivery of data set contents to Amazon S3.
+     * </p>
+     * 
+     * @return Configuration information for delivery of data set contents to Amazon S3.
+     */
+
+    public S3DestinationConfiguration getS3DestinationConfiguration() {
+        return this.s3DestinationConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information for delivery of data set contents to Amazon S3.
+     * </p>
+     * 
+     * @param s3DestinationConfiguration
+     *        Configuration information for delivery of data set contents to Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatasetContentDeliveryDestination withS3DestinationConfiguration(S3DestinationConfiguration s3DestinationConfiguration) {
+        setS3DestinationConfiguration(s3DestinationConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIotEventsDestinationConfiguration() != null)
-            sb.append("IotEventsDestinationConfiguration: ").append(getIotEventsDestinationConfiguration());
+            sb.append("IotEventsDestinationConfiguration: ").append(getIotEventsDestinationConfiguration()).append(",");
+        if (getS3DestinationConfiguration() != null)
+            sb.append("S3DestinationConfiguration: ").append(getS3DestinationConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -108,6 +156,10 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
         if (other.getIotEventsDestinationConfiguration() != null
                 && other.getIotEventsDestinationConfiguration().equals(this.getIotEventsDestinationConfiguration()) == false)
             return false;
+        if (other.getS3DestinationConfiguration() == null ^ this.getS3DestinationConfiguration() == null)
+            return false;
+        if (other.getS3DestinationConfiguration() != null && other.getS3DestinationConfiguration().equals(this.getS3DestinationConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -117,6 +169,7 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getIotEventsDestinationConfiguration() == null) ? 0 : getIotEventsDestinationConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getS3DestinationConfiguration() == null) ? 0 : getS3DestinationConfiguration().hashCode());
         return hashCode;
     }
 

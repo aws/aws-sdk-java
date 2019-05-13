@@ -24,6 +24,7 @@ public enum Runtime {
     Nodejs43("nodejs4.3"),
     Nodejs610("nodejs6.10"),
     Nodejs810("nodejs8.10"),
+    Nodejs10X("nodejs10.x"),
     Java8("java8"),
     Python27("python2.7"),
     Python36("python3.6"),

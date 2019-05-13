@@ -34,6 +34,8 @@ public class CreateLocationNfsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerHostname").build();
     private static final MarshallingInfo<StructuredPojo> ONPREMCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnPremConfig").build();
+    private static final MarshallingInfo<StructuredPojo> MOUNTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MountOptions").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -56,6 +58,7 @@ public class CreateLocationNfsRequestMarshaller {
             protocolMarshaller.marshall(createLocationNfsRequest.getSubdirectory(), SUBDIRECTORY_BINDING);
             protocolMarshaller.marshall(createLocationNfsRequest.getServerHostname(), SERVERHOSTNAME_BINDING);
             protocolMarshaller.marshall(createLocationNfsRequest.getOnPremConfig(), ONPREMCONFIG_BINDING);
+            protocolMarshaller.marshall(createLocationNfsRequest.getMountOptions(), MOUNTOPTIONS_BINDING);
             protocolMarshaller.marshall(createLocationNfsRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

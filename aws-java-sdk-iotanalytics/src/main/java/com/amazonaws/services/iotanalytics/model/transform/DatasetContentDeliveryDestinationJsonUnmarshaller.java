@@ -53,6 +53,11 @@ public class DatasetContentDeliveryDestinationJsonUnmarshaller implements Unmars
                     datasetContentDeliveryDestination.setIotEventsDestinationConfiguration(IotEventsDestinationConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("s3DestinationConfiguration", targetDepth)) {
+                    context.nextToken();
+                    datasetContentDeliveryDestination.setS3DestinationConfiguration(S3DestinationConfigurationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

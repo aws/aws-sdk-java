@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.lambda.model.*;
+import com.amazonaws.services.lambda.waiters.AWSLambdaWaiters;
 
 /**
  * Interface for accessing AWS Lambda.
@@ -1364,5 +1365,7 @@ public interface AWSLambda {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AWSLambdaWaiters waiters();
 
 }

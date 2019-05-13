@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.datasync.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,8 +32,12 @@ public class UpdateTaskRequestMarshaller {
             .marshallLocationName("TaskArn").build();
     private static final MarshallingInfo<StructuredPojo> OPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Options").build();
+    private static final MarshallingInfo<List> EXCLUDES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Excludes").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> CLOUDWATCHLOGGROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLogGroupArn").build();
 
     private static final UpdateTaskRequestMarshaller instance = new UpdateTaskRequestMarshaller();
 
@@ -52,7 +57,9 @@ public class UpdateTaskRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateTaskRequest.getTaskArn(), TASKARN_BINDING);
             protocolMarshaller.marshall(updateTaskRequest.getOptions(), OPTIONS_BINDING);
+            protocolMarshaller.marshall(updateTaskRequest.getExcludes(), EXCLUDES_BINDING);
             protocolMarshaller.marshall(updateTaskRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateTaskRequest.getCloudWatchLogGroupArn(), CLOUDWATCHLOGGROUPARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

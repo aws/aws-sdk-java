@@ -1,3 +1,16 @@
+# __1.11.551__ __2019-05-13__
+## __AWS DataSync__
+  - ### Features
+    - AWS DataSync now enables exclude and include filters to control what files and directories will be copied as part of a task execution.
+
+## __AWS IoT Analytics__
+  - ### Features
+    - ContentDeliveryRule to support sending dataset to S3 and glue
+
+## __AWS Lambda__
+  - ### Features
+    - AWS Lambda now supports Node.js v10
+
 # __1.11.550__ __2019-05-10__
 ## __AWS Glue__
   - ### Features

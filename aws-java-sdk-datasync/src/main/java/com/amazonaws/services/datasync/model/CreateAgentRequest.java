@@ -38,9 +38,11 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The redirect URL returned in the response provides you the activation key for your agent in the query string
      * parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these
      * are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent"
-     * >Activating a Sync Agent</a> in the <i>AWS DataSync User Guide.</i>
+     * </p>
+     * <p>
+     * For more information, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent" (Activating a
+     * Agent) in the <i>AWS DataSync User Guide.</i>
      * </p>
      */
     private String activationKey;
@@ -53,7 +55,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String agentName;
     /**
      * <p>
-     * The key-value pair that represents the tag you want to associate with the agent. The value can be an empty
+     * The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty
      * string. This value helps you manage, filter, and search for your agents.
      * </p>
      * <note>
@@ -75,9 +77,11 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The redirect URL returned in the response provides you the activation key for your agent in the query string
      * parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these
      * are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent"
-     * >Activating a Sync Agent</a> in the <i>AWS DataSync User Guide.</i>
+     * </p>
+     * <p>
+     * For more information, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent" (Activating a
+     * Agent) in the <i>AWS DataSync User Guide.</i>
      * </p>
      * 
      * @param activationKey
@@ -88,9 +92,12 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        The redirect URL returned in the response provides you the activation key for your agent in the query
      *        string parameter <code>activationKey</code>. It might also include other activation-related parameters;
      *        however, these are merely defaults. The arguments you pass to this API call determine the actual
-     *        configuration of your agent. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent"
-     *        >Activating a Sync Agent</a> in the <i>AWS DataSync User Guide.</i>
+     *        configuration of your agent.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
+     *        (Activating a Agent) in the <i>AWS DataSync User Guide.</i>
      */
 
     public void setActivationKey(String activationKey) {
@@ -107,9 +114,11 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The redirect URL returned in the response provides you the activation key for your agent in the query string
      * parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these
      * are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent"
-     * >Activating a Sync Agent</a> in the <i>AWS DataSync User Guide.</i>
+     * </p>
+     * <p>
+     * For more information, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent" (Activating a
+     * Agent) in the <i>AWS DataSync User Guide.</i>
      * </p>
      * 
      * @return Your agent activation key. You can get the activation key either by sending an HTTP GET request with
@@ -119,9 +128,12 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         The redirect URL returned in the response provides you the activation key for your agent in the query
      *         string parameter <code>activationKey</code>. It might also include other activation-related parameters;
      *         however, these are merely defaults. The arguments you pass to this API call determine the actual
-     *         configuration of your agent. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent"
-     *         >Activating a Sync Agent</a> in the <i>AWS DataSync User Guide.</i>
+     *         configuration of your agent.
+     *         </p>
+     *         <p>
+     *         For more information, see
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
+     *         (Activating a Agent) in the <i>AWS DataSync User Guide.</i>
      */
 
     public String getActivationKey() {
@@ -138,9 +150,11 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The redirect URL returned in the response provides you the activation key for your agent in the query string
      * parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these
      * are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent"
-     * >Activating a Sync Agent</a> in the <i>AWS DataSync User Guide.</i>
+     * </p>
+     * <p>
+     * For more information, see
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent" (Activating a
+     * Agent) in the <i>AWS DataSync User Guide.</i>
      * </p>
      * 
      * @param activationKey
@@ -151,9 +165,12 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        The redirect URL returned in the response provides you the activation key for your agent in the query
      *        string parameter <code>activationKey</code>. It might also include other activation-related parameters;
      *        however, these are merely defaults. The arguments you pass to this API call determine the actual
-     *        configuration of your agent. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent"
-     *        >Activating a Sync Agent</a> in the <i>AWS DataSync User Guide.</i>
+     *        configuration of your agent.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-agents.html#activating-agent"
+     *        (Activating a Agent) in the <i>AWS DataSync User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,7 +227,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The key-value pair that represents the tag you want to associate with the agent. The value can be an empty
+     * The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty
      * string. This value helps you manage, filter, and search for your agents.
      * </p>
      * <note>
@@ -220,7 +237,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </note>
      * 
-     * @return The key-value pair that represents the tag you want to associate with the agent. The value can be an
+     * @return The key-value pair that represents the tag that you want to associate with the agent. The value can be an
      *         empty string. This value helps you manage, filter, and search for your agents.</p> <note>
      *         <p>
      *         Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and
@@ -234,7 +251,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The key-value pair that represents the tag you want to associate with the agent. The value can be an empty
+     * The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty
      * string. This value helps you manage, filter, and search for your agents.
      * </p>
      * <note>
@@ -245,8 +262,8 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note>
      * 
      * @param tags
-     *        The key-value pair that represents the tag you want to associate with the agent. The value can be an empty
-     *        string. This value helps you manage, filter, and search for your agents.</p> <note>
+     *        The key-value pair that represents the tag that you want to associate with the agent. The value can be an
+     *        empty string. This value helps you manage, filter, and search for your agents.</p> <note>
      *        <p>
      *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
      *        following special characters: + - = . _ : / @.
@@ -264,7 +281,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The key-value pair that represents the tag you want to associate with the agent. The value can be an empty
+     * The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty
      * string. This value helps you manage, filter, and search for your agents.
      * </p>
      * <note>
@@ -280,8 +297,8 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        The key-value pair that represents the tag you want to associate with the agent. The value can be an empty
-     *        string. This value helps you manage, filter, and search for your agents.</p> <note>
+     *        The key-value pair that represents the tag that you want to associate with the agent. The value can be an
+     *        empty string. This value helps you manage, filter, and search for your agents.</p> <note>
      *        <p>
      *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
      *        following special characters: + - = . _ : / @.
@@ -301,7 +318,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The key-value pair that represents the tag you want to associate with the agent. The value can be an empty
+     * The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty
      * string. This value helps you manage, filter, and search for your agents.
      * </p>
      * <note>
@@ -312,8 +329,8 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note>
      * 
      * @param tags
-     *        The key-value pair that represents the tag you want to associate with the agent. The value can be an empty
-     *        string. This value helps you manage, filter, and search for your agents.</p> <note>
+     *        The key-value pair that represents the tag that you want to associate with the agent. The value can be an
+     *        empty string. This value helps you manage, filter, and search for your agents.</p> <note>
      *        <p>
      *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
      *        following special characters: + - = . _ : / @.

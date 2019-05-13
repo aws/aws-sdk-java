@@ -42,11 +42,13 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To
      * ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for
-     * all of the files that you want sync allow read access for all users. Doing either enables the agent to read the
-     * files. For the agent to access directories, you must additionally enable all execute access. For information
-     * about NFS export configuration, see <a
-     * href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-nfs-server-config-exports.html">18.7. The
-     * /etc/exports Configuration File</a> in the Centos documentation.
+     * all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read
+     * the files. For the agent to access directories, you must additionally enable all execute access.
+     * </p>
+     * <p>
+     * For information about NFS export configuration, see
+     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html" (18.7. The
+     * /etc/exports Configuration File).
      * </p>
      */
     private String subdirectory;
@@ -70,6 +72,12 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
     private OnPremConfig onPremConfig;
     /**
      * <p>
+     * The NFS mount options that DataSync can use to mount your NFS share.
+     * </p>
+     */
+    private NfsMountOptions mountOptions;
+    /**
+     * <p>
      * The key-value pair that represents the tag that you want to add to the location. The value can be an empty
      * string. We recommend using tags to name your resources.
      * </p>
@@ -90,11 +98,13 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To
      * ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for
-     * all of the files that you want sync allow read access for all users. Doing either enables the agent to read the
-     * files. For the agent to access directories, you must additionally enable all execute access. For information
-     * about NFS export configuration, see <a
-     * href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-nfs-server-config-exports.html">18.7. The
-     * /etc/exports Configuration File</a> in the Centos documentation.
+     * all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read
+     * the files. For the agent to access directories, you must additionally enable all execute access.
+     * </p>
+     * <p>
+     * For information about NFS export configuration, see
+     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html" (18.7. The
+     * /etc/exports Configuration File).
      * </p>
      * 
      * @param subdirectory
@@ -111,11 +121,14 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the
      *        data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the
-     *        permissions for all of the files that you want sync allow read access for all users. Doing either enables
-     *        the agent to read the files. For the agent to access directories, you must additionally enable all execute
-     *        access. For information about NFS export configuration, see <a
-     *        href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-nfs-server-config-exports.html">18.7.
-     *        The /etc/exports Configuration File</a> in the Centos documentation.
+     *        permissions for all of the files that you want DataSync allow read access for all users. Doing either
+     *        enables the agent to read the files. For the agent to access directories, you must additionally enable all
+     *        execute access.
+     *        </p>
+     *        <p>
+     *        For information about NFS export configuration, see
+     *        "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
+     *        (18.7. The /etc/exports Configuration File).
      */
 
     public void setSubdirectory(String subdirectory) {
@@ -136,11 +149,13 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To
      * ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for
-     * all of the files that you want sync allow read access for all users. Doing either enables the agent to read the
-     * files. For the agent to access directories, you must additionally enable all execute access. For information
-     * about NFS export configuration, see <a
-     * href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-nfs-server-config-exports.html">18.7. The
-     * /etc/exports Configuration File</a> in the Centos documentation.
+     * all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read
+     * the files. For the agent to access directories, you must additionally enable all execute access.
+     * </p>
+     * <p>
+     * For information about NFS export configuration, see
+     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html" (18.7. The
+     * /etc/exports Configuration File).
      * </p>
      * 
      * @return The subdirectory in the NFS file system that is used to read data from the NFS source location or write
@@ -156,11 +171,14 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <p>
      *         To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the
      *         data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that
-     *         the permissions for all of the files that you want sync allow read access for all users. Doing either
+     *         the permissions for all of the files that you want DataSync allow read access for all users. Doing either
      *         enables the agent to read the files. For the agent to access directories, you must additionally enable
-     *         all execute access. For information about NFS export configuration, see <a
-     *         href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-nfs-server-config-exports.html">18.7.
-     *         The /etc/exports Configuration File</a> in the Centos documentation.
+     *         all execute access.
+     *         </p>
+     *         <p>
+     *         For information about NFS export configuration, see
+     *         "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
+     *         (18.7. The /etc/exports Configuration File).
      */
 
     public String getSubdirectory() {
@@ -181,11 +199,13 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To
      * ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for
-     * all of the files that you want sync allow read access for all users. Doing either enables the agent to read the
-     * files. For the agent to access directories, you must additionally enable all execute access. For information
-     * about NFS export configuration, see <a
-     * href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-nfs-server-config-exports.html">18.7. The
-     * /etc/exports Configuration File</a> in the Centos documentation.
+     * all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read
+     * the files. For the agent to access directories, you must additionally enable all execute access.
+     * </p>
+     * <p>
+     * For information about NFS export configuration, see
+     * "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html" (18.7. The
+     * /etc/exports Configuration File).
      * </p>
      * 
      * @param subdirectory
@@ -202,11 +222,14 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the
      *        data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the
-     *        permissions for all of the files that you want sync allow read access for all users. Doing either enables
-     *        the agent to read the files. For the agent to access directories, you must additionally enable all execute
-     *        access. For information about NFS export configuration, see <a
-     *        href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-nfs-server-config-exports.html">18.7.
-     *        The /etc/exports Configuration File</a> in the Centos documentation.
+     *        permissions for all of the files that you want DataSync allow read access for all users. Doing either
+     *        enables the agent to read the files. For the agent to access directories, you must additionally enable all
+     *        execute access.
+     *        </p>
+     *        <p>
+     *        For information about NFS export configuration, see
+     *        "http://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-server-config-exports.html"
+     *        (18.7. The /etc/exports Configuration File).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -330,6 +353,46 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * The NFS mount options that DataSync can use to mount your NFS share.
+     * </p>
+     * 
+     * @param mountOptions
+     *        The NFS mount options that DataSync can use to mount your NFS share.
+     */
+
+    public void setMountOptions(NfsMountOptions mountOptions) {
+        this.mountOptions = mountOptions;
+    }
+
+    /**
+     * <p>
+     * The NFS mount options that DataSync can use to mount your NFS share.
+     * </p>
+     * 
+     * @return The NFS mount options that DataSync can use to mount your NFS share.
+     */
+
+    public NfsMountOptions getMountOptions() {
+        return this.mountOptions;
+    }
+
+    /**
+     * <p>
+     * The NFS mount options that DataSync can use to mount your NFS share.
+     * </p>
+     * 
+     * @param mountOptions
+     *        The NFS mount options that DataSync can use to mount your NFS share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLocationNfsRequest withMountOptions(NfsMountOptions mountOptions) {
+        setMountOptions(mountOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * The key-value pair that represents the tag that you want to add to the location. The value can be an empty
      * string. We recommend using tags to name your resources.
      * </p>
@@ -424,6 +487,8 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("ServerHostname: ").append(getServerHostname()).append(",");
         if (getOnPremConfig() != null)
             sb.append("OnPremConfig: ").append(getOnPremConfig()).append(",");
+        if (getMountOptions() != null)
+            sb.append("MountOptions: ").append(getMountOptions()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -452,6 +517,10 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getOnPremConfig() != null && other.getOnPremConfig().equals(this.getOnPremConfig()) == false)
             return false;
+        if (other.getMountOptions() == null ^ this.getMountOptions() == null)
+            return false;
+        if (other.getMountOptions() != null && other.getMountOptions().equals(this.getMountOptions()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -467,6 +536,7 @@ public class CreateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getSubdirectory() == null) ? 0 : getSubdirectory().hashCode());
         hashCode = prime * hashCode + ((getServerHostname() == null) ? 0 : getServerHostname().hashCode());
         hashCode = prime * hashCode + ((getOnPremConfig() == null) ? 0 : getOnPremConfig().hashCode());
+        hashCode = prime * hashCode + ((getMountOptions() == null) ? 0 : getMountOptions().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

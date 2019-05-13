@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.lambda.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.lambda.waiters.AWSLambdaWaiters;
 
 /**
  * Abstract implementation of {@code AWSLambda}. Convenient method forms pass through to the corresponding overload that
@@ -250,6 +251,11 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSLambdaWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

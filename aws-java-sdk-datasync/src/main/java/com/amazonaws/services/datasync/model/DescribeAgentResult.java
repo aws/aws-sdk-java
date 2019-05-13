@@ -49,7 +49,7 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     private String status;
     /**
      * <p>
-     * The time that the agent was last connected.
+     * The time that the agent last connected to DataSyc.
      * </p>
      */
     private java.util.Date lastConnectionTime;
@@ -225,11 +225,11 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The time that the agent was last connected.
+     * The time that the agent last connected to DataSyc.
      * </p>
      * 
      * @param lastConnectionTime
-     *        The time that the agent was last connected.
+     *        The time that the agent last connected to DataSyc.
      */
 
     public void setLastConnectionTime(java.util.Date lastConnectionTime) {
@@ -238,10 +238,10 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The time that the agent was last connected.
+     * The time that the agent last connected to DataSyc.
      * </p>
      * 
-     * @return The time that the agent was last connected.
+     * @return The time that the agent last connected to DataSyc.
      */
 
     public java.util.Date getLastConnectionTime() {
@@ -250,11 +250,11 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The time that the agent was last connected.
+     * The time that the agent last connected to DataSyc.
      * </p>
      * 
      * @param lastConnectionTime
-     *        The time that the agent was last connected.
+     *        The time that the agent last connected to DataSyc.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

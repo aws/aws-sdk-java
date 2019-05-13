@@ -60,6 +60,10 @@ public class DescribeLocationNfsResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeLocationNfsResult.setOnPremConfig(OnPremConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MountOptions", targetDepth)) {
+                    context.nextToken();
+                    describeLocationNfsResult.setMountOptions(NfsMountOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     describeLocationNfsResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

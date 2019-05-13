@@ -29,6 +29,8 @@ public class DatasetContentDeliveryDestinationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> IOTEVENTSDESTINATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("iotEventsDestinationConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> S3DESTINATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3DestinationConfiguration").build();
 
     private static final DatasetContentDeliveryDestinationMarshaller instance = new DatasetContentDeliveryDestinationMarshaller();
 
@@ -47,6 +49,7 @@ public class DatasetContentDeliveryDestinationMarshaller {
 
         try {
             protocolMarshaller.marshall(datasetContentDeliveryDestination.getIotEventsDestinationConfiguration(), IOTEVENTSDESTINATIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(datasetContentDeliveryDestination.getS3DestinationConfiguration(), S3DESTINATIONCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

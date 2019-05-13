@@ -37,11 +37,25 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     private Options options;
     /**
+     * <p/>
+     * <p>
+     * A filter that determines which files to exclude from a task based on the specified pattern in the filter.
+     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * </p>
+     */
+    private java.util.List<FilterRule> excludes;
+    /**
      * <p>
      * The name of the task to update.
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the resource name of the CloudWatch LogGroup.
+     * </p>
+     */
+    private String cloudWatchLogGroupArn;
 
     /**
      * <p>
@@ -110,6 +124,92 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p/>
+     * <p>
+     * A filter that determines which files to exclude from a task based on the specified pattern in the filter.
+     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * </p>
+     * 
+     * @return <p>
+     *         A filter that determines which files to exclude from a task based on the specified pattern in the filter.
+     *         Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     */
+
+    public java.util.List<FilterRule> getExcludes() {
+        return excludes;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * A filter that determines which files to exclude from a task based on the specified pattern in the filter.
+     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * </p>
+     * 
+     * @param excludes
+     *        <p>
+     *        A filter that determines which files to exclude from a task based on the specified pattern in the filter.
+     *        Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     */
+
+    public void setExcludes(java.util.Collection<FilterRule> excludes) {
+        if (excludes == null) {
+            this.excludes = null;
+            return;
+        }
+
+        this.excludes = new java.util.ArrayList<FilterRule>(excludes);
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * A filter that determines which files to exclude from a task based on the specified pattern in the filter.
+     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExcludes(java.util.Collection)} or {@link #withExcludes(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param excludes
+     *        <p>
+     *        A filter that determines which files to exclude from a task based on the specified pattern in the filter.
+     *        Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTaskRequest withExcludes(FilterRule... excludes) {
+        if (this.excludes == null) {
+            setExcludes(new java.util.ArrayList<FilterRule>(excludes.length));
+        }
+        for (FilterRule ele : excludes) {
+            this.excludes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * A filter that determines which files to exclude from a task based on the specified pattern in the filter.
+     * Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * </p>
+     * 
+     * @param excludes
+     *        <p>
+     *        A filter that determines which files to exclude from a task based on the specified pattern in the filter.
+     *        Transfers all files in the task’s subdirectory, except files that match the filter that is set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTaskRequest withExcludes(java.util.Collection<FilterRule> excludes) {
+        setExcludes(excludes);
+        return this;
+    }
+
+    /**
      * <p>
      * The name of the task to update.
      * </p>
@@ -150,6 +250,46 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the resource name of the CloudWatch LogGroup.
+     * </p>
+     * 
+     * @param cloudWatchLogGroupArn
+     *        The Amazon Resource Name (ARN) of the resource name of the CloudWatch LogGroup.
+     */
+
+    public void setCloudWatchLogGroupArn(String cloudWatchLogGroupArn) {
+        this.cloudWatchLogGroupArn = cloudWatchLogGroupArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the resource name of the CloudWatch LogGroup.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the resource name of the CloudWatch LogGroup.
+     */
+
+    public String getCloudWatchLogGroupArn() {
+        return this.cloudWatchLogGroupArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the resource name of the CloudWatch LogGroup.
+     * </p>
+     * 
+     * @param cloudWatchLogGroupArn
+     *        The Amazon Resource Name (ARN) of the resource name of the CloudWatch LogGroup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTaskRequest withCloudWatchLogGroupArn(String cloudWatchLogGroupArn) {
+        setCloudWatchLogGroupArn(cloudWatchLogGroupArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -165,8 +305,12 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("TaskArn: ").append(getTaskArn()).append(",");
         if (getOptions() != null)
             sb.append("Options: ").append(getOptions()).append(",");
+        if (getExcludes() != null)
+            sb.append("Excludes: ").append(getExcludes()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getCloudWatchLogGroupArn() != null)
+            sb.append("CloudWatchLogGroupArn: ").append(getCloudWatchLogGroupArn());
         sb.append("}");
         return sb.toString();
     }
@@ -189,9 +333,17 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
             return false;
+        if (other.getExcludes() == null ^ this.getExcludes() == null)
+            return false;
+        if (other.getExcludes() != null && other.getExcludes().equals(this.getExcludes()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getCloudWatchLogGroupArn() == null ^ this.getCloudWatchLogGroupArn() == null)
+            return false;
+        if (other.getCloudWatchLogGroupArn() != null && other.getCloudWatchLogGroupArn().equals(this.getCloudWatchLogGroupArn()) == false)
             return false;
         return true;
     }
@@ -203,7 +355,9 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
         hashCode = prime * hashCode + ((getTaskArn() == null) ? 0 : getTaskArn().hashCode());
         hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
+        hashCode = prime * hashCode + ((getExcludes() == null) ? 0 : getExcludes().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchLogGroupArn() == null) ? 0 : getCloudWatchLogGroupArn().hashCode());
         return hashCode;
     }
 

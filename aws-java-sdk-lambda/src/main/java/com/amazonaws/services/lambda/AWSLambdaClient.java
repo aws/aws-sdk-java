@@ -40,6 +40,7 @@ import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.lambda.AWSLambdaClientBuilder;
+import com.amazonaws.services.lambda.waiters.AWSLambdaWaiters;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -73,6 +74,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "lambda";
+
+    private volatile AWSLambdaWaiters waiters;
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
@@ -3215,6 +3218,26 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public AWSLambdaWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AWSLambdaWaiters(this);
+                }
+            }
+        }
+        return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }
