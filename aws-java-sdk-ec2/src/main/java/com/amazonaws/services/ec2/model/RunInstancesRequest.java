@@ -88,7 +88,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private String kernelId;
     /**
      * <p>
-     * The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.
+     * The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a> or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.
      * </p>
      * <important>
      * <p>
@@ -153,13 +155,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private String ramdiskId;
     /**
      * <p>
-     * The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.
+     * The IDs of the security groups. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
+     * >CreateSecurityGroup</a>.
      * </p>
      * <p>
-     * Default: Amazon EC2 uses the default security group.
-     * </p>
-     * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * If you specify a network interface, you must specify any security groups as part of the network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
@@ -169,7 +170,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * IDs instead.
      * </p>
      * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * If you specify a network interface, you must specify any security groups as part of the network interface.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
@@ -217,8 +218,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
-     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     * >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
      * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * <p>
@@ -256,7 +258,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private String instanceInitiatedShutdownBehavior;
     /**
      * <p>
-     * The network interfaces to associate with the instance.
+     * The network interfaces to associate with the instance. If you specify a network interface, you must specify any
+     * security groups as part of the network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification> networkInterfaces;
@@ -294,7 +297,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The specified
      * tags are applied to all instances or volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.
+     * created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
@@ -319,8 +322,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
-     * more information, see <a
+     * <code>unlimited</code>. To change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
+     * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -909,7 +913,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.
+     * The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a> or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.
      * </p>
      * <important>
      * <p>
@@ -919,8 +925,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </important>
      * 
      * @param keyName
-     *        The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or
-     *        <a>ImportKeyPair</a>.</p> <important>
+     *        The name of the key pair. You can create a key pair using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a> or
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.<
+     *        /p> <important>
      *        <p>
      *        If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is
      *        configured to allow users another way to log in.
@@ -933,7 +942,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.
+     * The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a> or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.
      * </p>
      * <important>
      * <p>
@@ -942,8 +953,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * </important>
      * 
-     * @return The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or
-     *         <a>ImportKeyPair</a>.</p> <important>
+     * @return The name of the key pair. You can create a key pair using <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a> or
+     *         <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.
+     *         </p> <important>
      *         <p>
      *         If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is
      *         configured to allow users another way to log in.
@@ -956,7 +970,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.
+     * The name of the key pair. You can create a key pair using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a> or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.
      * </p>
      * <important>
      * <p>
@@ -966,8 +982,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </important>
      * 
      * @param keyName
-     *        The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or
-     *        <a>ImportKeyPair</a>.</p> <important>
+     *        The name of the key pair. You can create a key pair using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a> or
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.<
+     *        /p> <important>
      *        <p>
      *        If you do not specify a key pair, you can't connect to the instance unless you choose an AMI that is
      *        configured to allow users another way to log in.
@@ -1323,21 +1342,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.
+     * The IDs of the security groups. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
+     * >CreateSecurityGroup</a>.
      * </p>
      * <p>
-     * Default: Amazon EC2 uses the default security group.
-     * </p>
-     * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * If you specify a network interface, you must specify any security groups as part of the network interface.
      * </p>
      * 
-     * @return The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.</p>
+     * @return The IDs of the security groups. You can create a security group using <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
+     *         >CreateSecurityGroup</a>.</p>
      *         <p>
-     *         Default: Amazon EC2 uses the default security group.
-     *         </p>
-     *         <p>
-     *         You cannot specify this option and the network interfaces option in the same request.
+     *         If you specify a network interface, you must specify any security groups as part of the network
+     *         interface.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -1349,22 +1367,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.
+     * The IDs of the security groups. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
+     * >CreateSecurityGroup</a>.
      * </p>
      * <p>
-     * Default: Amazon EC2 uses the default security group.
-     * </p>
-     * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * If you specify a network interface, you must specify any security groups as part of the network interface.
      * </p>
      * 
      * @param securityGroupIds
-     *        The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.</p>
+     *        The IDs of the security groups. You can create a security group using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
+     *        >CreateSecurityGroup</a>.</p>
      *        <p>
-     *        Default: Amazon EC2 uses the default security group.
-     *        </p>
-     *        <p>
-     *        You cannot specify this option and the network interfaces option in the same request.
+     *        If you specify a network interface, you must specify any security groups as part of the network interface.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -1378,13 +1394,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.
+     * The IDs of the security groups. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
+     * >CreateSecurityGroup</a>.
      * </p>
      * <p>
-     * Default: Amazon EC2 uses the default security group.
-     * </p>
-     * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * If you specify a network interface, you must specify any security groups as part of the network interface.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1393,12 +1408,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param securityGroupIds
-     *        The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.</p>
+     *        The IDs of the security groups. You can create a security group using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
+     *        >CreateSecurityGroup</a>.</p>
      *        <p>
-     *        Default: Amazon EC2 uses the default security group.
-     *        </p>
-     *        <p>
-     *        You cannot specify this option and the network interfaces option in the same request.
+     *        If you specify a network interface, you must specify any security groups as part of the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1414,22 +1428,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.
+     * The IDs of the security groups. You can create a security group using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
+     * >CreateSecurityGroup</a>.
      * </p>
      * <p>
-     * Default: Amazon EC2 uses the default security group.
-     * </p>
-     * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * If you specify a network interface, you must specify any security groups as part of the network interface.
      * </p>
      * 
      * @param securityGroupIds
-     *        The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.</p>
+     *        The IDs of the security groups. You can create a security group using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
+     *        >CreateSecurityGroup</a>.</p>
      *        <p>
-     *        Default: Amazon EC2 uses the default security group.
-     *        </p>
-     *        <p>
-     *        You cannot specify this option and the network interfaces option in the same request.
+     *        If you specify a network interface, you must specify any security groups as part of the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1444,7 +1456,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * IDs instead.
      * </p>
      * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * If you specify a network interface, you must specify any security groups as part of the network interface.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
@@ -1453,7 +1465,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @return [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security
      *         group IDs instead.</p>
      *         <p>
-     *         You cannot specify this option and the network interfaces option in the same request.
+     *         If you specify a network interface, you must specify any security groups as part of the network
+     *         interface.
      *         </p>
      *         <p>
      *         Default: Amazon EC2 uses the default security group.
@@ -1472,7 +1485,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * IDs instead.
      * </p>
      * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * If you specify a network interface, you must specify any security groups as part of the network interface.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
@@ -1482,7 +1495,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security
      *        group IDs instead.</p>
      *        <p>
-     *        You cannot specify this option and the network interfaces option in the same request.
+     *        If you specify a network interface, you must specify any security groups as part of the network interface.
      *        </p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
@@ -1503,7 +1516,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * IDs instead.
      * </p>
      * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * If you specify a network interface, you must specify any security groups as part of the network interface.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
@@ -1518,7 +1531,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security
      *        group IDs instead.</p>
      *        <p>
-     *        You cannot specify this option and the network interfaces option in the same request.
+     *        If you specify a network interface, you must specify any security groups as part of the network interface.
      *        </p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
@@ -1541,7 +1554,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * IDs instead.
      * </p>
      * <p>
-     * You cannot specify this option and the network interfaces option in the same request.
+     * If you specify a network interface, you must specify any security groups as part of the network interface.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
@@ -1551,7 +1564,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security
      *        group IDs instead.</p>
      *        <p>
-     *        You cannot specify this option and the network interfaces option in the same request.
+     *        If you specify a network interface, you must specify any security groups as part of the network interface.
      *        </p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
@@ -1807,8 +1820,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
-     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     * >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
      * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * <p>
@@ -1818,8 +1832,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @param disableApiTermination
      *        If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
      *        console, CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
-     *        <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code>
-     *        to <code>terminate</code>, you can terminate the instance by running the shutdown command from the
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
+     *        ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     *        <code>terminate</code>, you can terminate the instance by running the shutdown command from the
      *        instance.</p>
      *        <p>
      *        Default: <code>false</code>
@@ -1832,8 +1847,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
-     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     * >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
      * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * <p>
@@ -1842,9 +1858,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @return If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
      *         console, CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch,
-     *         use <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-     *         <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance
-     *         by running the shutdown command from the instance.</p>
+     *         use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
+     *         ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     *         <code>terminate</code>, you can terminate the instance by running the shutdown command from the
+     *         instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -1856,8 +1873,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
-     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     * >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
      * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * <p>
@@ -1867,8 +1885,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @param disableApiTermination
      *        If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
      *        console, CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
-     *        <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code>
-     *        to <code>terminate</code>, you can terminate the instance by running the shutdown command from the
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
+     *        ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     *        <code>terminate</code>, you can terminate the instance by running the shutdown command from the
      *        instance.</p>
      *        <p>
      *        Default: <code>false</code>
@@ -1883,8 +1902,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
-     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     * >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
      * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * <p>
@@ -1893,9 +1913,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @return If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
      *         console, CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch,
-     *         use <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-     *         <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance
-     *         by running the shutdown command from the instance.</p>
+     *         use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
+     *         ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     *         <code>terminate</code>, you can terminate the instance by running the shutdown command from the
+     *         instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -2150,10 +2171,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The network interfaces to associate with the instance.
+     * The network interfaces to associate with the instance. If you specify a network interface, you must specify any
+     * security groups as part of the network interface.
      * </p>
      * 
-     * @return The network interfaces to associate with the instance.
+     * @return The network interfaces to associate with the instance. If you specify a network interface, you must
+     *         specify any security groups as part of the network interface.
      */
 
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
@@ -2165,11 +2188,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The network interfaces to associate with the instance.
+     * The network interfaces to associate with the instance. If you specify a network interface, you must specify any
+     * security groups as part of the network interface.
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interfaces to associate with the instance.
+     *        The network interfaces to associate with the instance. If you specify a network interface, you must
+     *        specify any security groups as part of the network interface.
      */
 
     public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
@@ -2183,7 +2208,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The network interfaces to associate with the instance.
+     * The network interfaces to associate with the instance. If you specify a network interface, you must specify any
+     * security groups as part of the network interface.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2192,7 +2218,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interfaces to associate with the instance.
+     *        The network interfaces to associate with the instance. If you specify a network interface, you must
+     *        specify any security groups as part of the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2208,11 +2235,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The network interfaces to associate with the instance.
+     * The network interfaces to associate with the instance. If you specify a network interface, you must specify any
+     * security groups as part of the network interface.
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interfaces to associate with the instance.
+     *        The network interfaces to associate with the instance. If you specify a network interface, you must
+     *        specify any security groups as part of the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2495,12 +2524,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The specified
      * tags are applied to all instances or volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.
+     * created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * </p>
      * 
      * @return The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The
      *         specified tags are applied to all instances or volumes that are created during launch. To tag a resource
-     *         after it has been created, see <a>CreateTags</a>.
+     *         after it has been created, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      */
 
     public java.util.List<TagSpecification> getTagSpecifications() {
@@ -2514,13 +2544,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The specified
      * tags are applied to all instances or volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.
+     * created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * </p>
      * 
      * @param tagSpecifications
      *        The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The
      *        specified tags are applied to all instances or volumes that are created during launch. To tag a resource
-     *        after it has been created, see <a>CreateTags</a>.
+     *        after it has been created, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      */
 
     public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
@@ -2536,7 +2567,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The specified
      * tags are applied to all instances or volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.
+     * created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2547,7 +2578,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @param tagSpecifications
      *        The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The
      *        specified tags are applied to all instances or volumes that are created during launch. To tag a resource
-     *        after it has been created, see <a>CreateTags</a>.
+     *        after it has been created, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2565,13 +2597,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The specified
      * tags are applied to all instances or volumes that are created during launch. To tag a resource after it has been
-     * created, see <a>CreateTags</a>.
+     * created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * </p>
      * 
      * @param tagSpecifications
      *        The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The
      *        specified tags are applied to all instances or volumes that are created during launch. To tag a resource
-     *        after it has been created, see <a>CreateTags</a>.
+     *        after it has been created, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2696,8 +2729,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
-     * more information, see <a
+     * <code>unlimited</code>. To change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
+     * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -2707,8 +2741,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param creditSpecification
      *        The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code> and
-     *        <code>unlimited</code>. To change this attribute after launch, use
-     *        <a>ModifyInstanceCreditSpecification</a>. For more information, see <a
+     *        <code>unlimited</code>. To change this attribute after launch, use <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
+     *        ModifyInstanceCreditSpecification</a>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      *        Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
@@ -2722,8 +2757,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
-     * more information, see <a
+     * <code>unlimited</code>. To change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
+     * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -2732,8 +2768,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @return The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code> and
-     *         <code>unlimited</code>. To change this attribute after launch, use
-     *         <a>ModifyInstanceCreditSpecification</a>. For more information, see <a
+     *         <code>unlimited</code>. To change this attribute after launch, use <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
+     *         ModifyInstanceCreditSpecification</a>. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      *         Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
@@ -2747,8 +2784,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code> and
-     * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
-     * more information, see <a
+     * <code>unlimited</code>. To change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
+     * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -2758,8 +2796,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param creditSpecification
      *        The credit option for CPU usage of the T2 or T3 instance. Valid values are <code>standard</code> and
-     *        <code>unlimited</code>. To change this attribute after launch, use
-     *        <a>ModifyInstanceCreditSpecification</a>. For more information, see <a
+     *        <code>unlimited</code>. To change this attribute after launch, use <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
+     *        ModifyInstanceCreditSpecification</a>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      *        Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>

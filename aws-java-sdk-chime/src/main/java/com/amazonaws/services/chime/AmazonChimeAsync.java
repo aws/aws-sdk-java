@@ -194,7 +194,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
-     * Users suspended from a <code>Team</code> account are dissociated from the account, but they can continue to use
+     * Users suspended from a <code>Team</code> account are dissasociated from the account, but they can continue to use
      * Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them
      * to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.
      * </p>
@@ -223,7 +223,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
-     * Users suspended from a <code>Team</code> account are dissociated from the account, but they can continue to use
+     * Users suspended from a <code>Team</code> account are dissasociated from the account, but they can continue to use
      * Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them
      * to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.
      * </p>
@@ -401,6 +401,37 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Creates a bot for an Amazon Chime Enterprise account.
+     * </p>
+     * 
+     * @param createBotRequest
+     * @return A Java Future containing the result of the CreateBot operation returned by the service.
+     * @sample AmazonChimeAsync.CreateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBotResult> createBotAsync(CreateBotRequest createBotRequest);
+
+    /**
+     * <p>
+     * Creates a bot for an Amazon Chime Enterprise account.
+     * </p>
+     * 
+     * @param createBotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBot operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBotResult> createBotAsync(CreateBotRequest createBotRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateBotRequest, CreateBotResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime
      * Voice Connector product types.
      * </p>
@@ -525,6 +556,39 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<DeleteAccountResult> deleteAccountAsync(DeleteAccountRequest deleteAccountRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAccountRequest, DeleteAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the events configuration that allows a bot to receive outgoing events.
+     * </p>
+     * 
+     * @param deleteEventsConfigurationRequest
+     * @return A Java Future containing the result of the DeleteEventsConfiguration operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteEventsConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEventsConfigurationResult> deleteEventsConfigurationAsync(
+            DeleteEventsConfigurationRequest deleteEventsConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes the events configuration that allows a bot to receive outgoing events.
+     * </p>
+     * 
+     * @param deleteEventsConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEventsConfiguration operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteEventsConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEventsConfigurationResult> deleteEventsConfigurationAsync(
+            DeleteEventsConfigurationRequest deleteEventsConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEventsConfigurationRequest, DeleteEventsConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -840,6 +904,70 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(GetAccountSettingsRequest getAccountSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<GetAccountSettingsRequest, GetAccountSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details for the specified bot, such as bot email address, bot type, status, and display name.
+     * </p>
+     * 
+     * @param getBotRequest
+     * @return A Java Future containing the result of the GetBot operation returned by the service.
+     * @sample AmazonChimeAsync.GetBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetBotResult> getBotAsync(GetBotRequest getBotRequest);
+
+    /**
+     * <p>
+     * Retrieves details for the specified bot, such as bot email address, bot type, status, and display name.
+     * </p>
+     * 
+     * @param getBotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetBot operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetBotResult> getBotAsync(GetBotRequest getBotRequest,
+            com.amazonaws.handlers.AsyncHandler<GetBotRequest, GetBotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets details for an events configuration that allows a bot to receive outgoing events, such as an HTTPS endpoint
+     * or Lambda function ARN.
+     * </p>
+     * 
+     * @param getEventsConfigurationRequest
+     * @return A Java Future containing the result of the GetEventsConfiguration operation returned by the service.
+     * @sample AmazonChimeAsync.GetEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetEventsConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventsConfigurationResult> getEventsConfigurationAsync(GetEventsConfigurationRequest getEventsConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets details for an events configuration that allows a bot to receive outgoing events, such as an HTTPS endpoint
+     * or Lambda function ARN.
+     * </p>
+     * 
+     * @param getEventsConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEventsConfiguration operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetEventsConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventsConfigurationResult> getEventsConfigurationAsync(GetEventsConfigurationRequest getEventsConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEventsConfigurationRequest, GetEventsConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -1220,6 +1348,37 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Lists the bots associated with the administrator's Amazon Chime Enterprise account ID.
+     * </p>
+     * 
+     * @param listBotsRequest
+     * @return A Java Future containing the result of the ListBots operation returned by the service.
+     * @sample AmazonChimeAsync.ListBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListBots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest listBotsRequest);
+
+    /**
+     * <p>
+     * Lists the bots associated with the administrator's Amazon Chime Enterprise account ID.
+     * </p>
+     * 
+     * @param listBotsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBots operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListBots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest listBotsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBotsRequest, ListBotsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the phone number orders for the administrator's Amazon Chime account.
      * </p>
      * 
@@ -1414,6 +1573,39 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Creates an events configuration that allows a bot to receive outgoing events sent by Amazon Chime. Choose either
+     * an HTTPS endpoint or a Lambda function ARN. For more information, see <a>Bot</a>.
+     * </p>
+     * 
+     * @param putEventsConfigurationRequest
+     * @return A Java Future containing the result of the PutEventsConfiguration operation returned by the service.
+     * @sample AmazonChimeAsync.PutEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutEventsConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutEventsConfigurationResult> putEventsConfigurationAsync(PutEventsConfigurationRequest putEventsConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates an events configuration that allows a bot to receive outgoing events sent by Amazon Chime. Choose either
+     * an HTTPS endpoint or a Lambda function ARN. For more information, see <a>Bot</a>.
+     * </p>
+     * 
+     * @param putEventsConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutEventsConfiguration operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.PutEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutEventsConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutEventsConfigurationResult> putEventsConfigurationAsync(PutEventsConfigurationRequest putEventsConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutEventsConfigurationRequest, PutEventsConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds origination settings for the specified Amazon Chime Voice Connector.
      * </p>
      * 
@@ -1516,6 +1708,37 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<PutVoiceConnectorTerminationCredentialsResult> putVoiceConnectorTerminationCredentialsAsync(
             PutVoiceConnectorTerminationCredentialsRequest putVoiceConnectorTerminationCredentialsRequest,
             com.amazonaws.handlers.AsyncHandler<PutVoiceConnectorTerminationCredentialsRequest, PutVoiceConnectorTerminationCredentialsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Regenerates the security token for a bot.
+     * </p>
+     * 
+     * @param regenerateSecurityTokenRequest
+     * @return A Java Future containing the result of the RegenerateSecurityToken operation returned by the service.
+     * @sample AmazonChimeAsync.RegenerateSecurityToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RegenerateSecurityToken" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RegenerateSecurityTokenResult> regenerateSecurityTokenAsync(RegenerateSecurityTokenRequest regenerateSecurityTokenRequest);
+
+    /**
+     * <p>
+     * Regenerates the security token for a bot.
+     * </p>
+     * 
+     * @param regenerateSecurityTokenRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegenerateSecurityToken operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.RegenerateSecurityToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RegenerateSecurityToken" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RegenerateSecurityTokenResult> regenerateSecurityTokenAsync(RegenerateSecurityTokenRequest regenerateSecurityTokenRequest,
+            com.amazonaws.handlers.AsyncHandler<RegenerateSecurityTokenRequest, RegenerateSecurityTokenResult> asyncHandler);
 
     /**
      * <p>
@@ -1683,6 +1906,39 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<UpdateAccountSettingsResult> updateAccountSettingsAsync(UpdateAccountSettingsRequest updateAccountSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAccountSettingsRequest, UpdateAccountSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the status of the specified bot, such as starting or stopping the bot from running in your Amazon Chime
+     * Enterprise account.
+     * </p>
+     * 
+     * @param updateBotRequest
+     * @return A Java Future containing the result of the UpdateBot operation returned by the service.
+     * @sample AmazonChimeAsync.UpdateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBotResult> updateBotAsync(UpdateBotRequest updateBotRequest);
+
+    /**
+     * <p>
+     * Updates the status of the specified bot, such as starting or stopping the bot from running in your Amazon Chime
+     * Enterprise account.
+     * </p>
+     * 
+     * @param updateBotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateBot operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBotResult> updateBotAsync(UpdateBotRequest updateBotRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateBotRequest, UpdateBotResult> asyncHandler);
 
     /**
      * <p>

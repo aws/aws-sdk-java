@@ -54,8 +54,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     private String clientToken;
     /**
      * <p>
-     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
-     * decreased below the current size of the Spot Fleet.
+     * Indicates whether running Spot Instances should be terminated if you decrease the target capacity of the Spot
+     * Fleet request below the current size of the Spot Fleet.
      * </p>
      */
     private String excessCapacityTerminationPolicy;
@@ -73,23 +73,28 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     private Double onDemandFulfilledCapacity;
     /**
      * <p>
-     * Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you cancel its Spot Fleet
-     * request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
-     * <code>terminateInstancesWithExpiration</code>.
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the Spot Fleet the
+     * permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
+     * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can terminate Spot
+     * Instances on your behalf when you cancel its Spot Fleet request using <a>CancelSpotFleetRequests</a> or when the
+     * Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.
      * </p>
      */
     private String iamFleetRole;
     /**
      * <p>
      * The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't
-     * specify <code>LaunchTemplateConfigs</code>.
+     * specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use
+     * <code>LaunchTemplateConfigs</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SpotFleetLaunchSpecification> launchSpecifications;
     /**
      * <p>
      * The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
-     * <code>LaunchSpecifications</code>.
+     * <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use
+     * <code>LaunchTemplateConfigs</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LaunchTemplateConfig> launchTemplateConfigs;
@@ -102,9 +107,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     private String spotPrice;
     /**
      * <p>
-     * The number of units to request. You can choose to set the target capacity in terms of instances or a performance
-     * characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type
-     * is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
+     * The number of units to request for the Spot Fleet. You can choose to set the target capacity in terms of
+     * instances or a performance characteristic that is important to your application workload, such as vCPUs, memory,
+     * or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity
+     * later.
      * </p>
      */
     private Integer targetCapacity;
@@ -118,7 +124,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     private Integer onDemandTargetCapacity;
     /**
      * <p>
-     * Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
+     * Indicates whether running Spot Instances are terminated when the Spot Fleet request expires.
      * </p>
      */
     private Boolean terminateInstancesWithExpiration;
@@ -136,18 +142,18 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     private String type;
     /**
      * <p>
-     * The start date and time of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request
-     * immediately.
+     * The start date and time of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). By default, Amazon EC2 starts fulfilling the
+     * request immediately.
      * </p>
      */
     private java.util.Date validFrom;
     /**
      * <p>
-     * The end date and time of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance requests are
-     * placed or able to fulfill the request. If no value is specified, the Spot Fleet request remains until you cancel
-     * it.
+     * The end date and time of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). After the end date and time, no new Spot
+     * Instance requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet request
+     * remains until you cancel it.
      * </p>
      */
     private java.util.Date validUntil;
@@ -439,13 +445,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
-     * decreased below the current size of the Spot Fleet.
+     * Indicates whether running Spot Instances should be terminated if you decrease the target capacity of the Spot
+     * Fleet request below the current size of the Spot Fleet.
      * </p>
      * 
      * @param excessCapacityTerminationPolicy
-     *        Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet
-     *        request is decreased below the current size of the Spot Fleet.
+     *        Indicates whether running Spot Instances should be terminated if you decrease the target capacity of the
+     *        Spot Fleet request below the current size of the Spot Fleet.
      * @see ExcessCapacityTerminationPolicy
      */
 
@@ -455,12 +461,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
-     * decreased below the current size of the Spot Fleet.
+     * Indicates whether running Spot Instances should be terminated if you decrease the target capacity of the Spot
+     * Fleet request below the current size of the Spot Fleet.
      * </p>
      * 
-     * @return Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet
-     *         request is decreased below the current size of the Spot Fleet.
+     * @return Indicates whether running Spot Instances should be terminated if you decrease the target capacity of the
+     *         Spot Fleet request below the current size of the Spot Fleet.
      * @see ExcessCapacityTerminationPolicy
      */
 
@@ -470,13 +476,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
-     * decreased below the current size of the Spot Fleet.
+     * Indicates whether running Spot Instances should be terminated if you decrease the target capacity of the Spot
+     * Fleet request below the current size of the Spot Fleet.
      * </p>
      * 
      * @param excessCapacityTerminationPolicy
-     *        Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet
-     *        request is decreased below the current size of the Spot Fleet.
+     *        Indicates whether running Spot Instances should be terminated if you decrease the target capacity of the
+     *        Spot Fleet request below the current size of the Spot Fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExcessCapacityTerminationPolicy
      */
@@ -488,13 +494,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
-     * decreased below the current size of the Spot Fleet.
+     * Indicates whether running Spot Instances should be terminated if you decrease the target capacity of the Spot
+     * Fleet request below the current size of the Spot Fleet.
      * </p>
      * 
      * @param excessCapacityTerminationPolicy
-     *        Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet
-     *        request is decreased below the current size of the Spot Fleet.
+     *        Indicates whether running Spot Instances should be terminated if you decrease the target capacity of the
+     *        Spot Fleet request below the current size of the Spot Fleet.
      * @see ExcessCapacityTerminationPolicy
      */
 
@@ -504,13 +510,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
-     * decreased below the current size of the Spot Fleet.
+     * Indicates whether running Spot Instances should be terminated if you decrease the target capacity of the Spot
+     * Fleet request below the current size of the Spot Fleet.
      * </p>
      * 
      * @param excessCapacityTerminationPolicy
-     *        Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet
-     *        request is decreased below the current size of the Spot Fleet.
+     *        Indicates whether running Spot Instances should be terminated if you decrease the target capacity of the
+     *        Spot Fleet request below the current size of the Spot Fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExcessCapacityTerminationPolicy
      */
@@ -605,15 +611,23 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you cancel its Spot Fleet
-     * request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
-     * <code>terminateInstancesWithExpiration</code>.
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the Spot Fleet the
+     * permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
+     * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can terminate Spot
+     * Instances on your behalf when you cancel its Spot Fleet request using <a>CancelSpotFleetRequests</a> or when the
+     * Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.
      * </p>
      * 
      * @param iamFleetRole
-     *        Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you cancel its Spot Fleet
-     *        request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
-     *        <code>terminateInstancesWithExpiration</code>.
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the Spot
+     *        Fleet the permission to request, launch, terminate, and tag instances on your behalf. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites"
+     *        >Spot Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can
+     *        terminate Spot Instances on your behalf when you cancel its Spot Fleet request using
+     *        <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
+     *        <code>TerminateInstancesWithExpiration</code>.
      */
 
     public void setIamFleetRole(String iamFleetRole) {
@@ -622,14 +636,22 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you cancel its Spot Fleet
-     * request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
-     * <code>terminateInstancesWithExpiration</code>.
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the Spot Fleet the
+     * permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
+     * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can terminate Spot
+     * Instances on your behalf when you cancel its Spot Fleet request using <a>CancelSpotFleetRequests</a> or when the
+     * Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.
      * </p>
      * 
-     * @return Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you cancel its Spot
-     *         Fleet request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
-     *         <code>terminateInstancesWithExpiration</code>.
+     * @return The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the Spot
+     *         Fleet the permission to request, launch, terminate, and tag instances on your behalf. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites"
+     *         >Spot Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can
+     *         terminate Spot Instances on your behalf when you cancel its Spot Fleet request using
+     *         <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
+     *         <code>TerminateInstancesWithExpiration</code>.
      */
 
     public String getIamFleetRole() {
@@ -638,15 +660,23 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you cancel its Spot Fleet
-     * request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
-     * <code>terminateInstancesWithExpiration</code>.
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the Spot Fleet the
+     * permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
+     * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can terminate Spot
+     * Instances on your behalf when you cancel its Spot Fleet request using <a>CancelSpotFleetRequests</a> or when the
+     * Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.
      * </p>
      * 
      * @param iamFleetRole
-     *        Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you cancel its Spot Fleet
-     *        request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
-     *        <code>terminateInstancesWithExpiration</code>.
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the Spot
+     *        Fleet the permission to request, launch, terminate, and tag instances on your behalf. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites"
+     *        >Spot Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can
+     *        terminate Spot Instances on your behalf when you cancel its Spot Fleet request using
+     *        <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
+     *        <code>TerminateInstancesWithExpiration</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -658,11 +688,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * <p>
      * The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't
-     * specify <code>LaunchTemplateConfigs</code>.
+     * specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use
+     * <code>LaunchTemplateConfigs</code>.
      * </p>
      * 
      * @return The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>,
-     *         you can't specify <code>LaunchTemplateConfigs</code>.
+     *         you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request,
+     *         you must use <code>LaunchTemplateConfigs</code>.
      */
 
     public java.util.List<SpotFleetLaunchSpecification> getLaunchSpecifications() {
@@ -675,12 +707,14 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * <p>
      * The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't
-     * specify <code>LaunchTemplateConfigs</code>.
+     * specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use
+     * <code>LaunchTemplateConfigs</code>.
      * </p>
      * 
      * @param launchSpecifications
      *        The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>,
-     *        you can't specify <code>LaunchTemplateConfigs</code>.
+     *        you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request,
+     *        you must use <code>LaunchTemplateConfigs</code>.
      */
 
     public void setLaunchSpecifications(java.util.Collection<SpotFleetLaunchSpecification> launchSpecifications) {
@@ -695,7 +729,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * <p>
      * The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't
-     * specify <code>LaunchTemplateConfigs</code>.
+     * specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use
+     * <code>LaunchTemplateConfigs</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -705,7 +740,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * 
      * @param launchSpecifications
      *        The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>,
-     *        you can't specify <code>LaunchTemplateConfigs</code>.
+     *        you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request,
+     *        you must use <code>LaunchTemplateConfigs</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -722,12 +758,14 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * <p>
      * The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't
-     * specify <code>LaunchTemplateConfigs</code>.
+     * specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use
+     * <code>LaunchTemplateConfigs</code>.
      * </p>
      * 
      * @param launchSpecifications
      *        The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>,
-     *        you can't specify <code>LaunchTemplateConfigs</code>.
+     *        you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request,
+     *        you must use <code>LaunchTemplateConfigs</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -739,11 +777,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * <p>
      * The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
-     * <code>LaunchSpecifications</code>.
+     * <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use
+     * <code>LaunchTemplateConfigs</code>.
      * </p>
      * 
      * @return The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
-     *         <code>LaunchSpecifications</code>.
+     *         <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use
+     *         <code>LaunchTemplateConfigs</code>.
      */
 
     public java.util.List<LaunchTemplateConfig> getLaunchTemplateConfigs() {
@@ -756,12 +796,14 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * <p>
      * The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
-     * <code>LaunchSpecifications</code>.
+     * <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use
+     * <code>LaunchTemplateConfigs</code>.
      * </p>
      * 
      * @param launchTemplateConfigs
      *        The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
-     *        <code>LaunchSpecifications</code>.
+     *        <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use
+     *        <code>LaunchTemplateConfigs</code>.
      */
 
     public void setLaunchTemplateConfigs(java.util.Collection<LaunchTemplateConfig> launchTemplateConfigs) {
@@ -776,7 +818,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * <p>
      * The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
-     * <code>LaunchSpecifications</code>.
+     * <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use
+     * <code>LaunchTemplateConfigs</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -786,7 +829,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * 
      * @param launchTemplateConfigs
      *        The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
-     *        <code>LaunchSpecifications</code>.
+     *        <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use
+     *        <code>LaunchTemplateConfigs</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -803,12 +847,14 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * <p>
      * The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
-     * <code>LaunchSpecifications</code>.
+     * <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use
+     * <code>LaunchTemplateConfigs</code>.
      * </p>
      * 
      * @param launchTemplateConfigs
      *        The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify
-     *        <code>LaunchSpecifications</code>.
+     *        <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use
+     *        <code>LaunchTemplateConfigs</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -865,16 +911,17 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of units to request. You can choose to set the target capacity in terms of instances or a performance
-     * characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type
-     * is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
+     * The number of units to request for the Spot Fleet. You can choose to set the target capacity in terms of
+     * instances or a performance characteristic that is important to your application workload, such as vCPUs, memory,
+     * or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity
+     * later.
      * </p>
      * 
      * @param targetCapacity
-     *        The number of units to request. You can choose to set the target capacity in terms of instances or a
-     *        performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O.
-     *        If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity
-     *        later.
+     *        The number of units to request for the Spot Fleet. You can choose to set the target capacity in terms of
+     *        instances or a performance characteristic that is important to your application workload, such as vCPUs,
+     *        memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and
+     *        add capacity later.
      */
 
     public void setTargetCapacity(Integer targetCapacity) {
@@ -883,15 +930,16 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of units to request. You can choose to set the target capacity in terms of instances or a performance
-     * characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type
-     * is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
+     * The number of units to request for the Spot Fleet. You can choose to set the target capacity in terms of
+     * instances or a performance characteristic that is important to your application workload, such as vCPUs, memory,
+     * or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity
+     * later.
      * </p>
      * 
-     * @return The number of units to request. You can choose to set the target capacity in terms of instances or a
-     *         performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O.
-     *         If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity
-     *         later.
+     * @return The number of units to request for the Spot Fleet. You can choose to set the target capacity in terms of
+     *         instances or a performance characteristic that is important to your application workload, such as vCPUs,
+     *         memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and
+     *         add capacity later.
      */
 
     public Integer getTargetCapacity() {
@@ -900,16 +948,17 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of units to request. You can choose to set the target capacity in terms of instances or a performance
-     * characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type
-     * is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
+     * The number of units to request for the Spot Fleet. You can choose to set the target capacity in terms of
+     * instances or a performance characteristic that is important to your application workload, such as vCPUs, memory,
+     * or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity
+     * later.
      * </p>
      * 
      * @param targetCapacity
-     *        The number of units to request. You can choose to set the target capacity in terms of instances or a
-     *        performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O.
-     *        If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity
-     *        later.
+     *        The number of units to request for the Spot Fleet. You can choose to set the target capacity in terms of
+     *        instances or a performance characteristic that is important to your application workload, such as vCPUs,
+     *        memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and
+     *        add capacity later.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -975,11 +1024,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
+     * Indicates whether running Spot Instances are terminated when the Spot Fleet request expires.
      * </p>
      * 
      * @param terminateInstancesWithExpiration
-     *        Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
+     *        Indicates whether running Spot Instances are terminated when the Spot Fleet request expires.
      */
 
     public void setTerminateInstancesWithExpiration(Boolean terminateInstancesWithExpiration) {
@@ -988,10 +1037,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
+     * Indicates whether running Spot Instances are terminated when the Spot Fleet request expires.
      * </p>
      * 
-     * @return Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
+     * @return Indicates whether running Spot Instances are terminated when the Spot Fleet request expires.
      */
 
     public Boolean getTerminateInstancesWithExpiration() {
@@ -1000,11 +1049,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
+     * Indicates whether running Spot Instances are terminated when the Spot Fleet request expires.
      * </p>
      * 
      * @param terminateInstancesWithExpiration
-     *        Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
+     *        Indicates whether running Spot Instances are terminated when the Spot Fleet request expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1015,10 +1064,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
+     * Indicates whether running Spot Instances are terminated when the Spot Fleet request expires.
      * </p>
      * 
-     * @return Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
+     * @return Indicates whether running Spot Instances are terminated when the Spot Fleet request expires.
      */
 
     public Boolean isTerminateInstancesWithExpiration() {
@@ -1160,15 +1209,15 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The start date and time of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request
-     * immediately.
+     * The start date and time of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). By default, Amazon EC2 starts fulfilling the
+     * request immediately.
      * </p>
      * 
      * @param validFrom
-     *        The start date and time of the request, in UTC format (for example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the
-     *        request immediately.
+     *        The start date and time of the request, in UTC format
+     *        (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). By default, Amazon EC2 starts fulfilling
+     *        the request immediately.
      */
 
     public void setValidFrom(java.util.Date validFrom) {
@@ -1177,14 +1226,14 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The start date and time of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request
-     * immediately.
+     * The start date and time of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). By default, Amazon EC2 starts fulfilling the
+     * request immediately.
      * </p>
      * 
-     * @return The start date and time of the request, in UTC format (for example,
-     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the
-     *         request immediately.
+     * @return The start date and time of the request, in UTC format
+     *         (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). By default, Amazon EC2 starts
+     *         fulfilling the request immediately.
      */
 
     public java.util.Date getValidFrom() {
@@ -1193,15 +1242,15 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The start date and time of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request
-     * immediately.
+     * The start date and time of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). By default, Amazon EC2 starts fulfilling the
+     * request immediately.
      * </p>
      * 
      * @param validFrom
-     *        The start date and time of the request, in UTC format (for example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the
-     *        request immediately.
+     *        The start date and time of the request, in UTC format
+     *        (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). By default, Amazon EC2 starts fulfilling
+     *        the request immediately.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1212,17 +1261,17 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The end date and time of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance requests are
-     * placed or able to fulfill the request. If no value is specified, the Spot Fleet request remains until you cancel
-     * it.
+     * The end date and time of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). After the end date and time, no new Spot
+     * Instance requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet request
+     * remains until you cancel it.
      * </p>
      * 
      * @param validUntil
-     *        The end date and time of the request, in UTC format (for example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance
-     *        requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet request
-     *        remains until you cancel it.
+     *        The end date and time of the request, in UTC format
+     *        (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). After the end date and time, no new Spot
+     *        Instance requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet
+     *        request remains until you cancel it.
      */
 
     public void setValidUntil(java.util.Date validUntil) {
@@ -1231,16 +1280,16 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The end date and time of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance requests are
-     * placed or able to fulfill the request. If no value is specified, the Spot Fleet request remains until you cancel
-     * it.
+     * The end date and time of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). After the end date and time, no new Spot
+     * Instance requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet request
+     * remains until you cancel it.
      * </p>
      * 
-     * @return The end date and time of the request, in UTC format (for example,
-     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance
-     *         requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet request
-     *         remains until you cancel it.
+     * @return The end date and time of the request, in UTC format
+     *         (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). After the end date and time, no new
+     *         Spot Instance requests are placed or able to fulfill the request. If no value is specified, the Spot
+     *         Fleet request remains until you cancel it.
      */
 
     public java.util.Date getValidUntil() {
@@ -1249,17 +1298,17 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The end date and time of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance requests are
-     * placed or able to fulfill the request. If no value is specified, the Spot Fleet request remains until you cancel
-     * it.
+     * The end date and time of the request, in UTC format
+     * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). After the end date and time, no new Spot
+     * Instance requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet request
+     * remains until you cancel it.
      * </p>
      * 
      * @param validUntil
-     *        The end date and time of the request, in UTC format (for example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance
-     *        requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet request
-     *        remains until you cancel it.
+     *        The end date and time of the request, in UTC format
+     *        (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). After the end date and time, no new Spot
+     *        Instance requests are placed or able to fulfill the request. If no value is specified, the Spot Fleet
+     *        request remains until you cancel it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

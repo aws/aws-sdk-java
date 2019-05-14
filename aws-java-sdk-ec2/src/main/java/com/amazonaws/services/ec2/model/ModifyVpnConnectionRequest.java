@@ -25,14 +25,32 @@ import com.amazonaws.services.ec2.model.transform.ModifyVpnConnectionRequestMars
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifyVpnConnectionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ModifyVpnConnectionRequest> {
 
+    /**
+     * <p>
+     * The ID of the VPN connection.
+     * </p>
+     */
     private String vpnConnectionId;
-
+    /**
+     * <p>
+     * The ID of the transit gateway.
+     * </p>
+     */
     private String transitGatewayId;
-
+    /**
+     * <p>
+     * The ID of the virtual private gateway at the AWS side of the VPN connection.
+     * </p>
+     */
     private String vpnGatewayId;
 
     /**
+     * <p>
+     * The ID of the VPN connection.
+     * </p>
+     * 
      * @param vpnConnectionId
+     *        The ID of the VPN connection.
      */
 
     public void setVpnConnectionId(String vpnConnectionId) {
@@ -40,7 +58,11 @@ public class ModifyVpnConnectionRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the VPN connection.
+     * </p>
+     * 
+     * @return The ID of the VPN connection.
      */
 
     public String getVpnConnectionId() {
@@ -48,7 +70,12 @@ public class ModifyVpnConnectionRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * The ID of the VPN connection.
+     * </p>
+     * 
      * @param vpnConnectionId
+     *        The ID of the VPN connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +85,12 @@ public class ModifyVpnConnectionRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * The ID of the transit gateway.
+     * </p>
+     * 
      * @param transitGatewayId
+     *        The ID of the transit gateway.
      */
 
     public void setTransitGatewayId(String transitGatewayId) {
@@ -66,7 +98,11 @@ public class ModifyVpnConnectionRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the transit gateway.
+     * </p>
+     * 
+     * @return The ID of the transit gateway.
      */
 
     public String getTransitGatewayId() {
@@ -74,7 +110,12 @@ public class ModifyVpnConnectionRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * The ID of the transit gateway.
+     * </p>
+     * 
      * @param transitGatewayId
+     *        The ID of the transit gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +125,12 @@ public class ModifyVpnConnectionRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * The ID of the virtual private gateway at the AWS side of the VPN connection.
+     * </p>
+     * 
      * @param vpnGatewayId
+     *        The ID of the virtual private gateway at the AWS side of the VPN connection.
      */
 
     public void setVpnGatewayId(String vpnGatewayId) {
@@ -92,7 +138,11 @@ public class ModifyVpnConnectionRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the virtual private gateway at the AWS side of the VPN connection.
+     * </p>
+     * 
+     * @return The ID of the virtual private gateway at the AWS side of the VPN connection.
      */
 
     public String getVpnGatewayId() {
@@ -100,7 +150,12 @@ public class ModifyVpnConnectionRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * The ID of the virtual private gateway at the AWS side of the VPN connection.
+     * </p>
+     * 
      * @param vpnGatewayId
+     *        The ID of the virtual private gateway at the AWS side of the VPN connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

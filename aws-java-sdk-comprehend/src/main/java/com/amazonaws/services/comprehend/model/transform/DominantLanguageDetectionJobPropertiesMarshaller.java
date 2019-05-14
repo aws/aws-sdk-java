@@ -47,6 +47,8 @@ public class DominantLanguageDetectionJobPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
     private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
 
     private static final DominantLanguageDetectionJobPropertiesMarshaller instance = new DominantLanguageDetectionJobPropertiesMarshaller();
 
@@ -74,6 +76,7 @@ public class DominantLanguageDetectionJobPropertiesMarshaller {
             protocolMarshaller.marshall(dominantLanguageDetectionJobProperties.getOutputDataConfig(), OUTPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(dominantLanguageDetectionJobProperties.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(dominantLanguageDetectionJobProperties.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
+            protocolMarshaller.marshall(dominantLanguageDetectionJobProperties.getVpcConfig(), VPCCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

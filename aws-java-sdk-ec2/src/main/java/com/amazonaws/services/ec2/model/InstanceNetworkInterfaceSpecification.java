@@ -51,8 +51,11 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     private String description;
     /**
      * <p>
-     * The index of the device on the instance for the network interface attachment. If you are specifying a network
-     * interface in a <a>RunInstances</a> request, you must provide the device index.
+     * The position of the network interface in the attachment order. A primary network interface has a device index of
+     * 0.
+     * </p>
+     * <p>
+     * If you specify a network interface when launching an instance, you must specify the device index.
      * </p>
      */
     private Integer deviceIndex;
@@ -88,16 +91,16 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * The private IPv4 address of the network interface. Applies only if creating a network interface when launching an
-     * instance. You cannot specify this option if you're launching more than one instance in a <a>RunInstances</a>
-     * request.
+     * instance. You cannot specify this option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.
      * </p>
      */
     private String privateIpAddress;
     /**
      * <p>
      * One or more private IPv4 addresses to assign to the network interface. Only one private IPv4 address can be
-     * designated as primary. You cannot specify this option if you're launching more than one instance in a
-     * <a>RunInstances</a> request.
+     * designated as primary. You cannot specify this option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification> privateIpAddresses;
@@ -105,7 +108,8 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * <p>
      * The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private
      * IP address using the private IP addresses option. You cannot specify this option if you're launching more than
-     * one instance in a <a>RunInstances</a> request.
+     * one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.
      * </p>
      */
     private Integer secondaryPrivateIpAddressCount;
@@ -307,13 +311,18 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The index of the device on the instance for the network interface attachment. If you are specifying a network
-     * interface in a <a>RunInstances</a> request, you must provide the device index.
+     * The position of the network interface in the attachment order. A primary network interface has a device index of
+     * 0.
+     * </p>
+     * <p>
+     * If you specify a network interface when launching an instance, you must specify the device index.
      * </p>
      * 
      * @param deviceIndex
-     *        The index of the device on the instance for the network interface attachment. If you are specifying a
-     *        network interface in a <a>RunInstances</a> request, you must provide the device index.
+     *        The position of the network interface in the attachment order. A primary network interface has a device
+     *        index of 0.</p>
+     *        <p>
+     *        If you specify a network interface when launching an instance, you must specify the device index.
      */
 
     public void setDeviceIndex(Integer deviceIndex) {
@@ -322,12 +331,17 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The index of the device on the instance for the network interface attachment. If you are specifying a network
-     * interface in a <a>RunInstances</a> request, you must provide the device index.
+     * The position of the network interface in the attachment order. A primary network interface has a device index of
+     * 0.
+     * </p>
+     * <p>
+     * If you specify a network interface when launching an instance, you must specify the device index.
      * </p>
      * 
-     * @return The index of the device on the instance for the network interface attachment. If you are specifying a
-     *         network interface in a <a>RunInstances</a> request, you must provide the device index.
+     * @return The position of the network interface in the attachment order. A primary network interface has a device
+     *         index of 0.</p>
+     *         <p>
+     *         If you specify a network interface when launching an instance, you must specify the device index.
      */
 
     public Integer getDeviceIndex() {
@@ -336,13 +350,18 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The index of the device on the instance for the network interface attachment. If you are specifying a network
-     * interface in a <a>RunInstances</a> request, you must provide the device index.
+     * The position of the network interface in the attachment order. A primary network interface has a device index of
+     * 0.
+     * </p>
+     * <p>
+     * If you specify a network interface when launching an instance, you must specify the device index.
      * </p>
      * 
      * @param deviceIndex
-     *        The index of the device on the instance for the network interface attachment. If you are specifying a
-     *        network interface in a <a>RunInstances</a> request, you must provide the device index.
+     *        The position of the network interface in the attachment order. A primary network interface has a device
+     *        index of 0.</p>
+     *        <p>
+     *        If you specify a network interface when launching an instance, you must specify the device index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -619,14 +638,15 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * The private IPv4 address of the network interface. Applies only if creating a network interface when launching an
-     * instance. You cannot specify this option if you're launching more than one instance in a <a>RunInstances</a>
-     * request.
+     * instance. You cannot specify this option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.
      * </p>
      * 
      * @param privateIpAddress
      *        The private IPv4 address of the network interface. Applies only if creating a network interface when
-     *        launching an instance. You cannot specify this option if you're launching more than one instance in a
-     *        <a>RunInstances</a> request.
+     *        launching an instance. You cannot specify this option if you're launching more than one instance in a <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     *        request.
      */
 
     public void setPrivateIpAddress(String privateIpAddress) {
@@ -636,13 +656,14 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * The private IPv4 address of the network interface. Applies only if creating a network interface when launching an
-     * instance. You cannot specify this option if you're launching more than one instance in a <a>RunInstances</a>
-     * request.
+     * instance. You cannot specify this option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.
      * </p>
      * 
      * @return The private IPv4 address of the network interface. Applies only if creating a network interface when
-     *         launching an instance. You cannot specify this option if you're launching more than one instance in a
-     *         <a>RunInstances</a> request.
+     *         launching an instance. You cannot specify this option if you're launching more than one instance in a <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     *         request.
      */
 
     public String getPrivateIpAddress() {
@@ -652,14 +673,15 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * The private IPv4 address of the network interface. Applies only if creating a network interface when launching an
-     * instance. You cannot specify this option if you're launching more than one instance in a <a>RunInstances</a>
-     * request.
+     * instance. You cannot specify this option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.
      * </p>
      * 
      * @param privateIpAddress
      *        The private IPv4 address of the network interface. Applies only if creating a network interface when
-     *        launching an instance. You cannot specify this option if you're launching more than one instance in a
-     *        <a>RunInstances</a> request.
+     *        launching an instance. You cannot specify this option if you're launching more than one instance in a <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -671,13 +693,14 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * One or more private IPv4 addresses to assign to the network interface. Only one private IPv4 address can be
-     * designated as primary. You cannot specify this option if you're launching more than one instance in a
-     * <a>RunInstances</a> request.
+     * designated as primary. You cannot specify this option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.
      * </p>
      * 
      * @return One or more private IPv4 addresses to assign to the network interface. Only one private IPv4 address can
      *         be designated as primary. You cannot specify this option if you're launching more than one instance in a
-     *         <a>RunInstances</a> request.
+     *         <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     *         request.
      */
 
     public java.util.List<PrivateIpAddressSpecification> getPrivateIpAddresses() {
@@ -690,14 +713,15 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * One or more private IPv4 addresses to assign to the network interface. Only one private IPv4 address can be
-     * designated as primary. You cannot specify this option if you're launching more than one instance in a
-     * <a>RunInstances</a> request.
+     * designated as primary. You cannot specify this option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.
      * </p>
      * 
      * @param privateIpAddresses
      *        One or more private IPv4 addresses to assign to the network interface. Only one private IPv4 address can
      *        be designated as primary. You cannot specify this option if you're launching more than one instance in a
-     *        <a>RunInstances</a> request.
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     *        request.
      */
 
     public void setPrivateIpAddresses(java.util.Collection<PrivateIpAddressSpecification> privateIpAddresses) {
@@ -712,8 +736,8 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * One or more private IPv4 addresses to assign to the network interface. Only one private IPv4 address can be
-     * designated as primary. You cannot specify this option if you're launching more than one instance in a
-     * <a>RunInstances</a> request.
+     * designated as primary. You cannot specify this option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -724,7 +748,8 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * @param privateIpAddresses
      *        One or more private IPv4 addresses to assign to the network interface. Only one private IPv4 address can
      *        be designated as primary. You cannot specify this option if you're launching more than one instance in a
-     *        <a>RunInstances</a> request.
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -741,14 +766,15 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     /**
      * <p>
      * One or more private IPv4 addresses to assign to the network interface. Only one private IPv4 address can be
-     * designated as primary. You cannot specify this option if you're launching more than one instance in a
-     * <a>RunInstances</a> request.
+     * designated as primary. You cannot specify this option if you're launching more than one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.
      * </p>
      * 
      * @param privateIpAddresses
      *        One or more private IPv4 addresses to assign to the network interface. Only one private IPv4 address can
      *        be designated as primary. You cannot specify this option if you're launching more than one instance in a
-     *        <a>RunInstances</a> request.
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -761,13 +787,16 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * <p>
      * The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private
      * IP address using the private IP addresses option. You cannot specify this option if you're launching more than
-     * one instance in a <a>RunInstances</a> request.
+     * one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.
      * </p>
      * 
      * @param secondaryPrivateIpAddressCount
      *        The number of secondary private IPv4 addresses. You can't specify this option and specify more than one
      *        private IP address using the private IP addresses option. You cannot specify this option if you're
-     *        launching more than one instance in a <a>RunInstances</a> request.
+     *        launching more than one instance in a <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     *        request.
      */
 
     public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
@@ -778,12 +807,15 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * <p>
      * The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private
      * IP address using the private IP addresses option. You cannot specify this option if you're launching more than
-     * one instance in a <a>RunInstances</a> request.
+     * one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.
      * </p>
      * 
      * @return The number of secondary private IPv4 addresses. You can't specify this option and specify more than one
      *         private IP address using the private IP addresses option. You cannot specify this option if you're
-     *         launching more than one instance in a <a>RunInstances</a> request.
+     *         launching more than one instance in a <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     *         request.
      */
 
     public Integer getSecondaryPrivateIpAddressCount() {
@@ -794,13 +826,16 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * <p>
      * The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private
      * IP address using the private IP addresses option. You cannot specify this option if you're launching more than
-     * one instance in a <a>RunInstances</a> request.
+     * one instance in a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.
      * </p>
      * 
      * @param secondaryPrivateIpAddressCount
      *        The number of secondary private IPv4 addresses. You can't specify this option and specify more than one
      *        private IP address using the private IP addresses option. You cannot specify this option if you're
-     *        launching more than one instance in a <a>RunInstances</a> request.
+     *        launching more than one instance in a <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

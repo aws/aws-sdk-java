@@ -44,6 +44,8 @@ public class StartTopicsDetectionJobRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
 
     private static final StartTopicsDetectionJobRequestMarshaller instance = new StartTopicsDetectionJobRequestMarshaller();
 
@@ -68,6 +70,7 @@ public class StartTopicsDetectionJobRequestMarshaller {
             protocolMarshaller.marshall(startTopicsDetectionJobRequest.getNumberOfTopics(), NUMBEROFTOPICS_BINDING);
             protocolMarshaller.marshall(startTopicsDetectionJobRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(startTopicsDetectionJobRequest.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
+            protocolMarshaller.marshall(startTopicsDetectionJobRequest.getVpcConfig(), VPCCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

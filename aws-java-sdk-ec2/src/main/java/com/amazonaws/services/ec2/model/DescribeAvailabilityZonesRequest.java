@@ -38,7 +38,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region for the Availability Zone (for example, <code>us-east-1</code>
+     * <code>region-name</code> - The name of the Region for the Availability Zone (for example, <code>us-east-1</code>
      * ).
      * </p>
      * </li>
@@ -86,7 +86,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region for the Availability Zone (for example, <code>us-east-1</code>
+     * <code>region-name</code> - The name of the Region for the Availability Zone (for example, <code>us-east-1</code>
      * ).
      * </p>
      * </li>
@@ -117,7 +117,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>region-name</code> - The name of the region for the Availability Zone (for example,
+     *         <code>region-name</code> - The name of the Region for the Availability Zone (for example,
      *         <code>us-east-1</code>).
      *         </p>
      *         </li>
@@ -158,7 +158,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region for the Availability Zone (for example, <code>us-east-1</code>
+     * <code>region-name</code> - The name of the Region for the Availability Zone (for example, <code>us-east-1</code>
      * ).
      * </p>
      * </li>
@@ -190,7 +190,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>region-name</code> - The name of the region for the Availability Zone (for example,
+     *        <code>region-name</code> - The name of the Region for the Availability Zone (for example,
      *        <code>us-east-1</code>).
      *        </p>
      *        </li>
@@ -233,7 +233,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region for the Availability Zone (for example, <code>us-east-1</code>
+     * <code>region-name</code> - The name of the Region for the Availability Zone (for example, <code>us-east-1</code>
      * ).
      * </p>
      * </li>
@@ -270,7 +270,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>region-name</code> - The name of the region for the Availability Zone (for example,
+     *        <code>region-name</code> - The name of the Region for the Availability Zone (for example,
      *        <code>us-east-1</code>).
      *        </p>
      *        </li>
@@ -315,7 +315,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region for the Availability Zone (for example, <code>us-east-1</code>
+     * <code>region-name</code> - The name of the Region for the Availability Zone (for example, <code>us-east-1</code>
      * ).
      * </p>
      * </li>
@@ -347,7 +347,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>region-name</code> - The name of the region for the Availability Zone (for example,
+     *        <code>region-name</code> - The name of the Region for the Availability Zone (for example,
      *        <code>us-east-1</code>).
      *        </p>
      *        </li>

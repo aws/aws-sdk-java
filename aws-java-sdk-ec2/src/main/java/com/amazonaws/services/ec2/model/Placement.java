@@ -32,7 +32,7 @@ public class Placement implements Serializable, Cloneable {
      * </p>
      * <p>
      * If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria
-     * for the region.
+     * for the Region.
      * </p>
      */
     private String availabilityZone;
@@ -66,8 +66,8 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      */
     private String tenancy;
@@ -93,7 +93,7 @@ public class Placement implements Serializable, Cloneable {
      *        The Availability Zone of the instance.</p>
      *        <p>
      *        If not specified, an Availability Zone will be automatically chosen for you based on the load balancing
-     *        criteria for the region.
+     *        criteria for the Region.
      */
     public Placement(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
@@ -105,14 +105,14 @@ public class Placement implements Serializable, Cloneable {
      * </p>
      * <p>
      * If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria
-     * for the region.
+     * for the Region.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone of the instance.</p>
      *        <p>
      *        If not specified, an Availability Zone will be automatically chosen for you based on the load balancing
-     *        criteria for the region.
+     *        criteria for the Region.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -125,13 +125,13 @@ public class Placement implements Serializable, Cloneable {
      * </p>
      * <p>
      * If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria
-     * for the region.
+     * for the Region.
      * </p>
      * 
      * @return The Availability Zone of the instance.</p>
      *         <p>
      *         If not specified, an Availability Zone will be automatically chosen for you based on the load balancing
-     *         criteria for the region.
+     *         criteria for the Region.
      */
 
     public String getAvailabilityZone() {
@@ -144,14 +144,14 @@ public class Placement implements Serializable, Cloneable {
      * </p>
      * <p>
      * If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria
-     * for the region.
+     * for the Region.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone of the instance.</p>
      *        <p>
      *        If not specified, an Availability Zone will be automatically chosen for you based on the load balancing
-     *        criteria for the region.
+     *        criteria for the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -341,14 +341,16 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        the <a>ImportInstance</a> command.
+     *        the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *        command.
      * @see Tenancy
      */
 
@@ -359,13 +361,15 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * 
      * @return The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *         <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *         the <a>ImportInstance</a> command.
+     *         the <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *         command.
      * @see Tenancy
      */
 
@@ -376,14 +380,16 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        the <a>ImportInstance</a> command.
+     *        the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *        command.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Tenancy
      */
@@ -396,14 +402,16 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        the <a>ImportInstance</a> command.
+     *        the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *        command.
      * @see Tenancy
      */
 
@@ -414,14 +422,16 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        the <a>ImportInstance</a> command.
+     *        the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *        command.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Tenancy
      */

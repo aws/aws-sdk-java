@@ -40,7 +40,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<AvailabilityZoneMessage> messages;
     /**
      * <p>
-     * The name of the region.
+     * The name of the Region.
      * </p>
      */
     private String regionName;
@@ -205,11 +205,11 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the region.
+     * The name of the Region.
      * </p>
      * 
      * @param regionName
-     *        The name of the region.
+     *        The name of the Region.
      */
 
     public void setRegionName(String regionName) {
@@ -218,10 +218,10 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the region.
+     * The name of the Region.
      * </p>
      * 
-     * @return The name of the region.
+     * @return The name of the Region.
      */
 
     public String getRegionName() {
@@ -230,11 +230,11 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the region.
+     * The name of the Region.
      * </p>
      * 
      * @param regionName
-     *        The name of the region.
+     *        The name of the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

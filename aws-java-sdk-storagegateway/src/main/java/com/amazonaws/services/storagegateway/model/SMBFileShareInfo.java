@@ -98,6 +98,10 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file share. If it
      * is set to "false", it indicates that file and directory permissions are mapped to the POSIX permission.
      * </p>
+     * <p>
+     * For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the Storage
+     * Gateway User Guide.
+     * </p>
      */
     private Boolean sMBACLEnabled;
     /**
@@ -742,11 +746,18 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file share. If it
      * is set to "false", it indicates that file and directory permissions are mapped to the POSIX permission.
      * </p>
+     * <p>
+     * For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the Storage
+     * Gateway User Guide.
+     * </p>
      * 
      * @param sMBACLEnabled
      *        If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file share.
      *        If it is set to "false", it indicates that file and directory permissions are mapped to the POSIX
-     *        permission.
+     *        permission.</p>
+     *        <p>
+     *        For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the
+     *        Storage Gateway User Guide.
      */
 
     public void setSMBACLEnabled(Boolean sMBACLEnabled) {
@@ -758,10 +769,17 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file share. If it
      * is set to "false", it indicates that file and directory permissions are mapped to the POSIX permission.
      * </p>
+     * <p>
+     * For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the Storage
+     * Gateway User Guide.
+     * </p>
      * 
      * @return If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file
      *         share. If it is set to "false", it indicates that file and directory permissions are mapped to the POSIX
-     *         permission.
+     *         permission.</p>
+     *         <p>
+     *         For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the
+     *         Storage Gateway User Guide.
      */
 
     public Boolean getSMBACLEnabled() {
@@ -773,11 +791,18 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file share. If it
      * is set to "false", it indicates that file and directory permissions are mapped to the POSIX permission.
      * </p>
+     * <p>
+     * For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the Storage
+     * Gateway User Guide.
+     * </p>
      * 
      * @param sMBACLEnabled
      *        If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file share.
      *        If it is set to "false", it indicates that file and directory permissions are mapped to the POSIX
-     *        permission.
+     *        permission.</p>
+     *        <p>
+     *        For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the
+     *        Storage Gateway User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -791,10 +816,17 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file share. If it
      * is set to "false", it indicates that file and directory permissions are mapped to the POSIX permission.
      * </p>
+     * <p>
+     * For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the Storage
+     * Gateway User Guide.
+     * </p>
      * 
      * @return If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file
      *         share. If it is set to "false", it indicates that file and directory permissions are mapped to the POSIX
-     *         permission.
+     *         permission.</p>
+     *         <p>
+     *         For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the
+     *         Storage Gateway User Guide.
      */
 
     public Boolean isSMBACLEnabled() {

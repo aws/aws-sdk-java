@@ -46,7 +46,7 @@ public class CreateTransitGatewayRouteRequest extends AmazonWebServiceRequest im
     private String transitGatewayAttachmentId;
     /**
      * <p>
-     * Indicates whether to drop traffic if the target isn't available.
+     * Indicates whether to drop traffic that matches this route.
      * </p>
      */
     private Boolean blackhole;
@@ -173,11 +173,11 @@ public class CreateTransitGatewayRouteRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether to drop traffic if the target isn't available.
+     * Indicates whether to drop traffic that matches this route.
      * </p>
      * 
      * @param blackhole
-     *        Indicates whether to drop traffic if the target isn't available.
+     *        Indicates whether to drop traffic that matches this route.
      */
 
     public void setBlackhole(Boolean blackhole) {
@@ -186,10 +186,10 @@ public class CreateTransitGatewayRouteRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether to drop traffic if the target isn't available.
+     * Indicates whether to drop traffic that matches this route.
      * </p>
      * 
-     * @return Indicates whether to drop traffic if the target isn't available.
+     * @return Indicates whether to drop traffic that matches this route.
      */
 
     public Boolean getBlackhole() {
@@ -198,11 +198,11 @@ public class CreateTransitGatewayRouteRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether to drop traffic if the target isn't available.
+     * Indicates whether to drop traffic that matches this route.
      * </p>
      * 
      * @param blackhole
-     *        Indicates whether to drop traffic if the target isn't available.
+     *        Indicates whether to drop traffic that matches this route.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,10 +213,10 @@ public class CreateTransitGatewayRouteRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether to drop traffic if the target isn't available.
+     * Indicates whether to drop traffic that matches this route.
      * </p>
      * 
-     * @return Indicates whether to drop traffic if the target isn't available.
+     * @return Indicates whether to drop traffic that matches this route.
      */
 
     public Boolean isBlackhole() {

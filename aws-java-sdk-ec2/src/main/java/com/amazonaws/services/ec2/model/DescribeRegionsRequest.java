@@ -32,12 +32,12 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      * <ul>
      * <li>
      * <p>
-     * <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+     * <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
+     * <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).
      * </p>
      * </li>
      * </ul>
@@ -45,7 +45,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The names of the regions.
+     * The names of the Regions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> regionNames;
@@ -57,12 +57,12 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      * <ul>
      * <li>
      * <p>
-     * <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+     * <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
+     * <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).
      * </p>
      * </li>
      * </ul>
@@ -71,13 +71,13 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>
+     *         <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>
      *         ).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
+     *         <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).
      *         </p>
      *         </li>
      */
@@ -96,12 +96,12 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      * <ul>
      * <li>
      * <p>
-     * <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+     * <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
+     * <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).
      * </p>
      * </li>
      * </ul>
@@ -111,13 +111,13 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>
+     *        <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>
      *        ).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
+     *        <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).
      *        </p>
      *        </li>
      */
@@ -138,12 +138,12 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      * <ul>
      * <li>
      * <p>
-     * <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+     * <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
+     * <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).
      * </p>
      * </li>
      * </ul>
@@ -158,13 +158,13 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>
+     *        <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>
      *        ).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
+     *        <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -187,12 +187,12 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      * <ul>
      * <li>
      * <p>
-     * <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
+     * <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
+     * <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).
      * </p>
      * </li>
      * </ul>
@@ -202,13 +202,13 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>endpoint</code> - The endpoint of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>
+     *        <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>
      *        ).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>region-name</code> - The name of the region (for example, <code>us-east-1</code>).
+     *        <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -221,10 +221,10 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The names of the regions.
+     * The names of the Regions.
      * </p>
      * 
-     * @return The names of the regions.
+     * @return The names of the Regions.
      */
 
     public java.util.List<String> getRegionNames() {
@@ -236,11 +236,11 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The names of the regions.
+     * The names of the Regions.
      * </p>
      * 
      * @param regionNames
-     *        The names of the regions.
+     *        The names of the Regions.
      */
 
     public void setRegionNames(java.util.Collection<String> regionNames) {
@@ -254,7 +254,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The names of the regions.
+     * The names of the Regions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -263,7 +263,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      * </p>
      * 
      * @param regionNames
-     *        The names of the regions.
+     *        The names of the Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +279,11 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The names of the regions.
+     * The names of the Regions.
      * </p>
      * 
      * @param regionNames
-     *        The names of the regions.
+     *        The names of the Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

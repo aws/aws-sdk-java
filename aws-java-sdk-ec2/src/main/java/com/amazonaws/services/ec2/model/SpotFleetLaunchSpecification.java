@@ -17,7 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the launch specification for one or more Spot Instances.
+ * Describes the launch specification for one or more Spot Instances. If you include On-Demand capacity in your fleet
+ * request, you can't use <code>SpotFleetLaunchSpecification</code>; you must use <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetLaunchSpecification" target="_top">AWS
@@ -41,9 +43,9 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private String addressingType;
     /**
      * <p>
-     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
-     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
-     * and its encryption status is used for the volume encryption status.
+     * One or more block devices that are mapped to the Spot instances. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for
+     * a volume, it is not blank and its encryption status is used for the volume encryption status.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
@@ -109,7 +111,9 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private SpotPlacement placement;
     /**
      * <p>
-     * The ID of the RAM disk.
+     * The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements for
+     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the AWS Resource
+     * Center and search for the kernel ID.
      * </p>
      */
     private String ramdiskId;
@@ -130,18 +134,18 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private String subnetId;
     /**
      * <p>
-     * The Base64-encoded user data to make available to the instances.
+     * The Base64-encoded user data that instances use when starting up.
      * </p>
      */
     private String userData;
     /**
      * <p>
      * The number of units provided by the specified instance type. These are the same units that you chose to set the
-     * target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or I/O).
+     * target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.
      * </p>
      * <p>
-     * If the target capacity divided by this value is not a whole number, we round the number of instances to the next
-     * whole number. If this value is not specified, the default is 1.
+     * If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to
+     * the next whole number. If this value is not specified, the default is 1.
      * </p>
      */
     private Double weightedCapacity;
@@ -279,14 +283,15 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
-     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
-     * and its encryption status is used for the volume encryption status.
+     * One or more block devices that are mapped to the Spot instances. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for
+     * a volume, it is not blank and its encryption status is used for the volume encryption status.
      * </p>
      * 
-     * @return One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
-     *         This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
-     *         it is not blank and its encryption status is used for the volume encryption status.
+     * @return One or more block devices that are mapped to the Spot instances. You can't specify both a snapshot ID and
+     *         an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is
+     *         the basis for a volume, it is not blank and its encryption status is used for the volume encryption
+     *         status.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -298,15 +303,15 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
-     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
-     * and its encryption status is used for the volume encryption status.
+     * One or more block devices that are mapped to the Spot instances. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for
+     * a volume, it is not blank and its encryption status is used for the volume encryption status.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
-     *        This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
-     *        it is not blank and its encryption status is used for the volume encryption status.
+     *        One or more block devices that are mapped to the Spot instances. You can't specify both a snapshot ID and
+     *        an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the
+     *        basis for a volume, it is not blank and its encryption status is used for the volume encryption status.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -320,9 +325,9 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
-     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
-     * and its encryption status is used for the volume encryption status.
+     * One or more block devices that are mapped to the Spot instances. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for
+     * a volume, it is not blank and its encryption status is used for the volume encryption status.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -331,9 +336,9 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
-     *        This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
-     *        it is not blank and its encryption status is used for the volume encryption status.
+     *        One or more block devices that are mapped to the Spot instances. You can't specify both a snapshot ID and
+     *        an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the
+     *        basis for a volume, it is not blank and its encryption status is used for the volume encryption status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,15 +354,15 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
-     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
-     * and its encryption status is used for the volume encryption status.
+     * One or more block devices that are mapped to the Spot instances. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for
+     * a volume, it is not blank and its encryption status is used for the volume encryption status.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
-     *        This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
-     *        it is not blank and its encryption status is used for the volume encryption status.
+     *        One or more block devices that are mapped to the Spot instances. You can't specify both a snapshot ID and
+     *        an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the
+     *        basis for a volume, it is not blank and its encryption status is used for the volume encryption status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -854,11 +859,15 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the RAM disk.
+     * The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements for
+     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the AWS Resource
+     * Center and search for the kernel ID.
      * </p>
      * 
      * @param ramdiskId
-     *        The ID of the RAM disk.
+     *        The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements
+     *        for information about whether you need to specify a RAM disk. To find kernel requirements, refer to the
+     *        AWS Resource Center and search for the kernel ID.
      */
 
     public void setRamdiskId(String ramdiskId) {
@@ -867,10 +876,14 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the RAM disk.
+     * The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements for
+     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the AWS Resource
+     * Center and search for the kernel ID.
      * </p>
      * 
-     * @return The ID of the RAM disk.
+     * @return The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements
+     *         for information about whether you need to specify a RAM disk. To find kernel requirements, refer to the
+     *         AWS Resource Center and search for the kernel ID.
      */
 
     public String getRamdiskId() {
@@ -879,11 +892,15 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the RAM disk.
+     * The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements for
+     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the AWS Resource
+     * Center and search for the kernel ID.
      * </p>
      * 
      * @param ramdiskId
-     *        The ID of the RAM disk.
+     *        The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements
+     *        for information about whether you need to specify a RAM disk. To find kernel requirements, refer to the
+     *        AWS Resource Center and search for the kernel ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -992,11 +1009,11 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded user data to make available to the instances.
+     * The Base64-encoded user data that instances use when starting up.
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded user data to make available to the instances.
+     *        The Base64-encoded user data that instances use when starting up.
      */
 
     public void setUserData(String userData) {
@@ -1005,10 +1022,10 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded user data to make available to the instances.
+     * The Base64-encoded user data that instances use when starting up.
      * </p>
      * 
-     * @return The Base64-encoded user data to make available to the instances.
+     * @return The Base64-encoded user data that instances use when starting up.
      */
 
     public String getUserData() {
@@ -1017,11 +1034,11 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded user data to make available to the instances.
+     * The Base64-encoded user data that instances use when starting up.
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded user data to make available to the instances.
+     *        The Base64-encoded user data that instances use when starting up.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1033,20 +1050,20 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The number of units provided by the specified instance type. These are the same units that you chose to set the
-     * target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or I/O).
+     * target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.
      * </p>
      * <p>
-     * If the target capacity divided by this value is not a whole number, we round the number of instances to the next
-     * whole number. If this value is not specified, the default is 1.
+     * If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to
+     * the next whole number. If this value is not specified, the default is 1.
      * </p>
      * 
      * @param weightedCapacity
      *        The number of units provided by the specified instance type. These are the same units that you chose to
-     *        set the target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or
-     *        I/O).</p>
+     *        set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or
+     *        I/O.</p>
      *        <p>
-     *        If the target capacity divided by this value is not a whole number, we round the number of instances to
-     *        the next whole number. If this value is not specified, the default is 1.
+     *        If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of
+     *        instances to the next whole number. If this value is not specified, the default is 1.
      */
 
     public void setWeightedCapacity(Double weightedCapacity) {
@@ -1056,19 +1073,19 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The number of units provided by the specified instance type. These are the same units that you chose to set the
-     * target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or I/O).
+     * target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.
      * </p>
      * <p>
-     * If the target capacity divided by this value is not a whole number, we round the number of instances to the next
-     * whole number. If this value is not specified, the default is 1.
+     * If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to
+     * the next whole number. If this value is not specified, the default is 1.
      * </p>
      * 
      * @return The number of units provided by the specified instance type. These are the same units that you chose to
-     *         set the target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or
-     *         I/O).</p>
+     *         set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or
+     *         I/O.</p>
      *         <p>
-     *         If the target capacity divided by this value is not a whole number, we round the number of instances to
-     *         the next whole number. If this value is not specified, the default is 1.
+     *         If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of
+     *         instances to the next whole number. If this value is not specified, the default is 1.
      */
 
     public Double getWeightedCapacity() {
@@ -1078,20 +1095,20 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The number of units provided by the specified instance type. These are the same units that you chose to set the
-     * target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or I/O).
+     * target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.
      * </p>
      * <p>
-     * If the target capacity divided by this value is not a whole number, we round the number of instances to the next
-     * whole number. If this value is not specified, the default is 1.
+     * If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to
+     * the next whole number. If this value is not specified, the default is 1.
      * </p>
      * 
      * @param weightedCapacity
      *        The number of units provided by the specified instance type. These are the same units that you chose to
-     *        set the target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or
-     *        I/O).</p>
+     *        set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or
+     *        I/O.</p>
      *        <p>
-     *        If the target capacity divided by this value is not a whole number, we round the number of instances to
-     *        the next whole number. If this value is not specified, the default is 1.
+     *        If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of
+     *        instances to the next whole number. If this value is not specified, the default is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

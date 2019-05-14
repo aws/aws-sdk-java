@@ -147,6 +147,9 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                             new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withModeledClass(
                                     com.amazonaws.services.chime.model.ForbiddenException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.chime.model.ResourceLimitExceededException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withModeledClass(
                                     com.amazonaws.services.chime.model.BadRequestException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.chime.model.AmazonChimeException.class));
@@ -210,7 +213,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -279,7 +282,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -353,7 +356,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -416,7 +419,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
-     * Users suspended from a <code>Team</code> account are dissociated from the account, but they can continue to use
+     * Users suspended from a <code>Team</code> account are dissasociated from the account, but they can continue to use
      * Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them
      * to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.
      * </p>
@@ -437,7 +440,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -512,7 +515,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -580,7 +583,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -649,7 +652,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -719,7 +722,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -775,6 +778,73 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Creates a bot for an Amazon Chime Enterprise account.
+     * </p>
+     * 
+     * @param createBotRequest
+     * @return Result of the CreateBot operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @sample AmazonChime.CreateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateBotResult createBot(CreateBotRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBot(request);
+    }
+
+    @SdkInternalApi
+    final CreateBotResult executeCreateBot(CreateBotRequest createBotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createBotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateBotRequest> request = null;
+        Response<CreateBotResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateBotResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateBotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime
      * Voice Connector product types.
      * </p>
@@ -785,7 +855,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -854,7 +924,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -934,7 +1004,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -992,6 +1062,73 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Deletes the events configuration that allows a bot to receive outgoing events.
+     * </p>
+     * 
+     * @param deleteEventsConfigurationRequest
+     * @return Result of the DeleteEventsConfiguration operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @sample AmazonChime.DeleteEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteEventsConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteEventsConfigurationResult deleteEventsConfiguration(DeleteEventsConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEventsConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEventsConfigurationResult executeDeleteEventsConfiguration(DeleteEventsConfigurationRequest deleteEventsConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteEventsConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteEventsConfigurationRequest> request = null;
+        Response<DeleteEventsConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEventsConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteEventsConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventsConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEventsConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteEventsConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Moves the specified phone number into the <b>Deletion queue</b>. A phone number must be disassociated from any
      * users or Amazon Chime Voice Connectors before it can be deleted.
      * </p>
@@ -1007,7 +1144,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1075,7 +1212,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1142,7 +1279,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1212,7 +1349,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1282,7 +1419,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1352,7 +1489,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1422,7 +1559,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1492,7 +1629,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1564,7 +1701,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -1618,6 +1755,140 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Retrieves details for the specified bot, such as bot email address, bot type, status, and display name.
+     * </p>
+     * 
+     * @param getBotRequest
+     * @return Result of the GetBot operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @sample AmazonChime.GetBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetBotResult getBot(GetBotRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBot(request);
+    }
+
+    @SdkInternalApi
+    final GetBotResult executeGetBot(GetBotRequest getBotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getBotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetBotRequest> request = null;
+        Response<GetBotResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetBotResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetBotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets details for an events configuration that allows a bot to receive outgoing events, such as an HTTPS endpoint
+     * or Lambda function ARN.
+     * </p>
+     * 
+     * @param getEventsConfigurationRequest
+     * @return Result of the GetEventsConfiguration operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @sample AmazonChime.GetEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetEventsConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetEventsConfigurationResult getEventsConfiguration(GetEventsConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEventsConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetEventsConfigurationResult executeGetEventsConfiguration(GetEventsConfigurationRequest getEventsConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEventsConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEventsConfigurationRequest> request = null;
+        Response<GetEventsConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEventsConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEventsConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEventsConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEventsConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetEventsConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves global settings for the administrator's AWS account, such as Amazon Chime Business Calling and Amazon
      * Chime Voice Connector settings.
      * </p>
@@ -1628,7 +1899,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1695,7 +1966,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1763,7 +2034,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1835,7 +2106,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1902,7 +2173,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1970,7 +2241,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2037,7 +2308,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2106,7 +2377,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2176,7 +2447,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2247,7 +2518,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2316,7 +2587,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2372,6 +2643,71 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Lists the bots associated with the administrator's Amazon Chime Enterprise account ID.
+     * </p>
+     * 
+     * @param listBotsRequest
+     * @return Result of the ListBots operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @sample AmazonChime.ListBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListBots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListBotsResult listBots(ListBotsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBots(request);
+    }
+
+    @SdkInternalApi
+    final ListBotsResult executeListBots(ListBotsRequest listBotsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listBotsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListBotsRequest> request = null;
+        Response<ListBotsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListBotsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBotsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBots");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListBotsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListBotsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the phone number orders for the administrator's Amazon Chime account.
      * </p>
      * 
@@ -2381,7 +2717,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2448,7 +2784,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2516,7 +2852,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2583,7 +2919,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2651,7 +2987,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2718,7 +3054,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2774,6 +3110,75 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Creates an events configuration that allows a bot to receive outgoing events sent by Amazon Chime. Choose either
+     * an HTTPS endpoint or a Lambda function ARN. For more information, see <a>Bot</a>.
+     * </p>
+     * 
+     * @param putEventsConfigurationRequest
+     * @return Result of the PutEventsConfiguration operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @sample AmazonChime.PutEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutEventsConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutEventsConfigurationResult putEventsConfiguration(PutEventsConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutEventsConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutEventsConfigurationResult executePutEventsConfiguration(PutEventsConfigurationRequest putEventsConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putEventsConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutEventsConfigurationRequest> request = null;
+        Response<PutEventsConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutEventsConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEventsConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEventsConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutEventsConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutEventsConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds origination settings for the specified Amazon Chime Voice Connector.
      * </p>
      * 
@@ -2785,7 +3190,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2854,7 +3259,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2923,7 +3328,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2982,6 +3387,73 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Regenerates the security token for a bot.
+     * </p>
+     * 
+     * @param regenerateSecurityTokenRequest
+     * @return Result of the RegenerateSecurityToken operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @sample AmazonChime.RegenerateSecurityToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RegenerateSecurityToken" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public RegenerateSecurityTokenResult regenerateSecurityToken(RegenerateSecurityTokenRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegenerateSecurityToken(request);
+    }
+
+    @SdkInternalApi
+    final RegenerateSecurityTokenResult executeRegenerateSecurityToken(RegenerateSecurityTokenRequest regenerateSecurityTokenRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(regenerateSecurityTokenRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegenerateSecurityTokenRequest> request = null;
+        Response<RegenerateSecurityTokenResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegenerateSecurityTokenRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(regenerateSecurityTokenRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegenerateSecurityToken");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RegenerateSecurityTokenResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RegenerateSecurityTokenResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Resets the personal meeting PIN for the specified user on an Amazon Chime account. Returns the <a>User</a> object
      * with the updated personal meeting PIN.
      * </p>
@@ -2994,7 +3466,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3061,7 +3533,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3126,7 +3598,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3196,7 +3668,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3268,7 +3740,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws ConflictException
      *         The request could not be processed because of conflict in the current state of the resource.
      * @throws ThrottledClientException
@@ -3325,6 +3797,72 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Updates the status of the specified bot, such as starting or stopping the bot from running in your Amazon Chime
+     * Enterprise account.
+     * </p>
+     * 
+     * @param updateBotRequest
+     * @return Result of the UpdateBot operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @sample AmazonChime.UpdateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateBotResult updateBot(UpdateBotRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateBot(request);
+    }
+
+    @SdkInternalApi
+    final UpdateBotResult executeUpdateBot(UpdateBotRequest updateBotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateBotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateBotRequest> request = null;
+        Response<UpdateBotResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateBotResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateBotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates global settings for the administrator's AWS account, such as Amazon Chime Business Calling and Amazon
      * Chime Voice Connector settings.
      * </p>
@@ -3335,7 +3873,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3402,7 +3940,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3470,7 +4008,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3537,7 +4075,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3604,7 +4142,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException

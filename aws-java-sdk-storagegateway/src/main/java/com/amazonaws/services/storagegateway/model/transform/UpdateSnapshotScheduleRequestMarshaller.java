@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class UpdateSnapshotScheduleRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecurrenceInHours").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final UpdateSnapshotScheduleRequestMarshaller instance = new UpdateSnapshotScheduleRequestMarshaller();
 
@@ -56,6 +59,7 @@ public class UpdateSnapshotScheduleRequestMarshaller {
             protocolMarshaller.marshall(updateSnapshotScheduleRequest.getStartAt(), STARTAT_BINDING);
             protocolMarshaller.marshall(updateSnapshotScheduleRequest.getRecurrenceInHours(), RECURRENCEINHOURS_BINDING);
             protocolMarshaller.marshall(updateSnapshotScheduleRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateSnapshotScheduleRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

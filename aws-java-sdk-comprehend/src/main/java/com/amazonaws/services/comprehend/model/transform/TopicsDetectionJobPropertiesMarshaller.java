@@ -49,6 +49,8 @@ public class TopicsDetectionJobPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
     private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
 
     private static final TopicsDetectionJobPropertiesMarshaller instance = new TopicsDetectionJobPropertiesMarshaller();
 
@@ -77,6 +79,7 @@ public class TopicsDetectionJobPropertiesMarshaller {
             protocolMarshaller.marshall(topicsDetectionJobProperties.getNumberOfTopics(), NUMBEROFTOPICS_BINDING);
             protocolMarshaller.marshall(topicsDetectionJobProperties.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(topicsDetectionJobProperties.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
+            protocolMarshaller.marshall(topicsDetectionJobProperties.getVpcConfig(), VPCCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

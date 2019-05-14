@@ -80,6 +80,14 @@ public class DescribeDhcpOptionsRequestMarshaller implements Marshaller<Request<
             }
         }
 
+        if (describeDhcpOptionsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeDhcpOptionsRequest.getNextToken()));
+        }
+
+        if (describeDhcpOptionsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeDhcpOptionsRequest.getMaxResults()));
+        }
+
         return request;
     }
 

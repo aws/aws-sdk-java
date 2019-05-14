@@ -64,7 +64,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * The region in which the VPC is located.
+     * The Region in which the VPC is located.
      * </p>
      */
     private String region;
@@ -377,11 +377,11 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region in which the VPC is located.
+     * The Region in which the VPC is located.
      * </p>
      * 
      * @param region
-     *        The region in which the VPC is located.
+     *        The Region in which the VPC is located.
      */
 
     public void setRegion(String region) {
@@ -390,10 +390,10 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region in which the VPC is located.
+     * The Region in which the VPC is located.
      * </p>
      * 
-     * @return The region in which the VPC is located.
+     * @return The Region in which the VPC is located.
      */
 
     public String getRegion() {
@@ -402,11 +402,11 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region in which the VPC is located.
+     * The Region in which the VPC is located.
      * </p>
      * 
      * @param region
-     *        The region in which the VPC is located.
+     *        The Region in which the VPC is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

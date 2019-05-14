@@ -373,6 +373,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBotResult> createBotAsync(CreateBotRequest request) {
+
+        return createBotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBotResult> createBotAsync(final CreateBotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateBotRequest, CreateBotResult> asyncHandler) {
+        final CreateBotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateBotResult>() {
+            @Override
+            public CreateBotResult call() throws Exception {
+                CreateBotResult result = null;
+
+                try {
+                    result = executeCreateBot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePhoneNumberOrderResult> createPhoneNumberOrderAsync(CreatePhoneNumberOrderRequest request) {
 
         return createPhoneNumberOrderAsync(request, null);
@@ -456,6 +489,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeDeleteAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventsConfigurationResult> deleteEventsConfigurationAsync(DeleteEventsConfigurationRequest request) {
+
+        return deleteEventsConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventsConfigurationResult> deleteEventsConfigurationAsync(final DeleteEventsConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEventsConfigurationRequest, DeleteEventsConfigurationResult> asyncHandler) {
+        final DeleteEventsConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteEventsConfigurationResult>() {
+            @Override
+            public DeleteEventsConfigurationResult call() throws Exception {
+                DeleteEventsConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteEventsConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -763,6 +829,72 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeGetAccountSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBotResult> getBotAsync(GetBotRequest request) {
+
+        return getBotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBotResult> getBotAsync(final GetBotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBotRequest, GetBotResult> asyncHandler) {
+        final GetBotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBotResult>() {
+            @Override
+            public GetBotResult call() throws Exception {
+                GetBotResult result = null;
+
+                try {
+                    result = executeGetBot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventsConfigurationResult> getEventsConfigurationAsync(GetEventsConfigurationRequest request) {
+
+        return getEventsConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventsConfigurationResult> getEventsConfigurationAsync(final GetEventsConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEventsConfigurationRequest, GetEventsConfigurationResult> asyncHandler) {
+        final GetEventsConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEventsConfigurationResult>() {
+            @Override
+            public GetEventsConfigurationResult call() throws Exception {
+                GetEventsConfigurationResult result = null;
+
+                try {
+                    result = executeGetEventsConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1144,6 +1276,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest request) {
+
+        return listBotsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBotsResult> listBotsAsync(final ListBotsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListBotsRequest, ListBotsResult> asyncHandler) {
+        final ListBotsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListBotsResult>() {
+            @Override
+            public ListBotsResult call() throws Exception {
+                ListBotsResult result = null;
+
+                try {
+                    result = executeListBots(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPhoneNumberOrdersResult> listPhoneNumberOrdersAsync(ListPhoneNumberOrdersRequest request) {
 
         return listPhoneNumberOrdersAsync(request, null);
@@ -1344,6 +1509,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<PutEventsConfigurationResult> putEventsConfigurationAsync(PutEventsConfigurationRequest request) {
+
+        return putEventsConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEventsConfigurationResult> putEventsConfigurationAsync(final PutEventsConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutEventsConfigurationRequest, PutEventsConfigurationResult> asyncHandler) {
+        final PutEventsConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutEventsConfigurationResult>() {
+            @Override
+            public PutEventsConfigurationResult call() throws Exception {
+                PutEventsConfigurationResult result = null;
+
+                try {
+                    result = executePutEventsConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutVoiceConnectorOriginationResult> putVoiceConnectorOriginationAsync(PutVoiceConnectorOriginationRequest request) {
 
         return putVoiceConnectorOriginationAsync(request, null);
@@ -1429,6 +1627,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executePutVoiceConnectorTerminationCredentials(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegenerateSecurityTokenResult> regenerateSecurityTokenAsync(RegenerateSecurityTokenRequest request) {
+
+        return regenerateSecurityTokenAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegenerateSecurityTokenResult> regenerateSecurityTokenAsync(final RegenerateSecurityTokenRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegenerateSecurityTokenRequest, RegenerateSecurityTokenResult> asyncHandler) {
+        final RegenerateSecurityTokenRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RegenerateSecurityTokenResult>() {
+            @Override
+            public RegenerateSecurityTokenResult call() throws Exception {
+                RegenerateSecurityTokenResult result = null;
+
+                try {
+                    result = executeRegenerateSecurityToken(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1594,6 +1825,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeUpdateAccountSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBotResult> updateBotAsync(UpdateBotRequest request) {
+
+        return updateBotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBotResult> updateBotAsync(final UpdateBotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateBotRequest, UpdateBotResult> asyncHandler) {
+        final UpdateBotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateBotResult>() {
+            @Override
+            public UpdateBotResult call() throws Exception {
+                UpdateBotResult result = null;
+
+                try {
+                    result = executeUpdateBot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -49,6 +49,8 @@ public class SentimentDetectionJobPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
     private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
 
     private static final SentimentDetectionJobPropertiesMarshaller instance = new SentimentDetectionJobPropertiesMarshaller();
 
@@ -77,6 +79,7 @@ public class SentimentDetectionJobPropertiesMarshaller {
             protocolMarshaller.marshall(sentimentDetectionJobProperties.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(sentimentDetectionJobProperties.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(sentimentDetectionJobProperties.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
+            protocolMarshaller.marshall(sentimentDetectionJobProperties.getVpcConfig(), VPCCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

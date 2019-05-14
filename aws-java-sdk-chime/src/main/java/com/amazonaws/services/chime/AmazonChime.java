@@ -99,7 +99,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -127,7 +127,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -160,7 +160,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -183,7 +183,7 @@ public interface AmazonChime {
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
-     * Users suspended from a <code>Team</code> account are dissociated from the account, but they can continue to use
+     * Users suspended from a <code>Team</code> account are dissasociated from the account, but they can continue to use
      * Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them
      * to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.
      * </p>
@@ -204,7 +204,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -240,7 +240,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -269,7 +269,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -298,7 +298,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -329,7 +329,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -346,6 +346,34 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Creates a bot for an Amazon Chime Enterprise account.
+     * </p>
+     * 
+     * @param createBotRequest
+     * @return Result of the CreateBot operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @sample AmazonChime.CreateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateBotResult createBot(CreateBotRequest createBotRequest);
+
+    /**
+     * <p>
      * Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime
      * Voice Connector product types.
      * </p>
@@ -356,7 +384,7 @@ public interface AmazonChime {
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -385,7 +413,7 @@ public interface AmazonChime {
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -426,7 +454,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -445,6 +473,32 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Deletes the events configuration that allows a bot to receive outgoing events.
+     * </p>
+     * 
+     * @param deleteEventsConfigurationRequest
+     * @return Result of the DeleteEventsConfiguration operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @sample AmazonChime.DeleteEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteEventsConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteEventsConfigurationResult deleteEventsConfiguration(DeleteEventsConfigurationRequest deleteEventsConfigurationRequest);
+
+    /**
+     * <p>
      * Moves the specified phone number into the <b>Deletion queue</b>. A phone number must be disassociated from any
      * users or Amazon Chime Voice Connectors before it can be deleted.
      * </p>
@@ -460,7 +514,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -489,7 +543,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -517,7 +571,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -545,7 +599,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -573,7 +627,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -602,7 +656,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -630,7 +684,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -659,7 +713,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -692,7 +746,7 @@ public interface AmazonChime {
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -707,6 +761,61 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Retrieves details for the specified bot, such as bot email address, bot type, status, and display name.
+     * </p>
+     * 
+     * @param getBotRequest
+     * @return Result of the GetBot operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @sample AmazonChime.GetBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetBotResult getBot(GetBotRequest getBotRequest);
+
+    /**
+     * <p>
+     * Gets details for an events configuration that allows a bot to receive outgoing events, such as an HTTPS endpoint
+     * or Lambda function ARN.
+     * </p>
+     * 
+     * @param getEventsConfigurationRequest
+     * @return Result of the GetEventsConfiguration operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @sample AmazonChime.GetEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetEventsConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetEventsConfigurationResult getEventsConfiguration(GetEventsConfigurationRequest getEventsConfigurationRequest);
+
+    /**
+     * <p>
      * Retrieves global settings for the administrator's AWS account, such as Amazon Chime Business Calling and Amazon
      * Chime Voice Connector settings.
      * </p>
@@ -717,7 +826,7 @@ public interface AmazonChime {
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -745,7 +854,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -774,7 +883,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -807,7 +916,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -835,7 +944,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -864,7 +973,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -892,7 +1001,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -920,7 +1029,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -949,7 +1058,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -979,7 +1088,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1009,7 +1118,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1026,6 +1135,32 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Lists the bots associated with the administrator's Amazon Chime Enterprise account ID.
+     * </p>
+     * 
+     * @param listBotsRequest
+     * @return Result of the ListBots operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @sample AmazonChime.ListBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListBots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListBotsResult listBots(ListBotsRequest listBotsRequest);
+
+    /**
+     * <p>
      * Lists the phone number orders for the administrator's Amazon Chime account.
      * </p>
      * 
@@ -1035,7 +1170,7 @@ public interface AmazonChime {
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1062,7 +1197,7 @@ public interface AmazonChime {
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1091,7 +1226,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1119,7 +1254,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1146,7 +1281,7 @@ public interface AmazonChime {
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1174,7 +1309,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1191,6 +1326,35 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Creates an events configuration that allows a bot to receive outgoing events sent by Amazon Chime. Choose either
+     * an HTTPS endpoint or a Lambda function ARN. For more information, see <a>Bot</a>.
+     * </p>
+     * 
+     * @param putEventsConfigurationRequest
+     * @return Result of the PutEventsConfiguration operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @sample AmazonChime.PutEventsConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutEventsConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutEventsConfigurationResult putEventsConfiguration(PutEventsConfigurationRequest putEventsConfigurationRequest);
+
+    /**
+     * <p>
      * Adds origination settings for the specified Amazon Chime Voice Connector.
      * </p>
      * 
@@ -1202,7 +1366,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1230,7 +1394,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1258,7 +1422,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1276,6 +1440,32 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Regenerates the security token for a bot.
+     * </p>
+     * 
+     * @param regenerateSecurityTokenRequest
+     * @return Result of the RegenerateSecurityToken operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @sample AmazonChime.RegenerateSecurityToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RegenerateSecurityToken" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RegenerateSecurityTokenResult regenerateSecurityToken(RegenerateSecurityTokenRequest regenerateSecurityTokenRequest);
+
+    /**
+     * <p>
      * Resets the personal meeting PIN for the specified user on an Amazon Chime account. Returns the <a>User</a> object
      * with the updated personal meeting PIN.
      * </p>
@@ -1288,7 +1478,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1316,7 +1506,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1342,7 +1532,7 @@ public interface AmazonChime {
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1371,7 +1561,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1404,7 +1594,7 @@ public interface AmazonChime {
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws ConflictException
      *         The request could not be processed because of conflict in the current state of the resource.
      * @throws ThrottledClientException
@@ -1421,6 +1611,33 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Updates the status of the specified bot, such as starting or stopping the bot from running in your Amazon Chime
+     * Enterprise account.
+     * </p>
+     * 
+     * @param updateBotRequest
+     * @return Result of the UpdateBot operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @sample AmazonChime.UpdateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateBotResult updateBot(UpdateBotRequest updateBotRequest);
+
+    /**
+     * <p>
      * Updates global settings for the administrator's AWS account, such as Amazon Chime Business Calling and Amazon
      * Chime Voice Connector settings.
      * </p>
@@ -1431,7 +1648,7 @@ public interface AmazonChime {
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1459,7 +1676,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1488,7 +1705,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1516,7 +1733,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1544,7 +1761,7 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported region.
+     *         account from an unsupported Region.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException

@@ -45,7 +45,7 @@ public class CopyFpgaImageRequest extends AmazonWebServiceRequest implements Ser
     private String name;
     /**
      * <p>
-     * The region that contains the source AFI.
+     * The Region that contains the source AFI.
      * </p>
      */
     private String sourceRegion;
@@ -181,11 +181,11 @@ public class CopyFpgaImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The region that contains the source AFI.
+     * The Region that contains the source AFI.
      * </p>
      * 
      * @param sourceRegion
-     *        The region that contains the source AFI.
+     *        The Region that contains the source AFI.
      */
 
     public void setSourceRegion(String sourceRegion) {
@@ -194,10 +194,10 @@ public class CopyFpgaImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The region that contains the source AFI.
+     * The Region that contains the source AFI.
      * </p>
      * 
-     * @return The region that contains the source AFI.
+     * @return The Region that contains the source AFI.
      */
 
     public String getSourceRegion() {
@@ -206,11 +206,11 @@ public class CopyFpgaImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The region that contains the source AFI.
+     * The Region that contains the source AFI.
      * </p>
      * 
      * @param sourceRegion
-     *        The region that contains the source AFI.
+     *        The Region that contains the source AFI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

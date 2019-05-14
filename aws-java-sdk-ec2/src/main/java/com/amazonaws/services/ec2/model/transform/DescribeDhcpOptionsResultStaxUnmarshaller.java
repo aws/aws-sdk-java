@@ -55,6 +55,10 @@ public class DescribeDhcpOptionsResultStaxUnmarshaller implements Unmarshaller<D
                     continue;
                 }
 
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeDhcpOptionsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeDhcpOptionsResult;

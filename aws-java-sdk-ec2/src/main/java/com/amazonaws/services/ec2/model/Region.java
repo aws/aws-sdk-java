@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a region.
+ * Describes a Region.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Region" target="_top">AWS API Documentation</a>
@@ -27,24 +27,24 @@ public class Region implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region service endpoint.
+     * The Region service endpoint.
      * </p>
      */
     private String endpoint;
     /**
      * <p>
-     * The name of the region.
+     * The name of the Region.
      * </p>
      */
     private String regionName;
 
     /**
      * <p>
-     * The region service endpoint.
+     * The Region service endpoint.
      * </p>
      * 
      * @param endpoint
-     *        The region service endpoint.
+     *        The Region service endpoint.
      */
 
     public void setEndpoint(String endpoint) {
@@ -53,10 +53,10 @@ public class Region implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region service endpoint.
+     * The Region service endpoint.
      * </p>
      * 
-     * @return The region service endpoint.
+     * @return The Region service endpoint.
      */
 
     public String getEndpoint() {
@@ -65,11 +65,11 @@ public class Region implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region service endpoint.
+     * The Region service endpoint.
      * </p>
      * 
      * @param endpoint
-     *        The region service endpoint.
+     *        The Region service endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class Region implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the region.
+     * The name of the Region.
      * </p>
      * 
      * @param regionName
-     *        The name of the region.
+     *        The name of the Region.
      */
 
     public void setRegionName(String regionName) {
@@ -93,10 +93,10 @@ public class Region implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the region.
+     * The name of the Region.
      * </p>
      * 
-     * @return The name of the region.
+     * @return The name of the Region.
      */
 
     public String getRegionName() {
@@ -105,11 +105,11 @@ public class Region implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the region.
+     * The name of the Region.
      * </p>
      * 
      * @param regionName
-     *        The name of the region.
+     *        The name of the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

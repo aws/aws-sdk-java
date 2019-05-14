@@ -76,6 +76,19 @@ public class UpdateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.
+     * </p>
+     * <note>
+     * <p>
+     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256.
+     * </p>
+     * </note>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -250,6 +263,127 @@ public class UpdateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.
+     * </p>
+     * <note>
+     * <p>
+     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256.
+     * </p>
+     * </note>
+     * 
+     * @return A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
+     *         <p>
+     *         Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and
+     *         the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters,
+     *         and the maximum length for a tag's value is 256.
+     *         </p>
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.
+     * </p>
+     * <note>
+     * <p>
+     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
+     *        <p>
+     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
+     *        the maximum length for a tag's value is 256.
+     *        </p>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.
+     * </p>
+     * <note>
+     * <p>
+     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
+     *        <p>
+     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
+     *        the maximum length for a tag's value is 256.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSnapshotScheduleRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.
+     * </p>
+     * <note>
+     * <p>
+     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>
+     *        <p>
+     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
+     *        the maximum length for a tag's value is 256.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSnapshotScheduleRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -268,7 +402,9 @@ public class UpdateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
         if (getRecurrenceInHours() != null)
             sb.append("RecurrenceInHours: ").append(getRecurrenceInHours()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -299,6 +435,10 @@ public class UpdateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -311,6 +451,7 @@ public class UpdateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getStartAt() == null) ? 0 : getStartAt().hashCode());
         hashCode = prime * hashCode + ((getRecurrenceInHours() == null) ? 0 : getRecurrenceInHours().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

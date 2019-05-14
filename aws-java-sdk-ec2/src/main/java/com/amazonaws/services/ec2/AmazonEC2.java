@@ -181,7 +181,7 @@ public interface AmazonEC2 {
      * <a>DescribeVpcPeeringConnections</a> to view your outstanding VPC peering connection requests.
      * </p>
      * <p>
-     * For an inter-region VPC peering connection request, you must accept the VPC peering connection in the region of
+     * For an inter-Region VPC peering connection request, you must accept the VPC peering connection in the Region of
      * the accepter VPC.
      * </p>
      * 
@@ -251,7 +251,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By default, you can allocate 5
-     * Elastic IP addresses for EC2-Classic per region and 5 Elastic IP addresses for EC2-VPC per region.
+     * Elastic IP addresses for EC2-Classic per Region and 5 Elastic IP addresses for EC2-VPC per Region.
      * </p>
      * <p>
      * For more information, see <a
@@ -908,7 +908,7 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Copies the specified Amazon FPGA Image (AFI) to the current region.
+     * Copies the specified Amazon FPGA Image (AFI) to the current Region.
      * </p>
      * 
      * @param copyFpgaImageRequest
@@ -921,8 +921,8 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Initiates the copy of an AMI from the specified source region to the current region. You specify the destination
-     * region by using its endpoint when making the request.
+     * Initiates the copy of an AMI from the specified source Region to the current Region. You specify the destination
+     * Region by using its endpoint when making the request.
      * </p>
      * <p>
      * Copies of encrypted backing snapshots for the AMI are encrypted. Copies of unencrypted backing snapshots remain
@@ -1058,7 +1058,7 @@ public interface AmazonEC2 {
      * <note>
      * <p>
      * Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534, with the exception of 7224, which is
-     * reserved in the <code>us-east-1</code> region, and 9059, which is reserved in the <code>eu-west-1</code> region.
+     * reserved in the <code>us-east-1</code> Region, and 9059, which is reserved in the <code>eu-west-1</code> Region.
      * </p>
      * </note>
      * <p>
@@ -1145,7 +1145,7 @@ public interface AmazonEC2 {
      * <li>
      * <p>
      * <code>domain-name</code> - If you're using AmazonProvidedDNS in <code>us-east-1</code>, specify
-     * <code>ec2.internal</code>. If you're using AmazonProvidedDNS in another region, specify
+     * <code>ec2.internal</code>. If you're using AmazonProvidedDNS in another Region, specify
      * <code>region.compute.internal</code> (for example, <code>ap-northeast-1.compute.internal</code>). Otherwise,
      * specify a domain name (for example, <code>MyCompany.com</code>). This value is used to complete unqualified DNS
      * hostnames. <b>Important</b>: Some Linux operating systems accept multiple domain names separated by spaces.
@@ -1350,11 +1350,11 @@ public interface AmazonEC2 {
      * key. If a key with the specified name already exists, Amazon EC2 returns an error.
      * </p>
      * <p>
-     * You can have up to five thousand key pairs per region.
+     * You can have up to five thousand key pairs per Region.
      * </p>
      * <p>
-     * The key pair returned to you is available only in the region in which you create it. If you prefer, you can
-     * create your own key pair using a third-party tool and upload it to any region using <a>ImportKeyPair</a>.
+     * The key pair returned to you is available only in the Region in which you create it. If you prefer, you can
+     * create your own key pair using a third-party tool and upload it to any Region using <a>ImportKeyPair</a>.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
@@ -2850,8 +2850,8 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes the longer ID format settings for all resource types in a specific region. This request is useful for
-     * performing a quick audit to determine whether a specific region is fully opted in for longer IDs (17-character
+     * Describes the longer ID format settings for all resource types in a specific Region. This request is useful for
+     * performing a quick audit to determine whether a specific Region is fully opted in for longer IDs (17-character
      * IDs).
      * </p>
      * <p>
@@ -2880,7 +2880,7 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes the Availability Zones that are available to you. The results include zones only for the region you're
+     * Describes the Availability Zones that are available to you. The results include zones only for the Region you're
      * currently using. If there is an event impacting an Availability Zone, you can use this request to view the state
      * and any provided message for that Availability Zone.
      * </p>
@@ -3340,7 +3340,7 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes the ID format settings for your resources on a per-region basis, for example, to view which resource
+     * Describes the ID format settings for your resources on a per-Region basis, for example, to view which resource
      * types are enabled for longer IDs. This request only returns information about resource types whose ID formats can
      * be modified; it does not return information about other resource types.
      * </p>
@@ -3435,7 +3435,9 @@ public interface AmazonEC2 {
      * AWS accounts for which you have explicit launch permissions.
      * </p>
      * <p>
-     * Recently deregistered images might appear in the returned results for a short interval.
+     * Recently deregistered images appear in the returned results for a short interval and then return empty results.
+     * After all instances that reference a deregistered AMI are terminated, specifying the ID of the image results in
+     * an error indicating that the AMI ID cannot be found.
      * </p>
      * 
      * @param describeImagesRequest
@@ -3910,11 +3912,14 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes the regions that are currently available to you.
+     * Describes the Regions that are currently available to you. The API returns a list of all the Regions, including
+     * Regions that are disabled for your account. For information about enabling Regions for your account, see <a href=
+     * "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-account-payment.html#manage-account-payment-enable-disable-regions"
+     * >Enabling and Disabling Regions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * <p>
-     * For a list of the regions supported by Amazon EC2, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">Regions and Endpoints</a>.
+     * For a list of the Regions supported by Amazon EC2, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region"> Regions and Endpoints</a>.
      * </p>
      * 
      * @param describeRegionsRequest
@@ -5693,7 +5698,7 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the ID format for the specified resource on a per-region basis. You can specify that resources should
+     * Modifies the ID format for the specified resource on a per-Region basis. You can specify that resources should
      * receive longer IDs (17-character IDs) when they are created.
      * </p>
      * <p>
@@ -6232,10 +6237,10 @@ public interface AmazonEC2 {
      * <p>
      * If the peered VPCs are in the same AWS account, you can enable DNS resolution for queries from the local VPC.
      * This ensures that queries from the local VPC resolve to private IP addresses in the peer VPC. This option is not
-     * available if the peered VPCs are in different AWS accounts or different regions. For peered VPCs in different AWS
+     * available if the peered VPCs are in different AWS accounts or different Regions. For peered VPCs in different AWS
      * accounts, each AWS account owner must initiate a separate request to modify the peering connection options. For
-     * inter-region peering connections, you must use the region for the requester VPC to modify the requester VPC
-     * peering options and the region for the accepter VPC to modify the accepter VPC peering options. To verify which
+     * inter-region peering connections, you must use the Region for the requester VPC to modify the requester VPC
+     * peering options and the Region for the accepter VPC to modify the accepter VPC peering options. To verify which
      * VPCs are the accepter and the requester for a VPC peering connection, use the
      * <a>DescribeVpcPeeringConnections</a> command.
      * </p>
@@ -6273,6 +6278,65 @@ public interface AmazonEC2 {
     ModifyVpcTenancyResult modifyVpcTenancy(ModifyVpcTenancyRequest modifyVpcTenancyRequest);
 
     /**
+     * <p>
+     * Modifies the target gateway of a AWS Site-to-Site VPN connection. The following migration options are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An existing virtual private gateway to a new virtual private gateway
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An existing virtual private gateway to a transit gateway
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An existing transit gateway to a new transit gateway
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An existing transit gateway to a virtual private gateway
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Before you perform the migration to the new gateway, you must configure the new gateway. Use
+     * <a>CreateVpnGateway</a> to create a virtual private gateway, or <a>CreateTransitGateway</a> to create a transit
+     * gateway.
+     * </p>
+     * <p>
+     * This step is required when you migrate from a virtual private gateway with static routes to a transit gateway.
+     * </p>
+     * <p>
+     * You must delete the static routes before you migrate to the new gateway.
+     * </p>
+     * <p>
+     * Keep a copy of the static route before you delete it. You will need to add back these routes to the transit
+     * gateway after the VPN connection migration is complete.
+     * </p>
+     * <p>
+     * After you migrate to the new gateway, you might need to modify your VPC route table. Use <a>CreateRoute</a> and
+     * <a>DeleteRoute</a> to make the changes described in <a
+     * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">VPN Gateway
+     * Target Modification Required VPC Route Table Updates</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+     * </p>
+     * <p>
+     * When the new gateway is a transit gateway, modify the transit gateway route table to allow traffic between the
+     * VPC and the AWS Site-to-Site VPN connection. Use <a>CreateTransitGatewayRoute</a> to add the routes.
+     * </p>
+     * <p>
+     * If you deleted VPN static routes, you must add the static routes to the transit gateway route table.
+     * </p>
+     * <p>
+     * After you perform this operation, the AWS VPN endpoint's IP addresses on the AWS side and the tunnel options
+     * remain intact. Your s2slong; connection will be temporarily unavailable for approximately 10 minutes while we
+     * provision the new endpoints
+     * </p>
+     * 
      * @param modifyVpnConnectionRequest
      * @return Result of the ModifyVpnConnection operation returned by the service.
      * @sample AmazonEC2.ModifyVpnConnection

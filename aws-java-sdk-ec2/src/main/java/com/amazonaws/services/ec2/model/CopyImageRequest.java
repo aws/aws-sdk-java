@@ -37,7 +37,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
     private String clientToken;
     /**
      * <p>
-     * A description for the new AMI in the destination region.
+     * A description for the new AMI in the destination Region.
      * </p>
      */
     private String description;
@@ -69,21 +69,21 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the
+     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the
      * AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK,
      * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
      * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
@@ -94,13 +94,13 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      * though you provided an invalid identifier. This action will eventually report failure.
      * </p>
      * <p>
-     * The specified CMK must exist in the region that the snapshot is being copied to.
+     * The specified CMK must exist in the Region that the snapshot is being copied to.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * The name of the new AMI in the destination region.
+     * The name of the new AMI in the destination Region.
      * </p>
      */
     private String name;
@@ -112,7 +112,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
     private String sourceImageId;
     /**
      * <p>
-     * The name of the region that contains the AMI to copy.
+     * The name of the Region that contains the AMI to copy.
      * </p>
      */
     private String sourceRegion;
@@ -171,11 +171,11 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * A description for the new AMI in the destination region.
+     * A description for the new AMI in the destination Region.
      * </p>
      * 
      * @param description
-     *        A description for the new AMI in the destination region.
+     *        A description for the new AMI in the destination Region.
      */
 
     public void setDescription(String description) {
@@ -184,10 +184,10 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * A description for the new AMI in the destination region.
+     * A description for the new AMI in the destination Region.
      * </p>
      * 
-     * @return A description for the new AMI in the destination region.
+     * @return A description for the new AMI in the destination Region.
      */
 
     public String getDescription() {
@@ -196,11 +196,11 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * A description for the new AMI in the destination region.
+     * A description for the new AMI in the destination Region.
      * </p>
      * 
      * @param description
-     *        A description for the new AMI in the destination region.
+     *        A description for the new AMI in the destination Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,21 +315,21 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the
+     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the
      * AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK,
      * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
      * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
@@ -340,7 +340,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      * though you provided an invalid identifier. This action will eventually report failure.
      * </p>
      * <p>
-     * The specified CMK must exist in the region that the snapshot is being copied to.
+     * The specified CMK must exist in the Region that the snapshot is being copied to.
      * </p>
      * 
      * @param kmsKeyId
@@ -359,21 +359,21 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *        </li>
      *        <li>
      *        <p>
-     *        Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     *        Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
      *        CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For
      *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of
+     *        ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of
      *        the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For
      *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region
+     *        ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region
      *        of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias.
      *        For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      *        </p>
@@ -384,7 +384,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *        even though you provided an invalid identifier. This action will eventually report failure.
      *        </p>
      *        <p>
-     *        The specified CMK must exist in the region that the snapshot is being copied to.
+     *        The specified CMK must exist in the Region that the snapshot is being copied to.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -409,21 +409,21 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the
+     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the
      * AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK,
      * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
      * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
@@ -434,7 +434,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      * though you provided an invalid identifier. This action will eventually report failure.
      * </p>
      * <p>
-     * The specified CMK must exist in the region that the snapshot is being copied to.
+     * The specified CMK must exist in the Region that the snapshot is being copied to.
      * </p>
      * 
      * @return An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
@@ -452,14 +452,14 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *         </li>
      *         <li>
      *         <p>
-     *         Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     *         Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
      *         CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For
      *         example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of
+     *         ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of
      *         the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For
      *         example,
      *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
@@ -468,7 +468,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *         <li>
      *         <p>
      *         ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the
-     *         region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the
+     *         Region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the
      *         CMK alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      *         </p>
      *         </li>
@@ -478,7 +478,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *         even though you provided an invalid identifier. This action will eventually report failure.
      *         </p>
      *         <p>
-     *         The specified CMK must exist in the region that the snapshot is being copied to.
+     *         The specified CMK must exist in the Region that the snapshot is being copied to.
      */
 
     public String getKmsKeyId() {
@@ -503,21 +503,21 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the
+     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the
      * AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK,
      * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
      * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
@@ -528,7 +528,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      * though you provided an invalid identifier. This action will eventually report failure.
      * </p>
      * <p>
-     * The specified CMK must exist in the region that the snapshot is being copied to.
+     * The specified CMK must exist in the Region that the snapshot is being copied to.
      * </p>
      * 
      * @param kmsKeyId
@@ -547,21 +547,21 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *        </li>
      *        <li>
      *        <p>
-     *        Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     *        Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
      *        CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For
      *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of
+     *        ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of
      *        the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For
      *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region
+     *        ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region
      *        of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias.
      *        For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      *        </p>
@@ -572,7 +572,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *        even though you provided an invalid identifier. This action will eventually report failure.
      *        </p>
      *        <p>
-     *        The specified CMK must exist in the region that the snapshot is being copied to.
+     *        The specified CMK must exist in the Region that the snapshot is being copied to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -583,11 +583,11 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * The name of the new AMI in the destination region.
+     * The name of the new AMI in the destination Region.
      * </p>
      * 
      * @param name
-     *        The name of the new AMI in the destination region.
+     *        The name of the new AMI in the destination Region.
      */
 
     public void setName(String name) {
@@ -596,10 +596,10 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * The name of the new AMI in the destination region.
+     * The name of the new AMI in the destination Region.
      * </p>
      * 
-     * @return The name of the new AMI in the destination region.
+     * @return The name of the new AMI in the destination Region.
      */
 
     public String getName() {
@@ -608,11 +608,11 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * The name of the new AMI in the destination region.
+     * The name of the new AMI in the destination Region.
      * </p>
      * 
      * @param name
-     *        The name of the new AMI in the destination region.
+     *        The name of the new AMI in the destination Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -663,11 +663,11 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * The name of the region that contains the AMI to copy.
+     * The name of the Region that contains the AMI to copy.
      * </p>
      * 
      * @param sourceRegion
-     *        The name of the region that contains the AMI to copy.
+     *        The name of the Region that contains the AMI to copy.
      */
 
     public void setSourceRegion(String sourceRegion) {
@@ -676,10 +676,10 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * The name of the region that contains the AMI to copy.
+     * The name of the Region that contains the AMI to copy.
      * </p>
      * 
-     * @return The name of the region that contains the AMI to copy.
+     * @return The name of the Region that contains the AMI to copy.
      */
 
     public String getSourceRegion() {
@@ -688,11 +688,11 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * The name of the region that contains the AMI to copy.
+     * The name of the Region that contains the AMI to copy.
      * </p>
      * 
      * @param sourceRegion
-     *        The name of the region that contains the AMI to copy.
+     *        The name of the Region that contains the AMI to copy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

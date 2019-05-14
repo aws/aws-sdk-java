@@ -116,6 +116,14 @@ public class EntitiesDetectionJobProperties implements Serializable, Cloneable, 
      * </ul>
      */
     private String volumeKmsKeyId;
+    /**
+     * <p>
+     * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
+     * your entity detection job. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * </p>
+     */
+    private VpcConfig vpcConfig;
 
     /**
      * <p>
@@ -731,6 +739,58 @@ public class EntitiesDetectionJobProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
+     * your entity detection job. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using
+     *        for your entity detection job. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     */
+
+    public void setVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
+     * your entity detection job. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * </p>
+     * 
+     * @return Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using
+     *         for your entity detection job. For more information, see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     */
+
+    public VpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
+     * your entity detection job. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using
+     *        for your entity detection job. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntitiesDetectionJobProperties withVpcConfig(VpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -765,7 +825,9 @@ public class EntitiesDetectionJobProperties implements Serializable, Cloneable, 
         if (getDataAccessRoleArn() != null)
             sb.append("DataAccessRoleArn: ").append(getDataAccessRoleArn()).append(",");
         if (getVolumeKmsKeyId() != null)
-            sb.append("VolumeKmsKeyId: ").append(getVolumeKmsKeyId());
+            sb.append("VolumeKmsKeyId: ").append(getVolumeKmsKeyId()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -828,6 +890,10 @@ public class EntitiesDetectionJobProperties implements Serializable, Cloneable, 
             return false;
         if (other.getVolumeKmsKeyId() != null && other.getVolumeKmsKeyId().equals(this.getVolumeKmsKeyId()) == false)
             return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
         return true;
     }
 
@@ -848,6 +914,7 @@ public class EntitiesDetectionJobProperties implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getDataAccessRoleArn() == null) ? 0 : getDataAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         return hashCode;
     }
 

@@ -25,8 +25,8 @@ public class DescribeAggregateIdFormatResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Indicates whether all resource types in the region are configured to use longer IDs. This value is only
-     * <code>true</code> if all users are configured to use longer IDs for all resources types in the region.
+     * Indicates whether all resource types in the Region are configured to use longer IDs. This value is only
+     * <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.
      * </p>
      */
     private Boolean useLongIdsAggregated;
@@ -39,13 +39,13 @@ public class DescribeAggregateIdFormatResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Indicates whether all resource types in the region are configured to use longer IDs. This value is only
-     * <code>true</code> if all users are configured to use longer IDs for all resources types in the region.
+     * Indicates whether all resource types in the Region are configured to use longer IDs. This value is only
+     * <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.
      * </p>
      * 
      * @param useLongIdsAggregated
-     *        Indicates whether all resource types in the region are configured to use longer IDs. This value is only
-     *        <code>true</code> if all users are configured to use longer IDs for all resources types in the region.
+     *        Indicates whether all resource types in the Region are configured to use longer IDs. This value is only
+     *        <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.
      */
 
     public void setUseLongIdsAggregated(Boolean useLongIdsAggregated) {
@@ -54,12 +54,12 @@ public class DescribeAggregateIdFormatResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Indicates whether all resource types in the region are configured to use longer IDs. This value is only
-     * <code>true</code> if all users are configured to use longer IDs for all resources types in the region.
+     * Indicates whether all resource types in the Region are configured to use longer IDs. This value is only
+     * <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.
      * </p>
      * 
-     * @return Indicates whether all resource types in the region are configured to use longer IDs. This value is only
-     *         <code>true</code> if all users are configured to use longer IDs for all resources types in the region.
+     * @return Indicates whether all resource types in the Region are configured to use longer IDs. This value is only
+     *         <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.
      */
 
     public Boolean getUseLongIdsAggregated() {
@@ -68,13 +68,13 @@ public class DescribeAggregateIdFormatResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Indicates whether all resource types in the region are configured to use longer IDs. This value is only
-     * <code>true</code> if all users are configured to use longer IDs for all resources types in the region.
+     * Indicates whether all resource types in the Region are configured to use longer IDs. This value is only
+     * <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.
      * </p>
      * 
      * @param useLongIdsAggregated
-     *        Indicates whether all resource types in the region are configured to use longer IDs. This value is only
-     *        <code>true</code> if all users are configured to use longer IDs for all resources types in the region.
+     *        Indicates whether all resource types in the Region are configured to use longer IDs. This value is only
+     *        <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,12 +85,12 @@ public class DescribeAggregateIdFormatResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Indicates whether all resource types in the region are configured to use longer IDs. This value is only
-     * <code>true</code> if all users are configured to use longer IDs for all resources types in the region.
+     * Indicates whether all resource types in the Region are configured to use longer IDs. This value is only
+     * <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.
      * </p>
      * 
-     * @return Indicates whether all resource types in the region are configured to use longer IDs. This value is only
-     *         <code>true</code> if all users are configured to use longer IDs for all resources types in the region.
+     * @return Indicates whether all resource types in the Region are configured to use longer IDs. This value is only
+     *         <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.
      */
 
     public Boolean isUseLongIdsAggregated() {

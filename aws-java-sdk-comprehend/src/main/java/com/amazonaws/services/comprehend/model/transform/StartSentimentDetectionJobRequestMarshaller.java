@@ -44,6 +44,8 @@ public class StartSentimentDetectionJobRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
 
     private static final StartSentimentDetectionJobRequestMarshaller instance = new StartSentimentDetectionJobRequestMarshaller();
 
@@ -68,6 +70,7 @@ public class StartSentimentDetectionJobRequestMarshaller {
             protocolMarshaller.marshall(startSentimentDetectionJobRequest.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(startSentimentDetectionJobRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(startSentimentDetectionJobRequest.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
+            protocolMarshaller.marshall(startSentimentDetectionJobRequest.getVpcConfig(), VPCCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

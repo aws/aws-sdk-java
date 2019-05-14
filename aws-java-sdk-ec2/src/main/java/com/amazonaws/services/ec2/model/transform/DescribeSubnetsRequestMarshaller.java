@@ -80,6 +80,14 @@ public class DescribeSubnetsRequestMarshaller implements Marshaller<Request<Desc
             }
         }
 
+        if (describeSubnetsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeSubnetsRequest.getNextToken()));
+        }
+
+        if (describeSubnetsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeSubnetsRequest.getMaxResults()));
+        }
+
         return request;
     }
 

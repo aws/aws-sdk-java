@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class CreateSnapshotRequestMarshaller {
             .marshallLocationName("VolumeARN").build();
     private static final MarshallingInfo<String> SNAPSHOTDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotDescription").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateSnapshotRequestMarshaller instance = new CreateSnapshotRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class CreateSnapshotRequestMarshaller {
         try {
             protocolMarshaller.marshall(createSnapshotRequest.getVolumeARN(), VOLUMEARN_BINDING);
             protocolMarshaller.marshall(createSnapshotRequest.getSnapshotDescription(), SNAPSHOTDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createSnapshotRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

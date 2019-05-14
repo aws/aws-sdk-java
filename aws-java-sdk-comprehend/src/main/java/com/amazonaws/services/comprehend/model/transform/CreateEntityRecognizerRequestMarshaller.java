@@ -45,6 +45,8 @@ public class CreateEntityRecognizerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageCode").build();
     private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
 
     private static final CreateEntityRecognizerRequestMarshaller instance = new CreateEntityRecognizerRequestMarshaller();
 
@@ -69,6 +71,7 @@ public class CreateEntityRecognizerRequestMarshaller {
             protocolMarshaller.marshall(createEntityRecognizerRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createEntityRecognizerRequest.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(createEntityRecognizerRequest.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
+            protocolMarshaller.marshall(createEntityRecognizerRequest.getVpcConfig(), VPCCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

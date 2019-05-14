@@ -96,21 +96,21 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the
+     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the
      * AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK,
      * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
      * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
@@ -121,7 +121,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * though you provided an invalid identifier. This action will eventually report failure.
      * </p>
      * <p>
-     * The specified CMK must exist in the region that the AMI is being copied to.
+     * The specified CMK must exist in the Region that the AMI is being copied to.
      * </p>
      */
     private String kmsKeyId;
@@ -577,21 +577,21 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the
+     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the
      * AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK,
      * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
      * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
@@ -602,7 +602,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * though you provided an invalid identifier. This action will eventually report failure.
      * </p>
      * <p>
-     * The specified CMK must exist in the region that the AMI is being copied to.
+     * The specified CMK must exist in the Region that the AMI is being copied to.
      * </p>
      * 
      * @param kmsKeyId
@@ -621,21 +621,21 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *        </li>
      *        <li>
      *        <p>
-     *        Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     *        Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
      *        CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For
      *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of
+     *        ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of
      *        the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For
      *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region
+     *        ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region
      *        of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias.
      *        For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      *        </p>
@@ -646,7 +646,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *        even though you provided an invalid identifier. This action will eventually report failure.
      *        </p>
      *        <p>
-     *        The specified CMK must exist in the region that the AMI is being copied to.
+     *        The specified CMK must exist in the Region that the AMI is being copied to.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -671,21 +671,21 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the
+     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the
      * AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK,
      * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
      * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
@@ -696,7 +696,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * though you provided an invalid identifier. This action will eventually report failure.
      * </p>
      * <p>
-     * The specified CMK must exist in the region that the AMI is being copied to.
+     * The specified CMK must exist in the Region that the AMI is being copied to.
      * </p>
      * 
      * @return An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
@@ -714,14 +714,14 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *         </li>
      *         <li>
      *         <p>
-     *         Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     *         Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
      *         CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For
      *         example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of
+     *         ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of
      *         the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For
      *         example,
      *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
@@ -730,7 +730,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *         <li>
      *         <p>
      *         ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the
-     *         region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the
+     *         Region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the
      *         CMK alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      *         </p>
      *         </li>
@@ -740,7 +740,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *         even though you provided an invalid identifier. This action will eventually report failure.
      *         </p>
      *         <p>
-     *         The specified CMK must exist in the region that the AMI is being copied to.
+     *         The specified CMK must exist in the Region that the AMI is being copied to.
      */
 
     public String getKmsKeyId() {
@@ -765,21 +765,21 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the
+     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the
      * AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK,
      * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
      * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      * </p>
@@ -790,7 +790,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * though you provided an invalid identifier. This action will eventually report failure.
      * </p>
      * <p>
-     * The specified CMK must exist in the region that the AMI is being copied to.
+     * The specified CMK must exist in the Region that the AMI is being copied to.
      * </p>
      * 
      * @param kmsKeyId
@@ -809,21 +809,21 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *        </li>
      *        <li>
      *        <p>
-     *        Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     *        Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
      *        CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For
      *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of
+     *        ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of
      *        the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For
      *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region
+     *        ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region
      *        of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias.
      *        For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
      *        </p>
@@ -834,7 +834,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *        even though you provided an invalid identifier. This action will eventually report failure.
      *        </p>
      *        <p>
-     *        The specified CMK must exist in the region that the AMI is being copied to.
+     *        The specified CMK must exist in the Region that the AMI is being copied to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

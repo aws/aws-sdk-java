@@ -115,6 +115,10 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * Set this value to "true to enable ACL (access control list) on the SMB file share. Set it to "false" to map file
      * and directory permissions to the POSIX permissions.
      * </p>
+     * <p>
+     * For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the Storage
+     * Gateway User Guide.
+     * </p>
      */
     private Boolean sMBACLEnabled;
     /**
@@ -792,10 +796,17 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * Set this value to "true to enable ACL (access control list) on the SMB file share. Set it to "false" to map file
      * and directory permissions to the POSIX permissions.
      * </p>
+     * <p>
+     * For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the Storage
+     * Gateway User Guide.
+     * </p>
      * 
      * @param sMBACLEnabled
      *        Set this value to "true to enable ACL (access control list) on the SMB file share. Set it to "false" to
-     *        map file and directory permissions to the POSIX permissions.
+     *        map file and directory permissions to the POSIX permissions.</p>
+     *        <p>
+     *        For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the
+     *        Storage Gateway User Guide.
      */
 
     public void setSMBACLEnabled(Boolean sMBACLEnabled) {
@@ -807,9 +818,16 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * Set this value to "true to enable ACL (access control list) on the SMB file share. Set it to "false" to map file
      * and directory permissions to the POSIX permissions.
      * </p>
+     * <p>
+     * For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the Storage
+     * Gateway User Guide.
+     * </p>
      * 
      * @return Set this value to "true to enable ACL (access control list) on the SMB file share. Set it to "false" to
-     *         map file and directory permissions to the POSIX permissions.
+     *         map file and directory permissions to the POSIX permissions.</p>
+     *         <p>
+     *         For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the
+     *         Storage Gateway User Guide.
      */
 
     public Boolean getSMBACLEnabled() {
@@ -821,10 +839,17 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * Set this value to "true to enable ACL (access control list) on the SMB file share. Set it to "false" to map file
      * and directory permissions to the POSIX permissions.
      * </p>
+     * <p>
+     * For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the Storage
+     * Gateway User Guide.
+     * </p>
      * 
      * @param sMBACLEnabled
      *        Set this value to "true to enable ACL (access control list) on the SMB file share. Set it to "false" to
-     *        map file and directory permissions to the POSIX permissions.
+     *        map file and directory permissions to the POSIX permissions.</p>
+     *        <p>
+     *        For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the
+     *        Storage Gateway User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -838,9 +863,16 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * Set this value to "true to enable ACL (access control list) on the SMB file share. Set it to "false" to map file
      * and directory permissions to the POSIX permissions.
      * </p>
+     * <p>
+     * For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the Storage
+     * Gateway User Guide.
+     * </p>
      * 
      * @return Set this value to "true to enable ACL (access control list) on the SMB file share. Set it to "false" to
-     *         map file and directory permissions to the POSIX permissions.
+     *         map file and directory permissions to the POSIX permissions.</p>
+     *         <p>
+     *         For more information, see https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html in the
+     *         Storage Gateway User Guide.
      */
 
     public Boolean isSMBACLEnabled() {

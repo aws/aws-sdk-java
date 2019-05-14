@@ -57,7 +57,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
     private String platform;
     /**
      * <p>
-     * Whether the Reserved Instance is applied to instances in a region or instances in a specific Availability Zone.
+     * Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability Zone.
      * </p>
      */
     private String scope;
@@ -281,11 +281,11 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the Reserved Instance is applied to instances in a region or instances in a specific Availability Zone.
+     * Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability Zone.
      * </p>
      * 
      * @param scope
-     *        Whether the Reserved Instance is applied to instances in a region or instances in a specific Availability
+     *        Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability
      *        Zone.
      * @see Scope
      */
@@ -296,10 +296,10 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the Reserved Instance is applied to instances in a region or instances in a specific Availability Zone.
+     * Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability Zone.
      * </p>
      * 
-     * @return Whether the Reserved Instance is applied to instances in a region or instances in a specific Availability
+     * @return Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability
      *         Zone.
      * @see Scope
      */
@@ -310,11 +310,11 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the Reserved Instance is applied to instances in a region or instances in a specific Availability Zone.
+     * Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability Zone.
      * </p>
      * 
      * @param scope
-     *        Whether the Reserved Instance is applied to instances in a region or instances in a specific Availability
+     *        Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability
      *        Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scope
@@ -327,11 +327,11 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the Reserved Instance is applied to instances in a region or instances in a specific Availability Zone.
+     * Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability Zone.
      * </p>
      * 
      * @param scope
-     *        Whether the Reserved Instance is applied to instances in a region or instances in a specific Availability
+     *        Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability
      *        Zone.
      * @see Scope
      */
@@ -342,11 +342,11 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the Reserved Instance is applied to instances in a region or instances in a specific Availability Zone.
+     * Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability Zone.
      * </p>
      * 
      * @param scope
-     *        Whether the Reserved Instance is applied to instances in a region or instances in a specific Availability
+     *        Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability
      *        Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scope
