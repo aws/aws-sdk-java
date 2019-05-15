@@ -23,22 +23,22 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * <a>CreateDBInstance</a>
+ * <code>CreateDBInstance</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeDBInstances</a>
+ * <code>DescribeDBInstances</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteDBInstance</a>
+ * <code>DeleteDBInstance</code>
  * </p>
  * </li>
  * </ul>
  * <p>
- * For the data structure that represents Amazon Aurora DB cluster endpoints, see <a>DBClusterEndpoint</a>.
+ * For the data structure that represents Amazon Aurora DB cluster endpoints, see <code>DBClusterEndpoint</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Endpoint" target="_top">AWS API Documentation</a>

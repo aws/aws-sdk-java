@@ -74,7 +74,7 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Indicates if the global database cluster has deletion protection enabled. The global database cluster can't be
-     * deleted when this value is set to true.
+     * deleted when deletion protection is enabled.
      * </p>
      */
     private Boolean deletionProtection;
@@ -363,12 +363,12 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Indicates if the global database cluster has deletion protection enabled. The global database cluster can't be
-     * deleted when this value is set to true.
+     * deleted when deletion protection is enabled.
      * </p>
      * 
      * @param deletionProtection
      *        Indicates if the global database cluster has deletion protection enabled. The global database cluster
-     *        can't be deleted when this value is set to true.
+     *        can't be deleted when deletion protection is enabled.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -378,11 +378,11 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Indicates if the global database cluster has deletion protection enabled. The global database cluster can't be
-     * deleted when this value is set to true.
+     * deleted when deletion protection is enabled.
      * </p>
      * 
      * @return Indicates if the global database cluster has deletion protection enabled. The global database cluster
-     *         can't be deleted when this value is set to true.
+     *         can't be deleted when deletion protection is enabled.
      */
 
     public Boolean getDeletionProtection() {
@@ -392,12 +392,12 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Indicates if the global database cluster has deletion protection enabled. The global database cluster can't be
-     * deleted when this value is set to true.
+     * deleted when deletion protection is enabled.
      * </p>
      * 
      * @param deletionProtection
      *        Indicates if the global database cluster has deletion protection enabled. The global database cluster
-     *        can't be deleted when this value is set to true.
+     *        can't be deleted when deletion protection is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -409,11 +409,11 @@ public class ModifyGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Indicates if the global database cluster has deletion protection enabled. The global database cluster can't be
-     * deleted when this value is set to true.
+     * deleted when deletion protection is enabled.
      * </p>
      * 
      * @return Indicates if the global database cluster has deletion protection enabled. The global database cluster
-     *         can't be deleted when this value is set to true.
+     *         can't be deleted when deletion protection is enabled.
      */
 
     public Boolean isDeletionProtection() {

@@ -294,6 +294,9 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.ConcurrentModificationException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidClientTokenException").withModeledClass(
                                     com.amazonaws.services.codepipeline.model.InvalidClientTokenException.class))
                     .addErrorMetadata(
@@ -317,6 +320,9 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidActionDeclarationException").withModeledClass(
                                     com.amazonaws.services.codepipeline.model.InvalidActionDeclarationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArnException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.InvalidArnException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PipelineExecutionNotFoundException").withModeledClass(
                                     com.amazonaws.services.codepipeline.model.PipelineExecutionNotFoundException.class))
@@ -348,11 +354,20 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                             new JsonErrorShapeMetadata().withErrorCode("StageNotRetryableException").withModeledClass(
                                     com.amazonaws.services.codepipeline.model.StageNotRetryableException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.TooManyTagsException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidStructureException").withModeledClass(
                                     com.amazonaws.services.codepipeline.model.InvalidStructureException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidBlockerDeclarationException").withModeledClass(
                                     com.amazonaws.services.codepipeline.model.InvalidBlockerDeclarationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagsException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.InvalidTagsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ActionNotFoundException").withModeledClass(
                                     com.amazonaws.services.codepipeline.model.ActionNotFoundException.class))
@@ -708,6 +723,12 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *         The validation was specified in an invalid format.
      * @throws LimitExceededException
      *         The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.
+     * @throws TooManyTagsException
+     *         The tags limit for a resource has been exceeded.
+     * @throws InvalidTagsException
+     *         The specified resource tags are invalid.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
      * @sample AWSCodePipeline.CreateCustomActionType
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType"
      *      target="_top">AWS API Documentation</a>
@@ -776,6 +797,12 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *         The specified structure was specified in an invalid format.
      * @throws LimitExceededException
      *         The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.
+     * @throws TooManyTagsException
+     *         The tags limit for a resource has been exceeded.
+     * @throws InvalidTagsException
+     *         The specified resource tags are invalid.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
      * @sample AWSCodePipeline.CreatePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline" target="_top">AWS
      *      API Documentation</a>
@@ -841,6 +868,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @return Result of the DeleteCustomActionType operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
      * @sample AWSCodePipeline.DeleteCustomActionType
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType"
      *      target="_top">AWS API Documentation</a>
@@ -897,6 +926,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @return Result of the DeletePipeline operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
      * @sample AWSCodePipeline.DeletePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline" target="_top">AWS
      *      API Documentation</a>
@@ -954,6 +985,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @return Result of the DeleteWebhook operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
      * @sample AWSCodePipeline.DeleteWebhook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteWebhook" target="_top">AWS API
      *      Documentation</a>
@@ -1739,6 +1772,67 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Gets the set of key/value pairs (metadata) that are used to manage the resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @throws ResourceNotFoundException
+     *         The specified resource was specified in an invalid format.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format. Make sure that the next token you provided is the
+     *         token returned by a previous call.
+     * @throws InvalidArnException
+     *         The specified resource ARN is invalid.
+     * @sample AWSCodePipeline.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a listing of all the webhooks in this region for this account. The output lists all webhooks and includes
      * the webhook URL and ARN, as well the configuration for each webhook.
      * </p>
@@ -2320,6 +2414,12 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *         The specified authentication type is in an invalid format.
      * @throws PipelineNotFoundException
      *         The specified pipeline was specified in an invalid format or cannot be found.
+     * @throws TooManyTagsException
+     *         The tags limit for a resource has been exceeded.
+     * @throws InvalidTagsException
+     *         The specified resource tags are invalid.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
      * @sample AWSCodePipeline.PutWebhook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutWebhook" target="_top">AWS API
      *      Documentation</a>
@@ -2538,6 +2638,132 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<StartPipelineExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StartPipelineExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @throws ResourceNotFoundException
+     *         The specified resource was specified in an invalid format.
+     * @throws InvalidArnException
+     *         The specified resource ARN is invalid.
+     * @throws TooManyTagsException
+     *         The tags limit for a resource has been exceeded.
+     * @throws InvalidTagsException
+     *         The specified resource tags are invalid.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
+     * @sample AWSCodePipeline.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes tags from an AWS resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @throws ResourceNotFoundException
+     *         The specified resource was specified in an invalid format.
+     * @throws InvalidArnException
+     *         The specified resource ARN is invalid.
+     * @throws InvalidTagsException
+     *         The specified resource tags are invalid.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
+     * @sample AWSCodePipeline.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

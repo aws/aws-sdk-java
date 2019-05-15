@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The version for an option. Option group option versions are returned by the <a>DescribeOptionGroupOptions</a> action.
+ * The version for an option. Option group option versions are returned by the <code>DescribeOptionGroupOptions</code>
+ * action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionVersion" target="_top">AWS API

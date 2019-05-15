@@ -25,32 +25,32 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * <a>CreateDBInstance</a>
+ * <code>CreateDBInstance</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>CreateDBInstanceReadReplica</a>
+ * <code>CreateDBInstanceReadReplica</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteDBInstance</a>
+ * <code>DeleteDBInstance</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ModifyDBInstance</a>
+ * <code>ModifyDBInstance</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>RebootDBInstance</a>
+ * <code>RebootDBInstance</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>RestoreDBInstanceFromDBSnapshot</a>
+ * <code>RestoreDBInstanceFromDBSnapshot</code>
  * </p>
  * </li>
  * </ul>

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains an AWS Region name as the result of a successful call to the <a>DescribeSourceRegions</a> action.
+ * Contains an AWS Region name as the result of a successful call to the <code>DescribeSourceRegions</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SourceRegion" target="_top">AWS API

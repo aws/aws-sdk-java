@@ -17,11 +17,11 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.
+ * Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.
  * </p>
  * <p>
  * Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster
- * snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
+ * snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterSnapshotAttributesResult"

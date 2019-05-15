@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the <a>DescribeDBSnapshots</a> action.
+ * Contains the result of a successful invocation of the <code>DescribeDBSnapshots</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots" target="_top">AWS API
@@ -35,7 +35,7 @@ public class DescribeDBSnapshotsResult extends com.amazonaws.AmazonWebServiceRes
     private String marker;
     /**
      * <p>
-     * A list of <a>DBSnapshot</a> instances.
+     * A list of <code>DBSnapshot</code> instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DBSnapshot> dBSnapshots;
@@ -88,10 +88,10 @@ public class DescribeDBSnapshotsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of <a>DBSnapshot</a> instances.
+     * A list of <code>DBSnapshot</code> instances.
      * </p>
      * 
-     * @return A list of <a>DBSnapshot</a> instances.
+     * @return A list of <code>DBSnapshot</code> instances.
      */
 
     public java.util.List<DBSnapshot> getDBSnapshots() {
@@ -103,11 +103,11 @@ public class DescribeDBSnapshotsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of <a>DBSnapshot</a> instances.
+     * A list of <code>DBSnapshot</code> instances.
      * </p>
      * 
      * @param dBSnapshots
-     *        A list of <a>DBSnapshot</a> instances.
+     *        A list of <code>DBSnapshot</code> instances.
      */
 
     public void setDBSnapshots(java.util.Collection<DBSnapshot> dBSnapshots) {
@@ -121,7 +121,7 @@ public class DescribeDBSnapshotsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of <a>DBSnapshot</a> instances.
+     * A list of <code>DBSnapshot</code> instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -130,7 +130,7 @@ public class DescribeDBSnapshotsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param dBSnapshots
-     *        A list of <a>DBSnapshot</a> instances.
+     *        A list of <code>DBSnapshot</code> instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +146,11 @@ public class DescribeDBSnapshotsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of <a>DBSnapshot</a> instances.
+     * A list of <code>DBSnapshot</code> instances.
      * </p>
      * 
      * @param dBSnapshots
-     *        A list of <a>DBSnapshot</a> instances.
+     *        A list of <code>DBSnapshot</code> instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

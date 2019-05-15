@@ -33,6 +33,12 @@ public class PutWebhookRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private WebhookDefinition webhook;
+    /**
+     * <p>
+     * The tags for the webhook.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -90,6 +96,76 @@ public class PutWebhookRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The tags for the webhook.
+     * </p>
+     * 
+     * @return The tags for the webhook.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags for the webhook.
+     * </p>
+     * 
+     * @param tags
+     *        The tags for the webhook.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags for the webhook.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags for the webhook.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutWebhookRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags for the webhook.
+     * </p>
+     * 
+     * @param tags
+     *        The tags for the webhook.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutWebhookRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -102,7 +178,9 @@ public class PutWebhookRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWebhook() != null)
-            sb.append("Webhook: ").append(getWebhook());
+            sb.append("Webhook: ").append(getWebhook()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -121,6 +199,10 @@ public class PutWebhookRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getWebhook() != null && other.getWebhook().equals(this.getWebhook()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -130,6 +212,7 @@ public class PutWebhookRequest extends com.amazonaws.AmazonWebServiceRequest imp
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getWebhook() == null) ? 0 : getWebhook().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

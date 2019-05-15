@@ -82,7 +82,11 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String description;
-
+    /**
+     * <p>
+     * Tags to assign to the DB parameter group.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
@@ -488,7 +492,11 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * Tags to assign to the DB parameter group.
+     * </p>
+     * 
+     * @return Tags to assign to the DB parameter group.
      */
 
     public java.util.List<Tag> getTags() {
@@ -499,7 +507,12 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Tags to assign to the DB parameter group.
+     * </p>
+     * 
      * @param tags
+     *        Tags to assign to the DB parameter group.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -513,12 +526,16 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * Tags to assign to the DB parameter group.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        Tags to assign to the DB parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -533,7 +550,12 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Tags to assign to the DB parameter group.
+     * </p>
+     * 
      * @param tags
+     *        Tags to assign to the DB parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

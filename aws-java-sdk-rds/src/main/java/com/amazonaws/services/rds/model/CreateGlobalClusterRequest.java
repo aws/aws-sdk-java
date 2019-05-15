@@ -51,8 +51,8 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
     private String engineVersion;
     /**
      * <p>
-     * The deletion protection setting for the new global database. The global database can't be deleted when this value
-     * is set to true.
+     * The deletion protection setting for the new global database. The global database can't be deleted when deletion
+     * protection is enabled.
      * </p>
      */
     private Boolean deletionProtection;
@@ -235,13 +235,13 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The deletion protection setting for the new global database. The global database can't be deleted when this value
-     * is set to true.
+     * The deletion protection setting for the new global database. The global database can't be deleted when deletion
+     * protection is enabled.
      * </p>
      * 
      * @param deletionProtection
      *        The deletion protection setting for the new global database. The global database can't be deleted when
-     *        this value is set to true.
+     *        deletion protection is enabled.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -250,12 +250,12 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The deletion protection setting for the new global database. The global database can't be deleted when this value
-     * is set to true.
+     * The deletion protection setting for the new global database. The global database can't be deleted when deletion
+     * protection is enabled.
      * </p>
      * 
      * @return The deletion protection setting for the new global database. The global database can't be deleted when
-     *         this value is set to true.
+     *         deletion protection is enabled.
      */
 
     public Boolean getDeletionProtection() {
@@ -264,13 +264,13 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The deletion protection setting for the new global database. The global database can't be deleted when this value
-     * is set to true.
+     * The deletion protection setting for the new global database. The global database can't be deleted when deletion
+     * protection is enabled.
      * </p>
      * 
      * @param deletionProtection
      *        The deletion protection setting for the new global database. The global database can't be deleted when
-     *        this value is set to true.
+     *        deletion protection is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,12 +281,12 @@ public class CreateGlobalClusterRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The deletion protection setting for the new global database. The global database can't be deleted when this value
-     * is set to true.
+     * The deletion protection setting for the new global database. The global database can't be deleted when deletion
+     * protection is enabled.
      * </p>
      * 
      * @return The deletion protection setting for the new global database. The global database can't be deleted when
-     *         this value is set to true.
+     *         deletion protection is enabled.
      */
 
     public Boolean isDeletionProtection() {

@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -3914,6 +3914,12 @@
       }, {
         "name" : "EsES",
         "value" : "es-ES"
+      }, {
+        "name" : "EnIN",
+        "value" : "en-IN"
+      }, {
+        "name" : "HiIN",
+        "value" : "hi-IN"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

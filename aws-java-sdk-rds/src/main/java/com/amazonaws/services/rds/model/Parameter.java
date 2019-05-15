@@ -17,12 +17,12 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is used as a request parameter in the <a>ModifyDBParameterGroup</a> and <a>ResetDBParameterGroup</a>
- * actions.
+ * This data type is used as a request parameter in the <code>ModifyDBParameterGroup</code> and
+ * <code>ResetDBParameterGroup</code> actions.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>DescribeEngineDefaultParameters</a> and
- * <a>DescribeDBParameters</a> actions.
+ * This data type is used as a response element in the <code>DescribeEngineDefaultParameters</code> and
+ * <code>DescribeDBParameters</code> actions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Parameter" target="_top">AWS API

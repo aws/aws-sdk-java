@@ -60,9 +60,10 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer segmentDurationSeconds;
     /**
-     * Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     * Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to
      * NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to
-     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to
+     * NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
      */
     private String segmentTemplateFormat;
 
@@ -490,14 +491,17 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     * Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to
      * NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to
-     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to
+     * NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
      * 
      * @param segmentTemplateFormat
-     *        Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     *        Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to
      *        NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When
      *        set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     *        When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media
+     *        URLs.
      * @see SegmentTemplateFormat
      */
 
@@ -506,14 +510,16 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     * Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to
      * NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to
-     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to
+     * NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
      * 
-     * @return Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     * @return Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to
      *         NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs.
      *         When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media
-     *         URLs.
+     *         URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with
+     *         $Number$ media URLs.
      * @see SegmentTemplateFormat
      */
 
@@ -522,14 +528,17 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     * Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to
      * NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to
-     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to
+     * NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
      * 
      * @param segmentTemplateFormat
-     *        Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     *        Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to
      *        NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When
      *        set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     *        When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media
+     *        URLs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SegmentTemplateFormat
      */
@@ -540,14 +549,17 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     * Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to
      * NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to
-     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to
+     * NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
      * 
      * @param segmentTemplateFormat
-     *        Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     *        Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to
      *        NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When
      *        set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     *        When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media
+     *        URLs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SegmentTemplateFormat
      */

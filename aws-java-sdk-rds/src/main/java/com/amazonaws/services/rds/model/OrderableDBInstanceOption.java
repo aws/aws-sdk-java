@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains a list of available options for a DB instance.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a> action.
+ * This data type is used as a response element in the <code>DescribeOrderableDBInstanceOptions</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OrderableDBInstanceOption" target="_top">AWS API

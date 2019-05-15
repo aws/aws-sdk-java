@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains the details for an Amazon RDS DB cluster snapshot
  * </p>
  * <p>
- * This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.
+ * This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterSnapshot" target="_top">AWS API
@@ -31,7 +31,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
+     * Provides the list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> availabilityZones;
@@ -154,10 +154,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
+     * Provides the list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.
      * </p>
      * 
-     * @return Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
+     * @return Provides the list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.
      */
 
     public java.util.List<String> getAvailabilityZones() {
@@ -169,11 +169,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
+     * Provides the list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.
      * </p>
      * 
      * @param availabilityZones
-     *        Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
+     *        Provides the list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.
      */
 
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
@@ -187,7 +187,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
+     * Provides the list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -196,7 +196,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * </p>
      * 
      * @param availabilityZones
-     *        Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
+     *        Provides the list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,11 +212,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
+     * Provides the list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.
      * </p>
      * 
      * @param availabilityZones
-     *        Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.
+     *        Provides the list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

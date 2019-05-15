@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the <a>DescribeDBParameterGroups</a> action.
+ * Contains the result of a successful invocation of the <code>DescribeDBParameterGroups</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups" target="_top">AWS API
@@ -35,7 +35,7 @@ public class DescribeDBParameterGroupsResult extends com.amazonaws.AmazonWebServ
     private String marker;
     /**
      * <p>
-     * A list of <a>DBParameterGroup</a> instances.
+     * A list of <code>DBParameterGroup</code> instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DBParameterGroup> dBParameterGroups;
@@ -88,10 +88,10 @@ public class DescribeDBParameterGroupsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of <a>DBParameterGroup</a> instances.
+     * A list of <code>DBParameterGroup</code> instances.
      * </p>
      * 
-     * @return A list of <a>DBParameterGroup</a> instances.
+     * @return A list of <code>DBParameterGroup</code> instances.
      */
 
     public java.util.List<DBParameterGroup> getDBParameterGroups() {
@@ -103,11 +103,11 @@ public class DescribeDBParameterGroupsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of <a>DBParameterGroup</a> instances.
+     * A list of <code>DBParameterGroup</code> instances.
      * </p>
      * 
      * @param dBParameterGroups
-     *        A list of <a>DBParameterGroup</a> instances.
+     *        A list of <code>DBParameterGroup</code> instances.
      */
 
     public void setDBParameterGroups(java.util.Collection<DBParameterGroup> dBParameterGroups) {
@@ -121,7 +121,7 @@ public class DescribeDBParameterGroupsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of <a>DBParameterGroup</a> instances.
+     * A list of <code>DBParameterGroup</code> instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -130,7 +130,7 @@ public class DescribeDBParameterGroupsResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param dBParameterGroups
-     *        A list of <a>DBParameterGroup</a> instances.
+     *        A list of <code>DBParameterGroup</code> instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +146,11 @@ public class DescribeDBParameterGroupsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of <a>DBParameterGroup</a> instances.
+     * A list of <code>DBParameterGroup</code> instances.
      * </p>
      * 
      * @param dBParameterGroups
-     *        A list of <a>DBParameterGroup</a> instances.
+     *        A list of <code>DBParameterGroup</code> instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

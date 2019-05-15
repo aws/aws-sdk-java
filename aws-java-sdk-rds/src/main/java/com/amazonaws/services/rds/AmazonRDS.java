@@ -659,10 +659,10 @@ public interface AmazonRDS {
      * <p>
      * A DB cluster parameter group is initially created with the default parameters for the database engine used by
      * instances in the DB cluster. To provide custom values for any of the parameters, you must modify the group after
-     * creating it using <a>ModifyDBClusterParameterGroup</a>. Once you've created a DB cluster parameter group, you
-     * need to associate it with your DB cluster using <a>ModifyDBCluster</a>. When you associate a new DB cluster
-     * parameter group with a running DB cluster, you need to reboot the DB instances in the DB cluster without failover
-     * for the new DB cluster parameter group and associated settings to take effect.
+     * creating it using <code>ModifyDBClusterParameterGroup</code>. Once you've created a DB cluster parameter group,
+     * you need to associate it with your DB cluster using <code>ModifyDBCluster</code>. When you associate a new DB
+     * cluster parameter group with a running DB cluster, you need to reboot the DB instances in the DB cluster without
+     * failover for the new DB cluster parameter group and associated settings to take effect.
      * </p>
      * <important>
      * <p>
@@ -672,8 +672,8 @@ public interface AmazonRDS {
      * This is especially important for parameters that are critical when creating the default database for a DB
      * cluster, such as the character set for the default database defined by the <code>character_set_database</code>
      * parameter. You can use the <i>Parameter Groups</i> option of the <a
-     * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the <a>DescribeDBClusterParameters</a>
-     * command to verify that your DB cluster parameter group has been created or modified.
+     * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the <code>DescribeDBClusterParameters</code>
+     * action to verify that your DB cluster parameter group has been created or modified.
      * </p>
      * </important>
      * <p>
@@ -1186,8 +1186,8 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
-     * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when the
-     * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
+     * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when you skip
+     * creation of the final snapshot with the <code>SkipFinalSnapshot</code> parameter.
      * </p>
      * <p>
      * If the specified DB instance is part of an Amazon Aurora DB cluster, you can't delete the DB instance if both of
@@ -1206,8 +1206,8 @@ public interface AmazonRDS {
      * </li>
      * </ul>
      * <p>
-     * To delete a DB instance in this case, first call the <a>PromoteReadReplicaDBCluster</a> API action to promote the
-     * DB cluster so it's no longer a Read Replica. After the promotion completes, then call the
+     * To delete a DB instance in this case, first call the <code>PromoteReadReplicaDBCluster</code> API action to
+     * promote the DB cluster so it's no longer a Read Replica. After the promotion completes, then call the
      * <code>DeleteDBInstance</code> API action to delete the final instance in the DB cluster.
      * </p>
      * 
@@ -1559,7 +1559,7 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * To add or remove access for an AWS account to copy or restore a manual DB cluster snapshot, or to make the manual
-     * DB cluster snapshot public or private, use the <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     * DB cluster snapshot public or private, use the <code>ModifyDBClusterSnapshotAttribute</code> API action.
      * </p>
      * <note>
      * <p>
@@ -1794,7 +1794,7 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * To add or remove access for an AWS account to copy or restore a manual DB snapshot, or to make the manual DB
-     * snapshot public or private, use the <a>ModifyDBSnapshotAttribute</a> API action.
+     * snapshot public or private, use the <code>ModifyDBSnapshotAttribute</code> API action.
      * </p>
      * 
      * @param describeDBSnapshotAttributesRequest
@@ -2121,8 +2121,8 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * You can call <a>DescribeValidDBInstanceModifications</a> to learn what modifications you can make to your DB
-     * instance. You can use this information when you call <a>ModifyDBInstance</a>.
+     * You can call <code>DescribeValidDBInstanceModifications</code> to learn what modifications you can make to your
+     * DB instance. You can use this information when you call <code>ModifyDBInstance</code>.
      * </p>
      * 
      * @param describeValidDBInstanceModificationsRequest
@@ -2369,8 +2369,8 @@ public interface AmazonRDS {
      * especially important for parameters that are critical when creating the default database for a DB cluster, such
      * as the character set for the default database defined by the <code>character_set_database</code> parameter. You
      * can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon RDS
-     * console</a> or the <a>DescribeDBClusterParameters</a> command to verify that your DB cluster parameter group has
-     * been created or modified.
+     * console</a> or the <code>DescribeDBClusterParameters</code> action to verify that your DB cluster parameter group
+     * has been created or modified.
      * </p>
      * </important> <note>
      * <p>
@@ -2407,7 +2407,7 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * To view which AWS accounts have access to copy or restore a manual DB cluster snapshot, or whether a manual DB
-     * cluster snapshot public or private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.
+     * cluster snapshot public or private, use the <code>DescribeDBClusterSnapshotAttributes</code> API action.
      * </p>
      * <note>
      * <p>
@@ -2433,7 +2433,7 @@ public interface AmazonRDS {
      * <p>
      * Modifies settings for a DB instance. You can change one or more database configuration parameters by specifying
      * these parameters and the new values in the request. To learn what modifications you can make to your DB instance,
-     * call <a>DescribeValidDBInstanceModifications</a> before you call <a>ModifyDBInstance</a>.
+     * call <code>DescribeValidDBInstanceModifications</code> before you call <code>ModifyDBInstance</code>.
      * </p>
      * 
      * @param modifyDBInstanceRequest
@@ -2551,7 +2551,7 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * To view which AWS accounts have access to copy or restore a manual DB snapshot, or whether a manual DB snapshot
-     * public or private, use the <a>DescribeDBSnapshotAttributes</a> API action.
+     * public or private, use the <code>DescribeDBSnapshotAttributes</code> API action.
      * </p>
      * 
      * @param modifyDBSnapshotAttributeRequest
@@ -2596,8 +2596,8 @@ public interface AmazonRDS {
     /**
      * <p>
      * Modifies an existing RDS event notification subscription. Note that you can't modify the source identifiers using
-     * this call; to change source identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a> and
-     * <a>RemoveSourceIdentifierFromSubscription</a> calls.
+     * this call; to change source identifiers for a subscription, use the
+     * <code>AddSourceIdentifierToSubscription</code> and <code>RemoveSourceIdentifierFromSubscription</code> calls.
      * </p>
      * <p>
      * You can see a list of the event categories for a given SourceType in the <a
@@ -2890,9 +2890,9 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to
-     * <code>pending-reboot</code> to take effect on the next DB instance restart or <a>RebootDBInstance</a> request.
-     * You must call <a>RebootDBInstance</a> for every DB instance in your DB cluster that you want the updated static
-     * parameter to apply to.
+     * <code>pending-reboot</code> to take effect on the next DB instance restart or <code>RebootDBInstance</code>
+     * request. You must call <code>RebootDBInstance</code> for every DB instance in your DB cluster that you want the
+     * updated static parameter to apply to.
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
@@ -3075,9 +3075,9 @@ public interface AmazonRDS {
      * <note>
      * <p>
      * This action only restores the DB cluster, not the DB instances for that DB cluster. You must invoke the
-     * <a>CreateDBInstance</a> action to create DB instances for the restored DB cluster, specifying the identifier of
-     * the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB instances only after the
-     * <code>RestoreDBClusterToPointInTime</code> action has completed and the DB cluster is available.
+     * <code>CreateDBInstance</code> action to create DB instances for the restored DB cluster, specifying the
+     * identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB instances only after
+     * the <code>RestoreDBClusterToPointInTime</code> action has completed and the DB cluster is available.
      * </p>
      * </note>
      * <p>
@@ -3159,7 +3159,7 @@ public interface AmazonRDS {
      * <note>
      * <p>
      * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
-     * <a>RestoreDBClusterFromSnapshot</a>.
+     * <code>RestoreDBClusterFromSnapshot</code>.
      * </p>
      * </note>
      * 
@@ -3288,7 +3288,7 @@ public interface AmazonRDS {
      * <note>
      * <p>
      * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
-     * <a>RestoreDBClusterToPointInTime</a>.
+     * <code>RestoreDBClusterToPointInTime</code>.
      * </p>
      * </note>
      * 
@@ -3415,7 +3415,7 @@ public interface AmazonRDS {
      * <note>
      * <p>
      * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora DB clusters, use
-     * <a>StartDBCluster</a> instead.
+     * <code>StartDBCluster</code> instead.
      * </p>
      * </note>
      * 
@@ -3497,8 +3497,8 @@ public interface AmazonRDS {
      * </p>
      * <note>
      * <p>
-     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora clusters, use <a>StopDBCluster</a>
-     * instead.
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora clusters, use
+     * <code>StopDBCluster</code> instead.
      * </p>
      * </note>
      * 

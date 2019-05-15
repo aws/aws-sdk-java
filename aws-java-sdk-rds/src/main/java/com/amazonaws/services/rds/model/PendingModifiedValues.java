@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is used as a response element in the <a>ModifyDBInstance</a> action.
+ * This data type is used as a response element in the <code>ModifyDBInstance</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PendingModifiedValues" target="_top">AWS API

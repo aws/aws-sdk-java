@@ -87,6 +87,12 @@ public class ServiceConfiguration implements Serializable, Cloneable {
      * </p>
      */
     private String privateDnsName;
+    /**
+     * <p>
+     * Any tags assigned to the service.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -676,6 +682,79 @@ public class ServiceConfiguration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Any tags assigned to the service.
+     * </p>
+     * 
+     * @return Any tags assigned to the service.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the service.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the service.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the service.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceConfiguration withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the service.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceConfiguration withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -706,7 +785,9 @@ public class ServiceConfiguration implements Serializable, Cloneable {
         if (getBaseEndpointDnsNames() != null)
             sb.append("BaseEndpointDnsNames: ").append(getBaseEndpointDnsNames()).append(",");
         if (getPrivateDnsName() != null)
-            sb.append("PrivateDnsName: ").append(getPrivateDnsName());
+            sb.append("PrivateDnsName: ").append(getPrivateDnsName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -761,6 +842,10 @@ public class ServiceConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getPrivateDnsName() != null && other.getPrivateDnsName().equals(this.getPrivateDnsName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -779,6 +864,7 @@ public class ServiceConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNetworkLoadBalancerArns() == null) ? 0 : getNetworkLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getBaseEndpointDnsNames() == null) ? 0 : getBaseEndpointDnsNames().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

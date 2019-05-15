@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains the details of an Amazon RDS DB parameter group.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.
+ * This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBParameterGroup" target="_top">AWS API

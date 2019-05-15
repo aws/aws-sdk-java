@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum SegmentTemplateFormat {
 
     NUMBER_WITH_TIMELINE("NUMBER_WITH_TIMELINE"),
-    TIME_WITH_TIMELINE("TIME_WITH_TIMELINE");
+    TIME_WITH_TIMELINE("TIME_WITH_TIMELINE"),
+    NUMBER_WITH_DURATION("NUMBER_WITH_DURATION");
 
     private String value;
 

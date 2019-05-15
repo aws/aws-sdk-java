@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains the details of an Amazon RDS DB subnet group.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
+ * This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSubnetGroup" target="_top">AWS API
@@ -55,7 +55,7 @@ public class DBSubnetGroup implements Serializable, Cloneable {
     private String subnetGroupStatus;
     /**
      * <p>
-     * Contains a list of <a>Subnet</a> elements.
+     * Contains a list of <code>Subnet</code> elements.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Subnet> subnets;
@@ -228,10 +228,10 @@ public class DBSubnetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>Subnet</a> elements.
+     * Contains a list of <code>Subnet</code> elements.
      * </p>
      * 
-     * @return Contains a list of <a>Subnet</a> elements.
+     * @return Contains a list of <code>Subnet</code> elements.
      */
 
     public java.util.List<Subnet> getSubnets() {
@@ -243,11 +243,11 @@ public class DBSubnetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>Subnet</a> elements.
+     * Contains a list of <code>Subnet</code> elements.
      * </p>
      * 
      * @param subnets
-     *        Contains a list of <a>Subnet</a> elements.
+     *        Contains a list of <code>Subnet</code> elements.
      */
 
     public void setSubnets(java.util.Collection<Subnet> subnets) {
@@ -261,7 +261,7 @@ public class DBSubnetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>Subnet</a> elements.
+     * Contains a list of <code>Subnet</code> elements.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -270,7 +270,7 @@ public class DBSubnetGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param subnets
-     *        Contains a list of <a>Subnet</a> elements.
+     *        Contains a list of <code>Subnet</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -286,11 +286,11 @@ public class DBSubnetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>Subnet</a> elements.
+     * Contains a list of <code>Subnet</code> elements.
      * </p>
      * 
      * @param subnets
-     *        Contains a list of <a>Subnet</a> elements.
+     *        Contains a list of <code>Subnet</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the <a>DescribeEvents</a> action.
+ * Contains the result of a successful invocation of the <code>DescribeEvents</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents" target="_top">AWS API
@@ -35,7 +35,7 @@ public class DescribeEventsResult extends com.amazonaws.AmazonWebServiceResult<c
     private String marker;
     /**
      * <p>
-     * A list of <a>Event</a> instances.
+     * A list of <code>Event</code> instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Event> events;
@@ -88,10 +88,10 @@ public class DescribeEventsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of <a>Event</a> instances.
+     * A list of <code>Event</code> instances.
      * </p>
      * 
-     * @return A list of <a>Event</a> instances.
+     * @return A list of <code>Event</code> instances.
      */
 
     public java.util.List<Event> getEvents() {
@@ -103,11 +103,11 @@ public class DescribeEventsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of <a>Event</a> instances.
+     * A list of <code>Event</code> instances.
      * </p>
      * 
      * @param events
-     *        A list of <a>Event</a> instances.
+     *        A list of <code>Event</code> instances.
      */
 
     public void setEvents(java.util.Collection<Event> events) {
@@ -121,7 +121,7 @@ public class DescribeEventsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of <a>Event</a> instances.
+     * A list of <code>Event</code> instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -130,7 +130,7 @@ public class DescribeEventsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param events
-     *        A list of <a>Event</a> instances.
+     *        A list of <code>Event</code> instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +146,11 @@ public class DescribeEventsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of <a>Event</a> instances.
+     * A list of <code>Event</code> instances.
      * </p>
      * 
      * @param events
-     *        A list of <a>Event</a> instances.
+     *        A list of <code>Event</code> instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

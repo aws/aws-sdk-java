@@ -50,6 +50,11 @@ public class ServiceDetailStaxUnmarshaller implements Unmarshaller<ServiceDetail
                     continue;
                 }
 
+                if (context.testExpression("serviceId", targetDepth)) {
+                    serviceDetail.setServiceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("serviceType", targetDepth)) {
                     serviceDetail.withServiceType(new ArrayList<ServiceTypeDetail>());
                     continue;
@@ -104,6 +109,17 @@ public class ServiceDetailStaxUnmarshaller implements Unmarshaller<ServiceDetail
                     serviceDetail.setManagesVpcEndpoints(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    serviceDetail.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    serviceDetail.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return serviceDetail;

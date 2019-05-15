@@ -366,6 +366,12 @@ public interface AWSCodePipeline {
      *         The validation was specified in an invalid format.
      * @throws LimitExceededException
      *         The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.
+     * @throws TooManyTagsException
+     *         The tags limit for a resource has been exceeded.
+     * @throws InvalidTagsException
+     *         The specified resource tags are invalid.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
      * @sample AWSCodePipeline.CreateCustomActionType
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType"
      *      target="_top">AWS API Documentation</a>
@@ -394,6 +400,12 @@ public interface AWSCodePipeline {
      *         The specified structure was specified in an invalid format.
      * @throws LimitExceededException
      *         The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.
+     * @throws TooManyTagsException
+     *         The tags limit for a resource has been exceeded.
+     * @throws InvalidTagsException
+     *         The specified resource tags are invalid.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
      * @sample AWSCodePipeline.CreatePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline" target="_top">AWS
      *      API Documentation</a>
@@ -420,6 +432,8 @@ public interface AWSCodePipeline {
      * @return Result of the DeleteCustomActionType operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
      * @sample AWSCodePipeline.DeleteCustomActionType
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType"
      *      target="_top">AWS API Documentation</a>
@@ -436,6 +450,8 @@ public interface AWSCodePipeline {
      * @return Result of the DeletePipeline operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
      * @sample AWSCodePipeline.DeletePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline" target="_top">AWS
      *      API Documentation</a>
@@ -454,6 +470,8 @@ public interface AWSCodePipeline {
      * @return Result of the DeleteWebhook operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
      * @sample AWSCodePipeline.DeleteWebhook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteWebhook" target="_top">AWS API
      *      Documentation</a>
@@ -724,6 +742,28 @@ public interface AWSCodePipeline {
 
     /**
      * <p>
+     * Gets the set of key/value pairs (metadata) that are used to manage the resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @throws ResourceNotFoundException
+     *         The specified resource was specified in an invalid format.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format. Make sure that the next token you provided is the
+     *         token returned by a previous call.
+     * @throws InvalidArnException
+     *         The specified resource ARN is invalid.
+     * @sample AWSCodePipeline.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Gets a listing of all the webhooks in this region for this account. The output lists all webhooks and includes
      * the webhook URL and ARN, as well the configuration for each webhook.
      * </p>
@@ -949,6 +989,12 @@ public interface AWSCodePipeline {
      *         The specified authentication type is in an invalid format.
      * @throws PipelineNotFoundException
      *         The specified pipeline was specified in an invalid format or cannot be found.
+     * @throws TooManyTagsException
+     *         The tags limit for a resource has been exceeded.
+     * @throws InvalidTagsException
+     *         The specified resource tags are invalid.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
      * @sample AWSCodePipeline.PutWebhook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutWebhook" target="_top">AWS API
      *      Documentation</a>
@@ -1017,6 +1063,54 @@ public interface AWSCodePipeline {
      *      target="_top">AWS API Documentation</a>
      */
     StartPipelineExecutionResult startPipelineExecution(StartPipelineExecutionRequest startPipelineExecutionRequest);
+
+    /**
+     * <p>
+     * Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @throws ResourceNotFoundException
+     *         The specified resource was specified in an invalid format.
+     * @throws InvalidArnException
+     *         The specified resource ARN is invalid.
+     * @throws TooManyTagsException
+     *         The tags limit for a resource has been exceeded.
+     * @throws InvalidTagsException
+     *         The specified resource tags are invalid.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
+     * @sample AWSCodePipeline.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from an AWS resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @throws ResourceNotFoundException
+     *         The specified resource was specified in an invalid format.
+     * @throws InvalidArnException
+     *         The specified resource ARN is invalid.
+     * @throws InvalidTagsException
+     *         The specified resource tags are invalid.
+     * @throws ConcurrentModificationException
+     *         Unable to modify the tag due to a simultaneous update request.
+     * @sample AWSCodePipeline.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

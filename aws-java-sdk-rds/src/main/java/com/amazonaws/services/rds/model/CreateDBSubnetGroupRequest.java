@@ -51,7 +51,11 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
-
+    /**
+     * <p>
+     * Tags to assign to the DB subnet group.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
@@ -247,7 +251,11 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * Tags to assign to the DB subnet group.
+     * </p>
+     * 
+     * @return Tags to assign to the DB subnet group.
      */
 
     public java.util.List<Tag> getTags() {
@@ -258,7 +266,12 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Tags to assign to the DB subnet group.
+     * </p>
+     * 
      * @param tags
+     *        Tags to assign to the DB subnet group.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -272,12 +285,16 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * Tags to assign to the DB subnet group.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        Tags to assign to the DB subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,7 +309,12 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Tags to assign to the DB subnet group.
+     * </p>
+     * 
      * @param tags
+     *        Tags to assign to the DB subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

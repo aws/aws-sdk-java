@@ -22,17 +22,17 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * <a>AuthorizeDBSecurityGroupIngress</a>
+ * <code>AuthorizeDBSecurityGroupIngress</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeDBSecurityGroups</a>
+ * <code>DescribeDBSecurityGroups</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>RevokeDBSecurityGroupIngress</a>
+ * <code>RevokeDBSecurityGroupIngress</code>
  * </p>
  * </li>
  * </ul>

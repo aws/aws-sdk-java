@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains the details for an Amazon RDS DB security group.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>DescribeDBSecurityGroups</a> action.
+ * This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSecurityGroup" target="_top">AWS API
@@ -55,13 +55,13 @@ public class DBSecurityGroup implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * Contains a list of <a>EC2SecurityGroup</a> elements.
+     * Contains a list of <code>EC2SecurityGroup</code> elements.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EC2SecurityGroup> eC2SecurityGroups;
     /**
      * <p>
-     * Contains a list of <a>IPRange</a> elements.
+     * Contains a list of <code>IPRange</code> elements.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IPRange> iPRanges;
@@ -234,10 +234,10 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>EC2SecurityGroup</a> elements.
+     * Contains a list of <code>EC2SecurityGroup</code> elements.
      * </p>
      * 
-     * @return Contains a list of <a>EC2SecurityGroup</a> elements.
+     * @return Contains a list of <code>EC2SecurityGroup</code> elements.
      */
 
     public java.util.List<EC2SecurityGroup> getEC2SecurityGroups() {
@@ -249,11 +249,11 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>EC2SecurityGroup</a> elements.
+     * Contains a list of <code>EC2SecurityGroup</code> elements.
      * </p>
      * 
      * @param eC2SecurityGroups
-     *        Contains a list of <a>EC2SecurityGroup</a> elements.
+     *        Contains a list of <code>EC2SecurityGroup</code> elements.
      */
 
     public void setEC2SecurityGroups(java.util.Collection<EC2SecurityGroup> eC2SecurityGroups) {
@@ -267,7 +267,7 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>EC2SecurityGroup</a> elements.
+     * Contains a list of <code>EC2SecurityGroup</code> elements.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -276,7 +276,7 @@ public class DBSecurityGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param eC2SecurityGroups
-     *        Contains a list of <a>EC2SecurityGroup</a> elements.
+     *        Contains a list of <code>EC2SecurityGroup</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,11 +292,11 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>EC2SecurityGroup</a> elements.
+     * Contains a list of <code>EC2SecurityGroup</code> elements.
      * </p>
      * 
      * @param eC2SecurityGroups
-     *        Contains a list of <a>EC2SecurityGroup</a> elements.
+     *        Contains a list of <code>EC2SecurityGroup</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,10 +307,10 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>IPRange</a> elements.
+     * Contains a list of <code>IPRange</code> elements.
      * </p>
      * 
-     * @return Contains a list of <a>IPRange</a> elements.
+     * @return Contains a list of <code>IPRange</code> elements.
      */
 
     public java.util.List<IPRange> getIPRanges() {
@@ -322,11 +322,11 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>IPRange</a> elements.
+     * Contains a list of <code>IPRange</code> elements.
      * </p>
      * 
      * @param iPRanges
-     *        Contains a list of <a>IPRange</a> elements.
+     *        Contains a list of <code>IPRange</code> elements.
      */
 
     public void setIPRanges(java.util.Collection<IPRange> iPRanges) {
@@ -340,7 +340,7 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>IPRange</a> elements.
+     * Contains a list of <code>IPRange</code> elements.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -349,7 +349,7 @@ public class DBSecurityGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param iPRanges
-     *        Contains a list of <a>IPRange</a> elements.
+     *        Contains a list of <code>IPRange</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -365,11 +365,11 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>IPRange</a> elements.
+     * Contains a list of <code>IPRange</code> elements.
      * </p>
      * 
      * @param iPRanges
-     *        Contains a list of <a>IPRange</a> elements.
+     *        Contains a list of <code>IPRange</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

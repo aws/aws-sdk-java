@@ -85,6 +85,12 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private ArtifactDetails outputArtifactDetails;
+    /**
+     * <p>
+     * The tags for the custom action.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -544,6 +550,76 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The tags for the custom action.
+     * </p>
+     * 
+     * @return The tags for the custom action.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags for the custom action.
+     * </p>
+     * 
+     * @param tags
+     *        The tags for the custom action.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags for the custom action.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags for the custom action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomActionTypeRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags for the custom action.
+     * </p>
+     * 
+     * @param tags
+     *        The tags for the custom action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomActionTypeRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -568,7 +644,9 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
         if (getInputArtifactDetails() != null)
             sb.append("InputArtifactDetails: ").append(getInputArtifactDetails()).append(",");
         if (getOutputArtifactDetails() != null)
-            sb.append("OutputArtifactDetails: ").append(getOutputArtifactDetails());
+            sb.append("OutputArtifactDetails: ").append(getOutputArtifactDetails()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -611,6 +689,10 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getOutputArtifactDetails() != null && other.getOutputArtifactDetails().equals(this.getOutputArtifactDetails()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -626,6 +708,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getConfigurationProperties() == null) ? 0 : getConfigurationProperties().hashCode());
         hashCode = prime * hashCode + ((getInputArtifactDetails() == null) ? 0 : getInputArtifactDetails().hashCode());
         hashCode = prime * hashCode + ((getOutputArtifactDetails() == null) ? 0 : getOutputArtifactDetails().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -76,8 +76,7 @@ public class DescribeReservedDBInstancesRequest extends com.amazonaws.AmazonWebS
     private String offeringType;
     /**
      * <p>
-     * The Multi-AZ filter value. Specify this parameter to show only those reservations matching the specified Multi-AZ
-     * parameter.
+     * A value that indicates whether to show only those reservations that support Multi-AZ.
      * </p>
      */
     private Boolean multiAZ;
@@ -417,13 +416,11 @@ public class DescribeReservedDBInstancesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Multi-AZ filter value. Specify this parameter to show only those reservations matching the specified Multi-AZ
-     * parameter.
+     * A value that indicates whether to show only those reservations that support Multi-AZ.
      * </p>
      * 
      * @param multiAZ
-     *        The Multi-AZ filter value. Specify this parameter to show only those reservations matching the specified
-     *        Multi-AZ parameter.
+     *        A value that indicates whether to show only those reservations that support Multi-AZ.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -432,12 +429,10 @@ public class DescribeReservedDBInstancesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Multi-AZ filter value. Specify this parameter to show only those reservations matching the specified Multi-AZ
-     * parameter.
+     * A value that indicates whether to show only those reservations that support Multi-AZ.
      * </p>
      * 
-     * @return The Multi-AZ filter value. Specify this parameter to show only those reservations matching the specified
-     *         Multi-AZ parameter.
+     * @return A value that indicates whether to show only those reservations that support Multi-AZ.
      */
 
     public Boolean getMultiAZ() {
@@ -446,13 +441,11 @@ public class DescribeReservedDBInstancesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Multi-AZ filter value. Specify this parameter to show only those reservations matching the specified Multi-AZ
-     * parameter.
+     * A value that indicates whether to show only those reservations that support Multi-AZ.
      * </p>
      * 
      * @param multiAZ
-     *        The Multi-AZ filter value. Specify this parameter to show only those reservations matching the specified
-     *        Multi-AZ parameter.
+     *        A value that indicates whether to show only those reservations that support Multi-AZ.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -463,12 +456,10 @@ public class DescribeReservedDBInstancesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Multi-AZ filter value. Specify this parameter to show only those reservations matching the specified Multi-AZ
-     * parameter.
+     * A value that indicates whether to show only those reservations that support Multi-AZ.
      * </p>
      * 
-     * @return The Multi-AZ filter value. Specify this parameter to show only those reservations matching the specified
-     *         Multi-AZ parameter.
+     * @return A value that indicates whether to show only those reservations that support Multi-AZ.
      */
 
     public Boolean isMultiAZ() {

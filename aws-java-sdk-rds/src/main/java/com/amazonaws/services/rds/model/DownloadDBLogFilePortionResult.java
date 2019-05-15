@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is used as a response element to <a>DownloadDBLogFilePortion</a>.
+ * This data type is used as a response element to <code>DownloadDBLogFilePortion</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion" target="_top">AWS API
