@@ -40,6 +40,7 @@ import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.medialive.AWSMediaLiveClientBuilder;
+import com.amazonaws.services.medialive.waiters.AWSMediaLiveWaiters;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -63,6 +64,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "medialive";
+
+    private volatile AWSMediaLiveWaiters waiters;
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
@@ -2240,6 +2243,26 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public AWSMediaLiveWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AWSMediaLiveWaiters(this);
+                }
+            }
+        }
+        return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

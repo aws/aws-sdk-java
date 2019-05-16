@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.medialive.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.medialive.waiters.AWSMediaLiveWaiters;
 
 /**
  * Abstract implementation of {@code AWSMediaLive}. Convenient method forms pass through to the corresponding overload
@@ -189,6 +190,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSMediaLiveWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

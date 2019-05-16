@@ -5255,6 +5255,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         final byte[] bytes = bucketConfigurationXmlFactory
                 .convertToXmlByteArray(bucketReplicationConfiguration);
 
+        addHeaderIfNotNull(request, Headers.OBJECT_LOCK_TOKEN, setBucketReplicationConfigurationRequest.getToken());
         request.addHeader("Content-Length", String.valueOf(bytes.length));
         request.addHeader("Content-Type", "application/xml");
         request.setContent(new ByteArrayInputStream(bytes));

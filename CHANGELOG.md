@@ -1,3 +1,12 @@
+# __1.11.554__ __2019-05-16__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - Added channel state waiters to MediaLive.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - This release updates the Amazon S3 PUT Bucket replication API to include a new optional field named token, which allows you to add a replication configuration to an S3 bucket that has Object Lock enabled.
+
 # __1.11.553__ __2019-05-15__
 ## __AWS CodePipeline__
   - ### Features

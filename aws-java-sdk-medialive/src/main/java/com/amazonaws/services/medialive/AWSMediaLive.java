@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.medialive.model.*;
+import com.amazonaws.services.medialive.waiters.AWSMediaLiveWaiters;
 
 /**
  * Interface for accessing MediaLive.
@@ -858,5 +859,7 @@ public interface AWSMediaLive {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AWSMediaLiveWaiters waiters();
 
 }
