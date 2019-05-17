@@ -54,6 +54,8 @@ public class UpdateFleetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableDefaultInternetAccess").build();
     private static final MarshallingInfo<StructuredPojo> DOMAINJOININFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainJoinInfo").build();
+    private static final MarshallingInfo<Integer> IDLEDISCONNECTTIMEOUTINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdleDisconnectTimeoutInSeconds").build();
     private static final MarshallingInfo<List> ATTRIBUTESTODELETE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttributesToDelete").build();
 
@@ -86,6 +88,7 @@ public class UpdateFleetRequestMarshaller {
             protocolMarshaller.marshall(updateFleetRequest.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(updateFleetRequest.getEnableDefaultInternetAccess(), ENABLEDEFAULTINTERNETACCESS_BINDING);
             protocolMarshaller.marshall(updateFleetRequest.getDomainJoinInfo(), DOMAINJOININFO_BINDING);
+            protocolMarshaller.marshall(updateFleetRequest.getIdleDisconnectTimeoutInSeconds(), IDLEDISCONNECTTIMEOUTINSECONDS_BINDING);
             protocolMarshaller.marshall(updateFleetRequest.getAttributesToDelete(), ATTRIBUTESTODELETE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

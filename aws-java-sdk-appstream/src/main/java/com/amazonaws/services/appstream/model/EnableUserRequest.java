@@ -29,6 +29,13 @@ public class EnableUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The email address of the user.
      * </p>
+     * <note>
+     * <p>
+     * Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the
+     * same capitalization as the email address specified when their user pool account was created, a
+     * "user does not exist" error message displays.
+     * </p>
+     * </note>
      */
     private String userName;
     /**
@@ -42,9 +49,21 @@ public class EnableUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The email address of the user.
      * </p>
+     * <note>
+     * <p>
+     * Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the
+     * same capitalization as the email address specified when their user pool account was created, a
+     * "user does not exist" error message displays.
+     * </p>
+     * </note>
      * 
      * @param userName
-     *        The email address of the user.
+     *        The email address of the user.</p> <note>
+     *        <p>
+     *        Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use
+     *        the same capitalization as the email address specified when their user pool account was created, a
+     *        "user does not exist" error message displays.
+     *        </p>
      */
 
     public void setUserName(String userName) {
@@ -55,8 +74,20 @@ public class EnableUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The email address of the user.
      * </p>
+     * <note>
+     * <p>
+     * Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the
+     * same capitalization as the email address specified when their user pool account was created, a
+     * "user does not exist" error message displays.
+     * </p>
+     * </note>
      * 
-     * @return The email address of the user.
+     * @return The email address of the user.</p> <note>
+     *         <p>
+     *         Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't
+     *         use the same capitalization as the email address specified when their user pool account was created, a
+     *         "user does not exist" error message displays.
+     *         </p>
      */
 
     public String getUserName() {
@@ -67,9 +98,21 @@ public class EnableUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The email address of the user.
      * </p>
+     * <note>
+     * <p>
+     * Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the
+     * same capitalization as the email address specified when their user pool account was created, a
+     * "user does not exist" error message displays.
+     * </p>
+     * </note>
      * 
      * @param userName
-     *        The email address of the user.
+     *        The email address of the user.</p> <note>
+     *        <p>
+     *        Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use
+     *        the same capitalization as the email address specified when their user pool account was created, a
+     *        "user does not exist" error message displays.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

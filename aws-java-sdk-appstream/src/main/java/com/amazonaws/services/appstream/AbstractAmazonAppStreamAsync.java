@@ -158,6 +158,19 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUsageReportSubscriptionResult> createUsageReportSubscriptionAsync(CreateUsageReportSubscriptionRequest request) {
+
+        return createUsageReportSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUsageReportSubscriptionResult> createUsageReportSubscriptionAsync(CreateUsageReportSubscriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateUsageReportSubscriptionRequest, CreateUsageReportSubscriptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest request) {
 
         return createUserAsync(request, null);
@@ -244,6 +257,19 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     @Override
     public java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(DeleteStackRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, DeleteStackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsageReportSubscriptionResult> deleteUsageReportSubscriptionAsync(DeleteUsageReportSubscriptionRequest request) {
+
+        return deleteUsageReportSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsageReportSubscriptionResult> deleteUsageReportSubscriptionAsync(DeleteUsageReportSubscriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteUsageReportSubscriptionRequest, DeleteUsageReportSubscriptionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -348,6 +374,21 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     @Override
     public java.util.concurrent.Future<DescribeStacksResult> describeStacksAsync(DescribeStacksRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeStacksRequest, DescribeStacksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUsageReportSubscriptionsResult> describeUsageReportSubscriptionsAsync(
+            DescribeUsageReportSubscriptionsRequest request) {
+
+        return describeUsageReportSubscriptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUsageReportSubscriptionsResult> describeUsageReportSubscriptionsAsync(
+            DescribeUsageReportSubscriptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeUsageReportSubscriptionsRequest, DescribeUsageReportSubscriptionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

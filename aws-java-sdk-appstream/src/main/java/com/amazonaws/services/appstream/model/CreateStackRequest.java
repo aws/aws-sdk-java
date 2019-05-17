@@ -86,6 +86,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
+     * <p>
      * For more information about tags, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
@@ -508,6 +515,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
+     * <p>
      * For more information about tags, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
@@ -517,6 +531,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         Environment=Test. If you do not specify a value, Environment=. </p>
      *         <p>
      *         If you do not specify a value, the value is set to an empty string.
+     *         </p>
+     *         <p>
+     *         Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following
+     *         special characters:
+     *         </p>
+     *         <p>
+     *         _ . : / = + \ - @
      *         </p>
      *         <p>
      *         For more information about tags, see <a
@@ -537,6 +558,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
+     * <p>
      * For more information about tags, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
@@ -547,6 +575,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Environment=Test. If you do not specify a value, Environment=. </p>
      *        <p>
      *        If you do not specify a value, the value is set to an empty string.
+     *        </p>
+     *        <p>
+     *        Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following
+     *        special characters:
+     *        </p>
+     *        <p>
+     *        _ . : / = + \ - @
      *        </p>
      *        <p>
      *        For more information about tags, see <a
@@ -567,6 +602,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
+     * <p>
      * For more information about tags, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
@@ -577,6 +619,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Environment=Test. If you do not specify a value, Environment=. </p>
      *        <p>
      *        If you do not specify a value, the value is set to an empty string.
+     *        </p>
+     *        <p>
+     *        Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following
+     *        special characters:
+     *        </p>
+     *        <p>
+     *        _ . : / = + \ - @
      *        </p>
      *        <p>
      *        For more information about tags, see <a

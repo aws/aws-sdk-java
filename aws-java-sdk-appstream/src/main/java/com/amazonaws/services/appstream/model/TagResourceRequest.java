@@ -39,6 +39,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * If you do not specify a value, the value is set to an empty string.
      * </p>
+     * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
      */
     private java.util.Map<String, String> tags;
 
@@ -90,11 +97,25 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * If you do not specify a value, the value is set to an empty string.
      * </p>
+     * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
      * 
      * @return The tags to associate. A tag is a key-value pair, and the value is optional. For example,
      *         Environment=Test. If you do not specify a value, Environment=. </p>
      *         <p>
      *         If you do not specify a value, the value is set to an empty string.
+     *         </p>
+     *         <p>
+     *         Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following
+     *         special characters:
+     *         </p>
+     *         <p>
+     *         _ . : / = + \ - @
      */
 
     public java.util.Map<String, String> getTags() {
@@ -109,12 +130,26 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * If you do not specify a value, the value is set to an empty string.
      * </p>
+     * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
      * 
      * @param tags
      *        The tags to associate. A tag is a key-value pair, and the value is optional. For example,
      *        Environment=Test. If you do not specify a value, Environment=. </p>
      *        <p>
      *        If you do not specify a value, the value is set to an empty string.
+     *        </p>
+     *        <p>
+     *        Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following
+     *        special characters:
+     *        </p>
+     *        <p>
+     *        _ . : / = + \ - @
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -129,12 +164,26 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * If you do not specify a value, the value is set to an empty string.
      * </p>
+     * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
      * 
      * @param tags
      *        The tags to associate. A tag is a key-value pair, and the value is optional. For example,
      *        Environment=Test. If you do not specify a value, Environment=. </p>
      *        <p>
      *        If you do not specify a value, the value is set to an empty string.
+     *        </p>
+     *        <p>
+     *        Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following
+     *        special characters:
+     *        </p>
+     *        <p>
+     *        _ . : / = + \ - @
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

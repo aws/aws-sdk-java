@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a connector to enable persistent storage for users.
+ * Describes a connector that enables persistent storage for users.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StorageConnector" target="_top">AWS API

@@ -39,7 +39,7 @@ public class UpdateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
     private java.util.List<String> organizationalUnitDistinguishedNames;
     /**
      * <p>
-     * The credentials for the service account used by the streaming instance to connect to the directory.
+     * The credentials for the service account used by the fleet or image builder to connect to the directory.
      * </p>
      */
     private ServiceAccountCredentials serviceAccountCredentials;
@@ -157,11 +157,11 @@ public class UpdateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The credentials for the service account used by the streaming instance to connect to the directory.
+     * The credentials for the service account used by the fleet or image builder to connect to the directory.
      * </p>
      * 
      * @param serviceAccountCredentials
-     *        The credentials for the service account used by the streaming instance to connect to the directory.
+     *        The credentials for the service account used by the fleet or image builder to connect to the directory.
      */
 
     public void setServiceAccountCredentials(ServiceAccountCredentials serviceAccountCredentials) {
@@ -170,10 +170,10 @@ public class UpdateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The credentials for the service account used by the streaming instance to connect to the directory.
+     * The credentials for the service account used by the fleet or image builder to connect to the directory.
      * </p>
      * 
-     * @return The credentials for the service account used by the streaming instance to connect to the directory.
+     * @return The credentials for the service account used by the fleet or image builder to connect to the directory.
      */
 
     public ServiceAccountCredentials getServiceAccountCredentials() {
@@ -182,11 +182,11 @@ public class UpdateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The credentials for the service account used by the streaming instance to connect to the directory.
+     * The credentials for the service account used by the fleet or image builder to connect to the directory.
      * </p>
      * 
      * @param serviceAccountCredentials
-     *        The credentials for the service account used by the streaming instance to connect to the directory.
+     *        The credentials for the service account used by the fleet or image builder to connect to the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -29,11 +29,11 @@ import com.amazonaws.services.appstream.waiters.AmazonAppStreamWaiters;
  * <p>
  * <fullname>Amazon AppStream 2.0</fullname>
  * <p>
- * This is the <i>Amazon AppStream 2.0 API Reference</i>. This reference provides descriptions and syntax for each of
- * the actions and data types in AppStream 2.0. AppStream 2.0 is a fully managed application streaming service. You
- * centrally manage your desktop applications on AppStream 2.0 and securely deliver them to any computer. AppStream 2.0
- * manages the AWS resources required to host and run your applications, scales automatically, and provides access to
- * your users on demand.
+ * This is the <i>Amazon AppStream 2.0 API Reference</i>. It provides descriptions and syntax for each of the actions
+ * and data types in AppStream 2.0. AppStream 2.0 is a fully managed application streaming service. You centrally manage
+ * your desktop applications on AppStream 2.0 and securely deliver them to any computer. AppStream 2.0 manages the AWS
+ * resources required to host and run your applications, scales automatically, and provides access to your users on
+ * demand.
  * </p>
  * <p>
  * To learn more about AppStream 2.0, see the following resources:
@@ -198,8 +198,8 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Creates a Directory Config object in AppStream 2.0. This object includes the information required to join
-     * streaming instances to an Active Directory domain.
+     * Creates a Directory Config object in AppStream 2.0. This object includes the configuration information required
+     * to join fleets and image builders to Microsoft Active Directory domains.
      * </p>
      * 
      * @param createDirectoryConfigRequest
@@ -358,6 +358,22 @@ public interface AmazonAppStream {
 
     /**
      * <p>
+     * Creates a usage report subscription. Usage reports are generated daily.
+     * </p>
+     * 
+     * @param createUsageReportSubscriptionRequest
+     * @return Result of the CreateUsageReportSubscription operation returned by the service.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
+     * @sample AmazonAppStream.CreateUsageReportSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUsageReportSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateUsageReportSubscriptionResult createUsageReportSubscription(CreateUsageReportSubscriptionRequest createUsageReportSubscriptionRequest);
+
+    /**
+     * <p>
      * Creates a new user in the user pool.
      * </p>
      * 
@@ -499,6 +515,24 @@ public interface AmazonAppStream {
 
     /**
      * <p>
+     * Disables usage report generation.
+     * </p>
+     * 
+     * @param deleteUsageReportSubscriptionRequest
+     * @return Result of the DeleteUsageReportSubscription operation returned by the service.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DeleteUsageReportSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUsageReportSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteUsageReportSubscriptionResult deleteUsageReportSubscription(DeleteUsageReportSubscriptionRequest deleteUsageReportSubscriptionRequest);
+
+    /**
+     * <p>
      * Deletes a user from the user pool.
      * </p>
      * 
@@ -516,7 +550,8 @@ public interface AmazonAppStream {
      * <p>
      * Retrieves a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names
      * for these objects are provided. Otherwise, all Directory Config objects in the account are described. These
-     * objects include the information required to join streaming instances to an Active Directory domain.
+     * objects include the configuration information required to join fleets and image builders to Microsoft Active
+     * Directory domains.
      * </p>
      * <p>
      * Although the response syntax in this topic includes the account password, this password is not returned in the
@@ -600,9 +635,9 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Retrieves a list that describes the active streaming sessions for a specified stack and fleet. If a value for
-     * <code>UserId</code> is provided for the stack and fleet, only streaming sessions for that user are described. If
-     * an authentication type is not provided, the default is to authenticate users using a streaming URL.
+     * Retrieves a list that describes the streaming sessions for a specified stack and fleet. If a UserId is provided
+     * for the stack and fleet, only streaming sessions for that user are described. If an authentication type is not
+     * provided, the default is to authenticate users using a streaming URL.
      * </p>
      * 
      * @param describeSessionsRequest
@@ -630,6 +665,24 @@ public interface AmazonAppStream {
      *      Documentation</a>
      */
     DescribeStacksResult describeStacks(DescribeStacksRequest describeStacksRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more usage report subscriptions.
+     * </p>
+     * 
+     * @param describeUsageReportSubscriptionsRequest
+     * @return Result of the DescribeUsageReportSubscriptions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
+     * @sample AmazonAppStream.DescribeUsageReportSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsageReportSubscriptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeUsageReportSubscriptionsResult describeUsageReportSubscriptions(DescribeUsageReportSubscriptionsRequest describeUsageReportSubscriptionsRequest);
 
     /**
      * <p>
@@ -933,8 +986,8 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Updates the specified Directory Config object in AppStream 2.0. This object includes the information required to
-     * join streaming instances to an Active Directory domain.
+     * Updates the specified Directory Config object in AppStream 2.0. This object includes the configuration
+     * information required to join fleets and image builders to Microsoft Active Directory domains.
      * </p>
      * 
      * @param updateDirectoryConfigRequest
@@ -957,9 +1010,10 @@ public interface AmazonAppStream {
      * </p>
      * <p>
      * If the fleet is in the <code>STOPPED</code> state, you can update any attribute except the fleet name. If the
-     * fleet is in the <code>RUNNING</code> state, you can update the <code>DisplayName</code> and
-     * <code>ComputeCapacity</code> attributes. If the fleet is in the <code>STARTING</code> or <code>STOPPING</code>
-     * state, you can't update it.
+     * fleet is in the <code>RUNNING</code> state, you can update the <code>DisplayName</code>,
+     * <code>ComputeCapacity</code>, <code>ImageARN</code>, <code>ImageName</code>, and
+     * <code>DisconnectTimeoutInSeconds</code> attributes. If the fleet is in the <code>STARTING</code> or
+     * <code>STOPPING</code> state, you can't update it.
      * </p>
      * 
      * @param updateFleetRequest
@@ -1034,6 +1088,8 @@ public interface AmazonAppStream {
      *         The image does not support storage connectors.
      * @throws OperationNotPermittedException
      *         The attempted operation is not permitted.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
      * @sample AmazonAppStream.UpdateStack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack" target="_top">AWS API
      *      Documentation</a>
