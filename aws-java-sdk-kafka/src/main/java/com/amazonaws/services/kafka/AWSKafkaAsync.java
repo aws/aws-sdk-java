@@ -65,6 +65,37 @@ public interface AWSKafkaAsync extends AWSKafka {
 
     /**
      * <p>
+     * Creates a new MSK configuration.
+     * </p>
+     * 
+     * @param createConfigurationRequest
+     * @return A Java Future containing the result of the CreateConfiguration operation returned by the service.
+     * @sample AWSKafkaAsync.CreateConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateConfiguration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConfigurationResult> createConfigurationAsync(CreateConfigurationRequest createConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a new MSK configuration.
+     * </p>
+     * 
+     * @param createConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateConfiguration operation returned by the service.
+     * @sample AWSKafkaAsyncHandler.CreateConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateConfiguration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConfigurationResult> createConfigurationAsync(CreateConfigurationRequest createConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateConfigurationRequest, CreateConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the MSK cluster specified by the Amazon Resource Name (ARN) in the request.
      * </p>
      * 
@@ -127,6 +158,72 @@ public interface AWSKafkaAsync extends AWSKafka {
 
     /**
      * <p>
+     * Returns a description of this MSK configuration.
+     * </p>
+     * 
+     * @param describeConfigurationRequest
+     * @return A Java Future containing the result of the DescribeConfiguration operation returned by the service.
+     * @sample AWSKafkaAsync.DescribeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConfigurationResult> describeConfigurationAsync(DescribeConfigurationRequest describeConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns a description of this MSK configuration.
+     * </p>
+     * 
+     * @param describeConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeConfiguration operation returned by the service.
+     * @sample AWSKafkaAsyncHandler.DescribeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConfigurationResult> describeConfigurationAsync(DescribeConfigurationRequest describeConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeConfigurationRequest, DescribeConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a description of this revision of the configuration.
+     * </p>
+     * 
+     * @param describeConfigurationRevisionRequest
+     * @return A Java Future containing the result of the DescribeConfigurationRevision operation returned by the
+     *         service.
+     * @sample AWSKafkaAsync.DescribeConfigurationRevision
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeConfigurationRevision"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConfigurationRevisionResult> describeConfigurationRevisionAsync(
+            DescribeConfigurationRevisionRequest describeConfigurationRevisionRequest);
+
+    /**
+     * <p>
+     * Returns a description of this revision of the configuration.
+     * </p>
+     * 
+     * @param describeConfigurationRevisionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeConfigurationRevision operation returned by the
+     *         service.
+     * @sample AWSKafkaAsyncHandler.DescribeConfigurationRevision
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeConfigurationRevision"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConfigurationRevisionResult> describeConfigurationRevisionAsync(
+            DescribeConfigurationRevisionRequest describeConfigurationRevisionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeConfigurationRevisionRequest, DescribeConfigurationRevisionResult> asyncHandler);
+
+    /**
+     * <p>
      * A list of brokers that a client application can use to bootstrap.
      * </p>
      * 
@@ -186,6 +283,37 @@ public interface AWSKafkaAsync extends AWSKafka {
      */
     java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest listClustersRequest,
             com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of all the MSK configurations in this Region for this account.
+     * </p>
+     * 
+     * @param listConfigurationsRequest
+     * @return A Java Future containing the result of the ListConfigurations operation returned by the service.
+     * @sample AWSKafkaAsync.ListConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListConfigurations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListConfigurationsResult> listConfigurationsAsync(ListConfigurationsRequest listConfigurationsRequest);
+
+    /**
+     * <p>
+     * Returns a list of all the MSK configurations in this Region for this account.
+     * </p>
+     * 
+     * @param listConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListConfigurations operation returned by the service.
+     * @sample AWSKafkaAsyncHandler.ListConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListConfigurations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListConfigurationsResult> listConfigurationsAsync(ListConfigurationsRequest listConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListConfigurationsRequest, ListConfigurationsResult> asyncHandler);
 
     /**
      * <p>

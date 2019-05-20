@@ -217,6 +217,72 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
 
     /**
      * <p>
+     * Creates a new MSK configuration.
+     * </p>
+     * 
+     * @param createConfigurationRequest
+     * @return Result of the CreateConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         Because of incorrect input, the request isn't valid. Correct the input, then retry the request.
+     * @throws InternalServerErrorException
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     * @throws UnauthorizedException
+     *         The request is not authorized. The provided credentials couldn't be validated.
+     * @throws ForbiddenException
+     *         Access forbidden. Check your credentials and then retry your request.
+     * @throws ServiceUnavailableException
+     *         503 response
+     * @throws TooManyRequestsException
+     *         429 response
+     * @throws ConflictException
+     *         This configuration name already exists. Retry your request using another name.
+     * @sample AWSKafka.CreateConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateConfiguration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateConfigurationResult createConfiguration(CreateConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateConfigurationResult executeCreateConfiguration(CreateConfigurationRequest createConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateConfigurationRequest> request = null;
+        Response<CreateConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the MSK cluster specified by the Amazon Resource Name (ARN) in the request.
      * </p>
      * 
@@ -339,6 +405,137 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
 
     /**
      * <p>
+     * Returns a description of this MSK configuration.
+     * </p>
+     * 
+     * @param describeConfigurationRequest
+     * @return Result of the DescribeConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         Because of incorrect input, the request isn't valid. Correct the input, then retry the request.
+     * @throws UnauthorizedException
+     *         The request is not authorized. The provided credentials couldn't be validated.
+     * @throws InternalServerErrorException
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     * @throws ForbiddenException
+     *         Access forbidden. Check your credentials and then retry your request.
+     * @throws NotFoundException
+     *         The resource could not be found due to incorrect input. Correct the input, then retry the request.
+     * @throws ServiceUnavailableException
+     *         503 response
+     * @sample AWSKafka.DescribeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeConfigurationResult describeConfiguration(DescribeConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConfigurationResult executeDescribeConfiguration(DescribeConfigurationRequest describeConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeConfigurationRequest> request = null;
+        Response<DescribeConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a description of this revision of the configuration.
+     * </p>
+     * 
+     * @param describeConfigurationRevisionRequest
+     * @return Result of the DescribeConfigurationRevision operation returned by the service.
+     * @throws BadRequestException
+     *         Because of incorrect input, the request isn't valid. Correct the input, then retry the request.
+     * @throws UnauthorizedException
+     *         The request is not authorized. The provided credentials couldn't be validated.
+     * @throws InternalServerErrorException
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     * @throws ForbiddenException
+     *         Access forbidden. Check your credentials and then retry your request.
+     * @throws NotFoundException
+     *         The resource could not be found due to incorrect input. Correct the input, then retry the request.
+     * @throws ServiceUnavailableException
+     *         503 response
+     * @sample AWSKafka.DescribeConfigurationRevision
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeConfigurationRevision"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeConfigurationRevisionResult describeConfigurationRevision(DescribeConfigurationRevisionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConfigurationRevision(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConfigurationRevisionResult executeDescribeConfigurationRevision(DescribeConfigurationRevisionRequest describeConfigurationRevisionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeConfigurationRevisionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeConfigurationRevisionRequest> request = null;
+        Response<DescribeConfigurationRevisionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeConfigurationRevisionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeConfigurationRevisionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationRevision");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeConfigurationRevisionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeConfigurationRevisionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * A list of brokers that a client application can use to bootstrap.
      * </p>
      * 
@@ -449,6 +646,68 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
 
             HttpResponseHandler<AmazonWebServiceResponse<ListClustersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListClustersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of all the MSK configurations in this Region for this account.
+     * </p>
+     * 
+     * @param listConfigurationsRequest
+     * @return Result of the ListConfigurations operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         503 response
+     * @throws BadRequestException
+     *         Because of incorrect input, the request isn't valid. Correct the input, then retry the request.
+     * @throws UnauthorizedException
+     *         The request is not authorized. The provided credentials couldn't be validated.
+     * @throws InternalServerErrorException
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     * @throws ForbiddenException
+     *         Access forbidden. Check your credentials and then retry your request.
+     * @sample AWSKafka.ListConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListConfigurations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListConfigurationsResult listConfigurations(ListConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListConfigurationsResult executeListConfigurations(ListConfigurationsRequest listConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListConfigurationsRequest> request = null;
+        Response<ListConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListConfigurationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

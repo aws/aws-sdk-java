@@ -1,3 +1,16 @@
+# __1.11.556__ __2019-05-20__
+## __AWS Elemental MediaPackage VOD__
+  - ### Features
+    - AWS Elemental MediaPackage now supports Video-on-Demand (VOD) workflows.  These new features allow you to easily deliver a vast library of source video Assets stored in your own S3 buckets using a small set of simple to set up Packaging Configurations and Packaging Groups.
+
+## __AWSMarketplace Metering__
+  - ### Features
+    - Documentation updates for meteringmarketplace
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - Updated APIs for the Managed Streaming for Kafka service that let customers create clusters with custom Kafka configuration. 
+
 # __1.11.555__ __2019-05-17__
 ## __Amazon AppStream__
   - ### Features

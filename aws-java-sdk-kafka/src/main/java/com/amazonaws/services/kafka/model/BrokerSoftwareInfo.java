@@ -39,7 +39,7 @@ public class BrokerSoftwareInfo implements Serializable, Cloneable, StructuredPo
      * The revision of the configuration to use.
      * </p>
      */
-    private String configurationRevision;
+    private Long configurationRevision;
     /**
      * <p>
      * The version of Apache Kafka.
@@ -96,7 +96,7 @@ public class BrokerSoftwareInfo implements Serializable, Cloneable, StructuredPo
      *        The revision of the configuration to use.
      */
 
-    public void setConfigurationRevision(String configurationRevision) {
+    public void setConfigurationRevision(Long configurationRevision) {
         this.configurationRevision = configurationRevision;
     }
 
@@ -108,7 +108,7 @@ public class BrokerSoftwareInfo implements Serializable, Cloneable, StructuredPo
      * @return The revision of the configuration to use.
      */
 
-    public String getConfigurationRevision() {
+    public Long getConfigurationRevision() {
         return this.configurationRevision;
     }
 
@@ -122,7 +122,7 @@ public class BrokerSoftwareInfo implements Serializable, Cloneable, StructuredPo
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BrokerSoftwareInfo withConfigurationRevision(String configurationRevision) {
+    public BrokerSoftwareInfo withConfigurationRevision(Long configurationRevision) {
         setConfigurationRevision(configurationRevision);
         return this;
     }

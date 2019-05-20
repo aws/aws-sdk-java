@@ -31,6 +31,8 @@ public class CreateClusterRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("brokerNodeGroupInfo").build();
     private static final MarshallingInfo<String> CLUSTERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clusterName").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIGURATIONINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationInfo").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTIONINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionInfo").build();
     private static final MarshallingInfo<String> ENHANCEDMONITORING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -58,6 +60,7 @@ public class CreateClusterRequestMarshaller {
         try {
             protocolMarshaller.marshall(createClusterRequest.getBrokerNodeGroupInfo(), BROKERNODEGROUPINFO_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getClusterName(), CLUSTERNAME_BINDING);
+            protocolMarshaller.marshall(createClusterRequest.getConfigurationInfo(), CONFIGURATIONINFO_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getEncryptionInfo(), ENCRYPTIONINFO_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getEnhancedMonitoring(), ENHANCEDMONITORING_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getKafkaVersion(), KAFKAVERSION_BINDING);

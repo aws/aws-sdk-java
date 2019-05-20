@@ -54,7 +54,7 @@ public class BrokerSoftwareInfoJsonUnmarshaller implements Unmarshaller<BrokerSo
                 }
                 if (context.testExpression("configurationRevision", targetDepth)) {
                     context.nextToken();
-                    brokerSoftwareInfo.setConfigurationRevision(context.getUnmarshaller(String.class).unmarshall(context));
+                    brokerSoftwareInfo.setConfigurationRevision(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("kafkaVersion", targetDepth)) {
                     context.nextToken();

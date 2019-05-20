@@ -34,7 +34,8 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String productCode;
     /**
      * <p>
-     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.
+     * Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in
+     * the past. Make sure the timestamp value is not before the start of the software usage.
      * </p>
      */
     private java.util.Date timestamp;
@@ -107,12 +108,13 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.
+     * Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in
+     * the past. Make sure the timestamp value is not before the start of the software usage.
      * </p>
      * 
      * @param timestamp
-     *        Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be
-     *        ignored.
+     *        Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one
+     *        hour in the past. Make sure the timestamp value is not before the start of the software usage.
      */
 
     public void setTimestamp(java.util.Date timestamp) {
@@ -121,11 +123,12 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.
+     * Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in
+     * the past. Make sure the timestamp value is not before the start of the software usage.
      * </p>
      * 
-     * @return Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be
-     *         ignored.
+     * @return Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one
+     *         hour in the past. Make sure the timestamp value is not before the start of the software usage.
      */
 
     public java.util.Date getTimestamp() {
@@ -134,12 +137,13 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.
+     * Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in
+     * the past. Make sure the timestamp value is not before the start of the software usage.
      * </p>
      * 
      * @param timestamp
-     *        Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be
-     *        ignored.
+     *        Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one
+     *        hour in the past. Make sure the timestamp value is not before the start of the software usage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

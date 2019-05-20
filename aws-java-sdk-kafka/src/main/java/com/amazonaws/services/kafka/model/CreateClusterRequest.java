@@ -39,6 +39,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String clusterName;
     /**
      * <p>
+     * Comprises of the Configuration to be used on Kafka brokers in a cluster.
+     * </p>
+     */
+    private ConfigurationInfo configurationInfo;
+    /**
+     * <p>
      * Includes all encryption-related information.
      * </p>
      */
@@ -140,6 +146,46 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateClusterRequest withClusterName(String clusterName) {
         setClusterName(clusterName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Comprises of the Configuration to be used on Kafka brokers in a cluster.
+     * </p>
+     * 
+     * @param configurationInfo
+     *        Comprises of the Configuration to be used on Kafka brokers in a cluster.
+     */
+
+    public void setConfigurationInfo(ConfigurationInfo configurationInfo) {
+        this.configurationInfo = configurationInfo;
+    }
+
+    /**
+     * <p>
+     * Comprises of the Configuration to be used on Kafka brokers in a cluster.
+     * </p>
+     * 
+     * @return Comprises of the Configuration to be used on Kafka brokers in a cluster.
+     */
+
+    public ConfigurationInfo getConfigurationInfo() {
+        return this.configurationInfo;
+    }
+
+    /**
+     * <p>
+     * Comprises of the Configuration to be used on Kafka brokers in a cluster.
+     * </p>
+     * 
+     * @param configurationInfo
+     *        Comprises of the Configuration to be used on Kafka brokers in a cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withConfigurationInfo(ConfigurationInfo configurationInfo) {
+        setConfigurationInfo(configurationInfo);
         return this;
     }
 
@@ -346,6 +392,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("BrokerNodeGroupInfo: ").append(getBrokerNodeGroupInfo()).append(",");
         if (getClusterName() != null)
             sb.append("ClusterName: ").append(getClusterName()).append(",");
+        if (getConfigurationInfo() != null)
+            sb.append("ConfigurationInfo: ").append(getConfigurationInfo()).append(",");
         if (getEncryptionInfo() != null)
             sb.append("EncryptionInfo: ").append(getEncryptionInfo()).append(",");
         if (getEnhancedMonitoring() != null)
@@ -376,6 +424,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getClusterName() != null && other.getClusterName().equals(this.getClusterName()) == false)
             return false;
+        if (other.getConfigurationInfo() == null ^ this.getConfigurationInfo() == null)
+            return false;
+        if (other.getConfigurationInfo() != null && other.getConfigurationInfo().equals(this.getConfigurationInfo()) == false)
+            return false;
         if (other.getEncryptionInfo() == null ^ this.getEncryptionInfo() == null)
             return false;
         if (other.getEncryptionInfo() != null && other.getEncryptionInfo().equals(this.getEncryptionInfo()) == false)
@@ -402,6 +454,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getBrokerNodeGroupInfo() == null) ? 0 : getBrokerNodeGroupInfo().hashCode());
         hashCode = prime * hashCode + ((getClusterName() == null) ? 0 : getClusterName().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationInfo() == null) ? 0 : getConfigurationInfo().hashCode());
         hashCode = prime * hashCode + ((getEncryptionInfo() == null) ? 0 : getEncryptionInfo().hashCode());
         hashCode = prime * hashCode + ((getEnhancedMonitoring() == null) ? 0 : getEnhancedMonitoring().hashCode());
         hashCode = prime * hashCode + ((getKafkaVersion() == null) ? 0 : getKafkaVersion().hashCode());
