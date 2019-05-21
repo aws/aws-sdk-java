@@ -68,6 +68,14 @@ public class DescribeAgentResultJsonUnmarshaller implements Unmarshaller<Describ
                     context.nextToken();
                     describeAgentResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("EndpointOptions", targetDepth)) {
+                    context.nextToken();
+                    describeAgentResult.setEndpointOptions(EndpointOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("PrivateLinkConfig", targetDepth)) {
+                    context.nextToken();
+                    describeAgentResult.setPrivateLinkConfig(PrivateLinkConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

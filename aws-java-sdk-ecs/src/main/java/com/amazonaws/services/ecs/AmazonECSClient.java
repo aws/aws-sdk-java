@@ -413,6 +413,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -604,6 +605,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateService");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -684,6 +686,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTaskSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -746,6 +749,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccountSetting");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -806,6 +810,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -881,6 +886,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -965,6 +971,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteService");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1044,6 +1051,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTaskSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1126,6 +1134,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterContainerInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1203,6 +1212,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterTaskDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1264,6 +1274,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClusters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1334,6 +1345,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeContainerInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1398,6 +1410,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServices");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1465,6 +1478,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTaskDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1542,6 +1556,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTaskSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1605,6 +1620,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTasks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1668,6 +1684,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DiscoverPollEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1733,6 +1750,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccountSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1794,6 +1812,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1854,6 +1873,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListClusters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1926,6 +1946,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListContainerInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1995,6 +2016,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServices");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2063,6 +2085,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2130,6 +2153,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTaskDefinitionFamilies");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2197,6 +2221,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTaskDefinitions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2274,6 +2299,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTasks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2346,6 +2372,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccountSetting");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2409,6 +2436,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccountSettingDefault");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2477,6 +2505,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2543,6 +2572,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterContainerInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2625,6 +2655,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterTaskDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2736,6 +2767,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RunTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2804,6 +2836,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2882,6 +2915,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2948,6 +2982,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubmitContainerStateChange");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3019,6 +3054,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubmitTaskStateChange");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3087,6 +3123,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3152,6 +3189,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3239,6 +3277,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContainerAgent");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3353,6 +3392,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContainerInstancesState");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3546,6 +3586,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateService");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3629,6 +3670,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServicePrimaryTaskSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3709,6 +3751,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTaskSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

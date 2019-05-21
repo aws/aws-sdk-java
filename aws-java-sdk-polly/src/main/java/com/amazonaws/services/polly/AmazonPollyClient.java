@@ -393,6 +393,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLexicon");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -467,6 +468,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVoices");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -528,6 +530,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLexicon");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -588,6 +591,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSpeechSynthesisTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -646,6 +650,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLexicons");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -704,6 +709,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSpeechSynthesisTasks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -780,6 +786,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLexicon");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -870,6 +877,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSpeechSynthesisTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -952,6 +960,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Polly");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SynthesizeSpeech");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

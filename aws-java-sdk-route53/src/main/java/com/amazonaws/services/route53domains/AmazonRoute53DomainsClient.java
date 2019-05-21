@@ -341,6 +341,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CheckDomainAvailability");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -402,6 +403,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CheckDomainTransferability");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -468,6 +470,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTagsForDomain");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -526,6 +529,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableDomainAutoRenew");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -597,6 +601,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableDomainTransferLock");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -666,6 +671,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableDomainAutoRenew");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -736,6 +742,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableDomainTransferLock");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -802,6 +809,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContactReachabilityStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -863,6 +871,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDomainDetail");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -922,6 +931,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDomainSuggestions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -979,6 +989,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOperationDetail");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1036,6 +1047,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomains");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1098,6 +1110,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOperations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1168,6 +1181,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForDomain");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1275,6 +1289,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterDomain");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1349,6 +1364,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RenewDomain");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1412,6 +1428,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResendContactReachabilityEmail");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1474,6 +1491,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RetrieveDomainAuthCode");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1569,6 +1587,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TransferDomain");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1640,6 +1659,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDomainContact");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1714,6 +1734,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDomainContactPrivacy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1793,6 +1814,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDomainNameservers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1859,6 +1881,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTagsForDomain");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1916,6 +1939,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ViewBilling");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -41,6 +41,10 @@ public class DeviceDataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MacAddress").build();
     private static final MarshallingInfo<String> DEVICESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceStatus").build();
+    private static final MarshallingInfo<String> NETWORKPROFILEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkProfileArn").build();
+    private static final MarshallingInfo<String> NETWORKPROFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkProfileName").build();
     private static final MarshallingInfo<String> ROOMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoomArn").build();
     private static final MarshallingInfo<String> ROOMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -71,6 +75,8 @@ public class DeviceDataMarshaller {
             protocolMarshaller.marshall(deviceData.getSoftwareVersion(), SOFTWAREVERSION_BINDING);
             protocolMarshaller.marshall(deviceData.getMacAddress(), MACADDRESS_BINDING);
             protocolMarshaller.marshall(deviceData.getDeviceStatus(), DEVICESTATUS_BINDING);
+            protocolMarshaller.marshall(deviceData.getNetworkProfileArn(), NETWORKPROFILEARN_BINDING);
+            protocolMarshaller.marshall(deviceData.getNetworkProfileName(), NETWORKPROFILENAME_BINDING);
             protocolMarshaller.marshall(deviceData.getRoomArn(), ROOMARN_BINDING);
             protocolMarshaller.marshall(deviceData.getRoomName(), ROOMNAME_BINDING);
             protocolMarshaller.marshall(deviceData.getDeviceStatusInfo(), DEVICESTATUSINFO_BINDING);

@@ -209,6 +209,7 @@ public class AWSIoTJobsDataPlaneClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Jobs Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -273,6 +274,7 @@ public class AWSIoTJobsDataPlaneClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Jobs Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPendingJobExecutions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -338,6 +340,7 @@ public class AWSIoTJobsDataPlaneClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Jobs Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartNextPendingJobExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -406,6 +409,7 @@ public class AWSIoTJobsDataPlaneClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Jobs Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJobExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

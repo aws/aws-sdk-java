@@ -431,6 +431,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateWebACL");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -588,6 +589,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateByteMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -744,6 +746,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGeoMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -900,6 +903,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIPSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1123,6 +1127,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRateBasedRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1224,6 +1229,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRegexMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1321,6 +1327,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRegexPatternSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1505,6 +1512,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1594,6 +1602,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRuleGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1753,6 +1762,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSizeConstraintSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1912,6 +1922,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSqlInjectionMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2088,6 +2099,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWebACL");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2245,6 +2257,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateXssMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2371,6 +2384,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteByteMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2496,6 +2510,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGeoMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2621,6 +2636,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIPSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2681,6 +2697,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLoggingConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2744,6 +2761,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePermissionPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2871,6 +2889,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRateBasedRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2997,6 +3016,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRegexMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3098,6 +3118,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRegexPatternSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3224,6 +3245,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3379,6 +3401,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRuleGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3506,6 +3529,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSizeConstraintSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3635,6 +3659,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSqlInjectionMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3759,6 +3784,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWebACL");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3886,6 +3912,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteXssMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4000,6 +4027,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateWebACL");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4059,6 +4087,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetByteMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4126,6 +4155,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetChangeToken");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4201,6 +4231,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetChangeTokenStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4260,6 +4291,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGeoMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4319,6 +4351,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIPSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4376,6 +4409,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoggingConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4433,6 +4467,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPermissionPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4493,6 +4528,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRateBasedRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4610,6 +4646,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRateBasedRuleManagedKeys");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4670,6 +4707,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRegexMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4729,6 +4767,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRegexPatternSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4789,6 +4828,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4849,6 +4889,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRuleGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4913,6 +4954,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSampledRequests");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4972,6 +5014,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSizeConstraintSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5033,6 +5076,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSqlInjectionMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5093,6 +5137,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWebACL");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5209,6 +5254,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWebACLForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5269,6 +5315,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetXssMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5381,6 +5428,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListActivatedRulesInRuleGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5439,6 +5487,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListByteMatchSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5496,6 +5545,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGeoMatchSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5553,6 +5603,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIPSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5665,6 +5716,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLoggingConfigurations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5723,6 +5775,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRateBasedRules");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5780,6 +5833,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRegexMatchSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5837,6 +5891,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRegexPatternSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5951,6 +6006,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourcesForWebACL");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6006,6 +6062,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRuleGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6063,6 +6120,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRules");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6120,6 +6178,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSizeConstraintSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6180,6 +6239,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSqlInjectionMatchSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6238,6 +6298,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscribedRuleGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6296,6 +6357,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWebACLs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6354,6 +6416,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListXssMatchSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6447,6 +6510,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLoggingConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6610,6 +6674,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPermissionPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6856,6 +6921,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateByteMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7100,6 +7166,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGeoMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7385,6 +7452,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIPSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7640,6 +7708,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRateBasedRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7828,6 +7897,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRegexMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8023,6 +8093,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRegexPatternSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8279,6 +8350,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8498,6 +8570,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRuleGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8762,6 +8835,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSizeConstraintSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9003,6 +9077,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSqlInjectionMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9289,6 +9364,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWebACL");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9528,6 +9604,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF Regional");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateXssMatchSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

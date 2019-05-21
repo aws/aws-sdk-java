@@ -187,6 +187,7 @@ public class AmazonPinpointSMSVoiceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -254,6 +255,7 @@ public class AmazonPinpointSMSVoiceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationSetEventDestination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -313,6 +315,7 @@ public class AmazonPinpointSMSVoiceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -375,6 +378,7 @@ public class AmazonPinpointSMSVoiceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationSetEventDestination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -438,6 +442,7 @@ public class AmazonPinpointSMSVoiceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConfigurationSetEventDestinations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -495,6 +500,7 @@ public class AmazonPinpointSMSVoiceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurationSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -553,6 +559,7 @@ public class AmazonPinpointSMSVoiceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendVoiceMessage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -617,6 +624,7 @@ public class AmazonPinpointSMSVoiceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfigurationSetEventDestination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

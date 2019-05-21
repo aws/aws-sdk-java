@@ -403,6 +403,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeliveryStream");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -472,6 +473,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeliveryStream");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -528,6 +530,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDeliveryStream");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -589,6 +592,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeliveryStreams");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -649,6 +653,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForDeliveryStream");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -750,6 +755,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRecord");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -874,6 +880,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRecordBatch");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -955,6 +962,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDeliveryStreamEncryption");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1034,6 +1042,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDeliveryStreamEncryption");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1106,6 +1115,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagDeliveryStream");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1173,6 +1183,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagDeliveryStream");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1263,6 +1274,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDestination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -455,6 +455,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptMatch");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -569,6 +570,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAlias");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -716,6 +718,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBuild");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -955,6 +958,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1124,6 +1128,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGameSession");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1235,6 +1240,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGameSessionQueue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1370,6 +1376,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMatchmakingConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1510,6 +1517,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMatchmakingRuleSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1637,6 +1645,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePlayerSession");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1763,6 +1772,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePlayerSessions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1893,6 +1903,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateScript");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2016,6 +2027,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpcPeeringAuthorization");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2133,6 +2145,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpcPeeringConnection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2231,6 +2244,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAlias");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2335,6 +2349,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBuild");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2519,6 +2534,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2606,6 +2622,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGameSessionQueue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2715,6 +2732,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMatchmakingConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2837,6 +2855,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMatchmakingRuleSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2963,6 +2982,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteScalingPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3069,6 +3089,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteScript");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3167,6 +3188,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVpcPeeringAuthorization");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3272,6 +3294,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVpcPeeringConnection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3373,6 +3396,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAlias");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3474,6 +3498,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBuild");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3664,6 +3689,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEC2InstanceLimits");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3852,6 +3878,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4040,6 +4067,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetCapacity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4219,6 +4247,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4399,6 +4428,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetPortSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4587,6 +4617,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetUtilization");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4721,6 +4752,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGameSessionDetails");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4842,6 +4874,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGameSessionPlacement");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4933,6 +4966,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGameSessionQueues");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5068,6 +5102,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGameSessions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5138,6 +5173,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5236,6 +5272,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMatchmaking");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5346,6 +5383,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMatchmakingConfigurations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5469,6 +5507,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMatchmakingRuleSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5585,6 +5624,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePlayerSessions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5764,6 +5804,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRuntimeConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5896,6 +5937,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalingPolicies");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6001,6 +6043,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScript");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6096,6 +6139,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcPeeringAuthorizations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6201,6 +6245,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcPeeringConnections");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6328,6 +6373,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGameSessionLogUrl");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6408,6 +6454,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstanceAccess");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6507,6 +6554,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAliases");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6611,6 +6659,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBuilds");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6794,6 +6843,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFleets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6891,6 +6941,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListScripts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7090,6 +7141,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutScalingPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7198,6 +7250,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RequestUploadCredentials");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7300,6 +7353,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResolveAlias");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7490,6 +7544,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchGameSessions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7672,6 +7727,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartFleetActions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7843,6 +7899,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartGameSessionPlacement");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7957,6 +8014,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMatchBackfill");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8124,6 +8182,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMatchmaking");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8308,6 +8367,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopFleetActions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8428,6 +8488,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopGameSessionPlacement");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8522,6 +8583,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopMatchmaking");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8620,6 +8682,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAlias");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8722,6 +8785,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBuild");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8908,6 +8972,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFleetAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9108,6 +9173,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFleetCapacity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9298,6 +9364,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFleetPortSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9427,6 +9494,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGameSession");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9515,6 +9583,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGameSessionQueue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9624,6 +9693,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMatchmakingConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9817,6 +9887,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRuntimeConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9931,6 +10002,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateScript");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10050,6 +10122,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GameLift");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ValidateMatchmakingRuleSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

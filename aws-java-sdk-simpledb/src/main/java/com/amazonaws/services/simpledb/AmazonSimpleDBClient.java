@@ -347,6 +347,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -458,6 +459,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchPutAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -524,6 +526,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDomain");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -592,6 +595,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -645,6 +649,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDomain");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -700,6 +705,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DomainMetadata");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -761,6 +767,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -819,6 +826,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomains");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -923,6 +931,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1002,6 +1011,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Select");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

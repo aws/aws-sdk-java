@@ -359,6 +359,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -429,6 +430,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -493,6 +495,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePipeline");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -570,6 +573,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePreset");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -638,6 +642,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePipeline");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -704,6 +709,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePreset");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -769,6 +775,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobsByPipeline");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -831,6 +838,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobsByStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -889,6 +897,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPipelines");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -953,6 +962,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPresets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1019,6 +1029,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReadJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1080,6 +1091,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReadPipeline");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1141,6 +1153,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReadPreset");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1209,6 +1222,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestRole");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1280,6 +1294,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePipeline");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1350,6 +1365,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePipelineNotifications");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1421,6 +1437,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Transcoder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePipelineStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

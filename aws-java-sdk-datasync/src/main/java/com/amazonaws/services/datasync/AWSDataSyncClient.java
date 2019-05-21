@@ -185,6 +185,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelTaskExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -260,6 +261,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAgent");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -317,6 +319,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLocationEfs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -374,6 +377,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLocationNfs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -442,6 +446,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLocationS3");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -512,6 +517,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -571,6 +577,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAgent");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -628,6 +635,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLocation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -685,6 +693,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -744,6 +753,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAgent");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -801,6 +811,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocationEfs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -858,6 +869,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocationNfs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -915,6 +927,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocationS3");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -972,6 +985,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1029,6 +1043,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTaskExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1097,6 +1112,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAgents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1159,6 +1175,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLocations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1216,6 +1233,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1273,6 +1291,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTaskExecutions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1330,6 +1349,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTasks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1397,6 +1417,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartTaskExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1454,6 +1475,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1511,6 +1533,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1568,6 +1591,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAgent");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1625,6 +1649,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

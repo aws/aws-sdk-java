@@ -203,6 +203,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptInvitation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -266,6 +267,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDisableStandards");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -330,6 +332,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchEnableStandards");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -391,6 +394,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchImportFindings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -455,6 +459,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInsight");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -519,6 +524,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -580,6 +586,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeclineInvitations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -643,6 +650,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInsight");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -707,6 +715,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInvitations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -770,6 +779,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -836,6 +846,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableImportFindingsForProduct");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -898,6 +909,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableSecurityHub");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -962,6 +974,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateFromMasterAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1026,6 +1039,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1091,6 +1105,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableImportFindingsForProduct");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1155,6 +1170,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableSecurityHub");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1216,6 +1232,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEnabledStandards");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1277,6 +1294,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFindings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1340,6 +1358,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInsightResults");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1403,6 +1422,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInsights");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1465,6 +1485,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInvitationsCount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1528,6 +1549,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMasterAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1591,6 +1613,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1656,6 +1679,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InviteMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1716,6 +1740,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEnabledProductsForImport");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1778,6 +1803,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInvitations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1839,6 +1865,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1902,6 +1929,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFindings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1965,6 +1993,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInsight");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

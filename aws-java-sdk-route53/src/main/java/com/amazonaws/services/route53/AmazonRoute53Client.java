@@ -426,6 +426,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateVPCWithHostedZone");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -590,6 +591,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangeResourceRecordSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -661,6 +663,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangeTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -796,6 +799,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHealthCheck");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -962,6 +966,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHostedZone");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1208,6 +1213,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateQueryLoggingConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1360,6 +1366,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateReusableDelegationSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1437,6 +1444,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrafficPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1519,6 +1527,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrafficPolicyInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1597,6 +1606,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrafficPolicyVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1678,6 +1688,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVPCAssociationAuthorization");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1747,6 +1758,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHealthCheck");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1868,6 +1880,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHostedZone");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1933,6 +1946,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteQueryLoggingConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2005,6 +2019,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReusableDelegationSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2067,6 +2082,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrafficPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2135,6 +2151,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrafficPolicyInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2212,6 +2229,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVPCAssociationAuthorization");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2297,6 +2315,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateVPCFromHostedZone");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2368,6 +2387,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountLimit");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2438,6 +2458,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetChange");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2495,6 +2516,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCheckerIpRanges");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2577,6 +2599,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGeoLocation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2641,6 +2664,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHealthCheck");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2694,6 +2718,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHealthCheckCount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2757,6 +2782,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHealthCheckLastFailureReason");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2814,6 +2840,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHealthCheckStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2871,6 +2898,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHostedZone");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2925,6 +2953,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHostedZoneCount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2997,6 +3026,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHostedZoneLimit");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3059,6 +3089,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueryLoggingConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3119,6 +3150,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReusableDelegationSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3183,6 +3215,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReusableDelegationSetLimit");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3240,6 +3273,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTrafficPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3308,6 +3342,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTrafficPolicyInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3361,6 +3396,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTrafficPolicyInstanceCount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3427,6 +3463,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGeoLocations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3489,6 +3526,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHealthChecks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3559,6 +3597,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHostedZones");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3687,6 +3726,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHostedZonesByName");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3758,6 +3798,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListQueryLoggingConfigs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3897,6 +3938,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceRecordSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3952,6 +3994,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReusableDelegationSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4029,6 +4072,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4101,6 +4145,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4158,6 +4203,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrafficPolicies");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4232,6 +4278,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrafficPolicyInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4309,6 +4356,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrafficPolicyInstancesByHostedZone");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4381,6 +4429,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrafficPolicyInstancesByPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4441,6 +4490,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrafficPolicyVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4506,6 +4556,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVPCAssociationAuthorizations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4567,6 +4618,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestDNSAnswer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4631,6 +4683,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateHealthCheck");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4688,6 +4741,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateHostedZoneComment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4748,6 +4802,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTrafficPolicyComment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4844,6 +4899,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTrafficPolicyInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -328,6 +328,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetTraces");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -384,6 +385,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -446,6 +448,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSamplingRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -502,6 +505,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -558,6 +562,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSamplingRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -614,6 +619,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEncryptionConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -670,6 +676,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -726,6 +733,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -782,6 +790,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSamplingRules");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -839,6 +848,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSamplingStatisticSummaries");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -896,6 +906,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSamplingTargets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -955,6 +966,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServiceGraph");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1012,6 +1024,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTimeSeriesServiceStatistics");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1069,6 +1082,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTraceGraph");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1146,6 +1160,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTraceSummaries");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1202,6 +1217,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEncryptionConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1258,6 +1274,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutTelemetryRecords");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1388,6 +1405,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutTraceSegments");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1444,6 +1462,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1500,6 +1519,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSamplingRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

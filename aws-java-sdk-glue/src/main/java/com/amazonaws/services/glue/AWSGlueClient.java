@@ -238,6 +238,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchCreatePartition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -294,6 +295,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteConnection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -355,6 +357,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeletePartition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -427,6 +430,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteTable");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -488,6 +492,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteTableVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -547,6 +552,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetCrawlers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -609,6 +615,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetDevEndpoints");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -669,6 +676,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -731,6 +739,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetPartition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -791,6 +800,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetTriggers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -849,6 +859,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchStopJobRun");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -909,6 +920,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateClassifier");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -971,6 +983,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConnection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1033,6 +1046,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCrawler");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1097,6 +1111,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatabase");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1165,6 +1180,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDevEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1231,6 +1247,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1297,6 +1314,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePartition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1355,6 +1373,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateScript");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1418,6 +1437,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSecurityConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1485,6 +1505,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTable");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1551,6 +1572,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrigger");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1618,6 +1640,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserDefinedFunction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1675,6 +1698,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteClassifier");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1731,6 +1755,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConnection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1791,6 +1816,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCrawler");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1864,6 +1890,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDatabase");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1924,6 +1951,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDevEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1982,6 +2010,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2042,6 +2071,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePartition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2104,6 +2134,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourcePolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2165,6 +2196,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSecurityConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2238,6 +2270,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTable");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2298,6 +2331,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTableVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2358,6 +2392,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrigger");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2419,6 +2454,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserDefinedFunction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2476,6 +2512,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCatalogImportStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2533,6 +2570,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetClassifier");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2587,6 +2625,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetClassifiers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2647,6 +2686,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2707,6 +2747,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnections");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2763,6 +2804,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCrawler");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2817,6 +2859,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCrawlerMetrics");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2871,6 +2914,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCrawlers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2931,6 +2975,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataCatalogEncryptionSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2994,6 +3039,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDatabase");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3054,6 +3100,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDatabases");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3112,6 +3159,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataflowGraph");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3179,6 +3227,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3246,6 +3295,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevEndpoints");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3306,6 +3356,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3366,6 +3417,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJobRun");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3426,6 +3478,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJobRuns");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3486,6 +3539,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3546,6 +3600,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMapping");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3608,6 +3663,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPartition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3670,6 +3726,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPartitions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3728,6 +3785,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPlan");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3788,6 +3846,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourcePolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3849,6 +3908,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSecurityConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3911,6 +3971,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSecurityConfigurations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3974,6 +4035,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTable");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4036,6 +4098,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTableVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4098,6 +4161,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTableVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4160,6 +4224,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTables");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4220,6 +4285,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4280,6 +4346,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTrigger");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4340,6 +4407,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTriggers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4402,6 +4470,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUserDefinedFunction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4466,6 +4535,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUserDefinedFunctions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4523,6 +4593,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportCatalogToGlue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4583,6 +4654,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCrawlers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4649,6 +4721,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevEndpoints");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4715,6 +4788,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4781,6 +4855,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTriggers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4842,6 +4917,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDataCatalogEncryptionSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4905,6 +4981,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourcePolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4965,6 +5042,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetJobBookmark");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5026,6 +5104,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartCrawler");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5089,6 +5168,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartCrawlerSchedule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5153,6 +5233,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartJobRun");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5218,6 +5299,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartTrigger");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5278,6 +5360,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopCrawler");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5339,6 +5422,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopCrawlerSchedule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5401,6 +5485,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopTrigger");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5463,6 +5548,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5523,6 +5609,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5584,6 +5671,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateClassifier");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5646,6 +5734,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConnection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5708,6 +5797,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCrawler");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5770,6 +5860,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCrawlerSchedule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5833,6 +5924,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDatabase");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5895,6 +5987,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDevEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5957,6 +6050,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6019,6 +6113,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePartition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6085,6 +6180,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTable");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6147,6 +6243,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTrigger");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6210,6 +6307,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserDefinedFunction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

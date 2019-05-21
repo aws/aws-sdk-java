@@ -265,6 +265,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCertificateAuthority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -334,6 +335,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCertificateAuthorityAuditReport");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -408,6 +410,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -485,6 +488,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCertificateAuthority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -547,6 +551,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -645,6 +650,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCertificateAuthority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -709,6 +715,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCertificateAuthorityAuditReport");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -776,6 +783,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -838,6 +846,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCertificateAuthorityCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -906,6 +915,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCertificateAuthorityCsr");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -997,6 +1007,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportCertificateAuthorityCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1071,6 +1082,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "IssueCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1128,6 +1140,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCertificateAuthorities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1193,6 +1206,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPermissions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1251,6 +1265,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1320,6 +1335,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreCertificateAuthority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1394,6 +1410,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1464,6 +1481,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagCertificateAuthority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1529,6 +1547,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagCertificateAuthority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1598,6 +1617,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM PCA");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCertificateAuthority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

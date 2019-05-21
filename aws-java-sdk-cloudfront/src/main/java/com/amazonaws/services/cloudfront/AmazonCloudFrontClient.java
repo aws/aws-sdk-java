@@ -420,6 +420,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCloudFrontOriginAccessIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -571,6 +572,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDistribution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -706,6 +708,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDistributionWithTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -775,6 +778,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFieldLevelEncryptionConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -844,6 +848,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFieldLevelEncryptionProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -912,6 +917,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInvalidation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -972,6 +978,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePublicKey");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1075,6 +1082,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStreamingDistribution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1153,6 +1161,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStreamingDistributionWithTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1217,6 +1226,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCloudFrontOriginAccessIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1339,6 +1349,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDistribution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1402,6 +1413,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFieldLevelEncryptionConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1465,6 +1477,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFieldLevelEncryptionProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1527,6 +1540,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePublicKey");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1650,6 +1664,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStreamingDistribution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1708,6 +1723,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCloudFrontOriginAccessIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1769,6 +1785,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCloudFrontOriginAccessIdentityConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1826,6 +1843,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDistribution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1883,6 +1901,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDistributionConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1939,6 +1958,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFieldLevelEncryption");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1995,6 +2015,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFieldLevelEncryptionConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2051,6 +2072,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFieldLevelEncryptionProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2109,6 +2131,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFieldLevelEncryptionProfileConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2168,6 +2191,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInvalidation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2224,6 +2248,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPublicKey");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2279,6 +2304,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPublicKeyConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2336,6 +2362,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStreamingDistribution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2393,6 +2420,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStreamingDistributionConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2450,6 +2478,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCloudFrontOriginAccessIdentities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2505,6 +2534,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDistributions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2561,6 +2591,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDistributionsByWebACLId");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2616,6 +2647,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFieldLevelEncryptionConfigs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2671,6 +2703,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFieldLevelEncryptionProfiles");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2730,6 +2763,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInvalidations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2784,6 +2818,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPublicKeys");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2839,6 +2874,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStreamingDistributions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2898,6 +2934,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2957,6 +2994,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3015,6 +3053,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3086,6 +3125,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCloudFrontOriginAccessIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3323,6 +3363,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDistribution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3398,6 +3439,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFieldLevelEncryptionConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3475,6 +3517,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFieldLevelEncryptionProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3541,6 +3584,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePublicKey");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3619,6 +3663,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStreamingDistribution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

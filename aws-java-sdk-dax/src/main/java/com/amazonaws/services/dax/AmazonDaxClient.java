@@ -269,6 +269,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -333,6 +334,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -394,6 +396,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubnetGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -464,6 +467,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DecreaseReplicationFactor");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -528,6 +532,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -590,6 +595,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -652,6 +658,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubnetGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -728,6 +735,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClusters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -786,6 +794,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDefaultParameters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -849,6 +858,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -910,6 +920,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeParameterGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -970,6 +981,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeParameters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1026,6 +1038,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSubnetGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1097,6 +1110,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "IncreaseReplicationFactor");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1162,6 +1176,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1226,6 +1241,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebootNode");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1292,6 +1308,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1358,6 +1375,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1424,6 +1442,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1486,6 +1505,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1547,6 +1567,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DAX");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSubnetGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

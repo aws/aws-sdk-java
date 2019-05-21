@@ -198,6 +198,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetNamedQuery");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -258,6 +259,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetQueryExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -321,6 +323,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNamedQuery");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -378,6 +381,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorkGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -440,6 +444,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNamedQuery");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -497,6 +502,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWorkGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -555,6 +561,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNamedQuery");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -613,6 +620,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueryExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -672,6 +680,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueryResults");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -729,6 +738,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWorkGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -792,6 +802,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNamedQueries");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -855,6 +866,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListQueryExecutions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -914,6 +926,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -971,6 +984,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorkGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1036,6 +1050,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartQueryExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1098,6 +1113,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopQueryExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1165,6 +1181,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1225,6 +1242,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1282,6 +1300,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWorkGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

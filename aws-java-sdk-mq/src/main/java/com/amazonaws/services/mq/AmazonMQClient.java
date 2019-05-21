@@ -188,6 +188,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBroker");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -250,6 +251,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -309,6 +311,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -370,6 +373,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -428,6 +432,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBroker");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -486,6 +491,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -544,6 +550,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -602,6 +609,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBroker");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -659,6 +667,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBrokerEngineTypes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -717,6 +726,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBrokerInstanceOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -776,6 +786,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -836,6 +847,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationRevision");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -895,6 +907,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -951,6 +964,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBrokers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1010,6 +1024,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurationRevisions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1067,6 +1082,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1125,6 +1141,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1183,6 +1200,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1241,6 +1259,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebootBroker");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1303,6 +1322,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBroker");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1364,6 +1384,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1425,6 +1446,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

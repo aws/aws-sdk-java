@@ -352,6 +352,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTagsToResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -424,6 +425,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHapg");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -507,6 +509,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHsm");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -578,6 +581,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLunaClient");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -649,6 +653,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHapg");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -720,6 +725,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHsm");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -790,6 +796,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLunaClient");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -861,6 +868,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHapg");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -932,6 +940,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHsm");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1007,6 +1016,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLunaClient");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1083,6 +1093,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1154,6 +1165,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAvailableZones");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1234,6 +1246,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHapgs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1314,6 +1327,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHsms");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1394,6 +1408,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLunaClients");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1469,6 +1484,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1539,6 +1555,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyHapg");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1617,6 +1634,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyHsm");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1686,6 +1704,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyLunaClient");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1760,6 +1779,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTagsFromResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

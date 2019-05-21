@@ -376,6 +376,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTagsToCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -444,6 +445,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -501,6 +503,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -567,6 +570,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -629,6 +633,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -769,6 +774,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -824,6 +830,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCertificates");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -883,6 +890,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -951,6 +959,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTagsFromCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1014,6 +1023,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RenewCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1082,6 +1092,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RequestCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1150,6 +1161,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResendValidationEmail");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1216,6 +1228,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ACM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCertificateOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

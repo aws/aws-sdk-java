@@ -203,6 +203,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBackupPlan");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -308,6 +309,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBackupSelection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -377,6 +379,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBackupVault");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -442,6 +445,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackupPlan");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -502,6 +506,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackupSelection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -566,6 +571,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackupVault");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -627,6 +633,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackupVaultAccessPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -689,6 +696,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackupVaultNotifications");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -753,6 +761,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRecoveryPoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -816,6 +825,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBackupJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -876,6 +886,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBackupVault");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -938,6 +949,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProtectedResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -999,6 +1011,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRecoveryPoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1063,6 +1076,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRestoreJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1124,6 +1138,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportBackupPlanTemplate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1185,6 +1200,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBackupPlan");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1248,6 +1264,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBackupPlanFromJSON");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1310,6 +1327,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBackupPlanFromTemplate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1372,6 +1390,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBackupSelection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1433,6 +1452,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBackupVaultAccessPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1495,6 +1515,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBackupVaultNotifications");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1564,6 +1585,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRecoveryPointRestoreMetadata");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1620,6 +1642,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSupportedResourceTypes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1677,6 +1700,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackupJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1739,6 +1763,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackupPlanTemplates");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1801,6 +1826,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackupPlanVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1863,6 +1889,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackupPlans");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1923,6 +1950,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackupSelections");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1983,6 +2011,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackupVaults");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2040,6 +2069,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProtectedResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2103,6 +2133,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecoveryPointsByBackupVault");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2166,6 +2197,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecoveryPointsByResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2228,6 +2260,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRestoreJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2288,6 +2321,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2350,6 +2384,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBackupVaultAccessPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2412,6 +2447,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBackupVaultNotifications");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2475,6 +2511,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartBackupJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2539,6 +2576,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartRestoreJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2602,6 +2640,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopBackupJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2665,6 +2704,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2726,6 +2766,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2787,6 +2828,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBackupPlan");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2857,6 +2899,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRecoveryPointLifecycle");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

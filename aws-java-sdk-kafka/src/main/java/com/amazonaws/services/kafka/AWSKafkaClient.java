@@ -199,6 +199,7 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -265,6 +266,7 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -325,6 +327,7 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -387,6 +390,7 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -451,6 +455,7 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -517,6 +522,7 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationRevision");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -580,6 +586,7 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBootstrapBrokers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -640,6 +647,7 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListClusters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -702,6 +710,7 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -762,6 +771,7 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNodes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -820,6 +830,7 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -878,6 +889,7 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -936,6 +948,7 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -180,6 +180,7 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteObject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -238,6 +239,7 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeObject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -298,6 +300,7 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetObject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -354,6 +357,7 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListItems");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -410,6 +414,8 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutObject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

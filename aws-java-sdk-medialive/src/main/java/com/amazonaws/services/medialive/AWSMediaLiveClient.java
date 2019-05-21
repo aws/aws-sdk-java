@@ -204,6 +204,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUpdateSchedule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -271,6 +272,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChannel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -334,6 +336,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInput");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -398,6 +401,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInputSecurityGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -458,6 +462,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -525,6 +530,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChannel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -592,6 +598,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInput");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -658,6 +665,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInputSecurityGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -726,6 +734,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReservation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -791,6 +800,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSchedule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -850,6 +860,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -915,6 +926,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChannel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -980,6 +992,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInput");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1046,6 +1059,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInputSecurityGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1112,6 +1126,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOffering");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1177,6 +1192,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1242,6 +1258,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSchedule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1305,6 +1322,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannels");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1369,6 +1387,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInputSecurityGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1433,6 +1452,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInputs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1496,6 +1516,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOfferings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1559,6 +1580,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReservations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1618,6 +1640,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1685,6 +1708,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseOffering");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1752,6 +1776,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartChannel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1819,6 +1844,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopChannel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1884,6 +1910,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1953,6 +1980,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannelClass");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2018,6 +2046,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInput");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2085,6 +2114,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInputSecurityGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2153,6 +2183,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateReservation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

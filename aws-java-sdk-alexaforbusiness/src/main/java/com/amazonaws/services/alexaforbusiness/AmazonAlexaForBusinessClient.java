@@ -86,6 +86,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                             new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
                                     com.amazonaws.services.alexaforbusiness.model.ConcurrentModificationException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidServiceLinkedRoleStateException").withModeledClass(
+                                    com.amazonaws.services.alexaforbusiness.model.InvalidServiceLinkedRoleStateException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.alexaforbusiness.model.LimitExceededException.class))
                     .addErrorMetadata(
@@ -100,6 +103,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withModeledClass(
                                     com.amazonaws.services.alexaforbusiness.model.AlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSecretsManagerResourceException").withModeledClass(
+                                    com.amazonaws.services.alexaforbusiness.model.InvalidSecretsManagerResourceException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
                                     com.amazonaws.services.alexaforbusiness.model.ResourceInUseException.class))
@@ -212,6 +218,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ApproveSkill");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -268,6 +275,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateContactWithAddressBook");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -275,6 +283,70 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<AssociateContactWithAddressBookResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AssociateContactWithAddressBookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates a device with the specified network profile.
+     * </p>
+     * 
+     * @param associateDeviceWithNetworkProfileRequest
+     * @return Result of the AssociateDeviceWithNetworkProfile operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         There is a concurrent modification of resources.
+     * @throws DeviceNotRegisteredException
+     *         The request failed because this device is no longer registered and therefore no longer managed by this
+     *         account.
+     * @sample AmazonAlexaForBusiness.AssociateDeviceWithNetworkProfile
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateDeviceWithNetworkProfileResult associateDeviceWithNetworkProfile(AssociateDeviceWithNetworkProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateDeviceWithNetworkProfile(request);
+    }
+
+    @SdkInternalApi
+    final AssociateDeviceWithNetworkProfileResult executeAssociateDeviceWithNetworkProfile(
+            AssociateDeviceWithNetworkProfileRequest associateDeviceWithNetworkProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateDeviceWithNetworkProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateDeviceWithNetworkProfileRequest> request = null;
+        Response<AssociateDeviceWithNetworkProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateDeviceWithNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateDeviceWithNetworkProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDeviceWithNetworkProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateDeviceWithNetworkProfileResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateDeviceWithNetworkProfileResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -331,6 +403,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDeviceWithRoom");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -388,6 +461,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSkillGroupWithRoom");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -448,6 +522,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSkillWithSkillGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -506,6 +581,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSkillWithUsers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -563,6 +639,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAddressBook");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -619,6 +696,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBusinessReportSchedule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -675,6 +753,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConferenceProvider");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -732,6 +811,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateContact");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -788,12 +868,76 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGatewayGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateGatewayGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateGatewayGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a network profile with the specified details.
+     * </p>
+     * 
+     * @param createNetworkProfileRequest
+     * @return Result of the CreateNetworkProfile operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource being created already exists.
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits.
+     * @throws ConcurrentModificationException
+     *         There is a concurrent modification of resources.
+     * @throws InvalidCertificateAuthorityException
+     *         The Certificate Authority can't issue or revoke a certificate.
+     * @throws InvalidServiceLinkedRoleStateException
+     *         The service linked role is locked for deletion.
+     * @sample AmazonAlexaForBusiness.CreateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateNetworkProfileResult createNetworkProfile(CreateNetworkProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateNetworkProfile(request);
+    }
+
+    @SdkInternalApi
+    final CreateNetworkProfileResult executeCreateNetworkProfile(CreateNetworkProfileRequest createNetworkProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createNetworkProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateNetworkProfileRequest> request = null;
+        Response<CreateNetworkProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNetworkProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNetworkProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateNetworkProfileResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateNetworkProfileResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -846,6 +990,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -902,6 +1047,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRoom");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -960,6 +1106,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSkillGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1018,6 +1165,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1074,6 +1222,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAddressBook");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1131,6 +1280,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBusinessReportSchedule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1187,6 +1337,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConferenceProvider");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1244,6 +1395,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteContact");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1302,6 +1454,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDevice");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1321,8 +1474,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
     /**
      * <p>
      * When this action is called for a specified shared device, it allows authorized users to delete the device's
-     * entire previous history of voice input data and associated response data. This action can be called once every 24
-     * hours for a specific shared device.
+     * entire previous history of voice input data. This action can be called once every 24 hours for a specific shared
+     * device.
      * </p>
      * 
      * @param deleteDeviceUsageDataRequest
@@ -1363,6 +1516,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeviceUsageData");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1418,12 +1572,72 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGatewayGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteGatewayGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteGatewayGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a network profile by the network profile ARN.
+     * </p>
+     * 
+     * @param deleteNetworkProfileRequest
+     * @return Result of the DeleteNetworkProfile operation returned by the service.
+     * @throws ResourceInUseException
+     *         The resource in the request is already in use.
+     * @throws ConcurrentModificationException
+     *         There is a concurrent modification of resources.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.DeleteNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteNetworkProfileResult deleteNetworkProfile(DeleteNetworkProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNetworkProfile(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNetworkProfileResult executeDeleteNetworkProfile(DeleteNetworkProfileRequest deleteNetworkProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteNetworkProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteNetworkProfileRequest> request = null;
+        Response<DeleteNetworkProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNetworkProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNetworkProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteNetworkProfileResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteNetworkProfileResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1474,6 +1688,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1530,6 +1745,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRoom");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1585,6 +1801,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRoomSkillParameter");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1643,6 +1860,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSkillAuthorization");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1700,6 +1918,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSkillGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1756,6 +1975,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1811,6 +2031,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateContactFromAddressBook");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1871,6 +2092,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDeviceFromRoom");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1930,6 +2152,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateSkillFromSkillGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1988,6 +2211,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateSkillFromUsers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2045,6 +2269,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateSkillGroupFromRoom");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2101,6 +2326,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ForgetSmartHomeAppliances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2156,6 +2382,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAddressBook");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2211,6 +2438,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConferencePreference");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2266,6 +2494,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConferenceProvider");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2321,6 +2550,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContact");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2375,6 +2605,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevice");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2429,6 +2660,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGateway");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2483,6 +2715,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGatewayGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2538,6 +2771,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInvitationConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2545,6 +2779,63 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<GetInvitationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetInvitationConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the network profile details by the network profile ARN.
+     * </p>
+     * 
+     * @param getNetworkProfileRequest
+     * @return Result of the GetNetworkProfile operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws InvalidSecretsManagerResourceException
+     *         A password in SecretsManager is in an invalid state.
+     * @sample AmazonAlexaForBusiness.GetNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetNetworkProfileResult getNetworkProfile(GetNetworkProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetNetworkProfile(request);
+    }
+
+    @SdkInternalApi
+    final GetNetworkProfileResult executeGetNetworkProfile(GetNetworkProfileRequest getNetworkProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getNetworkProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetNetworkProfileRequest> request = null;
+        Response<GetNetworkProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getNetworkProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNetworkProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetNetworkProfileResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetNetworkProfileResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2593,6 +2884,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2647,6 +2939,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRoom");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2701,6 +2994,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRoomSkillParameter");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2756,6 +3050,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSkillGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2809,6 +3104,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBusinessReportSchedules");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2863,6 +3159,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConferenceProviders");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2918,6 +3215,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeviceEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2970,6 +3268,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGatewayGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3024,6 +3323,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGateways");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3076,6 +3376,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSkills");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3129,6 +3430,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSkillsStoreCategories");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3184,6 +3486,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSkillsStoreSkillsByCategory");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3240,6 +3543,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSmartHomeAppliances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3295,6 +3599,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3350,6 +3655,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConferencePreference");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3408,6 +3714,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutInvitationConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3464,6 +3771,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRoomSkillParameter");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3523,6 +3831,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutSkillAuthorization");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3583,6 +3892,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterAVSDevice");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3641,6 +3951,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectSkill");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3696,6 +4007,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResolveRoom");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3752,6 +4064,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeInvitation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3804,6 +4117,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchAddressBooks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3856,6 +4170,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchContacts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3908,12 +4223,67 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchDevices");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<SearchDevicesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchDevicesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Searches network profiles and lists the ones that meet a set of filter and sort criteria.
+     * </p>
+     * 
+     * @param searchNetworkProfilesRequest
+     * @return Result of the SearchNetworkProfiles operation returned by the service.
+     * @sample AmazonAlexaForBusiness.SearchNetworkProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SearchNetworkProfilesResult searchNetworkProfiles(SearchNetworkProfilesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchNetworkProfiles(request);
+    }
+
+    @SdkInternalApi
+    final SearchNetworkProfilesResult executeSearchNetworkProfiles(SearchNetworkProfilesRequest searchNetworkProfilesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchNetworkProfilesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchNetworkProfilesRequest> request = null;
+        Response<SearchNetworkProfilesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchNetworkProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchNetworkProfilesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchNetworkProfiles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchNetworkProfilesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new SearchNetworkProfilesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3960,6 +4330,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchProfiles");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4012,6 +4383,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchRooms");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4064,6 +4436,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchSkillGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4116,6 +4489,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchUsers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4173,6 +4547,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendAnnouncement");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4232,6 +4607,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendInvitation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4250,9 +4626,37 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Resets a device and its account to the known default settings, by clearing all information and settings set by
-     * previous users.
+     * Resets a device and its account to the known default settings. This clears all information and settings set by
+     * previous users in the following ways:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Bluetooth - This unpairs all bluetooth devices paired with your echo device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Volume - This resets the echo device's volume to the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Notifications - This clears all notifications from your echo device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lists - This clears all to-do items from your echo device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Settings - This internally syncs the room's profile (if the device is assigned to a room), contacts, address
+     * books, delegation access for account linking, and communications (if enabled on the room profile).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param startDeviceSyncRequest
      * @return Result of the StartDeviceSync operation returned by the service.
@@ -4288,6 +4692,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDeviceSync");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4345,6 +4750,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSmartHomeApplianceDiscovery");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4400,6 +4806,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4454,6 +4861,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4512,6 +4920,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAddressBook");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4569,6 +4978,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBusinessReportSchedule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4625,6 +5035,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConferenceProvider");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4682,6 +5093,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContact");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4741,6 +5153,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDevice");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4798,6 +5211,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGateway");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4855,12 +5269,76 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGatewayGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateGatewayGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateGatewayGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a network profile by the network profile ARN.
+     * </p>
+     * 
+     * @param updateNetworkProfileRequest
+     * @return Result of the UpdateNetworkProfile operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws NameInUseException
+     *         The name sent in the request is already in use.
+     * @throws ConcurrentModificationException
+     *         There is a concurrent modification of resources.
+     * @throws InvalidCertificateAuthorityException
+     *         The Certificate Authority can't issue or revoke a certificate.
+     * @throws InvalidSecretsManagerResourceException
+     *         A password in SecretsManager is in an invalid state.
+     * @sample AmazonAlexaForBusiness.UpdateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateNetworkProfileResult updateNetworkProfile(UpdateNetworkProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateNetworkProfile(request);
+    }
+
+    @SdkInternalApi
+    final UpdateNetworkProfileResult executeUpdateNetworkProfile(UpdateNetworkProfileRequest updateNetworkProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateNetworkProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateNetworkProfileRequest> request = null;
+        Response<UpdateNetworkProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNetworkProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNetworkProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateNetworkProfileResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateNetworkProfileResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4913,6 +5391,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4969,6 +5448,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRoom");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5027,6 +5507,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSkillGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

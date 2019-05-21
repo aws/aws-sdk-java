@@ -424,6 +424,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CompareFaces");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -503,6 +504,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCollection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -586,6 +588,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStreamProcessor");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -654,6 +657,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCollection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -721,6 +725,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFaces");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -787,6 +792,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStreamProcessor");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -855,6 +861,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCollection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -921,6 +928,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStreamProcessor");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1013,6 +1021,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectFaces");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1159,6 +1168,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectLabels");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1241,6 +1251,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectModerationLabels");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1343,6 +1354,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectText");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1414,6 +1426,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCelebrityInfo");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1527,6 +1540,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCelebrityRecognition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1626,6 +1640,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContentModeration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1711,6 +1726,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFaceDetection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1808,6 +1824,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFaceSearch");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1901,6 +1918,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLabelDetection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2002,6 +2020,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPersonTracking");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2198,6 +2217,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "IndexFaces");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2270,6 +2290,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCollections");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2340,6 +2361,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFaces");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2403,6 +2425,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStreamProcessors");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2503,6 +2526,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RecognizeCelebrities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2585,6 +2609,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchFaces");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2684,6 +2709,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchFacesByImage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2772,6 +2798,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartCelebrityRecognition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2862,6 +2889,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartContentModeration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2949,6 +2977,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartFaceDetection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3036,6 +3065,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartFaceSearch");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3127,6 +3157,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartLabelDetection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3213,6 +3244,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartPersonTracking");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3279,6 +3311,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartStreamProcessor");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3343,6 +3376,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopStreamProcessor");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

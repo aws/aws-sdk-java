@@ -195,6 +195,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelSigningProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -254,6 +255,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSigningJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -312,6 +314,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSigningPlatform");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -372,6 +375,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSigningProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -437,6 +441,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSigningJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -501,6 +506,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSigningPlatforms");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -564,6 +570,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSigningProfiles");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -629,6 +636,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutSigningProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -730,6 +738,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSigningJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

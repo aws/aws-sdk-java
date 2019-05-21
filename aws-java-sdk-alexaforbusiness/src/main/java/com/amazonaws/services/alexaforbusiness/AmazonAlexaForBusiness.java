@@ -84,6 +84,27 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Associates a device with the specified network profile.
+     * </p>
+     * 
+     * @param associateDeviceWithNetworkProfileRequest
+     * @return Result of the AssociateDeviceWithNetworkProfile operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws ConcurrentModificationException
+     *         There is a concurrent modification of resources.
+     * @throws DeviceNotRegisteredException
+     *         The request failed because this device is no longer registered and therefore no longer managed by this
+     *         account.
+     * @sample AmazonAlexaForBusiness.AssociateDeviceWithNetworkProfile
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateDeviceWithNetworkProfileResult associateDeviceWithNetworkProfile(AssociateDeviceWithNetworkProfileRequest associateDeviceWithNetworkProfileRequest);
+
+    /**
+     * <p>
      * Associates a device with a given room. This applies all the settings from the room profile to the device, and all
      * the skills in any skill groups added to that room. This operation requires the device to be online, or else a
      * manual sync is required.
@@ -237,6 +258,29 @@ public interface AmazonAlexaForBusiness {
      *      target="_top">AWS API Documentation</a>
      */
     CreateGatewayGroupResult createGatewayGroup(CreateGatewayGroupRequest createGatewayGroupRequest);
+
+    /**
+     * <p>
+     * Creates a network profile with the specified details.
+     * </p>
+     * 
+     * @param createNetworkProfileRequest
+     * @return Result of the CreateNetworkProfile operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource being created already exists.
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits.
+     * @throws ConcurrentModificationException
+     *         There is a concurrent modification of resources.
+     * @throws InvalidCertificateAuthorityException
+     *         The Certificate Authority can't issue or revoke a certificate.
+     * @throws InvalidServiceLinkedRoleStateException
+     *         The service linked role is locked for deletion.
+     * @sample AmazonAlexaForBusiness.CreateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateNetworkProfileResult createNetworkProfile(CreateNetworkProfileRequest createNetworkProfileRequest);
 
     /**
      * <p>
@@ -400,8 +444,8 @@ public interface AmazonAlexaForBusiness {
     /**
      * <p>
      * When this action is called for a specified shared device, it allows authorized users to delete the device's
-     * entire previous history of voice input data and associated response data. This action can be called once every 24
-     * hours for a specific shared device.
+     * entire previous history of voice input data. This action can be called once every 24 hours for a specific shared
+     * device.
      * </p>
      * 
      * @param deleteDeviceUsageDataRequest
@@ -433,6 +477,25 @@ public interface AmazonAlexaForBusiness {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteGatewayGroupResult deleteGatewayGroup(DeleteGatewayGroupRequest deleteGatewayGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a network profile by the network profile ARN.
+     * </p>
+     * 
+     * @param deleteNetworkProfileRequest
+     * @return Result of the DeleteNetworkProfile operation returned by the service.
+     * @throws ResourceInUseException
+     *         The resource in the request is already in use.
+     * @throws ConcurrentModificationException
+     *         There is a concurrent modification of resources.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.DeleteNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteNetworkProfileResult deleteNetworkProfile(DeleteNetworkProfileRequest deleteNetworkProfileRequest);
 
     /**
      * <p>
@@ -752,6 +815,23 @@ public interface AmazonAlexaForBusiness {
      *      target="_top">AWS API Documentation</a>
      */
     GetInvitationConfigurationResult getInvitationConfiguration(GetInvitationConfigurationRequest getInvitationConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets the network profile details by the network profile ARN.
+     * </p>
+     * 
+     * @param getNetworkProfileRequest
+     * @return Result of the GetNetworkProfile operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws InvalidSecretsManagerResourceException
+     *         A password in SecretsManager is in an invalid state.
+     * @sample AmazonAlexaForBusiness.GetNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetNetworkProfileResult getNetworkProfile(GetNetworkProfileRequest getNetworkProfileRequest);
 
     /**
      * <p>
@@ -1131,6 +1211,19 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Searches network profiles and lists the ones that meet a set of filter and sort criteria.
+     * </p>
+     * 
+     * @param searchNetworkProfilesRequest
+     * @return Result of the SearchNetworkProfiles operation returned by the service.
+     * @sample AmazonAlexaForBusiness.SearchNetworkProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SearchNetworkProfilesResult searchNetworkProfiles(SearchNetworkProfilesRequest searchNetworkProfilesRequest);
+
+    /**
+     * <p>
      * Searches room profiles and lists the ones that meet a set of filter criteria.
      * </p>
      * 
@@ -1221,9 +1314,37 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Resets a device and its account to the known default settings, by clearing all information and settings set by
-     * previous users.
+     * Resets a device and its account to the known default settings. This clears all information and settings set by
+     * previous users in the following ways:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Bluetooth - This unpairs all bluetooth devices paired with your echo device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Volume - This resets the echo device's volume to the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Notifications - This clears all notifications from your echo device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lists - This clears all to-do items from your echo device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Settings - This internally syncs the room's profile (if the device is assigned to a room), contacts, address
+     * books, delegation access for account linking, and communications (if enabled on the room profile).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param startDeviceSyncRequest
      * @return Result of the StartDeviceSync operation returned by the service.
@@ -1405,6 +1526,29 @@ public interface AmazonAlexaForBusiness {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateGatewayGroupResult updateGatewayGroup(UpdateGatewayGroupRequest updateGatewayGroupRequest);
+
+    /**
+     * <p>
+     * Updates a network profile by the network profile ARN.
+     * </p>
+     * 
+     * @param updateNetworkProfileRequest
+     * @return Result of the UpdateNetworkProfile operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws NameInUseException
+     *         The name sent in the request is already in use.
+     * @throws ConcurrentModificationException
+     *         There is a concurrent modification of resources.
+     * @throws InvalidCertificateAuthorityException
+     *         The Certificate Authority can't issue or revoke a certificate.
+     * @throws InvalidSecretsManagerResourceException
+     *         A password in SecretsManager is in an invalid state.
+     * @sample AmazonAlexaForBusiness.UpdateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateNetworkProfileResult updateNetworkProfile(UpdateNetworkProfileRequest updateNetworkProfileRequest);
 
     /**
      * <p>

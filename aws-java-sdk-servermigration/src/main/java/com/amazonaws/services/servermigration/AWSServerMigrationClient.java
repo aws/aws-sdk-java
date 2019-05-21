@@ -380,6 +380,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -452,6 +453,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateReplicationJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -516,6 +518,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -580,6 +583,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAppLaunchConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -646,6 +650,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAppReplicationConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -714,6 +719,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReplicationJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -775,6 +781,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteServerCatalog");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -839,6 +846,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateConnector");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -904,6 +912,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GenerateChangeSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -968,6 +977,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GenerateTemplate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1031,6 +1041,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1095,6 +1106,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAppLaunchConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1160,6 +1172,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAppReplicationConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1216,6 +1229,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnectors");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1275,6 +1289,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReplicationJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1334,6 +1349,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReplicationRuns");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1392,6 +1408,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1459,6 +1476,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportServerCatalog");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1522,6 +1540,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "LaunchApp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1585,6 +1604,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApps");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1649,6 +1669,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAppLaunchConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1714,6 +1735,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAppReplicationConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1778,6 +1800,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartAppReplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1846,6 +1869,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartOnDemandReplicationRun");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1910,6 +1934,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopAppReplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1973,6 +1998,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateApp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2036,6 +2062,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2105,6 +2132,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateReplicationJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

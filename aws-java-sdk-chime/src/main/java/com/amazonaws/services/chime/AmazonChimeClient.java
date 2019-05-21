@@ -252,6 +252,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociatePhoneNumberWithUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -322,6 +323,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociatePhoneNumbersWithVoiceConnector");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -394,6 +396,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeletePhoneNumber");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -478,6 +481,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchSuspendUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -553,6 +557,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUnsuspendUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -621,6 +626,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUpdatePhoneNumber");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -690,6 +696,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUpdateUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -760,6 +767,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -827,6 +835,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -893,6 +902,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePhoneNumberOrder");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -962,6 +972,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVoiceConnector");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1044,6 +1055,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1110,6 +1122,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventsConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1182,6 +1195,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePhoneNumber");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1250,6 +1264,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVoiceConnector");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1319,6 +1334,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVoiceConnectorOrigination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1389,6 +1405,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVoiceConnectorTermination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1459,6 +1476,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVoiceConnectorTerminationCredentials");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1529,6 +1547,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociatePhoneNumberFromUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1599,6 +1618,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociatePhoneNumbersFromVoiceConnector");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1667,6 +1687,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1737,6 +1758,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1802,6 +1824,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1870,6 +1893,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEventsConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1937,6 +1961,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGlobalSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2004,6 +2029,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPhoneNumber");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2072,6 +2098,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPhoneNumberOrder");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2144,6 +2171,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2211,6 +2239,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUserSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2279,6 +2308,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceConnector");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2347,6 +2377,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceConnectorOrigination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2416,6 +2447,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceConnectorTermination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2487,6 +2519,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceConnectorTerminationHealth");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2556,6 +2589,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InviteUsers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2625,6 +2659,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccounts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2690,6 +2725,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBots");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2755,6 +2791,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPhoneNumberOrders");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2822,6 +2859,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPhoneNumbers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2890,6 +2928,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2959,6 +2998,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVoiceConnectorTerminationCredentials");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3025,6 +3065,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVoiceConnectors");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3092,6 +3133,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "LogoutUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3160,6 +3202,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEventsConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3229,6 +3272,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutVoiceConnectorOrigination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3298,6 +3342,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutVoiceConnectorTermination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3368,6 +3413,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutVoiceConnectorTerminationCredentials");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3435,6 +3481,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegenerateSecurityToken");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3504,6 +3551,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetPersonalPIN");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3571,6 +3619,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestorePhoneNumber");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3637,6 +3686,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchAvailablePhoneNumbers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3706,6 +3756,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3778,6 +3829,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccountSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3845,6 +3897,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3911,6 +3964,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGlobalSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3978,6 +4032,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePhoneNumber");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4046,6 +4101,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4113,6 +4169,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4180,6 +4237,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVoiceConnector");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

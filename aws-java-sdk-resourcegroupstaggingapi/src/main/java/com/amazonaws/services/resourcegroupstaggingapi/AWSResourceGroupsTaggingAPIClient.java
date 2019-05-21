@@ -242,6 +242,7 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -305,6 +306,7 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTagKeys");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -368,6 +370,7 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTagValues");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -457,6 +460,7 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -534,6 +538,7 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

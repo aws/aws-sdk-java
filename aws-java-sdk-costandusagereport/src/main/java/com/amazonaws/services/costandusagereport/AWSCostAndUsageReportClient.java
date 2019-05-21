@@ -353,6 +353,7 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost and Usage Report Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReportDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -410,6 +411,7 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost and Usage Report Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReportDefinitions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -473,6 +475,7 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost and Usage Report Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutReportDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

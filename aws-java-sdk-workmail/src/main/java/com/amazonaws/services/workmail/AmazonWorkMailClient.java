@@ -264,6 +264,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDelegateToResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -335,6 +336,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateMemberToGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -408,6 +410,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAlias");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -477,6 +480,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -544,6 +548,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -616,6 +621,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -680,6 +686,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAlias");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -748,6 +755,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -813,6 +821,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMailboxPermissions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -876,6 +885,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -949,6 +959,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1015,6 +1026,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterFromWorkMail");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1077,6 +1089,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1133,6 +1146,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganization");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1194,6 +1208,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1255,6 +1270,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1321,6 +1337,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDelegateFromResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1393,6 +1410,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateMemberFromGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1453,6 +1471,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMailboxDetails");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1517,6 +1536,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAliases");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1581,6 +1601,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1642,6 +1663,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1703,6 +1725,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMailboxPermissions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1758,6 +1781,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOrganizations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1823,6 +1847,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceDelegates");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1883,6 +1908,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1942,6 +1968,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2006,6 +2033,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutMailboxPermissions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2093,6 +2121,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterToWorkMail");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2166,6 +2195,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetPassword");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2230,6 +2260,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMailboxQuota");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2313,6 +2344,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePrimaryEmailAddress");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2393,6 +2425,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -968,6 +968,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetRepositories");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1060,6 +1061,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBranch");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1218,6 +1220,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCommit");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1339,6 +1342,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePullRequest");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1416,6 +1420,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRepository");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1496,6 +1501,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBranch");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1556,6 +1562,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCommentContent");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1665,6 +1672,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1742,6 +1750,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRepository");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1824,6 +1833,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePullRequestEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1908,6 +1918,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBlob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1987,6 +1998,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBranch");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2047,6 +2059,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2131,6 +2144,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCommentsForComparedCommit");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2227,6 +2241,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCommentsForPullRequest");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2307,6 +2322,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCommit");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2397,6 +2413,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDifferences");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2485,6 +2502,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2569,6 +2587,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFolder");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2661,6 +2680,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMergeConflicts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2731,6 +2751,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPullRequest");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2812,6 +2833,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRepository");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2885,6 +2907,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRepositoryTriggers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2961,6 +2984,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBranches");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3046,6 +3070,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPullRequests");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3105,6 +3130,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRepositories");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3200,6 +3226,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MergePullRequestByFastForward");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3313,6 +3340,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PostCommentForComparedCommit");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3439,6 +3467,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PostCommentForPullRequest");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3512,6 +3541,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PostCommentReply");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3648,6 +3678,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutFile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3750,6 +3781,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRepositoryTriggers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3855,6 +3887,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestRepositoryTriggers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3922,6 +3955,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateComment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4007,6 +4041,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDefaultBranch");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4072,6 +4107,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePullRequestDescription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4152,6 +4188,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePullRequestStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4219,6 +4256,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePullRequestTitle");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4304,6 +4342,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRepositoryDescription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4374,6 +4413,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRepositoryName");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

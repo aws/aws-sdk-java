@@ -427,6 +427,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddLayerVersionPermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -516,6 +517,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddPermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -587,6 +589,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAlias");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -674,6 +677,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEventSourceMapping");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -772,6 +776,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFunction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -833,6 +838,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAlias");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -902,6 +908,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventSourceMapping");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -974,6 +981,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFunction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1038,6 +1046,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFunctionConcurrency");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1097,6 +1106,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLayerVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1154,6 +1164,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1218,6 +1229,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAlias");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1282,6 +1294,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEventSourceMapping");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1348,6 +1361,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1416,6 +1430,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunctionConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1482,6 +1497,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLayerVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1547,6 +1563,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLayerVersionByArn");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1612,6 +1629,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLayerVersionPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1678,6 +1696,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1813,6 +1832,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Invoke");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1880,6 +1900,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InvokeAsync");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1944,6 +1966,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAliases");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2009,6 +2032,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEventSourceMappings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2079,6 +2103,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFunctions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2150,6 +2175,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLayerVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2213,6 +2239,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLayers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2277,6 +2304,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2341,6 +2369,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVersionsByFunction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2413,6 +2442,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PublishLayerVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2493,6 +2523,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PublishVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2569,6 +2600,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutFunctionConcurrency");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2640,6 +2672,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveLayerVersionPermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2709,6 +2742,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2772,6 +2806,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2835,6 +2870,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2903,6 +2939,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAlias");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2974,6 +3011,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEventSourceMapping");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3049,6 +3087,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFunctionCode");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3127,6 +3166,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFunctionConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

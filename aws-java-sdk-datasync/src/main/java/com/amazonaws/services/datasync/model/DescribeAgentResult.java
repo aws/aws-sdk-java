@@ -60,6 +60,10 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
      */
     private java.util.Date creationTime;
 
+    private EndpointOptions endpointOptions;
+
+    private PrivateLinkConfig privateLinkConfig;
+
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the agent.
@@ -304,6 +308,58 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * @param endpointOptions
+     */
+
+    public void setEndpointOptions(EndpointOptions endpointOptions) {
+        this.endpointOptions = endpointOptions;
+    }
+
+    /**
+     * @return
+     */
+
+    public EndpointOptions getEndpointOptions() {
+        return this.endpointOptions;
+    }
+
+    /**
+     * @param endpointOptions
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAgentResult withEndpointOptions(EndpointOptions endpointOptions) {
+        setEndpointOptions(endpointOptions);
+        return this;
+    }
+
+    /**
+     * @param privateLinkConfig
+     */
+
+    public void setPrivateLinkConfig(PrivateLinkConfig privateLinkConfig) {
+        this.privateLinkConfig = privateLinkConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public PrivateLinkConfig getPrivateLinkConfig() {
+        return this.privateLinkConfig;
+    }
+
+    /**
+     * @param privateLinkConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAgentResult withPrivateLinkConfig(PrivateLinkConfig privateLinkConfig) {
+        setPrivateLinkConfig(privateLinkConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -324,7 +380,11 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getLastConnectionTime() != null)
             sb.append("LastConnectionTime: ").append(getLastConnectionTime()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime());
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getEndpointOptions() != null)
+            sb.append("EndpointOptions: ").append(getEndpointOptions()).append(",");
+        if (getPrivateLinkConfig() != null)
+            sb.append("PrivateLinkConfig: ").append(getPrivateLinkConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -359,6 +419,14 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
+        if (other.getEndpointOptions() == null ^ this.getEndpointOptions() == null)
+            return false;
+        if (other.getEndpointOptions() != null && other.getEndpointOptions().equals(this.getEndpointOptions()) == false)
+            return false;
+        if (other.getPrivateLinkConfig() == null ^ this.getPrivateLinkConfig() == null)
+            return false;
+        if (other.getPrivateLinkConfig() != null && other.getPrivateLinkConfig().equals(this.getPrivateLinkConfig()) == false)
+            return false;
         return true;
     }
 
@@ -372,6 +440,8 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getLastConnectionTime() == null) ? 0 : getLastConnectionTime().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getEndpointOptions() == null) ? 0 : getEndpointOptions().hashCode());
+        hashCode = prime * hashCode + ((getPrivateLinkConfig() == null) ? 0 : getPrivateLinkConfig().hashCode());
         return hashCode;
     }
 

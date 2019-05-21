@@ -356,6 +356,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddPermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -426,6 +427,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CheckIfPhoneNumberIsOptedOut");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -495,6 +497,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -589,6 +592,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePlatformApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -664,6 +668,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePlatformEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -740,6 +745,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTopic");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -809,6 +815,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -870,6 +877,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePlatformApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -939,6 +947,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTopic");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1006,6 +1015,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEndpointAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1071,6 +1081,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPlatformApplicationAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1136,6 +1147,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSMSAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1197,6 +1209,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSubscriptionAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1267,6 +1280,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTopicAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1344,6 +1358,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEndpointsByPlatformApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1413,6 +1428,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPhoneNumbersOptedOut");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1481,6 +1497,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPlatformApplications");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1550,6 +1567,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscriptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1626,6 +1644,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscriptionsByTopic");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1700,6 +1719,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1763,6 +1783,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTopics");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1838,6 +1859,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "OptInPhoneNumber");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1943,6 +1965,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Publish");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2013,6 +2036,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2081,6 +2105,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetEndpointAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2147,6 +2172,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetPlatformApplicationAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2215,6 +2241,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetSMSAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2279,6 +2306,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetSubscriptionAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2349,6 +2377,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetTopicAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2428,6 +2457,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Subscribe");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2538,6 +2568,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2608,6 +2639,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Unsubscribe");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2681,6 +2713,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

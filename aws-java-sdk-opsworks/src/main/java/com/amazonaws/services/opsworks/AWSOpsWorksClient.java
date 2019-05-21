@@ -503,6 +503,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssignInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -568,6 +569,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssignVolume");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -632,6 +634,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateElasticIp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -705,6 +708,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachElasticLoadBalancer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -770,6 +774,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CloneStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -833,6 +838,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -897,6 +903,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeployment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -961,6 +968,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1033,6 +1041,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLayer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1094,6 +1103,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1154,6 +1164,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1216,6 +1227,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1283,6 +1295,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1348,6 +1361,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLayer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1412,6 +1426,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1474,6 +1489,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1538,6 +1554,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterEcsCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1602,6 +1619,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterElasticIp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1665,6 +1683,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1728,6 +1747,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterRdsDbInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1792,6 +1812,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterVolume");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1850,6 +1871,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAgentVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1919,6 +1941,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApps");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1987,6 +2010,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCommands");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2055,6 +2079,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDeployments");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2123,6 +2148,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEcsClusters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2192,6 +2218,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeElasticIps");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2261,6 +2288,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeElasticLoadBalancers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2330,6 +2358,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2398,6 +2427,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLayers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2467,6 +2497,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLoadBasedAutoScaling");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2526,6 +2557,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMyUserProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2580,6 +2612,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOperatingSystems");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2643,6 +2676,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePermissions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2711,6 +2745,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRaidArrays");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2777,6 +2812,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRdsDbInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2844,6 +2880,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServiceErrors");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2910,6 +2947,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackProvisioningParameters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2975,6 +3013,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackSummary");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3038,6 +3077,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStacks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3107,6 +3147,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTimeBasedAutoScaling");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3170,6 +3211,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserProfiles");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3238,6 +3280,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVolumes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3299,6 +3342,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachElasticLoadBalancer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3364,6 +3408,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateElasticIp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3427,6 +3472,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHostnameSuggestion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3489,6 +3535,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GrantAccess");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3545,6 +3592,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3609,6 +3657,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebootInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3674,6 +3723,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterEcsCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3739,6 +3789,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterElasticIp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3819,6 +3870,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3881,6 +3933,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterRdsDbInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3947,6 +4000,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterVolume");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4019,6 +4073,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetLoadBasedAutoScaling");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4083,6 +4138,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetPermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4148,6 +4204,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetTimeBasedAutoScaling");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4213,6 +4270,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4275,6 +4333,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4340,6 +4399,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4402,6 +4462,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4460,6 +4521,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4524,6 +4586,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnassignInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4587,6 +4650,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnassignVolume");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4643,6 +4707,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4705,6 +4770,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4768,6 +4834,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateElasticIp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4830,6 +4897,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4892,6 +4960,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLayer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4952,6 +5021,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMyUserProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5014,6 +5084,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRdsDbInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5076,6 +5147,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5138,6 +5210,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5201,6 +5274,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpsWorks");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVolume");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

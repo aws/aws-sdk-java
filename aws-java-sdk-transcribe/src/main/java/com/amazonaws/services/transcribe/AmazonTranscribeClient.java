@@ -191,6 +191,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVocabulary");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -253,6 +254,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTranscriptionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -317,6 +319,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVocabulary");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -382,6 +385,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTranscriptionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -445,6 +449,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVocabulary");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -506,6 +511,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTranscriptionJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -569,6 +575,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVocabularies");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -636,6 +643,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartTranscriptionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -707,6 +715,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVocabulary");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

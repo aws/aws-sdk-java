@@ -447,6 +447,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ActivateGateway");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -512,6 +513,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddCache");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -600,6 +602,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTagsToResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -663,6 +666,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddUploadBuffer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -740,6 +744,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddWorkingStorage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -802,6 +807,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachVolume");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -862,6 +868,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelArchival");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -922,6 +929,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelRetrieval");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -999,6 +1007,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCachediSCSIVolume");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1072,6 +1081,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNFSFileShare");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1145,6 +1155,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSMBFileShare");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1245,6 +1256,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1328,6 +1340,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSnapshotFromVolumeRecoveryPoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1425,6 +1438,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStorediSCSIVolume");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1493,6 +1507,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTapeWithBarcode");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1560,6 +1575,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTapes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1628,6 +1644,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBandwidthRateLimit");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1700,6 +1717,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChapCredentials");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1760,6 +1778,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFileShare");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1835,6 +1854,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGateway");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1906,6 +1926,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSnapshotSchedule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1966,6 +1987,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTape");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2026,6 +2048,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTapeArchive");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2098,6 +2121,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVolume");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2164,6 +2188,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBandwidthRateLimit");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2228,6 +2253,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCache");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2292,6 +2318,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCachediSCSIVolumes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2354,6 +2381,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChapCredentials");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2417,6 +2445,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGatewayInformation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2479,6 +2508,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMaintenanceStartTime");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2540,6 +2570,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNFSFileShares");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2601,6 +2632,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSMBFileShares");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2661,6 +2693,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSMBSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2723,6 +2756,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSnapshotSchedule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2786,6 +2820,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStorediSCSIVolumes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2851,6 +2886,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTapeArchives");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2921,6 +2957,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTapeRecoveryPoints");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2983,6 +3020,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTapes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3046,6 +3084,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUploadBuffer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3109,6 +3148,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVTLDevices");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3180,6 +3220,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkingStorage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3243,6 +3284,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachVolume");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3312,6 +3354,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableGateway");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3372,6 +3415,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "JoinDomain");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3432,6 +3476,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFileShares");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3512,6 +3557,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGateways");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3583,6 +3629,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLocalDisks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3643,6 +3690,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3732,6 +3780,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTapes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3792,6 +3841,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVolumeInitiators");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3857,6 +3907,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVolumeRecoveryPoints");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3937,6 +3988,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVolumes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4009,6 +4061,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "NotifyWhenUploaded");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4080,6 +4133,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RefreshCache");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4140,6 +4194,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTagsFromResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4215,6 +4270,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetCache");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4282,6 +4338,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RetrieveTapeArchive");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4353,6 +4410,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RetrieveTapeRecoveryPoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4416,6 +4474,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetLocalConsolePassword");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4477,6 +4536,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetSMBGuestPassword");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4563,6 +4623,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ShutdownGateway");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4634,6 +4695,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartGateway");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4713,6 +4775,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBandwidthRateLimit");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4801,6 +4864,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChapCredentials");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4868,6 +4932,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGatewayInformation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4946,6 +5011,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGatewaySoftwareNow");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5029,6 +5095,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMaintenanceStartTime");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5130,6 +5197,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNFSFileShare");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5206,6 +5274,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSMBFileShare");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5295,6 +5364,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSnapshotSchedule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5356,6 +5426,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVTLDeviceType");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

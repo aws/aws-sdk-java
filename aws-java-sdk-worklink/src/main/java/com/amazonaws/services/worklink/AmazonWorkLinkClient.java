@@ -196,6 +196,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDomain");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -263,6 +264,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateWebsiteCertificateAuthority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -329,6 +331,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -391,6 +394,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -455,6 +459,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAuditStreamConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -520,6 +525,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCompanyNetworkConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -583,6 +589,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDevice");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -647,6 +654,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDevicePolicyConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -710,6 +718,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDomain");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -773,6 +782,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetMetadata");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -838,6 +848,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIdentityProviderConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -903,6 +914,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWebsiteCertificateAuthority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -967,6 +979,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDomain");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1031,6 +1044,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateWebsiteCertificateAuthority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1094,6 +1108,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevices");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1154,6 +1169,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomains");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1214,6 +1230,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFleets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1276,6 +1293,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWebsiteCertificateAuthorities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1339,6 +1357,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDomainAccess");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1401,6 +1420,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeDomainAccess");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1463,6 +1483,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SignOutUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1526,6 +1547,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAuditStreamConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1591,6 +1613,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCompanyNetworkConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1656,6 +1679,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDevicePolicyConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1719,6 +1743,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDomainMetadata");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1781,6 +1806,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFleetMetadata");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1845,6 +1871,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIdentityProviderConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -443,6 +443,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchMeterUsage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -517,6 +518,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MeterUsage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -617,6 +619,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterUsage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -686,6 +689,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResolveCustomer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

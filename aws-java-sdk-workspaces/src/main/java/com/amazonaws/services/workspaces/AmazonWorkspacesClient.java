@@ -364,6 +364,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateIpGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -430,6 +431,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AuthorizeIpRules");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -504,6 +506,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIpGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -562,6 +565,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -621,6 +625,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorkspaces");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -684,6 +689,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIpGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -740,6 +746,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -799,6 +806,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWorkspaceImage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -853,6 +861,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -909,6 +918,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountModifications");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -969,6 +979,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClientProperties");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1026,6 +1037,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIpGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1080,6 +1092,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1138,6 +1151,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspaceBundles");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1199,6 +1213,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspaceDirectories");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1261,6 +1276,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspaceImages");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1322,6 +1338,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspaces");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1383,6 +1400,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspacesConnectionStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1444,6 +1462,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateIpGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1509,6 +1528,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportWorkspaceImage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1573,6 +1593,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAvailableManagementCidrRanges");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1636,6 +1657,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1694,6 +1716,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyClientProperties");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1764,6 +1787,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyWorkspaceProperties");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1828,6 +1852,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyWorkspaceState");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1886,6 +1911,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebootWorkspaces");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1950,6 +1976,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebuildWorkspaces");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2010,6 +2037,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeIpRules");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2066,6 +2094,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartWorkspaces");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2122,6 +2151,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopWorkspaces");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2184,6 +2214,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateWorkspaces");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2246,6 +2277,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRulesOfIpGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

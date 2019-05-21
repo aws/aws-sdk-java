@@ -369,6 +369,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteThingShadow");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -441,6 +442,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetThingShadow");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -504,6 +506,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Publish");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -578,6 +581,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThingShadow");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

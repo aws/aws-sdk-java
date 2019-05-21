@@ -195,6 +195,7 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectEntities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -263,6 +264,7 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectPHI");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

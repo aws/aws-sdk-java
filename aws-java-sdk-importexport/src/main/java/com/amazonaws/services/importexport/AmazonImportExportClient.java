@@ -347,6 +347,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -435,6 +436,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -498,6 +500,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetShippingLabel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -560,6 +563,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -617,6 +621,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -713,6 +718,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

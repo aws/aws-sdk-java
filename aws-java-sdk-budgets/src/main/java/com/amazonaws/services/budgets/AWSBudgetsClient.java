@@ -415,6 +415,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBudget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -476,6 +477,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNotification");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -537,6 +539,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubscriber");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -599,6 +602,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBudget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -661,6 +665,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotification");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -723,6 +728,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubscriber");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -780,6 +786,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBudget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -843,6 +850,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBudgetPerformanceHistory");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -905,6 +913,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBudgets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -967,6 +976,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNotificationsForBudget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1031,6 +1041,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSubscribersForNotification");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1091,6 +1102,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBudget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1150,6 +1162,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNotification");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1209,6 +1222,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSubscriber");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

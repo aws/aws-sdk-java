@@ -197,6 +197,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateServer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -265,6 +266,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -330,6 +332,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteServer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -393,6 +396,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSshPublicKey");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -461,6 +465,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -524,6 +529,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -588,6 +594,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -655,6 +662,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportSshPublicKey");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -715,6 +723,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -776,6 +785,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -838,6 +848,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -907,6 +918,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartServer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -977,6 +989,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopServer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1039,6 +1052,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1102,6 +1116,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestIdentityProvider");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1164,6 +1179,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1228,6 +1244,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1292,6 +1309,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

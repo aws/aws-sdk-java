@@ -38,6 +38,13 @@
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "${metadata.serviceId}");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "${operationModel.operationName}");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                <#if operationModel.hasRequiresLengthInInput() >
+                    request.addHandlerContext(HandlerContextKey.REQUIRES_LENGTH, Boolean.TRUE);
+                </#if>
+                <#if operationModel.inputShape?? && operationModel.inputShape.hasStreamingMember >
+                    request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
+                </#if>
+
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

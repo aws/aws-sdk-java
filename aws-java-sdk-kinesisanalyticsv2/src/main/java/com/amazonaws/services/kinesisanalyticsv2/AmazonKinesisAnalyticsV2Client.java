@@ -217,6 +217,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationCloudWatchLoggingOption");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -291,6 +292,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationInput");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -359,6 +361,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationInputProcessingConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -438,6 +441,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationOutput");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -510,6 +514,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationReferenceDataSource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -582,6 +587,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -648,6 +654,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplicationSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -715,6 +722,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -783,6 +791,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationCloudWatchLoggingOption");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -851,6 +860,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationInputProcessingConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -918,6 +928,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationOutput");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -990,6 +1001,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationReferenceDataSource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1055,6 +1067,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1117,6 +1130,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1177,6 +1191,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApplicationSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1252,6 +1267,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DiscoverInputSchema");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1310,6 +1326,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationSnapshots");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1369,6 +1386,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplications");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1428,6 +1446,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1491,6 +1510,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1554,6 +1574,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1620,6 +1641,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1685,6 +1707,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1756,6 +1779,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

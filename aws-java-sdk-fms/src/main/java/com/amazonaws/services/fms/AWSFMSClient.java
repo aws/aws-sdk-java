@@ -199,6 +199,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateAdminAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -262,6 +263,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotificationChannel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -323,6 +325,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -385,6 +388,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateAdminAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -447,6 +451,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAdminAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -505,6 +510,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceDetail");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -566,6 +572,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNotificationChannel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -629,6 +636,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -688,6 +696,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProtectionStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -746,6 +755,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListComplianceStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -807,6 +817,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMemberAccounts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -872,6 +883,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPolicies");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -933,6 +945,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutNotificationChannel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1016,6 +1029,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

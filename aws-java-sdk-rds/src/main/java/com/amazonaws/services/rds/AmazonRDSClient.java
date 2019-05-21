@@ -494,6 +494,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddRoleToDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -560,6 +561,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddRoleToDBInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -616,6 +618,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddSourceIdentifierToSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -679,6 +682,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTagsToResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -737,6 +741,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ApplyPendingMaintenanceAction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -812,6 +817,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AuthorizeDBSecurityGroupIngress");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -877,6 +883,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BacktrackDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -940,6 +947,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyDBClusterParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1096,6 +1104,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyDBClusterSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1153,6 +1162,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyDBParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1223,6 +1233,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyDBSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1280,6 +1291,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyOptionGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1383,6 +1395,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1451,6 +1464,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBClusterEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1540,6 +1554,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBClusterParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1609,6 +1624,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBClusterSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1702,6 +1718,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1810,6 +1827,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBInstanceReadReplica");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1884,6 +1902,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1946,6 +1965,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBSecurityGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2005,6 +2025,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2068,6 +2089,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBSubnetGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2148,6 +2170,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEventSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2219,6 +2242,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGlobalCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2274,6 +2298,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOptionGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2348,6 +2373,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2410,6 +2436,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBClusterEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2478,6 +2505,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBClusterParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2549,6 +2577,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBClusterSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2646,6 +2675,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2704,6 +2734,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBInstanceAutomatedBackup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2762,6 +2793,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2823,6 +2855,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBSecurityGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2884,6 +2917,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2946,6 +2980,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBSubnetGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3002,6 +3037,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3061,6 +3097,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGlobalCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3116,6 +3153,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOptionGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3173,6 +3211,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3232,6 +3271,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCertificates");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3303,6 +3343,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterBacktracks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3362,6 +3403,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterEndpoints");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3429,6 +3471,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterParameterGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3498,6 +3541,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterParameters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3569,6 +3613,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterSnapshotAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3633,6 +3678,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterSnapshots");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3702,6 +3748,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3759,6 +3806,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBEngineVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3827,6 +3875,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBInstanceAutomatedBackups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3881,6 +3930,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3940,6 +3990,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBLogFiles");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3995,6 +4046,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBParameterGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4054,6 +4106,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBParameters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4109,6 +4162,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBSecurityGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4178,6 +4232,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBSnapshotAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4237,6 +4292,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBSnapshots");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4301,6 +4357,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBSubnetGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4365,6 +4422,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEngineDefaultClusterParameters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4416,6 +4474,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEngineDefaultParameters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4470,6 +4529,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventCategories");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4533,6 +4593,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventSubscriptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4592,6 +4653,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4660,6 +4722,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGlobalClusters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4712,6 +4775,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOptionGroupOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4766,6 +4830,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOptionGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4825,6 +4890,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrderableDBInstanceOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4880,6 +4946,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePendingMaintenanceActions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4939,6 +5006,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedDBInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5000,6 +5068,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedDBInstancesOfferings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5058,6 +5127,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSourceRegions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5117,6 +5187,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeValidDBInstanceModifications");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5173,6 +5244,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DownloadDBLogFilePortion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5251,6 +5323,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "FailoverDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5318,6 +5391,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5405,6 +5479,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyCurrentDBClusterCapacity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5488,6 +5563,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5554,6 +5630,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBClusterEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5639,6 +5716,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBClusterParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5717,6 +5795,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBClusterSnapshotAttribute");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5808,6 +5887,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5882,6 +5962,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5939,6 +6020,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6010,6 +6092,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBSnapshotAttribute");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6074,6 +6157,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBSubnetGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6144,6 +6228,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyEventSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6205,6 +6290,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyGlobalCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6260,6 +6346,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyOptionGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6333,6 +6420,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PromoteReadReplica");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6393,6 +6481,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PromoteReadReplicaDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6451,6 +6540,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseReservedDBInstancesOffering");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6517,6 +6607,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebootDBInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6579,6 +6670,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveFromGlobalCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6645,6 +6737,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveRoleFromDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6703,6 +6796,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveRoleFromDBInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6761,6 +6855,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveSourceIdentifierFromSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6823,6 +6918,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTagsFromResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6899,6 +6995,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetDBClusterParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6961,6 +7058,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetDBParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7052,6 +7150,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBClusterFromS3");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7162,6 +7261,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBClusterFromSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7271,6 +7371,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBClusterToPointInTime");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7388,6 +7489,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBInstanceFromDBSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7483,6 +7585,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBInstanceFromS3");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7597,6 +7700,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBInstanceToPointInTime");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7659,6 +7763,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeDBSecurityGroupIngress");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7727,6 +7832,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7816,6 +7922,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDBInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7885,6 +7992,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7959,6 +8067,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDBInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

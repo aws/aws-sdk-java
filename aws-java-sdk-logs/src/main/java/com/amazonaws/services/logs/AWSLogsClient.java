@@ -400,6 +400,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateKmsKey");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -463,6 +464,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelExportTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -538,6 +540,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateExportTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -633,6 +636,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLogGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -716,6 +720,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLogStream");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -777,6 +782,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDestination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -838,6 +844,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLogGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -899,6 +906,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLogStream");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -959,6 +967,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMetricFilter");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1018,6 +1027,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourcePolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1081,6 +1091,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRetentionPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1143,6 +1154,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubscriptionFilter");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1200,6 +1212,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDestinations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1262,6 +1275,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExportTasks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1319,6 +1333,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLogGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1386,6 +1401,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLogStreams");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1445,6 +1461,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMetricFilters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1506,6 +1523,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeQueries");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1563,6 +1581,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeResourcePolicies");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1624,6 +1643,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSubscriptionFilters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1694,6 +1714,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateKmsKey");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1758,6 +1779,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "FilterLogEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1820,6 +1842,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLogEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1888,6 +1911,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLogGroupFields");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1953,6 +1977,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLogRecord");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2015,6 +2040,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueryResults");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2071,6 +2097,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsLogGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2138,6 +2165,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDestination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2198,6 +2226,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDestinationPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2311,6 +2340,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLogEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2377,6 +2407,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutMetricFilter");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2436,6 +2467,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourcePolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2497,6 +2529,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRetentionPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2589,6 +2622,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutSubscriptionFilter");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2663,6 +2697,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartQuery");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2722,6 +2757,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopQuery");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2786,6 +2822,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagLogGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2843,6 +2880,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestMetricFilter");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2900,6 +2938,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagLogGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

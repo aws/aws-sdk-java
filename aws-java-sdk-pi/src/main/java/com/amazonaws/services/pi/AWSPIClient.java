@@ -188,6 +188,7 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDimensionKeys");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -248,6 +249,7 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceMetrics");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

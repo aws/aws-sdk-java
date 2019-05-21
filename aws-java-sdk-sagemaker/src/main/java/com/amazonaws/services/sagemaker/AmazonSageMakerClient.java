@@ -189,6 +189,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -241,6 +242,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAlgorithm");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -301,6 +303,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCodeRepository");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -398,6 +401,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCompilationJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -491,6 +495,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -565,6 +570,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEndpointConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -626,6 +632,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHyperParameterTuningJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -723,6 +730,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLabelingJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -802,6 +810,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateModel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -861,6 +870,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateModelPackage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -964,6 +974,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNotebookInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1044,6 +1055,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNotebookInstanceLifecycleConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1117,6 +1129,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePresignedNotebookInstanceUrl");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1231,6 +1244,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrainingJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1331,6 +1345,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTransformJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1392,6 +1407,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorkteam");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1444,6 +1460,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAlgorithm");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1496,6 +1513,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCodeRepository");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1553,6 +1571,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1606,6 +1625,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEndpointConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1661,6 +1681,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteModel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1717,6 +1738,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteModelPackage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1776,6 +1798,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotebookInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1831,6 +1854,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotebookInstanceLifecycleConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1893,6 +1917,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1948,6 +1973,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWorkteam");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2000,6 +2026,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAlgorithm");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2052,6 +2079,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCodeRepository");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2111,6 +2139,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCompilationJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2164,6 +2193,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2216,6 +2246,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEndpointConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2273,6 +2304,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHyperParameterTuningJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2328,6 +2360,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLabelingJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2380,6 +2413,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeModel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2436,6 +2470,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeModelPackage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2489,6 +2524,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNotebookInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2550,6 +2586,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNotebookInstanceLifecycleConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2605,6 +2642,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSubscribedWorkteam");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2660,6 +2698,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrainingJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2714,6 +2753,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTransformJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2767,6 +2807,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkteam");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2821,6 +2862,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSearchSuggestions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2873,6 +2915,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAlgorithms");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2925,6 +2968,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCodeRepositories");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2981,6 +3025,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCompilationJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3033,6 +3078,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEndpointConfigs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3085,6 +3131,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEndpoints");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3139,6 +3186,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHyperParameterTuningJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3192,6 +3240,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLabelingJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3247,6 +3296,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLabelingJobsForWorkteam");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3300,6 +3350,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListModelPackages");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3353,6 +3404,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListModels");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3408,6 +3460,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNotebookInstanceLifecycleConfigs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3461,6 +3514,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNotebookInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3516,6 +3570,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscribedWorkteams");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3569,6 +3624,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3621,6 +3677,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrainingJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3679,6 +3736,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrainingJobsForHyperParameterTuningJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3732,6 +3790,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTransformJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3785,6 +3844,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorkteams");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3837,6 +3897,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RenderUiTemplate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3894,6 +3955,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Search");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3952,6 +4014,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartNotebookInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4016,6 +4079,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopCompilationJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4076,6 +4140,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopHyperParameterTuningJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4132,6 +4197,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopLabelingJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4191,6 +4257,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopNotebookInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4251,6 +4318,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopTrainingJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4310,6 +4378,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopTransformJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4362,6 +4431,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCodeRepository");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4431,6 +4501,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4492,6 +4563,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEndpointWeightsAndCapacities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4549,6 +4621,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNotebookInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4608,6 +4681,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNotebookInstanceLifecycleConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4664,6 +4738,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWorkteam");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

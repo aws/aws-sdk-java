@@ -340,6 +340,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -455,6 +456,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateComputeEnvironment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -521,6 +523,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJobQueue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -585,6 +588,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteComputeEnvironment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -649,6 +653,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteJobQueue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -708,6 +713,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterJobDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -773,6 +779,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComputeEnvironments");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -833,6 +840,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobDefinitions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -892,6 +900,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobQueues");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -950,6 +959,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1032,6 +1042,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1090,6 +1101,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterJobDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1150,6 +1162,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubmitJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1210,6 +1223,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1269,6 +1283,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateComputeEnvironment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1328,6 +1343,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJobQueue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

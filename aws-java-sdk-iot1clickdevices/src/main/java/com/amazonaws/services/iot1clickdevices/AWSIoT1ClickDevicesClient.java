@@ -193,6 +193,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ClaimDevicesByClaimCode");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -252,6 +253,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDevice");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -320,6 +322,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "FinalizeDeviceClaim");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -378,6 +381,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeviceMethods");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -444,6 +448,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitiateDeviceClaim");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -509,6 +514,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InvokeDeviceMethod");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -569,6 +575,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeviceEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -627,6 +634,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevices");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -683,6 +691,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -743,6 +752,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -801,6 +811,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnclaimDevice");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -859,6 +870,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -917,6 +929,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Devices Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDeviceState");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

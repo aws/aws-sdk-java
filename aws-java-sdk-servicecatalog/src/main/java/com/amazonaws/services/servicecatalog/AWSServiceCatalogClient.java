@@ -350,6 +350,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptPortfolioShare");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -412,6 +413,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateBudgetWithResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -474,6 +476,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociatePrincipalWithPortfolio");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -535,6 +538,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateProductWithPortfolio");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -599,6 +603,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateServiceActionWithProvisioningArtifact");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -669,6 +674,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateTagOptionWithResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -728,6 +734,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchAssociateServiceActionWithProvisioningArtifact");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -787,6 +794,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDisassociateServiceActionFromProvisioningArtifact");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -852,6 +860,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyProduct");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -913,6 +922,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConstraint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -974,6 +984,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePortfolio");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1037,6 +1048,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePortfolioShare");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1098,6 +1110,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProduct");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1167,6 +1180,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProvisionedProductPlan");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1231,6 +1245,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProvisioningArtifact");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1289,6 +1304,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateServiceAction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1350,6 +1366,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTagOption");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1406,6 +1423,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConstraint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1472,6 +1490,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePortfolio");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1531,6 +1550,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePortfolioShare");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1596,6 +1616,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProduct");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1653,6 +1674,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProvisionedProductPlan");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1717,6 +1739,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProvisioningArtifact");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1774,6 +1797,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteServiceAction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1837,6 +1861,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTagOption");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1891,6 +1916,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConstraint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1946,6 +1972,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCopyProductStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2001,6 +2028,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePortfolio");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2061,6 +2089,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePortfolioShareStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2118,6 +2147,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProduct");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2172,6 +2202,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProductAsAdmin");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2229,6 +2260,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProductView");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2284,6 +2316,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProvisionedProduct");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2342,6 +2375,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProvisionedProductPlan");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2398,6 +2432,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProvisioningArtifact");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2464,6 +2499,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProvisioningParameters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2523,6 +2559,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRecord");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2577,6 +2614,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServiceAction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2636,6 +2674,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTagOption");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2699,6 +2738,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableAWSOrganizationsAccess");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2755,6 +2795,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateBudgetFromResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2815,6 +2856,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociatePrincipalFromPortfolio");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2876,6 +2918,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateProductFromPortfolio");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2935,6 +2978,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateServiceActionFromProvisioningArtifact");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2996,6 +3040,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateTagOptionFromResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3063,6 +3108,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableAWSOrganizationsAccess");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3124,6 +3170,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteProvisionedProductPlan");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3187,6 +3234,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteProvisionedProductServiceAction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3247,6 +3295,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAWSOrganizationsAccessStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3305,6 +3354,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAcceptedPortfolioShares");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3362,6 +3412,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBudgetsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3420,6 +3471,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConstraintsForPortfolio");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3478,6 +3530,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLaunchPaths");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3539,6 +3592,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOrganizationPortfolioAccess");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3594,6 +3648,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPortfolioAccess");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3648,6 +3703,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPortfolios");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3705,6 +3761,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPortfoliosForProduct");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3763,6 +3820,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPrincipalsForPortfolio");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3821,6 +3879,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProvisionedProductPlans");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3879,6 +3938,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProvisioningArtifacts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3939,6 +3999,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProvisioningArtifactsForServiceAction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3994,6 +4055,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecordHistory");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4055,6 +4117,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourcesForTagOption");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4110,6 +4173,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServiceActions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4170,6 +4234,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServiceActionsForProvisioningArtifact");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4229,6 +4294,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4297,6 +4363,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ProvisionProduct");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4351,6 +4418,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectPortfolioShare");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4409,6 +4477,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ScanProvisionedProducts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4464,6 +4533,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchProducts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4520,6 +4590,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchProductsAsAdmin");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4576,6 +4647,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchProvisionedProducts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4638,6 +4710,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateProvisionedProduct");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4695,6 +4768,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConstraint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4761,6 +4835,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePortfolio");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4821,6 +4896,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProduct");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4886,6 +4962,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProvisionedProduct");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4947,6 +5024,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProvisioningArtifact");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5004,6 +5082,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServiceAction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5066,6 +5145,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTagOption");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

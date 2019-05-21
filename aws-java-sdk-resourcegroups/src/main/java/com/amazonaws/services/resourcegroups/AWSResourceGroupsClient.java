@@ -238,6 +238,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -303,6 +304,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -367,6 +369,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -431,6 +434,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupQuery");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -495,6 +499,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -562,6 +567,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -624,6 +630,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -690,6 +697,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -755,6 +763,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Tag");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -819,6 +828,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Untag");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -883,6 +893,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -947,6 +958,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroupQuery");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

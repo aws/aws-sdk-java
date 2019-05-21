@@ -461,6 +461,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddPermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -557,6 +558,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangeMessageVisibility");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -642,6 +644,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangeMessageVisibilityBatch");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -771,6 +774,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateQueue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -851,6 +855,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMessage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -933,6 +938,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMessageBatch");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1013,6 +1019,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteQueue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1088,6 +1095,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueueAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1155,6 +1163,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueueUrl");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1219,6 +1228,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeadLetterSourceQueues");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1318,6 +1328,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListQueueTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1384,6 +1395,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListQueues");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1467,6 +1479,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurgeQueue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1592,6 +1605,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReceiveMessage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1660,6 +1674,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1734,6 +1749,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendMessage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1839,6 +1855,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendMessageBatch");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1912,6 +1929,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetQueueAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2016,6 +2034,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagQueue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2119,6 +2138,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagQueue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

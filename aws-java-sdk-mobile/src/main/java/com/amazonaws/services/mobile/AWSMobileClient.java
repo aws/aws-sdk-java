@@ -206,6 +206,7 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -270,6 +271,7 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -337,6 +339,7 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBundle");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -404,6 +407,7 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -473,6 +477,7 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportBundle");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -542,6 +547,7 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -607,6 +613,7 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBundles");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -672,6 +679,7 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProjects");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -745,6 +753,7 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

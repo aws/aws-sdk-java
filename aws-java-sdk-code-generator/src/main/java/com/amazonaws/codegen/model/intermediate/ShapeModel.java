@@ -42,6 +42,7 @@ public class ShapeModel extends DocumentationModel {
     private boolean hasHeaderMember;
     private boolean hasStatusCodeMember;
     private boolean hasStreamingMember;
+    private boolean hasRequiresLengthMember;
     private boolean wrapper;
     // For APIG generated requests
     private String requestSignerClassFqcn;
@@ -191,6 +192,19 @@ public class ShapeModel extends DocumentationModel {
 
     public ShapeModel withHasStreamingMember(boolean hasStreamingMember) {
         setHasStreamingMember(hasStreamingMember);
+        return this;
+    }
+
+    public boolean isHasRequiresLengthMember() {
+        return hasRequiresLengthMember;
+    }
+
+    public void setHasRequiresLengthMember(boolean hasRequiresLengthMember) {
+        this.hasRequiresLengthMember = hasRequiresLengthMember;
+    }
+
+    public ShapeModel withHasRequiresLengthMember(boolean hasRequiresLengthMember) {
+        setHasRequiresLengthMember(hasRequiresLengthMember);
         return this;
     }
 

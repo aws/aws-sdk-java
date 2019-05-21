@@ -342,6 +342,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAlarms");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -400,6 +401,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDashboards");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -458,6 +460,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAlarmHistory");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -518,6 +521,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAlarms");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -575,6 +579,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAlarmsForMetric");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -628,6 +633,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableAlarmActions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -680,6 +686,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableAlarmActions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -743,6 +750,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDashboard");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -840,6 +848,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetricData");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -971,6 +980,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetricStatistics");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1046,6 +1056,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetricWidgetImage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1108,6 +1119,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDashboards");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1173,6 +1185,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMetrics");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1235,6 +1248,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1309,6 +1323,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDashboard");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1423,6 +1438,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutMetricAlarm");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1530,6 +1546,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutMetricData");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1590,6 +1607,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetAlarmState");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1663,6 +1681,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1722,6 +1741,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -225,6 +225,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -288,6 +289,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplicationVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -350,6 +352,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCloudFormationChangeSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -414,6 +417,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCloudFormationTemplate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -479,6 +483,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -541,6 +546,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -603,6 +609,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApplicationPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -666,6 +673,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCloudFormationTemplate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -730,6 +738,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationDependencies");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -794,6 +803,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -855,6 +865,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplications");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -919,6 +930,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutApplicationPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -983,6 +995,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplication");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

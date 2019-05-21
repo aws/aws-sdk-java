@@ -393,6 +393,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BulkPublish");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -465,6 +466,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataset");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -534,6 +536,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataset");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -602,6 +605,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIdentityPoolUsage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -670,6 +674,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIdentityUsage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -736,6 +741,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBulkPublishDetails");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -804,6 +810,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCognitoEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -872,6 +879,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityPoolConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -939,6 +947,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1004,6 +1013,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIdentityPoolUsage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1072,6 +1082,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecords");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1140,6 +1151,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterDevice");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1209,6 +1221,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetCognitoEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1279,6 +1292,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIdentityPoolConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1348,6 +1362,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubscribeToDataset");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1416,6 +1431,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnsubscribeFromDataset");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1505,6 +1521,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRecords");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

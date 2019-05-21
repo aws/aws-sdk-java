@@ -187,6 +187,7 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyBackupToRegion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -250,6 +251,7 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -313,6 +315,7 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHsm");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -377,6 +380,7 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -442,6 +446,7 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -507,6 +512,7 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHsm");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -576,6 +582,7 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBackups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -643,6 +650,7 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClusters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -708,6 +716,7 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitializeCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -777,6 +786,7 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -841,6 +851,7 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreBackup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -904,6 +915,7 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -967,6 +979,7 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudHSM V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

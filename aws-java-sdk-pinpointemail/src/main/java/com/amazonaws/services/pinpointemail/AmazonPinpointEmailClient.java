@@ -236,6 +236,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -309,6 +310,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationSetEventDestination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -376,6 +378,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDedicatedIpPool");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -459,6 +462,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeliverabilityTestReport");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -534,6 +538,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEmailIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -601,6 +606,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -670,6 +676,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationSetEventDestination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -732,6 +739,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDedicatedIpPool");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -797,6 +805,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEmailIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -855,6 +864,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -914,6 +924,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBlacklistReports");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -980,6 +991,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConfigurationSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1048,6 +1060,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConfigurationSetEventDestinations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1109,6 +1122,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDedicatedIp");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1168,6 +1182,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDedicatedIps");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1244,6 +1259,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeliverabilityDashboardOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1305,6 +1321,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeliverabilityTestReport");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1366,6 +1383,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDomainStatisticsReport");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1427,6 +1445,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEmailIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1491,6 +1510,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurationSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1549,6 +1569,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDedicatedIpPools");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1611,6 +1632,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeliverabilityTestReports");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1673,6 +1695,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEmailIdentities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1734,6 +1757,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1794,6 +1818,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccountDedicatedIpWarmupAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1853,6 +1878,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccountSendingAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1917,6 +1943,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationSetDeliveryOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1981,6 +2008,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationSetReputationOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2044,6 +2072,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationSetSendingOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2107,6 +2136,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationSetTrackingOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2177,6 +2207,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDedicatedIpInPool");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2236,6 +2267,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDedicatedIpWarmupAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2317,6 +2349,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDeliverabilityDashboardOption");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2378,6 +2411,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEmailIdentityDkimAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2453,6 +2487,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEmailIdentityFeedbackAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2516,6 +2551,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEmailIdentityMailFromAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2601,6 +2637,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendEmail");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2669,6 +2706,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2729,6 +2767,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2797,6 +2836,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfigurationSetEventDestination");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

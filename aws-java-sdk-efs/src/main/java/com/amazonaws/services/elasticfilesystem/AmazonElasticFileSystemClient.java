@@ -456,6 +456,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFileSystem");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -689,6 +690,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMountTarget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -754,6 +756,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -831,6 +834,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFileSystem");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -928,6 +932,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMountTarget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -993,6 +998,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1074,6 +1080,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFileSystems");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1146,6 +1153,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLifecycleConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1228,6 +1236,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMountTargetSecurityGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1296,6 +1305,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMountTargets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1360,6 +1370,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1450,6 +1461,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyMountTargetSecurityGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1552,6 +1564,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLifecycleConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1625,6 +1638,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFileSystem");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

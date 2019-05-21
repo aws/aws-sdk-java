@@ -108,6 +108,43 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Associates a device with the specified network profile.
+     * </p>
+     * 
+     * @param associateDeviceWithNetworkProfileRequest
+     * @return A Java Future containing the result of the AssociateDeviceWithNetworkProfile operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsync.AssociateDeviceWithNetworkProfile
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateDeviceWithNetworkProfileResult> associateDeviceWithNetworkProfileAsync(
+            AssociateDeviceWithNetworkProfileRequest associateDeviceWithNetworkProfileRequest);
+
+    /**
+     * <p>
+     * Associates a device with the specified network profile.
+     * </p>
+     * 
+     * @param associateDeviceWithNetworkProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateDeviceWithNetworkProfile operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.AssociateDeviceWithNetworkProfile
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateDeviceWithNetworkProfileResult> associateDeviceWithNetworkProfileAsync(
+            AssociateDeviceWithNetworkProfileRequest associateDeviceWithNetworkProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateDeviceWithNetworkProfileRequest, AssociateDeviceWithNetworkProfileResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates a device with a given room. This applies all the settings from the room profile to the device, and all
      * the skills in any skill groups added to that room. This operation requires the device to be online, or else a
      * manual sync is required.
@@ -405,6 +442,37 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Creates a network profile with the specified details.
+     * </p>
+     * 
+     * @param createNetworkProfileRequest
+     * @return A Java Future containing the result of the CreateNetworkProfile operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.CreateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest createNetworkProfileRequest);
+
+    /**
+     * <p>
+     * Creates a network profile with the specified details.
+     * </p>
+     * 
+     * @param createNetworkProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateNetworkProfile operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.CreateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest createNetworkProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateNetworkProfileRequest, CreateNetworkProfileResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new room profile with the specified details.
      * </p>
      * 
@@ -689,8 +757,8 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
     /**
      * <p>
      * When this action is called for a specified shared device, it allows authorized users to delete the device's
-     * entire previous history of voice input data and associated response data. This action can be called once every 24
-     * hours for a specific shared device.
+     * entire previous history of voice input data. This action can be called once every 24 hours for a specific shared
+     * device.
      * </p>
      * 
      * @param deleteDeviceUsageDataRequest
@@ -704,8 +772,8 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
     /**
      * <p>
      * When this action is called for a specified shared device, it allows authorized users to delete the device's
-     * entire previous history of voice input data and associated response data. This action can be called once every 24
-     * hours for a specific shared device.
+     * entire previous history of voice input data. This action can be called once every 24 hours for a specific shared
+     * device.
      * </p>
      * 
      * @param deleteDeviceUsageDataRequest
@@ -751,6 +819,37 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<DeleteGatewayGroupResult> deleteGatewayGroupAsync(DeleteGatewayGroupRequest deleteGatewayGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteGatewayGroupRequest, DeleteGatewayGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a network profile by the network profile ARN.
+     * </p>
+     * 
+     * @param deleteNetworkProfileRequest
+     * @return A Java Future containing the result of the DeleteNetworkProfile operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.DeleteNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest deleteNetworkProfileRequest);
+
+    /**
+     * <p>
+     * Deletes a network profile by the network profile ARN.
+     * </p>
+     * 
+     * @param deleteNetworkProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteNetworkProfile operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.DeleteNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest deleteNetworkProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkProfileRequest, DeleteNetworkProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -1397,6 +1496,37 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
     java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(
             GetInvitationConfigurationRequest getInvitationConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<GetInvitationConfigurationRequest, GetInvitationConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the network profile details by the network profile ARN.
+     * </p>
+     * 
+     * @param getNetworkProfileRequest
+     * @return A Java Future containing the result of the GetNetworkProfile operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.GetNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest getNetworkProfileRequest);
+
+    /**
+     * <p>
+     * Gets the network profile details by the network profile ARN.
+     * </p>
+     * 
+     * @param getNetworkProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetNetworkProfile operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.GetNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest getNetworkProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<GetNetworkProfileRequest, GetNetworkProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -2203,6 +2333,37 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Searches network profiles and lists the ones that meet a set of filter and sort criteria.
+     * </p>
+     * 
+     * @param searchNetworkProfilesRequest
+     * @return A Java Future containing the result of the SearchNetworkProfiles operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.SearchNetworkProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchNetworkProfilesResult> searchNetworkProfilesAsync(SearchNetworkProfilesRequest searchNetworkProfilesRequest);
+
+    /**
+     * <p>
+     * Searches network profiles and lists the ones that meet a set of filter and sort criteria.
+     * </p>
+     * 
+     * @param searchNetworkProfilesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchNetworkProfiles operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.SearchNetworkProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchNetworkProfilesResult> searchNetworkProfilesAsync(SearchNetworkProfilesRequest searchNetworkProfilesRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchNetworkProfilesRequest, SearchNetworkProfilesResult> asyncHandler);
+
+    /**
+     * <p>
      * Searches room profiles and lists the ones that meet a set of filter criteria.
      * </p>
      * 
@@ -2393,9 +2554,37 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Resets a device and its account to the known default settings, by clearing all information and settings set by
-     * previous users.
+     * Resets a device and its account to the known default settings. This clears all information and settings set by
+     * previous users in the following ways:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Bluetooth - This unpairs all bluetooth devices paired with your echo device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Volume - This resets the echo device's volume to the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Notifications - This clears all notifications from your echo device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lists - This clears all to-do items from your echo device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Settings - This internally syncs the room's profile (if the device is assigned to a room), contacts, address
+     * books, delegation access for account linking, and communications (if enabled on the room profile).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param startDeviceSyncRequest
      * @return A Java Future containing the result of the StartDeviceSync operation returned by the service.
@@ -2407,9 +2596,37 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Resets a device and its account to the known default settings, by clearing all information and settings set by
-     * previous users.
+     * Resets a device and its account to the known default settings. This clears all information and settings set by
+     * previous users in the following ways:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Bluetooth - This unpairs all bluetooth devices paired with your echo device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Volume - This resets the echo device's volume to the default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Notifications - This clears all notifications from your echo device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lists - This clears all to-do items from your echo device.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Settings - This internally syncs the room's profile (if the device is assigned to a room), contacts, address
+     * books, delegation access for account linking, and communications (if enabled on the room profile).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param startDeviceSyncRequest
      * @param asyncHandler
@@ -2747,6 +2964,37 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<UpdateGatewayGroupResult> updateGatewayGroupAsync(UpdateGatewayGroupRequest updateGatewayGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateGatewayGroupRequest, UpdateGatewayGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a network profile by the network profile ARN.
+     * </p>
+     * 
+     * @param updateNetworkProfileRequest
+     * @return A Java Future containing the result of the UpdateNetworkProfile operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.UpdateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest updateNetworkProfileRequest);
+
+    /**
+     * <p>
+     * Updates a network profile by the network profile ARN.
+     * </p>
+     * 
+     * @param updateNetworkProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateNetworkProfile operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.UpdateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest updateNetworkProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateNetworkProfileRequest, UpdateNetworkProfileResult> asyncHandler);
 
     /**
      * <p>

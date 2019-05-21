@@ -265,6 +265,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AnalyzeDocument");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -357,6 +358,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectDocumentText");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -476,6 +478,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocumentAnalysis");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -575,6 +578,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocumentTextDetection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -678,6 +682,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDocumentAnalysis");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -782,6 +787,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDocumentTextDetection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

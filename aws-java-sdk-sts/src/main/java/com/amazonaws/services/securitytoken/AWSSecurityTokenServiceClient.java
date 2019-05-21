@@ -529,6 +529,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssumeRole");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -697,6 +698,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssumeRoleWithSAML");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -895,6 +897,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssumeRoleWithWebIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1001,6 +1004,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DecodeAuthorizationMessage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1053,6 +1057,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCallerIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1189,6 +1194,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFederationToken");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1300,6 +1306,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSessionToken");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

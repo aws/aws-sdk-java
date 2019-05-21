@@ -394,6 +394,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTagsToResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -465,6 +466,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AuthorizeCacheSecurityGroupIngress");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -633,6 +635,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopySnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -719,6 +722,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCacheCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -802,6 +806,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCacheParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -869,6 +874,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCacheSecurityGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -933,6 +939,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCacheSubnetGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1043,6 +1050,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateReplicationGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1132,6 +1140,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1210,6 +1219,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DecreaseReplicaCount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1299,6 +1309,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCacheCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1360,6 +1371,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCacheParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1426,6 +1438,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCacheSecurityGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1488,6 +1501,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCacheSubnetGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1581,6 +1595,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReplicationGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1647,6 +1662,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1727,6 +1743,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCacheClusters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1785,6 +1802,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCacheEngineVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1850,6 +1868,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCacheParameterGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1914,6 +1933,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCacheParameters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1974,6 +1994,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCacheSecurityGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2035,6 +2056,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCacheSubnetGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2097,6 +2119,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEngineDefaultParameters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2159,6 +2182,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2229,6 +2253,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReplicationGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2293,6 +2318,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedCacheNodes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2359,6 +2385,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedCacheNodesOfferings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2432,6 +2459,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSnapshots");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2514,6 +2542,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "IncreaseReplicaCount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2581,6 +2610,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAllowedNodeTypeModifications");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2654,6 +2684,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2731,6 +2762,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyCacheCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2792,6 +2824,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyCacheParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2854,6 +2887,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyCacheSubnetGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2957,6 +2991,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyReplicationGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3032,6 +3067,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyReplicationGroupShardConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3095,6 +3131,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseReservedCacheNodesOffering");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3169,6 +3206,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebootCacheCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3229,6 +3267,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTagsFromResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3292,6 +3331,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetCacheParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3356,6 +3396,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeCacheSecurityGroupIngress");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3508,6 +3549,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestFailover");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

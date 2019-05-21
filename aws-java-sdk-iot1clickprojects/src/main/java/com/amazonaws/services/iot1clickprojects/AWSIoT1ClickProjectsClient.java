@@ -181,6 +181,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDeviceWithPlacement");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -238,6 +239,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePlacement");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -294,6 +296,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -355,6 +358,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePlacement");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -416,6 +420,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -471,6 +476,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePlacement");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -526,6 +532,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -585,6 +592,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDeviceFromPlacement");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -641,6 +649,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevicesInPlacement");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -697,6 +706,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPlacements");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -751,6 +761,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProjects");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -806,6 +817,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -863,6 +875,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -918,6 +931,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -974,6 +988,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePlacement");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1032,6 +1047,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT 1Click Projects");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

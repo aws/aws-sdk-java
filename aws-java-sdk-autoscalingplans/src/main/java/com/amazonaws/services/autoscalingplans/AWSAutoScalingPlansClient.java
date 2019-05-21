@@ -199,6 +199,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateScalingPlan");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -268,6 +269,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteScalingPlan");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -330,6 +332,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalingPlanResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -392,6 +395,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalingPlans");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -455,6 +459,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetScalingPlanResourceForecastData");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -520,6 +525,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateScalingPlan");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

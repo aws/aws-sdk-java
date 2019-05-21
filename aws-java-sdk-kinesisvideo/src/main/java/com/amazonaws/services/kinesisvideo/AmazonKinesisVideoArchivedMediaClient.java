@@ -403,6 +403,7 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video Archived Media");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHLSStreamingSessionURL");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -498,6 +499,7 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video Archived Media");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMediaForFragmentList");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -581,6 +583,7 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video Archived Media");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFragments");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

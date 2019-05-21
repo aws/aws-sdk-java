@@ -225,6 +225,7 @@ public class AmazonKinesisVideoMediaClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video Media");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMedia");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -262,6 +262,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -336,6 +337,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -411,6 +413,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -478,6 +481,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUpdate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -540,6 +544,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListClusters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -603,6 +608,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUpdates");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -702,6 +708,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateClusterConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -778,6 +785,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateClusterVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

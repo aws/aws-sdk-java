@@ -137,6 +137,41 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateDeviceWithNetworkProfileResult> associateDeviceWithNetworkProfileAsync(
+            AssociateDeviceWithNetworkProfileRequest request) {
+
+        return associateDeviceWithNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateDeviceWithNetworkProfileResult> associateDeviceWithNetworkProfileAsync(
+            final AssociateDeviceWithNetworkProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateDeviceWithNetworkProfileRequest, AssociateDeviceWithNetworkProfileResult> asyncHandler) {
+        final AssociateDeviceWithNetworkProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateDeviceWithNetworkProfileResult>() {
+            @Override
+            public AssociateDeviceWithNetworkProfileResult call() throws Exception {
+                AssociateDeviceWithNetworkProfileResult result = null;
+
+                try {
+                    result = executeAssociateDeviceWithNetworkProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateDeviceWithRoomResult> associateDeviceWithRoomAsync(AssociateDeviceWithRoomRequest request) {
 
         return associateDeviceWithRoomAsync(request, null);
@@ -418,6 +453,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeCreateGatewayGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest request) {
+
+        return createNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(final CreateNetworkProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateNetworkProfileRequest, CreateNetworkProfileResult> asyncHandler) {
+        final CreateNetworkProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateNetworkProfileResult>() {
+            @Override
+            public CreateNetworkProfileResult call() throws Exception {
+                CreateNetworkProfileResult result = null;
+
+                try {
+                    result = executeCreateNetworkProfile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -781,6 +849,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeDeleteGatewayGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest request) {
+
+        return deleteNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(final DeleteNetworkProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteNetworkProfileRequest, DeleteNetworkProfileResult> asyncHandler) {
+        final DeleteNetworkProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteNetworkProfileResult>() {
+            @Override
+            public DeleteNetworkProfileResult call() throws Exception {
+                DeleteNetworkProfileResult result = null;
+
+                try {
+                    result = executeDeleteNetworkProfile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1446,6 +1547,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeGetInvitationConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest request) {
+
+        return getNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(final GetNetworkProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetNetworkProfileRequest, GetNetworkProfileResult> asyncHandler) {
+        final GetNetworkProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetNetworkProfileResult>() {
+            @Override
+            public GetNetworkProfileResult call() throws Exception {
+                GetNetworkProfileResult result = null;
+
+                try {
+                    result = executeGetNetworkProfile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2289,6 +2423,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<SearchNetworkProfilesResult> searchNetworkProfilesAsync(SearchNetworkProfilesRequest request) {
+
+        return searchNetworkProfilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchNetworkProfilesResult> searchNetworkProfilesAsync(final SearchNetworkProfilesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchNetworkProfilesRequest, SearchNetworkProfilesResult> asyncHandler) {
+        final SearchNetworkProfilesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchNetworkProfilesResult>() {
+            @Override
+            public SearchNetworkProfilesResult call() throws Exception {
+                SearchNetworkProfilesResult result = null;
+
+                try {
+                    result = executeSearchNetworkProfiles(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchProfilesResult> searchProfilesAsync(SearchProfilesRequest request) {
 
         return searchProfilesAsync(request, null);
@@ -2836,6 +3003,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeUpdateGatewayGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest request) {
+
+        return updateNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(final UpdateNetworkProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateNetworkProfileRequest, UpdateNetworkProfileResult> asyncHandler) {
+        final UpdateNetworkProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateNetworkProfileResult>() {
+            @Override
+            public UpdateNetworkProfileResult call() throws Exception {
+                UpdateNetworkProfileResult result = null;
+
+                try {
+                    result = executeUpdateNetworkProfile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

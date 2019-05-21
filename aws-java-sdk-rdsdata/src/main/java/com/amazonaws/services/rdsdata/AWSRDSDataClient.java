@@ -178,6 +178,7 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteSql");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

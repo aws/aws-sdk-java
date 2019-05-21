@@ -355,6 +355,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelRotateSecret");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -553,6 +554,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSecret");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -659,6 +661,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourcePolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -793,6 +796,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSecret");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -888,6 +892,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSecret");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -976,6 +981,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRandomPassword");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1084,6 +1090,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourcePolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1196,6 +1203,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSecretValue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1287,6 +1295,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSecretVersionIds");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1379,6 +1388,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSecrets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1497,6 +1507,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourcePolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1689,6 +1700,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutSecretValue");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1788,6 +1800,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreSecret");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1948,6 +1961,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RotateSecret");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2099,6 +2113,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2213,6 +2228,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2404,6 +2420,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSecret");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2528,6 +2545,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Secrets Manager");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSecretVersionStage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

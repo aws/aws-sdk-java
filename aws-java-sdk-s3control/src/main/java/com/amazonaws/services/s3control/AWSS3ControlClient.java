@@ -173,6 +173,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -225,6 +226,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePublicAccessBlock");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -281,6 +283,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -332,6 +335,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPublicAccessBlock");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -387,6 +391,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -437,6 +442,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPublicAccessBlock");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -493,6 +499,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJobPriority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -551,6 +558,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJobStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

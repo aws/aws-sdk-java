@@ -56,6 +56,21 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateDeviceWithNetworkProfileResult> associateDeviceWithNetworkProfileAsync(
+            AssociateDeviceWithNetworkProfileRequest request) {
+
+        return associateDeviceWithNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateDeviceWithNetworkProfileResult> associateDeviceWithNetworkProfileAsync(
+            AssociateDeviceWithNetworkProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateDeviceWithNetworkProfileRequest, AssociateDeviceWithNetworkProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateDeviceWithRoomResult> associateDeviceWithRoomAsync(AssociateDeviceWithRoomRequest request) {
 
         return associateDeviceWithRoomAsync(request, null);
@@ -168,6 +183,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<CreateGatewayGroupResult> createGatewayGroupAsync(CreateGatewayGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateGatewayGroupRequest, CreateGatewayGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest request) {
+
+        return createNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateNetworkProfileRequest, CreateNetworkProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -311,6 +339,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<DeleteGatewayGroupResult> deleteGatewayGroupAsync(DeleteGatewayGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteGatewayGroupRequest, DeleteGatewayGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest request) {
+
+        return deleteNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkProfileRequest, DeleteNetworkProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -575,6 +616,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(GetInvitationConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetInvitationConfigurationRequest, GetInvitationConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest request) {
+
+        return getNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetNetworkProfileRequest, GetNetworkProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -907,6 +961,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<SearchNetworkProfilesResult> searchNetworkProfilesAsync(SearchNetworkProfilesRequest request) {
+
+        return searchNetworkProfilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchNetworkProfilesResult> searchNetworkProfilesAsync(SearchNetworkProfilesRequest request,
+            com.amazonaws.handlers.AsyncHandler<SearchNetworkProfilesRequest, SearchNetworkProfilesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchProfilesResult> searchProfilesAsync(SearchProfilesRequest request) {
 
         return searchProfilesAsync(request, null);
@@ -1125,6 +1192,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<UpdateGatewayGroupResult> updateGatewayGroupAsync(UpdateGatewayGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateGatewayGroupRequest, UpdateGatewayGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest request) {
+
+        return updateNetworkProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateNetworkProfileRequest, UpdateNetworkProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

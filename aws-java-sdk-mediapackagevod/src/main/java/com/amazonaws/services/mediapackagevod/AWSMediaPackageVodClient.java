@@ -188,6 +188,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAsset");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -252,6 +253,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePackagingConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -316,6 +318,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePackagingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -378,6 +381,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAsset");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -441,6 +445,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePackagingConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -504,6 +509,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePackagingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -566,6 +572,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAsset");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -629,6 +636,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePackagingConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -692,6 +700,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePackagingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -755,6 +764,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -818,6 +828,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPackagingConfigurations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -881,6 +892,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPackagingGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

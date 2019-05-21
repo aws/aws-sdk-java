@@ -222,6 +222,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDetectDominantLanguage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -289,6 +290,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDetectEntities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -354,6 +356,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDetectKeyPhrases");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -421,6 +424,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDetectSentiment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -487,6 +491,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDetectSyntax");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -563,6 +568,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDocumentClassifier");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -637,6 +643,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEntityRecognizer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -712,6 +719,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDocumentClassifier");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -786,6 +794,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEntityRecognizer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -850,6 +859,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDocumentClassificationJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -912,6 +922,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDocumentClassifier");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -976,6 +987,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDominantLanguageDetectionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1039,6 +1051,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEntitiesDetectionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1102,6 +1115,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEntityRecognizer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1165,6 +1179,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeKeyPhrasesDetectionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1228,6 +1243,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSentimentDetectionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1291,6 +1307,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTopicsDetectionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1352,6 +1369,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectDominantLanguage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1416,6 +1434,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectEntities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1478,6 +1497,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectKeyPhrases");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1541,6 +1561,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectSentiment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1604,6 +1625,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectSyntax");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1666,6 +1688,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDocumentClassificationJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1729,6 +1752,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDocumentClassifiers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1793,6 +1817,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDominantLanguageDetectionJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1856,6 +1881,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEntitiesDetectionJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1923,6 +1949,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEntityRecognizers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1986,6 +2013,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListKeyPhrasesDetectionJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2049,6 +2077,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSentimentDetectionJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2108,6 +2137,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2170,6 +2200,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTopicsDetectionJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2237,6 +2268,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDocumentClassificationJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2301,6 +2333,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDominantLanguageDetectionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2374,6 +2407,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartEntitiesDetectionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2437,6 +2471,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartKeyPhrasesDetectionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2500,6 +2535,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSentimentDetectionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2563,6 +2599,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartTopicsDetectionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2636,6 +2673,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDominantLanguageDetectionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2708,6 +2746,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopEntitiesDetectionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2780,6 +2819,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopKeyPhrasesDetectionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2852,6 +2892,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopSentimentDetectionJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2920,6 +2961,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopTrainingDocumentClassifier");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2988,6 +3030,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopTrainingEntityRecognizer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3054,6 +3097,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3116,6 +3160,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Comprehend");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

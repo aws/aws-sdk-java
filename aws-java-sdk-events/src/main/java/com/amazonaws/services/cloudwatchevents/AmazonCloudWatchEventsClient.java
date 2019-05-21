@@ -384,6 +384,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -442,6 +443,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventBus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -502,6 +504,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -571,6 +574,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -639,6 +643,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -694,6 +699,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRuleNamesByTarget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -754,6 +760,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRules");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -810,6 +817,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -866,6 +874,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTargetsByRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -920,6 +929,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1002,6 +1012,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1115,6 +1126,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1348,6 +1360,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutTargets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1409,6 +1422,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1483,6 +1497,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTargets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1560,6 +1575,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1621,6 +1637,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestEventPattern");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1686,6 +1703,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

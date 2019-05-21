@@ -216,6 +216,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTagsToResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -271,6 +272,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ApplyPendingMaintenanceAction");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -330,6 +332,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyDBClusterParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -404,6 +407,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyDBClusterSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -490,6 +494,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -566,6 +571,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBClusterParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -629,6 +635,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBClusterSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -717,6 +724,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -782,6 +790,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBSubnetGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -847,6 +856,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -905,6 +915,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBClusterParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -967,6 +978,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBClusterSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1029,6 +1041,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1092,6 +1105,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBSubnetGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1150,6 +1164,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterParameterGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1205,6 +1220,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterParameters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1268,6 +1284,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterSnapshotAttributes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1323,6 +1340,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterSnapshots");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1378,6 +1396,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1431,6 +1450,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBEngineVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1486,6 +1506,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1542,6 +1563,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBSubnetGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1597,6 +1619,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEngineDefaultClusterParameters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1649,6 +1672,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventCategories");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1704,6 +1728,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1759,6 +1784,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrderableDBInstanceOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1815,6 +1841,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePendingMaintenanceActions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1882,6 +1909,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "FailoverDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1940,6 +1968,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2018,6 +2047,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2092,6 +2122,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBClusterParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2162,6 +2193,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBClusterSnapshotAttribute");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2246,6 +2278,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2311,6 +2344,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBSubnetGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2373,6 +2407,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebootDBInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2431,6 +2466,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTagsFromResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2496,6 +2532,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetDBClusterParameterGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2593,6 +2630,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBClusterFromSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2681,6 +2719,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBClusterToPointInTime");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -495,6 +495,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetItem");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -679,6 +680,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchWriteItem");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -813,6 +815,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBackup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -946,6 +949,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGlobalTable");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1040,6 +1044,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTable");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1129,6 +1134,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1222,6 +1228,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteItem");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1334,6 +1341,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTable");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1403,6 +1411,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBackup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1479,6 +1488,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeContinuousBackups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1537,6 +1547,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEndpoints");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1593,6 +1604,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGlobalTable");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1655,6 +1667,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGlobalTableSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1804,6 +1817,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLimits");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1876,6 +1890,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTable");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1943,6 +1958,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTimeToLive");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2023,6 +2039,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetItem");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2101,6 +2118,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2160,6 +2178,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGlobalTables");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2221,6 +2240,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTables");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2309,6 +2329,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsOfResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2476,6 +2497,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutItem");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2612,6 +2634,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Query");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2734,6 +2757,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreTableFromBackup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2897,6 +2921,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreTableToPointInTime");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3000,6 +3025,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Scan");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3102,6 +3128,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3259,6 +3286,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TransactGetItems");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3470,6 +3498,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TransactWriteItems");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3556,6 +3585,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3632,6 +3662,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContinuousBackups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3730,6 +3761,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGlobalTable");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3814,6 +3846,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGlobalTableSettings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3902,6 +3935,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateItem");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4027,6 +4061,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTable");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4146,6 +4181,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTimeToLive");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

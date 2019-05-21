@@ -1705,6 +1705,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         Request<PutObjectRequest> request = createRequest(bucketName, key, putObjectRequest, HttpMethodName.PUT);
         request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutObject");
+        request.addHandlerContext(HandlerContextKey.REQUIRES_LENGTH, Boolean.TRUE);
+        request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
+
         // Make backward compatible with buffer size via system property
         final Integer bufsize = Constants.getS3StreamBufferSize();
         if (bufsize != null) {
@@ -3632,6 +3635,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             "The upload ID parameter must be specified when uploading a part");
         Request<UploadPartRequest> request = createRequest(bucketName, key, uploadPartRequest, HttpMethodName.PUT);
         request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UploadPart");
+        request.addHandlerContext(HandlerContextKey.REQUIRES_LENGTH, Boolean.TRUE);
+        request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
+
         request.addParameter("uploadId", uploadId);
         request.addParameter("partNumber", Integer.toString(partNumber));
 

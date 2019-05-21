@@ -509,6 +509,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -664,6 +665,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrail");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -770,6 +772,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrail");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -827,6 +830,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrails");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -945,6 +949,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEventSelectors");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1033,6 +1038,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTrailStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1103,6 +1109,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPublicKeys");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1207,6 +1214,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1330,6 +1338,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "LookupEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1515,6 +1524,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEventSelectors");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1621,6 +1631,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1727,6 +1738,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartLogging");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1835,6 +1847,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopLogging");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1994,6 +2007,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTrail");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

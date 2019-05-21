@@ -470,6 +470,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetAggregateResourceConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -545,6 +546,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetResourceConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -601,6 +603,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAggregationAuthorization");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -668,6 +671,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -723,6 +727,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationAggregator");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -790,6 +795,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationRecorder");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -853,6 +859,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeliveryChannel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -915,6 +922,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEvaluationResults");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -972,6 +980,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePendingAggregationRequest");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1028,6 +1037,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRemediationConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1086,6 +1096,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRetentionConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1166,6 +1177,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeliverConfigSnapshot");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1237,6 +1249,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAggregateComplianceByConfigRules");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1299,6 +1312,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAggregationAuthorizations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1393,6 +1407,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComplianceByConfigRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1489,6 +1504,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComplianceByResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1559,6 +1575,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigRuleEvaluationStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1623,6 +1640,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigRules");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1695,6 +1713,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationAggregatorSourcesStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1760,6 +1779,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationAggregators");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1824,6 +1844,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationRecorderStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1892,6 +1913,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationRecorders");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1960,6 +1982,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDeliveryChannelStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2028,6 +2051,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDeliveryChannels");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2095,6 +2119,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePendingAggregationRequests");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2150,6 +2175,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRemediationConfigurations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2209,6 +2235,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRemediationExecutionStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2277,6 +2304,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRetentionConfigurations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2349,6 +2377,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAggregateComplianceDetailsByConfigRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2419,6 +2448,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAggregateConfigRuleComplianceSummary");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2489,6 +2519,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAggregateDiscoveredResourceCounts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2551,6 +2582,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAggregateResourceConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2615,6 +2647,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceDetailsByConfigRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2672,6 +2705,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceDetailsByResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2727,6 +2761,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceSummaryByConfigRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2790,6 +2825,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceSummaryByResourceType");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2924,6 +2960,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDiscoveredResourceCounts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3009,6 +3046,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceConfigHistory");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3081,6 +3119,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAggregateDiscoveredResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3158,6 +3197,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDiscoveredResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3220,6 +3260,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3275,6 +3316,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAggregationAuthorization");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3395,6 +3437,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3475,6 +3518,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationAggregator");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3552,6 +3596,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationRecorder");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3636,6 +3681,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDeliveryChannel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3696,6 +3742,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEvaluations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3768,6 +3815,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRemediationConfigurations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3835,6 +3883,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRetentionConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3901,6 +3950,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SelectResourceConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4016,6 +4066,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartConfigRulesEvaluation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4078,6 +4129,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartConfigurationRecorder");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4154,6 +4206,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartRemediationExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4211,6 +4264,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopConfigurationRecorder");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4272,6 +4326,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4328,6 +4383,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

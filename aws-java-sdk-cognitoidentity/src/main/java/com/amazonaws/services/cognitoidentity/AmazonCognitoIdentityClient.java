@@ -410,6 +410,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIdentityPool");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -472,6 +473,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIdentities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -538,6 +540,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIdentityPool");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -605,6 +608,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -672,6 +676,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIdentityPool");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -748,6 +753,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCredentialsForIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -821,6 +827,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetId");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -889,6 +896,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityPoolRoles");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -963,6 +971,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOpenIdToken");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1046,6 +1055,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOpenIdTokenForDeveloperIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1113,6 +1123,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIdentities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1179,6 +1190,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIdentityPools");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1248,6 +1260,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1329,6 +1342,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "LookupDeveloperIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1409,6 +1423,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MergeDeveloperIdentities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1481,6 +1496,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIdentityPoolRoles");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1558,6 +1574,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1629,6 +1646,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnlinkDeveloperIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1701,6 +1719,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnlinkIdentity");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1764,6 +1783,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1836,6 +1856,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIdentityPool");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

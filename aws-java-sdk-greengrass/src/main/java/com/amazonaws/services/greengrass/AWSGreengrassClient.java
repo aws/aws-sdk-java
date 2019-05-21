@@ -171,6 +171,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateRoleToGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -228,6 +229,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateServiceRoleToAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -283,6 +285,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConnectorDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -338,6 +341,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConnectorDefinitionVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -393,6 +397,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCoreDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -447,6 +452,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCoreDefinitionVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -501,6 +507,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeployment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -554,6 +561,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeviceDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -608,6 +616,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeviceDefinitionVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -664,6 +673,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFunctionDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -720,6 +730,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFunctionDefinitionVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -775,6 +786,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -831,6 +843,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroupCertificateAuthority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -884,6 +897,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroupVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -937,6 +951,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLoggerDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -991,6 +1006,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLoggerDefinitionVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1046,6 +1062,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResourceDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1101,6 +1118,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResourceDefinitionVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1159,6 +1177,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSoftwareUpdateJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1214,6 +1233,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubscriptionDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1269,6 +1289,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubscriptionDefinitionVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1323,6 +1344,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConnectorDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1376,6 +1398,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCoreDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1428,6 +1451,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeviceDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1482,6 +1506,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFunctionDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1535,6 +1560,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1587,6 +1613,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLoggerDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1641,6 +1668,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourceDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1695,6 +1723,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubscriptionDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1751,6 +1780,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateRoleFromGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1806,6 +1836,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateServiceRoleFromAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1861,6 +1892,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAssociatedRole");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1914,6 +1946,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBulkDeploymentStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1969,6 +2002,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnectivityInfo");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2021,6 +2055,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnectorDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2077,6 +2112,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnectorDefinitionVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2130,6 +2166,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCoreDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2183,6 +2220,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCoreDefinitionVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2236,6 +2274,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeploymentStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2288,6 +2327,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeviceDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2341,6 +2381,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeviceDefinitionVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2394,6 +2435,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunctionDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2449,6 +2491,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunctionDefinitionVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2502,6 +2545,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2557,6 +2601,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupCertificateAuthority");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2614,6 +2659,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupCertificateConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2667,6 +2713,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2719,6 +2766,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoggerDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2772,6 +2820,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoggerDefinitionVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2825,6 +2874,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2879,6 +2929,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceDefinitionVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2933,6 +2984,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServiceRoleForAccount");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2987,6 +3039,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSubscriptionDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3042,6 +3095,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSubscriptionDefinitionVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3098,6 +3152,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBulkDeploymentDetailedReports");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3151,6 +3206,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBulkDeployments");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3207,6 +3263,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConnectorDefinitionVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3259,6 +3316,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConnectorDefinitions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3313,6 +3371,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCoreDefinitionVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3364,6 +3423,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCoreDefinitions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3416,6 +3476,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeployments");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3469,6 +3530,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeviceDefinitionVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3520,6 +3582,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeviceDefinitions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3574,6 +3637,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFunctionDefinitionVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3626,6 +3690,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFunctionDefinitions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3683,6 +3748,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupCertificateAuthorities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3736,6 +3802,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3786,6 +3853,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3839,6 +3907,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLoggerDefinitionVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3890,6 +3959,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLoggerDefinitions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3944,6 +4014,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceDefinitionVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3996,6 +4067,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceDefinitions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4051,6 +4123,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscriptionDefinitionVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4103,6 +4176,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscriptionDefinitions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4156,6 +4230,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4209,6 +4284,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetDeployments");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4264,6 +4340,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartBulkDeployment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4318,6 +4395,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopBulkDeployment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4370,6 +4448,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4422,6 +4501,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4478,6 +4558,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConnectivityInfo");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4532,6 +4613,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConnectorDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4585,6 +4667,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCoreDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4637,6 +4720,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDeviceDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4691,6 +4775,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFunctionDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4744,6 +4829,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4800,6 +4886,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroupCertificateConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4853,6 +4940,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLoggerDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4907,6 +4995,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResourceDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4961,6 +5050,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSubscriptionDefinition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

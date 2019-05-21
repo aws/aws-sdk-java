@@ -76,6 +76,14 @@ public class DeviceDataJsonUnmarshaller implements Unmarshaller<DeviceData, Json
                     context.nextToken();
                     deviceData.setDeviceStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("NetworkProfileArn", targetDepth)) {
+                    context.nextToken();
+                    deviceData.setNetworkProfileArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NetworkProfileName", targetDepth)) {
+                    context.nextToken();
+                    deviceData.setNetworkProfileName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("RoomArn", targetDepth)) {
                     context.nextToken();
                     deviceData.setRoomArn(context.getUnmarshaller(String.class).unmarshall(context));

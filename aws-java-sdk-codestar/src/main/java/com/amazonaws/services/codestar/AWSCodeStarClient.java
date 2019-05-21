@@ -320,6 +320,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateTeamMember");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -390,6 +391,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -449,6 +451,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -508,6 +511,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -564,6 +568,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -626,6 +631,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -682,6 +688,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -744,6 +751,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateTeamMember");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -801,6 +809,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProjects");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -859,6 +868,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -917,6 +927,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -975,6 +986,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTeamMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1031,6 +1043,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserProfiles");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1091,6 +1104,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1151,6 +1165,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1207,6 +1222,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1274,6 +1290,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTeamMember");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1331,6 +1348,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

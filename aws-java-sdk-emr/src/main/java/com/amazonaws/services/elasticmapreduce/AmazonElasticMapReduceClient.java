@@ -336,6 +336,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddInstanceFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -391,6 +392,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddInstanceGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -468,6 +470,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddJobFlowSteps");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -527,6 +530,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -587,6 +591,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelSteps");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -644,6 +649,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSecurityConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -702,6 +708,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSecurityConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -760,6 +767,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -843,6 +851,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobFlows");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -906,6 +915,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSecurityConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -964,6 +974,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStep");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1021,6 +1032,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBootstrapActions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1081,6 +1093,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListClusters");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1148,6 +1161,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInstanceFleets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1205,6 +1219,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInstanceGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1264,6 +1279,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1323,6 +1339,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSecurityConfigurations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1381,6 +1398,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSteps");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1444,6 +1462,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyInstanceFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1501,6 +1520,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyInstanceGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1560,6 +1580,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAutoScalingPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1613,6 +1634,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveAutoScalingPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1676,6 +1698,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTags");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1761,6 +1784,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RunJobFlow");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1835,6 +1859,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetTerminationProtection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1894,6 +1919,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetVisibleToAllUsers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1956,6 +1982,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateJobFlows");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -360,6 +360,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelUpdateStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -426,6 +427,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ContinueUpdateRollback");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -506,6 +508,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChangeSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -572,6 +575,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -642,6 +646,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStackInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -704,6 +709,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStackSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -763,6 +769,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChangeSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -819,6 +826,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -881,6 +889,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStackInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -940,6 +949,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStackSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -996,6 +1006,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountLimits");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1055,6 +1066,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChangeSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1119,6 +1131,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackDriftDetectionStatus");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1181,6 +1194,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1240,6 +1254,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackInstance");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1297,6 +1312,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1363,6 +1379,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackResourceDrifts");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1440,6 +1457,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1494,6 +1512,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1550,6 +1569,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackSetOperation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1609,6 +1629,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStacks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1692,6 +1713,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectStackDrift");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1760,6 +1782,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectStackResourceDrift");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1814,6 +1837,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EstimateTemplateCost");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1892,6 +1916,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteChangeSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1945,6 +1970,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStackPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2009,6 +2035,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTemplate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2073,6 +2100,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTemplateSummary");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2132,6 +2160,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChangeSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2192,6 +2221,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExports");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2250,6 +2280,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImports");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2304,6 +2335,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2361,6 +2393,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2417,6 +2450,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackSetOperationResults");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2471,6 +2505,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackSetOperations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2523,6 +2558,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackSets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2578,6 +2614,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStacks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2635,6 +2672,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetStackPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2692,6 +2730,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SignalResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2750,6 +2789,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopStackSetOperation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2817,6 +2857,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2903,6 +2944,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStackInstances");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2973,6 +3015,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStackSet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3032,6 +3075,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTerminationProtection");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3087,6 +3131,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ValidateTemplate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

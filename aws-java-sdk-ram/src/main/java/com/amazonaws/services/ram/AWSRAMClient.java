@@ -263,6 +263,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptResourceShareInvitation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -341,6 +342,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateResourceShare");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -415,6 +417,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResourceShare");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -486,6 +489,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourceShare");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -560,6 +564,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateResourceShare");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -621,6 +626,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableSharingWithAwsOrganization");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -684,6 +690,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourcePolicies");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -751,6 +758,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceShareAssociations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -819,6 +827,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceShareInvitations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -884,6 +893,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceShares");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -948,6 +958,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPrincipals");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1014,6 +1025,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1083,6 +1095,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectResourceShareInvitation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1148,6 +1161,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1206,6 +1220,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1277,6 +1292,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResourceShare");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

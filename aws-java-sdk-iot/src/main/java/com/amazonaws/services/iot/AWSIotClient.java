@@ -428,6 +428,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptCertificateTransfer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -487,6 +488,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddThingToBillingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -546,6 +548,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddThingToThingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -624,6 +627,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateTargetsWithJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -689,6 +693,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -758,6 +763,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachPrincipalPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -823,6 +829,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachSecurityProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -888,6 +895,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachThingPrincipal");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -947,6 +955,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelAuditTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1023,6 +1032,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelCertificateTransfer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1082,6 +1092,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1146,6 +1157,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelJobExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1208,6 +1220,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ClearDefaultAuthorizer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1273,6 +1286,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAuthorizer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1331,6 +1345,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBillingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1441,6 +1456,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCertificateFromCsr");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1507,6 +1523,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDynamicThingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1570,6 +1587,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1636,6 +1654,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateKeysAndCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1703,6 +1722,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOTAUpdate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1772,6 +1792,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1845,6 +1866,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePolicyVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1909,6 +1931,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRoleAlias");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1967,6 +1990,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateScheduledAudit");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2025,6 +2049,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSecurityProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2096,6 +2121,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStream");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2170,6 +2196,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateThing");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2235,6 +2262,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateThingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2298,6 +2326,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateThingType");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2363,6 +2392,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTopicRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2424,6 +2454,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccountAuditConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2489,6 +2520,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAuthorizer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2548,6 +2580,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBillingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2613,6 +2646,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCACertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2685,6 +2719,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2745,6 +2780,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDynamicThingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2817,6 +2853,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2878,6 +2915,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteJobExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2943,6 +2981,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOTAUpdate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3019,6 +3058,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3086,6 +3126,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePolicyVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3147,6 +3188,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRegistrationCode");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3212,6 +3254,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRoleAlias");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3270,6 +3313,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteScheduledAudit");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3329,6 +3373,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSecurityProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3394,6 +3439,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStream");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3461,6 +3507,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteThing");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3520,6 +3567,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteThingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3586,6 +3634,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteThingType");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3648,6 +3697,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTopicRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3704,6 +3754,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteV2LoggingLevel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3767,6 +3818,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeprecateThingType");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3824,6 +3876,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountAuditConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3883,6 +3936,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAuditTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3945,6 +3999,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAuthorizer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4003,6 +4058,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBillingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4066,6 +4122,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCACertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4130,6 +4187,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4193,6 +4251,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDefaultAuthorizer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4253,6 +4312,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEndpoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4308,6 +4368,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventConfigurations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4371,6 +4432,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIndex");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4429,6 +4491,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4487,6 +4550,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4549,6 +4613,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRoleAlias");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4607,6 +4672,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScheduledAudit");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4667,6 +4733,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSecurityProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4730,6 +4797,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStream");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4793,6 +4861,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeThing");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4851,6 +4920,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeThingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4912,6 +4982,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeThingRegistrationTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4976,6 +5047,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeThingType");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5038,6 +5110,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5105,6 +5178,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachPrincipalPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5164,6 +5238,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachSecurityProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5234,6 +5309,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachThingPrincipal");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5296,6 +5372,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableTopicRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5358,6 +5435,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableTopicRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5423,6 +5501,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEffectivePolicies");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5484,6 +5563,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIndexingConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5543,6 +5623,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJobDocument");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5603,6 +5684,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoggingOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5665,6 +5747,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOTAUpdate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5728,6 +5811,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5791,6 +5875,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPolicyVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5852,6 +5937,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRegistrationCode");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5920,6 +6006,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStatistics");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5979,6 +6066,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTopicRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6035,6 +6123,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetV2LoggingOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6093,6 +6182,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListActiveViolations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6157,6 +6247,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttachedPolicies");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6214,6 +6305,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAuditFindings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6270,6 +6362,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAuditTasks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6330,6 +6423,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAuthorizers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6388,6 +6482,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBillingGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6453,6 +6548,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCACertificates");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6518,6 +6614,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCertificates");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6579,6 +6676,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCertificatesByCA");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6639,6 +6737,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIndices");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6698,6 +6797,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobExecutionsForJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6758,6 +6858,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobExecutionsForThing");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6817,6 +6918,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6877,6 +6979,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOTAUpdates");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6939,6 +7042,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOutgoingCertificates");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7001,6 +7105,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPolicies");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7068,6 +7173,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPolicyPrincipals");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7131,6 +7237,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPolicyVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7201,6 +7308,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPrincipalPolicies");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7266,6 +7374,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPrincipalThings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7326,6 +7435,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRoleAliases");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7382,6 +7492,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListScheduledAudits");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7439,6 +7550,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSecurityProfiles");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7498,6 +7610,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSecurityProfilesForTarget");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7559,6 +7672,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStreams");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7617,6 +7731,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7681,6 +7796,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTargetsForPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7740,6 +7856,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTargetsForSecurityProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7797,6 +7914,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThingGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7854,6 +7972,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThingGroupsForThing");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7919,6 +8038,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThingPrincipals");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7979,6 +8099,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThingRegistrationTaskReports");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8039,6 +8160,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThingRegistrationTasks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8101,6 +8223,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThingTypes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8164,6 +8287,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThings");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8223,6 +8347,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThingsInBillingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8280,6 +8405,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThingsInThingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8338,6 +8464,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTopicRules");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8396,6 +8523,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListV2LoggingLevels");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8454,6 +8582,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListViolationEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8527,6 +8656,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterCACertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8600,6 +8730,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8665,6 +8796,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterThing");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8739,6 +8871,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectCertificateTransfer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8799,6 +8932,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveThingFromBillingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8859,6 +8993,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveThingFromThingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8925,6 +9060,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReplaceTopicRule");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8991,6 +9127,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchIndex");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9056,6 +9193,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetDefaultAuthorizer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9122,6 +9260,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetDefaultPolicyVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9183,6 +9322,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetLoggingOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9241,6 +9381,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetV2LoggingLevel");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9297,6 +9438,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetV2LoggingOptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9355,6 +9497,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartOnDemandAuditTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9415,6 +9558,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartThingRegistrationTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9477,6 +9621,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopThingRegistrationTask");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9538,6 +9683,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9603,6 +9749,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestAuthorization");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9668,6 +9815,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestInvokeAuthorizer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9750,6 +9898,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TransferCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9808,6 +9957,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9867,6 +10017,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccountAuditConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9932,6 +10083,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAuthorizer");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9993,6 +10145,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBillingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10056,6 +10209,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCACertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10128,6 +10282,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCertificate");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10192,6 +10347,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDynamicThingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10250,6 +10406,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEventConfigurations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10312,6 +10469,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIndexingConfiguration");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10371,6 +10529,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10433,6 +10592,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRoleAlias");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10491,6 +10651,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateScheduledAudit");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10552,6 +10713,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSecurityProfile");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10615,6 +10777,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStream");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10681,6 +10844,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThing");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10742,6 +10906,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThingGroup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10801,6 +10966,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThingGroupsForThing");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -10860,6 +11026,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ValidateSecurityProfileBehaviors");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

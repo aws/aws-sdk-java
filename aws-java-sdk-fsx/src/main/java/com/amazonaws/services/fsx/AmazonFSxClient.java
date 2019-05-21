@@ -259,6 +259,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBackup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -372,6 +373,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFileSystem");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -485,6 +487,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFileSystemFromBackup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -563,6 +566,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackup");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -644,6 +648,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFileSystem");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -736,6 +741,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBackups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -826,6 +832,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFileSystems");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -919,6 +926,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -983,6 +991,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1047,6 +1056,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1111,6 +1121,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFileSystem");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

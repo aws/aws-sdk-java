@@ -25,6 +25,8 @@ public enum Feature {
     NOTIFICATIONS("NOTIFICATIONS"),
     LISTS("LISTS"),
     SKILLS("SKILLS"),
+    NETWORK_PROFILE("NETWORK_PROFILE"),
+    SETTINGS("SETTINGS"),
     ALL("ALL");
 
     private String value;

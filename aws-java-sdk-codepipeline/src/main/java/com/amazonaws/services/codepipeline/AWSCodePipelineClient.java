@@ -631,6 +631,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcknowledgeJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -693,6 +694,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcknowledgeThirdPartyJob");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -758,6 +760,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCustomActionType");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -832,6 +835,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePipeline");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -899,6 +903,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCustomActionType");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -957,6 +962,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePipeline");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1016,6 +1022,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWebhook");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1075,6 +1082,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterWebhookWithThirdParty");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1135,6 +1143,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableStageTransition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1195,6 +1204,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableStageTransition");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1260,6 +1270,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJobDetails");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1321,6 +1332,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPipeline");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1382,6 +1394,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPipelineExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1445,6 +1458,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPipelineState");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1514,6 +1528,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetThirdPartyJobDetails");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1577,6 +1592,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListActionExecutions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1635,6 +1651,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListActionTypes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1695,6 +1712,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPipelineExecutions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1754,6 +1772,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPipelines");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1815,6 +1834,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1873,6 +1893,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWebhooks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1939,6 +1960,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PollForJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2002,6 +2024,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PollForThirdPartyJobs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2064,6 +2087,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutActionRevision");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2130,6 +2154,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutApprovalResult");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2189,6 +2214,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutJobFailureResult");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2248,6 +2274,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutJobSuccessResult");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2311,6 +2338,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutThirdPartyJobFailureResult");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2375,6 +2403,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutThirdPartyJobSuccessResult");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2449,6 +2478,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutWebhook");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2506,6 +2536,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterWebhookWithThirdParty");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2573,6 +2604,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RetryStageExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2631,6 +2663,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartPipelineExecution");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2696,6 +2729,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2758,6 +2792,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2825,6 +2860,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePipeline");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

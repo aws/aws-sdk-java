@@ -30,10 +30,75 @@ public class DeviceStatusDetail implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * The list of available features on the device.
+     * </p>
+     */
+    private String feature;
+    /**
+     * <p>
      * The device status detail code.
      * </p>
      */
     private String code;
+
+    /**
+     * <p>
+     * The list of available features on the device.
+     * </p>
+     * 
+     * @param feature
+     *        The list of available features on the device.
+     * @see Feature
+     */
+
+    public void setFeature(String feature) {
+        this.feature = feature;
+    }
+
+    /**
+     * <p>
+     * The list of available features on the device.
+     * </p>
+     * 
+     * @return The list of available features on the device.
+     * @see Feature
+     */
+
+    public String getFeature() {
+        return this.feature;
+    }
+
+    /**
+     * <p>
+     * The list of available features on the device.
+     * </p>
+     * 
+     * @param feature
+     *        The list of available features on the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Feature
+     */
+
+    public DeviceStatusDetail withFeature(String feature) {
+        setFeature(feature);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of available features on the device.
+     * </p>
+     * 
+     * @param feature
+     *        The list of available features on the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Feature
+     */
+
+    public DeviceStatusDetail withFeature(Feature feature) {
+        this.feature = feature.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -106,6 +171,8 @@ public class DeviceStatusDetail implements Serializable, Cloneable, StructuredPo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFeature() != null)
+            sb.append("Feature: ").append(getFeature()).append(",");
         if (getCode() != null)
             sb.append("Code: ").append(getCode());
         sb.append("}");
@@ -122,6 +189,10 @@ public class DeviceStatusDetail implements Serializable, Cloneable, StructuredPo
         if (obj instanceof DeviceStatusDetail == false)
             return false;
         DeviceStatusDetail other = (DeviceStatusDetail) obj;
+        if (other.getFeature() == null ^ this.getFeature() == null)
+            return false;
+        if (other.getFeature() != null && other.getFeature().equals(this.getFeature()) == false)
+            return false;
         if (other.getCode() == null ^ this.getCode() == null)
             return false;
         if (other.getCode() != null && other.getCode().equals(this.getCode()) == false)
@@ -134,6 +205,7 @@ public class DeviceStatusDetail implements Serializable, Cloneable, StructuredPo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFeature() == null) ? 0 : getFeature().hashCode());
         hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode());
         return hashCode;
     }

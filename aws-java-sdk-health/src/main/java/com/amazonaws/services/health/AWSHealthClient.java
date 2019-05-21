@@ -397,6 +397,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAffectedEntities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -452,6 +453,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEntityAggregates");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -509,6 +511,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventAggregates");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -570,6 +573,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventDetails");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -627,6 +631,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventTypes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -690,6 +695,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEvents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

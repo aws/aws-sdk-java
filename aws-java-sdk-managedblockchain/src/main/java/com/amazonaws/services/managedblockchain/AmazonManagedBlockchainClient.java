@@ -211,6 +211,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMember");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -278,6 +279,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNetwork");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -349,6 +351,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNode");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -416,6 +419,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProposal");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -487,6 +491,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMember");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -554,6 +559,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNode");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -618,6 +624,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMember");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -682,6 +689,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNetwork");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -746,6 +754,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNode");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -810,6 +819,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProposal");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -877,6 +887,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInvitations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -939,6 +950,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMembers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1001,6 +1013,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNetworks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1063,6 +1076,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNodes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1126,6 +1140,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProposalVotes");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1190,6 +1205,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProposals");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1256,6 +1272,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectInvitation");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1322,6 +1339,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VoteOnProposal");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

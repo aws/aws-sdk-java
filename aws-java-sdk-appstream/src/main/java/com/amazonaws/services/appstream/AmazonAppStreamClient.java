@@ -383,6 +383,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -439,6 +440,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchAssociateUserStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -493,6 +495,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDisassociateUserStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -560,6 +563,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyImage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -620,6 +624,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDirectoryConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -694,6 +699,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -770,6 +776,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateImageBuilder");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -827,6 +834,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateImageBuilderStreamingURL");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -896,6 +904,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -957,6 +966,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStreamingURL");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1013,6 +1023,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUsageReportSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1077,6 +1088,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1134,6 +1146,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDirectoryConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1193,6 +1206,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1254,6 +1268,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteImage");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1312,6 +1327,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteImageBuilder");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1369,6 +1385,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteImagePermissions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1430,6 +1447,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1488,6 +1506,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUsageReportSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1543,6 +1562,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1605,6 +1625,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDirectoryConfigs");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1661,6 +1682,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1716,6 +1738,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeImageBuilders");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1772,6 +1795,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeImagePermissions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1830,6 +1854,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeImages");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1886,6 +1911,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSessions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1941,6 +1967,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStacks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2000,6 +2027,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUsageReportSubscriptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2069,6 +2097,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserStackAssociations");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2126,6 +2155,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUsers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2181,6 +2211,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2239,6 +2270,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2297,6 +2329,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2349,6 +2382,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExpireSession");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2401,6 +2435,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssociatedFleets");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2453,6 +2488,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssociatedStacks");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2513,6 +2549,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2576,6 +2613,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2639,6 +2677,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartImageBuilder");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2695,6 +2734,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2753,6 +2793,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopImageBuilder");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2826,6 +2867,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2888,6 +2930,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2947,6 +2990,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDirectoryConfig");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3028,6 +3072,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFleet");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3086,6 +3131,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateImagePermissions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3158,6 +3204,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStack");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -285,6 +285,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AbortDocumentVersionUpload");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -349,6 +350,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ActivateUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -411,6 +413,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddResourcePermissions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -482,6 +485,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateComment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -549,6 +553,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCustomMetadata");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -620,6 +625,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFolder");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -685,6 +691,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLabels");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -750,6 +757,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNotificationSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -815,6 +823,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -878,6 +887,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeactivateUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -946,6 +956,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteComment");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1011,6 +1022,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCustomMetadata");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1080,6 +1092,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDocument");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1149,6 +1162,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFolder");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1216,6 +1230,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFolderContents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1279,6 +1294,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLabels");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1340,6 +1356,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotificationSubscription");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1404,6 +1421,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1467,6 +1485,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeActivities");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1532,6 +1551,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComments");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1603,6 +1623,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDocumentVersions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1674,6 +1695,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFolderContents");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1736,6 +1758,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGroups");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1796,6 +1819,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNotificationSubscriptions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1859,6 +1883,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeResourcePermissions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1931,6 +1956,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRootFolders");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2004,6 +2030,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUsers");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2068,6 +2095,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCurrentUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2135,6 +2163,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocument");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2203,6 +2232,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocumentPath");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2270,6 +2300,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocumentVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2337,6 +2368,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFolder");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2405,6 +2437,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFolderPath");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2469,6 +2502,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResources");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2554,6 +2588,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitiateDocumentVersionUpload");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2617,6 +2652,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveAllResourcePermissions");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2680,6 +2716,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveResourcePermission");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2755,6 +2792,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDocument");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2828,6 +2866,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDocumentVersion");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2903,6 +2942,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFolder");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2973,6 +3013,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUser");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
