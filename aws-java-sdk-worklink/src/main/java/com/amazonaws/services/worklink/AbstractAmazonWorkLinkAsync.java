@@ -41,6 +41,21 @@ public class AbstractAmazonWorkLinkAsync extends AbstractAmazonWorkLink implemen
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateWebsiteAuthorizationProviderResult> associateWebsiteAuthorizationProviderAsync(
+            AssociateWebsiteAuthorizationProviderRequest request) {
+
+        return associateWebsiteAuthorizationProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateWebsiteAuthorizationProviderResult> associateWebsiteAuthorizationProviderAsync(
+            AssociateWebsiteAuthorizationProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateWebsiteAuthorizationProviderRequest, AssociateWebsiteAuthorizationProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateWebsiteCertificateAuthorityResult> associateWebsiteCertificateAuthorityAsync(
             AssociateWebsiteCertificateAuthorityRequest request) {
 
@@ -209,6 +224,21 @@ public class AbstractAmazonWorkLinkAsync extends AbstractAmazonWorkLink implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateWebsiteAuthorizationProviderResult> disassociateWebsiteAuthorizationProviderAsync(
+            DisassociateWebsiteAuthorizationProviderRequest request) {
+
+        return disassociateWebsiteAuthorizationProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateWebsiteAuthorizationProviderResult> disassociateWebsiteAuthorizationProviderAsync(
+            DisassociateWebsiteAuthorizationProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateWebsiteAuthorizationProviderRequest, DisassociateWebsiteAuthorizationProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateWebsiteCertificateAuthorityResult> disassociateWebsiteCertificateAuthorityAsync(
             DisassociateWebsiteCertificateAuthorityRequest request) {
 
@@ -258,6 +288,21 @@ public class AbstractAmazonWorkLinkAsync extends AbstractAmazonWorkLink implemen
     @Override
     public java.util.concurrent.Future<ListFleetsResult> listFleetsAsync(ListFleetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFleetsRequest, ListFleetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWebsiteAuthorizationProvidersResult> listWebsiteAuthorizationProvidersAsync(
+            ListWebsiteAuthorizationProvidersRequest request) {
+
+        return listWebsiteAuthorizationProvidersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWebsiteAuthorizationProvidersResult> listWebsiteAuthorizationProvidersAsync(
+            ListWebsiteAuthorizationProvidersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWebsiteAuthorizationProvidersRequest, ListWebsiteAuthorizationProvidersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

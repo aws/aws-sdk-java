@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -42,6 +43,8 @@ public class UsagePlanMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("quota").build();
     private static final MarshallingInfo<String> PRODUCTCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("productCode").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final UsagePlanMarshaller instance = new UsagePlanMarshaller();
 
@@ -66,6 +69,7 @@ public class UsagePlanMarshaller {
             protocolMarshaller.marshall(usagePlan.getThrottle(), THROTTLE_BINDING);
             protocolMarshaller.marshall(usagePlan.getQuota(), QUOTA_BINDING);
             protocolMarshaller.marshall(usagePlan.getProductCode(), PRODUCTCODE_BINDING);
+            protocolMarshaller.marshall(usagePlan.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

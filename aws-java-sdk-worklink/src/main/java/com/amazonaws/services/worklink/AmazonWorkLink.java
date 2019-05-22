@@ -73,6 +73,33 @@ public interface AmazonWorkLink {
 
     /**
      * <p>
+     * Associates a website authorization provider with a specified fleet. This is used to authorize users against
+     * associated websites in the company network.
+     * </p>
+     * 
+     * @param associateWebsiteAuthorizationProviderRequest
+     * @return Result of the AssociateWebsiteAuthorizationProvider operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.AssociateWebsiteAuthorizationProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateWebsiteAuthorizationProviderResult associateWebsiteAuthorizationProvider(
+            AssociateWebsiteAuthorizationProviderRequest associateWebsiteAuthorizationProviderRequest);
+
+    /**
+     * <p>
      * Imports the root certificate of a certificate authority (CA) used to obtain TLS certificates used by associated
      * websites within the company network.
      * </p>
@@ -361,6 +388,34 @@ public interface AmazonWorkLink {
 
     /**
      * <p>
+     * Disassociates a website authorization provider from a specified fleet. After the disassociation, users can't load
+     * any associated websites that require this authorization provider.
+     * </p>
+     * 
+     * @param disassociateWebsiteAuthorizationProviderRequest
+     * @return Result of the DisassociateWebsiteAuthorizationProvider operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.DisassociateWebsiteAuthorizationProvider
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateWebsiteAuthorizationProviderResult disassociateWebsiteAuthorizationProvider(
+            DisassociateWebsiteAuthorizationProviderRequest disassociateWebsiteAuthorizationProviderRequest);
+
+    /**
+     * <p>
      * Removes a certificate authority (CA).
      * </p>
      * 
@@ -447,6 +502,29 @@ public interface AmazonWorkLink {
      *      Documentation</a>
      */
     ListFleetsResult listFleets(ListFleetsRequest listFleetsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of website authorization providers associated with a specified fleet.
+     * </p>
+     * 
+     * @param listWebsiteAuthorizationProvidersRequest
+     * @return Result of the ListWebsiteAuthorizationProviders operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.ListWebsiteAuthorizationProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListWebsiteAuthorizationProvidersResult listWebsiteAuthorizationProviders(ListWebsiteAuthorizationProvidersRequest listWebsiteAuthorizationProvidersRequest);
 
     /**
      * <p>

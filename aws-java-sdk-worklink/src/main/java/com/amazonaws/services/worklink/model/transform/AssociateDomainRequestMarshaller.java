@@ -31,10 +31,10 @@ public class AssociateDomainRequestMarshaller {
             .marshallLocationName("FleetArn").build();
     private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
-    private static final MarshallingInfo<String> ACMCERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcmCertificateArn").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
+    private static final MarshallingInfo<String> ACMCERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcmCertificateArn").build();
 
     private static final AssociateDomainRequestMarshaller instance = new AssociateDomainRequestMarshaller();
 
@@ -54,8 +54,8 @@ public class AssociateDomainRequestMarshaller {
         try {
             protocolMarshaller.marshall(associateDomainRequest.getFleetArn(), FLEETARN_BINDING);
             protocolMarshaller.marshall(associateDomainRequest.getDomainName(), DOMAINNAME_BINDING);
-            protocolMarshaller.marshall(associateDomainRequest.getAcmCertificateArn(), ACMCERTIFICATEARN_BINDING);
             protocolMarshaller.marshall(associateDomainRequest.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(associateDomainRequest.getAcmCertificateArn(), ACMCERTIFICATEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

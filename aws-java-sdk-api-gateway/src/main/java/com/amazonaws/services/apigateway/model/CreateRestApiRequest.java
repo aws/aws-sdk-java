@@ -87,6 +87,13 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * configuration.
      */
     private String policy;
+    /**
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -564,6 +571,73 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     * 
+     * @return The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     *         characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     *        characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     *        characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRestApiRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateRestApiRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRestApiRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -592,7 +666,9 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getEndpointConfiguration() != null)
             sb.append("EndpointConfiguration: ").append(getEndpointConfiguration()).append(",");
         if (getPolicy() != null)
-            sb.append("Policy: ").append(getPolicy());
+            sb.append("Policy: ").append(getPolicy()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -643,6 +719,10 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getPolicy() != null && other.getPolicy().equals(this.getPolicy()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -660,6 +740,7 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getApiKeySource() == null) ? 0 : getApiKeySource().hashCode());
         hashCode = prime * hashCode + ((getEndpointConfiguration() == null) ? 0 : getEndpointConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

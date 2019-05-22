@@ -36,6 +36,12 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
     private String domainName;
     /**
      * <p>
+     * The name to display.
+     * </p>
+     */
+    private String displayName;
+    /**
+     * <p>
      * The time that the domain was created.
      * </p>
      */
@@ -46,12 +52,6 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String domainStatus;
-    /**
-     * <p>
-     * The name to display.
-     * </p>
-     */
-    private String displayName;
 
     /**
      * <p>
@@ -90,6 +90,46 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     public DomainSummary withDomainName(String domainName) {
         setDomainName(domainName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name to display.
+     * </p>
+     * 
+     * @param displayName
+     *        The name to display.
+     */
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    /**
+     * <p>
+     * The name to display.
+     * </p>
+     * 
+     * @return The name to display.
+     */
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    /**
+     * <p>
+     * The name to display.
+     * </p>
+     * 
+     * @param displayName
+     *        The name to display.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainSummary withDisplayName(String displayName) {
+        setDisplayName(displayName);
         return this;
     }
 
@@ -193,46 +233,6 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The name to display.
-     * </p>
-     * 
-     * @param displayName
-     *        The name to display.
-     */
-
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
-
-    /**
-     * <p>
-     * The name to display.
-     * </p>
-     * 
-     * @return The name to display.
-     */
-
-    public String getDisplayName() {
-        return this.displayName;
-    }
-
-    /**
-     * <p>
-     * The name to display.
-     * </p>
-     * 
-     * @param displayName
-     *        The name to display.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DomainSummary withDisplayName(String displayName) {
-        setDisplayName(displayName);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -246,12 +246,12 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName()).append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getCreatedTime() != null)
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getDomainStatus() != null)
-            sb.append("DomainStatus: ").append(getDomainStatus()).append(",");
-        if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName());
+            sb.append("DomainStatus: ").append(getDomainStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -270,6 +270,10 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+            return false;
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
+            return false;
         if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
@@ -277,10 +281,6 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
         if (other.getDomainStatus() == null ^ this.getDomainStatus() == null)
             return false;
         if (other.getDomainStatus() != null && other.getDomainStatus().equals(this.getDomainStatus()) == false)
-            return false;
-        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
-            return false;
-        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
         return true;
     }
@@ -291,9 +291,9 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getDomainStatus() == null) ? 0 : getDomainStatus().hashCode());
-        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         return hashCode;
     }
 

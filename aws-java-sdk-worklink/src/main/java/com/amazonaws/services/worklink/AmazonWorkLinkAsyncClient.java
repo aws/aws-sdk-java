@@ -100,6 +100,41 @@ public class AmazonWorkLinkAsyncClient extends AmazonWorkLinkClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateWebsiteAuthorizationProviderResult> associateWebsiteAuthorizationProviderAsync(
+            AssociateWebsiteAuthorizationProviderRequest request) {
+
+        return associateWebsiteAuthorizationProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateWebsiteAuthorizationProviderResult> associateWebsiteAuthorizationProviderAsync(
+            final AssociateWebsiteAuthorizationProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateWebsiteAuthorizationProviderRequest, AssociateWebsiteAuthorizationProviderResult> asyncHandler) {
+        final AssociateWebsiteAuthorizationProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateWebsiteAuthorizationProviderResult>() {
+            @Override
+            public AssociateWebsiteAuthorizationProviderResult call() throws Exception {
+                AssociateWebsiteAuthorizationProviderResult result = null;
+
+                try {
+                    result = executeAssociateWebsiteAuthorizationProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateWebsiteCertificateAuthorityResult> associateWebsiteCertificateAuthorityAsync(
             AssociateWebsiteCertificateAuthorityRequest request) {
 
@@ -508,6 +543,41 @@ public class AmazonWorkLinkAsyncClient extends AmazonWorkLinkClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateWebsiteAuthorizationProviderResult> disassociateWebsiteAuthorizationProviderAsync(
+            DisassociateWebsiteAuthorizationProviderRequest request) {
+
+        return disassociateWebsiteAuthorizationProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateWebsiteAuthorizationProviderResult> disassociateWebsiteAuthorizationProviderAsync(
+            final DisassociateWebsiteAuthorizationProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateWebsiteAuthorizationProviderRequest, DisassociateWebsiteAuthorizationProviderResult> asyncHandler) {
+        final DisassociateWebsiteAuthorizationProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateWebsiteAuthorizationProviderResult>() {
+            @Override
+            public DisassociateWebsiteAuthorizationProviderResult call() throws Exception {
+                DisassociateWebsiteAuthorizationProviderResult result = null;
+
+                try {
+                    result = executeDisassociateWebsiteAuthorizationProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateWebsiteCertificateAuthorityResult> disassociateWebsiteCertificateAuthorityAsync(
             DisassociateWebsiteCertificateAuthorityRequest request) {
 
@@ -626,6 +696,41 @@ public class AmazonWorkLinkAsyncClient extends AmazonWorkLinkClient implements A
 
                 try {
                     result = executeListFleets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWebsiteAuthorizationProvidersResult> listWebsiteAuthorizationProvidersAsync(
+            ListWebsiteAuthorizationProvidersRequest request) {
+
+        return listWebsiteAuthorizationProvidersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWebsiteAuthorizationProvidersResult> listWebsiteAuthorizationProvidersAsync(
+            final ListWebsiteAuthorizationProvidersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListWebsiteAuthorizationProvidersRequest, ListWebsiteAuthorizationProvidersResult> asyncHandler) {
+        final ListWebsiteAuthorizationProvidersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListWebsiteAuthorizationProvidersResult>() {
+            @Override
+            public ListWebsiteAuthorizationProvidersResult call() throws Exception {
+                ListWebsiteAuthorizationProvidersResult result = null;
+
+                try {
+                    result = executeListWebsiteAuthorizationProviders(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

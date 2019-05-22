@@ -174,6 +174,8 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @throws TagOperationException
+     *         The operation was not successful. Try again.
      * @sample AWSDeviceFarm.CreateProject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject" target="_top">AWS API
      *      Documentation</a>
@@ -1144,6 +1146,23 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
+     * List the tags for an AWS Device Farm resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws TagOperationException
+     *         The operation was not successful. Try again.
+     * @sample AWSDeviceFarm.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Gets information about tests in a given test suite.
      * </p>
      * 
@@ -1375,6 +1394,48 @@ public interface AWSDeviceFarm {
      *      Documentation</a>
      */
     StopRunResult stopRun(StopRunRequest stopRunRequest);
+
+    /**
+     * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are deleted as well.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws TagOperationException
+     *         The operation was not successful. Try again.
+     * @throws TooManyTagsException
+     *         The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a
+     *         repository is 50.
+     * @throws TagPolicyException
+     *         The request doesn't comply with the AWS Identity and Access Management (IAM) tag policy. Correct your
+     *         request and then retry it.
+     * @sample AWSDeviceFarm.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes the specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws TagOperationException
+     *         The operation was not successful. Try again.
+     * @sample AWSDeviceFarm.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

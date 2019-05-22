@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -46,6 +47,8 @@ public class ApiKeyMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<List> STAGEKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("stageKeys").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final ApiKeyMarshaller instance = new ApiKeyMarshaller();
 
@@ -72,6 +75,7 @@ public class ApiKeyMarshaller {
             protocolMarshaller.marshall(apiKey.getCreatedDate(), CREATEDDATE_BINDING);
             protocolMarshaller.marshall(apiKey.getLastUpdatedDate(), LASTUPDATEDDATE_BINDING);
             protocolMarshaller.marshall(apiKey.getStageKeys(), STAGEKEYS_BINDING);
+            protocolMarshaller.marshall(apiKey.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

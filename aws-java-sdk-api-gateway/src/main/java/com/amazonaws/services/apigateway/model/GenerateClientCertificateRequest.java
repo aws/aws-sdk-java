@@ -31,6 +31,13 @@ public class GenerateClientCertificateRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -73,6 +80,73 @@ public class GenerateClientCertificateRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     * 
+     * @return The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     *         characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     *        characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     *        characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GenerateClientCertificateRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public GenerateClientCertificateRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GenerateClientCertificateRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +159,9 @@ public class GenerateClientCertificateRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +180,10 @@ public class GenerateClientCertificateRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +193,7 @@ public class GenerateClientCertificateRequest extends com.amazonaws.AmazonWebSer
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

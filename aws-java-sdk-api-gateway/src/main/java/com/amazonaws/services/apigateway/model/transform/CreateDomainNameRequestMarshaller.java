@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -45,6 +47,8 @@ public class CreateDomainNameRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("regionalCertificateArn").build();
     private static final MarshallingInfo<StructuredPojo> ENDPOINTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endpointConfiguration").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateDomainNameRequestMarshaller instance = new CreateDomainNameRequestMarshaller();
 
@@ -71,6 +75,7 @@ public class CreateDomainNameRequestMarshaller {
             protocolMarshaller.marshall(createDomainNameRequest.getRegionalCertificateName(), REGIONALCERTIFICATENAME_BINDING);
             protocolMarshaller.marshall(createDomainNameRequest.getRegionalCertificateArn(), REGIONALCERTIFICATEARN_BINDING);
             protocolMarshaller.marshall(createDomainNameRequest.getEndpointConfiguration(), ENDPOINTCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDomainNameRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

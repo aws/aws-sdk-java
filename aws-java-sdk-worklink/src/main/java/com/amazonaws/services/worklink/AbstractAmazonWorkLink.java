@@ -33,6 +33,11 @@ public class AbstractAmazonWorkLink implements AmazonWorkLink {
     }
 
     @Override
+    public AssociateWebsiteAuthorizationProviderResult associateWebsiteAuthorizationProvider(AssociateWebsiteAuthorizationProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateWebsiteCertificateAuthorityResult associateWebsiteCertificateAuthority(AssociateWebsiteCertificateAuthorityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -93,6 +98,11 @@ public class AbstractAmazonWorkLink implements AmazonWorkLink {
     }
 
     @Override
+    public DisassociateWebsiteAuthorizationProviderResult disassociateWebsiteAuthorizationProvider(DisassociateWebsiteAuthorizationProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateWebsiteCertificateAuthorityResult disassociateWebsiteCertificateAuthority(DisassociateWebsiteCertificateAuthorityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,6 +119,11 @@ public class AbstractAmazonWorkLink implements AmazonWorkLink {
 
     @Override
     public ListFleetsResult listFleets(ListFleetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListWebsiteAuthorizationProvidersResult listWebsiteAuthorizationProviders(ListWebsiteAuthorizationProvidersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

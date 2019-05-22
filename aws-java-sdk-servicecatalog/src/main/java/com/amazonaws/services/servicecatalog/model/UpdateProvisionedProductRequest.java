@@ -50,7 +50,7 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
     private String acceptLanguage;
     /**
      * <p>
-     * The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
      * <code>ProvisionedProductId</code>.
      * </p>
      */
@@ -248,13 +248,13 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
      * <code>ProvisionedProductId</code>.
      * </p>
      * 
      * @param provisionedProductName
-     *        The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
-     *        and <code>ProvisionedProductId</code>.
+     *        The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     *        <code>ProvisionedProductId</code>.
      */
 
     public void setProvisionedProductName(String provisionedProductName) {
@@ -263,12 +263,12 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
      * <code>ProvisionedProductId</code>.
      * </p>
      * 
-     * @return The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
-     *         and <code>ProvisionedProductId</code>.
+     * @return The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     *         <code>ProvisionedProductId</code>.
      */
 
     public String getProvisionedProductName() {
@@ -277,13 +277,13 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
      * <code>ProvisionedProductId</code>.
      * </p>
      * 
      * @param provisionedProductName
-     *        The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
-     *        and <code>ProvisionedProductId</code>.
+     *        The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     *        <code>ProvisionedProductId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

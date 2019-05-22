@@ -215,6 +215,75 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Associates a website authorization provider with a specified fleet. This is used to authorize users against
+     * associated websites in the company network.
+     * </p>
+     * 
+     * @param associateWebsiteAuthorizationProviderRequest
+     * @return Result of the AssociateWebsiteAuthorizationProvider operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.AssociateWebsiteAuthorizationProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateWebsiteAuthorizationProviderResult associateWebsiteAuthorizationProvider(AssociateWebsiteAuthorizationProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateWebsiteAuthorizationProvider(request);
+    }
+
+    @SdkInternalApi
+    final AssociateWebsiteAuthorizationProviderResult executeAssociateWebsiteAuthorizationProvider(
+            AssociateWebsiteAuthorizationProviderRequest associateWebsiteAuthorizationProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateWebsiteAuthorizationProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateWebsiteAuthorizationProviderRequest> request = null;
+        Response<AssociateWebsiteAuthorizationProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateWebsiteAuthorizationProviderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateWebsiteAuthorizationProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateWebsiteAuthorizationProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateWebsiteAuthorizationProviderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateWebsiteAuthorizationProviderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Imports the root certificate of a certificate authority (CA) used to obtain TLS certificates used by associated
      * websites within the company network.
      * </p>
@@ -998,6 +1067,76 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Disassociates a website authorization provider from a specified fleet. After the disassociation, users can't load
+     * any associated websites that require this authorization provider.
+     * </p>
+     * 
+     * @param disassociateWebsiteAuthorizationProviderRequest
+     * @return Result of the DisassociateWebsiteAuthorizationProvider operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.DisassociateWebsiteAuthorizationProvider
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateWebsiteAuthorizationProviderResult disassociateWebsiteAuthorizationProvider(DisassociateWebsiteAuthorizationProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateWebsiteAuthorizationProvider(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateWebsiteAuthorizationProviderResult executeDisassociateWebsiteAuthorizationProvider(
+            DisassociateWebsiteAuthorizationProviderRequest disassociateWebsiteAuthorizationProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateWebsiteAuthorizationProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateWebsiteAuthorizationProviderRequest> request = null;
+        Response<DisassociateWebsiteAuthorizationProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateWebsiteAuthorizationProviderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateWebsiteAuthorizationProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateWebsiteAuthorizationProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateWebsiteAuthorizationProviderResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DisassociateWebsiteAuthorizationProviderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Removes a certificate authority (CA).
      * </p>
      * 
@@ -1237,6 +1376,72 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ListFleetsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFleetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of website authorization providers associated with a specified fleet.
+     * </p>
+     * 
+     * @param listWebsiteAuthorizationProvidersRequest
+     * @return Result of the ListWebsiteAuthorizationProviders operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.ListWebsiteAuthorizationProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListWebsiteAuthorizationProvidersResult listWebsiteAuthorizationProviders(ListWebsiteAuthorizationProvidersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWebsiteAuthorizationProviders(request);
+    }
+
+    @SdkInternalApi
+    final ListWebsiteAuthorizationProvidersResult executeListWebsiteAuthorizationProviders(
+            ListWebsiteAuthorizationProvidersRequest listWebsiteAuthorizationProvidersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWebsiteAuthorizationProvidersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWebsiteAuthorizationProvidersRequest> request = null;
+        Response<ListWebsiteAuthorizationProvidersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWebsiteAuthorizationProvidersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listWebsiteAuthorizationProvidersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkLink");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWebsiteAuthorizationProviders");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWebsiteAuthorizationProvidersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListWebsiteAuthorizationProvidersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

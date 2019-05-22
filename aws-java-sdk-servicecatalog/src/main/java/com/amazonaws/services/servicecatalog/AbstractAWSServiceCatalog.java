@@ -427,6 +427,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
     }
 
     @Override
+    public UpdateProvisionedProductPropertiesResult updateProvisionedProductProperties(UpdateProvisionedProductPropertiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateProvisioningArtifactResult updateProvisioningArtifact(UpdateProvisioningArtifactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

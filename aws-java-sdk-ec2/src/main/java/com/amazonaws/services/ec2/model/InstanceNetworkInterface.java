@@ -120,6 +120,9 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * <p>
      * Describes the type of network interface.
      * </p>
+     * <p>
+     * Valid values: <code>interface</code> | <code>efa</code>
+     * </p>
      */
     private String interfaceType;
 
@@ -871,9 +874,14 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * <p>
      * Describes the type of network interface.
      * </p>
+     * <p>
+     * Valid values: <code>interface</code> | <code>efa</code>
+     * </p>
      * 
      * @param interfaceType
-     *        Describes the type of network interface.
+     *        Describes the type of network interface.</p>
+     *        <p>
+     *        Valid values: <code>interface</code> | <code>efa</code>
      */
 
     public void setInterfaceType(String interfaceType) {
@@ -884,8 +892,13 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * <p>
      * Describes the type of network interface.
      * </p>
+     * <p>
+     * Valid values: <code>interface</code> | <code>efa</code>
+     * </p>
      * 
-     * @return Describes the type of network interface.
+     * @return Describes the type of network interface.</p>
+     *         <p>
+     *         Valid values: <code>interface</code> | <code>efa</code>
      */
 
     public String getInterfaceType() {
@@ -896,9 +909,14 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * <p>
      * Describes the type of network interface.
      * </p>
+     * <p>
+     * Valid values: <code>interface</code> | <code>efa</code>
+     * </p>
      * 
      * @param interfaceType
-     *        Describes the type of network interface.
+     *        Describes the type of network interface.</p>
+     *        <p>
+     *        Valid values: <code>interface</code> | <code>efa</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

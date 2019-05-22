@@ -25,6 +25,12 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
+     * The name of the domain.
+     * </p>
+     */
+    private String domainName;
+    /**
+     * <p>
      * The name to display.
      * </p>
      */
@@ -41,6 +47,52 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String domainStatus;
+    /**
+     * <p>
+     * The ARN of an issued ACM certificate that is valid for the domain being associated.
+     * </p>
+     */
+    private String acmCertificateArn;
+
+    /**
+     * <p>
+     * The name of the domain.
+     * </p>
+     * 
+     * @param domainName
+     *        The name of the domain.
+     */
+
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
+    }
+
+    /**
+     * <p>
+     * The name of the domain.
+     * </p>
+     * 
+     * @return The name of the domain.
+     */
+
+    public String getDomainName() {
+        return this.domainName;
+    }
+
+    /**
+     * <p>
+     * The name of the domain.
+     * </p>
+     * 
+     * @param domainName
+     *        The name of the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDomainResult withDomainName(String domainName) {
+        setDomainName(domainName);
+        return this;
+    }
 
     /**
      * <p>
@@ -182,6 +234,46 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The ARN of an issued ACM certificate that is valid for the domain being associated.
+     * </p>
+     * 
+     * @param acmCertificateArn
+     *        The ARN of an issued ACM certificate that is valid for the domain being associated.
+     */
+
+    public void setAcmCertificateArn(String acmCertificateArn) {
+        this.acmCertificateArn = acmCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of an issued ACM certificate that is valid for the domain being associated.
+     * </p>
+     * 
+     * @return The ARN of an issued ACM certificate that is valid for the domain being associated.
+     */
+
+    public String getAcmCertificateArn() {
+        return this.acmCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of an issued ACM certificate that is valid for the domain being associated.
+     * </p>
+     * 
+     * @param acmCertificateArn
+     *        The ARN of an issued ACM certificate that is valid for the domain being associated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDomainResult withAcmCertificateArn(String acmCertificateArn) {
+        setAcmCertificateArn(acmCertificateArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -193,12 +285,16 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDomainName() != null)
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getCreatedTime() != null)
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getDomainStatus() != null)
-            sb.append("DomainStatus: ").append(getDomainStatus());
+            sb.append("DomainStatus: ").append(getDomainStatus()).append(",");
+        if (getAcmCertificateArn() != null)
+            sb.append("AcmCertificateArn: ").append(getAcmCertificateArn());
         sb.append("}");
         return sb.toString();
     }
@@ -213,6 +309,10 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
         if (obj instanceof DescribeDomainResult == false)
             return false;
         DescribeDomainResult other = (DescribeDomainResult) obj;
+        if (other.getDomainName() == null ^ this.getDomainName() == null)
+            return false;
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
+            return false;
         if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
@@ -225,6 +325,10 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getDomainStatus() != null && other.getDomainStatus().equals(this.getDomainStatus()) == false)
             return false;
+        if (other.getAcmCertificateArn() == null ^ this.getAcmCertificateArn() == null)
+            return false;
+        if (other.getAcmCertificateArn() != null && other.getAcmCertificateArn().equals(this.getAcmCertificateArn()) == false)
+            return false;
         return true;
     }
 
@@ -233,9 +337,11 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getDomainStatus() == null) ? 0 : getDomainStatus().hashCode());
+        hashCode = prime * hashCode + ((getAcmCertificateArn() == null) ? 0 : getAcmCertificateArn().hashCode());
         return hashCode;
     }
 

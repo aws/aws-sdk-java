@@ -34,13 +34,15 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) The throughput mode that you want your file system to use. If you're not updating your throughput
-     * mode, you don't need to provide this value in your request.
+     * mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code>
+     * to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.
      * </p>
      */
     private String throughputMode;
     /**
      * <p>
-     * (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. If you're not
+     * (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. Valid values are
+     * 1-1024. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update. If you're not
      * updating the amount of provisioned throughput for your file system, you don't need to provide this value in your
      * request.
      * </p>
@@ -90,12 +92,15 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) The throughput mode that you want your file system to use. If you're not updating your throughput
-     * mode, you don't need to provide this value in your request.
+     * mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code>
+     * to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.
      * </p>
      * 
      * @param throughputMode
      *        (Optional) The throughput mode that you want your file system to use. If you're not updating your
-     *        throughput mode, you don't need to provide this value in your request.
+     *        throughput mode, you don't need to provide this value in your request. If you are changing the
+     *        <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for
+     *        <code>ProvisionedThroughputInMibps</code>.
      * @see ThroughputMode
      */
 
@@ -106,11 +111,14 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) The throughput mode that you want your file system to use. If you're not updating your throughput
-     * mode, you don't need to provide this value in your request.
+     * mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code>
+     * to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.
      * </p>
      * 
      * @return (Optional) The throughput mode that you want your file system to use. If you're not updating your
-     *         throughput mode, you don't need to provide this value in your request.
+     *         throughput mode, you don't need to provide this value in your request. If you are changing the
+     *         <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for
+     *         <code>ProvisionedThroughputInMibps</code>.
      * @see ThroughputMode
      */
 
@@ -121,12 +129,15 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) The throughput mode that you want your file system to use. If you're not updating your throughput
-     * mode, you don't need to provide this value in your request.
+     * mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code>
+     * to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.
      * </p>
      * 
      * @param throughputMode
      *        (Optional) The throughput mode that you want your file system to use. If you're not updating your
-     *        throughput mode, you don't need to provide this value in your request.
+     *        throughput mode, you don't need to provide this value in your request. If you are changing the
+     *        <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for
+     *        <code>ProvisionedThroughputInMibps</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ThroughputMode
      */
@@ -139,12 +150,15 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) The throughput mode that you want your file system to use. If you're not updating your throughput
-     * mode, you don't need to provide this value in your request.
+     * mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code>
+     * to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.
      * </p>
      * 
      * @param throughputMode
      *        (Optional) The throughput mode that you want your file system to use. If you're not updating your
-     *        throughput mode, you don't need to provide this value in your request.
+     *        throughput mode, you don't need to provide this value in your request. If you are changing the
+     *        <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for
+     *        <code>ProvisionedThroughputInMibps</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ThroughputMode
      */
@@ -156,15 +170,17 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. If you're not
+     * (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. Valid values are
+     * 1-1024. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update. If you're not
      * updating the amount of provisioned throughput for your file system, you don't need to provide this value in your
      * request.
      * </p>
      * 
      * @param provisionedThroughputInMibps
-     *        (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. If you're
-     *        not updating the amount of provisioned throughput for your file system, you don't need to provide this
-     *        value in your request.
+     *        (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. Valid
+     *        values are 1-1024. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on
+     *        update. If you're not updating the amount of provisioned throughput for your file system, you don't need
+     *        to provide this value in your request.
      */
 
     public void setProvisionedThroughputInMibps(Double provisionedThroughputInMibps) {
@@ -173,14 +189,16 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. If you're not
+     * (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. Valid values are
+     * 1-1024. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update. If you're not
      * updating the amount of provisioned throughput for your file system, you don't need to provide this value in your
      * request.
      * </p>
      * 
-     * @return (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. If you're
-     *         not updating the amount of provisioned throughput for your file system, you don't need to provide this
-     *         value in your request.
+     * @return (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. Valid
+     *         values are 1-1024. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on
+     *         update. If you're not updating the amount of provisioned throughput for your file system, you don't need
+     *         to provide this value in your request.
      */
 
     public Double getProvisionedThroughputInMibps() {
@@ -189,15 +207,17 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. If you're not
+     * (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. Valid values are
+     * 1-1024. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update. If you're not
      * updating the amount of provisioned throughput for your file system, you don't need to provide this value in your
      * request.
      * </p>
      * 
      * @param provisionedThroughputInMibps
-     *        (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. If you're
-     *        not updating the amount of provisioned throughput for your file system, you don't need to provide this
-     *        value in your request.
+     *        (Optional) The amount of throughput, in MiB/s, that you want to provision for your file system. Valid
+     *        values are 1-1024. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on
+     *        update. If you're not updating the amount of provisioned throughput for your file system, you don't need
+     *        to provide this value in your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

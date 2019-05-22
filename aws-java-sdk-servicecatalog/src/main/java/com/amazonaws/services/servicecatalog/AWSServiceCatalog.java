@@ -837,6 +837,14 @@ public interface AWSServiceCatalog {
      * Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>,
      * <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
      * </p>
+     * <note>
+     * <p>
+     * If a provisioned product was transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the new
+     * owner will be able to describe all past records for that product. The previous owner will no longer be able to
+     * describe the records, but will be able to use <a>ListRecordHistory</a> to see the product's history from when he
+     * was the owner.
+     * </p>
+     * </note>
      * 
      * @param describeRecordRequest
      * @return Result of the DescribeRecord operation returned by the service.
@@ -1595,6 +1603,28 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateProvisionedProductResult updateProvisionedProduct(UpdateProvisionedProductRequest updateProvisionedProductRequest);
+
+    /**
+     * <p>
+     * Requests updates to the properties of the specified provisioned product.
+     * </p>
+     * 
+     * @param updateProvisionedProductPropertiesRequest
+     * @return Result of the UpdateProvisionedProductProperties operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidStateException
+     *         An attempt was made to modify a resource that is in a state that is not valid. Check your resources to
+     *         ensure that they are in valid states before retrying the operation.
+     * @sample AWSServiceCatalog.UpdateProvisionedProductProperties
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProductProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateProvisionedProductPropertiesResult updateProvisionedProductProperties(
+            UpdateProvisionedProductPropertiesRequest updateProvisionedProductPropertiesRequest);
 
     /**
      * <p>

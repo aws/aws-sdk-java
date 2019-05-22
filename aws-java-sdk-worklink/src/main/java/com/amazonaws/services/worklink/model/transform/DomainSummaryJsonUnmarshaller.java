@@ -52,6 +52,10 @@ public class DomainSummaryJsonUnmarshaller implements Unmarshaller<DomainSummary
                     context.nextToken();
                     domainSummary.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DisplayName", targetDepth)) {
+                    context.nextToken();
+                    domainSummary.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
                     domainSummary.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -59,10 +63,6 @@ public class DomainSummaryJsonUnmarshaller implements Unmarshaller<DomainSummary
                 if (context.testExpression("DomainStatus", targetDepth)) {
                     context.nextToken();
                     domainSummary.setDomainStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("DisplayName", targetDepth)) {
-                    context.nextToken();
-                    domainSummary.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

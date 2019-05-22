@@ -1317,6 +1317,14 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>,
      * <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
      * </p>
+     * <note>
+     * <p>
+     * If a provisioned product was transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the new
+     * owner will be able to describe all past records for that product. The previous owner will no longer be able to
+     * describe the records, but will be able to use <a>ListRecordHistory</a> to see the product's history from when he
+     * was the owner.
+     * </p>
+     * </note>
      * 
      * @param describeRecordRequest
      * @return A Java Future containing the result of the DescribeRecord operation returned by the service.
@@ -1334,6 +1342,14 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>,
      * <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
      * </p>
+     * <note>
+     * <p>
+     * If a provisioned product was transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the new
+     * owner will be able to describe all past records for that product. The previous owner will no longer be able to
+     * describe the records, but will be able to use <a>ListRecordHistory</a> to see the product's history from when he
+     * was the owner.
+     * </p>
+     * </note>
      * 
      * @param describeRecordRequest
      * @param asyncHandler
@@ -2751,6 +2767,43 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      */
     java.util.concurrent.Future<UpdateProvisionedProductResult> updateProvisionedProductAsync(UpdateProvisionedProductRequest updateProvisionedProductRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateProvisionedProductRequest, UpdateProvisionedProductResult> asyncHandler);
+
+    /**
+     * <p>
+     * Requests updates to the properties of the specified provisioned product.
+     * </p>
+     * 
+     * @param updateProvisionedProductPropertiesRequest
+     * @return A Java Future containing the result of the UpdateProvisionedProductProperties operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsync.UpdateProvisionedProductProperties
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProductProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProvisionedProductPropertiesResult> updateProvisionedProductPropertiesAsync(
+            UpdateProvisionedProductPropertiesRequest updateProvisionedProductPropertiesRequest);
+
+    /**
+     * <p>
+     * Requests updates to the properties of the specified provisioned product.
+     * </p>
+     * 
+     * @param updateProvisionedProductPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateProvisionedProductProperties operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsyncHandler.UpdateProvisionedProductProperties
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisionedProductProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProvisionedProductPropertiesResult> updateProvisionedProductPropertiesAsync(
+            UpdateProvisionedProductPropertiesRequest updateProvisionedProductPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateProvisionedProductPropertiesRequest, UpdateProvisionedProductPropertiesResult> asyncHandler);
 
     /**
      * <p>

@@ -122,7 +122,15 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     private String subnetId;
     /**
      * <p>
-     * The type of interface.
+     * The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric
+     * Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
+     * </p>
+     * <p>
+     * Valide values: <code>interface</code> | <code>efa</code>
      * </p>
      */
     private String interfaceType;
@@ -892,11 +900,26 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The type of interface.
+     * The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric
+     * Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
+     * </p>
+     * <p>
+     * Valide values: <code>interface</code> | <code>efa</code>
      * </p>
      * 
      * @param interfaceType
-     *        The type of interface.
+     *        The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For
+     *        more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
+     *        Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
+     *        </p>
+     *        <p>
+     *        Valide values: <code>interface</code> | <code>efa</code>
      */
 
     public void setInterfaceType(String interfaceType) {
@@ -905,10 +928,25 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The type of interface.
+     * The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric
+     * Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
+     * </p>
+     * <p>
+     * Valide values: <code>interface</code> | <code>efa</code>
      * </p>
      * 
-     * @return The type of interface.
+     * @return The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For
+     *         more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
+     *         Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         <p>
+     *         If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
+     *         </p>
+     *         <p>
+     *         Valide values: <code>interface</code> | <code>efa</code>
      */
 
     public String getInterfaceType() {
@@ -917,11 +955,26 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * The type of interface.
+     * The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric
+     * Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
+     * </p>
+     * <p>
+     * Valide values: <code>interface</code> | <code>efa</code>
      * </p>
      * 
      * @param interfaceType
-     *        The type of interface.
+     *        The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For
+     *        more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
+     *        Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
+     *        </p>
+     *        <p>
+     *        Valide values: <code>interface</code> | <code>efa</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

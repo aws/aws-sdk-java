@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -40,6 +41,8 @@ public class VpcLinkMarshaller {
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusMessage").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final VpcLinkMarshaller instance = new VpcLinkMarshaller();
 
@@ -63,6 +66,7 @@ public class VpcLinkMarshaller {
             protocolMarshaller.marshall(vpcLink.getTargetArns(), TARGETARNS_BINDING);
             protocolMarshaller.marshall(vpcLink.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(vpcLink.getStatusMessage(), STATUSMESSAGE_BINDING);
+            protocolMarshaller.marshall(vpcLink.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

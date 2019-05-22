@@ -86,12 +86,12 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     private Integer secondaryPrivateIpAddressCount;
     /**
      * <p>
-     * Indicates whether the network interface is an Elastic Fabric Adapter (EFA). Only specify this parameter to create
-     * an EFA. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Indicates the type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic Fabric
+     * Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you are not creating an EFA ENI, omit this parameter.
+     * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      * </p>
      */
     private String interfaceType;
@@ -572,21 +572,21 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Indicates whether the network interface is an Elastic Fabric Adapter (EFA). Only specify this parameter to create
-     * an EFA. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Indicates the type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic Fabric
+     * Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you are not creating an EFA ENI, omit this parameter.
+     * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      * </p>
      * 
      * @param interfaceType
-     *        Indicates whether the network interface is an Elastic Fabric Adapter (EFA). Only specify this parameter to
-     *        create an EFA. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the
+     *        Indicates the type of network interface. To create an Elastic Fabric Adapter (EFA), specify
+     *        <code>efa</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic Fabric Adapter</a> in the
      *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
-     *        If you are not creating an EFA ENI, omit this parameter.
+     *        If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      * @see NetworkInterfaceCreationType
      */
 
@@ -596,20 +596,20 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Indicates whether the network interface is an Elastic Fabric Adapter (EFA). Only specify this parameter to create
-     * an EFA. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Indicates the type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic Fabric
+     * Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you are not creating an EFA ENI, omit this parameter.
+     * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      * </p>
      * 
-     * @return Indicates whether the network interface is an Elastic Fabric Adapter (EFA). Only specify this parameter
-     *         to create an EFA. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the
+     * @return Indicates the type of network interface. To create an Elastic Fabric Adapter (EFA), specify
+     *         <code>efa</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic Fabric Adapter</a> in the
      *         <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
-     *         If you are not creating an EFA ENI, omit this parameter.
+     *         If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      * @see NetworkInterfaceCreationType
      */
 
@@ -619,21 +619,21 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Indicates whether the network interface is an Elastic Fabric Adapter (EFA). Only specify this parameter to create
-     * an EFA. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Indicates the type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic Fabric
+     * Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you are not creating an EFA ENI, omit this parameter.
+     * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      * </p>
      * 
      * @param interfaceType
-     *        Indicates whether the network interface is an Elastic Fabric Adapter (EFA). Only specify this parameter to
-     *        create an EFA. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the
+     *        Indicates the type of network interface. To create an Elastic Fabric Adapter (EFA), specify
+     *        <code>efa</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic Fabric Adapter</a> in the
      *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
-     *        If you are not creating an EFA ENI, omit this parameter.
+     *        If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkInterfaceCreationType
      */
@@ -645,21 +645,21 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Indicates whether the network interface is an Elastic Fabric Adapter (EFA). Only specify this parameter to create
-     * an EFA. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
-     * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Indicates the type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic Fabric
+     * Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you are not creating an EFA ENI, omit this parameter.
+     * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      * </p>
      * 
      * @param interfaceType
-     *        Indicates whether the network interface is an Elastic Fabric Adapter (EFA). Only specify this parameter to
-     *        create an EFA. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the
+     *        Indicates the type of network interface. To create an Elastic Fabric Adapter (EFA), specify
+     *        <code>efa</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"> Elastic Fabric Adapter</a> in the
      *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
-     *        If you are not creating an EFA ENI, omit this parameter.
+     *        If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkInterfaceCreationType
      */

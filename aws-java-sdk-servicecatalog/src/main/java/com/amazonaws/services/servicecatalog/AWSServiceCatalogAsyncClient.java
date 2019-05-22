@@ -2824,6 +2824,41 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateProvisionedProductPropertiesResult> updateProvisionedProductPropertiesAsync(
+            UpdateProvisionedProductPropertiesRequest request) {
+
+        return updateProvisionedProductPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProvisionedProductPropertiesResult> updateProvisionedProductPropertiesAsync(
+            final UpdateProvisionedProductPropertiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateProvisionedProductPropertiesRequest, UpdateProvisionedProductPropertiesResult> asyncHandler) {
+        final UpdateProvisionedProductPropertiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateProvisionedProductPropertiesResult>() {
+            @Override
+            public UpdateProvisionedProductPropertiesResult call() throws Exception {
+                UpdateProvisionedProductPropertiesResult result = null;
+
+                try {
+                    result = executeUpdateProvisionedProductProperties(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateProvisioningArtifactResult> updateProvisioningArtifactAsync(UpdateProvisioningArtifactRequest request) {
 
         return updateProvisioningArtifactAsync(request, null);

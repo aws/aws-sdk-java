@@ -39,16 +39,16 @@ public class AssociateDomainRequest extends com.amazonaws.AmazonWebServiceReques
     private String domainName;
     /**
      * <p>
-     * The ARN of an issued ACM certificate that is valid for the domain being associated.
-     * </p>
-     */
-    private String acmCertificateArn;
-    /**
-     * <p>
      * The name to display.
      * </p>
      */
     private String displayName;
+    /**
+     * <p>
+     * The ARN of an issued ACM certificate that is valid for the domain being associated.
+     * </p>
+     */
+    private String acmCertificateArn;
 
     /**
      * <p>
@@ -132,46 +132,6 @@ public class AssociateDomainRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of an issued ACM certificate that is valid for the domain being associated.
-     * </p>
-     * 
-     * @param acmCertificateArn
-     *        The ARN of an issued ACM certificate that is valid for the domain being associated.
-     */
-
-    public void setAcmCertificateArn(String acmCertificateArn) {
-        this.acmCertificateArn = acmCertificateArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of an issued ACM certificate that is valid for the domain being associated.
-     * </p>
-     * 
-     * @return The ARN of an issued ACM certificate that is valid for the domain being associated.
-     */
-
-    public String getAcmCertificateArn() {
-        return this.acmCertificateArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of an issued ACM certificate that is valid for the domain being associated.
-     * </p>
-     * 
-     * @param acmCertificateArn
-     *        The ARN of an issued ACM certificate that is valid for the domain being associated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AssociateDomainRequest withAcmCertificateArn(String acmCertificateArn) {
-        setAcmCertificateArn(acmCertificateArn);
-        return this;
-    }
-
-    /**
-     * <p>
      * The name to display.
      * </p>
      * 
@@ -211,6 +171,46 @@ public class AssociateDomainRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The ARN of an issued ACM certificate that is valid for the domain being associated.
+     * </p>
+     * 
+     * @param acmCertificateArn
+     *        The ARN of an issued ACM certificate that is valid for the domain being associated.
+     */
+
+    public void setAcmCertificateArn(String acmCertificateArn) {
+        this.acmCertificateArn = acmCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of an issued ACM certificate that is valid for the domain being associated.
+     * </p>
+     * 
+     * @return The ARN of an issued ACM certificate that is valid for the domain being associated.
+     */
+
+    public String getAcmCertificateArn() {
+        return this.acmCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of an issued ACM certificate that is valid for the domain being associated.
+     * </p>
+     * 
+     * @param acmCertificateArn
+     *        The ARN of an issued ACM certificate that is valid for the domain being associated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateDomainRequest withAcmCertificateArn(String acmCertificateArn) {
+        setAcmCertificateArn(acmCertificateArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -226,10 +226,10 @@ public class AssociateDomainRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("FleetArn: ").append(getFleetArn()).append(",");
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName()).append(",");
-        if (getAcmCertificateArn() != null)
-            sb.append("AcmCertificateArn: ").append(getAcmCertificateArn()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName());
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
+        if (getAcmCertificateArn() != null)
+            sb.append("AcmCertificateArn: ").append(getAcmCertificateArn());
         sb.append("}");
         return sb.toString();
     }
@@ -252,13 +252,13 @@ public class AssociateDomainRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
-        if (other.getAcmCertificateArn() == null ^ this.getAcmCertificateArn() == null)
-            return false;
-        if (other.getAcmCertificateArn() != null && other.getAcmCertificateArn().equals(this.getAcmCertificateArn()) == false)
-            return false;
         if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
+            return false;
+        if (other.getAcmCertificateArn() == null ^ this.getAcmCertificateArn() == null)
+            return false;
+        if (other.getAcmCertificateArn() != null && other.getAcmCertificateArn().equals(this.getAcmCertificateArn()) == false)
             return false;
         return true;
     }
@@ -270,8 +270,8 @@ public class AssociateDomainRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getFleetArn() == null) ? 0 : getFleetArn().hashCode());
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
-        hashCode = prime * hashCode + ((getAcmCertificateArn() == null) ? 0 : getAcmCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getAcmCertificateArn() == null) ? 0 : getAcmCertificateArn().hashCode());
         return hashCode;
     }
 

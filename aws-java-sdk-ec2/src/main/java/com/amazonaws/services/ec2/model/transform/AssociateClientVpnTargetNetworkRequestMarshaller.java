@@ -21,6 +21,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 
 /**
  * AssociateClientVpnTargetNetworkRequest Marshaller
@@ -49,6 +50,8 @@ public class AssociateClientVpnTargetNetworkRequestMarshaller implements
         if (associateClientVpnTargetNetworkRequest.getSubnetId() != null) {
             request.addParameter("SubnetId", StringUtils.fromString(associateClientVpnTargetNetworkRequest.getSubnetId()));
         }
+
+        request.addParameter("ClientToken", IdempotentUtils.resolveString(associateClientVpnTargetNetworkRequest.getClientToken()));
 
         return request;
     }

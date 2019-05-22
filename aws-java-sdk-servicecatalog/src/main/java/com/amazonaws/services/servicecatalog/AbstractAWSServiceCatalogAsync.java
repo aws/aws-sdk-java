@@ -1055,6 +1055,21 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateProvisionedProductPropertiesResult> updateProvisionedProductPropertiesAsync(
+            UpdateProvisionedProductPropertiesRequest request) {
+
+        return updateProvisionedProductPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProvisionedProductPropertiesResult> updateProvisionedProductPropertiesAsync(
+            UpdateProvisionedProductPropertiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateProvisionedProductPropertiesRequest, UpdateProvisionedProductPropertiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateProvisioningArtifactResult> updateProvisioningArtifactAsync(UpdateProvisioningArtifactRequest request) {
 
         return updateProvisioningArtifactAsync(request, null);

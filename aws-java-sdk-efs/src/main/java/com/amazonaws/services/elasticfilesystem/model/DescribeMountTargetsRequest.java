@@ -29,7 +29,8 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
-     * to 10.
+     * to 10, and other values are ignored. The response is paginated at 10 per page if you have more than 10 mount
+     * targets.
      * </p>
      */
     private Integer maxItems;
@@ -58,12 +59,14 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
-     * to 10.
+     * to 10, and other values are ignored. The response is paginated at 10 per page if you have more than 10 mount
+     * targets.
      * </p>
      * 
      * @param maxItems
      *        (Optional) Maximum number of mount targets to return in the response. Currently, this number is
-     *        automatically set to 10.
+     *        automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you
+     *        have more than 10 mount targets.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -73,11 +76,13 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
-     * to 10.
+     * to 10, and other values are ignored. The response is paginated at 10 per page if you have more than 10 mount
+     * targets.
      * </p>
      * 
      * @return (Optional) Maximum number of mount targets to return in the response. Currently, this number is
-     *         automatically set to 10.
+     *         automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you
+     *         have more than 10 mount targets.
      */
 
     public Integer getMaxItems() {
@@ -87,12 +92,14 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
-     * to 10.
+     * to 10, and other values are ignored. The response is paginated at 10 per page if you have more than 10 mount
+     * targets.
      * </p>
      * 
      * @param maxItems
      *        (Optional) Maximum number of mount targets to return in the response. Currently, this number is
-     *        automatically set to 10.
+     *        automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you
+     *        have more than 10 mount targets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

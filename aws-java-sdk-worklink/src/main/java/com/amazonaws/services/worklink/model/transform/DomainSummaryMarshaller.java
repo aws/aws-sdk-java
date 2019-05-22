@@ -29,12 +29,12 @@ public class DomainSummaryMarshaller {
 
     private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DOMAINSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainStatus").build();
-    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
 
     private static final DomainSummaryMarshaller instance = new DomainSummaryMarshaller();
 
@@ -53,9 +53,9 @@ public class DomainSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(domainSummary.getDomainName(), DOMAINNAME_BINDING);
+            protocolMarshaller.marshall(domainSummary.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(domainSummary.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(domainSummary.getDomainStatus(), DOMAINSTATUS_BINDING);
-            protocolMarshaller.marshall(domainSummary.getDisplayName(), DISPLAYNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

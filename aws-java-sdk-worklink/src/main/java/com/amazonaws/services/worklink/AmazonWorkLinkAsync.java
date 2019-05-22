@@ -70,6 +70,43 @@ public interface AmazonWorkLinkAsync extends AmazonWorkLink {
 
     /**
      * <p>
+     * Associates a website authorization provider with a specified fleet. This is used to authorize users against
+     * associated websites in the company network.
+     * </p>
+     * 
+     * @param associateWebsiteAuthorizationProviderRequest
+     * @return A Java Future containing the result of the AssociateWebsiteAuthorizationProvider operation returned by
+     *         the service.
+     * @sample AmazonWorkLinkAsync.AssociateWebsiteAuthorizationProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateWebsiteAuthorizationProviderResult> associateWebsiteAuthorizationProviderAsync(
+            AssociateWebsiteAuthorizationProviderRequest associateWebsiteAuthorizationProviderRequest);
+
+    /**
+     * <p>
+     * Associates a website authorization provider with a specified fleet. This is used to authorize users against
+     * associated websites in the company network.
+     * </p>
+     * 
+     * @param associateWebsiteAuthorizationProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateWebsiteAuthorizationProvider operation returned by
+     *         the service.
+     * @sample AmazonWorkLinkAsyncHandler.AssociateWebsiteAuthorizationProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateWebsiteAuthorizationProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateWebsiteAuthorizationProviderResult> associateWebsiteAuthorizationProviderAsync(
+            AssociateWebsiteAuthorizationProviderRequest associateWebsiteAuthorizationProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateWebsiteAuthorizationProviderRequest, AssociateWebsiteAuthorizationProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Imports the root certificate of a certificate authority (CA) used to obtain TLS certificates used by associated
      * websites within the company network.
      * </p>
@@ -474,6 +511,45 @@ public interface AmazonWorkLinkAsync extends AmazonWorkLink {
 
     /**
      * <p>
+     * Disassociates a website authorization provider from a specified fleet. After the disassociation, users can't load
+     * any associated websites that require this authorization provider.
+     * </p>
+     * 
+     * @param disassociateWebsiteAuthorizationProviderRequest
+     * @return A Java Future containing the result of the DisassociateWebsiteAuthorizationProvider operation returned by
+     *         the service.
+     * @sample AmazonWorkLinkAsync.DisassociateWebsiteAuthorizationProvider
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateWebsiteAuthorizationProviderResult> disassociateWebsiteAuthorizationProviderAsync(
+            DisassociateWebsiteAuthorizationProviderRequest disassociateWebsiteAuthorizationProviderRequest);
+
+    /**
+     * <p>
+     * Disassociates a website authorization provider from a specified fleet. After the disassociation, users can't load
+     * any associated websites that require this authorization provider.
+     * </p>
+     * 
+     * @param disassociateWebsiteAuthorizationProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateWebsiteAuthorizationProvider operation returned by
+     *         the service.
+     * @sample AmazonWorkLinkAsyncHandler.DisassociateWebsiteAuthorizationProvider
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateWebsiteAuthorizationProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateWebsiteAuthorizationProviderResult> disassociateWebsiteAuthorizationProviderAsync(
+            DisassociateWebsiteAuthorizationProviderRequest disassociateWebsiteAuthorizationProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateWebsiteAuthorizationProviderRequest, DisassociateWebsiteAuthorizationProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes a certificate authority (CA).
      * </p>
      * 
@@ -599,6 +675,41 @@ public interface AmazonWorkLinkAsync extends AmazonWorkLink {
      */
     java.util.concurrent.Future<ListFleetsResult> listFleetsAsync(ListFleetsRequest listFleetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListFleetsRequest, ListFleetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of website authorization providers associated with a specified fleet.
+     * </p>
+     * 
+     * @param listWebsiteAuthorizationProvidersRequest
+     * @return A Java Future containing the result of the ListWebsiteAuthorizationProviders operation returned by the
+     *         service.
+     * @sample AmazonWorkLinkAsync.ListWebsiteAuthorizationProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWebsiteAuthorizationProvidersResult> listWebsiteAuthorizationProvidersAsync(
+            ListWebsiteAuthorizationProvidersRequest listWebsiteAuthorizationProvidersRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of website authorization providers associated with a specified fleet.
+     * </p>
+     * 
+     * @param listWebsiteAuthorizationProvidersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWebsiteAuthorizationProviders operation returned by the
+     *         service.
+     * @sample AmazonWorkLinkAsyncHandler.ListWebsiteAuthorizationProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListWebsiteAuthorizationProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWebsiteAuthorizationProvidersResult> listWebsiteAuthorizationProvidersAsync(
+            ListWebsiteAuthorizationProvidersRequest listWebsiteAuthorizationProvidersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWebsiteAuthorizationProvidersRequest, ListWebsiteAuthorizationProvidersResult> asyncHandler);
 
     /**
      * <p>

@@ -66,8 +66,8 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.
      * </p>
      */
     private String tenancy;
@@ -341,16 +341,14 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        the <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
-     *        command.
+     *        the <a>ImportInstance</a> command.
      * @see Tenancy
      */
 
@@ -361,15 +359,13 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.
      * </p>
      * 
      * @return The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *         <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *         the <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
-     *         command.
+     *         the <a>ImportInstance</a> command.
      * @see Tenancy
      */
 
@@ -380,16 +376,14 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        the <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
-     *        command.
+     *        the <a>ImportInstance</a> command.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Tenancy
      */
@@ -402,16 +396,14 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        the <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
-     *        command.
+     *        the <a>ImportInstance</a> command.
      * @see Tenancy
      */
 
@@ -422,16 +414,14 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
+     * <a>ImportInstance</a> command.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        the <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
-     *        command.
+     *        the <a>ImportInstance</a> command.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Tenancy
      */
