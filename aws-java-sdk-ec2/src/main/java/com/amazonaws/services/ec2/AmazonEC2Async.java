@@ -4409,8 +4409,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a VPN connection between an existing virtual private gateway and a VPN customer gateway. The only
-     * supported connection type is <code>ipsec.1</code>.
+     * Creates a VPN connection between an existing virtual private gateway and a VPN customer gateway. The supported
+     * connection types are <code>ipsec.1</code> and <code>ipsec.2</code>.
      * </p>
      * <p>
      * The response includes information that you need to give to your network administrator to configure your customer
@@ -4445,8 +4445,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a VPN connection between an existing virtual private gateway and a VPN customer gateway. The only
-     * supported connection type is <code>ipsec.1</code>.
+     * Creates a VPN connection between an existing virtual private gateway and a VPN customer gateway. The supported
+     * connection types are <code>ipsec.1</code> and <code>ipsec.2</code>.
      * </p>
      * <p>
      * The response includes information that you need to give to your network administrator to configure your customer
@@ -11224,6 +11224,57 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Disables default encryption for EBS volumes that are created in your account in the current region.
+     * </p>
+     * <p>
+     * Call this API if you have enabled default encryption using <a>EnableEbsEncryptionByDefault</a> and want to
+     * disable default EBS encryption. Once default EBS encryption is disabled, you can still create an encrypted volume
+     * by setting <i>encrypted</i> to <i>true</i> in the API call that creates the volume.
+     * </p>
+     * <p>
+     * Disabling default EBS encryption will not change the encryption status of any of your existing volumes.
+     * </p>
+     * 
+     * @param disableEbsEncryptionByDefaultRequest
+     * @return A Java Future containing the result of the DisableEbsEncryptionByDefault operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DisableEbsEncryptionByDefault
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableEbsEncryptionByDefaultResult> disableEbsEncryptionByDefaultAsync(
+            DisableEbsEncryptionByDefaultRequest disableEbsEncryptionByDefaultRequest);
+
+    /**
+     * <p>
+     * Disables default encryption for EBS volumes that are created in your account in the current region.
+     * </p>
+     * <p>
+     * Call this API if you have enabled default encryption using <a>EnableEbsEncryptionByDefault</a> and want to
+     * disable default EBS encryption. Once default EBS encryption is disabled, you can still create an encrypted volume
+     * by setting <i>encrypted</i> to <i>true</i> in the API call that creates the volume.
+     * </p>
+     * <p>
+     * Disabling default EBS encryption will not change the encryption status of any of your existing volumes.
+     * </p>
+     * 
+     * @param disableEbsEncryptionByDefaultRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableEbsEncryptionByDefault operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DisableEbsEncryptionByDefault
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableEbsEncryptionByDefaultResult> disableEbsEncryptionByDefaultAsync(
+            DisableEbsEncryptionByDefaultRequest disableEbsEncryptionByDefaultRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableEbsEncryptionByDefaultRequest, DisableEbsEncryptionByDefaultResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables the specified resource attachment from propagating routes to the specified propagation route table.
      * </p>
      * 
@@ -11695,6 +11746,93 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Enables default encryption for EBS volumes that are created in your account in the current region.
+     * </p>
+     * <p>
+     * Once encryption is enabled with this action, EBS volumes that are created in your account will always be
+     * encrypted even if encryption is not specified at launch. This setting overrides the <i>encrypted</i> setting to
+     * <i>true</i> in all API calls that create EBS volumes in your account. A volume will be encrypted even if you
+     * specify <i>encryption</i> to be <i>false</i> in the API call that creates the volume.
+     * </p>
+     * <p>
+     * If you do not specify a customer master key (CMK) in the API call that creates the EBS volume, then the volume is
+     * encrypted to your AWS account's default CMK.
+     * </p>
+     * <p>
+     * You can specify a default CMK of your choice using <a>ModifyEbsDefaultKmsKeyId</a>.
+     * </p>
+     * <p>
+     * Enabling default encryption for EBS volumes has no effect on existing unencrypted volumes in your account.
+     * Encrypting the data in these requires manual action. You can either create an encrypted snapshot of an
+     * unencrypted volume, or encrypt a copy of an unencrypted snapshot. Any volume restored from an encrypted snapshot
+     * is also encrypted. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS Snapshots</a>.
+     * </p>
+     * <p>
+     * Once EBS encryption by default is enabled, you can no longer launch older-generation instance types that do not
+     * support encryption. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * >Supported Instance Types</a>.
+     * </p>
+     * 
+     * @param enableEbsEncryptionByDefaultRequest
+     * @return A Java Future containing the result of the EnableEbsEncryptionByDefault operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.EnableEbsEncryptionByDefault
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableEbsEncryptionByDefaultResult> enableEbsEncryptionByDefaultAsync(
+            EnableEbsEncryptionByDefaultRequest enableEbsEncryptionByDefaultRequest);
+
+    /**
+     * <p>
+     * Enables default encryption for EBS volumes that are created in your account in the current region.
+     * </p>
+     * <p>
+     * Once encryption is enabled with this action, EBS volumes that are created in your account will always be
+     * encrypted even if encryption is not specified at launch. This setting overrides the <i>encrypted</i> setting to
+     * <i>true</i> in all API calls that create EBS volumes in your account. A volume will be encrypted even if you
+     * specify <i>encryption</i> to be <i>false</i> in the API call that creates the volume.
+     * </p>
+     * <p>
+     * If you do not specify a customer master key (CMK) in the API call that creates the EBS volume, then the volume is
+     * encrypted to your AWS account's default CMK.
+     * </p>
+     * <p>
+     * You can specify a default CMK of your choice using <a>ModifyEbsDefaultKmsKeyId</a>.
+     * </p>
+     * <p>
+     * Enabling default encryption for EBS volumes has no effect on existing unencrypted volumes in your account.
+     * Encrypting the data in these requires manual action. You can either create an encrypted snapshot of an
+     * unencrypted volume, or encrypt a copy of an unencrypted snapshot. Any volume restored from an encrypted snapshot
+     * is also encrypted. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS Snapshots</a>.
+     * </p>
+     * <p>
+     * Once EBS encryption by default is enabled, you can no longer launch older-generation instance types that do not
+     * support encryption. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * >Supported Instance Types</a>.
+     * </p>
+     * 
+     * @param enableEbsEncryptionByDefaultRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableEbsEncryptionByDefault operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.EnableEbsEncryptionByDefault
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableEbsEncryptionByDefaultResult> enableEbsEncryptionByDefaultAsync(
+            EnableEbsEncryptionByDefaultRequest enableEbsEncryptionByDefaultRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableEbsEncryptionByDefaultRequest, EnableEbsEncryptionByDefaultResult> asyncHandler);
+
+    /**
+     * <p>
      * Enables the specified attachment to propagate routes to the specified propagation route table.
      * </p>
      * 
@@ -12096,6 +12234,72 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<GetConsoleScreenshotResult> getConsoleScreenshotAsync(GetConsoleScreenshotRequest getConsoleScreenshotRequest,
             com.amazonaws.handlers.AsyncHandler<GetConsoleScreenshotRequest, GetConsoleScreenshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the default customer master key (CMK) that your account uses to encrypt EBS volumes if you don’t
+     * specify a CMK in the API call. You can change this default using <a>ModifyEbsDefaultKmsKeyId</a>.
+     * </p>
+     * 
+     * @param getEbsDefaultKmsKeyIdRequest
+     * @return A Java Future containing the result of the GetEbsDefaultKmsKeyId operation returned by the service.
+     * @sample AmazonEC2Async.GetEbsDefaultKmsKeyId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetEbsDefaultKmsKeyIdResult> getEbsDefaultKmsKeyIdAsync(GetEbsDefaultKmsKeyIdRequest getEbsDefaultKmsKeyIdRequest);
+
+    /**
+     * <p>
+     * Describes the default customer master key (CMK) that your account uses to encrypt EBS volumes if you don’t
+     * specify a CMK in the API call. You can change this default using <a>ModifyEbsDefaultKmsKeyId</a>.
+     * </p>
+     * 
+     * @param getEbsDefaultKmsKeyIdRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEbsDefaultKmsKeyId operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.GetEbsDefaultKmsKeyId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetEbsDefaultKmsKeyIdResult> getEbsDefaultKmsKeyIdAsync(GetEbsDefaultKmsKeyIdRequest getEbsDefaultKmsKeyIdRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEbsDefaultKmsKeyIdRequest, GetEbsDefaultKmsKeyIdResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes whether default EBS encryption is enabled for your account in the current region.
+     * </p>
+     * 
+     * @param getEbsEncryptionByDefaultRequest
+     * @return A Java Future containing the result of the GetEbsEncryptionByDefault operation returned by the service.
+     * @sample AmazonEC2Async.GetEbsEncryptionByDefault
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEbsEncryptionByDefaultResult> getEbsEncryptionByDefaultAsync(
+            GetEbsEncryptionByDefaultRequest getEbsEncryptionByDefaultRequest);
+
+    /**
+     * <p>
+     * Describes whether default EBS encryption is enabled for your account in the current region.
+     * </p>
+     * 
+     * @param getEbsEncryptionByDefaultRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEbsEncryptionByDefault operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.GetEbsEncryptionByDefault
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEbsEncryptionByDefaultResult> getEbsEncryptionByDefaultAsync(
+            GetEbsEncryptionByDefaultRequest getEbsEncryptionByDefaultRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEbsEncryptionByDefaultRequest, GetEbsEncryptionByDefaultResult> asyncHandler);
 
     /**
      * <p>
@@ -12750,6 +12954,57 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<ModifyClientVpnEndpointResult> modifyClientVpnEndpointAsync(ModifyClientVpnEndpointRequest modifyClientVpnEndpointRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyClientVpnEndpointRequest, ModifyClientVpnEndpointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Changes the default customer master key (CMK) that your account uses to encrypt EBS volumes if you don’t specify
+     * a CMK in the API call.
+     * </p>
+     * <p>
+     * Your account has an AWS-managed default CMK that is used for encrypting an EBS volume when no CMK is specified in
+     * the API call that creates the volume. By calling this API, you can specify a customer-managed CMK to use in place
+     * of the AWS-managed default CMK.
+     * </p>
+     * <p>
+     * Note: Deleting or disabling the custom CMK that you have specified to act as your default CMK will result in
+     * instance-launch failures.
+     * </p>
+     * 
+     * @param modifyEbsDefaultKmsKeyIdRequest
+     * @return A Java Future containing the result of the ModifyEbsDefaultKmsKeyId operation returned by the service.
+     * @sample AmazonEC2Async.ModifyEbsDefaultKmsKeyId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyEbsDefaultKmsKeyIdResult> modifyEbsDefaultKmsKeyIdAsync(ModifyEbsDefaultKmsKeyIdRequest modifyEbsDefaultKmsKeyIdRequest);
+
+    /**
+     * <p>
+     * Changes the default customer master key (CMK) that your account uses to encrypt EBS volumes if you don’t specify
+     * a CMK in the API call.
+     * </p>
+     * <p>
+     * Your account has an AWS-managed default CMK that is used for encrypting an EBS volume when no CMK is specified in
+     * the API call that creates the volume. By calling this API, you can specify a customer-managed CMK to use in place
+     * of the AWS-managed default CMK.
+     * </p>
+     * <p>
+     * Note: Deleting or disabling the custom CMK that you have specified to act as your default CMK will result in
+     * instance-launch failures.
+     * </p>
+     * 
+     * @param modifyEbsDefaultKmsKeyIdRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyEbsDefaultKmsKeyId operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyEbsDefaultKmsKeyId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyEbsDefaultKmsKeyIdResult> modifyEbsDefaultKmsKeyIdAsync(ModifyEbsDefaultKmsKeyIdRequest modifyEbsDefaultKmsKeyIdRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyEbsDefaultKmsKeyIdRequest, ModifyEbsDefaultKmsKeyIdResult> asyncHandler);
 
     /**
      * <p>
@@ -13533,6 +13788,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Modifies the specified Spot Fleet request.
      * </p>
      * <p>
+     * You can only modify a Spot Fleet request of type <code>maintain</code>.
+     * </p>
+     * <p>
      * While the Spot Fleet request is being modified, it is in the <code>modifying</code> state.
      * </p>
      * <p>
@@ -13567,6 +13825,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Modifies the specified Spot Fleet request.
+     * </p>
+     * <p>
+     * You can only modify a Spot Fleet request of type <code>maintain</code>.
      * </p>
      * <p>
      * While the Spot Fleet request is being modified, it is in the <code>modifying</code> state.
@@ -15416,6 +15677,55 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<RequestSpotInstancesResult> requestSpotInstancesAsync(RequestSpotInstancesRequest requestSpotInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<RequestSpotInstancesRequest, RequestSpotInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Resets the account's default customer master key (CMK) to the account's AWS-managed default CMK. This default CMK
+     * is used to encrypt EBS volumes when you have enabled EBS encryption by default without specifying a CMK in the
+     * API call. If you have not enabled encryption by default, then this CMK is used when you set the
+     * <code>Encrypted</code> parameter to true without specifying a custom CMK in the API call.
+     * </p>
+     * <p>
+     * Call this API if you have modified the default CMK that is used for encrypting your EBS volume using
+     * <a>ModifyEbsDefaultKmsKeyId</a> and you want to reset it to the AWS-managed default CMK. After resetting, you can
+     * continue to provide a CMK of your choice in the API call that creates the volume. However, if no CMK is
+     * specified, your account will encrypt the volume to the AWS-managed default CMK.
+     * </p>
+     * 
+     * @param resetEbsDefaultKmsKeyIdRequest
+     * @return A Java Future containing the result of the ResetEbsDefaultKmsKeyId operation returned by the service.
+     * @sample AmazonEC2Async.ResetEbsDefaultKmsKeyId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ResetEbsDefaultKmsKeyIdResult> resetEbsDefaultKmsKeyIdAsync(ResetEbsDefaultKmsKeyIdRequest resetEbsDefaultKmsKeyIdRequest);
+
+    /**
+     * <p>
+     * Resets the account's default customer master key (CMK) to the account's AWS-managed default CMK. This default CMK
+     * is used to encrypt EBS volumes when you have enabled EBS encryption by default without specifying a CMK in the
+     * API call. If you have not enabled encryption by default, then this CMK is used when you set the
+     * <code>Encrypted</code> parameter to true without specifying a custom CMK in the API call.
+     * </p>
+     * <p>
+     * Call this API if you have modified the default CMK that is used for encrypting your EBS volume using
+     * <a>ModifyEbsDefaultKmsKeyId</a> and you want to reset it to the AWS-managed default CMK. After resetting, you can
+     * continue to provide a CMK of your choice in the API call that creates the volume. However, if no CMK is
+     * specified, your account will encrypt the volume to the AWS-managed default CMK.
+     * </p>
+     * 
+     * @param resetEbsDefaultKmsKeyIdRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResetEbsDefaultKmsKeyId operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ResetEbsDefaultKmsKeyId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ResetEbsDefaultKmsKeyIdResult> resetEbsDefaultKmsKeyIdAsync(ResetEbsDefaultKmsKeyIdRequest resetEbsDefaultKmsKeyIdRequest,
+            com.amazonaws.handlers.AsyncHandler<ResetEbsDefaultKmsKeyIdRequest, ResetEbsDefaultKmsKeyIdResult> asyncHandler);
 
     /**
      * <p>

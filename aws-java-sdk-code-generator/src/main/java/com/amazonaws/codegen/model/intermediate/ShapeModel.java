@@ -283,6 +283,13 @@ public class ShapeModel extends DocumentationModel {
         members.add(member);
     }
 
+    /**
+     * Returns true if the shape is empty (ie, there are no members in the shape)
+     */
+    public boolean hasNoMembers() {
+        return members == null || members.isEmpty();
+    }
+
     @JsonIgnore
     public List<ConstructorModel> getAdditionalConstructors() {
         return additionalConstructors;
@@ -472,4 +479,6 @@ public class ShapeModel extends DocumentationModel {
     public void setRequestSignerClassFqcn(String authorizerClass) {
         this.requestSignerClassFqcn = authorizerClass;
     }
+
+
 }

@@ -1420,6 +1420,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DisableEbsEncryptionByDefaultResult disableEbsEncryptionByDefault(DisableEbsEncryptionByDefaultRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisableTransitGatewayRouteTablePropagationResult disableTransitGatewayRouteTablePropagation(DisableTransitGatewayRouteTablePropagationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1475,6 +1480,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public EnableEbsEncryptionByDefaultResult enableEbsEncryptionByDefault(EnableEbsEncryptionByDefaultRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public EnableTransitGatewayRouteTablePropagationResult enableTransitGatewayRouteTablePropagation(EnableTransitGatewayRouteTablePropagationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1522,6 +1532,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public GetConsoleScreenshotResult getConsoleScreenshot(GetConsoleScreenshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetEbsDefaultKmsKeyIdResult getEbsDefaultKmsKeyId(GetEbsDefaultKmsKeyIdRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetEbsEncryptionByDefaultResult getEbsEncryptionByDefault(GetEbsEncryptionByDefaultRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1608,6 +1628,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ModifyClientVpnEndpointResult modifyClientVpnEndpoint(ModifyClientVpnEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyEbsDefaultKmsKeyIdResult modifyEbsDefaultKmsKeyId(ModifyEbsDefaultKmsKeyIdRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1859,6 +1884,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public RequestSpotInstancesResult requestSpotInstances(RequestSpotInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResetEbsDefaultKmsKeyIdResult resetEbsDefaultKmsKeyId(ResetEbsDefaultKmsKeyIdRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,3 +1,12 @@
+# __1.11.559__ __2019-05-23__
+## __AWS WAF Regional__
+  - ### Features
+    - Documentation updates for waf-regional
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - New APIs to enable EBS encryption by default feature. Once EBS encryption by default is enabled in a region within the account, all new EBS volumes and snapshot copies are always encrypted
+
 # __1.11.558__ __2019-05-22__
 ## __AWS Budgets__
   - ### Features

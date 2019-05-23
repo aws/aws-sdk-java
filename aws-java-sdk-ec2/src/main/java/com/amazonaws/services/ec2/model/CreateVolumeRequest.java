@@ -29,17 +29,20 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the
-     * Availability Zones that are currently available to you.
+     * The Availability Zone in which to create the volume.
      * </p>
      */
     private String availabilityZone;
     /**
      * <p>
-     * Specifies the encryption state of the volume. The default effect of setting this parameter depends on the
-     * volume's source and ownership. Each default case can be overridden by specifying a customer master key (CMK) with
-     * the <code>KeyKeyId</code> parameter. For a complete list of possible encryption cases, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * Specifies the encryption state of the volume. The default effect of setting the <code>Encrypted</code> parameter
+     * to <code>true</code> through the console, API, or CLI depends on the volume's origin (new or from a snapshot),
+     * starting encryption state, ownership, and whether <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK) with the
+     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to <code>true</code>. For a
+     * complete list of possible encryption cases, see <a href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS
+     * Encryption</a>.
      * </p>
      * <p>
      * Encrypted Amazon EBS volumes may only be attached to instances that support Amazon EBS encryption. For more
@@ -65,10 +68,10 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     private Integer iops;
     /**
      * <p>
-     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
-     * encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-     * flag must also be set.
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use to encrypt the
+     * volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not specified,
+     * the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must
+     * also be set.
      * </p>
      * <p>
      * The CMK identifier may be provided in any of the following formats:
@@ -122,7 +125,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <note>
      * <p>
-     * At least one of Size or SnapshotId are required.
+     * At least one of Size or SnapshotId is required.
      * </p>
      * </note>
      */
@@ -182,11 +185,10 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        </p>
      *        <note>
      *        <p>
-     *        At least one of Size or SnapshotId are required.
+     *        At least one of Size or SnapshotId is required.
      *        </p>
      * @param availabilityZone
-     *        The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the
-     *        Availability Zones that are currently available to you.
+     *        The Availability Zone in which to create the volume.
      */
     public CreateVolumeRequest(Integer size, String availabilityZone) {
         setSize(size);
@@ -203,8 +205,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        At least one of Size or SnapshotId are required.
      *        </p>
      * @param availabilityZone
-     *        The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the
-     *        Availability Zones that are currently available to you.
+     *        The Availability Zone in which to create the volume.
      */
     public CreateVolumeRequest(String snapshotId, String availabilityZone) {
         setSnapshotId(snapshotId);
@@ -213,13 +214,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the
-     * Availability Zones that are currently available to you.
+     * The Availability Zone in which to create the volume.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the
-     *        Availability Zones that are currently available to you.
+     *        The Availability Zone in which to create the volume.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -228,12 +227,10 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the
-     * Availability Zones that are currently available to you.
+     * The Availability Zone in which to create the volume.
      * </p>
      * 
-     * @return The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the
-     *         Availability Zones that are currently available to you.
+     * @return The Availability Zone in which to create the volume.
      */
 
     public String getAvailabilityZone() {
@@ -242,13 +239,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the
-     * Availability Zones that are currently available to you.
+     * The Availability Zone in which to create the volume.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the
-     *        Availability Zones that are currently available to you.
+     *        The Availability Zone in which to create the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,10 +254,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies the encryption state of the volume. The default effect of setting this parameter depends on the
-     * volume's source and ownership. Each default case can be overridden by specifying a customer master key (CMK) with
-     * the <code>KeyKeyId</code> parameter. For a complete list of possible encryption cases, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * Specifies the encryption state of the volume. The default effect of setting the <code>Encrypted</code> parameter
+     * to <code>true</code> through the console, API, or CLI depends on the volume's origin (new or from a snapshot),
+     * starting encryption state, ownership, and whether <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK) with the
+     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to <code>true</code>. For a
+     * complete list of possible encryption cases, see <a href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS
+     * Encryption</a>.
      * </p>
      * <p>
      * Encrypted Amazon EBS volumes may only be attached to instances that support Amazon EBS encryption. For more
@@ -272,11 +271,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param encrypted
-     *        Specifies the encryption state of the volume. The default effect of setting this parameter depends on the
-     *        volume's source and ownership. Each default case can be overridden by specifying a customer master key
-     *        (CMK) with the <code>KeyKeyId</code> parameter. For a complete list of possible encryption cases, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
-     *        </p>
+     *        Specifies the encryption state of the volume. The default effect of setting the <code>Encrypted</code>
+     *        parameter to <code>true</code> through the console, API, or CLI depends on the volume's origin (new or
+     *        from a snapshot), starting encryption state, ownership, and whether <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     *        encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK)
+     *        with the <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to
+     *        <code>true</code>. For a complete list of possible encryption cases, see <a
+     *        href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS Encryption</a>. </p>
      *        <p>
      *        Encrypted Amazon EBS volumes may only be attached to instances that support Amazon EBS encryption. For
      *        more information, see <a href=
@@ -290,10 +292,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies the encryption state of the volume. The default effect of setting this parameter depends on the
-     * volume's source and ownership. Each default case can be overridden by specifying a customer master key (CMK) with
-     * the <code>KeyKeyId</code> parameter. For a complete list of possible encryption cases, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * Specifies the encryption state of the volume. The default effect of setting the <code>Encrypted</code> parameter
+     * to <code>true</code> through the console, API, or CLI depends on the volume's origin (new or from a snapshot),
+     * starting encryption state, ownership, and whether <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK) with the
+     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to <code>true</code>. For a
+     * complete list of possible encryption cases, see <a href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS
+     * Encryption</a>.
      * </p>
      * <p>
      * Encrypted Amazon EBS volumes may only be attached to instances that support Amazon EBS encryption. For more
@@ -302,11 +308,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * >Supported Instance Types</a>.
      * </p>
      * 
-     * @return Specifies the encryption state of the volume. The default effect of setting this parameter depends on the
-     *         volume's source and ownership. Each default case can be overridden by specifying a customer master key
-     *         (CMK) with the <code>KeyKeyId</code> parameter. For a complete list of possible encryption cases, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
-     *         </p>
+     * @return Specifies the encryption state of the volume. The default effect of setting the <code>Encrypted</code>
+     *         parameter to <code>true</code> through the console, API, or CLI depends on the volume's origin (new or
+     *         from a snapshot), starting encryption state, ownership, and whether <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     *         encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK)
+     *         with the <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to
+     *         <code>true</code>. For a complete list of possible encryption cases, see <a
+     *         href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS Encryption</a>. </p>
      *         <p>
      *         Encrypted Amazon EBS volumes may only be attached to instances that support Amazon EBS encryption. For
      *         more information, see <a href=
@@ -320,10 +329,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies the encryption state of the volume. The default effect of setting this parameter depends on the
-     * volume's source and ownership. Each default case can be overridden by specifying a customer master key (CMK) with
-     * the <code>KeyKeyId</code> parameter. For a complete list of possible encryption cases, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * Specifies the encryption state of the volume. The default effect of setting the <code>Encrypted</code> parameter
+     * to <code>true</code> through the console, API, or CLI depends on the volume's origin (new or from a snapshot),
+     * starting encryption state, ownership, and whether <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK) with the
+     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to <code>true</code>. For a
+     * complete list of possible encryption cases, see <a href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS
+     * Encryption</a>.
      * </p>
      * <p>
      * Encrypted Amazon EBS volumes may only be attached to instances that support Amazon EBS encryption. For more
@@ -333,11 +346,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param encrypted
-     *        Specifies the encryption state of the volume. The default effect of setting this parameter depends on the
-     *        volume's source and ownership. Each default case can be overridden by specifying a customer master key
-     *        (CMK) with the <code>KeyKeyId</code> parameter. For a complete list of possible encryption cases, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
-     *        </p>
+     *        Specifies the encryption state of the volume. The default effect of setting the <code>Encrypted</code>
+     *        parameter to <code>true</code> through the console, API, or CLI depends on the volume's origin (new or
+     *        from a snapshot), starting encryption state, ownership, and whether <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     *        encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK)
+     *        with the <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to
+     *        <code>true</code>. For a complete list of possible encryption cases, see <a
+     *        href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS Encryption</a>. </p>
      *        <p>
      *        Encrypted Amazon EBS volumes may only be attached to instances that support Amazon EBS encryption. For
      *        more information, see <a href=
@@ -353,10 +369,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies the encryption state of the volume. The default effect of setting this parameter depends on the
-     * volume's source and ownership. Each default case can be overridden by specifying a customer master key (CMK) with
-     * the <code>KeyKeyId</code> parameter. For a complete list of possible encryption cases, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * Specifies the encryption state of the volume. The default effect of setting the <code>Encrypted</code> parameter
+     * to <code>true</code> through the console, API, or CLI depends on the volume's origin (new or from a snapshot),
+     * starting encryption state, ownership, and whether <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     * encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK) with the
+     * <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to <code>true</code>. For a
+     * complete list of possible encryption cases, see <a href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS
+     * Encryption</a>.
      * </p>
      * <p>
      * Encrypted Amazon EBS volumes may only be attached to instances that support Amazon EBS encryption. For more
@@ -365,11 +385,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * >Supported Instance Types</a>.
      * </p>
      * 
-     * @return Specifies the encryption state of the volume. The default effect of setting this parameter depends on the
-     *         volume's source and ownership. Each default case can be overridden by specifying a customer master key
-     *         (CMK) with the <code>KeyKeyId</code> parameter. For a complete list of possible encryption cases, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
-     *         </p>
+     * @return Specifies the encryption state of the volume. The default effect of setting the <code>Encrypted</code>
+     *         parameter to <code>true</code> through the console, API, or CLI depends on the volume's origin (new or
+     *         from a snapshot), starting encryption state, ownership, and whether <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html">account-level
+     *         encryption</a> is enabled. Each default case can be overridden by specifying a customer master key (CMK)
+     *         with the <code>KmsKeyId</code> parameter in addition to setting <code>Encrypted</code> to
+     *         <code>true</code>. For a complete list of possible encryption cases, see <a
+     *         href="AWSEC2/latest/UserGuide/EBSEncryption.htm">Amazon EBS Encryption</a>. </p>
      *         <p>
      *         Encrypted Amazon EBS volumes may only be attached to instances that support Amazon EBS encryption. For
      *         more information, see <a href=
@@ -471,10 +494,10 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
-     * encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-     * flag must also be set.
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use to encrypt the
+     * volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not specified,
+     * the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must
+     * also be set.
      * </p>
      * <p>
      * The CMK identifier may be provided in any of the following formats:
@@ -513,9 +536,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param kmsKeyId
-     *        An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
-     *        the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this
-     *        parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     *        An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use to encrypt the
+     *        volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not
+     *        specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
      *        <code>Encrypted</code> flag must also be set. </p>
      *        <p>
      *        The CMK identifier may be provided in any of the following formats:
@@ -559,10 +582,10 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
-     * encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-     * flag must also be set.
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use to encrypt the
+     * volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not specified,
+     * the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must
+     * also be set.
      * </p>
      * <p>
      * The CMK identifier may be provided in any of the following formats:
@@ -600,9 +623,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * though you provided an invalid identifier. The action will eventually fail.
      * </p>
      * 
-     * @return An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
-     *         the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this
-     *         parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * @return An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use to encrypt
+     *         the volume. This parameter is only required if you want to use a non-default CMK; if this parameter is
+     *         not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
      *         <code>Encrypted</code> flag must also be set. </p>
      *         <p>
      *         The CMK identifier may be provided in any of the following formats:
@@ -647,10 +670,10 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
-     * encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-     * flag must also be set.
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use to encrypt the
+     * volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not specified,
+     * the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must
+     * also be set.
      * </p>
      * <p>
      * The CMK identifier may be provided in any of the following formats:
@@ -689,9 +712,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param kmsKeyId
-     *        An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
-     *        the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this
-     *        parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     *        An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use to encrypt the
+     *        volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not
+     *        specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
      *        <code>Encrypted</code> flag must also be set. </p>
      *        <p>
      *        The CMK identifier may be provided in any of the following formats:
@@ -750,7 +773,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <note>
      * <p>
-     * At least one of Size or SnapshotId are required.
+     * At least one of Size or SnapshotId is required.
      * </p>
      * </note>
      * 
@@ -767,7 +790,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        </p>
      *        <note>
      *        <p>
-     *        At least one of Size or SnapshotId are required.
+     *        At least one of Size or SnapshotId is required.
      *        </p>
      */
 
@@ -790,7 +813,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <note>
      * <p>
-     * At least one of Size or SnapshotId are required.
+     * At least one of Size or SnapshotId is required.
      * </p>
      * </note>
      * 
@@ -806,7 +829,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         </p>
      *         <note>
      *         <p>
-     *         At least one of Size or SnapshotId are required.
+     *         At least one of Size or SnapshotId is required.
      *         </p>
      */
 
@@ -829,7 +852,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <note>
      * <p>
-     * At least one of Size or SnapshotId are required.
+     * At least one of Size or SnapshotId is required.
      * </p>
      * </note>
      * 
@@ -846,7 +869,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        </p>
      *        <note>
      *        <p>
-     *        At least one of Size or SnapshotId are required.
+     *        At least one of Size or SnapshotId is required.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

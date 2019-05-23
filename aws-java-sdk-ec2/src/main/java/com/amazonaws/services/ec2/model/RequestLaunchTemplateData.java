@@ -77,8 +77,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest> networkInterfaces;
     /**
      * <p>
-     * The ID of the AMI, which you can get by using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.
+     * The ID of the AMI.
      * </p>
      */
     private String imageId;
@@ -131,10 +130,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     private String ramDiskId;
     /**
      * <p>
-     * If set to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API. To
-     * change this attribute to <code>false</code> after launch, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
-     * ModifyInstanceAttribute</a>.
+     * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
+     * CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     * >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      */
     private Boolean disableApiTermination;
@@ -644,13 +644,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AMI, which you can get by using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.
+     * The ID of the AMI.
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI, which you can get by using <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.
+     *        The ID of the AMI.
      */
 
     public void setImageId(String imageId) {
@@ -659,12 +657,10 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AMI, which you can get by using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.
+     * The ID of the AMI.
      * </p>
      * 
-     * @return The ID of the AMI, which you can get by using <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.
+     * @return The ID of the AMI.
      */
 
     public String getImageId() {
@@ -673,13 +669,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AMI, which you can get by using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.
+     * The ID of the AMI.
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI, which you can get by using <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a>.
+     *        The ID of the AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1009,17 +1003,19 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If set to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API. To
-     * change this attribute to <code>false</code> after launch, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
-     * ModifyInstanceAttribute</a>.
+     * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
+     * CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     * >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * 
      * @param disableApiTermination
-     *        If set to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API.
-     *        To change this attribute to <code>false</code> after launch, use <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
-     *        ModifyInstanceAttribute</a>.
+     *        If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
+     *        console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     *        >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     *        <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      */
 
     public void setDisableApiTermination(Boolean disableApiTermination) {
@@ -1028,16 +1024,18 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If set to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API. To
-     * change this attribute to <code>false</code> after launch, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
-     * ModifyInstanceAttribute</a>.
+     * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
+     * CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     * >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * 
-     * @return If set to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API.
-     *         To change this attribute to <code>false</code> after launch, use <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
-     *         ModifyInstanceAttribute</a>.
+     * @return If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
+     *         console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     *         >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     *         <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      */
 
     public Boolean getDisableApiTermination() {
@@ -1046,17 +1044,19 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If set to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API. To
-     * change this attribute to <code>false</code> after launch, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
-     * ModifyInstanceAttribute</a>.
+     * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
+     * CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     * >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * 
      * @param disableApiTermination
-     *        If set to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API.
-     *        To change this attribute to <code>false</code> after launch, use <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
-     *        ModifyInstanceAttribute</a>.
+     *        If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
+     *        console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     *        >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     *        <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1067,16 +1067,18 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If set to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API. To
-     * change this attribute to <code>false</code> after launch, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
-     * ModifyInstanceAttribute</a>.
+     * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
+     * CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     * >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * 
-     * @return If set to <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API.
-     *         To change this attribute to <code>false</code> after launch, use <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">
-     *         ModifyInstanceAttribute</a>.
+     * @return If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
+     *         console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     *         >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     *         <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      */
 
     public Boolean isDisableApiTermination() {

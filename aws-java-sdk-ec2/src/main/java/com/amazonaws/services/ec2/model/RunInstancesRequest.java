@@ -35,8 +35,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
     /**
      * <p>
-     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI ID is required to launch an
-     * instance and must be specified here or in a launch template.
+     * The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch
+     * template.
      * </p>
      */
     private String imageId;
@@ -219,8 +219,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
-     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     * >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
      * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * <p>
@@ -376,8 +377,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * initialize any additional object members.
      * 
      * @param imageId
-     *        The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI ID is required to launch an
-     *        instance and must be specified here or in a launch template.
+     *        The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch
+     *        template.
      * @param minCount
      *        The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2
      *        can launch in the target Availability Zone, Amazon EC2 launches no instances.</p>
@@ -494,13 +495,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI ID is required to launch an
-     * instance and must be specified here or in a launch template.
+     * The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch
+     * template.
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI ID is required to launch an
-     *        instance and must be specified here or in a launch template.
+     *        The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch
+     *        template.
      */
 
     public void setImageId(String imageId) {
@@ -509,12 +510,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI ID is required to launch an
-     * instance and must be specified here or in a launch template.
+     * The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch
+     * template.
      * </p>
      * 
-     * @return The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI ID is required to launch an
-     *         instance and must be specified here or in a launch template.
+     * @return The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch
+     *         template.
      */
 
     public String getImageId() {
@@ -523,13 +524,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI ID is required to launch an
-     * instance and must be specified here or in a launch template.
+     * The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch
+     * template.
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI ID is required to launch an
-     *        instance and must be specified here or in a launch template.
+     *        The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch
+     *        template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1823,8 +1824,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
-     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     * >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
      * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * <p>
@@ -1833,9 +1835,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param disableApiTermination
      *        If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
-     *        console, CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
-     *        <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code>
-     *        to <code>terminate</code>, you can terminate the instance by running the shutdown command from the
+     *        console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     *        >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     *        <code>terminate</code>, you can terminate the instance by running the shutdown command from the
      *        instance.</p>
      *        <p>
      *        Default: <code>false</code>
@@ -1848,8 +1851,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
-     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     * >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
      * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * <p>
@@ -1857,10 +1861,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @return If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
-     *         console, CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch,
-     *         use <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-     *         <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance
-     *         by running the shutdown command from the instance.</p>
+     *         console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     *         >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     *         <code>terminate</code>, you can terminate the instance by running the shutdown command from the
+     *         instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -1872,8 +1877,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
-     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     * >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
      * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * <p>
@@ -1882,9 +1888,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param disableApiTermination
      *        If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
-     *        console, CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
-     *        <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code>
-     *        to <code>terminate</code>, you can terminate the instance by running the shutdown command from the
+     *        console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     *        >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     *        <code>terminate</code>, you can terminate the instance by running the shutdown command from the
      *        instance.</p>
      *        <p>
      *        Default: <code>false</code>
@@ -1899,8 +1906,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2 console,
-     * CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch, use
-     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     * >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
      * <code>terminate</code>, you can terminate the instance by running the shutdown command from the instance.
      * </p>
      * <p>
@@ -1908,10 +1916,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @return If you set this parameter to <code>true</code>, you can't terminate the instance using the Amazon EC2
-     *         console, CLI, or API; otherwise, you can. To change this attribute to <code>false</code> after launch,
-     *         use <a>ModifyInstanceAttribute</a>. Alternatively, if you set
-     *         <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you can terminate the instance
-     *         by running the shutdown command from the instance.</p>
+     *         console, CLI, or API; otherwise, you can. To change this attribute after launch, use <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html"
+     *         >ModifyInstanceAttribute</a>. Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     *         <code>terminate</code>, you can terminate the instance by running the shutdown command from the
+     *         instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */

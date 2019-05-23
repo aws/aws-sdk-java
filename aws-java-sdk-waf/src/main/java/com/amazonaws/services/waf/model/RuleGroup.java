@@ -70,8 +70,9 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RuleGroup</code>.
+     * alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name
+     * of the metric after you create the <code>RuleGroup</code>.
      * </p>
      */
     private String metricName;
@@ -201,14 +202,16 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RuleGroup</code>.
+     * alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name
+     * of the metric after you create the <code>RuleGroup</code>.
      * </p>
      * 
      * @param metricName
      *        A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only
-     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of
-     *        the metric after you create the <code>RuleGroup</code>.
+     *        alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     *        whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change
+     *        the name of the metric after you create the <code>RuleGroup</code>.
      */
 
     public void setMetricName(String metricName) {
@@ -218,13 +221,15 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RuleGroup</code>.
+     * alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name
+     * of the metric after you create the <code>RuleGroup</code>.
      * </p>
      * 
      * @return A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only
-     *         alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of
-     *         the metric after you create the <code>RuleGroup</code>.
+     *         alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     *         whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change
+     *         the name of the metric after you create the <code>RuleGroup</code>.
      */
 
     public String getMetricName() {
@@ -234,14 +239,16 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the
-     * metric after you create the <code>RuleGroup</code>.
+     * alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     * whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name
+     * of the metric after you create the <code>RuleGroup</code>.
      * </p>
      * 
      * @param metricName
      *        A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only
-     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of
-     *        the metric after you create the <code>RuleGroup</code>.
+     *        alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     *        whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change
+     *        the name of the metric after you create the <code>RuleGroup</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

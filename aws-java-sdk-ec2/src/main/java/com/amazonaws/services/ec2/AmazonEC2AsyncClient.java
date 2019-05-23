@@ -8944,6 +8944,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DisableEbsEncryptionByDefaultResult> disableEbsEncryptionByDefaultAsync(DisableEbsEncryptionByDefaultRequest request) {
+
+        return disableEbsEncryptionByDefaultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableEbsEncryptionByDefaultResult> disableEbsEncryptionByDefaultAsync(
+            final DisableEbsEncryptionByDefaultRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableEbsEncryptionByDefaultRequest, DisableEbsEncryptionByDefaultResult> asyncHandler) {
+        final DisableEbsEncryptionByDefaultRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableEbsEncryptionByDefaultResult>() {
+            @Override
+            public DisableEbsEncryptionByDefaultResult call() throws Exception {
+                DisableEbsEncryptionByDefaultResult result = null;
+
+                try {
+                    result = executeDisableEbsEncryptionByDefault(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableTransitGatewayRouteTablePropagationResult> disableTransitGatewayRouteTablePropagationAsync(
             DisableTransitGatewayRouteTablePropagationRequest request) {
 
@@ -9316,6 +9350,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<EnableEbsEncryptionByDefaultResult> enableEbsEncryptionByDefaultAsync(EnableEbsEncryptionByDefaultRequest request) {
+
+        return enableEbsEncryptionByDefaultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableEbsEncryptionByDefaultResult> enableEbsEncryptionByDefaultAsync(final EnableEbsEncryptionByDefaultRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableEbsEncryptionByDefaultRequest, EnableEbsEncryptionByDefaultResult> asyncHandler) {
+        final EnableEbsEncryptionByDefaultRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableEbsEncryptionByDefaultResult>() {
+            @Override
+            public EnableEbsEncryptionByDefaultResult call() throws Exception {
+                EnableEbsEncryptionByDefaultResult result = null;
+
+                try {
+                    result = executeEnableEbsEncryptionByDefault(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<EnableTransitGatewayRouteTablePropagationResult> enableTransitGatewayRouteTablePropagationAsync(
             EnableTransitGatewayRouteTablePropagationRequest request) {
 
@@ -9637,6 +9704,72 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeGetConsoleScreenshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEbsDefaultKmsKeyIdResult> getEbsDefaultKmsKeyIdAsync(GetEbsDefaultKmsKeyIdRequest request) {
+
+        return getEbsDefaultKmsKeyIdAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEbsDefaultKmsKeyIdResult> getEbsDefaultKmsKeyIdAsync(final GetEbsDefaultKmsKeyIdRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEbsDefaultKmsKeyIdRequest, GetEbsDefaultKmsKeyIdResult> asyncHandler) {
+        final GetEbsDefaultKmsKeyIdRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEbsDefaultKmsKeyIdResult>() {
+            @Override
+            public GetEbsDefaultKmsKeyIdResult call() throws Exception {
+                GetEbsDefaultKmsKeyIdResult result = null;
+
+                try {
+                    result = executeGetEbsDefaultKmsKeyId(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEbsEncryptionByDefaultResult> getEbsEncryptionByDefaultAsync(GetEbsEncryptionByDefaultRequest request) {
+
+        return getEbsEncryptionByDefaultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEbsEncryptionByDefaultResult> getEbsEncryptionByDefaultAsync(final GetEbsEncryptionByDefaultRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEbsEncryptionByDefaultRequest, GetEbsEncryptionByDefaultResult> asyncHandler) {
+        final GetEbsEncryptionByDefaultRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEbsEncryptionByDefaultResult>() {
+            @Override
+            public GetEbsEncryptionByDefaultResult call() throws Exception {
+                GetEbsEncryptionByDefaultResult result = null;
+
+                try {
+                    result = executeGetEbsEncryptionByDefault(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -10190,6 +10323,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeModifyClientVpnEndpoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyEbsDefaultKmsKeyIdResult> modifyEbsDefaultKmsKeyIdAsync(ModifyEbsDefaultKmsKeyIdRequest request) {
+
+        return modifyEbsDefaultKmsKeyIdAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyEbsDefaultKmsKeyIdResult> modifyEbsDefaultKmsKeyIdAsync(final ModifyEbsDefaultKmsKeyIdRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyEbsDefaultKmsKeyIdRequest, ModifyEbsDefaultKmsKeyIdResult> asyncHandler) {
+        final ModifyEbsDefaultKmsKeyIdRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyEbsDefaultKmsKeyIdResult>() {
+            @Override
+            public ModifyEbsDefaultKmsKeyIdResult call() throws Exception {
+                ModifyEbsDefaultKmsKeyIdResult result = null;
+
+                try {
+                    result = executeModifyEbsDefaultKmsKeyId(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -11862,6 +12028,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeRequestSpotInstances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetEbsDefaultKmsKeyIdResult> resetEbsDefaultKmsKeyIdAsync(ResetEbsDefaultKmsKeyIdRequest request) {
+
+        return resetEbsDefaultKmsKeyIdAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetEbsDefaultKmsKeyIdResult> resetEbsDefaultKmsKeyIdAsync(final ResetEbsDefaultKmsKeyIdRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResetEbsDefaultKmsKeyIdRequest, ResetEbsDefaultKmsKeyIdResult> asyncHandler) {
+        final ResetEbsDefaultKmsKeyIdRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ResetEbsDefaultKmsKeyIdResult>() {
+            @Override
+            public ResetEbsDefaultKmsKeyIdResult call() throws Exception {
+                ResetEbsDefaultKmsKeyIdResult result = null;
+
+                try {
+                    result = executeResetEbsDefaultKmsKeyId(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
