@@ -162,7 +162,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more application revisions.
+     * Gets information about one or more application revisions. The maximum number of application revisions that can be
+     * returned is 25.
      * </p>
      * 
      * @param batchGetApplicationRevisionsRequest
@@ -178,7 +179,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more application revisions.
+     * Gets information about one or more application revisions. The maximum number of application revisions that can be
+     * returned is 25.
      * </p>
      * 
      * @param batchGetApplicationRevisionsRequest
@@ -199,7 +201,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more applications.
+     * Gets information about one or more applications. The maximum number of applications that can be returned is 25.
      * </p>
      * 
      * @param batchGetApplicationsRequest
@@ -213,7 +215,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more applications.
+     * Gets information about one or more applications. The maximum number of applications that can be returned is 25.
      * </p>
      * 
      * @param batchGetApplicationsRequest
@@ -285,8 +287,9 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * </note>
      * <p>
-     * Returns an array of instances associated with a deployment. This method works with EC2/On-premises and AWS Lambda
-     * compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute platforms.
+     * Returns an array of one or more instances associated with a deployment. This method works with EC2/On-premises
+     * and AWS Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute
+     * platforms. The maximum number of instances that can be returned is 25.
      * </p>
      * 
      * @param batchGetDeploymentInstancesRequest
@@ -307,8 +310,9 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * </note>
      * <p>
-     * Returns an array of instances associated with a deployment. This method works with EC2/On-premises and AWS Lambda
-     * compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute platforms.
+     * Returns an array of one or more instances associated with a deployment. This method works with EC2/On-premises
+     * and AWS Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute
+     * platforms. The maximum number of instances that can be returned is 25.
      * </p>
      * 
      * @param batchGetDeploymentInstancesRequest
@@ -329,8 +333,9 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Returns an array of targets associated with a deployment. This method works with all compute types and should be
-     * used instead of the deprecated <code>BatchGetDeploymentInstances</code>.
+     * Returns an array of one or more targets associated with a deployment. This method works with all compute types
+     * and should be used instead of the deprecated <code>BatchGetDeploymentInstances</code>. The maximum number of
+     * targets that can be returned is 25.
      * </p>
      * <p>
      * The type of targets returned depends on the deployment's compute platform:
@@ -364,8 +369,9 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Returns an array of targets associated with a deployment. This method works with all compute types and should be
-     * used instead of the deprecated <code>BatchGetDeploymentInstances</code>.
+     * Returns an array of one or more targets associated with a deployment. This method works with all compute types
+     * and should be used instead of the deprecated <code>BatchGetDeploymentInstances</code>. The maximum number of
+     * targets that can be returned is 25.
      * </p>
      * <p>
      * The type of targets returned depends on the deployment's compute platform:
@@ -404,7 +410,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more deployments.
+     * Gets information about one or more deployments. The maximum number of deployments that can be returned is 25.
      * </p>
      * 
      * @param batchGetDeploymentsRequest
@@ -418,7 +424,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more deployments.
+     * Gets information about one or more deployments. The maximum number of deployments that can be returned is 25.
      * </p>
      * 
      * @param batchGetDeploymentsRequest
@@ -452,7 +458,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more on-premises instances.
+     * Gets information about one or more on-premises instances. The maximum number of on-premises instances that can be
+     * returned is 25.
      * </p>
      * 
      * @param batchGetOnPremisesInstancesRequest
@@ -467,7 +474,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more on-premises instances.
+     * Gets information about one or more on-premises instances. The maximum number of on-premises instances that can be
+     * returned is 25.
      * </p>
      * 
      * @param batchGetOnPremisesInstancesRequest
@@ -1511,6 +1519,39 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
+     * Returns a list of tags for the resource identified by a specified ARN. Tags are used to organize and categorize
+     * your CodeDeploy resources.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonCodeDeployAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns a list of tags for the resource identified by a specified ARN. Tags are used to organize and categorize
+     * your CodeDeploy resources.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets the result of a Lambda validation function. The function validates one or both lifecycle events (
      * <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or
      * <code>Failed</code>.
@@ -1736,6 +1777,72 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      */
     java.util.concurrent.Future<StopDeploymentResult> stopDeploymentAsync(StopDeploymentRequest stopDeploymentRequest,
             com.amazonaws.handlers.AsyncHandler<StopDeploymentRequest, StopDeploymentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates the list of tags in the input <code>Tags</code> parameter with the resource identified by the
+     * <code>ResourceArn</code> input parameter.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonCodeDeployAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Associates the list of tags in the input <code>Tags</code> parameter with the resource identified by the
+     * <code>ResourceArn</code> input parameter.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates a resource from a list of tags. The resource is identified by the <code>ResourceArn</code> input
+     * parameter. The tags are identfied by the list of keys in the <code>TagKeys</code> input parameter.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonCodeDeployAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Disassociates a resource from a list of tags. The resource is identified by the <code>ResourceArn</code> input
+     * parameter. The tags are identfied by the list of keys in the <code>TagKeys</code> input parameter.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

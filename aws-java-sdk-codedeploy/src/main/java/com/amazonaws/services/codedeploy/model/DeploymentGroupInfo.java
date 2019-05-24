@@ -74,7 +74,10 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<AutoScalingGroup> autoScalingGroups;
     /**
      * <p>
-     * A service role ARN.
+     * A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to AWS services on your
+     * behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a
+     * Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
      * </p>
      */
     private String serviceRoleArn;
@@ -150,7 +153,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
     private OnPremisesTagSet onPremisesTagSet;
     /**
      * <p>
-     * The destination platform type for the deployment group (<code>Lambda</code> or <code>Server</code>).
+     * The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).
      * </p>
      */
     private String computePlatform;
@@ -560,11 +563,17 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A service role ARN.
+     * A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to AWS services on your
+     * behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a
+     * Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
      * </p>
      * 
      * @param serviceRoleArn
-     *        A service role ARN.
+     *        A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to AWS services
+     *        on your behalf. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html"
+     *        >Create a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -573,10 +582,16 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A service role ARN.
+     * A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to AWS services on your
+     * behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a
+     * Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
      * </p>
      * 
-     * @return A service role ARN.
+     * @return A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to AWS services
+     *         on your behalf. For more information, see <a
+     *         href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html"
+     *         >Create a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
      */
 
     public String getServiceRoleArn() {
@@ -585,11 +600,17 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A service role ARN.
+     * A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to AWS services on your
+     * behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create a
+     * Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
      * </p>
      * 
      * @param serviceRoleArn
-     *        A service role ARN.
+     *        A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to AWS services
+     *        on your behalf. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html"
+     *        >Create a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1097,11 +1118,12 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The destination platform type for the deployment group (<code>Lambda</code> or <code>Server</code>).
+     * The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).
      * </p>
      * 
      * @param computePlatform
-     *        The destination platform type for the deployment group (<code>Lambda</code> or <code>Server</code>).
+     *        The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or
+     *        <code>ECS</code>).
      * @see ComputePlatform
      */
 
@@ -1111,10 +1133,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The destination platform type for the deployment group (<code>Lambda</code> or <code>Server</code>).
+     * The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).
      * </p>
      * 
-     * @return The destination platform type for the deployment group (<code>Lambda</code> or <code>Server</code>).
+     * @return The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or
+     *         <code>ECS</code>).
      * @see ComputePlatform
      */
 
@@ -1124,11 +1147,12 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The destination platform type for the deployment group (<code>Lambda</code> or <code>Server</code>).
+     * The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).
      * </p>
      * 
      * @param computePlatform
-     *        The destination platform type for the deployment group (<code>Lambda</code> or <code>Server</code>).
+     *        The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or
+     *        <code>ECS</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComputePlatform
      */
@@ -1140,11 +1164,12 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The destination platform type for the deployment group (<code>Lambda</code> or <code>Server</code>).
+     * The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).
      * </p>
      * 
      * @param computePlatform
-     *        The destination platform type for the deployment group (<code>Lambda</code> or <code>Server</code>).
+     *        The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or
+     *        <code>ECS</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComputePlatform
      */

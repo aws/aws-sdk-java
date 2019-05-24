@@ -144,6 +144,13 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private OnPremisesTagSet onPremisesTagSet;
+    /**
+     * <p>
+     * The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag
+     * consists of a key and an optional value, both of which you define.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -1086,6 +1093,87 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag
+     * consists of a key and an optional value, both of which you define.
+     * </p>
+     * 
+     * @return The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them.
+     *         Each tag consists of a key and an optional value, both of which you define.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag
+     * consists of a key and an optional value, both of which you define.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each
+     *        tag consists of a key and an optional value, both of which you define.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag
+     * consists of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each
+     *        tag consists of a key and an optional value, both of which you define.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentGroupRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag
+     * consists of a key and an optional value, both of which you define.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each
+     *        tag consists of a key and an optional value, both of which you define.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentGroupRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1128,7 +1216,9 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
         if (getEcsServices() != null)
             sb.append("EcsServices: ").append(getEcsServices()).append(",");
         if (getOnPremisesTagSet() != null)
-            sb.append("OnPremisesTagSet: ").append(getOnPremisesTagSet());
+            sb.append("OnPremisesTagSet: ").append(getOnPremisesTagSet()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1208,6 +1298,10 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getOnPremisesTagSet() != null && other.getOnPremisesTagSet().equals(this.getOnPremisesTagSet()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1232,6 +1326,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getEc2TagSet() == null) ? 0 : getEc2TagSet().hashCode());
         hashCode = prime * hashCode + ((getEcsServices() == null) ? 0 : getEcsServices().hashCode());
         hashCode = prime * hashCode + ((getOnPremisesTagSet() == null) ? 0 : getOnPremisesTagSet().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -90,6 +90,18 @@ public class PutObjectRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String storageClass;
+    /**
+     * <p>
+     * Indicates the availability of an object while it is still uploading. If the value is set to
+     * <code>streaming</code>, the object is available for downloading after some initial buffering but before the
+     * object is uploaded completely. If the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.
+     * </p>
+     * <p>
+     * To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.
+     * </p>
+     */
+    private String uploadAvailability;
 
     /**
      * <p>
@@ -511,6 +523,117 @@ public class PutObjectRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Indicates the availability of an object while it is still uploading. If the value is set to
+     * <code>streaming</code>, the object is available for downloading after some initial buffering but before the
+     * object is uploaded completely. If the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.
+     * </p>
+     * <p>
+     * To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.
+     * </p>
+     * 
+     * @param uploadAvailability
+     *        Indicates the availability of an object while it is still uploading. If the value is set to
+     *        <code>streaming</code>, the object is available for downloading after some initial buffering but before
+     *        the object is uploaded completely. If the value is set to <code>standard</code>, the object is available
+     *        for downloading only when it is uploaded completely. The default value for this header is
+     *        <code>standard</code>.</p>
+     *        <p>
+     *        To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to
+     *        <code>chunked</code>.
+     * @see UploadAvailability
+     */
+
+    public void setUploadAvailability(String uploadAvailability) {
+        this.uploadAvailability = uploadAvailability;
+    }
+
+    /**
+     * <p>
+     * Indicates the availability of an object while it is still uploading. If the value is set to
+     * <code>streaming</code>, the object is available for downloading after some initial buffering but before the
+     * object is uploaded completely. If the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.
+     * </p>
+     * <p>
+     * To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.
+     * </p>
+     * 
+     * @return Indicates the availability of an object while it is still uploading. If the value is set to
+     *         <code>streaming</code>, the object is available for downloading after some initial buffering but before
+     *         the object is uploaded completely. If the value is set to <code>standard</code>, the object is available
+     *         for downloading only when it is uploaded completely. The default value for this header is
+     *         <code>standard</code>.</p>
+     *         <p>
+     *         To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to
+     *         <code>chunked</code>.
+     * @see UploadAvailability
+     */
+
+    public String getUploadAvailability() {
+        return this.uploadAvailability;
+    }
+
+    /**
+     * <p>
+     * Indicates the availability of an object while it is still uploading. If the value is set to
+     * <code>streaming</code>, the object is available for downloading after some initial buffering but before the
+     * object is uploaded completely. If the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.
+     * </p>
+     * <p>
+     * To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.
+     * </p>
+     * 
+     * @param uploadAvailability
+     *        Indicates the availability of an object while it is still uploading. If the value is set to
+     *        <code>streaming</code>, the object is available for downloading after some initial buffering but before
+     *        the object is uploaded completely. If the value is set to <code>standard</code>, the object is available
+     *        for downloading only when it is uploaded completely. The default value for this header is
+     *        <code>standard</code>.</p>
+     *        <p>
+     *        To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to
+     *        <code>chunked</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UploadAvailability
+     */
+
+    public PutObjectRequest withUploadAvailability(String uploadAvailability) {
+        setUploadAvailability(uploadAvailability);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the availability of an object while it is still uploading. If the value is set to
+     * <code>streaming</code>, the object is available for downloading after some initial buffering but before the
+     * object is uploaded completely. If the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.
+     * </p>
+     * <p>
+     * To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.
+     * </p>
+     * 
+     * @param uploadAvailability
+     *        Indicates the availability of an object while it is still uploading. If the value is set to
+     *        <code>streaming</code>, the object is available for downloading after some initial buffering but before
+     *        the object is uploaded completely. If the value is set to <code>standard</code>, the object is available
+     *        for downloading only when it is uploaded completely. The default value for this header is
+     *        <code>standard</code>.</p>
+     *        <p>
+     *        To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to
+     *        <code>chunked</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UploadAvailability
+     */
+
+    public PutObjectRequest withUploadAvailability(UploadAvailability uploadAvailability) {
+        this.uploadAvailability = uploadAvailability.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -531,7 +654,9 @@ public class PutObjectRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getCacheControl() != null)
             sb.append("CacheControl: ").append(getCacheControl()).append(",");
         if (getStorageClass() != null)
-            sb.append("StorageClass: ").append(getStorageClass());
+            sb.append("StorageClass: ").append(getStorageClass()).append(",");
+        if (getUploadAvailability() != null)
+            sb.append("UploadAvailability: ").append(getUploadAvailability());
         sb.append("}");
         return sb.toString();
     }
@@ -566,6 +691,10 @@ public class PutObjectRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getStorageClass() != null && other.getStorageClass().equals(this.getStorageClass()) == false)
             return false;
+        if (other.getUploadAvailability() == null ^ this.getUploadAvailability() == null)
+            return false;
+        if (other.getUploadAvailability() != null && other.getUploadAvailability().equals(this.getUploadAvailability()) == false)
+            return false;
         return true;
     }
 
@@ -579,6 +708,7 @@ public class PutObjectRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         hashCode = prime * hashCode + ((getCacheControl() == null) ? 0 : getCacheControl().hashCode());
         hashCode = prime * hashCode + ((getStorageClass() == null) ? 0 : getStorageClass().hashCode());
+        hashCode = prime * hashCode + ((getUploadAvailability() == null) ? 0 : getUploadAvailability().hashCode());
         return hashCode;
     }
 

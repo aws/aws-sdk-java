@@ -54,7 +54,7 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
     private java.util.Date createTime;
     /**
      * <p>
-     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).
      * </p>
      */
     private String computePlatform;
@@ -228,11 +228,12 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).
      * </p>
      * 
      * @param computePlatform
-     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     *        The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or
+     *        <code>ECS</code>).
      * @see ComputePlatform
      */
 
@@ -242,10 +243,11 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).
      * </p>
      * 
-     * @return The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * @return The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or
+     *         <code>ECS</code>).
      * @see ComputePlatform
      */
 
@@ -255,11 +257,12 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).
      * </p>
      * 
      * @param computePlatform
-     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     *        The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or
+     *        <code>ECS</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComputePlatform
      */
@@ -271,11 +274,12 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).
      * </p>
      * 
      * @param computePlatform
-     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     *        The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or
+     *        <code>ECS</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComputePlatform
      */

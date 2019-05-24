@@ -73,7 +73,7 @@ import com.amazonaws.services.opsworkscm.model.transform.*;
  * <li>
  * <p>
  * <b>Engine</b>: The engine is the specific configuration manager that you want to use. Valid values in this release
- * include <code>Chef</code> and <code>Puppet</code>.
+ * include <code>ChefAutomate</code> and <code>Puppet</code>.
  * </p>
  * </li>
  * <li>
@@ -785,7 +785,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
 
     /**
      * <p>
-     * Describes your account attributes, and creates requests to increase limits before they are reached or exceeded.
+     * Describes your OpsWorks-CM account attributes.
      * </p>
      * <p>
      * This operation is synchronous.

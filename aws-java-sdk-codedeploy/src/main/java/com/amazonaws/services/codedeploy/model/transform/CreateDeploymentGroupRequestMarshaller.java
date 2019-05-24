@@ -60,6 +60,8 @@ public class CreateDeploymentGroupRequestMarshaller {
             .marshallLocationName("ecsServices").build();
     private static final MarshallingInfo<StructuredPojo> ONPREMISESTAGSET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("onPremisesTagSet").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateDeploymentGroupRequestMarshaller instance = new CreateDeploymentGroupRequestMarshaller();
 
@@ -93,6 +95,7 @@ public class CreateDeploymentGroupRequestMarshaller {
             protocolMarshaller.marshall(createDeploymentGroupRequest.getEc2TagSet(), EC2TAGSET_BINDING);
             protocolMarshaller.marshall(createDeploymentGroupRequest.getEcsServices(), ECSSERVICES_BINDING);
             protocolMarshaller.marshall(createDeploymentGroupRequest.getOnPremisesTagSet(), ONPREMISESTAGSET_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

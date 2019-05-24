@@ -34,7 +34,7 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the
-     * targets and their formats.
+     * targets and their formats. The maximum number of deployment target IDs you can specify is 25.
      * </p>
      * <ul>
      * <li>
@@ -103,7 +103,7 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the
-     * targets and their formats.
+     * targets and their formats. The maximum number of deployment target IDs you can specify is 25.
      * </p>
      * <ul>
      * <li>
@@ -128,7 +128,7 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * 
      * @return The unique IDs of the deployment targets. The compute platform of the deployment determines the type of
-     *         the targets and their formats. </p>
+     *         the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -161,7 +161,7 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the
-     * targets and their formats.
+     * targets and their formats. The maximum number of deployment target IDs you can specify is 25.
      * </p>
      * <ul>
      * <li>
@@ -187,7 +187,7 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
      * 
      * @param targetIds
      *        The unique IDs of the deployment targets. The compute platform of the deployment determines the type of
-     *        the targets and their formats. </p>
+     *        the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -222,7 +222,7 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the
-     * targets and their formats.
+     * targets and their formats. The maximum number of deployment target IDs you can specify is 25.
      * </p>
      * <ul>
      * <li>
@@ -253,7 +253,7 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
      * 
      * @param targetIds
      *        The unique IDs of the deployment targets. The compute platform of the deployment determines the type of
-     *        the targets and their formats. </p>
+     *        the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -290,7 +290,7 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the
-     * targets and their formats.
+     * targets and their formats. The maximum number of deployment target IDs you can specify is 25.
      * </p>
      * <ul>
      * <li>
@@ -316,7 +316,7 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
      * 
      * @param targetIds
      *        The unique IDs of the deployment targets. The compute platform of the deployment determines the type of
-     *        the targets and their formats. </p>
+     *        the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
      *        <ul>
      *        <li>
      *        <p>

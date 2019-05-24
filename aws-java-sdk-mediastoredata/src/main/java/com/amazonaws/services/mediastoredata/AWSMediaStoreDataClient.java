@@ -258,7 +258,8 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Downloads the object at the specified path.
+     * Downloads the object at the specified path. If the object’s upload availability is set to <code>streaming</code>,
+     * AWS Elemental MediaStore downloads the object even if it’s still uploading the object.
      * </p>
      * 
      * @param getObjectRequest
@@ -376,7 +377,8 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Uploads an object to the specified path. Object sizes are limited to 25 MB.
+     * Uploads an object to the specified path. Object sizes are limited to 25 MB for standard upload availability and
+     * 10 MB for streaming upload availability.
      * </p>
      * 
      * @param putObjectRequest

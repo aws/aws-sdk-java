@@ -30,17 +30,18 @@ public class BatchGetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of deployment IDs, separated by spaces.
+     * A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> deploymentIds;
 
     /**
      * <p>
-     * A list of deployment IDs, separated by spaces.
+     * A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.
      * </p>
      * 
-     * @return A list of deployment IDs, separated by spaces.
+     * @return A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is
+     *         25.
      */
 
     public java.util.List<String> getDeploymentIds() {
@@ -52,11 +53,11 @@ public class BatchGetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of deployment IDs, separated by spaces.
+     * A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.
      * </p>
      * 
      * @param deploymentIds
-     *        A list of deployment IDs, separated by spaces.
+     *        A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.
      */
 
     public void setDeploymentIds(java.util.Collection<String> deploymentIds) {
@@ -70,7 +71,7 @@ public class BatchGetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of deployment IDs, separated by spaces.
+     * A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +80,7 @@ public class BatchGetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param deploymentIds
-     *        A list of deployment IDs, separated by spaces.
+     *        A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +96,11 @@ public class BatchGetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of deployment IDs, separated by spaces.
+     * A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.
      * </p>
      * 
      * @param deploymentIds
-     *        A list of deployment IDs, separated by spaces.
+     *        A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

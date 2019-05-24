@@ -52,7 +52,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <b>Engine</b>: The engine is the specific configuration manager that you want to use. Valid values in this release
- * include <code>Chef</code> and <code>Puppet</code>.
+ * include <code>ChefAutomate</code> and <code>Puppet</code>.
  * </p>
  * </li>
  * <li>

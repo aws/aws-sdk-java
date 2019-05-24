@@ -30,17 +30,20 @@ public class BatchGetOnPremisesInstancesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The names of the on-premises instances about which to get information.
+     * The names of the on-premises instances about which to get information. The maximum number of instance names you
+     * can specify is 25.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceNames;
 
     /**
      * <p>
-     * The names of the on-premises instances about which to get information.
+     * The names of the on-premises instances about which to get information. The maximum number of instance names you
+     * can specify is 25.
      * </p>
      * 
-     * @return The names of the on-premises instances about which to get information.
+     * @return The names of the on-premises instances about which to get information. The maximum number of instance
+     *         names you can specify is 25.
      */
 
     public java.util.List<String> getInstanceNames() {
@@ -52,11 +55,13 @@ public class BatchGetOnPremisesInstancesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The names of the on-premises instances about which to get information.
+     * The names of the on-premises instances about which to get information. The maximum number of instance names you
+     * can specify is 25.
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances about which to get information.
+     *        The names of the on-premises instances about which to get information. The maximum number of instance
+     *        names you can specify is 25.
      */
 
     public void setInstanceNames(java.util.Collection<String> instanceNames) {
@@ -70,7 +75,8 @@ public class BatchGetOnPremisesInstancesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The names of the on-premises instances about which to get information.
+     * The names of the on-premises instances about which to get information. The maximum number of instance names you
+     * can specify is 25.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +85,8 @@ public class BatchGetOnPremisesInstancesRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances about which to get information.
+     *        The names of the on-premises instances about which to get information. The maximum number of instance
+     *        names you can specify is 25.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +102,13 @@ public class BatchGetOnPremisesInstancesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The names of the on-premises instances about which to get information.
+     * The names of the on-premises instances about which to get information. The maximum number of instance names you
+     * can specify is 25.
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances about which to get information.
+     *        The names of the on-premises instances about which to get information. The maximum number of instance
+     *        names you can specify is 25.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
