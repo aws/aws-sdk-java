@@ -26,14 +26,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag
  * key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within
- * a tag key. For example, if you have two versions of an Amazon Pinpoint project, one for internal testing and another
- * for external use, you might assign a <code>Stack</code> tag key to both projects. The value of the <code>Stack</code>
- *  tag key might be <code>Test</code> for one project and <code>Production</code> for the other project.
- * </p>
- * <p>
- * A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters
- * can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional
- * restrictions apply to tags:
+ * a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The
+ * characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following
+ * additional restrictions apply to tags:
  * </p>
  * <ul>
  * <li>

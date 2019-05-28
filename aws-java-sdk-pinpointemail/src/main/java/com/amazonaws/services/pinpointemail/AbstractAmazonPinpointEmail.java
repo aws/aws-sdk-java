@@ -113,6 +113,11 @@ public class AbstractAmazonPinpointEmail implements AmazonPinpointEmail {
     }
 
     @Override
+    public GetDomainDeliverabilityCampaignResult getDomainDeliverabilityCampaign(GetDomainDeliverabilityCampaignRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDomainStatisticsReportResult getDomainStatisticsReport(GetDomainStatisticsReportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -134,6 +139,11 @@ public class AbstractAmazonPinpointEmail implements AmazonPinpointEmail {
 
     @Override
     public ListDeliverabilityTestReportsResult listDeliverabilityTestReports(ListDeliverabilityTestReportsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDomainDeliverabilityCampaignsResult listDomainDeliverabilityCampaigns(ListDomainDeliverabilityCampaignsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

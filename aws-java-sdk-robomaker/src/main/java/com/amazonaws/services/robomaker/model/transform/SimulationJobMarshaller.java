@@ -35,6 +35,8 @@ public class SimulationJobMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<java.util.Date> LASTSTARTEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastStartedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> FAILUREBEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -81,6 +83,7 @@ public class SimulationJobMarshaller {
             protocolMarshaller.marshall(simulationJob.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(simulationJob.getName(), NAME_BINDING);
             protocolMarshaller.marshall(simulationJob.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(simulationJob.getLastStartedAt(), LASTSTARTEDAT_BINDING);
             protocolMarshaller.marshall(simulationJob.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(simulationJob.getFailureBehavior(), FAILUREBEHAVIOR_BINDING);
             protocolMarshaller.marshall(simulationJob.getFailureCode(), FAILURECODE_BINDING);

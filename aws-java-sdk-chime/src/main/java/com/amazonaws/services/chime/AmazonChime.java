@@ -258,7 +258,7 @@ public interface AmazonChime {
     /**
      * <p>
      * Updates phone number product types. Choose from Amazon Chime Business Calling and Amazon Chime Voice Connector
-     * product types.
+     * product types. For toll-free numbers, you can use only the Amazon Chime Voice Connector product type.
      * </p>
      * 
      * @param batchUpdatePhoneNumberRequest
@@ -375,7 +375,8 @@ public interface AmazonChime {
     /**
      * <p>
      * Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime
-     * Voice Connector product types.
+     * Voice Connector product types. For toll-free numbers, you can use only the Amazon Chime Voice Connector product
+     * type.
      * </p>
      * 
      * @param createPhoneNumberOrderRequest
@@ -1665,7 +1666,8 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Updates phone number details, such as product type, for the specified phone number ID.
+     * Updates phone number details, such as product type, for the specified phone number ID. For toll-free numbers, you
+     * can use only the Amazon Chime Voice Connector product type.
      * </p>
      * 
      * @param updatePhoneNumberRequest

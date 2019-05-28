@@ -61,7 +61,7 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     private com.amazonaws.internal.SdkInternalList<String> eventCategories;
     /**
      * <p>
-     * A value that indicates whether to activate the subscription.
+     * A Boolean value; set to <b>true</b> to activate the subscription.
      * </p>
      */
     private Boolean enabled;
@@ -318,11 +318,11 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to activate the subscription.
+     * A Boolean value; set to <b>true</b> to activate the subscription.
      * </p>
      * 
      * @param enabled
-     *        A value that indicates whether to activate the subscription.
+     *        A Boolean value; set to <b>true</b> to activate the subscription.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -331,10 +331,10 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to activate the subscription.
+     * A Boolean value; set to <b>true</b> to activate the subscription.
      * </p>
      * 
-     * @return A value that indicates whether to activate the subscription.
+     * @return A Boolean value; set to <b>true</b> to activate the subscription.
      */
 
     public Boolean getEnabled() {
@@ -343,11 +343,11 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to activate the subscription.
+     * A Boolean value; set to <b>true</b> to activate the subscription.
      * </p>
      * 
      * @param enabled
-     *        A value that indicates whether to activate the subscription.
+     *        A Boolean value; set to <b>true</b> to activate the subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -358,10 +358,10 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to activate the subscription.
+     * A Boolean value; set to <b>true</b> to activate the subscription.
      * </p>
      * 
-     * @return A value that indicates whether to activate the subscription.
+     * @return A Boolean value; set to <b>true</b> to activate the subscription.
      */
 
     public Boolean isEnabled() {

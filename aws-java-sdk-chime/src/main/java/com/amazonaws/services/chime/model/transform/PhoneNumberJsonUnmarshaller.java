@@ -56,6 +56,10 @@ public class PhoneNumberJsonUnmarshaller implements Unmarshaller<PhoneNumber, Js
                     context.nextToken();
                     phoneNumber.setE164PhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Type", targetDepth)) {
+                    context.nextToken();
+                    phoneNumber.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ProductType", targetDepth)) {
                     context.nextToken();
                     phoneNumber.setProductType(context.getUnmarshaller(String.class).unmarshall(context));

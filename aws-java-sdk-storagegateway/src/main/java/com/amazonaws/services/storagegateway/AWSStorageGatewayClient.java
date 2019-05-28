@@ -763,6 +763,70 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Assigns a tape to a tape pool for archiving. The tape assigned to a pool is archived in the S3 storage class that
+     * is associated with the pool. When you use your backup application to eject the tape, the tape is archived
+     * directly into the S3 storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @param assignTapePoolRequest
+     * @return Result of the AssignTapePool operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.AssignTapePool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssignTapePool" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public AssignTapePoolResult assignTapePool(AssignTapePoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssignTapePool(request);
+    }
+
+    @SdkInternalApi
+    final AssignTapePoolResult executeAssignTapePool(AssignTapePoolRequest assignTapePoolRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(assignTapePoolRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssignTapePoolRequest> request = null;
+        Response<AssignTapePoolResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssignTapePoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(assignTapePoolRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssignTapePool");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssignTapePoolResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssignTapePoolResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Connects a volume to an iSCSI connection and then attaches the volume to the specified gateway. Detaching and
      * attaching a volume enables you to recover your data from one gateway to a different gateway without creating a
      * snapshot. It also makes it easier to move your volumes from an on-premises gateway to a gateway hosted on an

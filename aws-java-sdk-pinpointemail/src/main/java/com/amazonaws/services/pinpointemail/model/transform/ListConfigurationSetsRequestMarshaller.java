@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListConfigurationSetsRequestMarshaller {
 
-    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> PAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PageSize").build();
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("PageSize").build();
 
     private static final ListConfigurationSetsRequestMarshaller instance = new ListConfigurationSetsRequestMarshaller();
 

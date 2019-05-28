@@ -51,6 +51,12 @@ public class SearchAvailablePhoneNumbersRequest extends com.amazonaws.AmazonWebS
     private String state;
     /**
      * <p>
+     * The toll-free prefix that you use to filter results.
+     * </p>
+     */
+    private String tollFreePrefix;
+    /**
+     * <p>
      * The maximum number of results to return in a single call.
      * </p>
      */
@@ -224,6 +230,46 @@ public class SearchAvailablePhoneNumbersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
+     * The toll-free prefix that you use to filter results.
+     * </p>
+     * 
+     * @param tollFreePrefix
+     *        The toll-free prefix that you use to filter results.
+     */
+
+    public void setTollFreePrefix(String tollFreePrefix) {
+        this.tollFreePrefix = tollFreePrefix;
+    }
+
+    /**
+     * <p>
+     * The toll-free prefix that you use to filter results.
+     * </p>
+     * 
+     * @return The toll-free prefix that you use to filter results.
+     */
+
+    public String getTollFreePrefix() {
+        return this.tollFreePrefix;
+    }
+
+    /**
+     * <p>
+     * The toll-free prefix that you use to filter results.
+     * </p>
+     * 
+     * @param tollFreePrefix
+     *        The toll-free prefix that you use to filter results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchAvailablePhoneNumbersRequest withTollFreePrefix(String tollFreePrefix) {
+        setTollFreePrefix(tollFreePrefix);
+        return this;
+    }
+
+    /**
+     * <p>
      * The maximum number of results to return in a single call.
      * </p>
      * 
@@ -322,6 +368,8 @@ public class SearchAvailablePhoneNumbersRequest extends com.amazonaws.AmazonWebS
             sb.append("Country: ").append(getCountry()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
+        if (getTollFreePrefix() != null)
+            sb.append("TollFreePrefix: ").append(getTollFreePrefix()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -356,6 +404,10 @@ public class SearchAvailablePhoneNumbersRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getTollFreePrefix() == null ^ this.getTollFreePrefix() == null)
+            return false;
+        if (other.getTollFreePrefix() != null && other.getTollFreePrefix().equals(this.getTollFreePrefix()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -376,6 +428,7 @@ public class SearchAvailablePhoneNumbersRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getCity() == null) ? 0 : getCity().hashCode());
         hashCode = prime * hashCode + ((getCountry() == null) ? 0 : getCountry().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getTollFreePrefix() == null) ? 0 : getTollFreePrefix().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

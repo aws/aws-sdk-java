@@ -72,9 +72,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * intersection of the role's identity-based policy and the session policies. You can use the role's temporary
      * credentials in subsequent AWS API calls to access resources in the account that owns the role. You cannot use
      * session policies to grant more permissions than those allowed by the identity-based policy of the role that is
-     * being assumed. For more information, see <a href=
-     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     * >Session Policies</a> in the <i>IAM User Guide</i>.
+     * being assumed. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private java.util.List<PolicyDescriptorType> policyArns;
@@ -87,9 +87,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * session's permissions are the intersection of the role's identity-based policy and the session policies. You can
      * use the role's temporary credentials in subsequent AWS API calls to access resources in the account that owns the
      * role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     * of the role that is being assumed. For more information, see <a href=
-     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     * >Session Policies</a> in the <i>IAM User Guide</i>.
+     * of the role that is being assumed. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The plain text that you use for both inline and managed session policies shouldn't exceed 2048 characters. The
@@ -306,9 +306,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * intersection of the role's identity-based policy and the session policies. You can use the role's temporary
      * credentials in subsequent AWS API calls to access resources in the account that owns the role. You cannot use
      * session policies to grant more permissions than those allowed by the identity-based policy of the role that is
-     * being assumed. For more information, see <a href=
-     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     * >Session Policies</a> in the <i>IAM User Guide</i>.
+     * being assumed. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as managed session
@@ -332,9 +332,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *         are the intersection of the role's identity-based policy and the session policies. You can use the role's
      *         temporary credentials in subsequent AWS API calls to access resources in the account that owns the role.
      *         You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     *         of the role that is being assumed. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     *         >Session Policies</a> in the <i>IAM User Guide</i>.
+     *         of the role that is being assumed. For more information, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     *         Policies</a> in the <i>IAM User Guide</i>.
      */
 
     public java.util.List<PolicyDescriptorType> getPolicyArns() {
@@ -365,9 +365,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * intersection of the role's identity-based policy and the session policies. You can use the role's temporary
      * credentials in subsequent AWS API calls to access resources in the account that owns the role. You cannot use
      * session policies to grant more permissions than those allowed by the identity-based policy of the role that is
-     * being assumed. For more information, see <a href=
-     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     * >Session Policies</a> in the <i>IAM User Guide</i>.
+     * being assumed. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param policyArns
@@ -392,9 +392,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        are the intersection of the role's identity-based policy and the session policies. You can use the role's
      *        temporary credentials in subsequent AWS API calls to access resources in the account that owns the role.
      *        You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     *        of the role that is being assumed. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     *        >Session Policies</a> in the <i>IAM User Guide</i>.
+     *        of the role that is being assumed. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     *        Policies</a> in the <i>IAM User Guide</i>.
      */
 
     public void setPolicyArns(java.util.Collection<PolicyDescriptorType> policyArns) {
@@ -430,9 +430,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * intersection of the role's identity-based policy and the session policies. You can use the role's temporary
      * credentials in subsequent AWS API calls to access resources in the account that owns the role. You cannot use
      * session policies to grant more permissions than those allowed by the identity-based policy of the role that is
-     * being assumed. For more information, see <a href=
-     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     * >Session Policies</a> in the <i>IAM User Guide</i>.
+     * being assumed. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -462,9 +462,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        are the intersection of the role's identity-based policy and the session policies. You can use the role's
      *        temporary credentials in subsequent AWS API calls to access resources in the account that owns the role.
      *        You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     *        of the role that is being assumed. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     *        >Session Policies</a> in the <i>IAM User Guide</i>.
+     *        of the role that is being assumed. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     *        Policies</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -502,9 +502,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * intersection of the role's identity-based policy and the session policies. You can use the role's temporary
      * credentials in subsequent AWS API calls to access resources in the account that owns the role. You cannot use
      * session policies to grant more permissions than those allowed by the identity-based policy of the role that is
-     * being assumed. For more information, see <a href=
-     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     * >Session Policies</a> in the <i>IAM User Guide</i>.
+     * being assumed. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param policyArns
@@ -529,9 +529,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        are the intersection of the role's identity-based policy and the session policies. You can use the role's
      *        temporary credentials in subsequent AWS API calls to access resources in the account that owns the role.
      *        You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     *        of the role that is being assumed. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     *        >Session Policies</a> in the <i>IAM User Guide</i>.
+     *        of the role that is being assumed. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     *        Policies</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -549,9 +549,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * session's permissions are the intersection of the role's identity-based policy and the session policies. You can
      * use the role's temporary credentials in subsequent AWS API calls to access resources in the account that owns the
      * role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     * of the role that is being assumed. For more information, see <a href=
-     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     * >Session Policies</a> in the <i>IAM User Guide</i>.
+     * of the role that is being assumed. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The plain text that you use for both inline and managed session policies shouldn't exceed 2048 characters. The
@@ -574,9 +574,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        resulting session's permissions are the intersection of the role's identity-based policy and the session
      *        policies. You can use the role's temporary credentials in subsequent AWS API calls to access resources in
      *        the account that owns the role. You cannot use session policies to grant more permissions than those
-     *        allowed by the identity-based policy of the role that is being assumed. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     *        >Session Policies</a> in the <i>IAM User Guide</i>.
+     *        allowed by the identity-based policy of the role that is being assumed. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     *        Policies</a> in the <i>IAM User Guide</i>.
      *        </p>
      *        <p>
      *        The plain text that you use for both inline and managed session policies shouldn't exceed 2048 characters.
@@ -606,9 +606,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * session's permissions are the intersection of the role's identity-based policy and the session policies. You can
      * use the role's temporary credentials in subsequent AWS API calls to access resources in the account that owns the
      * role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     * of the role that is being assumed. For more information, see <a href=
-     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     * >Session Policies</a> in the <i>IAM User Guide</i>.
+     * of the role that is being assumed. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The plain text that you use for both inline and managed session policies shouldn't exceed 2048 characters. The
@@ -631,9 +631,8 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *         policies. You can use the role's temporary credentials in subsequent AWS API calls to access resources in
      *         the account that owns the role. You cannot use session policies to grant more permissions than those
      *         allowed by the identity-based policy of the role that is being assumed. For more information, see <a
-     *         href=
-     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     *         >Session Policies</a> in the <i>IAM User Guide</i>.
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     *         Policies</a> in the <i>IAM User Guide</i>.
      *         </p>
      *         <p>
      *         The plain text that you use for both inline and managed session policies shouldn't exceed 2048
@@ -663,9 +662,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * session's permissions are the intersection of the role's identity-based policy and the session policies. You can
      * use the role's temporary credentials in subsequent AWS API calls to access resources in the account that owns the
      * role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy
-     * of the role that is being assumed. For more information, see <a href=
-     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     * >Session Policies</a> in the <i>IAM User Guide</i>.
+     * of the role that is being assumed. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The plain text that you use for both inline and managed session policies shouldn't exceed 2048 characters. The
@@ -688,9 +687,9 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        resulting session's permissions are the intersection of the role's identity-based policy and the session
      *        policies. You can use the role's temporary credentials in subsequent AWS API calls to access resources in
      *        the account that owns the role. You cannot use session policies to grant more permissions than those
-     *        allowed by the identity-based policy of the role that is being assumed. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     *        >Session Policies</a> in the <i>IAM User Guide</i>.
+     *        allowed by the identity-based policy of the role that is being assumed. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     *        Policies</a> in the <i>IAM User Guide</i>.
      *        </p>
      *        <p>
      *        The plain text that you use for both inline and managed session policies shouldn't exceed 2048 characters.

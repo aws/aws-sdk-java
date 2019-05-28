@@ -39,13 +39,13 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      * Validating the deployment.
      * </p>
      * </dd>
-     * <dt>Downloading/Extracting</dt>
+     * <dt>DownloadingExtracting</dt>
      * <dd>
      * <p>
      * Downloading and extracting the bundle on the robot.
      * </p>
      * </dd>
-     * <dt>Executing pre-launch script(s)</dt>
+     * <dt>ExecutingPreLaunch</dt>
      * <dd>
      * <p>
      * Executing pre-launch script(s) if provided.
@@ -57,7 +57,7 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      * Launching the robot application.
      * </p>
      * </dd>
-     * <dt>Executing post-launch script(s)</dt>
+     * <dt>ExecutingPostLaunch</dt>
      * <dd>
      * <p>
      * Executing post-launch script(s) if provided.
@@ -104,13 +104,13 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      * Validating the deployment.
      * </p>
      * </dd>
-     * <dt>Downloading/Extracting</dt>
+     * <dt>DownloadingExtracting</dt>
      * <dd>
      * <p>
      * Downloading and extracting the bundle on the robot.
      * </p>
      * </dd>
-     * <dt>Executing pre-launch script(s)</dt>
+     * <dt>ExecutingPreLaunch</dt>
      * <dd>
      * <p>
      * Executing pre-launch script(s) if provided.
@@ -122,7 +122,7 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      * Launching the robot application.
      * </p>
      * </dd>
-     * <dt>Executing post-launch script(s)</dt>
+     * <dt>ExecutingPostLaunch</dt>
      * <dd>
      * <p>
      * Executing post-launch script(s) if provided.
@@ -145,13 +145,13 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      *        Validating the deployment.
      *        </p>
      *        </dd>
-     *        <dt>Downloading/Extracting</dt>
+     *        <dt>DownloadingExtracting</dt>
      *        <dd>
      *        <p>
      *        Downloading and extracting the bundle on the robot.
      *        </p>
      *        </dd>
-     *        <dt>Executing pre-launch script(s)</dt>
+     *        <dt>ExecutingPreLaunch</dt>
      *        <dd>
      *        <p>
      *        Executing pre-launch script(s) if provided.
@@ -163,7 +163,7 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      *        Launching the robot application.
      *        </p>
      *        </dd>
-     *        <dt>Executing post-launch script(s)</dt>
+     *        <dt>ExecutingPostLaunch</dt>
      *        <dd>
      *        <p>
      *        Executing post-launch script(s) if provided.
@@ -193,13 +193,13 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      * Validating the deployment.
      * </p>
      * </dd>
-     * <dt>Downloading/Extracting</dt>
+     * <dt>DownloadingExtracting</dt>
      * <dd>
      * <p>
      * Downloading and extracting the bundle on the robot.
      * </p>
      * </dd>
-     * <dt>Executing pre-launch script(s)</dt>
+     * <dt>ExecutingPreLaunch</dt>
      * <dd>
      * <p>
      * Executing pre-launch script(s) if provided.
@@ -211,7 +211,7 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      * Launching the robot application.
      * </p>
      * </dd>
-     * <dt>Executing post-launch script(s)</dt>
+     * <dt>ExecutingPostLaunch</dt>
      * <dd>
      * <p>
      * Executing post-launch script(s) if provided.
@@ -233,13 +233,13 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      *         Validating the deployment.
      *         </p>
      *         </dd>
-     *         <dt>Downloading/Extracting</dt>
+     *         <dt>DownloadingExtracting</dt>
      *         <dd>
      *         <p>
      *         Downloading and extracting the bundle on the robot.
      *         </p>
      *         </dd>
-     *         <dt>Executing pre-launch script(s)</dt>
+     *         <dt>ExecutingPreLaunch</dt>
      *         <dd>
      *         <p>
      *         Executing pre-launch script(s) if provided.
@@ -251,7 +251,7 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      *         Launching the robot application.
      *         </p>
      *         </dd>
-     *         <dt>Executing post-launch script(s)</dt>
+     *         <dt>ExecutingPostLaunch</dt>
      *         <dd>
      *         <p>
      *         Executing post-launch script(s) if provided.
@@ -281,13 +281,13 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      * Validating the deployment.
      * </p>
      * </dd>
-     * <dt>Downloading/Extracting</dt>
+     * <dt>DownloadingExtracting</dt>
      * <dd>
      * <p>
      * Downloading and extracting the bundle on the robot.
      * </p>
      * </dd>
-     * <dt>Executing pre-launch script(s)</dt>
+     * <dt>ExecutingPreLaunch</dt>
      * <dd>
      * <p>
      * Executing pre-launch script(s) if provided.
@@ -299,7 +299,7 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      * Launching the robot application.
      * </p>
      * </dd>
-     * <dt>Executing post-launch script(s)</dt>
+     * <dt>ExecutingPostLaunch</dt>
      * <dd>
      * <p>
      * Executing post-launch script(s) if provided.
@@ -322,13 +322,13 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      *        Validating the deployment.
      *        </p>
      *        </dd>
-     *        <dt>Downloading/Extracting</dt>
+     *        <dt>DownloadingExtracting</dt>
      *        <dd>
      *        <p>
      *        Downloading and extracting the bundle on the robot.
      *        </p>
      *        </dd>
-     *        <dt>Executing pre-launch script(s)</dt>
+     *        <dt>ExecutingPreLaunch</dt>
      *        <dd>
      *        <p>
      *        Executing pre-launch script(s) if provided.
@@ -340,7 +340,7 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      *        Launching the robot application.
      *        </p>
      *        </dd>
-     *        <dt>Executing post-launch script(s)</dt>
+     *        <dt>ExecutingPostLaunch</dt>
      *        <dd>
      *        <p>
      *        Executing post-launch script(s) if provided.
@@ -372,13 +372,13 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      * Validating the deployment.
      * </p>
      * </dd>
-     * <dt>Downloading/Extracting</dt>
+     * <dt>DownloadingExtracting</dt>
      * <dd>
      * <p>
      * Downloading and extracting the bundle on the robot.
      * </p>
      * </dd>
-     * <dt>Executing pre-launch script(s)</dt>
+     * <dt>ExecutingPreLaunch</dt>
      * <dd>
      * <p>
      * Executing pre-launch script(s) if provided.
@@ -390,7 +390,7 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      * Launching the robot application.
      * </p>
      * </dd>
-     * <dt>Executing post-launch script(s)</dt>
+     * <dt>ExecutingPostLaunch</dt>
      * <dd>
      * <p>
      * Executing post-launch script(s) if provided.
@@ -413,13 +413,13 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      *        Validating the deployment.
      *        </p>
      *        </dd>
-     *        <dt>Downloading/Extracting</dt>
+     *        <dt>DownloadingExtracting</dt>
      *        <dd>
      *        <p>
      *        Downloading and extracting the bundle on the robot.
      *        </p>
      *        </dd>
-     *        <dt>Executing pre-launch script(s)</dt>
+     *        <dt>ExecutingPreLaunch</dt>
      *        <dd>
      *        <p>
      *        Executing pre-launch script(s) if provided.
@@ -431,7 +431,7 @@ public class ProgressDetail implements Serializable, Cloneable, StructuredPojo {
      *        Launching the robot application.
      *        </p>
      *        </dd>
-     *        <dt>Executing post-launch script(s)</dt>
+     *        <dt>ExecutingPostLaunch</dt>
      *        <dd>
      *        <p>
      *        Executing post-launch script(s) if provided.

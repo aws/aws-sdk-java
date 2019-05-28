@@ -128,7 +128,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Updates phone number product types. Choose from Amazon Chime Business Calling and Amazon Chime Voice Connector product types.</p>"
+      "documentation":"<p>Updates phone number product types. Choose from Amazon Chime Business Calling and Amazon Chime Voice Connector product types. For toll-free numbers, you can use only the Amazon Chime Voice Connector product type.</p>"
     },
     "BatchUpdateUser":{
       "name":"BatchUpdateUser",
@@ -207,7 +207,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime Voice Connector product types.</p>"
+      "documentation":"<p>Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime Voice Connector product types. For toll-free numbers, you can use only the Amazon Chime Voice Connector product type.</p>"
     },
     "CreateVoiceConnector":{
       "name":"CreateVoiceConnector",
@@ -1082,7 +1082,7 @@
         {"shape":"ServiceUnavailableException"},
         {"shape":"ServiceFailureException"}
       ],
-      "documentation":"<p>Updates phone number details, such as product type, for the specified phone number ID.</p>"
+      "documentation":"<p>Updates phone number details, such as product type, for the specified phone number ID. For toll-free numbers, you can use only the Amazon Chime Voice Connector product type.</p>"
     },
     "UpdateUser":{
       "name":"UpdateUser",
@@ -2610,6 +2610,10 @@
           "shape":"E164PhoneNumber",
           "documentation":"<p>The phone number, in E.164 format.</p>"
         },
+        "Type":{
+          "shape":"PhoneNumberType",
+          "documentation":"<p>The phone number type.</p>"
+        },
         "ProductType":{
           "shape":"PhoneNumberProductType",
           "documentation":"<p>The phone number product type.</p>"
@@ -2793,6 +2797,13 @@
         "DeleteInProgress",
         "ReleaseFailed",
         "DeleteFailed"
+      ]
+    },
+    "PhoneNumberType":{
+      "type":"string",
+      "enum":[
+        "Local",
+        "TollFree"
       ]
     },
     "Port":{
@@ -3040,6 +3051,12 @@
           "location":"querystring",
           "locationName":"state"
         },
+        "TollFreePrefix":{
+          "shape":"TollFreePrefix",
+          "documentation":"<p>The toll-free prefix that you use to filter results.</p>",
+          "location":"querystring",
+          "locationName":"toll-free-prefix"
+        },
         "MaxResults":{
           "shape":"PhoneNumberMaxResults",
           "documentation":"<p>The maximum number of results to return in a single call.</p>",
@@ -3170,6 +3187,12 @@
       "documentation":"<p>The client exceeded its request rate limit.</p>",
       "error":{"httpStatusCode":429},
       "exception":true
+    },
+    "TollFreePrefix":{
+      "type":"string",
+      "max":3,
+      "min":3,
+      "pattern":"^8(00|33|44|55|66|77|88)$"
     },
     "UnauthorizedClientException":{
       "type":"structure",

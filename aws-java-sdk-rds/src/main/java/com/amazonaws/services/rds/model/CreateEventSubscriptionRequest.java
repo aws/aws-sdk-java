@@ -103,8 +103,8 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     private com.amazonaws.internal.SdkInternalList<String> sourceIds;
     /**
      * <p>
-     * A value that indicates whether to activate the subscription. If the event notification subscription is not
-     * activated, the subscription is created but not active.
+     * A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription
+     * but not active it.
      * </p>
      */
     private Boolean enabled;
@@ -709,13 +709,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to activate the subscription. If the event notification subscription is not
-     * activated, the subscription is created but not active.
+     * A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription
+     * but not active it.
      * </p>
      * 
      * @param enabled
-     *        A value that indicates whether to activate the subscription. If the event notification subscription is not
-     *        activated, the subscription is created but not active.
+     *        A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the
+     *        subscription but not active it.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -724,12 +724,12 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to activate the subscription. If the event notification subscription is not
-     * activated, the subscription is created but not active.
+     * A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription
+     * but not active it.
      * </p>
      * 
-     * @return A value that indicates whether to activate the subscription. If the event notification subscription is
-     *         not activated, the subscription is created but not active.
+     * @return A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the
+     *         subscription but not active it.
      */
 
     public Boolean getEnabled() {
@@ -738,13 +738,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to activate the subscription. If the event notification subscription is not
-     * activated, the subscription is created but not active.
+     * A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription
+     * but not active it.
      * </p>
      * 
      * @param enabled
-     *        A value that indicates whether to activate the subscription. If the event notification subscription is not
-     *        activated, the subscription is created but not active.
+     *        A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the
+     *        subscription but not active it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -755,12 +755,12 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to activate the subscription. If the event notification subscription is not
-     * activated, the subscription is created but not active.
+     * A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription
+     * but not active it.
      * </p>
      * 
-     * @return A value that indicates whether to activate the subscription. If the event notification subscription is
-     *         not activated, the subscription is created but not active.
+     * @return A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the
+     *         subscription but not active it.
      */
 
     public Boolean isEnabled() {

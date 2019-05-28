@@ -42,6 +42,12 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
     private String e164PhoneNumber;
     /**
      * <p>
+     * The phone number type.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
      * The phone number product type.
      * </p>
      */
@@ -160,6 +166,65 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
 
     public PhoneNumber withE164PhoneNumber(String e164PhoneNumber) {
         setE164PhoneNumber(e164PhoneNumber);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The phone number type.
+     * </p>
+     * 
+     * @param type
+     *        The phone number type.
+     * @see PhoneNumberType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The phone number type.
+     * </p>
+     * 
+     * @return The phone number type.
+     * @see PhoneNumberType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The phone number type.
+     * </p>
+     * 
+     * @param type
+     *        The phone number type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PhoneNumberType
+     */
+
+    public PhoneNumber withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The phone number type.
+     * </p>
+     * 
+     * @param type
+     *        The phone number type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PhoneNumberType
+     */
+
+    public PhoneNumber withType(PhoneNumberType type) {
+        this.type = type.toString();
         return this;
     }
 
@@ -527,6 +592,8 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
             sb.append("PhoneNumberId: ").append(getPhoneNumberId()).append(",");
         if (getE164PhoneNumber() != null)
             sb.append("E164PhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getProductType() != null)
             sb.append("ProductType: ").append(getProductType()).append(",");
         if (getStatus() != null)
@@ -562,6 +629,10 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
         if (other.getE164PhoneNumber() == null ^ this.getE164PhoneNumber() == null)
             return false;
         if (other.getE164PhoneNumber() != null && other.getE164PhoneNumber().equals(this.getE164PhoneNumber()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getProductType() == null ^ this.getProductType() == null)
             return false;
@@ -601,6 +672,7 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getPhoneNumberId() == null) ? 0 : getPhoneNumberId().hashCode());
         hashCode = prime * hashCode + ((getE164PhoneNumber() == null) ? 0 : getE164PhoneNumber().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getProductType() == null) ? 0 : getProductType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());

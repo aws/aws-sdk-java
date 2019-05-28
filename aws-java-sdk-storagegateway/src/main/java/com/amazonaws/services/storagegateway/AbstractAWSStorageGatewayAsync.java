@@ -93,6 +93,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<AssignTapePoolResult> assignTapePoolAsync(AssignTapePoolRequest request) {
+
+        return assignTapePoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssignTapePoolResult> assignTapePoolAsync(AssignTapePoolRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssignTapePoolRequest, AssignTapePoolResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AttachVolumeResult> attachVolumeAsync(AttachVolumeRequest request) {
 
         return attachVolumeAsync(request, null);

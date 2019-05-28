@@ -32,6 +32,8 @@ public class PhoneNumberMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PhoneNumberId").build();
     private static final MarshallingInfo<String> E164PHONENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("E164PhoneNumber").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
     private static final MarshallingInfo<String> PRODUCTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductType").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -65,6 +67,7 @@ public class PhoneNumberMarshaller {
         try {
             protocolMarshaller.marshall(phoneNumber.getPhoneNumberId(), PHONENUMBERID_BINDING);
             protocolMarshaller.marshall(phoneNumber.getE164PhoneNumber(), E164PHONENUMBER_BINDING);
+            protocolMarshaller.marshall(phoneNumber.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(phoneNumber.getProductType(), PRODUCTTYPE_BINDING);
             protocolMarshaller.marshall(phoneNumber.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(phoneNumber.getCapabilities(), CAPABILITIES_BINDING);

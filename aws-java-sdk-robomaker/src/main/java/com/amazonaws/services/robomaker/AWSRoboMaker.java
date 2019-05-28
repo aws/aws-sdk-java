@@ -65,6 +65,28 @@ public interface AWSRoboMaker {
 
     /**
      * <p>
+     * Cancels the specified deployment job.
+     * </p>
+     * 
+     * @param cancelDeploymentJobRequest
+     * @return Result of the CancelDeploymentJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidParameterException
+     *         A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message
+     *         provides an explanation of the error value.
+     * @throws InternalServerException
+     *         AWS RoboMaker experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         AWS RoboMaker is temporarily unable to process the request. Try your call again.
+     * @sample AWSRoboMaker.CancelDeploymentJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CancelDeploymentJobResult cancelDeploymentJob(CancelDeploymentJobRequest cancelDeploymentJobRequest);
+
+    /**
+     * <p>
      * Cancels the specified simulation job.
      * </p>
      * 

@@ -35,6 +35,10 @@ public class SimulationApplicationSummaryMarshaller {
             .marshallLocationName("version").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> ROBOTSOFTWARESUITE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("robotSoftwareSuite").build();
+    private static final MarshallingInfo<StructuredPojo> SIMULATIONSOFTWARESUITE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("simulationSoftwareSuite").build();
 
     private static final SimulationApplicationSummaryMarshaller instance = new SimulationApplicationSummaryMarshaller();
 
@@ -56,6 +60,8 @@ public class SimulationApplicationSummaryMarshaller {
             protocolMarshaller.marshall(simulationApplicationSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(simulationApplicationSummary.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(simulationApplicationSummary.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
+            protocolMarshaller.marshall(simulationApplicationSummary.getRobotSoftwareSuite(), ROBOTSOFTWARESUITE_BINDING);
+            protocolMarshaller.marshall(simulationApplicationSummary.getSimulationSoftwareSuite(), SIMULATIONSOFTWARESUITE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

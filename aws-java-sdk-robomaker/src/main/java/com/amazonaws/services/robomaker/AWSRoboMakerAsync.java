@@ -67,6 +67,37 @@ public interface AWSRoboMakerAsync extends AWSRoboMaker {
 
     /**
      * <p>
+     * Cancels the specified deployment job.
+     * </p>
+     * 
+     * @param cancelDeploymentJobRequest
+     * @return A Java Future containing the result of the CancelDeploymentJob operation returned by the service.
+     * @sample AWSRoboMakerAsync.CancelDeploymentJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelDeploymentJobResult> cancelDeploymentJobAsync(CancelDeploymentJobRequest cancelDeploymentJobRequest);
+
+    /**
+     * <p>
+     * Cancels the specified deployment job.
+     * </p>
+     * 
+     * @param cancelDeploymentJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelDeploymentJob operation returned by the service.
+     * @sample AWSRoboMakerAsyncHandler.CancelDeploymentJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelDeploymentJobResult> cancelDeploymentJobAsync(CancelDeploymentJobRequest cancelDeploymentJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelDeploymentJobRequest, CancelDeploymentJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Cancels the specified simulation job.
      * </p>
      * 

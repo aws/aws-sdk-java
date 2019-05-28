@@ -28,7 +28,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ListTagsForResourceRequestMarshaller {
 
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceArn").build();
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("ResourceArn").build();
 
     private static final ListTagsForResourceRequestMarshaller instance = new ListTagsForResourceRequestMarshaller();
 

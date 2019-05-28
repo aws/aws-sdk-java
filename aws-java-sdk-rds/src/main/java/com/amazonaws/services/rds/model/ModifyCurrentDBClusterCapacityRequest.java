@@ -54,8 +54,8 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * Value must be <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
-     * <code>64</code>, <code>128</code>, or <code>256</code>.
+     * Value must be <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>,
+     * <code>128</code>, or <code>256</code>.
      * </p>
      * </li>
      * </ul>
@@ -200,8 +200,8 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * Value must be <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
-     * <code>64</code>, <code>128</code>, or <code>256</code>.
+     * Value must be <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>,
+     * <code>128</code>, or <code>256</code>.
      * </p>
      * </li>
      * </ul>
@@ -217,8 +217,8 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      *        <ul>
      *        <li>
      *        <p>
-     *        Value must be <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
-     *        <code>32</code>, <code>64</code>, <code>128</code>, or <code>256</code>.
+     *        Value must be <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
+     *        <code>64</code>, <code>128</code>, or <code>256</code>.
      *        </p>
      *        </li>
      */
@@ -240,8 +240,8 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * Value must be <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
-     * <code>64</code>, <code>128</code>, or <code>256</code>.
+     * Value must be <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>,
+     * <code>128</code>, or <code>256</code>.
      * </p>
      * </li>
      * </ul>
@@ -256,8 +256,8 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      *         <ul>
      *         <li>
      *         <p>
-     *         Value must be <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
-     *         <code>32</code>, <code>64</code>, <code>128</code>, or <code>256</code>.
+     *         Value must be <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
+     *         <code>64</code>, <code>128</code>, or <code>256</code>.
      *         </p>
      *         </li>
      */
@@ -279,8 +279,8 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * Value must be <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
-     * <code>64</code>, <code>128</code>, or <code>256</code>.
+     * Value must be <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>,
+     * <code>128</code>, or <code>256</code>.
      * </p>
      * </li>
      * </ul>
@@ -296,8 +296,8 @@ public class ModifyCurrentDBClusterCapacityRequest extends com.amazonaws.AmazonW
      *        <ul>
      *        <li>
      *        <p>
-     *        Value must be <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
-     *        <code>32</code>, <code>64</code>, <code>128</code>, or <code>256</code>.
+     *        Value must be <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
+     *        <code>64</code>, <code>128</code>, or <code>256</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

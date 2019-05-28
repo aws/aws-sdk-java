@@ -36,7 +36,7 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
     private String emailIdentity;
     /**
      * <p>
-     * An object that defines the tags (keys and values) that you want to associate with the email identity.
+     * An array of objects that define the tags (keys and values) that you want to associate with the email identity.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -83,10 +83,11 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An object that defines the tags (keys and values) that you want to associate with the email identity.
+     * An array of objects that define the tags (keys and values) that you want to associate with the email identity.
      * </p>
      * 
-     * @return An object that defines the tags (keys and values) that you want to associate with the email identity.
+     * @return An array of objects that define the tags (keys and values) that you want to associate with the email
+     *         identity.
      */
 
     public java.util.List<Tag> getTags() {
@@ -95,11 +96,12 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An object that defines the tags (keys and values) that you want to associate with the email identity.
+     * An array of objects that define the tags (keys and values) that you want to associate with the email identity.
      * </p>
      * 
      * @param tags
-     *        An object that defines the tags (keys and values) that you want to associate with the email identity.
+     *        An array of objects that define the tags (keys and values) that you want to associate with the email
+     *        identity.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -113,7 +115,7 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An object that defines the tags (keys and values) that you want to associate with the email identity.
+     * An array of objects that define the tags (keys and values) that you want to associate with the email identity.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +124,8 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param tags
-     *        An object that defines the tags (keys and values) that you want to associate with the email identity.
+     *        An array of objects that define the tags (keys and values) that you want to associate with the email
+     *        identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +141,12 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An object that defines the tags (keys and values) that you want to associate with the email identity.
+     * An array of objects that define the tags (keys and values) that you want to associate with the email identity.
      * </p>
      * 
      * @param tags
-     *        An object that defines the tags (keys and values) that you want to associate with the email identity.
+     *        An array of objects that define the tags (keys and values) that you want to associate with the email
+     *        identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

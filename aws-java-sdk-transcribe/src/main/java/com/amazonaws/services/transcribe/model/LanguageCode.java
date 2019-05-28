@@ -32,7 +32,8 @@ public enum LanguageCode {
     KoKR("ko-KR"),
     EsES("es-ES"),
     EnIN("en-IN"),
-    HiIN("hi-IN");
+    HiIN("hi-IN"),
+    ArSA("ar-SA");
 
     private String value;
 

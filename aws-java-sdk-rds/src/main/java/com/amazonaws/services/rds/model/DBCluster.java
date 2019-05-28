@@ -219,7 +219,7 @@ public class DBCluster implements Serializable, Cloneable {
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
      */
     private String kmsKeyId;
@@ -246,8 +246,8 @@ public class DBCluster implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<DBClusterRole> associatedRoles;
     /**
      * <p>
-     * A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts is enabled.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
@@ -315,8 +315,8 @@ public class DBCluster implements Serializable, Cloneable {
     private ScalingConfigurationInfo scalingConfigurationInfo;
     /**
      * <p>
-     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     * protection is enabled.
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
+     * to true.
      * </p>
      */
     private Boolean deletionProtection;
@@ -327,7 +327,8 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.
+     * Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
+     * <code>false</code> otherwise.
      * </p>
      * <p>
      * When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora
@@ -1815,11 +1816,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
+     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1828,10 +1829,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
+     * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
      */
 
     public String getKmsKeyId() {
@@ -1840,11 +1841,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
+     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2030,13 +2031,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts is enabled.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts is enabled.
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     *        otherwise false.
      */
 
     public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
@@ -2045,12 +2046,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts is enabled.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
-     * @return A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts is enabled.
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     *         otherwise false.
      */
 
     public Boolean getIAMDatabaseAuthenticationEnabled() {
@@ -2059,13 +2060,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts is enabled.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts is enabled.
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     *        otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2076,12 +2077,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts is enabled.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
-     * @return A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts is enabled.
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     *         otherwise false.
      */
 
     public Boolean isIAMDatabaseAuthenticationEnabled() {
@@ -2547,13 +2548,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     * protection is enabled.
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
+     * to true.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     *        protection is enabled.
+     *        Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value
+     *        is set to true.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -2562,12 +2563,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     * protection is enabled.
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
+     * to true.
      * </p>
      * 
-     * @return Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     *         protection is enabled.
+     * @return Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this
+     *         value is set to true.
      */
 
     public Boolean getDeletionProtection() {
@@ -2576,13 +2577,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     * protection is enabled.
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
+     * to true.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     *        protection is enabled.
+     *        Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value
+     *        is set to true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2593,12 +2594,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     * protection is enabled.
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
+     * to true.
      * </p>
      * 
-     * @return Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     *         protection is enabled.
+     * @return Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this
+     *         value is set to true.
      */
 
     public Boolean isDeletionProtection() {
@@ -2612,7 +2613,8 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.
+     * Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
+     * <code>false</code> otherwise.
      * </p>
      * <p>
      * When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora
@@ -2630,7 +2632,8 @@ public class DBCluster implements Serializable, Cloneable {
      *        </p>
      *        </note>
      *        <p>
-     *        A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.
+     *        Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
+     *        <code>false</code> otherwise.
      *        </p>
      *        <p>
      *        When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the
@@ -2654,7 +2657,8 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.
+     * Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
+     * <code>false</code> otherwise.
      * </p>
      * <p>
      * When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora
@@ -2671,7 +2675,8 @@ public class DBCluster implements Serializable, Cloneable {
      *         </p>
      *         </note>
      *         <p>
-     *         A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.
+     *         Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
+     *         <code>false</code> otherwise.
      *         </p>
      *         <p>
      *         When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the
@@ -2695,7 +2700,8 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.
+     * Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
+     * <code>false</code> otherwise.
      * </p>
      * <p>
      * When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora
@@ -2713,7 +2719,8 @@ public class DBCluster implements Serializable, Cloneable {
      *        </p>
      *        </note>
      *        <p>
-     *        A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.
+     *        Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
+     *        <code>false</code> otherwise.
      *        </p>
      *        <p>
      *        When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the
@@ -2739,7 +2746,8 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.
+     * Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
+     * <code>false</code> otherwise.
      * </p>
      * <p>
      * When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora
@@ -2756,7 +2764,8 @@ public class DBCluster implements Serializable, Cloneable {
      *         </p>
      *         </note>
      *         <p>
-     *         A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.
+     *         Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster is enabled and
+     *         <code>false</code> otherwise.
      *         </p>
      *         <p>
      *         When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the

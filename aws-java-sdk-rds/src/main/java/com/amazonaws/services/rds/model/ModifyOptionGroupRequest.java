@@ -51,7 +51,7 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private com.amazonaws.internal.SdkInternalList<String> optionsToRemove;
     /**
      * <p>
-     * A value that indicates whether to apply the change immediately or during the next maintenance window for each
+     * Indicates whether the changes should be applied immediately, or during the next maintenance window for each
      * instance associated with the option group.
      * </p>
      */
@@ -277,12 +277,12 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A value that indicates whether to apply the change immediately or during the next maintenance window for each
+     * Indicates whether the changes should be applied immediately, or during the next maintenance window for each
      * instance associated with the option group.
      * </p>
      * 
      * @param applyImmediately
-     *        A value that indicates whether to apply the change immediately or during the next maintenance window for
+     *        Indicates whether the changes should be applied immediately, or during the next maintenance window for
      *        each instance associated with the option group.
      */
 
@@ -292,11 +292,11 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A value that indicates whether to apply the change immediately or during the next maintenance window for each
+     * Indicates whether the changes should be applied immediately, or during the next maintenance window for each
      * instance associated with the option group.
      * </p>
      * 
-     * @return A value that indicates whether to apply the change immediately or during the next maintenance window for
+     * @return Indicates whether the changes should be applied immediately, or during the next maintenance window for
      *         each instance associated with the option group.
      */
 
@@ -306,12 +306,12 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A value that indicates whether to apply the change immediately or during the next maintenance window for each
+     * Indicates whether the changes should be applied immediately, or during the next maintenance window for each
      * instance associated with the option group.
      * </p>
      * 
      * @param applyImmediately
-     *        A value that indicates whether to apply the change immediately or during the next maintenance window for
+     *        Indicates whether the changes should be applied immediately, or during the next maintenance window for
      *        each instance associated with the option group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -323,11 +323,11 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A value that indicates whether to apply the change immediately or during the next maintenance window for each
+     * Indicates whether the changes should be applied immediately, or during the next maintenance window for each
      * instance associated with the option group.
      * </p>
      * 
-     * @return A value that indicates whether to apply the change immediately or during the next maintenance window for
+     * @return Indicates whether the changes should be applied immediately, or during the next maintenance window for
      *         each instance associated with the option group.
      */
 

@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -3975,6 +3975,9 @@
       }, {
         "name" : "HiIN",
         "value" : "hi-IN"
+      }, {
+        "name" : "ArSA",
+        "value" : "ar-SA"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

@@ -52,6 +52,13 @@ public class GetDeliverabilityTestReportResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String message;
+    /**
+     * <p>
+     * An array of objects that define the tags (keys and values) that are associated with the predictive inbox
+     * placement test.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -262,6 +269,84 @@ public class GetDeliverabilityTestReportResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * An array of objects that define the tags (keys and values) that are associated with the predictive inbox
+     * placement test.
+     * </p>
+     * 
+     * @return An array of objects that define the tags (keys and values) that are associated with the predictive inbox
+     *         placement test.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * An array of objects that define the tags (keys and values) that are associated with the predictive inbox
+     * placement test.
+     * </p>
+     * 
+     * @param tags
+     *        An array of objects that define the tags (keys and values) that are associated with the predictive inbox
+     *        placement test.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * An array of objects that define the tags (keys and values) that are associated with the predictive inbox
+     * placement test.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        An array of objects that define the tags (keys and values) that are associated with the predictive inbox
+     *        placement test.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeliverabilityTestReportResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of objects that define the tags (keys and values) that are associated with the predictive inbox
+     * placement test.
+     * </p>
+     * 
+     * @param tags
+     *        An array of objects that define the tags (keys and values) that are associated with the predictive inbox
+     *        placement test.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeliverabilityTestReportResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -280,7 +365,9 @@ public class GetDeliverabilityTestReportResult extends com.amazonaws.AmazonWebSe
         if (getIspPlacements() != null)
             sb.append("IspPlacements: ").append(getIspPlacements()).append(",");
         if (getMessage() != null)
-            sb.append("Message: ").append(getMessage());
+            sb.append("Message: ").append(getMessage()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -311,6 +398,10 @@ public class GetDeliverabilityTestReportResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -323,6 +414,7 @@ public class GetDeliverabilityTestReportResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getOverallPlacement() == null) ? 0 : getOverallPlacement().hashCode());
         hashCode = prime * hashCode + ((getIspPlacements() == null) ? 0 : getIspPlacements().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

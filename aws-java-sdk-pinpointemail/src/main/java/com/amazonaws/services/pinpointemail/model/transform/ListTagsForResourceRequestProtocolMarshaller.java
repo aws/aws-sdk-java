@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class ListTagsForResourceRequestProtocolMarshaller implements Marshaller<Request<ListTagsForResourceRequest>, ListTagsForResourceRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/v1/email/tags")
-            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AmazonPinpointEmail").build();
+            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AmazonPinpointEmail").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

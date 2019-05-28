@@ -29,6 +29,22 @@
       ],
       "documentation":"<p>Describes one or more simulation jobs.</p>"
     },
+    "CancelDeploymentJob":{
+      "name":"CancelDeploymentJob",
+      "http":{
+        "method":"POST",
+        "requestUri":"/cancelDeploymentJob"
+      },
+      "input":{"shape":"CancelDeploymentJobRequest"},
+      "output":{"shape":"CancelDeploymentJobResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Cancels the specified deployment job.</p>"
+    },
     "CancelSimulationJob":{
       "name":"CancelSimulationJob",
       "http":{
@@ -631,6 +647,21 @@
       }
     },
     "Boolean":{"type":"boolean"},
+    "CancelDeploymentJobRequest":{
+      "type":"structure",
+      "required":["job"],
+      "members":{
+        "job":{
+          "shape":"Arn",
+          "documentation":"<p>The deployment job ARN to cancel.</p>"
+        }
+      }
+    },
+    "CancelDeploymentJobResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "CancelSimulationJobRequest":{
       "type":"structure",
       "required":["job"],
@@ -1132,6 +1163,10 @@
           "shape":"SimulationJobStatus",
           "documentation":"<p>The status of the simulation job.</p>"
         },
+        "lastStartedAt":{
+          "shape":"LastStartedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>"
+        },
         "lastUpdatedAt":{
           "shape":"LastUpdatedAt",
           "documentation":"<p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>"
@@ -1396,7 +1431,8 @@
         "Preparing",
         "InProgress",
         "Failed",
-        "Succeeded"
+        "Succeeded",
+        "Canceled"
       ]
     },
     "DeploymentVersion":{
@@ -1727,6 +1763,10 @@
           "shape":"SimulationJobStatus",
           "documentation":"<p>The status of the simulation job.</p>"
         },
+        "lastStartedAt":{
+          "shape":"LastStartedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>"
+        },
         "lastUpdatedAt":{
           "shape":"LastUpdatedAt",
           "documentation":"<p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>"
@@ -1909,6 +1949,7 @@
       "exception":true
     },
     "JobDuration":{"type":"long"},
+    "LastStartedAt":{"type":"timestamp"},
     "LastUpdatedAt":{"type":"timestamp"},
     "LaunchConfig":{
       "type":"structure",
@@ -2198,7 +2239,7 @@
       "members":{
         "currentProgress":{
           "shape":"RobotDeploymentStep",
-          "documentation":"<p>The current progress status.</p> <dl> <dt>Validating</dt> <dd> <p>Validating the deployment.</p> </dd> <dt>Downloading/Extracting</dt> <dd> <p>Downloading and extracting the bundle on the robot.</p> </dd> <dt>Executing pre-launch script(s)</dt> <dd> <p>Executing pre-launch script(s) if provided.</p> </dd> <dt>Launching</dt> <dd> <p>Launching the robot application.</p> </dd> <dt>Executing post-launch script(s)</dt> <dd> <p>Executing post-launch script(s) if provided.</p> </dd> <dt>Finished</dt> <dd> <p>Deployment is complete.</p> </dd> </dl>"
+          "documentation":"<p>The current progress status.</p> <dl> <dt>Validating</dt> <dd> <p>Validating the deployment.</p> </dd> <dt>DownloadingExtracting</dt> <dd> <p>Downloading and extracting the bundle on the robot.</p> </dd> <dt>ExecutingPreLaunch</dt> <dd> <p>Executing pre-launch script(s) if provided.</p> </dd> <dt>Launching</dt> <dd> <p>Launching the robot application.</p> </dd> <dt>ExecutingPostLaunch</dt> <dd> <p>Executing post-launch script(s) if provided.</p> </dd> <dt>Finished</dt> <dd> <p>Deployment is complete.</p> </dd> </dl>"
         },
         "percentDone":{
           "shape":"PercentDone",
@@ -2406,6 +2447,10 @@
         "lastUpdatedAt":{
           "shape":"LastUpdatedAt",
           "documentation":"<p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>"
+        },
+        "robotSoftwareSuite":{
+          "shape":"RobotSoftwareSuite",
+          "documentation":"<p>Information about a robot software suite.</p>"
         }
       },
       "documentation":"<p>Summary information for a robot application.</p>"
@@ -2576,6 +2621,14 @@
         "lastUpdatedAt":{
           "shape":"LastUpdatedAt",
           "documentation":"<p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>"
+        },
+        "robotSoftwareSuite":{
+          "shape":"RobotSoftwareSuite",
+          "documentation":"<p>Information about a robot software suite.</p>"
+        },
+        "simulationSoftwareSuite":{
+          "shape":"SimulationSoftwareSuite",
+          "documentation":"<p>Information about a simulation software suite.</p>"
         }
       },
       "documentation":"<p>Summary information for a simulation application.</p>"
@@ -2594,6 +2647,10 @@
         "status":{
           "shape":"SimulationJobStatus",
           "documentation":"<p>Status of the simulation job.</p>"
+        },
+        "lastStartedAt":{
+          "shape":"LastStartedAt",
+          "documentation":"<p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>"
         },
         "lastUpdatedAt":{
           "shape":"LastUpdatedAt",
@@ -2629,7 +2686,7 @@
         },
         "iamRole":{
           "shape":"IamRole",
-          "documentation":"<p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. See how to <a href=\"https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials\">specify AWS security credentials for your application</a>. </p>"
+          "documentation":"<p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>"
         },
         "robotApplications":{
           "shape":"RobotApplicationConfigs",

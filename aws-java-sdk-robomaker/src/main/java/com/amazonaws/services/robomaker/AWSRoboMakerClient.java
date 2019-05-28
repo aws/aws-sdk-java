@@ -215,6 +215,68 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
 
     /**
      * <p>
+     * Cancels the specified deployment job.
+     * </p>
+     * 
+     * @param cancelDeploymentJobRequest
+     * @return Result of the CancelDeploymentJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidParameterException
+     *         A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message
+     *         provides an explanation of the error value.
+     * @throws InternalServerException
+     *         AWS RoboMaker experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         AWS RoboMaker is temporarily unable to process the request. Try your call again.
+     * @sample AWSRoboMaker.CancelDeploymentJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelDeploymentJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CancelDeploymentJobResult cancelDeploymentJob(CancelDeploymentJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelDeploymentJob(request);
+    }
+
+    @SdkInternalApi
+    final CancelDeploymentJobResult executeCancelDeploymentJob(CancelDeploymentJobRequest cancelDeploymentJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelDeploymentJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelDeploymentJobRequest> request = null;
+        Response<CancelDeploymentJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelDeploymentJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelDeploymentJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelDeploymentJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelDeploymentJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CancelDeploymentJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Cancels the specified simulation job.
      * </p>
      * 

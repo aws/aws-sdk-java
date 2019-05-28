@@ -34,7 +34,7 @@ public class GetBlacklistReportsRequestProtocolMarshaller implements Marshaller<
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
             .requestUri("/v1/email/deliverability-dashboard/blacklist-report").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false)
-            .hasPayloadMembers(true).serviceName("AmazonPinpointEmail").build();
+            .hasPayloadMembers(false).serviceName("AmazonPinpointEmail").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

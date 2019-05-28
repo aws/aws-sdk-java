@@ -74,20 +74,21 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String newDBClusterIdentifier;
     /**
      * <p>
-     * A value that indicates whether the modifications in this request and any pending modifications are asynchronously
+     * A value that specifies whether the modifications in this request and any pending modifications are asynchronously
      * applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB
-     * cluster. If this parameter is disabled, changes to the DB cluster are applied during the next maintenance window.
+     * cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the next
+     * maintenance window.
      * </p>
      * <p>
      * The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
-     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If the
-     * <code>ApplyImmediately</code> parameter is disabled, then changes to the
+     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to the
      * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
      * <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
      * applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
-     * By default, this parameter is disabled.
+     * Default: <code>false</code>
      * </p>
      */
     private Boolean applyImmediately;
@@ -148,9 +149,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
      * parameter doesn't result in an outage except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> is enabled for this request. If the parameter change
-     * results in an option group that enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
+     * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
+     * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
      * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
@@ -219,8 +220,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
@@ -253,10 +257,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to
+     * true.
      * </p>
      * <p>
-     * For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.
+     * For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> action.
      * </p>
      */
     private String engineVersion;
@@ -269,8 +274,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private ScalingConfiguration scalingConfiguration;
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection is disabled.
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
+     * to true.
      * </p>
      */
     private Boolean deletionProtection;
@@ -297,8 +302,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private Boolean enableHttpEndpoint;
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default
-     * is not to copy them.
+     * True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The default is
+     * false.
      * </p>
      */
     private Boolean copyTagsToSnapshot;
@@ -583,37 +588,38 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether the modifications in this request and any pending modifications are asynchronously
+     * A value that specifies whether the modifications in this request and any pending modifications are asynchronously
      * applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB
-     * cluster. If this parameter is disabled, changes to the DB cluster are applied during the next maintenance window.
+     * cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the next
+     * maintenance window.
      * </p>
      * <p>
      * The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
-     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If the
-     * <code>ApplyImmediately</code> parameter is disabled, then changes to the
+     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to the
      * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
      * <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
      * applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
-     * By default, this parameter is disabled.
+     * Default: <code>false</code>
      * </p>
      * 
      * @param applyImmediately
-     *        A value that indicates whether the modifications in this request and any pending modifications are
+     *        A value that specifies whether the modifications in this request and any pending modifications are
      *        asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
-     *        setting for the DB cluster. If this parameter is disabled, changes to the DB cluster are applied during
-     *        the next maintenance window.</p>
+     *        setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are
+     *        applied during the next maintenance window.</p>
      *        <p>
      *        The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
-     *        <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If the
-     *        <code>ApplyImmediately</code> parameter is disabled, then changes to the
+     *        <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     *        <code>ApplyImmediately</code> parameter value to false, then changes to the
      *        <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
      *        <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other
      *        changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      *        </p>
      *        <p>
-     *        By default, this parameter is disabled.
+     *        Default: <code>false</code>
      */
 
     public void setApplyImmediately(Boolean applyImmediately) {
@@ -622,35 +628,36 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether the modifications in this request and any pending modifications are asynchronously
+     * A value that specifies whether the modifications in this request and any pending modifications are asynchronously
      * applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB
-     * cluster. If this parameter is disabled, changes to the DB cluster are applied during the next maintenance window.
+     * cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the next
+     * maintenance window.
      * </p>
      * <p>
      * The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
-     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If the
-     * <code>ApplyImmediately</code> parameter is disabled, then changes to the
+     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to the
      * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
      * <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
      * applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
-     * By default, this parameter is disabled.
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return A value that indicates whether the modifications in this request and any pending modifications are
+     * @return A value that specifies whether the modifications in this request and any pending modifications are
      *         asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
-     *         setting for the DB cluster. If this parameter is disabled, changes to the DB cluster are applied during
-     *         the next maintenance window.</p>
+     *         setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are
+     *         applied during the next maintenance window.</p>
      *         <p>
-     *         The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If the
-     *         <code>ApplyImmediately</code> parameter is disabled, then changes to the
+     *         The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     *         <code>ApplyImmediately</code> parameter value to false, then changes to the
      *         <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
      *         <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other
      *         changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      *         </p>
      *         <p>
-     *         By default, this parameter is disabled.
+     *         Default: <code>false</code>
      */
 
     public Boolean getApplyImmediately() {
@@ -659,37 +666,38 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether the modifications in this request and any pending modifications are asynchronously
+     * A value that specifies whether the modifications in this request and any pending modifications are asynchronously
      * applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB
-     * cluster. If this parameter is disabled, changes to the DB cluster are applied during the next maintenance window.
+     * cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the next
+     * maintenance window.
      * </p>
      * <p>
      * The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
-     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If the
-     * <code>ApplyImmediately</code> parameter is disabled, then changes to the
+     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to the
      * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
      * <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
      * applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
-     * By default, this parameter is disabled.
+     * Default: <code>false</code>
      * </p>
      * 
      * @param applyImmediately
-     *        A value that indicates whether the modifications in this request and any pending modifications are
+     *        A value that specifies whether the modifications in this request and any pending modifications are
      *        asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
-     *        setting for the DB cluster. If this parameter is disabled, changes to the DB cluster are applied during
-     *        the next maintenance window.</p>
+     *        setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are
+     *        applied during the next maintenance window.</p>
      *        <p>
      *        The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
-     *        <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If the
-     *        <code>ApplyImmediately</code> parameter is disabled, then changes to the
+     *        <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     *        <code>ApplyImmediately</code> parameter value to false, then changes to the
      *        <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
      *        <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other
      *        changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      *        </p>
      *        <p>
-     *        By default, this parameter is disabled.
+     *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -700,35 +708,36 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether the modifications in this request and any pending modifications are asynchronously
+     * A value that specifies whether the modifications in this request and any pending modifications are asynchronously
      * applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB
-     * cluster. If this parameter is disabled, changes to the DB cluster are applied during the next maintenance window.
+     * cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the next
+     * maintenance window.
      * </p>
      * <p>
      * The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
-     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If the
-     * <code>ApplyImmediately</code> parameter is disabled, then changes to the
+     * <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     * <code>ApplyImmediately</code> parameter value to false, then changes to the
      * <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
      * <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are
      * applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
-     * By default, this parameter is disabled.
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return A value that indicates whether the modifications in this request and any pending modifications are
+     * @return A value that specifies whether the modifications in this request and any pending modifications are
      *         asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
-     *         setting for the DB cluster. If this parameter is disabled, changes to the DB cluster are applied during
-     *         the next maintenance window.</p>
+     *         setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are
+     *         applied during the next maintenance window.</p>
      *         <p>
-     *         The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If the
-     *         <code>ApplyImmediately</code> parameter is disabled, then changes to the
+     *         The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If you set the
+     *         <code>ApplyImmediately</code> parameter value to false, then changes to the
      *         <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>, and
      *         <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other
      *         changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      *         </p>
      *         <p>
-     *         By default, this parameter is disabled.
+     *         Default: <code>false</code>
      */
 
     public Boolean isApplyImmediately() {
@@ -1101,9 +1110,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
      * parameter doesn't result in an outage except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> is enabled for this request. If the parameter change
-     * results in an option group that enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
+     * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
+     * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
      * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
@@ -1113,9 +1122,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * @param optionGroupName
      *        A value that indicates that the DB cluster should be associated with the specified option group. Changing
      *        this parameter doesn't result in an outage except in the following case, and the change is applied during
-     *        the next maintenance window unless the <code>ApplyImmediately</code> is enabled for this request. If the
-     *        parameter change results in an option group that enables OEM, this change can cause a brief (sub-second)
-     *        period during which new connections are rejected but existing connections are not interrupted. </p>
+     *        the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
+     *        for this request. If the parameter change results in an option group that enables OEM, this change can
+     *        cause a brief (sub-second) period during which new connections are rejected but existing connections are
+     *        not interrupted. </p>
      *        <p>
      *        Permanent options can't be removed from an option group. The option group can't be removed from a DB
      *        cluster once it is associated with a DB cluster.
@@ -1129,9 +1139,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
      * parameter doesn't result in an outage except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> is enabled for this request. If the parameter change
-     * results in an option group that enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
+     * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
+     * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
      * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
@@ -1140,9 +1150,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @return A value that indicates that the DB cluster should be associated with the specified option group. Changing
      *         this parameter doesn't result in an outage except in the following case, and the change is applied during
-     *         the next maintenance window unless the <code>ApplyImmediately</code> is enabled for this request. If the
-     *         parameter change results in an option group that enables OEM, this change can cause a brief (sub-second)
-     *         period during which new connections are rejected but existing connections are not interrupted. </p>
+     *         the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to
+     *         <code>true</code> for this request. If the parameter change results in an option group that enables OEM,
+     *         this change can cause a brief (sub-second) period during which new connections are rejected but existing
+     *         connections are not interrupted. </p>
      *         <p>
      *         Permanent options can't be removed from an option group. The option group can't be removed from a DB
      *         cluster once it is associated with a DB cluster.
@@ -1156,9 +1167,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
      * parameter doesn't result in an outage except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> is enabled for this request. If the parameter change
-     * results in an option group that enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.
+     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
+     * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
+     * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
      * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
@@ -1168,9 +1179,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * @param optionGroupName
      *        A value that indicates that the DB cluster should be associated with the specified option group. Changing
      *        this parameter doesn't result in an outage except in the following case, and the change is applied during
-     *        the next maintenance window unless the <code>ApplyImmediately</code> is enabled for this request. If the
-     *        parameter change results in an option group that enables OEM, this change can cause a brief (sub-second)
-     *        period during which new connections are rejected but existing connections are not interrupted. </p>
+     *        the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
+     *        for this request. If the parameter change results in an option group that enables OEM, this change can
+     *        cause a brief (sub-second) period during which new connections are rejected but existing connections are
+     *        not interrupted. </p>
      *        <p>
      *        Permanent options can't be removed from an option group. The option group can't be removed from a DB
      *        cluster once it is associated with a DB cluster.
@@ -1540,13 +1552,18 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
+     *        <p>
+     *        Default: <code>false</code>
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -1555,12 +1572,17 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
+     *         <p>
+     *         Default: <code>false</code>
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -1569,13 +1591,18 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
+     *        <p>
+     *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1586,12 +1613,17 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
+     *         <p>
+     *         Default: <code>false</code>
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {
@@ -1762,18 +1794,19 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to
+     * true.
      * </p>
      * <p>
-     * For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.
+     * For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> action.
      * </p>
      * 
      * @param engineVersion
      *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
-     *        an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code>
-     *        is enabled.</p>
+     *        an outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter
+     *        is set to true.</p>
      *        <p>
-     *        For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.
+     *        For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> action.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1783,17 +1816,18 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to
+     * true.
      * </p>
      * <p>
-     * For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.
+     * For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> action.
      * </p>
      * 
      * @return The version number of the database engine to which you want to upgrade. Changing this parameter results
-     *         in an outage. The change is applied during the next maintenance window unless
-     *         <code>ApplyImmediately</code> is enabled.</p>
+     *         in an outage. The change is applied during the next maintenance window unless the ApplyImmediately
+     *         parameter is set to true.</p>
      *         <p>
-     *         For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.
+     *         For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> action.
      */
 
     public String getEngineVersion() {
@@ -1803,18 +1837,19 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.
+     * outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to
+     * true.
      * </p>
      * <p>
-     * For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.
+     * For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> action.
      * </p>
      * 
      * @param engineVersion
      *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
-     *        an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code>
-     *        is enabled.</p>
+     *        an outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter
+     *        is set to true.</p>
      *        <p>
-     *        For a list of valid engine versions, use <a>DescribeDBEngineVersions</a>.
+     *        For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1871,13 +1906,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection is disabled.
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
+     * to true.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     *        Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value
+     *        is set to true.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -1886,12 +1921,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection is disabled.
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
+     * to true.
      * </p>
      * 
-     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     * @return Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this
+     *         value is set to true.
      */
 
     public Boolean getDeletionProtection() {
@@ -1900,13 +1935,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection is disabled.
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
+     * to true.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     *        Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value
+     *        is set to true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1917,12 +1952,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection is disabled.
+     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this value is set
+     * to true.
      * </p>
      * 
-     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     * @return Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when this
+     *         value is set to true.
      */
 
     public Boolean isDeletionProtection() {
@@ -2107,13 +2142,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default
-     * is not to copy them.
+     * True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The default is
+     * false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The
-     *        default is not to copy them.
+     *        True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The default
+     *        is false.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -2122,12 +2157,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default
-     * is not to copy them.
+     * True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The default is
+     * false.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The
-     *         default is not to copy them.
+     * @return True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The
+     *         default is false.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -2136,13 +2171,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default
-     * is not to copy them.
+     * True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The default is
+     * false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The
-     *        default is not to copy them.
+     *        True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The default
+     *        is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2153,12 +2188,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default
-     * is not to copy them.
+     * True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The default is
+     * false.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The
-     *         default is not to copy them.
+     * @return True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The
+     *         default is false.
      */
 
     public Boolean isCopyTagsToSnapshot() {

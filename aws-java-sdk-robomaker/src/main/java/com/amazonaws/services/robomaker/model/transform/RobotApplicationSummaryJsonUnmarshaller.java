@@ -64,6 +64,10 @@ public class RobotApplicationSummaryJsonUnmarshaller implements Unmarshaller<Rob
                     context.nextToken();
                     robotApplicationSummary.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("robotSoftwareSuite", targetDepth)) {
+                    context.nextToken();
+                    robotApplicationSummary.setRobotSoftwareSuite(RobotSoftwareSuiteJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

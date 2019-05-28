@@ -56,6 +56,10 @@ public class CreateSimulationJobResultJsonUnmarshaller implements Unmarshaller<C
                     context.nextToken();
                     createSimulationJobResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lastStartedAt", targetDepth)) {
+                    context.nextToken();
+                    createSimulationJobResult.setLastStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
                     context.nextToken();
                     createSimulationJobResult.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

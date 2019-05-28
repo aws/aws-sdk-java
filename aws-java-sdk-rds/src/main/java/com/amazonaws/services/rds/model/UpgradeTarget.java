@@ -47,7 +47,7 @@ public class UpgradeTarget implements Serializable, Cloneable {
     /**
      * <p>
      * A value that indicates whether the target version is applied to any source DB instances that have
-     * <code>AutoMinorVersionUpgrade</code> set to true.
+     * AutoMinorVersionUpgrade set to true.
      * </p>
      */
     private Boolean autoUpgrade;
@@ -181,12 +181,12 @@ public class UpgradeTarget implements Serializable, Cloneable {
     /**
      * <p>
      * A value that indicates whether the target version is applied to any source DB instances that have
-     * <code>AutoMinorVersionUpgrade</code> set to true.
+     * AutoMinorVersionUpgrade set to true.
      * </p>
      * 
      * @param autoUpgrade
      *        A value that indicates whether the target version is applied to any source DB instances that have
-     *        <code>AutoMinorVersionUpgrade</code> set to true.
+     *        AutoMinorVersionUpgrade set to true.
      */
 
     public void setAutoUpgrade(Boolean autoUpgrade) {
@@ -196,11 +196,11 @@ public class UpgradeTarget implements Serializable, Cloneable {
     /**
      * <p>
      * A value that indicates whether the target version is applied to any source DB instances that have
-     * <code>AutoMinorVersionUpgrade</code> set to true.
+     * AutoMinorVersionUpgrade set to true.
      * </p>
      * 
      * @return A value that indicates whether the target version is applied to any source DB instances that have
-     *         <code>AutoMinorVersionUpgrade</code> set to true.
+     *         AutoMinorVersionUpgrade set to true.
      */
 
     public Boolean getAutoUpgrade() {
@@ -210,12 +210,12 @@ public class UpgradeTarget implements Serializable, Cloneable {
     /**
      * <p>
      * A value that indicates whether the target version is applied to any source DB instances that have
-     * <code>AutoMinorVersionUpgrade</code> set to true.
+     * AutoMinorVersionUpgrade set to true.
      * </p>
      * 
      * @param autoUpgrade
      *        A value that indicates whether the target version is applied to any source DB instances that have
-     *        <code>AutoMinorVersionUpgrade</code> set to true.
+     *        AutoMinorVersionUpgrade set to true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,11 @@ public class UpgradeTarget implements Serializable, Cloneable {
     /**
      * <p>
      * A value that indicates whether the target version is applied to any source DB instances that have
-     * <code>AutoMinorVersionUpgrade</code> set to true.
+     * AutoMinorVersionUpgrade set to true.
      * </p>
      * 
      * @return A value that indicates whether the target version is applied to any source DB instances that have
-     *         <code>AutoMinorVersionUpgrade</code> set to true.
+     *         AutoMinorVersionUpgrade set to true.
      */
 
     public Boolean isAutoUpgrade() {

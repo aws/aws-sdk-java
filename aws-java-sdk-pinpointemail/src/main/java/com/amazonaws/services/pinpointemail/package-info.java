@@ -19,31 +19,18 @@
  * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
  * </p>
  * <p>
- * The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon), EU (Frankfurt), and EU
- * (Ireland) Regions at the following endpoints:
+ * The Amazon Pinpoint Email API is available in several AWS Regions and it provides an endpoint for each of these
+ * Regions. For a list of all the Regions and endpoints where the API is currently available, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#pinpoint_region">AWS Regions and Endpoints</a> in the
+ * <i>Amazon Web Services General Reference</i>.
  * </p>
- * <ul>
- * <li>
  * <p>
- * <b>US East (N. Virginia)</b>: <code>email.us-east-1.amazonaws.com</code>
+ * In each Region, AWS maintains multiple Availability Zones. These Availability Zones are physically isolated from each
+ * other, but are united by private, low-latency, high-throughput, and highly redundant network connections. These
+ * Availability Zones enable us to provide very high levels of availability and redundancy, while also minimizing
+ * latency. To learn more about the number of Availability Zones that are available in each Region, see <a
+ * href="http://aws.amazon.com/about-aws/global-infrastructure/">AWS Global Infrastructure</a>.
  * </p>
- * </li>
- * <li>
- * <p>
- * <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>EU (Frankfurt)</b>: <code>email.eu-central-1.amazonaws.com</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>EU (Ireland)</b>: <code>email.eu-west-1.amazonaws.com</code>
- * </p>
- * </li>
- * </ul>
  */
 package com.amazonaws.services.pinpointemail;
 

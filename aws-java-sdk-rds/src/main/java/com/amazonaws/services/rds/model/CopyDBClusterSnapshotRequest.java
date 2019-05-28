@@ -164,8 +164,8 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     private String preSignedUrl;
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster
-     * snapshot. By default, tags are not copied.
+     * True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false.
+     * The default is false.
      * </p>
      */
     private Boolean copyTags;
@@ -1002,13 +1002,13 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster
-     * snapshot. By default, tags are not copied.
+     * True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false.
+     * The default is false.
      * </p>
      * 
      * @param copyTags
-     *        A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB
-     *        cluster snapshot. By default, tags are not copied.
+     *        True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise
+     *        false. The default is false.
      */
 
     public void setCopyTags(Boolean copyTags) {
@@ -1017,12 +1017,12 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster
-     * snapshot. By default, tags are not copied.
+     * True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false.
+     * The default is false.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB
-     *         cluster snapshot. By default, tags are not copied.
+     * @return True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and
+     *         otherwise false. The default is false.
      */
 
     public Boolean getCopyTags() {
@@ -1031,13 +1031,13 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster
-     * snapshot. By default, tags are not copied.
+     * True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false.
+     * The default is false.
      * </p>
      * 
      * @param copyTags
-     *        A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB
-     *        cluster snapshot. By default, tags are not copied.
+     *        True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise
+     *        false. The default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1048,12 +1048,12 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster
-     * snapshot. By default, tags are not copied.
+     * True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false.
+     * The default is false.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB
-     *         cluster snapshot. By default, tags are not copied.
+     * @return True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and
+     *         otherwise false. The default is false.
      */
 
     public Boolean isCopyTags() {

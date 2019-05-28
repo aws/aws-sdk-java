@@ -126,8 +126,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     * default, tags are not copied.
+     * True to copy all tags from the source DB snapshot to the target DB snapshot, and otherwise false. The default is
+     * false.
      * </p>
      */
     private Boolean copyTags;
@@ -843,13 +843,13 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     * default, tags are not copied.
+     * True to copy all tags from the source DB snapshot to the target DB snapshot, and otherwise false. The default is
+     * false.
      * </p>
      * 
      * @param copyTags
-     *        A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     *        default, tags are not copied.
+     *        True to copy all tags from the source DB snapshot to the target DB snapshot, and otherwise false. The
+     *        default is false.
      */
 
     public void setCopyTags(Boolean copyTags) {
@@ -858,12 +858,12 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     * default, tags are not copied.
+     * True to copy all tags from the source DB snapshot to the target DB snapshot, and otherwise false. The default is
+     * false.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     *         default, tags are not copied.
+     * @return True to copy all tags from the source DB snapshot to the target DB snapshot, and otherwise false. The
+     *         default is false.
      */
 
     public Boolean getCopyTags() {
@@ -872,13 +872,13 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     * default, tags are not copied.
+     * True to copy all tags from the source DB snapshot to the target DB snapshot, and otherwise false. The default is
+     * false.
      * </p>
      * 
      * @param copyTags
-     *        A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     *        default, tags are not copied.
+     *        True to copy all tags from the source DB snapshot to the target DB snapshot, and otherwise false. The
+     *        default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -889,12 +889,12 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     * default, tags are not copied.
+     * True to copy all tags from the source DB snapshot to the target DB snapshot, and otherwise false. The default is
+     * false.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By
-     *         default, tags are not copied.
+     * @return True to copy all tags from the source DB snapshot to the target DB snapshot, and otherwise false. The
+     *         default is false.
      */
 
     public Boolean isCopyTags() {

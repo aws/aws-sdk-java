@@ -33,6 +33,11 @@ public class AbstractAWSRoboMaker implements AWSRoboMaker {
     }
 
     @Override
+    public CancelDeploymentJobResult cancelDeploymentJob(CancelDeploymentJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelSimulationJobResult cancelSimulationJob(CancelSimulationJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

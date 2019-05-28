@@ -353,11 +353,11 @@ public class UpdateChapCredentialsRequest extends com.amazonaws.AmazonWebService
         if (getTargetARN() != null)
             sb.append("TargetARN: ").append(getTargetARN()).append(",");
         if (getSecretToAuthenticateInitiator() != null)
-            sb.append("SecretToAuthenticateInitiator: ").append(getSecretToAuthenticateInitiator()).append(",");
+            sb.append("SecretToAuthenticateInitiator: ").append("***Sensitive Data Redacted***").append(",");
         if (getInitiatorName() != null)
             sb.append("InitiatorName: ").append(getInitiatorName()).append(",");
         if (getSecretToAuthenticateTarget() != null)
-            sb.append("SecretToAuthenticateTarget: ").append(getSecretToAuthenticateTarget());
+            sb.append("SecretToAuthenticateTarget: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

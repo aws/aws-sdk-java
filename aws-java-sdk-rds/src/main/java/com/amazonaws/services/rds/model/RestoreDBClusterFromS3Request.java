@@ -273,7 +273,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * A value that indicates whether the restored DB cluster is encrypted.
+     * Specifies whether the restored DB cluster is encrypted.
      * </p>
      */
     private Boolean storageEncrypted;
@@ -287,16 +287,20 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * can use the KMS key alias instead of the ARN for the KM encryption key.
      * </p>
      * <p>
-     * If the StorageEncrypted parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
+     * Region.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
@@ -372,15 +376,15 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection is disabled.
+     * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
+     * value is set to true. The default is false.
      * </p>
      */
     private Boolean deletionProtection;
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise false.
+     * The default is false.
      * </p>
      */
     private Boolean copyTagsToSnapshot;
@@ -2003,11 +2007,11 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the restored DB cluster is encrypted.
+     * Specifies whether the restored DB cluster is encrypted.
      * </p>
      * 
      * @param storageEncrypted
-     *        A value that indicates whether the restored DB cluster is encrypted.
+     *        Specifies whether the restored DB cluster is encrypted.
      */
 
     public void setStorageEncrypted(Boolean storageEncrypted) {
@@ -2016,10 +2020,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the restored DB cluster is encrypted.
+     * Specifies whether the restored DB cluster is encrypted.
      * </p>
      * 
-     * @return A value that indicates whether the restored DB cluster is encrypted.
+     * @return Specifies whether the restored DB cluster is encrypted.
      */
 
     public Boolean getStorageEncrypted() {
@@ -2028,11 +2032,11 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the restored DB cluster is encrypted.
+     * Specifies whether the restored DB cluster is encrypted.
      * </p>
      * 
      * @param storageEncrypted
-     *        A value that indicates whether the restored DB cluster is encrypted.
+     *        Specifies whether the restored DB cluster is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2043,10 +2047,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the restored DB cluster is encrypted.
+     * Specifies whether the restored DB cluster is encrypted.
      * </p>
      * 
-     * @return A value that indicates whether the restored DB cluster is encrypted.
+     * @return Specifies whether the restored DB cluster is encrypted.
      */
 
     public Boolean isStorageEncrypted() {
@@ -2063,9 +2067,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * can use the KMS key alias instead of the ARN for the KM encryption key.
      * </p>
      * <p>
-     * If the StorageEncrypted parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
+     * Region.
      * </p>
      * 
      * @param kmsKeyId
@@ -2076,9 +2081,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        then you can use the KMS key alias instead of the ARN for the KM encryption key.
      *        </p>
      *        <p>
-     *        If the StorageEncrypted parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     *        parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption
-     *        key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     *        If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
+     *        <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
+     *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
+     *        each AWS Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2095,9 +2101,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * can use the KMS key alias instead of the ARN for the KM encryption key.
      * </p>
      * <p>
-     * If the StorageEncrypted parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
+     * Region.
      * </p>
      * 
      * @return The AWS KMS key identifier for an encrypted DB cluster.</p>
@@ -2107,7 +2114,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *         cluster, then you can use the KMS key alias instead of the ARN for the KM encryption key.
      *         </p>
      *         <p>
-     *         If the StorageEncrypted parameter is enabled, and you do not specify a value for the
+     *         If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
      *         <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates
      *         the default encryption key for your AWS account. Your AWS account has a different default encryption key
      *         for each AWS Region.
@@ -2127,9 +2134,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * can use the KMS key alias instead of the ARN for the KM encryption key.
      * </p>
      * <p>
-     * If the StorageEncrypted parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
+     * Region.
      * </p>
      * 
      * @param kmsKeyId
@@ -2140,9 +2148,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        then you can use the KMS key alias instead of the ARN for the KM encryption key.
      *        </p>
      *        <p>
-     *        If the StorageEncrypted parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     *        parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption
-     *        key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     *        If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
+     *        <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
+     *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
+     *        each AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2153,13 +2162,18 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
+     *        <p>
+     *        Default: <code>false</code>
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -2168,12 +2182,17 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
+     *         <p>
+     *         Default: <code>false</code>
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -2182,13 +2201,18 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
+     *        <p>
+     *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2199,12 +2223,17 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
+     *         <p>
+     *         Default: <code>false</code>
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {
@@ -2694,13 +2723,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection is disabled.
+     * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
+     * value is set to true. The default is false.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     *        Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when
+     *        this value is set to true. The default is false.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -2709,12 +2738,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection is disabled.
+     * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
+     * value is set to true. The default is false.
      * </p>
      * 
-     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     * @return Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when
+     *         this value is set to true. The default is false.
      */
 
     public Boolean getDeletionProtection() {
@@ -2723,13 +2752,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection is disabled.
+     * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
+     * value is set to true. The default is false.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     *        Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when
+     *        this value is set to true. The default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2740,12 +2769,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection is disabled.
+     * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
+     * value is set to true. The default is false.
      * </p>
      * 
-     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     * @return Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when
+     *         this value is set to true. The default is false.
      */
 
     public Boolean isDeletionProtection() {
@@ -2754,13 +2783,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise false.
+     * The default is false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *        DB cluster. The default is not to copy them.
+     *        True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise
+     *        false. The default is false.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -2769,12 +2798,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise false.
+     * The default is false.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *         DB cluster. The default is not to copy them.
+     * @return True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise
+     *         false. The default is false.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -2783,13 +2812,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise false.
+     * The default is false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *        DB cluster. The default is not to copy them.
+     *        True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise
+     *        false. The default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2800,12 +2829,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise false.
+     * The default is false.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *         DB cluster. The default is not to copy them.
+     * @return True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise
+     *         false. The default is false.
      */
 
     public Boolean isCopyTagsToSnapshot() {

@@ -30,9 +30,9 @@ public class GetDomainStatisticsReportRequestMarshaller {
     private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("Domain").build();
     private static final MarshallingInfo<java.util.Date> STARTDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartDate").timestampFormat("unixTimestamp").build();
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("StartDate").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> ENDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndDate").timestampFormat("unixTimestamp").build();
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("EndDate").timestampFormat("iso8601").build();
 
     private static final GetDomainStatisticsReportRequestMarshaller instance = new GetDomainStatisticsReportRequestMarshaller();
 

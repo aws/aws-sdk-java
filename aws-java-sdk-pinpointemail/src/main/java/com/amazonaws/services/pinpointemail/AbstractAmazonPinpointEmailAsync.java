@@ -257,6 +257,21 @@ public class AbstractAmazonPinpointEmailAsync extends AbstractAmazonPinpointEmai
     }
 
     @Override
+    public java.util.concurrent.Future<GetDomainDeliverabilityCampaignResult> getDomainDeliverabilityCampaignAsync(
+            GetDomainDeliverabilityCampaignRequest request) {
+
+        return getDomainDeliverabilityCampaignAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDomainDeliverabilityCampaignResult> getDomainDeliverabilityCampaignAsync(
+            GetDomainDeliverabilityCampaignRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDomainDeliverabilityCampaignRequest, GetDomainDeliverabilityCampaignResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDomainStatisticsReportResult> getDomainStatisticsReportAsync(GetDomainStatisticsReportRequest request) {
 
         return getDomainStatisticsReportAsync(request, null);
@@ -317,6 +332,21 @@ public class AbstractAmazonPinpointEmailAsync extends AbstractAmazonPinpointEmai
     @Override
     public java.util.concurrent.Future<ListDeliverabilityTestReportsResult> listDeliverabilityTestReportsAsync(ListDeliverabilityTestReportsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDeliverabilityTestReportsRequest, ListDeliverabilityTestReportsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDomainDeliverabilityCampaignsResult> listDomainDeliverabilityCampaignsAsync(
+            ListDomainDeliverabilityCampaignsRequest request) {
+
+        return listDomainDeliverabilityCampaignsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDomainDeliverabilityCampaignsResult> listDomainDeliverabilityCampaignsAsync(
+            ListDomainDeliverabilityCampaignsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDomainDeliverabilityCampaignsRequest, ListDomainDeliverabilityCampaignsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

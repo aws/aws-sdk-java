@@ -29,7 +29,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class GetBlacklistReportsRequestMarshaller {
 
     private static final MarshallingInfo<List> BLACKLISTITEMNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BlacklistItemNames").build();
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("BlacklistItemNames").build();
 
     private static final GetBlacklistReportsRequestMarshaller instance = new GetBlacklistReportsRequestMarshaller();
 

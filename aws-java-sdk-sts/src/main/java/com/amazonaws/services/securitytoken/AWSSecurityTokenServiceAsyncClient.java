@@ -37,15 +37,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * This guide provides descriptions of the STS API. For more detailed information about using this service, go to <a
  * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary Security Credentials</a>.
  * </p>
- * <note>
- * <p>
- * As an alternative to using the API, you can use one of the AWS SDKs, which consist of libraries and sample code for
- * various programming languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way
- * to create programmatic access to STS. For example, the SDKs take care of cryptographically signing requests, managing
- * errors, and retrying requests automatically. For information about the AWS SDKs, including how to download and
- * install them, see the <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services page</a>.
- * </p>
- * </note>
  * <p>
  * For information about setting up signatures and authorization through the API, go to <a
  * href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a> in
@@ -85,11 +76,10 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * After you activate a Region for use with AWS STS, you can direct AWS STS API calls to that Region. AWS STS recommends
- * that you use both the <code>setRegion</code> and <code>setEndpoint</code> methods to make calls to a Regional
- * endpoint. You can use the <code>setRegion</code> method alone for manually enabled Regions, such as Asia Pacific
- * (Hong Kong). In this case, the calls are directed to the STS Regional endpoint. However, if you use the
- * <code>setRegion</code> method alone for Regions enabled by default, the calls are directed to the global endpoint of
- * <code>https://sts.amazonaws.com</code>.
+ * that you provide both the Region and endpoint when you make calls to a Regional endpoint. You can provide the Region
+ * alone for manually enabled Regions, such as Asia Pacific (Hong Kong). In this case, the calls are directed to the STS
+ * Regional endpoint. However, if you provide the Region alone for Regions enabled by default, the calls are directed to
+ * the global endpoint of <code>https://sts.amazonaws.com</code>.
  * </p>
  * <p>
  * To view the list of AWS STS endpoints and whether they are active by default, see <a href=

@@ -110,8 +110,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Default: A random, system-chosen Availability Zone.
      * </p>
      * <p>
-     * Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
-     * deployment.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * <p>
      * Example: <code>us-east-1a</code>
@@ -132,27 +132,26 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private String dBSubnetGroupName;
     /**
      * <p>
-     * A value that indicates whether the DB instance is a Multi-AZ deployment.
+     * Specifies if the DB instance is a Multi-AZ deployment.
      * </p>
      * <p>
-     * Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
-     * deployment.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      */
     private Boolean multiAZ;
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
+     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
+     * internal instance with a DNS name that resolves to a private IP address. For more information, see
+     * <code>CreateDBInstance</code>.
      * </p>
      */
     private Boolean publiclyAccessible;
     /**
      * <p>
-     * A value that indicates whether minor version upgrades are applied automatically to the DB instance during the
-     * maintenance window.
+     * Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window.
      * </p>
      */
     private Boolean autoMinorVersionUpgrade;
@@ -293,7 +292,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      */
     private String storageType;
@@ -326,8 +325,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private String domain;
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By
-     * default, tags are not copied.
+     * True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and otherwise
+     * false. The default is false.
      * </p>
      */
     private Boolean copyTagsToSnapshot;
@@ -339,8 +338,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private String domainIAMRoleName;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * You can enable IAM database authentication for the following database engines
@@ -357,6 +356,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
     /**
@@ -376,7 +378,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeatures;
     /**
      * <p>
-     * A value that indicates whether the DB instance class of the DB instance uses its default processor features.
+     * A value that specifies that the DB instance class of the DB instance uses its default processor features.
      * </p>
      */
     private Boolean useDefaultProcessorFeatures;
@@ -414,8 +416,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private String dBParameterGroupName;
     /**
      * <p>
-     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection is disabled. For more information, see <a
+     * Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when this
+     * value is set to true. The default is false. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
@@ -949,8 +951,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Default: A random, system-chosen Availability Zone.
      * </p>
      * <p>
-     * Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
-     * deployment.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * <p>
      * Example: <code>us-east-1a</code>
@@ -962,8 +964,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        Default: A random, system-chosen Availability Zone.
      *        </p>
      *        <p>
-     *        Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
-     *        deployment.
+     *        Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *        <code>true</code>.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1a</code>
@@ -981,8 +983,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Default: A random, system-chosen Availability Zone.
      * </p>
      * <p>
-     * Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
-     * deployment.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * <p>
      * Example: <code>us-east-1a</code>
@@ -993,8 +995,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         Default: A random, system-chosen Availability Zone.
      *         </p>
      *         <p>
-     *         Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a
-     *         Multi-AZ deployment.
+     *         Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *         <code>true</code>.
      *         </p>
      *         <p>
      *         Example: <code>us-east-1a</code>
@@ -1012,8 +1014,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Default: A random, system-chosen Availability Zone.
      * </p>
      * <p>
-     * Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
-     * deployment.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * <p>
      * Example: <code>us-east-1a</code>
@@ -1025,8 +1027,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        Default: A random, system-chosen Availability Zone.
      *        </p>
      *        <p>
-     *        Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
-     *        deployment.
+     *        Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *        <code>true</code>.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1a</code>
@@ -1113,18 +1115,18 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is a Multi-AZ deployment.
+     * Specifies if the DB instance is a Multi-AZ deployment.
      * </p>
      * <p>
-     * Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
-     * deployment.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * 
      * @param multiAZ
-     *        A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+     *        Specifies if the DB instance is a Multi-AZ deployment.</p>
      *        <p>
-     *        Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
-     *        deployment.
+     *        Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *        <code>true</code>.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -1133,17 +1135,17 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is a Multi-AZ deployment.
+     * Specifies if the DB instance is a Multi-AZ deployment.
      * </p>
      * <p>
-     * Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
-     * deployment.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+     * @return Specifies if the DB instance is a Multi-AZ deployment.</p>
      *         <p>
-     *         Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a
-     *         Multi-AZ deployment.
+     *         Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *         <code>true</code>.
      */
 
     public Boolean getMultiAZ() {
@@ -1152,18 +1154,18 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is a Multi-AZ deployment.
+     * Specifies if the DB instance is a Multi-AZ deployment.
      * </p>
      * <p>
-     * Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
-     * deployment.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * 
      * @param multiAZ
-     *        A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+     *        Specifies if the DB instance is a Multi-AZ deployment.</p>
      *        <p>
-     *        Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
-     *        deployment.
+     *        Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1174,17 +1176,17 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is a Multi-AZ deployment.
+     * Specifies if the DB instance is a Multi-AZ deployment.
      * </p>
      * <p>
-     * Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
-     * deployment.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
+     * @return Specifies if the DB instance is a Multi-AZ deployment.</p>
      *         <p>
-     *         Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a
-     *         Multi-AZ deployment.
+     *         Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *         <code>true</code>.
      */
 
     public Boolean isMultiAZ() {
@@ -1193,17 +1195,17 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
+     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
+     * internal instance with a DNS name that resolves to a private IP address. For more information, see
+     * <code>CreateDBInstance</code>.
      * </p>
      * 
      * @param publiclyAccessible
-     *        A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *        accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *        public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
-     *        name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
+     *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
+     *        specifies an internal instance with a DNS name that resolves to a private IP address. For more
+     *        information, see <code>CreateDBInstance</code>.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -1212,16 +1214,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
+     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
+     * internal instance with a DNS name that resolves to a private IP address. For more information, see
+     * <code>CreateDBInstance</code>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *         accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *         public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
-     *         name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
+     *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a private IP address. For more
+     *         information, see <code>CreateDBInstance</code>.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -1230,17 +1232,17 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
+     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
+     * internal instance with a DNS name that resolves to a private IP address. For more information, see
+     * <code>CreateDBInstance</code>.
      * </p>
      * 
      * @param publiclyAccessible
-     *        A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *        accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *        public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
-     *        name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
+     *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
+     *        specifies an internal instance with a DNS name that resolves to a private IP address. For more
+     *        information, see <code>CreateDBInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1251,16 +1253,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
-     * resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
+     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
+     * internal instance with a DNS name that resolves to a private IP address. For more information, see
+     * <code>CreateDBInstance</code>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *         accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *         public IP address. When the DB instance is not publicly accessible, it is an internal instance with a DNS
-     *         name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
+     *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a private IP address. For more
+     *         information, see <code>CreateDBInstance</code>.
      */
 
     public Boolean isPubliclyAccessible() {
@@ -1269,13 +1271,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether minor version upgrades are applied automatically to the DB instance during the
-     * maintenance window.
+     * Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        A value that indicates whether minor version upgrades are applied automatically to the DB instance during
-     *        the maintenance window.
+     *        Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance
+     *        window.
      */
 
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -1284,12 +1285,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether minor version upgrades are applied automatically to the DB instance during the
-     * maintenance window.
+     * Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window.
      * </p>
      * 
-     * @return A value that indicates whether minor version upgrades are applied automatically to the DB instance during
-     *         the maintenance window.
+     * @return Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance
+     *         window.
      */
 
     public Boolean getAutoMinorVersionUpgrade() {
@@ -1298,13 +1298,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether minor version upgrades are applied automatically to the DB instance during the
-     * maintenance window.
+     * Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        A value that indicates whether minor version upgrades are applied automatically to the DB instance during
-     *        the maintenance window.
+     *        Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance
+     *        window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1315,12 +1314,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether minor version upgrades are applied automatically to the DB instance during the
-     * maintenance window.
+     * Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window.
      * </p>
      * 
-     * @return A value that indicates whether minor version upgrades are applied automatically to the DB instance during
-     *         the maintenance window.
+     * @return Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance
+     *         window.
      */
 
     public Boolean isAutoMinorVersionUpgrade() {
@@ -2142,7 +2140,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      * 
      * @param storageType
@@ -2154,7 +2152,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      *        </p>
      *        <p>
-     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
+     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      */
 
     public void setStorageType(String storageType) {
@@ -2172,7 +2170,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      * 
      * @return Specifies the storage type to be associated with the DB instance.</p>
@@ -2183,7 +2181,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      *         </p>
      *         <p>
-     *         Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
+     *         Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
+     *         <code>standard</code>
      */
 
     public String getStorageType() {
@@ -2201,7 +2200,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      * 
      * @param storageType
@@ -2213,7 +2212,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      *        </p>
      *        <p>
-     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
+     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2437,13 +2436,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By
-     * default, tags are not copied.
+     * True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and otherwise
+     * false. The default is false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB
-     *        instance. By default, tags are not copied.
+     *        True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and
+     *        otherwise false. The default is false.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -2452,12 +2451,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By
-     * default, tags are not copied.
+     * True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and otherwise
+     * false. The default is false.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB
-     *         instance. By default, tags are not copied.
+     * @return True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and
+     *         otherwise false. The default is false.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -2466,13 +2465,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By
-     * default, tags are not copied.
+     * True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and otherwise
+     * false. The default is false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB
-     *        instance. By default, tags are not copied.
+     *        True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and
+     *        otherwise false. The default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2483,12 +2482,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By
-     * default, tags are not copied.
+     * True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and otherwise
+     * false. The default is false.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB
-     *         instance. By default, tags are not copied.
+     * @return True to copy all tags from the restored DB instance to snapshots of the restored DB instance, and
+     *         otherwise false. The default is false.
      */
 
     public Boolean isCopyTagsToSnapshot() {
@@ -2537,8 +2536,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * You can enable IAM database authentication for the following database engines
@@ -2555,10 +2554,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
      *        <p>
      *        You can enable IAM database authentication for the following database engines
      *        </p>
@@ -2573,6 +2575,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        For MySQL 5.7, minor version 5.7.16 or higher
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>false</code>
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -2581,8 +2586,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * You can enable IAM database authentication for the following database engines
@@ -2599,9 +2604,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
      *         <p>
      *         You can enable IAM database authentication for the following database engines
      *         </p>
@@ -2616,6 +2624,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         For MySQL 5.7, minor version 5.7.16 or higher
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Default: <code>false</code>
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -2624,8 +2635,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * You can enable IAM database authentication for the following database engines
@@ -2642,10 +2653,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
      *        <p>
      *        You can enable IAM database authentication for the following database engines
      *        </p>
@@ -2660,6 +2674,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        For MySQL 5.7, minor version 5.7.16 or higher
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2670,8 +2687,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * You can enable IAM database authentication for the following database engines
@@ -2688,9 +2705,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
      *         <p>
      *         You can enable IAM database authentication for the following database engines
      *         </p>
@@ -2705,6 +2725,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         For MySQL 5.7, minor version 5.7.16 or higher
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Default: <code>false</code>
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {
@@ -2883,12 +2906,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance class of the DB instance uses its default processor features.
+     * A value that specifies that the DB instance class of the DB instance uses its default processor features.
      * </p>
      * 
      * @param useDefaultProcessorFeatures
-     *        A value that indicates whether the DB instance class of the DB instance uses its default processor
-     *        features.
+     *        A value that specifies that the DB instance class of the DB instance uses its default processor features.
      */
 
     public void setUseDefaultProcessorFeatures(Boolean useDefaultProcessorFeatures) {
@@ -2897,11 +2919,10 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance class of the DB instance uses its default processor features.
+     * A value that specifies that the DB instance class of the DB instance uses its default processor features.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance class of the DB instance uses its default processor
-     *         features.
+     * @return A value that specifies that the DB instance class of the DB instance uses its default processor features.
      */
 
     public Boolean getUseDefaultProcessorFeatures() {
@@ -2910,12 +2931,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance class of the DB instance uses its default processor features.
+     * A value that specifies that the DB instance class of the DB instance uses its default processor features.
      * </p>
      * 
      * @param useDefaultProcessorFeatures
-     *        A value that indicates whether the DB instance class of the DB instance uses its default processor
-     *        features.
+     *        A value that specifies that the DB instance class of the DB instance uses its default processor features.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2926,11 +2946,10 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance class of the DB instance uses its default processor features.
+     * A value that specifies that the DB instance class of the DB instance uses its default processor features.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance class of the DB instance uses its default processor
-     *         features.
+     * @return A value that specifies that the DB instance class of the DB instance uses its default processor features.
      */
 
     public Boolean isUseDefaultProcessorFeatures() {
@@ -3132,16 +3151,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection is disabled. For more information, see <a
+     * Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when this
+     * value is set to true. The default is false. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection is disabled. For more
-     *        information, see <a
+     *        Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when
+     *        this value is set to true. The default is false. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *        Instance</a>.
      */
@@ -3152,15 +3170,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection is disabled. For more information, see <a
+     * Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when this
+     * value is set to true. The default is false. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection is disabled. For more
-     *         information, see <a
+     * @return Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when
+     *         this value is set to true. The default is false. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *         Instance</a>.
      */
@@ -3171,16 +3188,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection is disabled. For more information, see <a
+     * Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when this
+     * value is set to true. The default is false. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection is disabled. For more
-     *        information, see <a
+     *        Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when
+     *        this value is set to true. The default is false. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *        Instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3193,15 +3209,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection is disabled. For more information, see <a
+     * Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when this
+     * value is set to true. The default is false. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection is disabled. For more
-     *         information, see <a
+     * @return Indicates if the DB instance should have deletion protection enabled. The database can't be deleted when
+     *         this value is set to true. The default is false. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *         Instance</a>.
      */

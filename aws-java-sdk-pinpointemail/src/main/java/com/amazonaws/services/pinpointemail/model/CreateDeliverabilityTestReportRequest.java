@@ -53,8 +53,8 @@ public class CreateDeliverabilityTestReportRequest extends com.amazonaws.AmazonW
     private EmailContent content;
     /**
      * <p>
-     * An object that defines the tags (keys and values) that you want to associate with the predictive inbox placement
-     * test.
+     * An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox
+     * placement test.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -184,12 +184,12 @@ public class CreateDeliverabilityTestReportRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * An object that defines the tags (keys and values) that you want to associate with the predictive inbox placement
-     * test.
+     * An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox
+     * placement test.
      * </p>
      * 
-     * @return An object that defines the tags (keys and values) that you want to associate with the predictive inbox
-     *         placement test.
+     * @return An array of objects that define the tags (keys and values) that you want to associate with the predictive
+     *         inbox placement test.
      */
 
     public java.util.List<Tag> getTags() {
@@ -198,13 +198,13 @@ public class CreateDeliverabilityTestReportRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * An object that defines the tags (keys and values) that you want to associate with the predictive inbox placement
-     * test.
+     * An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox
+     * placement test.
      * </p>
      * 
      * @param tags
-     *        An object that defines the tags (keys and values) that you want to associate with the predictive inbox
-     *        placement test.
+     *        An array of objects that define the tags (keys and values) that you want to associate with the predictive
+     *        inbox placement test.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -218,8 +218,8 @@ public class CreateDeliverabilityTestReportRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * An object that defines the tags (keys and values) that you want to associate with the predictive inbox placement
-     * test.
+     * An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox
+     * placement test.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -228,8 +228,8 @@ public class CreateDeliverabilityTestReportRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param tags
-     *        An object that defines the tags (keys and values) that you want to associate with the predictive inbox
-     *        placement test.
+     *        An array of objects that define the tags (keys and values) that you want to associate with the predictive
+     *        inbox placement test.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,13 +245,13 @@ public class CreateDeliverabilityTestReportRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * An object that defines the tags (keys and values) that you want to associate with the predictive inbox placement
-     * test.
+     * An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox
+     * placement test.
      * </p>
      * 
      * @param tags
-     *        An object that defines the tags (keys and values) that you want to associate with the predictive inbox
-     *        placement test.
+     *        An array of objects that define the tags (keys and values) that you want to associate with the predictive
+     *        inbox placement test.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

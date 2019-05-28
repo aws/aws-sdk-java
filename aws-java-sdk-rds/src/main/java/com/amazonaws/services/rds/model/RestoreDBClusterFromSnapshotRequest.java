@@ -179,8 +179,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     private String kmsKeyId;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
@@ -259,15 +262,15 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     private String dBClusterParameterGroupName;
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection is disabled.
+     * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
+     * value is set to true. The default is false.
      * </p>
      */
     private Boolean deletionProtection;
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise false.
+     * The default is false.
      * </p>
      */
     private Boolean copyTagsToSnapshot;
@@ -1312,13 +1315,18 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
+     *        <p>
+     *        Default: <code>false</code>
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -1327,12 +1335,17 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
+     *         <p>
+     *         Default: <code>false</code>
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -1341,13 +1354,18 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
+     *        <p>
+     *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1358,12 +1376,17 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
+     *         <p>
+     *         Default: <code>false</code>
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {
@@ -1863,13 +1886,13 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection is disabled.
+     * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
+     * value is set to true. The default is false.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     *        Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when
+     *        this value is set to true. The default is false.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -1878,12 +1901,12 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection is disabled.
+     * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
+     * value is set to true. The default is false.
      * </p>
      * 
-     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     * @return Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when
+     *         this value is set to true. The default is false.
      */
 
     public Boolean getDeletionProtection() {
@@ -1892,13 +1915,13 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection is disabled.
+     * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
+     * value is set to true. The default is false.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     *        Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when
+     *        this value is set to true. The default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1909,12 +1932,12 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection is disabled.
+     * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
+     * value is set to true. The default is false.
      * </p>
      * 
-     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     * @return Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when
+     *         this value is set to true. The default is false.
      */
 
     public Boolean isDeletionProtection() {
@@ -1923,13 +1946,13 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise false.
+     * The default is false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *        DB cluster. The default is not to copy them.
+     *        True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise
+     *        false. The default is false.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -1938,12 +1961,12 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise false.
+     * The default is false.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *         DB cluster. The default is not to copy them.
+     * @return True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise
+     *         false. The default is false.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -1952,13 +1975,13 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise false.
+     * The default is false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *        DB cluster. The default is not to copy them.
+     *        True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise
+     *        false. The default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1969,12 +1992,12 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise false.
+     * The default is false.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *         DB cluster. The default is not to copy them.
+     * @return True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise
+     *         false. The default is false.
      */
 
     public Boolean isCopyTagsToSnapshot() {

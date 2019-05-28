@@ -57,15 +57,6 @@ import com.amazonaws.services.securitytoken.model.transform.*;
  * This guide provides descriptions of the STS API. For more detailed information about using this service, go to <a
  * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary Security Credentials</a>.
  * </p>
- * <note>
- * <p>
- * As an alternative to using the API, you can use one of the AWS SDKs, which consist of libraries and sample code for
- * various programming languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way
- * to create programmatic access to STS. For example, the SDKs take care of cryptographically signing requests, managing
- * errors, and retrying requests automatically. For information about the AWS SDKs, including how to download and
- * install them, see the <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services page</a>.
- * </p>
- * </note>
  * <p>
  * For information about setting up signatures and authorization through the API, go to <a
  * href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a> in
@@ -105,11 +96,10 @@ import com.amazonaws.services.securitytoken.model.transform.*;
  * </p>
  * <p>
  * After you activate a Region for use with AWS STS, you can direct AWS STS API calls to that Region. AWS STS recommends
- * that you use both the <code>setRegion</code> and <code>setEndpoint</code> methods to make calls to a Regional
- * endpoint. You can use the <code>setRegion</code> method alone for manually enabled Regions, such as Asia Pacific
- * (Hong Kong). In this case, the calls are directed to the STS Regional endpoint. However, if you use the
- * <code>setRegion</code> method alone for Regions enabled by default, the calls are directed to the global endpoint of
- * <code>https://sts.amazonaws.com</code>.
+ * that you provide both the Region and endpoint when you make calls to a Regional endpoint. You can provide the Region
+ * alone for manually enabled Regions, such as Asia Pacific (Hong Kong). In this case, the calls are directed to the STS
+ * Regional endpoint. However, if you provide the Region alone for Regions enabled by default, the calls are directed to
+ * the global endpoint of <code>https://sts.amazonaws.com</code>.
  * </p>
  * <p>
  * To view the list of AWS STS endpoints and whether they are active by default, see <a href=
@@ -429,9 +419,9 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * identity-based policy and the session policies. You can use the role's temporary credentials in subsequent AWS
      * API calls to access resources in the account that owns the role. You cannot use session policies to grant more
      * permissions than those allowed by the identity-based policy of the role that is being assumed. For more
-     * information, see <a href=
-     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     * >Session Policies</a> in the <i>IAM User Guide</i>.
+     * information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * To assume a role from a different account, your AWS account must be trusted by the role. The trust relationship
@@ -590,9 +580,9 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * identity-based policy and the session policies. You can use the role's temporary credentials in subsequent AWS
      * API calls to access resources in the account that owns the role. You cannot use session policies to grant more
      * permissions than those allowed by the identity-based policy of the role that is being assumed. For more
-     * information, see <a href=
-     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     * >Session Policies</a> in the <i>IAM User Guide</i>.
+     * information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * Before your application can call <code>AssumeRoleWithSAML</code>, you must configure your SAML identity provider
@@ -781,9 +771,9 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * identity-based policy and the session policies. You can use the role's temporary credentials in subsequent AWS
      * API calls to access resources in the account that owns the role. You cannot use session policies to grant more
      * permissions than those allowed by the identity-based policy of the role that is being assumed. For more
-     * information, see <a href=
-     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     * >Session Policies</a> in the <i>IAM User Guide</i>.
+     * information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * Before your application can call <code>AssumeRoleWithWebIdentity</code>, you must have an identity token from a
@@ -1144,10 +1134,10 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * element of the policy. When you pass session policies, the session permissions are the intersection of the IAM
      * user policies and the session policies that you pass. This gives you a way to further restrict the permissions
      * for a federated user. You cannot use session policies to grant more permissions than those that are defined in
-     * the permissions policy of the IAM user. For more information, see <a href=
-     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM/latest/UserGuide/access_policies.html#policies_session"
-     * >Session Policies</a> in the <i>IAM User Guide</i>. For information about using <code>GetFederationToken</code>
-     * to create temporary security credentials, see <a
+     * the permissions policy of the IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * Policies</a> in the <i>IAM User Guide</i>. For information about using <code>GetFederationToken</code> to create
+     * temporary security credentials, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken"
      * >GetFederationToken—Federation Through a Custom Identity Broker</a>.
      * </p>

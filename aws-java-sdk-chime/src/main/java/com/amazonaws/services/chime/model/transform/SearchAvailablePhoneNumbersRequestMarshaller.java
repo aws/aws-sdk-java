@@ -35,6 +35,8 @@ public class SearchAvailablePhoneNumbersRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("country").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
             .marshallLocationName("state").build();
+    private static final MarshallingInfo<String> TOLLFREEPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("toll-free-prefix").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("max-results").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -60,6 +62,7 @@ public class SearchAvailablePhoneNumbersRequestMarshaller {
             protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getCity(), CITY_BINDING);
             protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getCountry(), COUNTRY_BINDING);
             protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getTollFreePrefix(), TOLLFREEPREFIX_BINDING);
             protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

@@ -121,6 +121,12 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedFeatureNames;
+    /**
+     * <p>
+     * The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.
+     * </p>
+     */
+    private String status;
 
     /**
      * <p>
@@ -987,6 +993,46 @@ public class DBEngineVersion implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.
+     * </p>
+     * 
+     * @param status
+     *        The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.
+     * </p>
+     * 
+     * @return The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.
+     * </p>
+     * 
+     * @param status
+     *        The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1025,7 +1071,9 @@ public class DBEngineVersion implements Serializable, Cloneable {
         if (getSupportedEngineModes() != null)
             sb.append("SupportedEngineModes: ").append(getSupportedEngineModes()).append(",");
         if (getSupportedFeatureNames() != null)
-            sb.append("SupportedFeatureNames: ").append(getSupportedFeatureNames());
+            sb.append("SupportedFeatureNames: ").append(getSupportedFeatureNames()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -1097,6 +1145,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
             return false;
         if (other.getSupportedFeatureNames() != null && other.getSupportedFeatureNames().equals(this.getSupportedFeatureNames()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -1119,6 +1171,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSupportsReadReplica() == null) ? 0 : getSupportsReadReplica().hashCode());
         hashCode = prime * hashCode + ((getSupportedEngineModes() == null) ? 0 : getSupportedEngineModes().hashCode());
         hashCode = prime * hashCode + ((getSupportedFeatureNames() == null) ? 0 : getSupportedFeatureNames().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

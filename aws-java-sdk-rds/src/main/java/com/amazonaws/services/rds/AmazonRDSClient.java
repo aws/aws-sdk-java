@@ -2606,8 +2606,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <p>
      * Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
-     * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when you skip
-     * creation of the final snapshot with the <code>SkipFinalSnapshot</code> parameter.
+     * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when the
+     * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
      * </p>
      * <p>
      * If the specified DB instance is part of an Amazon Aurora DB cluster, you can't delete the DB instance if both of
