@@ -408,7 +408,16 @@ public class ClientConfigurationTest {
         assertEquals("test3.com", config.getNonProxyHosts());
         config.setNonProxyHosts("test4.com");
         assertEquals("test4.com", config.getNonProxyHosts());
-        System.clearProperty("https.nonProxyHosts");
+        System.clearProperty("http.nonProxyHosts");
+        environmentVariableHelper.reset();
+
+        config = new ClientConfiguration();
+        assertNull(config.getNonProxyHosts());
+        config.setProtocol(Protocol.HTTP);
+        environmentVariableHelper.set("no_proxy", "test1.com,test2.com,test3.com");
+        assertEquals("test1.com|test2.com|test3.com", config.getNonProxyHosts());
+        environmentVariableHelper.set("no_proxy", "test1.com|test2.com|test3.com");
+        assertEquals("test1.com|test2.com|test3.com", config.getNonProxyHosts());
         environmentVariableHelper.reset();
     }
 

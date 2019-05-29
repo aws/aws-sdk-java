@@ -1078,24 +1078,35 @@ public class ClientConfiguration {
     /**
      * Returns the Java system property for nonProxyHosts. We still honor this property even
      * {@link #getProtocol()} is https, see http://docs.oracle.com/javase/7/docs/api/java/net/doc-files/net-properties.html.
+     * This method expects the property to be set as pipe separated list.
      */
     private String getNonProxyHostsProperty() {
         return getSystemProperty("http.nonProxyHosts");
     }
 
     /**
-     * Returns the value of the environment variable NO_PROXY/no_proxy.
+     * Returns the value of the environment variable NO_PROXY/no_proxy. This method expects
+     * the environment variable to be set as a comma separated list, so this method
+     * converts the comma separated list to pipe separated list to be used internally.
      */
     private String getNonProxyHostsEnvironment() {
-        return getEnvironmentVariableCaseInsensitive("NO_PROXY");
+        String nonProxyHosts = getEnvironmentVariableCaseInsensitive("NO_PROXY");
+        if (nonProxyHosts != null) {
+            nonProxyHosts = nonProxyHosts.replace(",", "|");
+        }
+
+        return nonProxyHosts;
     }
 
     /**
      * Returns the optional hosts the client will access without going
      * through the proxy. Returns either the nonProxyHosts set on this
      * object, or if not provided, returns the value of the Java system property
-     * http.nonProxyHosts. If neither are set, returns the value of the
-     * environment variable NO_PROXY/no_proxy.
+     * http.nonProxyHosts. We still honor this property even
+     * {@link #getProtocol()} is https, see http://docs.oracle.com/javase/7/docs/api/java/net/doc-files/net-properties.html.
+     * This property is expected to be set as a pipe separated list. If neither are set,
+     * returns the value of the environment variable NO_PROXY/no_proxy. This environment
+     * variable is expected to be set as a comma separated list.
      *
      * @return The hosts the client will connect through bypassing the proxy.
      */
