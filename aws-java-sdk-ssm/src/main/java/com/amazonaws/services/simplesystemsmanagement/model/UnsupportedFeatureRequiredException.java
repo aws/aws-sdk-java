@@ -15,7 +15,12 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * Microsoft application patching is only available on EC2 instances and Advanced Instances. To patch Microsoft
+ * applications on on-premises servers and VMs, you must enable Advanced Instances. For more information, see <a
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html"
+ * >Using the Advanced-Instances Tier</a> in the <i>AWS Systems Manager User Guide</i>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnsupportedFeatureRequiredException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {

@@ -26,7 +26,7 @@ public class DescribeMaintenanceWindowTasksResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the tasks in the Maintenance Window.
+     * Information about the tasks in the maintenance window.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MaintenanceWindowTask> tasks;
@@ -40,10 +40,10 @@ public class DescribeMaintenanceWindowTasksResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the tasks in the Maintenance Window.
+     * Information about the tasks in the maintenance window.
      * </p>
      * 
-     * @return Information about the tasks in the Maintenance Window.
+     * @return Information about the tasks in the maintenance window.
      */
 
     public java.util.List<MaintenanceWindowTask> getTasks() {
@@ -55,11 +55,11 @@ public class DescribeMaintenanceWindowTasksResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the tasks in the Maintenance Window.
+     * Information about the tasks in the maintenance window.
      * </p>
      * 
      * @param tasks
-     *        Information about the tasks in the Maintenance Window.
+     *        Information about the tasks in the maintenance window.
      */
 
     public void setTasks(java.util.Collection<MaintenanceWindowTask> tasks) {
@@ -73,7 +73,7 @@ public class DescribeMaintenanceWindowTasksResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the tasks in the Maintenance Window.
+     * Information about the tasks in the maintenance window.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeMaintenanceWindowTasksResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param tasks
-     *        Information about the tasks in the Maintenance Window.
+     *        Information about the tasks in the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeMaintenanceWindowTasksResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the tasks in the Maintenance Window.
+     * Information about the tasks in the maintenance window.
      * </p>
      * 
      * @param tasks
-     *        Information about the tasks in the Maintenance Window.
+     *        Information about the tasks in the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

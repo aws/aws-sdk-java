@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The details of an AWS EC2 instance.
+ * The details of an Amazon EC2 instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2InstanceDetails" target="_top">AWS
@@ -66,13 +66,13 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
     private String iamInstanceProfileArn;
     /**
      * <p>
-     * The identifier of the VPC in which the instance was launched.
+     * The identifier of the VPC that the instance was launched in.
      * </p>
      */
     private String vpcId;
     /**
      * <p>
-     * The identifier of the subnet in which the instance was launched.
+     * The identifier of the subnet that the instance was launched in.
      * </p>
      */
     private String subnetId;
@@ -385,11 +385,11 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The identifier of the VPC in which the instance was launched.
+     * The identifier of the VPC that the instance was launched in.
      * </p>
      * 
      * @param vpcId
-     *        The identifier of the VPC in which the instance was launched.
+     *        The identifier of the VPC that the instance was launched in.
      */
 
     public void setVpcId(String vpcId) {
@@ -398,10 +398,10 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The identifier of the VPC in which the instance was launched.
+     * The identifier of the VPC that the instance was launched in.
      * </p>
      * 
-     * @return The identifier of the VPC in which the instance was launched.
+     * @return The identifier of the VPC that the instance was launched in.
      */
 
     public String getVpcId() {
@@ -410,11 +410,11 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The identifier of the VPC in which the instance was launched.
+     * The identifier of the VPC that the instance was launched in.
      * </p>
      * 
      * @param vpcId
-     *        The identifier of the VPC in which the instance was launched.
+     *        The identifier of the VPC that the instance was launched in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -425,11 +425,11 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The identifier of the subnet in which the instance was launched.
+     * The identifier of the subnet that the instance was launched in.
      * </p>
      * 
      * @param subnetId
-     *        The identifier of the subnet in which the instance was launched.
+     *        The identifier of the subnet that the instance was launched in.
      */
 
     public void setSubnetId(String subnetId) {
@@ -438,10 +438,10 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The identifier of the subnet in which the instance was launched.
+     * The identifier of the subnet that the instance was launched in.
      * </p>
      * 
-     * @return The identifier of the subnet in which the instance was launched.
+     * @return The identifier of the subnet that the instance was launched in.
      */
 
     public String getSubnetId() {
@@ -450,11 +450,11 @@ public class AwsEc2InstanceDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The identifier of the subnet in which the instance was launched.
+     * The identifier of the subnet that the instance was launched in.
      * </p>
      * 
      * @param subnetId
-     *        The identifier of the subnet in which the instance was launched.
+     *        The identifier of the subnet that the instance was launched in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

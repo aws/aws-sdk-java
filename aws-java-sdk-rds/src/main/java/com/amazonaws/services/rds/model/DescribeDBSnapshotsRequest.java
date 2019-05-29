@@ -108,9 +108,8 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned.
      * Shared and public DB snapshots are not included in the returned results by default. You can include shared
-     * snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
-     * include public snapshots with these results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.
+     * snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public
+     * snapshots with these results by enabling the <code>IncludePublic</code> parameter.
      * </p>
      * <p>
      * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
@@ -150,8 +149,8 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
     private String marker;
     /**
      * <p>
-     * True to include shared manual DB snapshots from other AWS accounts that this AWS account has been given
-     * permission to copy or restore, and otherwise false. The default is <code>false</code>.
+     * A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that this
+     * AWS account has been given permission to copy or restore. By default, these snapshots are not included.
      * </p>
      * <p>
      * You can give an AWS account permission to restore a manual DB snapshot from another AWS account by using the
@@ -161,11 +160,11 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
     private Boolean includeShared;
     /**
      * <p>
-     * True to include manual DB snapshots that are public and can be copied or restored by any AWS account, and
-     * otherwise false. The default is false.
+     * A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or
+     * restored by any AWS account. By default, the public snapshots are not included.
      * </p>
      * <p>
-     * You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.
+     * You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.
      * </p>
      */
     private Boolean includePublic;
@@ -458,9 +457,8 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned.
      * Shared and public DB snapshots are not included in the returned results by default. You can include shared
-     * snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
-     * include public snapshots with these results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.
+     * snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public
+     * snapshots with these results by enabling the <code>IncludePublic</code> parameter.
      * </p>
      * <p>
      * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
@@ -510,9 +508,8 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are
      *        returned. Shared and public DB snapshots are not included in the returned results by default. You can
-     *        include shared snapshots with these results by setting the <code>IncludeShared</code> parameter to
-     *        <code>true</code>. You can include public snapshots with these results by setting the
-     *        <code>IncludePublic</code> parameter to <code>true</code>.
+     *        include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can
+     *        include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.
      *        </p>
      *        <p>
      *        The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
@@ -569,9 +566,8 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned.
      * Shared and public DB snapshots are not included in the returned results by default. You can include shared
-     * snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
-     * include public snapshots with these results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.
+     * snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public
+     * snapshots with these results by enabling the <code>IncludePublic</code> parameter.
      * </p>
      * <p>
      * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
@@ -620,9 +616,8 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      *         <p>
      *         If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are
      *         returned. Shared and public DB snapshots are not included in the returned results by default. You can
-     *         include shared snapshots with these results by setting the <code>IncludeShared</code> parameter to
-     *         <code>true</code>. You can include public snapshots with these results by setting the
-     *         <code>IncludePublic</code> parameter to <code>true</code>.
+     *         include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can
+     *         include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.
      *         </p>
      *         <p>
      *         The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
@@ -679,9 +674,8 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned.
      * Shared and public DB snapshots are not included in the returned results by default. You can include shared
-     * snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
-     * include public snapshots with these results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.
+     * snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can include public
+     * snapshots with these results by enabling the <code>IncludePublic</code> parameter.
      * </p>
      * <p>
      * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
@@ -731,9 +725,8 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are
      *        returned. Shared and public DB snapshots are not included in the returned results by default. You can
-     *        include shared snapshots with these results by setting the <code>IncludeShared</code> parameter to
-     *        <code>true</code>. You can include public snapshots with these results by setting the
-     *        <code>IncludePublic</code> parameter to <code>true</code>.
+     *        include shared snapshots with these results by enabling the <code>IncludeShared</code> parameter. You can
+     *        include public snapshots with these results by enabling the <code>IncludePublic</code> parameter.
      *        </p>
      *        <p>
      *        The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
@@ -961,8 +954,8 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * True to include shared manual DB snapshots from other AWS accounts that this AWS account has been given
-     * permission to copy or restore, and otherwise false. The default is <code>false</code>.
+     * A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that this
+     * AWS account has been given permission to copy or restore. By default, these snapshots are not included.
      * </p>
      * <p>
      * You can give an AWS account permission to restore a manual DB snapshot from another AWS account by using the
@@ -970,8 +963,9 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param includeShared
-     *        True to include shared manual DB snapshots from other AWS accounts that this AWS account has been given
-     *        permission to copy or restore, and otherwise false. The default is <code>false</code>.</p>
+     *        A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that
+     *        this AWS account has been given permission to copy or restore. By default, these snapshots are not
+     *        included.</p>
      *        <p>
      *        You can give an AWS account permission to restore a manual DB snapshot from another AWS account by using
      *        the <code>ModifyDBSnapshotAttribute</code> API action.
@@ -983,16 +977,17 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * True to include shared manual DB snapshots from other AWS accounts that this AWS account has been given
-     * permission to copy or restore, and otherwise false. The default is <code>false</code>.
+     * A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that this
+     * AWS account has been given permission to copy or restore. By default, these snapshots are not included.
      * </p>
      * <p>
      * You can give an AWS account permission to restore a manual DB snapshot from another AWS account by using the
      * <code>ModifyDBSnapshotAttribute</code> API action.
      * </p>
      * 
-     * @return True to include shared manual DB snapshots from other AWS accounts that this AWS account has been given
-     *         permission to copy or restore, and otherwise false. The default is <code>false</code>.</p>
+     * @return A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that
+     *         this AWS account has been given permission to copy or restore. By default, these snapshots are not
+     *         included.</p>
      *         <p>
      *         You can give an AWS account permission to restore a manual DB snapshot from another AWS account by using
      *         the <code>ModifyDBSnapshotAttribute</code> API action.
@@ -1004,8 +999,8 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * True to include shared manual DB snapshots from other AWS accounts that this AWS account has been given
-     * permission to copy or restore, and otherwise false. The default is <code>false</code>.
+     * A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that this
+     * AWS account has been given permission to copy or restore. By default, these snapshots are not included.
      * </p>
      * <p>
      * You can give an AWS account permission to restore a manual DB snapshot from another AWS account by using the
@@ -1013,8 +1008,9 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param includeShared
-     *        True to include shared manual DB snapshots from other AWS accounts that this AWS account has been given
-     *        permission to copy or restore, and otherwise false. The default is <code>false</code>.</p>
+     *        A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that
+     *        this AWS account has been given permission to copy or restore. By default, these snapshots are not
+     *        included.</p>
      *        <p>
      *        You can give an AWS account permission to restore a manual DB snapshot from another AWS account by using
      *        the <code>ModifyDBSnapshotAttribute</code> API action.
@@ -1028,16 +1024,17 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * True to include shared manual DB snapshots from other AWS accounts that this AWS account has been given
-     * permission to copy or restore, and otherwise false. The default is <code>false</code>.
+     * A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that this
+     * AWS account has been given permission to copy or restore. By default, these snapshots are not included.
      * </p>
      * <p>
      * You can give an AWS account permission to restore a manual DB snapshot from another AWS account by using the
      * <code>ModifyDBSnapshotAttribute</code> API action.
      * </p>
      * 
-     * @return True to include shared manual DB snapshots from other AWS accounts that this AWS account has been given
-     *         permission to copy or restore, and otherwise false. The default is <code>false</code>.</p>
+     * @return A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that
+     *         this AWS account has been given permission to copy or restore. By default, these snapshots are not
+     *         included.</p>
      *         <p>
      *         You can give an AWS account permission to restore a manual DB snapshot from another AWS account by using
      *         the <code>ModifyDBSnapshotAttribute</code> API action.
@@ -1049,18 +1046,18 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * True to include manual DB snapshots that are public and can be copied or restored by any AWS account, and
-     * otherwise false. The default is false.
+     * A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or
+     * restored by any AWS account. By default, the public snapshots are not included.
      * </p>
      * <p>
-     * You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.
+     * You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.
      * </p>
      * 
      * @param includePublic
-     *        True to include manual DB snapshots that are public and can be copied or restored by any AWS account, and
-     *        otherwise false. The default is false.</p>
+     *        A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or
+     *        restored by any AWS account. By default, the public snapshots are not included.</p>
      *        <p>
-     *        You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.
+     *        You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.
      */
 
     public void setIncludePublic(Boolean includePublic) {
@@ -1069,17 +1066,17 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * True to include manual DB snapshots that are public and can be copied or restored by any AWS account, and
-     * otherwise false. The default is false.
+     * A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or
+     * restored by any AWS account. By default, the public snapshots are not included.
      * </p>
      * <p>
-     * You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.
+     * You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.
      * </p>
      * 
-     * @return True to include manual DB snapshots that are public and can be copied or restored by any AWS account, and
-     *         otherwise false. The default is false.</p>
+     * @return A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
+     *         or restored by any AWS account. By default, the public snapshots are not included.</p>
      *         <p>
-     *         You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.
+     *         You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.
      */
 
     public Boolean getIncludePublic() {
@@ -1088,18 +1085,18 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * True to include manual DB snapshots that are public and can be copied or restored by any AWS account, and
-     * otherwise false. The default is false.
+     * A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or
+     * restored by any AWS account. By default, the public snapshots are not included.
      * </p>
      * <p>
-     * You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.
+     * You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.
      * </p>
      * 
      * @param includePublic
-     *        True to include manual DB snapshots that are public and can be copied or restored by any AWS account, and
-     *        otherwise false. The default is false.</p>
+     *        A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or
+     *        restored by any AWS account. By default, the public snapshots are not included.</p>
      *        <p>
-     *        You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.
+     *        You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1110,17 +1107,17 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * True to include manual DB snapshots that are public and can be copied or restored by any AWS account, and
-     * otherwise false. The default is false.
+     * A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or
+     * restored by any AWS account. By default, the public snapshots are not included.
      * </p>
      * <p>
-     * You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.
+     * You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.
      * </p>
      * 
-     * @return True to include manual DB snapshots that are public and can be copied or restored by any AWS account, and
-     *         otherwise false. The default is false.</p>
+     * @return A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
+     *         or restored by any AWS account. By default, the public snapshots are not included.</p>
      *         <p>
-     *         You can share a manual DB snapshot as public by using the <code>ModifyDBSnapshotAttribute</code> API.
+     *         You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.
      */
 
     public Boolean isIncludePublic() {

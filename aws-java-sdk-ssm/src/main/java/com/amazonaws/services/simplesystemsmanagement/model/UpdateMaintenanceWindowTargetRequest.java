@@ -27,7 +27,7 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Maintenance Window ID with which to modify the target.
+     * The maintenance window ID with which to modify the target.
      * </p>
      */
     private String windowId;
@@ -46,7 +46,7 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this Maintenance Window.
+     * in this maintenance window.
      * </p>
      */
     private String ownerInformation;
@@ -72,11 +72,11 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Maintenance Window ID with which to modify the target.
+     * The maintenance window ID with which to modify the target.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID with which to modify the target.
+     *        The maintenance window ID with which to modify the target.
      */
 
     public void setWindowId(String windowId) {
@@ -85,10 +85,10 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Maintenance Window ID with which to modify the target.
+     * The maintenance window ID with which to modify the target.
      * </p>
      * 
-     * @return The Maintenance Window ID with which to modify the target.
+     * @return The maintenance window ID with which to modify the target.
      */
 
     public String getWindowId() {
@@ -97,11 +97,11 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Maintenance Window ID with which to modify the target.
+     * The maintenance window ID with which to modify the target.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID with which to modify the target.
+     *        The maintenance window ID with which to modify the target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,12 +226,12 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this Maintenance Window.
+     * in this maintenance window.
      * </p>
      * 
      * @param ownerInformation
      *        User-provided value that will be included in any CloudWatch events raised while running tasks for these
-     *        targets in this Maintenance Window.
+     *        targets in this maintenance window.
      */
 
     public void setOwnerInformation(String ownerInformation) {
@@ -241,11 +241,11 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this Maintenance Window.
+     * in this maintenance window.
      * </p>
      * 
      * @return User-provided value that will be included in any CloudWatch events raised while running tasks for these
-     *         targets in this Maintenance Window.
+     *         targets in this maintenance window.
      */
 
     public String getOwnerInformation() {
@@ -255,12 +255,12 @@ public class UpdateMaintenanceWindowTargetRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this Maintenance Window.
+     * in this maintenance window.
      * </p>
      * 
      * @param ownerInformation
      *        User-provided value that will be included in any CloudWatch events raised while running tasks for these
-     *        targets in this Maintenance Window.
+     *        targets in this maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

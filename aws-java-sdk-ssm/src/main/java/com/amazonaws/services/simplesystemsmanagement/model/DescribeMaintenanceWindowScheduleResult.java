@@ -26,7 +26,7 @@ public class DescribeMaintenanceWindowScheduleResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Information about Maintenance Window executions scheduled for the specified time range.
+     * Information about maintenance window executions scheduled for the specified time range.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ScheduledWindowExecution> scheduledWindowExecutions;
@@ -39,10 +39,10 @@ public class DescribeMaintenanceWindowScheduleResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Information about Maintenance Window executions scheduled for the specified time range.
+     * Information about maintenance window executions scheduled for the specified time range.
      * </p>
      * 
-     * @return Information about Maintenance Window executions scheduled for the specified time range.
+     * @return Information about maintenance window executions scheduled for the specified time range.
      */
 
     public java.util.List<ScheduledWindowExecution> getScheduledWindowExecutions() {
@@ -54,11 +54,11 @@ public class DescribeMaintenanceWindowScheduleResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Information about Maintenance Window executions scheduled for the specified time range.
+     * Information about maintenance window executions scheduled for the specified time range.
      * </p>
      * 
      * @param scheduledWindowExecutions
-     *        Information about Maintenance Window executions scheduled for the specified time range.
+     *        Information about maintenance window executions scheduled for the specified time range.
      */
 
     public void setScheduledWindowExecutions(java.util.Collection<ScheduledWindowExecution> scheduledWindowExecutions) {
@@ -72,7 +72,7 @@ public class DescribeMaintenanceWindowScheduleResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Information about Maintenance Window executions scheduled for the specified time range.
+     * Information about maintenance window executions scheduled for the specified time range.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeMaintenanceWindowScheduleResult extends com.amazonaws.Amazo
      * </p>
      * 
      * @param scheduledWindowExecutions
-     *        Information about Maintenance Window executions scheduled for the specified time range.
+     *        Information about maintenance window executions scheduled for the specified time range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeMaintenanceWindowScheduleResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Information about Maintenance Window executions scheduled for the specified time range.
+     * Information about maintenance window executions scheduled for the specified time range.
      * </p>
      * 
      * @param scheduledWindowExecutions
-     *        Information about Maintenance Window executions scheduled for the specified time range.
+     *        Information about maintenance window executions scheduled for the specified time range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

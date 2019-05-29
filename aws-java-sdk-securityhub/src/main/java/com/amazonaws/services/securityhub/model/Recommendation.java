@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides a recommendation on how to remediate the issue identified within a finding.
+ * A recommendation on how to remediate the issue identified in a finding.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Recommendation" target="_top">AWS API

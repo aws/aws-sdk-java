@@ -31,7 +31,7 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private java.util.List<Member> members;
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that could not be processed.
+     * A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
      * </p>
      */
     private java.util.List<Result> unprocessedAccounts;
@@ -108,10 +108,10 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that could not be processed.
+     * A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
      * </p>
      * 
-     * @return A list of account ID and email address pairs of the AWS accounts that could not be processed.
+     * @return A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
      */
 
     public java.util.List<Result> getUnprocessedAccounts() {
@@ -120,11 +120,11 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that could not be processed.
+     * A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of account ID and email address pairs of the AWS accounts that could not be processed.
+     *        A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
      */
 
     public void setUnprocessedAccounts(java.util.Collection<Result> unprocessedAccounts) {
@@ -138,7 +138,7 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that could not be processed.
+     * A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -147,7 +147,7 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of account ID and email address pairs of the AWS accounts that could not be processed.
+     *        A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,11 +163,11 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that could not be processed.
+     * A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of account ID and email address pairs of the AWS accounts that could not be processed.
+     *        A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

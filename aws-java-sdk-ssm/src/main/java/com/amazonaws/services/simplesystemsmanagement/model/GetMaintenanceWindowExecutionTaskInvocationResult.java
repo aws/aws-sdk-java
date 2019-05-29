@@ -26,7 +26,7 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The Maintenance Window execution ID.
+     * The maintenance window execution ID.
      * </p>
      */
     private String windowExecutionId;
@@ -50,7 +50,7 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
     private String executionId;
     /**
      * <p>
-     * Retrieves the task type for a Maintenance Window. Task types include the following: LAMBDA, STEP_FUNCTION,
+     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
      * AUTOMATION, RUN_COMMAND.
      * </p>
      */
@@ -88,24 +88,24 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
     /**
      * <p>
      * User-provided value to be included in any CloudWatch events raised while running tasks for these targets in this
-     * Maintenance Window.
+     * maintenance window.
      * </p>
      */
     private String ownerInformation;
     /**
      * <p>
-     * The Maintenance Window target ID.
+     * The maintenance window target ID.
      * </p>
      */
     private String windowTargetId;
 
     /**
      * <p>
-     * The Maintenance Window execution ID.
+     * The maintenance window execution ID.
      * </p>
      * 
      * @param windowExecutionId
-     *        The Maintenance Window execution ID.
+     *        The maintenance window execution ID.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -114,10 +114,10 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The Maintenance Window execution ID.
+     * The maintenance window execution ID.
      * </p>
      * 
-     * @return The Maintenance Window execution ID.
+     * @return The maintenance window execution ID.
      */
 
     public String getWindowExecutionId() {
@@ -126,11 +126,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The Maintenance Window execution ID.
+     * The maintenance window execution ID.
      * </p>
      * 
      * @param windowExecutionId
-     *        The Maintenance Window execution ID.
+     *        The maintenance window execution ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,12 +261,12 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * Retrieves the task type for a Maintenance Window. Task types include the following: LAMBDA, STEP_FUNCTION,
+     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
      * AUTOMATION, RUN_COMMAND.
      * </p>
      * 
      * @param taskType
-     *        Retrieves the task type for a Maintenance Window. Task types include the following: LAMBDA, STEP_FUNCTION,
+     *        Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
      *        AUTOMATION, RUN_COMMAND.
      * @see MaintenanceWindowTaskType
      */
@@ -277,11 +277,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * Retrieves the task type for a Maintenance Window. Task types include the following: LAMBDA, STEP_FUNCTION,
+     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
      * AUTOMATION, RUN_COMMAND.
      * </p>
      * 
-     * @return Retrieves the task type for a Maintenance Window. Task types include the following: LAMBDA,
+     * @return Retrieves the task type for a maintenance window. Task types include the following: LAMBDA,
      *         STEP_FUNCTION, AUTOMATION, RUN_COMMAND.
      * @see MaintenanceWindowTaskType
      */
@@ -292,12 +292,12 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * Retrieves the task type for a Maintenance Window. Task types include the following: LAMBDA, STEP_FUNCTION,
+     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
      * AUTOMATION, RUN_COMMAND.
      * </p>
      * 
      * @param taskType
-     *        Retrieves the task type for a Maintenance Window. Task types include the following: LAMBDA, STEP_FUNCTION,
+     *        Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
      *        AUTOMATION, RUN_COMMAND.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
@@ -310,12 +310,12 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * Retrieves the task type for a Maintenance Window. Task types include the following: LAMBDA, STEP_FUNCTION,
+     * Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
      * AUTOMATION, RUN_COMMAND.
      * </p>
      * 
      * @param taskType
-     *        Retrieves the task type for a Maintenance Window. Task types include the following: LAMBDA, STEP_FUNCTION,
+     *        Retrieves the task type for a maintenance window. Task types include the following: LAMBDA, STEP_FUNCTION,
      *        AUTOMATION, RUN_COMMAND.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
@@ -548,12 +548,12 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
     /**
      * <p>
      * User-provided value to be included in any CloudWatch events raised while running tasks for these targets in this
-     * Maintenance Window.
+     * maintenance window.
      * </p>
      * 
      * @param ownerInformation
      *        User-provided value to be included in any CloudWatch events raised while running tasks for these targets
-     *        in this Maintenance Window.
+     *        in this maintenance window.
      */
 
     public void setOwnerInformation(String ownerInformation) {
@@ -563,11 +563,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
     /**
      * <p>
      * User-provided value to be included in any CloudWatch events raised while running tasks for these targets in this
-     * Maintenance Window.
+     * maintenance window.
      * </p>
      * 
      * @return User-provided value to be included in any CloudWatch events raised while running tasks for these targets
-     *         in this Maintenance Window.
+     *         in this maintenance window.
      */
 
     public String getOwnerInformation() {
@@ -577,12 +577,12 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
     /**
      * <p>
      * User-provided value to be included in any CloudWatch events raised while running tasks for these targets in this
-     * Maintenance Window.
+     * maintenance window.
      * </p>
      * 
      * @param ownerInformation
      *        User-provided value to be included in any CloudWatch events raised while running tasks for these targets
-     *        in this Maintenance Window.
+     *        in this maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -593,11 +593,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The Maintenance Window target ID.
+     * The maintenance window target ID.
      * </p>
      * 
      * @param windowTargetId
-     *        The Maintenance Window target ID.
+     *        The maintenance window target ID.
      */
 
     public void setWindowTargetId(String windowTargetId) {
@@ -606,10 +606,10 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The Maintenance Window target ID.
+     * The maintenance window target ID.
      * </p>
      * 
-     * @return The Maintenance Window target ID.
+     * @return The maintenance window target ID.
      */
 
     public String getWindowTargetId() {
@@ -618,11 +618,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The Maintenance Window target ID.
+     * The maintenance window target ID.
      * </p>
      * 
      * @param windowTargetId
-     *        The Maintenance Window target ID.
+     *        The maintenance window target ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -149,7 +149,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String maxErrors;
     /**
      * <p>
-     * The IAM role that Systems Manager uses to send notifications.
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for Run Command commands.
      * </p>
      */
     private String serviceRoleArn;
@@ -1099,11 +1100,13 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IAM role that Systems Manager uses to send notifications.
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for Run Command commands.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The IAM role that Systems Manager uses to send notifications.
+     *        The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     *        notifications for Run Command commands.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -1112,10 +1115,12 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IAM role that Systems Manager uses to send notifications.
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for Run Command commands.
      * </p>
      * 
-     * @return The IAM role that Systems Manager uses to send notifications.
+     * @return The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     *         notifications for Run Command commands.
      */
 
     public String getServiceRoleArn() {
@@ -1124,11 +1129,13 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IAM role that Systems Manager uses to send notifications.
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for Run Command commands.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The IAM role that Systems Manager uses to send notifications.
+     *        The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     *        notifications for Run Command commands.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

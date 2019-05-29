@@ -27,18 +27,18 @@ public class DeleteInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the insight that you want to delete.
+     * The ARN of the insight to delete.
      * </p>
      */
     private String insightArn;
 
     /**
      * <p>
-     * The ARN of the insight that you want to delete.
+     * The ARN of the insight to delete.
      * </p>
      * 
      * @param insightArn
-     *        The ARN of the insight that you want to delete.
+     *        The ARN of the insight to delete.
      */
 
     public void setInsightArn(String insightArn) {
@@ -47,10 +47,10 @@ public class DeleteInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the insight that you want to delete.
+     * The ARN of the insight to delete.
      * </p>
      * 
-     * @return The ARN of the insight that you want to delete.
+     * @return The ARN of the insight to delete.
      */
 
     public String getInsightArn() {
@@ -59,11 +59,11 @@ public class DeleteInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the insight that you want to delete.
+     * The ARN of the insight to delete.
      * </p>
      * 
      * @param insightArn
-     *        The ARN of the insight that you want to delete.
+     *        The ARN of the insight to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

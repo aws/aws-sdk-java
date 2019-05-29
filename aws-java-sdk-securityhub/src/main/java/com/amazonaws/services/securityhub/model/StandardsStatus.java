@@ -23,7 +23,8 @@ public enum StandardsStatus {
     PENDING("PENDING"),
     READY("READY"),
     FAILED("FAILED"),
-    DELETING("DELETING");
+    DELETING("DELETING"),
+    INCOMPLETE("INCOMPLETE");
 
     private String value;
 

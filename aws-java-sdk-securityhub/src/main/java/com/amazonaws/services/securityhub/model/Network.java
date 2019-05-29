@@ -30,7 +30,7 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the direction of network traffic associated with a finding.
+     * The direction of network traffic associated with a finding.
      * </p>
      */
     private String direction;
@@ -97,11 +97,11 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the direction of network traffic associated with a finding.
+     * The direction of network traffic associated with a finding.
      * </p>
      * 
      * @param direction
-     *        Indicates the direction of network traffic associated with a finding.
+     *        The direction of network traffic associated with a finding.
      * @see NetworkDirection
      */
 
@@ -111,10 +111,10 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the direction of network traffic associated with a finding.
+     * The direction of network traffic associated with a finding.
      * </p>
      * 
-     * @return Indicates the direction of network traffic associated with a finding.
+     * @return The direction of network traffic associated with a finding.
      * @see NetworkDirection
      */
 
@@ -124,11 +124,11 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the direction of network traffic associated with a finding.
+     * The direction of network traffic associated with a finding.
      * </p>
      * 
      * @param direction
-     *        Indicates the direction of network traffic associated with a finding.
+     *        The direction of network traffic associated with a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkDirection
      */
@@ -140,11 +140,11 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the direction of network traffic associated with a finding.
+     * The direction of network traffic associated with a finding.
      * </p>
      * 
      * @param direction
-     *        Indicates the direction of network traffic associated with a finding.
+     *        The direction of network traffic associated with a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkDirection
      */

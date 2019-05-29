@@ -288,7 +288,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * Specifies whether the DB cluster is encrypted.
+     * A value that indicates whether the DB cluster is encrypted.
      * </p>
      */
     private Boolean storageEncrypted;
@@ -313,7 +313,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not
+     * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> is not
      * specified, then Amazon RDS will use your default encryption key.
      * </p>
      * </li>
@@ -376,11 +376,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String preSignedUrl;
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts. By default, mapping is disabled.
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
@@ -427,8 +424,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private ScalingConfiguration scalingConfiguration;
     /**
      * <p>
-     * Indicates whether the DB cluster should have deletion protection enabled. The database can't be deleted when this
-     * value is set to true. The default is false.
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
      * </p>
      */
     private Boolean deletionProtection;
@@ -440,8 +437,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String globalClusterIdentifier;
     /**
      * <p>
-     * True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The default is
-     * false.
+     * A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default
+     * is not to copy them.
      * </p>
      */
     private Boolean copyTagsToSnapshot;
@@ -2151,11 +2148,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies whether the DB cluster is encrypted.
+     * A value that indicates whether the DB cluster is encrypted.
      * </p>
      * 
      * @param storageEncrypted
-     *        Specifies whether the DB cluster is encrypted.
+     *        A value that indicates whether the DB cluster is encrypted.
      */
 
     public void setStorageEncrypted(Boolean storageEncrypted) {
@@ -2164,10 +2161,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies whether the DB cluster is encrypted.
+     * A value that indicates whether the DB cluster is encrypted.
      * </p>
      * 
-     * @return Specifies whether the DB cluster is encrypted.
+     * @return A value that indicates whether the DB cluster is encrypted.
      */
 
     public Boolean getStorageEncrypted() {
@@ -2176,11 +2173,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies whether the DB cluster is encrypted.
+     * A value that indicates whether the DB cluster is encrypted.
      * </p>
      * 
      * @param storageEncrypted
-     *        Specifies whether the DB cluster is encrypted.
+     *        A value that indicates whether the DB cluster is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2191,10 +2188,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies whether the DB cluster is encrypted.
+     * A value that indicates whether the DB cluster is encrypted.
      * </p>
      * 
-     * @return Specifies whether the DB cluster is encrypted.
+     * @return A value that indicates whether the DB cluster is encrypted.
      */
 
     public Boolean isStorageEncrypted() {
@@ -2222,7 +2219,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not
+     * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> is not
      * specified, then Amazon RDS will use your default encryption key.
      * </p>
      * </li>
@@ -2256,8 +2253,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not
-     *        specified, then Amazon RDS will use your default encryption key.
+     *        If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> is
+     *        not specified, then Amazon RDS will use your default encryption key.
      *        </p>
      *        </li>
      *        </ul>
@@ -2296,7 +2293,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not
+     * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> is not
      * specified, then Amazon RDS will use your default encryption key.
      * </p>
      * </li>
@@ -2329,7 +2326,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is
+     *         If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> is
      *         not specified, then Amazon RDS will use your default encryption key.
      *         </p>
      *         </li>
@@ -2369,7 +2366,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not
+     * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> is not
      * specified, then Amazon RDS will use your default encryption key.
      * </p>
      * </li>
@@ -2403,8 +2400,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not
-     *        specified, then Amazon RDS will use your default encryption key.
+     *        If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> is
+     *        not specified, then Amazon RDS will use your default encryption key.
      *        </p>
      *        </li>
      *        </ul>
@@ -2703,18 +2700,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts. By default, mapping is disabled.
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *        otherwise false.</p>
-     *        <p>
-     *        Default: <code>false</code>
+     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *        database accounts. By default, mapping is disabled.
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -2723,17 +2715,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts. By default, mapping is disabled.
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *         otherwise false.</p>
-     *         <p>
-     *         Default: <code>false</code>
+     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *         database accounts. By default, mapping is disabled.
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -2742,18 +2729,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts. By default, mapping is disabled.
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *        otherwise false.</p>
-     *        <p>
-     *        Default: <code>false</code>
+     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *        database accounts. By default, mapping is disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2764,17 +2746,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts. By default, mapping is disabled.
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *         otherwise false.</p>
-     *         <p>
-     *         Default: <code>false</code>
+     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *         database accounts. By default, mapping is disabled.
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {
@@ -3081,13 +3058,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Indicates whether the DB cluster should have deletion protection enabled. The database can't be deleted when this
-     * value is set to true. The default is false.
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates whether the DB cluster should have deletion protection enabled. The database can't be deleted
-     *        when this value is set to true. The default is false.
+     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -3096,12 +3073,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Indicates whether the DB cluster should have deletion protection enabled. The database can't be deleted when this
-     * value is set to true. The default is false.
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
      * </p>
      * 
-     * @return Indicates whether the DB cluster should have deletion protection enabled. The database can't be deleted
-     *         when this value is set to true. The default is false.
+     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
      */
 
     public Boolean getDeletionProtection() {
@@ -3110,13 +3087,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Indicates whether the DB cluster should have deletion protection enabled. The database can't be deleted when this
-     * value is set to true. The default is false.
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates whether the DB cluster should have deletion protection enabled. The database can't be deleted
-     *        when this value is set to true. The default is false.
+     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3127,12 +3104,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Indicates whether the DB cluster should have deletion protection enabled. The database can't be deleted when this
-     * value is set to true. The default is false.
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
      * </p>
      * 
-     * @return Indicates whether the DB cluster should have deletion protection enabled. The database can't be deleted
-     *         when this value is set to true. The default is false.
+     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
      */
 
     public Boolean isDeletionProtection() {
@@ -3184,13 +3161,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The default is
-     * false.
+     * A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default
+     * is not to copy them.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The default
-     *        is false.
+     *        A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The
+     *        default is not to copy them.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -3199,12 +3176,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The default is
-     * false.
+     * A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default
+     * is not to copy them.
      * </p>
      * 
-     * @return True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The
-     *         default is false.
+     * @return A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The
+     *         default is not to copy them.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -3213,13 +3190,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The default is
-     * false.
+     * A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default
+     * is not to copy them.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The default
-     *        is false.
+     *        A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The
+     *        default is not to copy them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3230,12 +3207,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The default is
-     * false.
+     * A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default
+     * is not to copy them.
      * </p>
      * 
-     * @return True to copy all tags from the DB cluster to snapshots of the DB cluster, and otherwise false. The
-     *         default is false.
+     * @return A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The
+     *         default is not to copy them.
      */
 
     public Boolean isCopyTagsToSnapshot() {

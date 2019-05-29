@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a task execution performed as part of a Maintenance Window execution.
+ * Information about a task execution performed as part of a maintenance window execution.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowExecutionTaskIdentity"
@@ -30,13 +30,13 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      */
     private String windowExecutionId;
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      */
     private String taskExecutionId;
@@ -79,11 +79,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that ran the task.
+     *        The ID of the maintenance window execution that ran the task.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -92,10 +92,10 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      * 
-     * @return The ID of the Maintenance Window execution that ran the task.
+     * @return The ID of the maintenance window execution that ran the task.
      */
 
     public String getWindowExecutionId() {
@@ -104,11 +104,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that ran the task.
+     *        The ID of the maintenance window execution that ran the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,11 +119,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      * 
      * @param taskExecutionId
-     *        The ID of the specific task execution in the Maintenance Window execution.
+     *        The ID of the specific task execution in the maintenance window execution.
      */
 
     public void setTaskExecutionId(String taskExecutionId) {
@@ -132,10 +132,10 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      * 
-     * @return The ID of the specific task execution in the Maintenance Window execution.
+     * @return The ID of the specific task execution in the maintenance window execution.
      */
 
     public String getTaskExecutionId() {
@@ -144,11 +144,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      * 
      * @param taskExecutionId
-     *        The ID of the specific task execution in the Maintenance Window execution.
+     *        The ID of the specific task execution in the maintenance window execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The ID specified for the delete operation does not exist or is not valide. Verify the ID and try again.
+ * The ID specified for the delete operation does not exist or is not valid. Verify the ID and try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

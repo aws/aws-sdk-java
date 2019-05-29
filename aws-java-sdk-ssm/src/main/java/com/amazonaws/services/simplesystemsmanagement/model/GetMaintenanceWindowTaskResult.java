@@ -25,13 +25,13 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The retrieved Maintenance Window ID.
+     * The retrieved maintenance window ID.
      * </p>
      */
     private String windowId;
     /**
      * <p>
-     * The retrieved Maintenance Window task ID.
+     * The retrieved maintenance window task ID.
      * </p>
      */
     private String windowTaskId;
@@ -51,7 +51,8 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
     private String taskArn;
     /**
      * <p>
-     * The IAM service role to assume during task execution.
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for maintenance window Run Command tasks.
      * </p>
      */
     private String serviceRoleArn;
@@ -69,7 +70,7 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
@@ -109,7 +110,7 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      */
@@ -129,11 +130,11 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The retrieved Maintenance Window ID.
+     * The retrieved maintenance window ID.
      * </p>
      * 
      * @param windowId
-     *        The retrieved Maintenance Window ID.
+     *        The retrieved maintenance window ID.
      */
 
     public void setWindowId(String windowId) {
@@ -142,10 +143,10 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The retrieved Maintenance Window ID.
+     * The retrieved maintenance window ID.
      * </p>
      * 
-     * @return The retrieved Maintenance Window ID.
+     * @return The retrieved maintenance window ID.
      */
 
     public String getWindowId() {
@@ -154,11 +155,11 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The retrieved Maintenance Window ID.
+     * The retrieved maintenance window ID.
      * </p>
      * 
      * @param windowId
-     *        The retrieved Maintenance Window ID.
+     *        The retrieved maintenance window ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,11 +170,11 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The retrieved Maintenance Window task ID.
+     * The retrieved maintenance window task ID.
      * </p>
      * 
      * @param windowTaskId
-     *        The retrieved Maintenance Window task ID.
+     *        The retrieved maintenance window task ID.
      */
 
     public void setWindowTaskId(String windowTaskId) {
@@ -182,10 +183,10 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The retrieved Maintenance Window task ID.
+     * The retrieved maintenance window task ID.
      * </p>
      * 
-     * @return The retrieved Maintenance Window task ID.
+     * @return The retrieved maintenance window task ID.
      */
 
     public String getWindowTaskId() {
@@ -194,11 +195,11 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The retrieved Maintenance Window task ID.
+     * The retrieved maintenance window task ID.
      * </p>
      * 
      * @param windowTaskId
-     *        The retrieved Maintenance Window task ID.
+     *        The retrieved maintenance window task ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,11 +335,13 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The IAM service role to assume during task execution.
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for maintenance window Run Command tasks.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The IAM service role to assume during task execution.
+     *        The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     *        notifications for maintenance window Run Command tasks.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -347,10 +350,12 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The IAM service role to assume during task execution.
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for maintenance window Run Command tasks.
      * </p>
      * 
-     * @return The IAM service role to assume during task execution.
+     * @return The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     *         notifications for maintenance window Run Command tasks.
      */
 
     public String getServiceRoleArn() {
@@ -359,11 +364,13 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The IAM service role to assume during task execution.
+     * The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications
+     * for maintenance window Run Command tasks.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The IAM service role to assume during task execution.
+     *        The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     *        notifications for maintenance window Run Command tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -439,7 +446,7 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
@@ -448,7 +455,7 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      *         <p>
      *         <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *         instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure.
-     *         For information about how Systems Manager handles these options for the supported Maintenance Window task
+     *         For information about how Systems Manager handles these options for the supported maintenance window task
      *         types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *         </p>
      */
@@ -465,7 +472,7 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
@@ -475,7 +482,7 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
-     *        information about how Systems Manager handles these options for the supported Maintenance Window task
+     *        information about how Systems Manager handles these options for the supported maintenance window task
      *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      */
@@ -492,7 +499,7 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
      * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
      * <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
@@ -502,7 +509,7 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
-     *        information about how Systems Manager handles these options for the supported Maintenance Window task
+     *        information about how Systems Manager handles these options for the supported maintenance window task
      *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -709,7 +716,7 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
@@ -719,7 +726,7 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
      *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported Maintenance Window task types, see
+     *        options for the supported maintenance window task types, see
      *        <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      */
@@ -737,7 +744,7 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
@@ -746,7 +753,7 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      *         <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      *         <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
      *         <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *         options for the supported Maintenance Window task types, see
+     *         options for the supported maintenance window task types, see
      *         <a>MaintenanceWindowTaskInvocationParameters</a>.
      *         </p>
      */
@@ -764,7 +771,7 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
      * </p>
      * </note>
      * 
@@ -774,7 +781,7 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
      *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported Maintenance Window task types, see
+     *        options for the supported maintenance window task types, see
      *        <a>MaintenanceWindowTaskInvocationParameters</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

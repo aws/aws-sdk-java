@@ -33,7 +33,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String name;
-
+    /**
+     * <p>
+     * Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.
+     * </p>
+     */
     private Boolean copyTags;
     /**
      * <p>
@@ -42,6 +46,14 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Tag> tagsToAdd;
+    /**
+     * <p>
+     * A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any
+     * valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or
+     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.
+     * </p>
+     */
+    private java.util.List<Tag> variableTags;
     /**
      * <p>
      * The create rule.
@@ -96,7 +108,12 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.
+     * </p>
+     * 
      * @param copyTags
+     *        Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.
      */
 
     public void setCopyTags(Boolean copyTags) {
@@ -104,7 +121,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.
+     * </p>
+     * 
+     * @return Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.
      */
 
     public Boolean getCopyTags() {
@@ -112,7 +133,12 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.
+     * </p>
+     * 
      * @param copyTags
+     *        Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,7 +148,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.
+     * </p>
+     * 
+     * @return Copy all user-defined tags on a source volume to snapshots of the volume created by this policy.
      */
 
     public Boolean isCopyTags() {
@@ -204,6 +234,96 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     public Schedule withTagsToAdd(java.util.Collection<Tag> tagsToAdd) {
         setTagsToAdd(tagsToAdd);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any
+     * valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or
+     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.
+     * </p>
+     * 
+     * @return A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may
+     *         be any valid Amazon EC2 tag key. Values must be in one of the two following formats:
+     *         <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
+     *         Management – Instance policies.
+     */
+
+    public java.util.List<Tag> getVariableTags() {
+        return variableTags;
+    }
+
+    /**
+     * <p>
+     * A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any
+     * valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or
+     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.
+     * </p>
+     * 
+     * @param variableTags
+     *        A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may
+     *        be any valid Amazon EC2 tag key. Values must be in one of the two following formats:
+     *        <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
+     *        Management – Instance policies.
+     */
+
+    public void setVariableTags(java.util.Collection<Tag> variableTags) {
+        if (variableTags == null) {
+            this.variableTags = null;
+            return;
+        }
+
+        this.variableTags = new java.util.ArrayList<Tag>(variableTags);
+    }
+
+    /**
+     * <p>
+     * A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any
+     * valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or
+     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVariableTags(java.util.Collection)} or {@link #withVariableTags(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param variableTags
+     *        A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may
+     *        be any valid Amazon EC2 tag key. Values must be in one of the two following formats:
+     *        <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
+     *        Management – Instance policies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Schedule withVariableTags(Tag... variableTags) {
+        if (this.variableTags == null) {
+            setVariableTags(new java.util.ArrayList<Tag>(variableTags.length));
+        }
+        for (Tag ele : variableTags) {
+            this.variableTags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may be any
+     * valid Amazon EC2 tag key. Values must be in one of the two following formats: <code>$(instance-id)</code> or
+     * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot Management – Instance policies.
+     * </p>
+     * 
+     * @param variableTags
+     *        A collection of key/value pairs with values determined dynamically when the policy is executed. Keys may
+     *        be any valid Amazon EC2 tag key. Values must be in one of the two following formats:
+     *        <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
+     *        Management – Instance policies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Schedule withVariableTags(java.util.Collection<Tag> variableTags) {
+        setVariableTags(variableTags);
         return this;
     }
 
@@ -305,6 +425,8 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
             sb.append("CopyTags: ").append(getCopyTags()).append(",");
         if (getTagsToAdd() != null)
             sb.append("TagsToAdd: ").append(getTagsToAdd()).append(",");
+        if (getVariableTags() != null)
+            sb.append("VariableTags: ").append(getVariableTags()).append(",");
         if (getCreateRule() != null)
             sb.append("CreateRule: ").append(getCreateRule()).append(",");
         if (getRetainRule() != null)
@@ -335,6 +457,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTagsToAdd() != null && other.getTagsToAdd().equals(this.getTagsToAdd()) == false)
             return false;
+        if (other.getVariableTags() == null ^ this.getVariableTags() == null)
+            return false;
+        if (other.getVariableTags() != null && other.getVariableTags().equals(this.getVariableTags()) == false)
+            return false;
         if (other.getCreateRule() == null ^ this.getCreateRule() == null)
             return false;
         if (other.getCreateRule() != null && other.getCreateRule().equals(this.getCreateRule()) == false)
@@ -354,6 +480,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getCopyTags() == null) ? 0 : getCopyTags().hashCode());
         hashCode = prime * hashCode + ((getTagsToAdd() == null) ? 0 : getTagsToAdd().hashCode());
+        hashCode = prime * hashCode + ((getVariableTags() == null) ? 0 : getVariableTags().hashCode());
         hashCode = prime * hashCode + ((getCreateRule() == null) ? 0 : getCreateRule().hashCode());
         hashCode = prime * hashCode + ((getRetainRule() == null) ? 0 : getRetainRule().hashCode());
         return hashCode;

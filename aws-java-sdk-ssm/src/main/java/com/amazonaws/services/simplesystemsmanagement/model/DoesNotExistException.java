@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Error returned when the ID specified for a resource, such as a Maintenance Window or Patch baseline, doesn't exist.
+ * Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline, doesn't exist.
  * </p>
  * <p>
  * For information about resource limits in Systems Manager, see <a

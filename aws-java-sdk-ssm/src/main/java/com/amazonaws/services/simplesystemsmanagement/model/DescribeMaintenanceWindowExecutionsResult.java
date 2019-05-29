@@ -26,7 +26,7 @@ public class DescribeMaintenanceWindowExecutionsResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Information about the Maintenance Windows execution.
+     * Information about the maintenance window executions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MaintenanceWindowExecution> windowExecutions;
@@ -40,10 +40,10 @@ public class DescribeMaintenanceWindowExecutionsResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Information about the Maintenance Windows execution.
+     * Information about the maintenance window executions.
      * </p>
      * 
-     * @return Information about the Maintenance Windows execution.
+     * @return Information about the maintenance window executions.
      */
 
     public java.util.List<MaintenanceWindowExecution> getWindowExecutions() {
@@ -55,11 +55,11 @@ public class DescribeMaintenanceWindowExecutionsResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Information about the Maintenance Windows execution.
+     * Information about the maintenance window executions.
      * </p>
      * 
      * @param windowExecutions
-     *        Information about the Maintenance Windows execution.
+     *        Information about the maintenance window executions.
      */
 
     public void setWindowExecutions(java.util.Collection<MaintenanceWindowExecution> windowExecutions) {
@@ -73,7 +73,7 @@ public class DescribeMaintenanceWindowExecutionsResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Information about the Maintenance Windows execution.
+     * Information about the maintenance window executions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeMaintenanceWindowExecutionsResult extends com.amazonaws.Ama
      * </p>
      * 
      * @param windowExecutions
-     *        Information about the Maintenance Windows execution.
+     *        Information about the maintenance window executions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeMaintenanceWindowExecutionsResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Information about the Maintenance Windows execution.
+     * Information about the maintenance window executions.
      * </p>
      * 
      * @param windowExecutions
-     *        Information about the Maintenance Windows execution.
+     *        Information about the maintenance window executions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

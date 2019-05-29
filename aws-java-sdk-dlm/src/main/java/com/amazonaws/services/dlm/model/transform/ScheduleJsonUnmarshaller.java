@@ -60,6 +60,10 @@ public class ScheduleJsonUnmarshaller implements Unmarshaller<Schedule, JsonUnma
                     context.nextToken();
                     schedule.setTagsToAdd(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("VariableTags", targetDepth)) {
+                    context.nextToken();
+                    schedule.setVariableTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("CreateRule", targetDepth)) {
                     context.nextToken();
                     schedule.setCreateRule(CreateRuleJsonUnmarshaller.getInstance().unmarshall(context));

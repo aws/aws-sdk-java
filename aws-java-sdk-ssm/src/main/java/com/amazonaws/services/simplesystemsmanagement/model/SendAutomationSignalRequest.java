@@ -33,13 +33,33 @@ public class SendAutomationSignalRequest extends com.amazonaws.AmazonWebServiceR
     private String automationExecutionId;
     /**
      * <p>
-     * The type of signal. Valid signal types include the following: Approve and Reject
+     * The type of signal to send to an Automation execution.
      * </p>
      */
     private String signalType;
     /**
      * <p>
      * The data sent with the signal. The data schema depends on the type of signal used in the request.
+     * </p>
+     * <p>
+     * For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can
+     * send with the signal type. For example:
+     * </p>
+     * <p>
+     * <code>Comment="Looks good"</code>
+     * </p>
+     * <p>
+     * For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to
+     * start or resume as the payload. For example:
+     * </p>
+     * <p>
+     * <code>StepName="step1"</code>
+     * </p>
+     * <p>
+     * For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:
+     * </p>
+     * <p>
+     * <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code>
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> payload;
@@ -86,11 +106,11 @@ public class SendAutomationSignalRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of signal. Valid signal types include the following: Approve and Reject
+     * The type of signal to send to an Automation execution.
      * </p>
      * 
      * @param signalType
-     *        The type of signal. Valid signal types include the following: Approve and Reject
+     *        The type of signal to send to an Automation execution.
      * @see SignalType
      */
 
@@ -100,10 +120,10 @@ public class SendAutomationSignalRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of signal. Valid signal types include the following: Approve and Reject
+     * The type of signal to send to an Automation execution.
      * </p>
      * 
-     * @return The type of signal. Valid signal types include the following: Approve and Reject
+     * @return The type of signal to send to an Automation execution.
      * @see SignalType
      */
 
@@ -113,11 +133,11 @@ public class SendAutomationSignalRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of signal. Valid signal types include the following: Approve and Reject
+     * The type of signal to send to an Automation execution.
      * </p>
      * 
      * @param signalType
-     *        The type of signal. Valid signal types include the following: Approve and Reject
+     *        The type of signal to send to an Automation execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SignalType
      */
@@ -129,11 +149,11 @@ public class SendAutomationSignalRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of signal. Valid signal types include the following: Approve and Reject
+     * The type of signal to send to an Automation execution.
      * </p>
      * 
      * @param signalType
-     *        The type of signal. Valid signal types include the following: Approve and Reject
+     *        The type of signal to send to an Automation execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SignalType
      */
@@ -147,8 +167,48 @@ public class SendAutomationSignalRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The data sent with the signal. The data schema depends on the type of signal used in the request.
      * </p>
+     * <p>
+     * For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can
+     * send with the signal type. For example:
+     * </p>
+     * <p>
+     * <code>Comment="Looks good"</code>
+     * </p>
+     * <p>
+     * For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to
+     * start or resume as the payload. For example:
+     * </p>
+     * <p>
+     * <code>StepName="step1"</code>
+     * </p>
+     * <p>
+     * For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:
+     * </p>
+     * <p>
+     * <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code>
+     * </p>
      * 
-     * @return The data sent with the signal. The data schema depends on the type of signal used in the request.
+     * @return The data sent with the signal. The data schema depends on the type of signal used in the request.</p>
+     *         <p>
+     *         For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that
+     *         you can send with the signal type. For example:
+     *         </p>
+     *         <p>
+     *         <code>Comment="Looks good"</code>
+     *         </p>
+     *         <p>
+     *         For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation
+     *         step to start or resume as the payload. For example:
+     *         </p>
+     *         <p>
+     *         <code>StepName="step1"</code>
+     *         </p>
+     *         <p>
+     *         For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For
+     *         example:
+     *         </p>
+     *         <p>
+     *         <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code>
      */
 
     public java.util.Map<String, java.util.List<String>> getPayload() {
@@ -159,9 +219,49 @@ public class SendAutomationSignalRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The data sent with the signal. The data schema depends on the type of signal used in the request.
      * </p>
+     * <p>
+     * For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can
+     * send with the signal type. For example:
+     * </p>
+     * <p>
+     * <code>Comment="Looks good"</code>
+     * </p>
+     * <p>
+     * For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to
+     * start or resume as the payload. For example:
+     * </p>
+     * <p>
+     * <code>StepName="step1"</code>
+     * </p>
+     * <p>
+     * For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:
+     * </p>
+     * <p>
+     * <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code>
+     * </p>
      * 
      * @param payload
-     *        The data sent with the signal. The data schema depends on the type of signal used in the request.
+     *        The data sent with the signal. The data schema depends on the type of signal used in the request.</p>
+     *        <p>
+     *        For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you
+     *        can send with the signal type. For example:
+     *        </p>
+     *        <p>
+     *        <code>Comment="Looks good"</code>
+     *        </p>
+     *        <p>
+     *        For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation
+     *        step to start or resume as the payload. For example:
+     *        </p>
+     *        <p>
+     *        <code>StepName="step1"</code>
+     *        </p>
+     *        <p>
+     *        For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For
+     *        example:
+     *        </p>
+     *        <p>
+     *        <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code>
      */
 
     public void setPayload(java.util.Map<String, java.util.List<String>> payload) {
@@ -172,9 +272,49 @@ public class SendAutomationSignalRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The data sent with the signal. The data schema depends on the type of signal used in the request.
      * </p>
+     * <p>
+     * For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can
+     * send with the signal type. For example:
+     * </p>
+     * <p>
+     * <code>Comment="Looks good"</code>
+     * </p>
+     * <p>
+     * For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to
+     * start or resume as the payload. For example:
+     * </p>
+     * <p>
+     * <code>StepName="step1"</code>
+     * </p>
+     * <p>
+     * For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:
+     * </p>
+     * <p>
+     * <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code>
+     * </p>
      * 
      * @param payload
-     *        The data sent with the signal. The data schema depends on the type of signal used in the request.
+     *        The data sent with the signal. The data schema depends on the type of signal used in the request.</p>
+     *        <p>
+     *        For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you
+     *        can send with the signal type. For example:
+     *        </p>
+     *        <p>
+     *        <code>Comment="Looks good"</code>
+     *        </p>
+     *        <p>
+     *        For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation
+     *        step to start or resume as the payload. For example:
+     *        </p>
+     *        <p>
+     *        <code>StepName="step1"</code>
+     *        </p>
+     *        <p>
+     *        For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For
+     *        example:
+     *        </p>
+     *        <p>
+     *        <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The target registered with the Maintenance Window.
+ * The target registered with the maintenance window.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowTarget" target="_top">AWS API
@@ -30,7 +30,7 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the Maintenance Window to register the target with.
+     * The ID of the maintenance window to register the target with.
      * </p>
      */
     private String windowId;
@@ -42,7 +42,7 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
     private String windowTargetId;
     /**
      * <p>
-     * The type of target that is being registered with the Maintenance Window.
+     * The type of target that is being registered with the maintenance window.
      * </p>
      */
     private String resourceType;
@@ -67,13 +67,13 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
     /**
      * <p>
      * A user-provided value that will be included in any CloudWatch events that are raised while running tasks for
-     * these targets in this Maintenance Window.
+     * these targets in this maintenance window.
      * </p>
      */
     private String ownerInformation;
     /**
      * <p>
-     * The target name.
+     * The name for the maintenance window target.
      * </p>
      */
     private String name;
@@ -86,11 +86,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the Maintenance Window to register the target with.
+     * The ID of the maintenance window to register the target with.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window to register the target with.
+     *        The ID of the maintenance window to register the target with.
      */
 
     public void setWindowId(String windowId) {
@@ -99,10 +99,10 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the Maintenance Window to register the target with.
+     * The ID of the maintenance window to register the target with.
      * </p>
      * 
-     * @return The ID of the Maintenance Window to register the target with.
+     * @return The ID of the maintenance window to register the target with.
      */
 
     public String getWindowId() {
@@ -111,11 +111,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the Maintenance Window to register the target with.
+     * The ID of the maintenance window to register the target with.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window to register the target with.
+     *        The ID of the maintenance window to register the target with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,11 +166,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The type of target that is being registered with the Maintenance Window.
+     * The type of target that is being registered with the maintenance window.
      * </p>
      * 
      * @param resourceType
-     *        The type of target that is being registered with the Maintenance Window.
+     *        The type of target that is being registered with the maintenance window.
      * @see MaintenanceWindowResourceType
      */
 
@@ -180,10 +180,10 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The type of target that is being registered with the Maintenance Window.
+     * The type of target that is being registered with the maintenance window.
      * </p>
      * 
-     * @return The type of target that is being registered with the Maintenance Window.
+     * @return The type of target that is being registered with the maintenance window.
      * @see MaintenanceWindowResourceType
      */
 
@@ -193,11 +193,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The type of target that is being registered with the Maintenance Window.
+     * The type of target that is being registered with the maintenance window.
      * </p>
      * 
      * @param resourceType
-     *        The type of target that is being registered with the Maintenance Window.
+     *        The type of target that is being registered with the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowResourceType
      */
@@ -209,11 +209,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The type of target that is being registered with the Maintenance Window.
+     * The type of target that is being registered with the maintenance window.
      * </p>
      * 
      * @param resourceType
-     *        The type of target that is being registered with the Maintenance Window.
+     *        The type of target that is being registered with the maintenance window.
      * @see MaintenanceWindowResourceType
      */
 
@@ -223,11 +223,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The type of target that is being registered with the Maintenance Window.
+     * The type of target that is being registered with the maintenance window.
      * </p>
      * 
      * @param resourceType
-     *        The type of target that is being registered with the Maintenance Window.
+     *        The type of target that is being registered with the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowResourceType
      */
@@ -405,12 +405,12 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
     /**
      * <p>
      * A user-provided value that will be included in any CloudWatch events that are raised while running tasks for
-     * these targets in this Maintenance Window.
+     * these targets in this maintenance window.
      * </p>
      * 
      * @param ownerInformation
      *        A user-provided value that will be included in any CloudWatch events that are raised while running tasks
-     *        for these targets in this Maintenance Window.
+     *        for these targets in this maintenance window.
      */
 
     public void setOwnerInformation(String ownerInformation) {
@@ -420,11 +420,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
     /**
      * <p>
      * A user-provided value that will be included in any CloudWatch events that are raised while running tasks for
-     * these targets in this Maintenance Window.
+     * these targets in this maintenance window.
      * </p>
      * 
      * @return A user-provided value that will be included in any CloudWatch events that are raised while running tasks
-     *         for these targets in this Maintenance Window.
+     *         for these targets in this maintenance window.
      */
 
     public String getOwnerInformation() {
@@ -434,12 +434,12 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
     /**
      * <p>
      * A user-provided value that will be included in any CloudWatch events that are raised while running tasks for
-     * these targets in this Maintenance Window.
+     * these targets in this maintenance window.
      * </p>
      * 
      * @param ownerInformation
      *        A user-provided value that will be included in any CloudWatch events that are raised while running tasks
-     *        for these targets in this Maintenance Window.
+     *        for these targets in this maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,11 +450,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The target name.
+     * The name for the maintenance window target.
      * </p>
      * 
      * @param name
-     *        The target name.
+     *        The name for the maintenance window target.
      */
 
     public void setName(String name) {
@@ -463,10 +463,10 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The target name.
+     * The name for the maintenance window target.
      * </p>
      * 
-     * @return The target name.
+     * @return The name for the maintenance window target.
      */
 
     public String getName() {
@@ -475,11 +475,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The target name.
+     * The name for the maintenance window target.
      * </p>
      * 
      * @param name
-     *        The target name.
+     *        The name for the maintenance window target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A collection of attributes that is use for querying findings.
+     * A collection of attributes that is used for querying findings.
      * </p>
      */
     private AwsSecurityFindingFilters filters;
@@ -39,9 +39,9 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<SortCriterion> sortCriteria;
     /**
      * <p>
-     * Paginates results. Set the value of this parameter to NULL on your first call to the GetFindings operation. For
-     * subsequent calls to the operation, fill nextToken in the request with the value of nextToken from the previous
-     * response to continue listing data.
+     * Paginates results. On your first call to the <code>GetFindings</code> operation, set the value of this parameter
+     * to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request with the
+     * value of <code>nextToken</code> from the previous response to continue listing data.
      * </p>
      */
     private String nextToken;
@@ -54,11 +54,11 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A collection of attributes that is use for querying findings.
+     * A collection of attributes that is used for querying findings.
      * </p>
      * 
      * @param filters
-     *        A collection of attributes that is use for querying findings.
+     *        A collection of attributes that is used for querying findings.
      */
 
     public void setFilters(AwsSecurityFindingFilters filters) {
@@ -67,10 +67,10 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A collection of attributes that is use for querying findings.
+     * A collection of attributes that is used for querying findings.
      * </p>
      * 
-     * @return A collection of attributes that is use for querying findings.
+     * @return A collection of attributes that is used for querying findings.
      */
 
     public AwsSecurityFindingFilters getFilters() {
@@ -79,11 +79,11 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A collection of attributes that is use for querying findings.
+     * A collection of attributes that is used for querying findings.
      * </p>
      * 
      * @param filters
-     *        A collection of attributes that is use for querying findings.
+     *        A collection of attributes that is used for querying findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,15 +164,15 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Paginates results. Set the value of this parameter to NULL on your first call to the GetFindings operation. For
-     * subsequent calls to the operation, fill nextToken in the request with the value of nextToken from the previous
-     * response to continue listing data.
+     * Paginates results. On your first call to the <code>GetFindings</code> operation, set the value of this parameter
+     * to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request with the
+     * value of <code>nextToken</code> from the previous response to continue listing data.
      * </p>
      * 
      * @param nextToken
-     *        Paginates results. Set the value of this parameter to NULL on your first call to the GetFindings
-     *        operation. For subsequent calls to the operation, fill nextToken in the request with the value of
-     *        nextToken from the previous response to continue listing data.
+     *        Paginates results. On your first call to the <code>GetFindings</code> operation, set the value of this
+     *        parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the
+     *        request with the value of <code>nextToken</code> from the previous response to continue listing data.
      */
 
     public void setNextToken(String nextToken) {
@@ -181,14 +181,14 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Paginates results. Set the value of this parameter to NULL on your first call to the GetFindings operation. For
-     * subsequent calls to the operation, fill nextToken in the request with the value of nextToken from the previous
-     * response to continue listing data.
+     * Paginates results. On your first call to the <code>GetFindings</code> operation, set the value of this parameter
+     * to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request with the
+     * value of <code>nextToken</code> from the previous response to continue listing data.
      * </p>
      * 
-     * @return Paginates results. Set the value of this parameter to NULL on your first call to the GetFindings
-     *         operation. For subsequent calls to the operation, fill nextToken in the request with the value of
-     *         nextToken from the previous response to continue listing data.
+     * @return Paginates results. On your first call to the <code>GetFindings</code> operation, set the value of this
+     *         parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the
+     *         request with the value of <code>nextToken</code> from the previous response to continue listing data.
      */
 
     public String getNextToken() {
@@ -197,15 +197,15 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Paginates results. Set the value of this parameter to NULL on your first call to the GetFindings operation. For
-     * subsequent calls to the operation, fill nextToken in the request with the value of nextToken from the previous
-     * response to continue listing data.
+     * Paginates results. On your first call to the <code>GetFindings</code> operation, set the value of this parameter
+     * to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request with the
+     * value of <code>nextToken</code> from the previous response to continue listing data.
      * </p>
      * 
      * @param nextToken
-     *        Paginates results. Set the value of this parameter to NULL on your first call to the GetFindings
-     *        operation. For subsequent calls to the operation, fill nextToken in the request with the value of
-     *        nextToken from the previous response to continue listing data.
+     *        Paginates results. On your first call to the <code>GetFindings</code> operation, set the value of this
+     *        parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the
+     *        request with the value of <code>nextToken</code> from the previous response to continue listing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

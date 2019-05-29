@@ -68,6 +68,9 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * <p>
      * One or more flow log IDs.
      * </p>
+     * <p>
+     * Constraint: Maximum of 1000 flow log IDs.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> flowLogIds;
     /**
@@ -429,8 +432,13 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * <p>
      * One or more flow log IDs.
      * </p>
+     * <p>
+     * Constraint: Maximum of 1000 flow log IDs.
+     * </p>
      * 
-     * @return One or more flow log IDs.
+     * @return One or more flow log IDs.</p>
+     *         <p>
+     *         Constraint: Maximum of 1000 flow log IDs.
      */
 
     public java.util.List<String> getFlowLogIds() {
@@ -444,9 +452,14 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * <p>
      * One or more flow log IDs.
      * </p>
+     * <p>
+     * Constraint: Maximum of 1000 flow log IDs.
+     * </p>
      * 
      * @param flowLogIds
-     *        One or more flow log IDs.
+     *        One or more flow log IDs.</p>
+     *        <p>
+     *        Constraint: Maximum of 1000 flow log IDs.
      */
 
     public void setFlowLogIds(java.util.Collection<String> flowLogIds) {
@@ -463,13 +476,18 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * One or more flow log IDs.
      * </p>
      * <p>
+     * Constraint: Maximum of 1000 flow log IDs.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFlowLogIds(java.util.Collection)} or {@link #withFlowLogIds(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param flowLogIds
-     *        One or more flow log IDs.
+     *        One or more flow log IDs.</p>
+     *        <p>
+     *        Constraint: Maximum of 1000 flow log IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -487,9 +505,14 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * <p>
      * One or more flow log IDs.
      * </p>
+     * <p>
+     * Constraint: Maximum of 1000 flow log IDs.
+     * </p>
      * 
      * @param flowLogIds
-     *        One or more flow log IDs.
+     *        One or more flow log IDs.</p>
+     *        <p>
+     *        Constraint: Maximum of 1000 flow log IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

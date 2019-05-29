@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The command ID and instance ID you specified did not match any invocations. Verify the command ID adn the instance ID
+ * The command ID and instance ID you specified did not match any invocations. Verify the command ID and the instance ID
  * and try again.
  * </p>
  */

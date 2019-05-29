@@ -1279,8 +1279,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * [VPC only] Adds the specified egress rules to a security group for use with a VPC.
      * </p>
      * <p>
-     * An outbound rule permits instances to send traffic to the specified destination IPv4 or IPv6 CIDR address ranges,
-     * or to the specified destination security groups for the same VPC.
+     * An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR address ranges, or to the
+     * instances associated with the specified destination security groups.
      * </p>
      * <p>
      * You specify a protocol for each rule (for example, TCP). For the TCP and UDP protocols, you must also specify the
@@ -1310,8 +1310,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * [VPC only] Adds the specified egress rules to a security group for use with a VPC.
      * </p>
      * <p>
-     * An outbound rule permits instances to send traffic to the specified destination IPv4 or IPv6 CIDR address ranges,
-     * or to the specified destination security groups for the same VPC.
+     * An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR address ranges, or to the
+     * instances associated with the specified destination security groups.
      * </p>
      * <p>
      * You specify a protocol for each rule (for example, TCP). For the TCP and UDP protocols, you must also specify the
@@ -1346,8 +1346,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Adds the specified ingress rules to a security group.
      * </p>
      * <p>
-     * An inbound rule permits instances to receive traffic from the specified destination IPv4 or IPv6 CIDR address
-     * ranges, or from the specified destination security groups.
+     * An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 CIDR address ranges, or from
+     * the instances associated with the specified destination security groups.
      * </p>
      * <p>
      * You specify a protocol for each rule (for example, TCP). For TCP and UDP, you must also specify the destination
@@ -1378,8 +1378,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Adds the specified ingress rules to a security group.
      * </p>
      * <p>
-     * An inbound rule permits instances to receive traffic from the specified destination IPv4 or IPv6 CIDR address
-     * ranges, or from the specified destination security groups.
+     * An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 CIDR address ranges, or from
+     * the instances associated with the specified destination security groups.
      * </p>
      * <p>
      * You specify a protocol for each rule (for example, TCP). For TCP and UDP, you must also specify the destination
@@ -3642,6 +3642,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<CreateSnapshotResult> createSnapshotAsync(CreateSnapshotRequest createSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<CreateSnapshotRequest, CreateSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates crash-consistent snapshots of multiple EBS volumes and stores the data in S3. Volumes are chosen by
+     * specifying an instance. Any attached volumes will produce one snapshot each that is crash-consistent across the
+     * instance. Boot volumes can be excluded by changing the paramaters.
+     * </p>
+     * 
+     * @param createSnapshotsRequest
+     * @return A Java Future containing the result of the CreateSnapshots operation returned by the service.
+     * @sample AmazonEC2Async.CreateSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSnapshotsResult> createSnapshotsAsync(CreateSnapshotsRequest createSnapshotsRequest);
+
+    /**
+     * <p>
+     * Creates crash-consistent snapshots of multiple EBS volumes and stores the data in S3. Volumes are chosen by
+     * specifying an instance. Any attached volumes will produce one snapshot each that is crash-consistent across the
+     * instance. Boot volumes can be excluded by changing the paramaters.
+     * </p>
+     * 
+     * @param createSnapshotsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSnapshots operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSnapshotsResult> createSnapshotsAsync(CreateSnapshotsRequest createSnapshotsRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSnapshotsRequest, CreateSnapshotsResult> asyncHandler);
 
     /**
      * <p>
@@ -11769,7 +11804,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS Snapshots</a>.
      * </p>
      * <p>
-     * Once EBS encryption by default is enabled, you can no longer launch older-generation instance types that do not
+     * After EBS encryption by default is enabled, you can no longer launch older-generation instance types that do not
      * support encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
      * >Supported Instance Types</a>.
@@ -11810,7 +11845,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS Snapshots</a>.
      * </p>
      * <p>
-     * Once EBS encryption by default is enabled, you can no longer launch older-generation instance types that do not
+     * After EBS encryption by default is enabled, you can no longer launch older-generation instance types that do not
      * support encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
      * >Supported Instance Types</a>.
@@ -12957,7 +12992,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Changes the default customer master key (CMK) that your account uses to encrypt EBS volumes if you don’t specify
+     * Changes the default customer master key (CMK) that your account uses to encrypt EBS volumes if you don't specify
      * a CMK in the API call.
      * </p>
      * <p>
@@ -12980,7 +13015,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Changes the default customer master key (CMK) that your account uses to encrypt EBS volumes if you don’t specify
+     * Changes the default customer master key (CMK) that your account uses to encrypt EBS volumes if you don't specify
      * a CMK in the API call.
      * </p>
      * <p>

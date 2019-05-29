@@ -27,24 +27,24 @@ public class GetMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Maintenance Window ID that includes the task to retrieve.
+     * The maintenance window ID that includes the task to retrieve.
      * </p>
      */
     private String windowId;
     /**
      * <p>
-     * The Maintenance Window task ID to retrieve.
+     * The maintenance window task ID to retrieve.
      * </p>
      */
     private String windowTaskId;
 
     /**
      * <p>
-     * The Maintenance Window ID that includes the task to retrieve.
+     * The maintenance window ID that includes the task to retrieve.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID that includes the task to retrieve.
+     *        The maintenance window ID that includes the task to retrieve.
      */
 
     public void setWindowId(String windowId) {
@@ -53,10 +53,10 @@ public class GetMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Maintenance Window ID that includes the task to retrieve.
+     * The maintenance window ID that includes the task to retrieve.
      * </p>
      * 
-     * @return The Maintenance Window ID that includes the task to retrieve.
+     * @return The maintenance window ID that includes the task to retrieve.
      */
 
     public String getWindowId() {
@@ -65,11 +65,11 @@ public class GetMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Maintenance Window ID that includes the task to retrieve.
+     * The maintenance window ID that includes the task to retrieve.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID that includes the task to retrieve.
+     *        The maintenance window ID that includes the task to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class GetMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Maintenance Window task ID to retrieve.
+     * The maintenance window task ID to retrieve.
      * </p>
      * 
      * @param windowTaskId
-     *        The Maintenance Window task ID to retrieve.
+     *        The maintenance window task ID to retrieve.
      */
 
     public void setWindowTaskId(String windowTaskId) {
@@ -93,10 +93,10 @@ public class GetMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Maintenance Window task ID to retrieve.
+     * The maintenance window task ID to retrieve.
      * </p>
      * 
-     * @return The Maintenance Window task ID to retrieve.
+     * @return The maintenance window task ID to retrieve.
      */
 
     public String getWindowTaskId() {
@@ -105,11 +105,11 @@ public class GetMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Maintenance Window task ID to retrieve.
+     * The maintenance window task ID to retrieve.
      * </p>
      * 
      * @param windowTaskId
-     *        The Maintenance Window task ID to retrieve.
+     *        The maintenance window task ID to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,18 +30,18 @@ public class Remediation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides a recommendation on how to remediate the issue identified within a finding.
+     * A recommendation on how to remediate the issue identified within a finding.
      * </p>
      */
     private Recommendation recommendation;
 
     /**
      * <p>
-     * Provides a recommendation on how to remediate the issue identified within a finding.
+     * A recommendation on how to remediate the issue identified within a finding.
      * </p>
      * 
      * @param recommendation
-     *        Provides a recommendation on how to remediate the issue identified within a finding.
+     *        A recommendation on how to remediate the issue identified within a finding.
      */
 
     public void setRecommendation(Recommendation recommendation) {
@@ -50,10 +50,10 @@ public class Remediation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides a recommendation on how to remediate the issue identified within a finding.
+     * A recommendation on how to remediate the issue identified within a finding.
      * </p>
      * 
-     * @return Provides a recommendation on how to remediate the issue identified within a finding.
+     * @return A recommendation on how to remediate the issue identified within a finding.
      */
 
     public Recommendation getRecommendation() {
@@ -62,11 +62,11 @@ public class Remediation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides a recommendation on how to remediate the issue identified within a finding.
+     * A recommendation on how to remediate the issue identified within a finding.
      * </p>
      * 
      * @param recommendation
-     *        Provides a recommendation on how to remediate the issue identified within a finding.
+     *        A recommendation on how to remediate the issue identified within a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

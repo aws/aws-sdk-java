@@ -27,7 +27,7 @@ public class DescribeMaintenanceWindowExecutionsRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose executions should be retrieved.
+     * The ID of the maintenance window whose executions should be retrieved.
      * </p>
      */
     private String windowId;
@@ -63,11 +63,11 @@ public class DescribeMaintenanceWindowExecutionsRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose executions should be retrieved.
+     * The ID of the maintenance window whose executions should be retrieved.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window whose executions should be retrieved.
+     *        The ID of the maintenance window whose executions should be retrieved.
      */
 
     public void setWindowId(String windowId) {
@@ -76,10 +76,10 @@ public class DescribeMaintenanceWindowExecutionsRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose executions should be retrieved.
+     * The ID of the maintenance window whose executions should be retrieved.
      * </p>
      * 
-     * @return The ID of the Maintenance Window whose executions should be retrieved.
+     * @return The ID of the maintenance window whose executions should be retrieved.
      */
 
     public String getWindowId() {
@@ -88,11 +88,11 @@ public class DescribeMaintenanceWindowExecutionsRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose executions should be retrieved.
+     * The ID of the maintenance window whose executions should be retrieved.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window whose executions should be retrieved.
+     *        The ID of the maintenance window whose executions should be retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

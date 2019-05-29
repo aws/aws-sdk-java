@@ -1807,8 +1807,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * [VPC only] Adds the specified egress rules to a security group for use with a VPC.
      * </p>
      * <p>
-     * An outbound rule permits instances to send traffic to the specified destination IPv4 or IPv6 CIDR address ranges,
-     * or to the specified destination security groups for the same VPC.
+     * An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR address ranges, or to the
+     * instances associated with the specified destination security groups.
      * </p>
      * <p>
      * You specify a protocol for each rule (for example, TCP). For the TCP and UDP protocols, you must also specify the
@@ -1876,8 +1876,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Adds the specified ingress rules to a security group.
      * </p>
      * <p>
-     * An inbound rule permits instances to receive traffic from the specified destination IPv4 or IPv6 CIDR address
-     * ranges, or from the specified destination security groups.
+     * An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 CIDR address ranges, or from
+     * the instances associated with the specified destination security groups.
      * </p>
      * <p>
      * You specify a protocol for each rule (for example, TCP). For TCP and UDP, you must also specify the destination
@@ -4563,6 +4563,61 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateSnapshotResult> responseHandler = new StaxResponseHandler<CreateSnapshotResult>(
                     new CreateSnapshotResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates crash-consistent snapshots of multiple EBS volumes and stores the data in S3. Volumes are chosen by
+     * specifying an instance. Any attached volumes will produce one snapshot each that is crash-consistent across the
+     * instance. Boot volumes can be excluded by changing the paramaters.
+     * </p>
+     * 
+     * @param createSnapshotsRequest
+     * @return Result of the CreateSnapshots operation returned by the service.
+     * @sample AmazonEC2.CreateSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateSnapshotsResult createSnapshots(CreateSnapshotsRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSnapshots(request);
+    }
+
+    @SdkInternalApi
+    final CreateSnapshotsResult executeCreateSnapshots(CreateSnapshotsRequest createSnapshotsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSnapshotsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSnapshotsRequest> request = null;
+        Response<CreateSnapshotsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSnapshotsRequestMarshaller().marshall(super.beforeMarshalling(createSnapshotsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSnapshots");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateSnapshotsResult> responseHandler = new StaxResponseHandler<CreateSnapshotsResult>(
+                    new CreateSnapshotsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14742,7 +14797,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS Snapshots</a>.
      * </p>
      * <p>
-     * Once EBS encryption by default is enabled, you can no longer launch older-generation instance types that do not
+     * After EBS encryption by default is enabled, you can no longer launch older-generation instance types that do not
      * support encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
      * >Supported Instance Types</a>.
@@ -16359,7 +16414,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Changes the default customer master key (CMK) that your account uses to encrypt EBS volumes if you don’t specify
+     * Changes the default customer master key (CMK) that your account uses to encrypt EBS volumes if you don't specify
      * a CMK in the API call.
      * </p>
      * <p>

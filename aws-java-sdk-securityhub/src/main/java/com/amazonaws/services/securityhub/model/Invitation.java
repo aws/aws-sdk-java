@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The details of an invitation sent to an AWS account by the Security Hub master account.
+ * The details of an invitation that the Security Hub master account sent to an AWS account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Invitation" target="_top">AWS API
@@ -30,13 +30,13 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account ID of the master Security Hub account who sent the invitation.
+     * The account ID of the Security Hub master account that sent the invitation.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The ID of the invitation sent by the master Security Hub account.
+     * The ID of the invitation that the Security Hub master account sent.
      * </p>
      */
     private String invitationId;
@@ -55,11 +55,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account ID of the master Security Hub account who sent the invitation.
+     * The account ID of the Security Hub master account that sent the invitation.
      * </p>
      * 
      * @param accountId
-     *        The account ID of the master Security Hub account who sent the invitation.
+     *        The account ID of the Security Hub master account that sent the invitation.
      */
 
     public void setAccountId(String accountId) {
@@ -68,10 +68,10 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account ID of the master Security Hub account who sent the invitation.
+     * The account ID of the Security Hub master account that sent the invitation.
      * </p>
      * 
-     * @return The account ID of the master Security Hub account who sent the invitation.
+     * @return The account ID of the Security Hub master account that sent the invitation.
      */
 
     public String getAccountId() {
@@ -80,11 +80,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account ID of the master Security Hub account who sent the invitation.
+     * The account ID of the Security Hub master account that sent the invitation.
      * </p>
      * 
      * @param accountId
-     *        The account ID of the master Security Hub account who sent the invitation.
+     *        The account ID of the Security Hub master account that sent the invitation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the invitation sent by the master Security Hub account.
+     * The ID of the invitation that the Security Hub master account sent.
      * </p>
      * 
      * @param invitationId
-     *        The ID of the invitation sent by the master Security Hub account.
+     *        The ID of the invitation that the Security Hub master account sent.
      */
 
     public void setInvitationId(String invitationId) {
@@ -108,10 +108,10 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the invitation sent by the master Security Hub account.
+     * The ID of the invitation that the Security Hub master account sent.
      * </p>
      * 
-     * @return The ID of the invitation sent by the master Security Hub account.
+     * @return The ID of the invitation that the Security Hub master account sent.
      */
 
     public String getInvitationId() {
@@ -120,11 +120,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the invitation sent by the master Security Hub account.
+     * The ID of the invitation that the Security Hub master account sent.
      * </p>
      * 
      * @param invitationId
-     *        The ID of the invitation sent by the master Security Hub account.
+     *        The ID of the invitation that the Security Hub master account sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

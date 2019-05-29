@@ -44,38 +44,33 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * A value that indicates whether a final DB snapshot is created before the DB instance is deleted. If
-     * <code>true</code> is specified, no DB snapshot is created. If <code>false</code> is specified, a DB snapshot is
-     * created before the DB instance is deleted.
+     * A value that indicates whether to skip the creation of a final DB snapshot before the DB instance is deleted. If
+     * skip is specified, no DB snapshot is created. If skip is not specified, a DB snapshot is created before the DB
+     * instance is deleted. By default, skip is not specified, and the DB snapshot is created.
      * </p>
      * <p>
-     * When a DB instance is in a failure state and has a status of <code>failed</code>,
-     * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when the
-     * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
+     * Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or
+     * 'incompatible-network', it can only be deleted when skip is specified.
      * </p>
      * <p>
-     * Specify <code>true</code> when deleting a Read Replica.
+     * Specify skip when deleting a Read Replica.
      * </p>
      * <note>
      * <p>
-     * The <code>FinalDBSnapshotIdentifier</code> parameter must be specified if <code>SkipFinalSnapshot</code> is
-     * <code>false</code>.
+     * The FinalDBSnapshotIdentifier parameter must be specified if skip is not specified.
      * </p>
      * </note>
-     * <p>
-     * Default: <code>false</code>
-     * </p>
      */
     private Boolean skipFinalSnapshot;
     /**
      * <p>
-     * The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when <code>SkipFinalSnapshot</code> is set
-     * to <code>false</code>.
+     * The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the
+     * <code>SkipFinalSnapshot</code> parameter is disabled.
      * </p>
      * <note>
      * <p>
-     * Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to <code>true</code>
-     * results in an error.
+     * Specifying this parameter and also specifying to skip final DB snapshot creation in SkipFinalShapshot results in
+     * an error.
      * </p>
      * </note>
      * <p>
@@ -108,7 +103,8 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This
-     * parameter isn't case-sensitive. This parameter defaults to <code>true</code>.
+     * parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is
+     * deleted.
      * </p>
      */
     private Boolean deleteAutomatedBackups;
@@ -239,48 +235,39 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether a final DB snapshot is created before the DB instance is deleted. If
-     * <code>true</code> is specified, no DB snapshot is created. If <code>false</code> is specified, a DB snapshot is
-     * created before the DB instance is deleted.
+     * A value that indicates whether to skip the creation of a final DB snapshot before the DB instance is deleted. If
+     * skip is specified, no DB snapshot is created. If skip is not specified, a DB snapshot is created before the DB
+     * instance is deleted. By default, skip is not specified, and the DB snapshot is created.
      * </p>
      * <p>
-     * When a DB instance is in a failure state and has a status of <code>failed</code>,
-     * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when the
-     * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
+     * Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or
+     * 'incompatible-network', it can only be deleted when skip is specified.
      * </p>
      * <p>
-     * Specify <code>true</code> when deleting a Read Replica.
+     * Specify skip when deleting a Read Replica.
      * </p>
      * <note>
      * <p>
-     * The <code>FinalDBSnapshotIdentifier</code> parameter must be specified if <code>SkipFinalSnapshot</code> is
-     * <code>false</code>.
+     * The FinalDBSnapshotIdentifier parameter must be specified if skip is not specified.
      * </p>
      * </note>
-     * <p>
-     * Default: <code>false</code>
-     * </p>
      * 
      * @param skipFinalSnapshot
-     *        A value that indicates whether a final DB snapshot is created before the DB instance is deleted. If
-     *        <code>true</code> is specified, no DB snapshot is created. If <code>false</code> is specified, a DB
-     *        snapshot is created before the DB instance is deleted. </p>
+     *        A value that indicates whether to skip the creation of a final DB snapshot before the DB instance is
+     *        deleted. If skip is specified, no DB snapshot is created. If skip is not specified, a DB snapshot is
+     *        created before the DB instance is deleted. By default, skip is not specified, and the DB snapshot is
+     *        created.</p>
      *        <p>
-     *        When a DB instance is in a failure state and has a status of <code>failed</code>,
-     *        <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when the
-     *        <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
+     *        Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore',
+     *        or 'incompatible-network', it can only be deleted when skip is specified.
      *        </p>
      *        <p>
-     *        Specify <code>true</code> when deleting a Read Replica.
+     *        Specify skip when deleting a Read Replica.
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>FinalDBSnapshotIdentifier</code> parameter must be specified if <code>SkipFinalSnapshot</code>
-     *        is <code>false</code>.
+     *        The FinalDBSnapshotIdentifier parameter must be specified if skip is not specified.
      *        </p>
-     *        </note>
-     *        <p>
-     *        Default: <code>false</code>
      */
 
     public void setSkipFinalSnapshot(Boolean skipFinalSnapshot) {
@@ -289,47 +276,38 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether a final DB snapshot is created before the DB instance is deleted. If
-     * <code>true</code> is specified, no DB snapshot is created. If <code>false</code> is specified, a DB snapshot is
-     * created before the DB instance is deleted.
+     * A value that indicates whether to skip the creation of a final DB snapshot before the DB instance is deleted. If
+     * skip is specified, no DB snapshot is created. If skip is not specified, a DB snapshot is created before the DB
+     * instance is deleted. By default, skip is not specified, and the DB snapshot is created.
      * </p>
      * <p>
-     * When a DB instance is in a failure state and has a status of <code>failed</code>,
-     * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when the
-     * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
+     * Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or
+     * 'incompatible-network', it can only be deleted when skip is specified.
      * </p>
      * <p>
-     * Specify <code>true</code> when deleting a Read Replica.
+     * Specify skip when deleting a Read Replica.
      * </p>
      * <note>
      * <p>
-     * The <code>FinalDBSnapshotIdentifier</code> parameter must be specified if <code>SkipFinalSnapshot</code> is
-     * <code>false</code>.
+     * The FinalDBSnapshotIdentifier parameter must be specified if skip is not specified.
      * </p>
      * </note>
-     * <p>
-     * Default: <code>false</code>
-     * </p>
      * 
-     * @return A value that indicates whether a final DB snapshot is created before the DB instance is deleted. If
-     *         <code>true</code> is specified, no DB snapshot is created. If <code>false</code> is specified, a DB
-     *         snapshot is created before the DB instance is deleted. </p>
+     * @return A value that indicates whether to skip the creation of a final DB snapshot before the DB instance is
+     *         deleted. If skip is specified, no DB snapshot is created. If skip is not specified, a DB snapshot is
+     *         created before the DB instance is deleted. By default, skip is not specified, and the DB snapshot is
+     *         created.</p>
      *         <p>
-     *         When a DB instance is in a failure state and has a status of <code>failed</code>,
-     *         <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when the
-     *         <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
+     *         Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore',
+     *         or 'incompatible-network', it can only be deleted when skip is specified.
      *         </p>
      *         <p>
-     *         Specify <code>true</code> when deleting a Read Replica.
+     *         Specify skip when deleting a Read Replica.
      *         </p>
      *         <note>
      *         <p>
-     *         The <code>FinalDBSnapshotIdentifier</code> parameter must be specified if <code>SkipFinalSnapshot</code>
-     *         is <code>false</code>.
+     *         The FinalDBSnapshotIdentifier parameter must be specified if skip is not specified.
      *         </p>
-     *         </note>
-     *         <p>
-     *         Default: <code>false</code>
      */
 
     public Boolean getSkipFinalSnapshot() {
@@ -338,48 +316,39 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether a final DB snapshot is created before the DB instance is deleted. If
-     * <code>true</code> is specified, no DB snapshot is created. If <code>false</code> is specified, a DB snapshot is
-     * created before the DB instance is deleted.
+     * A value that indicates whether to skip the creation of a final DB snapshot before the DB instance is deleted. If
+     * skip is specified, no DB snapshot is created. If skip is not specified, a DB snapshot is created before the DB
+     * instance is deleted. By default, skip is not specified, and the DB snapshot is created.
      * </p>
      * <p>
-     * When a DB instance is in a failure state and has a status of <code>failed</code>,
-     * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when the
-     * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
+     * Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or
+     * 'incompatible-network', it can only be deleted when skip is specified.
      * </p>
      * <p>
-     * Specify <code>true</code> when deleting a Read Replica.
+     * Specify skip when deleting a Read Replica.
      * </p>
      * <note>
      * <p>
-     * The <code>FinalDBSnapshotIdentifier</code> parameter must be specified if <code>SkipFinalSnapshot</code> is
-     * <code>false</code>.
+     * The FinalDBSnapshotIdentifier parameter must be specified if skip is not specified.
      * </p>
      * </note>
-     * <p>
-     * Default: <code>false</code>
-     * </p>
      * 
      * @param skipFinalSnapshot
-     *        A value that indicates whether a final DB snapshot is created before the DB instance is deleted. If
-     *        <code>true</code> is specified, no DB snapshot is created. If <code>false</code> is specified, a DB
-     *        snapshot is created before the DB instance is deleted. </p>
+     *        A value that indicates whether to skip the creation of a final DB snapshot before the DB instance is
+     *        deleted. If skip is specified, no DB snapshot is created. If skip is not specified, a DB snapshot is
+     *        created before the DB instance is deleted. By default, skip is not specified, and the DB snapshot is
+     *        created.</p>
      *        <p>
-     *        When a DB instance is in a failure state and has a status of <code>failed</code>,
-     *        <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when the
-     *        <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
+     *        Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore',
+     *        or 'incompatible-network', it can only be deleted when skip is specified.
      *        </p>
      *        <p>
-     *        Specify <code>true</code> when deleting a Read Replica.
+     *        Specify skip when deleting a Read Replica.
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>FinalDBSnapshotIdentifier</code> parameter must be specified if <code>SkipFinalSnapshot</code>
-     *        is <code>false</code>.
+     *        The FinalDBSnapshotIdentifier parameter must be specified if skip is not specified.
      *        </p>
-     *        </note>
-     *        <p>
-     *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -390,47 +359,38 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether a final DB snapshot is created before the DB instance is deleted. If
-     * <code>true</code> is specified, no DB snapshot is created. If <code>false</code> is specified, a DB snapshot is
-     * created before the DB instance is deleted.
+     * A value that indicates whether to skip the creation of a final DB snapshot before the DB instance is deleted. If
+     * skip is specified, no DB snapshot is created. If skip is not specified, a DB snapshot is created before the DB
+     * instance is deleted. By default, skip is not specified, and the DB snapshot is created.
      * </p>
      * <p>
-     * When a DB instance is in a failure state and has a status of <code>failed</code>,
-     * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when the
-     * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
+     * Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or
+     * 'incompatible-network', it can only be deleted when skip is specified.
      * </p>
      * <p>
-     * Specify <code>true</code> when deleting a Read Replica.
+     * Specify skip when deleting a Read Replica.
      * </p>
      * <note>
      * <p>
-     * The <code>FinalDBSnapshotIdentifier</code> parameter must be specified if <code>SkipFinalSnapshot</code> is
-     * <code>false</code>.
+     * The FinalDBSnapshotIdentifier parameter must be specified if skip is not specified.
      * </p>
      * </note>
-     * <p>
-     * Default: <code>false</code>
-     * </p>
      * 
-     * @return A value that indicates whether a final DB snapshot is created before the DB instance is deleted. If
-     *         <code>true</code> is specified, no DB snapshot is created. If <code>false</code> is specified, a DB
-     *         snapshot is created before the DB instance is deleted. </p>
+     * @return A value that indicates whether to skip the creation of a final DB snapshot before the DB instance is
+     *         deleted. If skip is specified, no DB snapshot is created. If skip is not specified, a DB snapshot is
+     *         created before the DB instance is deleted. By default, skip is not specified, and the DB snapshot is
+     *         created.</p>
      *         <p>
-     *         When a DB instance is in a failure state and has a status of <code>failed</code>,
-     *         <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when the
-     *         <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
+     *         Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore',
+     *         or 'incompatible-network', it can only be deleted when skip is specified.
      *         </p>
      *         <p>
-     *         Specify <code>true</code> when deleting a Read Replica.
+     *         Specify skip when deleting a Read Replica.
      *         </p>
      *         <note>
      *         <p>
-     *         The <code>FinalDBSnapshotIdentifier</code> parameter must be specified if <code>SkipFinalSnapshot</code>
-     *         is <code>false</code>.
+     *         The FinalDBSnapshotIdentifier parameter must be specified if skip is not specified.
      *         </p>
-     *         </note>
-     *         <p>
-     *         Default: <code>false</code>
      */
 
     public Boolean isSkipFinalSnapshot() {
@@ -439,13 +399,13 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when <code>SkipFinalSnapshot</code> is set
-     * to <code>false</code>.
+     * The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the
+     * <code>SkipFinalSnapshot</code> parameter is disabled.
      * </p>
      * <note>
      * <p>
-     * Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to <code>true</code>
-     * results in an error.
+     * Specifying this parameter and also specifying to skip final DB snapshot creation in SkipFinalShapshot results in
+     * an error.
      * </p>
      * </note>
      * <p>
@@ -475,11 +435,11 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param finalDBSnapshotIdentifier
-     *        The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when <code>SkipFinalSnapshot</code>
-     *        is set to <code>false</code>. </p> <note>
+     *        The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the
+     *        <code>SkipFinalSnapshot</code> parameter is disabled. </p> <note>
      *        <p>
-     *        Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to
-     *        <code>true</code> results in an error.
+     *        Specifying this parameter and also specifying to skip final DB snapshot creation in SkipFinalShapshot
+     *        results in an error.
      *        </p>
      *        </note>
      *        <p>
@@ -514,13 +474,13 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when <code>SkipFinalSnapshot</code> is set
-     * to <code>false</code>.
+     * The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the
+     * <code>SkipFinalSnapshot</code> parameter is disabled.
      * </p>
      * <note>
      * <p>
-     * Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to <code>true</code>
-     * results in an error.
+     * Specifying this parameter and also specifying to skip final DB snapshot creation in SkipFinalShapshot results in
+     * an error.
      * </p>
      * </note>
      * <p>
@@ -549,11 +509,11 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * 
-     * @return The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when <code>SkipFinalSnapshot</code>
-     *         is set to <code>false</code>. </p> <note>
+     * @return The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the
+     *         <code>SkipFinalSnapshot</code> parameter is disabled. </p> <note>
      *         <p>
-     *         Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to
-     *         <code>true</code> results in an error.
+     *         Specifying this parameter and also specifying to skip final DB snapshot creation in SkipFinalShapshot
+     *         results in an error.
      *         </p>
      *         </note>
      *         <p>
@@ -588,13 +548,13 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when <code>SkipFinalSnapshot</code> is set
-     * to <code>false</code>.
+     * The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the
+     * <code>SkipFinalSnapshot</code> parameter is disabled.
      * </p>
      * <note>
      * <p>
-     * Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to <code>true</code>
-     * results in an error.
+     * Specifying this parameter and also specifying to skip final DB snapshot creation in SkipFinalShapshot results in
+     * an error.
      * </p>
      * </note>
      * <p>
@@ -624,11 +584,11 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param finalDBSnapshotIdentifier
-     *        The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when <code>SkipFinalSnapshot</code>
-     *        is set to <code>false</code>. </p> <note>
+     *        The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the
+     *        <code>SkipFinalSnapshot</code> parameter is disabled. </p> <note>
      *        <p>
-     *        Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to
-     *        <code>true</code> results in an error.
+     *        Specifying this parameter and also specifying to skip final DB snapshot creation in SkipFinalShapshot
+     *        results in an error.
      *        </p>
      *        </note>
      *        <p>
@@ -666,12 +626,14 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This
-     * parameter isn't case-sensitive. This parameter defaults to <code>true</code>.
+     * parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is
+     * deleted.
      * </p>
      * 
      * @param deleteAutomatedBackups
      *        A value that indicates whether to remove automated backups immediately after the DB instance is deleted.
-     *        This parameter isn't case-sensitive. This parameter defaults to <code>true</code>.
+     *        This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB
+     *        instance is deleted.
      */
 
     public void setDeleteAutomatedBackups(Boolean deleteAutomatedBackups) {
@@ -681,11 +643,13 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This
-     * parameter isn't case-sensitive. This parameter defaults to <code>true</code>.
+     * parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is
+     * deleted.
      * </p>
      * 
      * @return A value that indicates whether to remove automated backups immediately after the DB instance is deleted.
-     *         This parameter isn't case-sensitive. This parameter defaults to <code>true</code>.
+     *         This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB
+     *         instance is deleted.
      */
 
     public Boolean getDeleteAutomatedBackups() {
@@ -695,12 +659,14 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This
-     * parameter isn't case-sensitive. This parameter defaults to <code>true</code>.
+     * parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is
+     * deleted.
      * </p>
      * 
      * @param deleteAutomatedBackups
      *        A value that indicates whether to remove automated backups immediately after the DB instance is deleted.
-     *        This parameter isn't case-sensitive. This parameter defaults to <code>true</code>.
+     *        This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB
+     *        instance is deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -712,11 +678,13 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This
-     * parameter isn't case-sensitive. This parameter defaults to <code>true</code>.
+     * parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is
+     * deleted.
      * </p>
      * 
      * @return A value that indicates whether to remove automated backups immediately after the DB instance is deleted.
-     *         This parameter isn't case-sensitive. This parameter defaults to <code>true</code>.
+     *         This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB
+     *         instance is deleted.
      */
 
     public Boolean isDeleteAutomatedBackups() {

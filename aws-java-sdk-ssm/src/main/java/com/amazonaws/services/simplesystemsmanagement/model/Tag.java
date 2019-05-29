@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Metadata that you assign to your AWS resources. Tags enable you to categorize your resources in different ways, for
  * example, by purpose, owner, or environment. In Systems Manager, you can apply tags to documents, managed instances,
- * Maintenance Windows, Parameter Store parameters, and patch baselines.
+ * maintenance windows, Parameter Store parameters, and patch baselines.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Tag" target="_top">AWS API Documentation</a>

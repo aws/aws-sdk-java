@@ -117,12 +117,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
+     * Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+     * Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>
      * </p>
      * </li>
      * </ul>
@@ -133,11 +133,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private java.util.Date restoreToTime;
     /**
      * <p>
-     * A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and
-     * <code>false</code> otherwise.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB
+     * cluster is not restored to the latest restorable backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
@@ -220,11 +217,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String kmsKeyId;
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts. By default, mapping is disabled.
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
@@ -290,15 +284,15 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String dBClusterParameterGroupName;
     /**
      * <p>
-     * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
-     * value is set to true. The default is false.
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
      * </p>
      */
     private Boolean deletionProtection;
     /**
      * <p>
-     * True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise false.
-     * The default is false.
+     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
+     * cluster. The default is not to copy them.
      * </p>
      */
     private Boolean copyTagsToSnapshot;
@@ -737,12 +731,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
+     * Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+     * Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>
      * </p>
      * </li>
      * </ul>
@@ -771,12 +765,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
+     *        Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+     *        Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -811,12 +805,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
+     * Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+     * Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>
      * </p>
      * </li>
      * </ul>
@@ -844,12 +838,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         </li>
      *         <li>
      *         <p>
-     *         Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
+     *         Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+     *         Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -884,12 +878,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
+     * Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+     * Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>
      * </p>
      * </li>
      * </ul>
@@ -918,12 +912,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
+     *        Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+     *        Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -939,22 +933,16 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and
-     * <code>false</code> otherwise.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB
+     * cluster is not restored to the latest restorable backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
      * @param useLatestRestorableTime
-     *        A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
-     *        and <code>false</code> otherwise. </p>
-     *        <p>
-     *        Default: <code>false</code>
-     *        </p>
+     *        A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default,
+     *        the DB cluster is not restored to the latest restorable backup time. </p>
      *        <p>
      *        Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      */
@@ -965,21 +953,15 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and
-     * <code>false</code> otherwise.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB
+     * cluster is not restored to the latest restorable backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
-     * @return A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
-     *         and <code>false</code> otherwise. </p>
-     *         <p>
-     *         Default: <code>false</code>
-     *         </p>
+     * @return A value that indicates whether to restore the DB cluster to the latest restorable backup time. By
+     *         default, the DB cluster is not restored to the latest restorable backup time. </p>
      *         <p>
      *         Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      */
@@ -990,22 +972,16 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and
-     * <code>false</code> otherwise.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB
+     * cluster is not restored to the latest restorable backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
      * @param useLatestRestorableTime
-     *        A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
-     *        and <code>false</code> otherwise. </p>
-     *        <p>
-     *        Default: <code>false</code>
-     *        </p>
+     *        A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default,
+     *        the DB cluster is not restored to the latest restorable backup time. </p>
      *        <p>
      *        Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1018,21 +994,15 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and
-     * <code>false</code> otherwise.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB
+     * cluster is not restored to the latest restorable backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
-     * @return A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
-     *         and <code>false</code> otherwise. </p>
-     *         <p>
-     *         Default: <code>false</code>
-     *         </p>
+     * @return A value that indicates whether to restore the DB cluster to the latest restorable backup time. By
+     *         default, the DB cluster is not restored to the latest restorable backup time. </p>
      *         <p>
      *         Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      */
@@ -1575,18 +1545,13 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts. By default, mapping is disabled.
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *        otherwise false.</p>
-     *        <p>
-     *        Default: <code>false</code>
+     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *        database accounts. By default, mapping is disabled.
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -1595,17 +1560,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts. By default, mapping is disabled.
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *         otherwise false.</p>
-     *         <p>
-     *         Default: <code>false</code>
+     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *         database accounts. By default, mapping is disabled.
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -1614,18 +1574,13 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts. By default, mapping is disabled.
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *        otherwise false.</p>
-     *        <p>
-     *        Default: <code>false</code>
+     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *        database accounts. By default, mapping is disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1636,17 +1591,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts. By default, mapping is disabled.
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *         otherwise false.</p>
-     *         <p>
-     *         Default: <code>false</code>
+     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *         database accounts. By default, mapping is disabled.
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {
@@ -2060,13 +2010,13 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
-     * value is set to true. The default is false.
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when
-     *        this value is set to true. The default is false.
+     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -2075,12 +2025,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
-     * value is set to true. The default is false.
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
      * </p>
      * 
-     * @return Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when
-     *         this value is set to true. The default is false.
+     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
      */
 
     public Boolean getDeletionProtection() {
@@ -2089,13 +2039,13 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
-     * value is set to true. The default is false.
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when
-     *        this value is set to true. The default is false.
+     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2106,12 +2056,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when this
-     * value is set to true. The default is false.
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
      * </p>
      * 
-     * @return Indicates if the DB cluster should have deletion protection enabled. The database can't be deleted when
-     *         this value is set to true. The default is false.
+     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
      */
 
     public Boolean isDeletionProtection() {
@@ -2120,13 +2070,13 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise false.
-     * The default is false.
+     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
+     * cluster. The default is not to copy them.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise
-     *        false. The default is false.
+     *        A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
+     *        DB cluster. The default is not to copy them.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -2135,12 +2085,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise false.
-     * The default is false.
+     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
+     * cluster. The default is not to copy them.
      * </p>
      * 
-     * @return True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise
-     *         false. The default is false.
+     * @return A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
+     *         DB cluster. The default is not to copy them.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -2149,13 +2099,13 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise false.
-     * The default is false.
+     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
+     * cluster. The default is not to copy them.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise
-     *        false. The default is false.
+     *        A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
+     *        DB cluster. The default is not to copy them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2166,12 +2116,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise false.
-     * The default is false.
+     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
+     * cluster. The default is not to copy them.
      * </p>
      * 
-     * @return True to copy all tags from the restored DB cluster to snapshots of the restored DB cluster, and otherwise
-     *         false. The default is false.
+     * @return A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
+     *         DB cluster. The default is not to copy them.
      */
 
     public Boolean isCopyTagsToSnapshot() {

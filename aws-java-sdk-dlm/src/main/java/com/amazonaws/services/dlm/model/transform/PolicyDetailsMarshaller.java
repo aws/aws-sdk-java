@@ -28,12 +28,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PolicyDetailsMarshaller {
 
+    private static final MarshallingInfo<String> POLICYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyType").build();
     private static final MarshallingInfo<List> RESOURCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ResourceTypes").build();
     private static final MarshallingInfo<List> TARGETTAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TargetTags").build();
     private static final MarshallingInfo<List> SCHEDULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Schedules").build();
+    private static final MarshallingInfo<StructuredPojo> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Parameters").build();
 
     private static final PolicyDetailsMarshaller instance = new PolicyDetailsMarshaller();
 
@@ -51,9 +55,11 @@ public class PolicyDetailsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(policyDetails.getPolicyType(), POLICYTYPE_BINDING);
             protocolMarshaller.marshall(policyDetails.getResourceTypes(), RESOURCETYPES_BINDING);
             protocolMarshaller.marshall(policyDetails.getTargetTags(), TARGETTAGS_BINDING);
             protocolMarshaller.marshall(policyDetails.getSchedules(), SCHEDULES_BINDING);
+            protocolMarshaller.marshall(policyDetails.getParameters(), PARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

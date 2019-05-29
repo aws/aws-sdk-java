@@ -26,24 +26,24 @@ public class DeregisterTaskFromMaintenanceWindowResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the Maintenance Window the task was removed from.
+     * The ID of the maintenance window the task was removed from.
      * </p>
      */
     private String windowId;
     /**
      * <p>
-     * The ID of the task removed from the Maintenance Window.
+     * The ID of the task removed from the maintenance window.
      * </p>
      */
     private String windowTaskId;
 
     /**
      * <p>
-     * The ID of the Maintenance Window the task was removed from.
+     * The ID of the maintenance window the task was removed from.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window the task was removed from.
+     *        The ID of the maintenance window the task was removed from.
      */
 
     public void setWindowId(String windowId) {
@@ -52,10 +52,10 @@ public class DeregisterTaskFromMaintenanceWindowResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the Maintenance Window the task was removed from.
+     * The ID of the maintenance window the task was removed from.
      * </p>
      * 
-     * @return The ID of the Maintenance Window the task was removed from.
+     * @return The ID of the maintenance window the task was removed from.
      */
 
     public String getWindowId() {
@@ -64,11 +64,11 @@ public class DeregisterTaskFromMaintenanceWindowResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the Maintenance Window the task was removed from.
+     * The ID of the maintenance window the task was removed from.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window the task was removed from.
+     *        The ID of the maintenance window the task was removed from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,11 +79,11 @@ public class DeregisterTaskFromMaintenanceWindowResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the task removed from the Maintenance Window.
+     * The ID of the task removed from the maintenance window.
      * </p>
      * 
      * @param windowTaskId
-     *        The ID of the task removed from the Maintenance Window.
+     *        The ID of the task removed from the maintenance window.
      */
 
     public void setWindowTaskId(String windowTaskId) {
@@ -92,10 +92,10 @@ public class DeregisterTaskFromMaintenanceWindowResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the task removed from the Maintenance Window.
+     * The ID of the task removed from the maintenance window.
      * </p>
      * 
-     * @return The ID of the task removed from the Maintenance Window.
+     * @return The ID of the task removed from the maintenance window.
      */
 
     public String getWindowTaskId() {
@@ -104,11 +104,11 @@ public class DeregisterTaskFromMaintenanceWindowResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the task removed from the Maintenance Window.
+     * The ID of the task removed from the maintenance window.
      * </p>
      * 
      * @param windowTaskId
-     *        The ID of the task removed from the Maintenance Window.
+     *        The ID of the task removed from the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

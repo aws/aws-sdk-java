@@ -49,8 +49,8 @@ public class Insight implements Serializable, Cloneable, StructuredPojo {
     private AwsSecurityFindingFilters filters;
     /**
      * <p>
-     * The attribute by which the insight's findings are grouped. This attribute is used as a findings aggregator for
-     * the purposes of viewing and managing multiple related findings under a single operand.
+     * The attribute that the insight's findings are grouped by. This attribute is used as a findings aggregator for the
+     * purposes of viewing and managing multiple related findings under a single operand.
      * </p>
      */
     private String groupByAttribute;
@@ -183,12 +183,12 @@ public class Insight implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute by which the insight's findings are grouped. This attribute is used as a findings aggregator for
-     * the purposes of viewing and managing multiple related findings under a single operand.
+     * The attribute that the insight's findings are grouped by. This attribute is used as a findings aggregator for the
+     * purposes of viewing and managing multiple related findings under a single operand.
      * </p>
      * 
      * @param groupByAttribute
-     *        The attribute by which the insight's findings are grouped. This attribute is used as a findings aggregator
+     *        The attribute that the insight's findings are grouped by. This attribute is used as a findings aggregator
      *        for the purposes of viewing and managing multiple related findings under a single operand.
      */
 
@@ -198,12 +198,12 @@ public class Insight implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute by which the insight's findings are grouped. This attribute is used as a findings aggregator for
-     * the purposes of viewing and managing multiple related findings under a single operand.
+     * The attribute that the insight's findings are grouped by. This attribute is used as a findings aggregator for the
+     * purposes of viewing and managing multiple related findings under a single operand.
      * </p>
      * 
-     * @return The attribute by which the insight's findings are grouped. This attribute is used as a findings
-     *         aggregator for the purposes of viewing and managing multiple related findings under a single operand.
+     * @return The attribute that the insight's findings are grouped by. This attribute is used as a findings aggregator
+     *         for the purposes of viewing and managing multiple related findings under a single operand.
      */
 
     public String getGroupByAttribute() {
@@ -212,12 +212,12 @@ public class Insight implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute by which the insight's findings are grouped. This attribute is used as a findings aggregator for
-     * the purposes of viewing and managing multiple related findings under a single operand.
+     * The attribute that the insight's findings are grouped by. This attribute is used as a findings aggregator for the
+     * purposes of viewing and managing multiple related findings under a single operand.
      * </p>
      * 
      * @param groupByAttribute
-     *        The attribute by which the insight's findings are grouped. This attribute is used as a findings aggregator
+     *        The attribute that the insight's findings are grouped by. This attribute is used as a findings aggregator
      *        for the purposes of viewing and managing multiple related findings under a single operand.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

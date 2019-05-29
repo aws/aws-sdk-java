@@ -26,18 +26,18 @@ public class CancelMaintenanceWindowExecutionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that has been stopped.
+     * The ID of the maintenance window execution that has been stopped.
      * </p>
      */
     private String windowExecutionId;
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that has been stopped.
+     * The ID of the maintenance window execution that has been stopped.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that has been stopped.
+     *        The ID of the maintenance window execution that has been stopped.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -46,10 +46,10 @@ public class CancelMaintenanceWindowExecutionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that has been stopped.
+     * The ID of the maintenance window execution that has been stopped.
      * </p>
      * 
-     * @return The ID of the Maintenance Window execution that has been stopped.
+     * @return The ID of the maintenance window execution that has been stopped.
      */
 
     public String getWindowExecutionId() {
@@ -58,11 +58,11 @@ public class CancelMaintenanceWindowExecutionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that has been stopped.
+     * The ID of the maintenance window execution that has been stopped.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that has been stopped.
+     *        The ID of the maintenance window execution that has been stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

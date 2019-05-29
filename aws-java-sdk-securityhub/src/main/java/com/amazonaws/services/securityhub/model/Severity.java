@@ -30,7 +30,7 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The native severity as defined by the security findings provider's solution that generated the finding.
+     * The native severity as defined by the security-findings provider's solution that generated the finding.
      * </p>
      */
     private Double product;
@@ -43,11 +43,11 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The native severity as defined by the security findings provider's solution that generated the finding.
+     * The native severity as defined by the security-findings provider's solution that generated the finding.
      * </p>
      * 
      * @param product
-     *        The native severity as defined by the security findings provider's solution that generated the finding.
+     *        The native severity as defined by the security-findings provider's solution that generated the finding.
      */
 
     public void setProduct(Double product) {
@@ -56,10 +56,10 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The native severity as defined by the security findings provider's solution that generated the finding.
+     * The native severity as defined by the security-findings provider's solution that generated the finding.
      * </p>
      * 
-     * @return The native severity as defined by the security findings provider's solution that generated the finding.
+     * @return The native severity as defined by the security-findings provider's solution that generated the finding.
      */
 
     public Double getProduct() {
@@ -68,11 +68,11 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The native severity as defined by the security findings provider's solution that generated the finding.
+     * The native severity as defined by the security-findings provider's solution that generated the finding.
      * </p>
      * 
      * @param product
-     *        The native severity as defined by the security findings provider's solution that generated the finding.
+     *        The native severity as defined by the security-findings provider's solution that generated the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

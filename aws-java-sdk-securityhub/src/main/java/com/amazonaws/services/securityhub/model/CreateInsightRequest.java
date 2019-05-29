@@ -27,14 +27,14 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The user-defined name that identifies the insight that you want to create.
+     * The user-defined name that identifies the insight to create.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a
-     * subset of findings that are included in this insight.
+     * A collection of attributes that are applied to all of the active findings aggregated by Security Hub, and that
+     * result in a subset of findings that are included in this insight.
      * </p>
      */
     private AwsSecurityFindingFilters filters;
@@ -48,11 +48,11 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The user-defined name that identifies the insight that you want to create.
+     * The user-defined name that identifies the insight to create.
      * </p>
      * 
      * @param name
-     *        The user-defined name that identifies the insight that you want to create.
+     *        The user-defined name that identifies the insight to create.
      */
 
     public void setName(String name) {
@@ -61,10 +61,10 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The user-defined name that identifies the insight that you want to create.
+     * The user-defined name that identifies the insight to create.
      * </p>
      * 
-     * @return The user-defined name that identifies the insight that you want to create.
+     * @return The user-defined name that identifies the insight to create.
      */
 
     public String getName() {
@@ -73,11 +73,11 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The user-defined name that identifies the insight that you want to create.
+     * The user-defined name that identifies the insight to create.
      * </p>
      * 
      * @param name
-     *        The user-defined name that identifies the insight that you want to create.
+     *        The user-defined name that identifies the insight to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,13 +88,13 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a
-     * subset of findings that are included in this insight.
+     * A collection of attributes that are applied to all of the active findings aggregated by Security Hub, and that
+     * result in a subset of findings that are included in this insight.
      * </p>
      * 
      * @param filters
-     *        A collection of attributes that are applied to all active Security Hub-aggregated findings and that result
-     *        in a subset of findings that are included in this insight.
+     *        A collection of attributes that are applied to all of the active findings aggregated by Security Hub, and
+     *        that result in a subset of findings that are included in this insight.
      */
 
     public void setFilters(AwsSecurityFindingFilters filters) {
@@ -103,12 +103,12 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a
-     * subset of findings that are included in this insight.
+     * A collection of attributes that are applied to all of the active findings aggregated by Security Hub, and that
+     * result in a subset of findings that are included in this insight.
      * </p>
      * 
-     * @return A collection of attributes that are applied to all active Security Hub-aggregated findings and that
-     *         result in a subset of findings that are included in this insight.
+     * @return A collection of attributes that are applied to all of the active findings aggregated by Security Hub, and
+     *         that result in a subset of findings that are included in this insight.
      */
 
     public AwsSecurityFindingFilters getFilters() {
@@ -117,13 +117,13 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a
-     * subset of findings that are included in this insight.
+     * A collection of attributes that are applied to all of the active findings aggregated by Security Hub, and that
+     * result in a subset of findings that are included in this insight.
      * </p>
      * 
      * @param filters
-     *        A collection of attributes that are applied to all active Security Hub-aggregated findings and that result
-     *        in a subset of findings that are included in this insight.
+     *        A collection of attributes that are applied to all of the active findings aggregated by Security Hub, and
+     *        that result in a subset of findings that are included in this insight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

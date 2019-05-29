@@ -429,8 +429,8 @@ public class DBInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeatures;
     /**
      * <p>
-     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this value is
-     * set to true. For more information, see <a
+     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
+     * protection is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
@@ -3544,15 +3544,15 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this value is
-     * set to true. For more information, see <a
+     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
+     * protection is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this
-     *        value is set to true. For more information, see <a
+     *        Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
+     *        protection is enabled. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *        Instance</a>.
      */
@@ -3563,14 +3563,14 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this value is
-     * set to true. For more information, see <a
+     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
+     * protection is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
-     * @return Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this
-     *         value is set to true. For more information, see <a
+     * @return Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
+     *         protection is enabled. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *         Instance</a>.
      */
@@ -3581,15 +3581,15 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this value is
-     * set to true. For more information, see <a
+     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
+     * protection is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this
-     *        value is set to true. For more information, see <a
+     *        Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
+     *        protection is enabled. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *        Instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3602,14 +3602,14 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this value is
-     * set to true. For more information, see <a
+     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
+     * protection is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      * Instance</a>.
      * </p>
      * 
-     * @return Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this
-     *         value is set to true. For more information, see <a
+     * @return Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
+     *         protection is enabled. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
      *         Instance</a>.
      */

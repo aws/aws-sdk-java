@@ -25,18 +25,18 @@ public class CreateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the created Maintenance Window.
+     * The ID of the created maintenance window.
      * </p>
      */
     private String windowId;
 
     /**
      * <p>
-     * The ID of the created Maintenance Window.
+     * The ID of the created maintenance window.
      * </p>
      * 
      * @param windowId
-     *        The ID of the created Maintenance Window.
+     *        The ID of the created maintenance window.
      */
 
     public void setWindowId(String windowId) {
@@ -45,10 +45,10 @@ public class CreateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the created Maintenance Window.
+     * The ID of the created maintenance window.
      * </p>
      * 
-     * @return The ID of the created Maintenance Window.
+     * @return The ID of the created maintenance window.
      */
 
     public String getWindowId() {
@@ -57,11 +57,11 @@ public class CreateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the created Maintenance Window.
+     * The ID of the created maintenance window.
      * </p>
      * 
      * @param windowId
-     *        The ID of the created Maintenance Window.
+     *        The ID of the created maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

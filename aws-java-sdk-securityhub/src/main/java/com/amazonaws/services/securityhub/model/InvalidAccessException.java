@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS Security Hub is not enabled for the account used to make this request.
+ * AWS Security Hub isn't enabled for the account used to make this request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

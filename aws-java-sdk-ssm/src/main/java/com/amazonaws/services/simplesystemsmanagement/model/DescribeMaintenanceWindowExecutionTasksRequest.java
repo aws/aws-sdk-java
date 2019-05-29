@@ -27,7 +27,7 @@ public class DescribeMaintenanceWindowExecutionTasksRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution whose task executions should be retrieved.
+     * The ID of the maintenance window execution whose task executions should be retrieved.
      * </p>
      */
     private String windowExecutionId;
@@ -54,11 +54,11 @@ public class DescribeMaintenanceWindowExecutionTasksRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution whose task executions should be retrieved.
+     * The ID of the maintenance window execution whose task executions should be retrieved.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution whose task executions should be retrieved.
+     *        The ID of the maintenance window execution whose task executions should be retrieved.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -67,10 +67,10 @@ public class DescribeMaintenanceWindowExecutionTasksRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution whose task executions should be retrieved.
+     * The ID of the maintenance window execution whose task executions should be retrieved.
      * </p>
      * 
-     * @return The ID of the Maintenance Window execution whose task executions should be retrieved.
+     * @return The ID of the maintenance window execution whose task executions should be retrieved.
      */
 
     public String getWindowExecutionId() {
@@ -79,11 +79,11 @@ public class DescribeMaintenanceWindowExecutionTasksRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution whose task executions should be retrieved.
+     * The ID of the maintenance window execution whose task executions should be retrieved.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution whose task executions should be retrieved.
+     *        The ID of the maintenance window execution whose task executions should be retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

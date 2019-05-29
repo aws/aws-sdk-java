@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes the information about a task invocation for a particular target as part of a task execution performed as
- * part of a Maintenance Window execution.
+ * part of a maintenance window execution.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowExecutionTaskInvocationIdentity"
@@ -31,13 +31,13 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      */
     private String windowExecutionId;
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      */
     private String taskExecutionId;
@@ -92,25 +92,25 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
     private java.util.Date endTime;
     /**
      * <p>
-     * User-provided value that was specified when the target was registered with the Maintenance Window. This was also
+     * User-provided value that was specified when the target was registered with the maintenance window. This was also
      * included in any CloudWatch events raised during the task invocation.
      * </p>
      */
     private String ownerInformation;
     /**
      * <p>
-     * The ID of the target definition in this Maintenance Window the invocation was performed for.
+     * The ID of the target definition in this maintenance window the invocation was performed for.
      * </p>
      */
     private String windowTargetId;
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that ran the task.
+     *        The ID of the maintenance window execution that ran the task.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -119,10 +119,10 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      * 
-     * @return The ID of the Maintenance Window execution that ran the task.
+     * @return The ID of the maintenance window execution that ran the task.
      */
 
     public String getWindowExecutionId() {
@@ -131,11 +131,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that ran the task.
+     *        The ID of the maintenance window execution that ran the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +146,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      * 
      * @param taskExecutionId
-     *        The ID of the specific task execution in the Maintenance Window execution.
+     *        The ID of the specific task execution in the maintenance window execution.
      */
 
     public void setTaskExecutionId(String taskExecutionId) {
@@ -159,10 +159,10 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      * 
-     * @return The ID of the specific task execution in the Maintenance Window execution.
+     * @return The ID of the specific task execution in the maintenance window execution.
      */
 
     public String getTaskExecutionId() {
@@ -171,11 +171,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      * 
      * @param taskExecutionId
-     *        The ID of the specific task execution in the Maintenance Window execution.
+     *        The ID of the specific task execution in the maintenance window execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -578,12 +578,12 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * User-provided value that was specified when the target was registered with the Maintenance Window. This was also
+     * User-provided value that was specified when the target was registered with the maintenance window. This was also
      * included in any CloudWatch events raised during the task invocation.
      * </p>
      * 
      * @param ownerInformation
-     *        User-provided value that was specified when the target was registered with the Maintenance Window. This
+     *        User-provided value that was specified when the target was registered with the maintenance window. This
      *        was also included in any CloudWatch events raised during the task invocation.
      */
 
@@ -593,11 +593,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * User-provided value that was specified when the target was registered with the Maintenance Window. This was also
+     * User-provided value that was specified when the target was registered with the maintenance window. This was also
      * included in any CloudWatch events raised during the task invocation.
      * </p>
      * 
-     * @return User-provided value that was specified when the target was registered with the Maintenance Window. This
+     * @return User-provided value that was specified when the target was registered with the maintenance window. This
      *         was also included in any CloudWatch events raised during the task invocation.
      */
 
@@ -607,12 +607,12 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * User-provided value that was specified when the target was registered with the Maintenance Window. This was also
+     * User-provided value that was specified when the target was registered with the maintenance window. This was also
      * included in any CloudWatch events raised during the task invocation.
      * </p>
      * 
      * @param ownerInformation
-     *        User-provided value that was specified when the target was registered with the Maintenance Window. This
+     *        User-provided value that was specified when the target was registered with the maintenance window. This
      *        was also included in any CloudWatch events raised during the task invocation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -624,11 +624,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the target definition in this Maintenance Window the invocation was performed for.
+     * The ID of the target definition in this maintenance window the invocation was performed for.
      * </p>
      * 
      * @param windowTargetId
-     *        The ID of the target definition in this Maintenance Window the invocation was performed for.
+     *        The ID of the target definition in this maintenance window the invocation was performed for.
      */
 
     public void setWindowTargetId(String windowTargetId) {
@@ -637,10 +637,10 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the target definition in this Maintenance Window the invocation was performed for.
+     * The ID of the target definition in this maintenance window the invocation was performed for.
      * </p>
      * 
-     * @return The ID of the target definition in this Maintenance Window the invocation was performed for.
+     * @return The ID of the target definition in this maintenance window the invocation was performed for.
      */
 
     public String getWindowTargetId() {
@@ -649,11 +649,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the target definition in this Maintenance Window the invocation was performed for.
+     * The ID of the target definition in this maintenance window the invocation was performed for.
      * </p>
      * 
      * @param windowTargetId
-     *        The ID of the target definition in this Maintenance Window the invocation was performed for.
+     *        The ID of the target definition in this maintenance window the invocation was performed for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

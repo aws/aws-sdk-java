@@ -28,13 +28,13 @@ public class DescribeMaintenanceWindowExecutionTaskInvocationsRequest extends co
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution the task is part of.
+     * The ID of the maintenance window execution the task is part of.
      * </p>
      */
     private String windowExecutionId;
     /**
      * <p>
-     * The ID of the specific task in the Maintenance Window task that should be retrieved.
+     * The ID of the specific task in the maintenance window task that should be retrieved.
      * </p>
      */
     private String taskId;
@@ -61,11 +61,11 @@ public class DescribeMaintenanceWindowExecutionTaskInvocationsRequest extends co
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution the task is part of.
+     * The ID of the maintenance window execution the task is part of.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution the task is part of.
+     *        The ID of the maintenance window execution the task is part of.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -74,10 +74,10 @@ public class DescribeMaintenanceWindowExecutionTaskInvocationsRequest extends co
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution the task is part of.
+     * The ID of the maintenance window execution the task is part of.
      * </p>
      * 
-     * @return The ID of the Maintenance Window execution the task is part of.
+     * @return The ID of the maintenance window execution the task is part of.
      */
 
     public String getWindowExecutionId() {
@@ -86,11 +86,11 @@ public class DescribeMaintenanceWindowExecutionTaskInvocationsRequest extends co
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution the task is part of.
+     * The ID of the maintenance window execution the task is part of.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution the task is part of.
+     *        The ID of the maintenance window execution the task is part of.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class DescribeMaintenanceWindowExecutionTaskInvocationsRequest extends co
 
     /**
      * <p>
-     * The ID of the specific task in the Maintenance Window task that should be retrieved.
+     * The ID of the specific task in the maintenance window task that should be retrieved.
      * </p>
      * 
      * @param taskId
-     *        The ID of the specific task in the Maintenance Window task that should be retrieved.
+     *        The ID of the specific task in the maintenance window task that should be retrieved.
      */
 
     public void setTaskId(String taskId) {
@@ -114,10 +114,10 @@ public class DescribeMaintenanceWindowExecutionTaskInvocationsRequest extends co
 
     /**
      * <p>
-     * The ID of the specific task in the Maintenance Window task that should be retrieved.
+     * The ID of the specific task in the maintenance window task that should be retrieved.
      * </p>
      * 
-     * @return The ID of the specific task in the Maintenance Window task that should be retrieved.
+     * @return The ID of the specific task in the maintenance window task that should be retrieved.
      */
 
     public String getTaskId() {
@@ -126,11 +126,11 @@ public class DescribeMaintenanceWindowExecutionTaskInvocationsRequest extends co
 
     /**
      * <p>
-     * The ID of the specific task in the Maintenance Window task that should be retrieved.
+     * The ID of the specific task in the maintenance window task that should be retrieved.
      * </p>
      * 
      * @param taskId
-     *        The ID of the specific task in the Maintenance Window task that should be retrieved.
+     *        The ID of the specific task in the maintenance window task that should be retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

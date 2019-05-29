@@ -1,3 +1,28 @@
+# __1.11.562__ __2019-05-29__
+## __AWS IoT Things Graph__
+  - ### Features
+    - Initial release.
+
+## __AWS SecurityHub__
+  - ### Features
+    - This update adds the ListProductSubscribers API, DescribeProducts API, removes CONTAINS as a comparison value for the StringFilter, and only allows use of EQUALS instead of CONTAINS in MapFilter.  
+
+## __Amazon Data Lifecycle Manager__
+  - ### Features
+    - Customers can now simultaneously take snapshots of multiple EBS volumes attached to an EC2 instance. With this new capability, snapshots guarantee crash-consistency across multiple volumes by preserving the order of IO operations. This new feature is fully integrated with Amazon Data Lifecycle Manager (DLM) allowing customers to automatically manage snapshots by creating lifecycle policies. 
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Customers can now simultaneously take snapshots of multiple EBS volumes attached to an EC2 instance. With this new capability, snapshots guarantee crash-consistency across multiple volumes by preserving the order of IO operations. This new feature is fully integrated with Amazon Data Lifecycle Manager (DLM) allowing customers to automatically manage snapshots by creating lifecycle policies. 
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Documentation updates for rds
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Systems Manager - Documentation updates
+
 # __1.11.561__ __2019-05-28__
 ## __AWS Ground Station__
   - ### Features

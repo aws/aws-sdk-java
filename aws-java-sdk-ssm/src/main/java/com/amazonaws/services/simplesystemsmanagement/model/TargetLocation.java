@@ -42,13 +42,13 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<String> regions;
     /**
      * <p>
-     * The maxium number of AWS accounts and AWS regions allowed to run the Automation concurrently
+     * The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently
      * </p>
      */
     private String targetLocationMaxConcurrency;
     /**
      * <p>
-     * The maxium number of errors allowed before the system stops queueing additional Automation executions for the
+     * The maximum number of errors allowed before the system stops queueing additional Automation executions for the
      * currently running Automation.
      * </p>
      */
@@ -208,11 +208,11 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maxium number of AWS accounts and AWS regions allowed to run the Automation concurrently
+     * The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently
      * </p>
      * 
      * @param targetLocationMaxConcurrency
-     *        The maxium number of AWS accounts and AWS regions allowed to run the Automation concurrently
+     *        The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently
      */
 
     public void setTargetLocationMaxConcurrency(String targetLocationMaxConcurrency) {
@@ -221,10 +221,10 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maxium number of AWS accounts and AWS regions allowed to run the Automation concurrently
+     * The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently
      * </p>
      * 
-     * @return The maxium number of AWS accounts and AWS regions allowed to run the Automation concurrently
+     * @return The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently
      */
 
     public String getTargetLocationMaxConcurrency() {
@@ -233,11 +233,11 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maxium number of AWS accounts and AWS regions allowed to run the Automation concurrently
+     * The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently
      * </p>
      * 
      * @param targetLocationMaxConcurrency
-     *        The maxium number of AWS accounts and AWS regions allowed to run the Automation concurrently
+     *        The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,12 +248,12 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maxium number of errors allowed before the system stops queueing additional Automation executions for the
+     * The maximum number of errors allowed before the system stops queueing additional Automation executions for the
      * currently running Automation.
      * </p>
      * 
      * @param targetLocationMaxErrors
-     *        The maxium number of errors allowed before the system stops queueing additional Automation executions for
+     *        The maximum number of errors allowed before the system stops queueing additional Automation executions for
      *        the currently running Automation.
      */
 
@@ -263,12 +263,12 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maxium number of errors allowed before the system stops queueing additional Automation executions for the
+     * The maximum number of errors allowed before the system stops queueing additional Automation executions for the
      * currently running Automation.
      * </p>
      * 
-     * @return The maxium number of errors allowed before the system stops queueing additional Automation executions for
-     *         the currently running Automation.
+     * @return The maximum number of errors allowed before the system stops queueing additional Automation executions
+     *         for the currently running Automation.
      */
 
     public String getTargetLocationMaxErrors() {
@@ -277,12 +277,12 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maxium number of errors allowed before the system stops queueing additional Automation executions for the
+     * The maximum number of errors allowed before the system stops queueing additional Automation executions for the
      * currently running Automation.
      * </p>
      * 
      * @param targetLocationMaxErrors
-     *        The maxium number of errors allowed before the system stops queueing additional Automation executions for
+     *        The maximum number of errors allowed before the system stops queueing additional Automation executions for
      *        the currently running Automation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

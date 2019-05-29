@@ -130,7 +130,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      * </p>
      * <p>
-     * Valide values: <code>interface</code> | <code>efa</code>
+     * Valid values: <code>interface</code> | <code>efa</code>
      * </p>
      */
     private String interfaceType;
@@ -908,7 +908,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      * </p>
      * <p>
-     * Valide values: <code>interface</code> | <code>efa</code>
+     * Valid values: <code>interface</code> | <code>efa</code>
      * </p>
      * 
      * @param interfaceType
@@ -919,7 +919,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      *        If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      *        </p>
      *        <p>
-     *        Valide values: <code>interface</code> | <code>efa</code>
+     *        Valid values: <code>interface</code> | <code>efa</code>
      */
 
     public void setInterfaceType(String interfaceType) {
@@ -936,7 +936,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      * </p>
      * <p>
-     * Valide values: <code>interface</code> | <code>efa</code>
+     * Valid values: <code>interface</code> | <code>efa</code>
      * </p>
      * 
      * @return The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For
@@ -946,7 +946,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      *         If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      *         </p>
      *         <p>
-     *         Valide values: <code>interface</code> | <code>efa</code>
+     *         Valid values: <code>interface</code> | <code>efa</code>
      */
 
     public String getInterfaceType() {
@@ -963,7 +963,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      * </p>
      * <p>
-     * Valide values: <code>interface</code> | <code>efa</code>
+     * Valid values: <code>interface</code> | <code>efa</code>
      * </p>
      * 
      * @param interfaceType
@@ -974,7 +974,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      *        If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      *        </p>
      *        <p>
-     *        Valide values: <code>interface</code> | <code>efa</code>
+     *        Valid values: <code>interface</code> | <code>efa</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

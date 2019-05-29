@@ -101,6 +101,10 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Information about the policies assigned to a parameter.
      * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working with
+     * Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ParameterInlinePolicy> policies;
 
@@ -662,8 +666,15 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Information about the policies assigned to a parameter.
      * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working with
+     * Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
      * 
-     * @return Information about the policies assigned to a parameter.
+     * @return Information about the policies assigned to a parameter.</p>
+     *         <p>
+     *         <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">
+     *         Working with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public java.util.List<ParameterInlinePolicy> getPolicies() {
@@ -677,9 +688,16 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Information about the policies assigned to a parameter.
      * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working with
+     * Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
      * 
      * @param policies
-     *        Information about the policies assigned to a parameter.
+     *        Information about the policies assigned to a parameter.</p>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">
+     *        Working with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setPolicies(java.util.Collection<ParameterInlinePolicy> policies) {
@@ -696,13 +714,20 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
      * Information about the policies assigned to a parameter.
      * </p>
      * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working with
+     * Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPolicies(java.util.Collection)} or {@link #withPolicies(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param policies
-     *        Information about the policies assigned to a parameter.
+     *        Information about the policies assigned to a parameter.</p>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">
+     *        Working with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -720,9 +745,16 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Information about the policies assigned to a parameter.
      * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working with
+     * Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
      * 
      * @param policies
-     *        Information about the policies assigned to a parameter.
+     *        Information about the policies assigned to a parameter.</p>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">
+     *        Working with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

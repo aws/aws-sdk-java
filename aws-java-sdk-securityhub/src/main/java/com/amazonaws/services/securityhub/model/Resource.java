@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A resource data type that describes a resource to which the finding refers.
+ * A resource data type that describes a resource that the finding refers to.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Resource" target="_top">AWS API
@@ -30,7 +30,7 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the type of the resource for which details are provided.
+     * The type of the resource that details are provided for.
      * </p>
      */
     private String type;
@@ -42,13 +42,13 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The canonical AWS partition name to which the region is assigned.
+     * The canonical AWS partition name that the Region is assigned to.
      * </p>
      */
     private String partition;
     /**
      * <p>
-     * The canonical AWS external region name where this resource is located.
+     * The canonical AWS external Region name where this resource is located.
      * </p>
      */
     private String region;
@@ -60,18 +60,18 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * Provides additional details about the resource.
+     * Additional details about the resource.
      * </p>
      */
     private ResourceDetails details;
 
     /**
      * <p>
-     * Specifies the type of the resource for which details are provided.
+     * The type of the resource that details are provided for.
      * </p>
      * 
      * @param type
-     *        Specifies the type of the resource for which details are provided.
+     *        The type of the resource that details are provided for.
      */
 
     public void setType(String type) {
@@ -80,10 +80,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the type of the resource for which details are provided.
+     * The type of the resource that details are provided for.
      * </p>
      * 
-     * @return Specifies the type of the resource for which details are provided.
+     * @return The type of the resource that details are provided for.
      */
 
     public String getType() {
@@ -92,11 +92,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the type of the resource for which details are provided.
+     * The type of the resource that details are provided for.
      * </p>
      * 
      * @param type
-     *        Specifies the type of the resource for which details are provided.
+     *        The type of the resource that details are provided for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The canonical AWS partition name to which the region is assigned.
+     * The canonical AWS partition name that the Region is assigned to.
      * </p>
      * 
      * @param partition
-     *        The canonical AWS partition name to which the region is assigned.
+     *        The canonical AWS partition name that the Region is assigned to.
      * @see Partition
      */
 
@@ -161,10 +161,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The canonical AWS partition name to which the region is assigned.
+     * The canonical AWS partition name that the Region is assigned to.
      * </p>
      * 
-     * @return The canonical AWS partition name to which the region is assigned.
+     * @return The canonical AWS partition name that the Region is assigned to.
      * @see Partition
      */
 
@@ -174,11 +174,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The canonical AWS partition name to which the region is assigned.
+     * The canonical AWS partition name that the Region is assigned to.
      * </p>
      * 
      * @param partition
-     *        The canonical AWS partition name to which the region is assigned.
+     *        The canonical AWS partition name that the Region is assigned to.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Partition
      */
@@ -190,11 +190,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The canonical AWS partition name to which the region is assigned.
+     * The canonical AWS partition name that the Region is assigned to.
      * </p>
      * 
      * @param partition
-     *        The canonical AWS partition name to which the region is assigned.
+     *        The canonical AWS partition name that the Region is assigned to.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Partition
      */
@@ -206,11 +206,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The canonical AWS external region name where this resource is located.
+     * The canonical AWS external Region name where this resource is located.
      * </p>
      * 
      * @param region
-     *        The canonical AWS external region name where this resource is located.
+     *        The canonical AWS external Region name where this resource is located.
      */
 
     public void setRegion(String region) {
@@ -219,10 +219,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The canonical AWS external region name where this resource is located.
+     * The canonical AWS external Region name where this resource is located.
      * </p>
      * 
-     * @return The canonical AWS external region name where this resource is located.
+     * @return The canonical AWS external Region name where this resource is located.
      */
 
     public String getRegion() {
@@ -231,11 +231,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The canonical AWS external region name where this resource is located.
+     * The canonical AWS external Region name where this resource is located.
      * </p>
      * 
      * @param region
-     *        The canonical AWS external region name where this resource is located.
+     *        The canonical AWS external Region name where this resource is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,11 +307,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides additional details about the resource.
+     * Additional details about the resource.
      * </p>
      * 
      * @param details
-     *        Provides additional details about the resource.
+     *        Additional details about the resource.
      */
 
     public void setDetails(ResourceDetails details) {
@@ -320,10 +320,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides additional details about the resource.
+     * Additional details about the resource.
      * </p>
      * 
-     * @return Provides additional details about the resource.
+     * @return Additional details about the resource.
      */
 
     public ResourceDetails getDetails() {
@@ -332,11 +332,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides additional details about the resource.
+     * Additional details about the resource.
      * </p>
      * 
      * @param details
-     *        Provides additional details about the resource.
+     *        Additional details about the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Error returned when the caller has exceeded the default resource limits. For example, too many Maintenance Windows or
- * Patch baselines have been created.
+ * Error returned when the caller has exceeded the default resource limits. For example, too many maintenance windows or
+ * patch baselines have been created.
  * </p>
  * <p>
  * For information about resource limits in Systems Manager, see <a

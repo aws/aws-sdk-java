@@ -30,18 +30,18 @@ public class IpFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Finding's CIDR value.
+     * A finding's CIDR value.
      * </p>
      */
     private String cidr;
 
     /**
      * <p>
-     * Finding's CIDR value.
+     * A finding's CIDR value.
      * </p>
      * 
      * @param cidr
-     *        Finding's CIDR value.
+     *        A finding's CIDR value.
      */
 
     public void setCidr(String cidr) {
@@ -50,10 +50,10 @@ public class IpFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Finding's CIDR value.
+     * A finding's CIDR value.
      * </p>
      * 
-     * @return Finding's CIDR value.
+     * @return A finding's CIDR value.
      */
 
     public String getCidr() {
@@ -62,11 +62,11 @@ public class IpFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Finding's CIDR value.
+     * A finding's CIDR value.
      * </p>
      * 
      * @param cidr
-     *        Finding's CIDR value.
+     *        A finding's CIDR value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

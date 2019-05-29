@@ -27,7 +27,7 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A collection of attributes that specify what findings you want to update.
+     * A collection of attributes that specify which findings you want to update.
      * </p>
      */
     private AwsSecurityFindingFilters filters;
@@ -46,11 +46,11 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A collection of attributes that specify what findings you want to update.
+     * A collection of attributes that specify which findings you want to update.
      * </p>
      * 
      * @param filters
-     *        A collection of attributes that specify what findings you want to update.
+     *        A collection of attributes that specify which findings you want to update.
      */
 
     public void setFilters(AwsSecurityFindingFilters filters) {
@@ -59,10 +59,10 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A collection of attributes that specify what findings you want to update.
+     * A collection of attributes that specify which findings you want to update.
      * </p>
      * 
-     * @return A collection of attributes that specify what findings you want to update.
+     * @return A collection of attributes that specify which findings you want to update.
      */
 
     public AwsSecurityFindingFilters getFilters() {
@@ -71,11 +71,11 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A collection of attributes that specify what findings you want to update.
+     * A collection of attributes that specify which findings you want to update.
      * </p>
      * 
      * @param filters
-     *        A collection of attributes that specify what findings you want to update.
+     *        A collection of attributes that specify which findings you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

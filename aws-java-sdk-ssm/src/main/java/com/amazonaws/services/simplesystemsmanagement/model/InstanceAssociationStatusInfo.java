@@ -42,7 +42,7 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
     private String name;
     /**
      * <p>
-     * The association document verions.
+     * The association document versions.
      * </p>
      */
     private String documentVersion;
@@ -183,11 +183,11 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The association document verions.
+     * The association document versions.
      * </p>
      * 
      * @param documentVersion
-     *        The association document verions.
+     *        The association document versions.
      */
 
     public void setDocumentVersion(String documentVersion) {
@@ -196,10 +196,10 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The association document verions.
+     * The association document versions.
      * </p>
      * 
-     * @return The association document verions.
+     * @return The association document versions.
      */
 
     public String getDocumentVersion() {
@@ -208,11 +208,11 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The association document verions.
+     * The association document versions.
      * </p>
      * 
      * @param documentVersion
-     *        The association document verions.
+     *        The association document versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

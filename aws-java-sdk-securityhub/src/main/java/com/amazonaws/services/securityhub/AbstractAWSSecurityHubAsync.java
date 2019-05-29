@@ -158,6 +158,19 @@ public class AbstractAWSSecurityHubAsync extends AbstractAWSSecurityHub implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeProductsResult> describeProductsAsync(DescribeProductsRequest request) {
+
+        return describeProductsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProductsResult> describeProductsAsync(DescribeProductsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeProductsRequest, DescribeProductsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableImportFindingsForProductResult> disableImportFindingsForProductAsync(
             DisableImportFindingsForProductRequest request) {
 
@@ -376,6 +389,19 @@ public class AbstractAWSSecurityHubAsync extends AbstractAWSSecurityHub implemen
     @Override
     public java.util.concurrent.Future<ListMembersResult> listMembersAsync(ListMembersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListMembersRequest, ListMembersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProductSubscribersResult> listProductSubscribersAsync(ListProductSubscribersRequest request) {
+
+        return listProductSubscribersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProductSubscribersResult> listProductSubscribersAsync(ListProductSubscribersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListProductSubscribersRequest, ListProductSubscribersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

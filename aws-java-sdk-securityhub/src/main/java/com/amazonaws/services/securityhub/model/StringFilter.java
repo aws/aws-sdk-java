@@ -36,7 +36,7 @@ public class StringFilter implements Serializable, Cloneable, StructuredPojo {
     private String value;
     /**
      * <p>
-     * Represents the condition to be applied to a string value when querying for findings.
+     * The condition to be applied to a string value when querying for findings.
      * </p>
      */
     private String comparison;
@@ -83,11 +83,11 @@ public class StringFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the condition to be applied to a string value when querying for findings.
+     * The condition to be applied to a string value when querying for findings.
      * </p>
      * 
      * @param comparison
-     *        Represents the condition to be applied to a string value when querying for findings.
+     *        The condition to be applied to a string value when querying for findings.
      * @see StringFilterComparison
      */
 
@@ -97,10 +97,10 @@ public class StringFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the condition to be applied to a string value when querying for findings.
+     * The condition to be applied to a string value when querying for findings.
      * </p>
      * 
-     * @return Represents the condition to be applied to a string value when querying for findings.
+     * @return The condition to be applied to a string value when querying for findings.
      * @see StringFilterComparison
      */
 
@@ -110,11 +110,11 @@ public class StringFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the condition to be applied to a string value when querying for findings.
+     * The condition to be applied to a string value when querying for findings.
      * </p>
      * 
      * @param comparison
-     *        Represents the condition to be applied to a string value when querying for findings.
+     *        The condition to be applied to a string value when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StringFilterComparison
      */
@@ -126,11 +126,11 @@ public class StringFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the condition to be applied to a string value when querying for findings.
+     * The condition to be applied to a string value when querying for findings.
      * </p>
      * 
      * @param comparison
-     *        Represents the condition to be applied to a string value when querying for findings.
+     *        The condition to be applied to a string value when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StringFilterComparison
      */

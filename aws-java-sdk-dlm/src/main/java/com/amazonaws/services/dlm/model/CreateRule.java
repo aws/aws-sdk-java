@@ -30,7 +30,7 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The interval. The supported values are 12 and 24.
+     * The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
      * </p>
      */
     private Integer interval;
@@ -42,7 +42,7 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
     private String intervalUnit;
     /**
      * <p>
-     * The time, in UTC, to start the operation.
+     * The time, in UTC, to start the operation. The supported format is hh:mm.
      * </p>
      * <p>
      * The operation occurs within a one-hour window following the specified time.
@@ -52,11 +52,11 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The interval. The supported values are 12 and 24.
+     * The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
      * </p>
      * 
      * @param interval
-     *        The interval. The supported values are 12 and 24.
+     *        The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
      */
 
     public void setInterval(Integer interval) {
@@ -65,10 +65,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The interval. The supported values are 12 and 24.
+     * The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
      * </p>
      * 
-     * @return The interval. The supported values are 12 and 24.
+     * @return The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
      */
 
     public Integer getInterval() {
@@ -77,11 +77,11 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The interval. The supported values are 12 and 24.
+     * The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
      * </p>
      * 
      * @param interval
-     *        The interval. The supported values are 12 and 24.
+     *        The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,13 +151,13 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in UTC, to start the operation.
+     * The time, in UTC, to start the operation. The supported format is hh:mm.
      * </p>
      * <p>
      * The operation occurs within a one-hour window following the specified time.
      * </p>
      * 
-     * @return The time, in UTC, to start the operation.</p>
+     * @return The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      *         <p>
      *         The operation occurs within a one-hour window following the specified time.
      */
@@ -168,14 +168,14 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in UTC, to start the operation.
+     * The time, in UTC, to start the operation. The supported format is hh:mm.
      * </p>
      * <p>
      * The operation occurs within a one-hour window following the specified time.
      * </p>
      * 
      * @param times
-     *        The time, in UTC, to start the operation.</p>
+     *        The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      *        <p>
      *        The operation occurs within a one-hour window following the specified time.
      */
@@ -191,7 +191,7 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in UTC, to start the operation.
+     * The time, in UTC, to start the operation. The supported format is hh:mm.
      * </p>
      * <p>
      * The operation occurs within a one-hour window following the specified time.
@@ -203,7 +203,7 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param times
-     *        The time, in UTC, to start the operation.</p>
+     *        The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      *        <p>
      *        The operation occurs within a one-hour window following the specified time.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -221,14 +221,14 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in UTC, to start the operation.
+     * The time, in UTC, to start the operation. The supported format is hh:mm.
      * </p>
      * <p>
      * The operation occurs within a one-hour window following the specified time.
      * </p>
      * 
      * @param times
-     *        The time, in UTC, to start the operation.</p>
+     *        The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      *        <p>
      *        The operation occurs within a one-hour window following the specified time.
      * @return Returns a reference to this object so that method calls can be chained together.

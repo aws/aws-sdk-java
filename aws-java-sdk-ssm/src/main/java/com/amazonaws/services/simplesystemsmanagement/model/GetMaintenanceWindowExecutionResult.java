@@ -26,19 +26,19 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution.
+     * The ID of the maintenance window execution.
      * </p>
      */
     private String windowExecutionId;
     /**
      * <p>
-     * The ID of the task executions from the Maintenance Window execution.
+     * The ID of the task executions from the maintenance window execution.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> taskIds;
     /**
      * <p>
-     * The status of the Maintenance Window execution.
+     * The status of the maintenance window execution.
      * </p>
      */
     private String status;
@@ -50,24 +50,24 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
     private String statusDetails;
     /**
      * <p>
-     * The time the Maintenance Window started running.
+     * The time the maintenance window started running.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * The time the Maintenance Window finished running.
+     * The time the maintenance window finished running.
      * </p>
      */
     private java.util.Date endTime;
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution.
+     * The ID of the maintenance window execution.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution.
+     *        The ID of the maintenance window execution.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -76,10 +76,10 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution.
+     * The ID of the maintenance window execution.
      * </p>
      * 
-     * @return The ID of the Maintenance Window execution.
+     * @return The ID of the maintenance window execution.
      */
 
     public String getWindowExecutionId() {
@@ -88,11 +88,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution.
+     * The ID of the maintenance window execution.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution.
+     *        The ID of the maintenance window execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,10 +103,10 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the task executions from the Maintenance Window execution.
+     * The ID of the task executions from the maintenance window execution.
      * </p>
      * 
-     * @return The ID of the task executions from the Maintenance Window execution.
+     * @return The ID of the task executions from the maintenance window execution.
      */
 
     public java.util.List<String> getTaskIds() {
@@ -118,11 +118,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the task executions from the Maintenance Window execution.
+     * The ID of the task executions from the maintenance window execution.
      * </p>
      * 
      * @param taskIds
-     *        The ID of the task executions from the Maintenance Window execution.
+     *        The ID of the task executions from the maintenance window execution.
      */
 
     public void setTaskIds(java.util.Collection<String> taskIds) {
@@ -136,7 +136,7 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the task executions from the Maintenance Window execution.
+     * The ID of the task executions from the maintenance window execution.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -145,7 +145,7 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param taskIds
-     *        The ID of the task executions from the Maintenance Window execution.
+     *        The ID of the task executions from the maintenance window execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,11 +161,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the task executions from the Maintenance Window execution.
+     * The ID of the task executions from the maintenance window execution.
      * </p>
      * 
      * @param taskIds
-     *        The ID of the task executions from the Maintenance Window execution.
+     *        The ID of the task executions from the maintenance window execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,11 +176,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The status of the Maintenance Window execution.
+     * The status of the maintenance window execution.
      * </p>
      * 
      * @param status
-     *        The status of the Maintenance Window execution.
+     *        The status of the maintenance window execution.
      * @see MaintenanceWindowExecutionStatus
      */
 
@@ -190,10 +190,10 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The status of the Maintenance Window execution.
+     * The status of the maintenance window execution.
      * </p>
      * 
-     * @return The status of the Maintenance Window execution.
+     * @return The status of the maintenance window execution.
      * @see MaintenanceWindowExecutionStatus
      */
 
@@ -203,11 +203,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The status of the Maintenance Window execution.
+     * The status of the maintenance window execution.
      * </p>
      * 
      * @param status
-     *        The status of the Maintenance Window execution.
+     *        The status of the maintenance window execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowExecutionStatus
      */
@@ -219,11 +219,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The status of the Maintenance Window execution.
+     * The status of the maintenance window execution.
      * </p>
      * 
      * @param status
-     *        The status of the Maintenance Window execution.
+     *        The status of the maintenance window execution.
      * @see MaintenanceWindowExecutionStatus
      */
 
@@ -233,11 +233,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The status of the Maintenance Window execution.
+     * The status of the maintenance window execution.
      * </p>
      * 
      * @param status
-     *        The status of the Maintenance Window execution.
+     *        The status of the maintenance window execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowExecutionStatus
      */
@@ -289,11 +289,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The time the Maintenance Window started running.
+     * The time the maintenance window started running.
      * </p>
      * 
      * @param startTime
-     *        The time the Maintenance Window started running.
+     *        The time the maintenance window started running.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -302,10 +302,10 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The time the Maintenance Window started running.
+     * The time the maintenance window started running.
      * </p>
      * 
-     * @return The time the Maintenance Window started running.
+     * @return The time the maintenance window started running.
      */
 
     public java.util.Date getStartTime() {
@@ -314,11 +314,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The time the Maintenance Window started running.
+     * The time the maintenance window started running.
      * </p>
      * 
      * @param startTime
-     *        The time the Maintenance Window started running.
+     *        The time the maintenance window started running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,11 +329,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The time the Maintenance Window finished running.
+     * The time the maintenance window finished running.
      * </p>
      * 
      * @param endTime
-     *        The time the Maintenance Window finished running.
+     *        The time the maintenance window finished running.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -342,10 +342,10 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The time the Maintenance Window finished running.
+     * The time the maintenance window finished running.
      * </p>
      * 
-     * @return The time the Maintenance Window finished running.
+     * @return The time the maintenance window finished running.
      */
 
     public java.util.Date getEndTime() {
@@ -354,11 +354,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The time the Maintenance Window finished running.
+     * The time the maintenance window finished running.
      * </p>
      * 
      * @param endTime
-     *        The time the Maintenance Window finished running.
+     *        The time the maintenance window finished running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a scheduled execution for a Maintenance Window.
+ * Information about a scheduled execution for a maintenance window.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ScheduledWindowExecution" target="_top">AWS API
@@ -30,30 +30,30 @@ public class ScheduledWindowExecution implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The ID of the Maintenance Window to be run.
+     * The ID of the maintenance window to be run.
      * </p>
      */
     private String windowId;
     /**
      * <p>
-     * The name of the Maintenance Window to be run.
+     * The name of the maintenance window to be run.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The time, in ISO-8601 Extended format, that the Maintenance Window is scheduled to be run.
+     * The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.
      * </p>
      */
     private String executionTime;
 
     /**
      * <p>
-     * The ID of the Maintenance Window to be run.
+     * The ID of the maintenance window to be run.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window to be run.
+     *        The ID of the maintenance window to be run.
      */
 
     public void setWindowId(String windowId) {
@@ -62,10 +62,10 @@ public class ScheduledWindowExecution implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The ID of the Maintenance Window to be run.
+     * The ID of the maintenance window to be run.
      * </p>
      * 
-     * @return The ID of the Maintenance Window to be run.
+     * @return The ID of the maintenance window to be run.
      */
 
     public String getWindowId() {
@@ -74,11 +74,11 @@ public class ScheduledWindowExecution implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The ID of the Maintenance Window to be run.
+     * The ID of the maintenance window to be run.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window to be run.
+     *        The ID of the maintenance window to be run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class ScheduledWindowExecution implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the Maintenance Window to be run.
+     * The name of the maintenance window to be run.
      * </p>
      * 
      * @param name
-     *        The name of the Maintenance Window to be run.
+     *        The name of the maintenance window to be run.
      */
 
     public void setName(String name) {
@@ -102,10 +102,10 @@ public class ScheduledWindowExecution implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the Maintenance Window to be run.
+     * The name of the maintenance window to be run.
      * </p>
      * 
-     * @return The name of the Maintenance Window to be run.
+     * @return The name of the maintenance window to be run.
      */
 
     public String getName() {
@@ -114,11 +114,11 @@ public class ScheduledWindowExecution implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The name of the Maintenance Window to be run.
+     * The name of the maintenance window to be run.
      * </p>
      * 
      * @param name
-     *        The name of the Maintenance Window to be run.
+     *        The name of the maintenance window to be run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class ScheduledWindowExecution implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The time, in ISO-8601 Extended format, that the Maintenance Window is scheduled to be run.
+     * The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.
      * </p>
      * 
      * @param executionTime
-     *        The time, in ISO-8601 Extended format, that the Maintenance Window is scheduled to be run.
+     *        The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.
      */
 
     public void setExecutionTime(String executionTime) {
@@ -142,10 +142,10 @@ public class ScheduledWindowExecution implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The time, in ISO-8601 Extended format, that the Maintenance Window is scheduled to be run.
+     * The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.
      * </p>
      * 
-     * @return The time, in ISO-8601 Extended format, that the Maintenance Window is scheduled to be run.
+     * @return The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.
      */
 
     public String getExecutionTime() {
@@ -154,11 +154,11 @@ public class ScheduledWindowExecution implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The time, in ISO-8601 Extended format, that the Maintenance Window is scheduled to be run.
+     * The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.
      * </p>
      * 
      * @param executionTime
-     *        The time, in ISO-8601 Extended format, that the Maintenance Window is scheduled to be run.
+     *        The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
