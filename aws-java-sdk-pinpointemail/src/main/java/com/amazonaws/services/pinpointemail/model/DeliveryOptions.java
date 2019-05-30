@@ -30,10 +30,97 @@ public class DeliveryOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Specifies whether Amazon Pinpoint should require that incoming email is delivered over a connection that’s
+     * encrypted by using Transport Layer Security (TLS). If this value is set to <code>Require</code>, Amazon Pinpoint
+     * will bounce email messages that cannot be delivered over TLS. The default value is <code>Optional</code>.
+     * </p>
+     */
+    private String tlsPolicy;
+    /**
+     * <p>
      * The name of the dedicated IP pool that you want to associate with the configuration set.
      * </p>
      */
     private String sendingPoolName;
+
+    /**
+     * <p>
+     * Specifies whether Amazon Pinpoint should require that incoming email is delivered over a connection that’s
+     * encrypted by using Transport Layer Security (TLS). If this value is set to <code>Require</code>, Amazon Pinpoint
+     * will bounce email messages that cannot be delivered over TLS. The default value is <code>Optional</code>.
+     * </p>
+     * 
+     * @param tlsPolicy
+     *        Specifies whether Amazon Pinpoint should require that incoming email is delivered over a connection that’s
+     *        encrypted by using Transport Layer Security (TLS). If this value is set to <code>Require</code>, Amazon
+     *        Pinpoint will bounce email messages that cannot be delivered over TLS. The default value is
+     *        <code>Optional</code>.
+     * @see TlsPolicy
+     */
+
+    public void setTlsPolicy(String tlsPolicy) {
+        this.tlsPolicy = tlsPolicy;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon Pinpoint should require that incoming email is delivered over a connection that’s
+     * encrypted by using Transport Layer Security (TLS). If this value is set to <code>Require</code>, Amazon Pinpoint
+     * will bounce email messages that cannot be delivered over TLS. The default value is <code>Optional</code>.
+     * </p>
+     * 
+     * @return Specifies whether Amazon Pinpoint should require that incoming email is delivered over a connection
+     *         that’s encrypted by using Transport Layer Security (TLS). If this value is set to <code>Require</code>,
+     *         Amazon Pinpoint will bounce email messages that cannot be delivered over TLS. The default value is
+     *         <code>Optional</code>.
+     * @see TlsPolicy
+     */
+
+    public String getTlsPolicy() {
+        return this.tlsPolicy;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon Pinpoint should require that incoming email is delivered over a connection that’s
+     * encrypted by using Transport Layer Security (TLS). If this value is set to <code>Require</code>, Amazon Pinpoint
+     * will bounce email messages that cannot be delivered over TLS. The default value is <code>Optional</code>.
+     * </p>
+     * 
+     * @param tlsPolicy
+     *        Specifies whether Amazon Pinpoint should require that incoming email is delivered over a connection that’s
+     *        encrypted by using Transport Layer Security (TLS). If this value is set to <code>Require</code>, Amazon
+     *        Pinpoint will bounce email messages that cannot be delivered over TLS. The default value is
+     *        <code>Optional</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TlsPolicy
+     */
+
+    public DeliveryOptions withTlsPolicy(String tlsPolicy) {
+        setTlsPolicy(tlsPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon Pinpoint should require that incoming email is delivered over a connection that’s
+     * encrypted by using Transport Layer Security (TLS). If this value is set to <code>Require</code>, Amazon Pinpoint
+     * will bounce email messages that cannot be delivered over TLS. The default value is <code>Optional</code>.
+     * </p>
+     * 
+     * @param tlsPolicy
+     *        Specifies whether Amazon Pinpoint should require that incoming email is delivered over a connection that’s
+     *        encrypted by using Transport Layer Security (TLS). If this value is set to <code>Require</code>, Amazon
+     *        Pinpoint will bounce email messages that cannot be delivered over TLS. The default value is
+     *        <code>Optional</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TlsPolicy
+     */
+
+    public DeliveryOptions withTlsPolicy(TlsPolicy tlsPolicy) {
+        this.tlsPolicy = tlsPolicy.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -87,6 +174,8 @@ public class DeliveryOptions implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getTlsPolicy() != null)
+            sb.append("TlsPolicy: ").append(getTlsPolicy()).append(",");
         if (getSendingPoolName() != null)
             sb.append("SendingPoolName: ").append(getSendingPoolName());
         sb.append("}");
@@ -103,6 +192,10 @@ public class DeliveryOptions implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof DeliveryOptions == false)
             return false;
         DeliveryOptions other = (DeliveryOptions) obj;
+        if (other.getTlsPolicy() == null ^ this.getTlsPolicy() == null)
+            return false;
+        if (other.getTlsPolicy() != null && other.getTlsPolicy().equals(this.getTlsPolicy()) == false)
+            return false;
         if (other.getSendingPoolName() == null ^ this.getSendingPoolName() == null)
             return false;
         if (other.getSendingPoolName() != null && other.getSendingPoolName().equals(this.getSendingPoolName()) == false)
@@ -115,6 +208,7 @@ public class DeliveryOptions implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getTlsPolicy() == null) ? 0 : getTlsPolicy().hashCode());
         hashCode = prime * hashCode + ((getSendingPoolName() == null) ? 0 : getSendingPoolName().hashCode());
         return hashCode;
     }

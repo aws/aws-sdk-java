@@ -244,6 +244,27 @@
  * </li>
  * </ul>
  * <p>
+ * Tags used to tag resources in AWS CodeCommit (not Git tags), by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ListTagsForResource</a>, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
+ * CodeCommit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeCommit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UntagResource</a>, which removes tags for a resource in AWS CodeCommit.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * Triggers, by calling the following:
  * </p>
  * <ul>
@@ -267,7 +288,7 @@
  * </ul>
  * <p>
  * For information about how to use AWS CodeCommit, see the <a
- * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
+ * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
  * </p>
  */
 package com.amazonaws.services.codecommit;

@@ -25,7 +25,16 @@ import java.util.concurrent.ExecutorService;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * AWS RDS DataService provides Http Endpoint to query RDS databases.
+ * <fullname>Amazon RDS Data Service</fullname>
+ * <p>
+ * Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless DB cluster. To run these
+ * statements, you work with the Data Service API.
+ * </p>
+ * <p>
+ * For more information about the Data Service API, see <a
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
+ * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -61,12 +70,113 @@ public class AWSRDSDataAsyncClient extends AWSRDSDataClient implements AWSRDSDat
     }
 
     @Override
+    public java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(BatchExecuteStatementRequest request) {
+
+        return batchExecuteStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(final BatchExecuteStatementRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchExecuteStatementRequest, BatchExecuteStatementResult> asyncHandler) {
+        final BatchExecuteStatementRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchExecuteStatementResult>() {
+            @Override
+            public BatchExecuteStatementResult call() throws Exception {
+                BatchExecuteStatementResult result = null;
+
+                try {
+                    result = executeBatchExecuteStatement(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BeginTransactionResult> beginTransactionAsync(BeginTransactionRequest request) {
+
+        return beginTransactionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BeginTransactionResult> beginTransactionAsync(final BeginTransactionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BeginTransactionRequest, BeginTransactionResult> asyncHandler) {
+        final BeginTransactionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BeginTransactionResult>() {
+            @Override
+            public BeginTransactionResult call() throws Exception {
+                BeginTransactionResult result = null;
+
+                try {
+                    result = executeBeginTransaction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CommitTransactionResult> commitTransactionAsync(CommitTransactionRequest request) {
+
+        return commitTransactionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CommitTransactionResult> commitTransactionAsync(final CommitTransactionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CommitTransactionRequest, CommitTransactionResult> asyncHandler) {
+        final CommitTransactionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CommitTransactionResult>() {
+            @Override
+            public CommitTransactionResult call() throws Exception {
+                CommitTransactionResult result = null;
+
+                try {
+                    result = executeCommitTransaction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    @Deprecated
     public java.util.concurrent.Future<ExecuteSqlResult> executeSqlAsync(ExecuteSqlRequest request) {
 
         return executeSqlAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ExecuteSqlResult> executeSqlAsync(final ExecuteSqlRequest request,
             final com.amazonaws.handlers.AsyncHandler<ExecuteSqlRequest, ExecuteSqlResult> asyncHandler) {
         final ExecuteSqlRequest finalRequest = beforeClientExecution(request);
@@ -78,6 +188,72 @@ public class AWSRDSDataAsyncClient extends AWSRDSDataClient implements AWSRDSDat
 
                 try {
                     result = executeExecuteSql(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteStatementResult> executeStatementAsync(ExecuteStatementRequest request) {
+
+        return executeStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteStatementResult> executeStatementAsync(final ExecuteStatementRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExecuteStatementRequest, ExecuteStatementResult> asyncHandler) {
+        final ExecuteStatementRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExecuteStatementResult>() {
+            @Override
+            public ExecuteStatementResult call() throws Exception {
+                ExecuteStatementResult result = null;
+
+                try {
+                    result = executeExecuteStatement(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RollbackTransactionResult> rollbackTransactionAsync(RollbackTransactionRequest request) {
+
+        return rollbackTransactionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RollbackTransactionResult> rollbackTransactionAsync(final RollbackTransactionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RollbackTransactionRequest, RollbackTransactionResult> asyncHandler) {
+        final RollbackTransactionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RollbackTransactionResult>() {
+            @Override
+            public RollbackTransactionResult call() throws Exception {
+                RollbackTransactionResult result = null;
+
+                try {
+                    result = executeRollbackTransaction(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -899,6 +899,21 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     }
 
     @Override
+    public java.util.concurrent.Future<ListStackInstancesForProvisionedProductResult> listStackInstancesForProvisionedProductAsync(
+            ListStackInstancesForProvisionedProductRequest request) {
+
+        return listStackInstancesForProvisionedProductAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStackInstancesForProvisionedProductResult> listStackInstancesForProvisionedProductAsync(
+            ListStackInstancesForProvisionedProductRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListStackInstancesForProvisionedProductRequest, ListStackInstancesForProvisionedProductResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagOptionsResult> listTagOptionsAsync(ListTagOptionsRequest request) {
 
         return listTagOptionsAsync(request, null);

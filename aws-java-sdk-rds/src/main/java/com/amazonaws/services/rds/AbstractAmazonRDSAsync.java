@@ -1869,6 +1869,19 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements AmazonR
     }
 
     @Override
+    public java.util.concurrent.Future<StartActivityStreamResult> startActivityStreamAsync(StartActivityStreamRequest request) {
+
+        return startActivityStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartActivityStreamResult> startActivityStreamAsync(StartActivityStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartActivityStreamRequest, StartActivityStreamResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DBCluster> startDBClusterAsync(StartDBClusterRequest request) {
 
         return startDBClusterAsync(request, null);
@@ -1890,6 +1903,19 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements AmazonR
     @Override
     public java.util.concurrent.Future<DBInstance> startDBInstanceAsync(StartDBInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<StartDBInstanceRequest, DBInstance> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopActivityStreamResult> stopActivityStreamAsync(StopActivityStreamRequest request) {
+
+        return stopActivityStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopActivityStreamResult> stopActivityStreamAsync(StopActivityStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopActivityStreamRequest, StopActivityStreamResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

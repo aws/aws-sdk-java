@@ -28,7 +28,33 @@ public class AbstractAWSRDSData implements AWSRDSData {
     }
 
     @Override
+    public BatchExecuteStatementResult batchExecuteStatement(BatchExecuteStatementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BeginTransactionResult beginTransaction(BeginTransactionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CommitTransactionResult commitTransaction(CommitTransactionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    @Deprecated
     public ExecuteSqlResult executeSql(ExecuteSqlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ExecuteStatementResult executeStatement(ExecuteStatementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RollbackTransactionResult rollbackTransaction(RollbackTransactionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

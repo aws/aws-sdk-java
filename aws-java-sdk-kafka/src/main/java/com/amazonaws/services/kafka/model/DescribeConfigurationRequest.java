@@ -38,7 +38,9 @@ public class DescribeConfigurationRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param arn
+     *        <p>
      *        The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
+     *        </p>
      */
 
     public void setArn(String arn) {
@@ -50,7 +52,9 @@ public class DescribeConfigurationRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
+     * @return <p>
+     *         The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
+     *         </p>
      */
 
     public String getArn() {
@@ -63,7 +67,9 @@ public class DescribeConfigurationRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param arn
+     *        <p>
      *        The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

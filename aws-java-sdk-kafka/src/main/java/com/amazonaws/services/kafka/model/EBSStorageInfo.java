@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
+ * 
+ <p>
  * Contains information about the EBS storage volumes attached to Kafka broker nodes.
  * </p>
  * 
@@ -41,7 +42,9 @@ public class EBSStorageInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param volumeSize
+     *        <p>
      *        The size in GiB of the EBS volume for the data drive on each broker node.
+     *        </p>
      */
 
     public void setVolumeSize(Integer volumeSize) {
@@ -53,7 +56,9 @@ public class EBSStorageInfo implements Serializable, Cloneable, StructuredPojo {
      * The size in GiB of the EBS volume for the data drive on each broker node.
      * </p>
      * 
-     * @return The size in GiB of the EBS volume for the data drive on each broker node.
+     * @return <p>
+     *         The size in GiB of the EBS volume for the data drive on each broker node.
+     *         </p>
      */
 
     public Integer getVolumeSize() {
@@ -66,7 +71,9 @@ public class EBSStorageInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param volumeSize
+     *        <p>
      *        The size in GiB of the EBS volume for the data drive on each broker node.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

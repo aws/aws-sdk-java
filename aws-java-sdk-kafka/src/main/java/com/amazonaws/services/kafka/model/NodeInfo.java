@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
+ * 
+ <p>
  * The node information object.
  * </p>
  * 
@@ -71,7 +72,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param addedToClusterTime
+     *        <p>
      *        The start time.
+     *        </p>
      */
 
     public void setAddedToClusterTime(String addedToClusterTime) {
@@ -83,7 +86,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * The start time.
      * </p>
      * 
-     * @return The start time.
+     * @return <p>
+     *         The start time.
+     *         </p>
      */
 
     public String getAddedToClusterTime() {
@@ -96,7 +101,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param addedToClusterTime
+     *        <p>
      *        The start time.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,7 +118,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param brokerNodeInfo
+     *        <p>
      *        The broker node info.
+     *        </p>
      */
 
     public void setBrokerNodeInfo(BrokerNodeInfo brokerNodeInfo) {
@@ -123,7 +132,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * The broker node info.
      * </p>
      * 
-     * @return The broker node info.
+     * @return <p>
+     *         The broker node info.
+     *         </p>
      */
 
     public BrokerNodeInfo getBrokerNodeInfo() {
@@ -136,7 +147,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param brokerNodeInfo
+     *        <p>
      *        The broker node info.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,7 +164,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param instanceType
+     *        <p>
      *        The instance type.
+     *        </p>
      */
 
     public void setInstanceType(String instanceType) {
@@ -163,7 +178,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * The instance type.
      * </p>
      * 
-     * @return The instance type.
+     * @return <p>
+     *         The instance type.
+     *         </p>
      */
 
     public String getInstanceType() {
@@ -176,7 +193,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param instanceType
+     *        <p>
      *        The instance type.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,7 +210,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param nodeARN
+     *        <p>
      *        The Amazon Resource Name (ARN) of the node.
+     *        </p>
      */
 
     public void setNodeARN(String nodeARN) {
@@ -203,7 +224,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the node.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the node.
+     * @return <p>
+     *         The Amazon Resource Name (ARN) of the node.
+     *         </p>
      */
 
     public String getNodeARN() {
@@ -216,7 +239,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param nodeARN
+     *        <p>
      *        The Amazon Resource Name (ARN) of the node.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,7 +256,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param nodeType
+     *        <p>
      *        The node type.
+     *        </p>
      * @see NodeType
      */
 
@@ -244,7 +271,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * The node type.
      * </p>
      * 
-     * @return The node type.
+     * @return <p>
+     *         The node type.
+     *         </p>
      * @see NodeType
      */
 
@@ -258,7 +287,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param nodeType
+     *        <p>
      *        The node type.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NodeType
      */
@@ -274,7 +305,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param nodeType
+     *        <p>
      *        The node type.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NodeType
      */
@@ -290,7 +323,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param zookeeperNodeInfo
+     *        <p>
      *        The ZookeeperNodeInfo.
+     *        </p>
      */
 
     public void setZookeeperNodeInfo(ZookeeperNodeInfo zookeeperNodeInfo) {
@@ -302,7 +337,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * The ZookeeperNodeInfo.
      * </p>
      * 
-     * @return The ZookeeperNodeInfo.
+     * @return <p>
+     *         The ZookeeperNodeInfo.
+     *         </p>
      */
 
     public ZookeeperNodeInfo getZookeeperNodeInfo() {
@@ -315,7 +352,9 @@ public class NodeInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param zookeeperNodeInfo
+     *        <p>
      *        The ZookeeperNodeInfo.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

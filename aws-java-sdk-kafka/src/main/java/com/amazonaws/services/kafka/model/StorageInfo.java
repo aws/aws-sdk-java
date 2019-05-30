@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
+ * 
+ <p>
  * Contains information about storage volumes attached to MSK broker nodes.
  * </p>
  * 
@@ -41,7 +42,9 @@ public class StorageInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param ebsStorageInfo
+     *        <p>
      *        EBS volume information.
+     *        </p>
      */
 
     public void setEbsStorageInfo(EBSStorageInfo ebsStorageInfo) {
@@ -53,7 +56,9 @@ public class StorageInfo implements Serializable, Cloneable, StructuredPojo {
      * EBS volume information.
      * </p>
      * 
-     * @return EBS volume information.
+     * @return <p>
+     *         EBS volume information.
+     *         </p>
      */
 
     public EBSStorageInfo getEbsStorageInfo() {
@@ -66,7 +71,9 @@ public class StorageInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param ebsStorageInfo
+     *        <p>
      *        EBS volume information.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

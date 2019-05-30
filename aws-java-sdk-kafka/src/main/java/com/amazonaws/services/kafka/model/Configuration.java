@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
+ * 
+ <p>
  * Represents an MSK Configuration.
  * </p>
  * 
@@ -73,7 +74,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param arn
+     *        <p>
      *        The Amazon Resource Name (ARN) of the configuration.
+     *        </p>
      */
 
     public void setArn(String arn) {
@@ -85,7 +88,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the configuration.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the configuration.
+     * @return <p>
+     *         The Amazon Resource Name (ARN) of the configuration.
+     *         </p>
      */
 
     public String getArn() {
@@ -98,7 +103,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param arn
+     *        <p>
      *        The Amazon Resource Name (ARN) of the configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,7 +120,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param creationTime
+     *        <p>
      *        The time when the configuration was created.
+     *        </p>
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -125,7 +134,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * The time when the configuration was created.
      * </p>
      * 
-     * @return The time when the configuration was created.
+     * @return <p>
+     *         The time when the configuration was created.
+     *         </p>
      */
 
     public java.util.Date getCreationTime() {
@@ -138,7 +149,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param creationTime
+     *        <p>
      *        The time when the configuration was created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,7 +166,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param description
+     *        <p>
      *        The description of the configuration.
+     *        </p>
      */
 
     public void setDescription(String description) {
@@ -165,7 +180,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * The description of the configuration.
      * </p>
      * 
-     * @return The description of the configuration.
+     * @return <p>
+     *         The description of the configuration.
+     *         </p>
      */
 
     public String getDescription() {
@@ -178,7 +195,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param description
+     *        <p>
      *        The description of the configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,9 +213,11 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * array.
      * </p>
      * 
-     * @return An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this
+     * @return <p>
+     *         An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this
      *         configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in
      *         this array.
+     *         </p>
      */
 
     public java.util.List<String> getKafkaVersions() {
@@ -211,9 +232,11 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param kafkaVersions
+     *        <p>
      *        An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this
      *        configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in
      *        this array.
+     *        </p>
      */
 
     public void setKafkaVersions(java.util.Collection<String> kafkaVersions) {
@@ -231,6 +254,7 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in this
      * array.
      * </p>
+     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setKafkaVersions(java.util.Collection)} or {@link #withKafkaVersions(java.util.Collection)} if you want
@@ -238,9 +262,11 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param kafkaVersions
+     *        <p>
      *        An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this
      *        configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in
      *        this array.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,9 +288,11 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param kafkaVersions
+     *        <p>
      *        An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this
      *        configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in
      *        this array.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,7 +307,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param latestRevision
+     *        <p>
      *        Latest revision of the configuration.
+     *        </p>
      */
 
     public void setLatestRevision(ConfigurationRevision latestRevision) {
@@ -291,7 +321,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * Latest revision of the configuration.
      * </p>
      * 
-     * @return Latest revision of the configuration.
+     * @return <p>
+     *         Latest revision of the configuration.
+     *         </p>
      */
 
     public ConfigurationRevision getLatestRevision() {
@@ -304,7 +336,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param latestRevision
+     *        <p>
      *        Latest revision of the configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,7 +353,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param name
+     *        <p>
      *        The name of the configuration.
+     *        </p>
      */
 
     public void setName(String name) {
@@ -331,7 +367,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * The name of the configuration.
      * </p>
      * 
-     * @return The name of the configuration.
+     * @return <p>
+     *         The name of the configuration.
+     *         </p>
      */
 
     public String getName() {
@@ -344,7 +382,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param name
+     *        <p>
      *        The name of the configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

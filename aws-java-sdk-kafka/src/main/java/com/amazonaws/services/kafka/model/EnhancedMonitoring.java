@@ -15,9 +15,11 @@ package com.amazonaws.services.kafka.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
+ * 
+ <p>
  * Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT,
- * PER_BROKER, and PER_TOPIC_PER_BROKER.
+ * PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of
+ * monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

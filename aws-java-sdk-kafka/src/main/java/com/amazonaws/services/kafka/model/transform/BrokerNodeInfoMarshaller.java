@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.kafka.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class BrokerNodeInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientVpcIpAddress").build();
     private static final MarshallingInfo<StructuredPojo> CURRENTBROKERSOFTWAREINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("currentBrokerSoftwareInfo").build();
+    private static final MarshallingInfo<List> ENDPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("endpoints").build();
 
     private static final BrokerNodeInfoMarshaller instance = new BrokerNodeInfoMarshaller();
 
@@ -59,6 +62,7 @@ public class BrokerNodeInfoMarshaller {
             protocolMarshaller.marshall(brokerNodeInfo.getClientSubnet(), CLIENTSUBNET_BINDING);
             protocolMarshaller.marshall(brokerNodeInfo.getClientVpcIpAddress(), CLIENTVPCIPADDRESS_BINDING);
             protocolMarshaller.marshall(brokerNodeInfo.getCurrentBrokerSoftwareInfo(), CURRENTBROKERSOFTWAREINFO_BINDING);
+            protocolMarshaller.marshall(brokerNodeInfo.getEndpoints(), ENDPOINTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

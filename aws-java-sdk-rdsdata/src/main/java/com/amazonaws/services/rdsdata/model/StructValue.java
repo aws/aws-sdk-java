@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * User Defined Type
+ * <p>
+ * A structure value returned by a call.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/StructValue" target="_top">AWS API
  *      Documentation</a>
@@ -26,13 +28,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StructValue implements Serializable, Cloneable, StructuredPojo {
 
-    /** Struct or UDT */
+    /**
+     * <p>
+     * The attributes returned in the record.
+     * </p>
+     */
     private java.util.List<Value> attributes;
 
     /**
-     * Struct or UDT
+     * <p>
+     * The attributes returned in the record.
+     * </p>
      * 
-     * @return Struct or UDT
+     * @return The attributes returned in the record.
      */
 
     public java.util.List<Value> getAttributes() {
@@ -40,10 +48,12 @@ public class StructValue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Struct or UDT
+     * <p>
+     * The attributes returned in the record.
+     * </p>
      * 
      * @param attributes
-     *        Struct or UDT
+     *        The attributes returned in the record.
      */
 
     public void setAttributes(java.util.Collection<Value> attributes) {
@@ -56,7 +66,9 @@ public class StructValue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Struct or UDT
+     * <p>
+     * The attributes returned in the record.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to
@@ -64,7 +76,7 @@ public class StructValue implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param attributes
-     *        Struct or UDT
+     *        The attributes returned in the record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +91,12 @@ public class StructValue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Struct or UDT
+     * <p>
+     * The attributes returned in the record.
+     * </p>
      * 
      * @param attributes
-     *        Struct or UDT
+     *        The attributes returned in the record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

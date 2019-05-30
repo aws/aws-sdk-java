@@ -174,7 +174,7 @@ public class ProfilesConfigFileWriter {
 
                 if (LOG.isDebugEnabled()) {
                     LOG.debug(String
-                            .format("The original credentials file is stashed to loaction (%s).",
+                            .format("The original credentials file is stashed to location (%s).",
                                     stashLocation.getAbsolutePath()));
                 }
 

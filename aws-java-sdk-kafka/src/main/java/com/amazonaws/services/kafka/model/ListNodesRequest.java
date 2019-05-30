@@ -33,15 +33,15 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String clusterArn;
     /**
      * <p>
-     * The maximum number of clusters to return in the response. If there are more clusters, the response includes a
+     * The maximum number of results to return in the response. If there are more results, the response includes a
      * NextToken parameter.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The paginated results marker. When the result of a ListClusters operation is truncated, the call returns
-     * NextToken in the response. To get another batch of clusters, provide this token in your next request.
+     * The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the
+     * response. To get the next batch, provide this token in your next request.
      * </p>
      */
     private String nextToken;
@@ -52,7 +52,9 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param clusterArn
+     *        <p>
      *        The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     *        </p>
      */
 
     public void setClusterArn(String clusterArn) {
@@ -64,7 +66,9 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * The Amazon Resource Name (ARN) that uniquely identifies the cluster.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     * @return <p>
+     *         The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     *         </p>
      */
 
     public String getClusterArn() {
@@ -77,7 +81,9 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param clusterArn
+     *        <p>
      *        The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,13 +94,15 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum number of clusters to return in the response. If there are more clusters, the response includes a
+     * The maximum number of results to return in the response. If there are more results, the response includes a
      * NextToken parameter.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of clusters to return in the response. If there are more clusters, the response
-     *        includes a NextToken parameter.
+     *        <p>
+     *        The maximum number of results to return in the response. If there are more results, the response includes
+     *        a NextToken parameter.
+     *        </p>
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -103,12 +111,14 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum number of clusters to return in the response. If there are more clusters, the response includes a
+     * The maximum number of results to return in the response. If there are more results, the response includes a
      * NextToken parameter.
      * </p>
      * 
-     * @return The maximum number of clusters to return in the response. If there are more clusters, the response
-     *         includes a NextToken parameter.
+     * @return <p>
+     *         The maximum number of results to return in the response. If there are more results, the response includes
+     *         a NextToken parameter.
+     *         </p>
      */
 
     public Integer getMaxResults() {
@@ -117,13 +127,15 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum number of clusters to return in the response. If there are more clusters, the response includes a
+     * The maximum number of results to return in the response. If there are more results, the response includes a
      * NextToken parameter.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of clusters to return in the response. If there are more clusters, the response
-     *        includes a NextToken parameter.
+     *        <p>
+     *        The maximum number of results to return in the response. If there are more results, the response includes
+     *        a NextToken parameter.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,13 +146,15 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The paginated results marker. When the result of a ListClusters operation is truncated, the call returns
-     * NextToken in the response. To get another batch of clusters, provide this token in your next request.
+     * The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the
+     * response. To get the next batch, provide this token in your next request.
      * </p>
      * 
      * @param nextToken
-     *        The paginated results marker. When the result of a ListClusters operation is truncated, the call returns
-     *        NextToken in the response. To get another batch of clusters, provide this token in your next request.
+     *        <p>
+     *        The paginated results marker. When the result of the operation is truncated, the call returns NextToken in
+     *        the response. To get the next batch, provide this token in your next request.
+     *        </p>
      */
 
     public void setNextToken(String nextToken) {
@@ -149,12 +163,14 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The paginated results marker. When the result of a ListClusters operation is truncated, the call returns
-     * NextToken in the response. To get another batch of clusters, provide this token in your next request.
+     * The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the
+     * response. To get the next batch, provide this token in your next request.
      * </p>
      * 
-     * @return The paginated results marker. When the result of a ListClusters operation is truncated, the call returns
-     *         NextToken in the response. To get another batch of clusters, provide this token in your next request.
+     * @return <p>
+     *         The paginated results marker. When the result of the operation is truncated, the call returns NextToken
+     *         in the response. To get the next batch, provide this token in your next request.
+     *         </p>
      */
 
     public String getNextToken() {
@@ -163,13 +179,15 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The paginated results marker. When the result of a ListClusters operation is truncated, the call returns
-     * NextToken in the response. To get another batch of clusters, provide this token in your next request.
+     * The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the
+     * response. To get the next batch, provide this token in your next request.
      * </p>
      * 
      * @param nextToken
-     *        The paginated results marker. When the result of a ListClusters operation is truncated, the call returns
-     *        NextToken in the response. To get another batch of clusters, provide this token in your next request.
+     *        <p>
+     *        The paginated results marker. When the result of the operation is truncated, the call returns NextToken in
+     *        the response. To get the next batch, provide this token in your next request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

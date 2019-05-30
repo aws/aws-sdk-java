@@ -44,7 +44,9 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param clusterArn
+     *        <p>
      *        The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     *        </p>
      */
 
     public void setClusterArn(String clusterArn) {
@@ -56,7 +58,9 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Amazon Resource Name (ARN) that uniquely identifies the cluster.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     * @return <p>
+     *         The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     *         </p>
      */
 
     public String getClusterArn() {
@@ -69,7 +73,9 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param clusterArn
+     *        <p>
      *        The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +90,9 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param currentVersion
+     *        <p>
      *        The current version of the MSK cluster.
+     *        </p>
      */
 
     public void setCurrentVersion(String currentVersion) {
@@ -96,7 +104,9 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The current version of the MSK cluster.
      * </p>
      * 
-     * @return The current version of the MSK cluster.
+     * @return <p>
+     *         The current version of the MSK cluster.
+     *         </p>
      */
 
     public String getCurrentVersion() {
@@ -109,7 +119,9 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param currentVersion
+     *        <p>
      *        The current version of the MSK cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

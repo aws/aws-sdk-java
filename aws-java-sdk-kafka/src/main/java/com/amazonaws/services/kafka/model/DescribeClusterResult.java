@@ -36,7 +36,9 @@ public class DescribeClusterResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param clusterInfo
+     *        <p>
      *        The cluster information.
+     *        </p>
      */
 
     public void setClusterInfo(ClusterInfo clusterInfo) {
@@ -48,7 +50,9 @@ public class DescribeClusterResult extends com.amazonaws.AmazonWebServiceResult<
      * The cluster information.
      * </p>
      * 
-     * @return The cluster information.
+     * @return <p>
+     *         The cluster information.
+     *         </p>
      */
 
     public ClusterInfo getClusterInfo() {
@@ -61,7 +65,9 @@ public class DescribeClusterResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param clusterInfo
+     *        <p>
      *        The cluster information.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

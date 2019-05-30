@@ -18,7 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Execute SQL Request
+ * <p>
+ * The request parameters represent the input of a request to run one or more SQL statements.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteSql" target="_top">AWS API
  *      Documentation</a>
@@ -26,22 +28,48 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExecuteSqlRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** ARN of the db credentials in AWS Secret Store or the friendly secret name */
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.
+     * </p>
+     */
     private String awsSecretStoreArn;
-    /** Target DB name */
+    /**
+     * <p>
+     * The name of the database.
+     * </p>
+     */
     private String database;
-    /** ARN of the target db cluster or instance */
+    /**
+     * <p>
+     * The ARN of the Aurora Serverless DB cluster.
+     * </p>
+     */
     private String dbClusterOrInstanceArn;
-    /** Target Schema name */
+    /**
+     * <p>
+     * The name of the database schema.
+     * </p>
+     */
     private String schema;
-    /** SQL statement(s) to be executed. Statements can be chained by using semicolons */
+    /**
+     * <p>
+     * One or more SQL statements to run on the DB cluster.
+     * </p>
+     * <p>
+     * You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted,
+     * including data definition, data manipulation, and commit statements.
+     * </p>
+     */
     private String sqlStatements;
 
     /**
-     * ARN of the db credentials in AWS Secret Store or the friendly secret name
+     * <p>
+     * The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.
+     * </p>
      * 
      * @param awsSecretStoreArn
-     *        ARN of the db credentials in AWS Secret Store or the friendly secret name
+     *        The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.
      */
 
     public void setAwsSecretStoreArn(String awsSecretStoreArn) {
@@ -49,9 +77,11 @@ public class ExecuteSqlRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * ARN of the db credentials in AWS Secret Store or the friendly secret name
+     * <p>
+     * The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.
+     * </p>
      * 
-     * @return ARN of the db credentials in AWS Secret Store or the friendly secret name
+     * @return The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.
      */
 
     public String getAwsSecretStoreArn() {
@@ -59,10 +89,12 @@ public class ExecuteSqlRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * ARN of the db credentials in AWS Secret Store or the friendly secret name
+     * <p>
+     * The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.
+     * </p>
      * 
      * @param awsSecretStoreArn
-     *        ARN of the db credentials in AWS Secret Store or the friendly secret name
+     *        The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,10 +104,12 @@ public class ExecuteSqlRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Target DB name
+     * <p>
+     * The name of the database.
+     * </p>
      * 
      * @param database
-     *        Target DB name
+     *        The name of the database.
      */
 
     public void setDatabase(String database) {
@@ -83,9 +117,11 @@ public class ExecuteSqlRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Target DB name
+     * <p>
+     * The name of the database.
+     * </p>
      * 
-     * @return Target DB name
+     * @return The name of the database.
      */
 
     public String getDatabase() {
@@ -93,10 +129,12 @@ public class ExecuteSqlRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Target DB name
+     * <p>
+     * The name of the database.
+     * </p>
      * 
      * @param database
-     *        Target DB name
+     *        The name of the database.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,10 +144,12 @@ public class ExecuteSqlRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * ARN of the target db cluster or instance
+     * <p>
+     * The ARN of the Aurora Serverless DB cluster.
+     * </p>
      * 
      * @param dbClusterOrInstanceArn
-     *        ARN of the target db cluster or instance
+     *        The ARN of the Aurora Serverless DB cluster.
      */
 
     public void setDbClusterOrInstanceArn(String dbClusterOrInstanceArn) {
@@ -117,9 +157,11 @@ public class ExecuteSqlRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * ARN of the target db cluster or instance
+     * <p>
+     * The ARN of the Aurora Serverless DB cluster.
+     * </p>
      * 
-     * @return ARN of the target db cluster or instance
+     * @return The ARN of the Aurora Serverless DB cluster.
      */
 
     public String getDbClusterOrInstanceArn() {
@@ -127,10 +169,12 @@ public class ExecuteSqlRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * ARN of the target db cluster or instance
+     * <p>
+     * The ARN of the Aurora Serverless DB cluster.
+     * </p>
      * 
      * @param dbClusterOrInstanceArn
-     *        ARN of the target db cluster or instance
+     *        The ARN of the Aurora Serverless DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,10 +184,12 @@ public class ExecuteSqlRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Target Schema name
+     * <p>
+     * The name of the database schema.
+     * </p>
      * 
      * @param schema
-     *        Target Schema name
+     *        The name of the database schema.
      */
 
     public void setSchema(String schema) {
@@ -151,9 +197,11 @@ public class ExecuteSqlRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Target Schema name
+     * <p>
+     * The name of the database schema.
+     * </p>
      * 
-     * @return Target Schema name
+     * @return The name of the database schema.
      */
 
     public String getSchema() {
@@ -161,10 +209,12 @@ public class ExecuteSqlRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Target Schema name
+     * <p>
+     * The name of the database schema.
+     * </p>
      * 
      * @param schema
-     *        Target Schema name
+     *        The name of the database schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,10 +224,19 @@ public class ExecuteSqlRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * SQL statement(s) to be executed. Statements can be chained by using semicolons
+     * <p>
+     * One or more SQL statements to run on the DB cluster.
+     * </p>
+     * <p>
+     * You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted,
+     * including data definition, data manipulation, and commit statements.
+     * </p>
      * 
      * @param sqlStatements
-     *        SQL statement(s) to be executed. Statements can be chained by using semicolons
+     *        One or more SQL statements to run on the DB cluster.</p>
+     *        <p>
+     *        You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is
+     *        permitted, including data definition, data manipulation, and commit statements.
      */
 
     public void setSqlStatements(String sqlStatements) {
@@ -185,9 +244,18 @@ public class ExecuteSqlRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * SQL statement(s) to be executed. Statements can be chained by using semicolons
+     * <p>
+     * One or more SQL statements to run on the DB cluster.
+     * </p>
+     * <p>
+     * You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted,
+     * including data definition, data manipulation, and commit statements.
+     * </p>
      * 
-     * @return SQL statement(s) to be executed. Statements can be chained by using semicolons
+     * @return One or more SQL statements to run on the DB cluster.</p>
+     *         <p>
+     *         You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is
+     *         permitted, including data definition, data manipulation, and commit statements.
      */
 
     public String getSqlStatements() {
@@ -195,10 +263,19 @@ public class ExecuteSqlRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * SQL statement(s) to be executed. Statements can be chained by using semicolons
+     * <p>
+     * One or more SQL statements to run on the DB cluster.
+     * </p>
+     * <p>
+     * You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted,
+     * including data definition, data manipulation, and commit statements.
+     * </p>
      * 
      * @param sqlStatements
-     *        SQL statement(s) to be executed. Statements can be chained by using semicolons
+     *        One or more SQL statements to run on the DB cluster.</p>
+     *        <p>
+     *        You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is
+     *        permitted, including data definition, data manipulation, and commit statements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

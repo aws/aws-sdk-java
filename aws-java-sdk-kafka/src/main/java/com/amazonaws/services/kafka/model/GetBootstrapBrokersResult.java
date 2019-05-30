@@ -29,6 +29,12 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private String bootstrapBrokerString;
+    /**
+     * <p>
+     * A string containing one or more DNS names (or IP) and TLS port pairs.
+     * </p>
+     */
+    private String bootstrapBrokerStringTls;
 
     /**
      * <p>
@@ -36,7 +42,9 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param bootstrapBrokerString
+     *        <p>
      *        A string containing one or more hostname:port pairs.
+     *        </p>
      */
 
     public void setBootstrapBrokerString(String bootstrapBrokerString) {
@@ -48,7 +56,9 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
      * A string containing one or more hostname:port pairs.
      * </p>
      * 
-     * @return A string containing one or more hostname:port pairs.
+     * @return <p>
+     *         A string containing one or more hostname:port pairs.
+     *         </p>
      */
 
     public String getBootstrapBrokerString() {
@@ -61,12 +71,60 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param bootstrapBrokerString
+     *        <p>
      *        A string containing one or more hostname:port pairs.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetBootstrapBrokersResult withBootstrapBrokerString(String bootstrapBrokerString) {
         setBootstrapBrokerString(bootstrapBrokerString);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A string containing one or more DNS names (or IP) and TLS port pairs.
+     * </p>
+     * 
+     * @param bootstrapBrokerStringTls
+     *        <p>
+     *        A string containing one or more DNS names (or IP) and TLS port pairs.
+     *        </p>
+     */
+
+    public void setBootstrapBrokerStringTls(String bootstrapBrokerStringTls) {
+        this.bootstrapBrokerStringTls = bootstrapBrokerStringTls;
+    }
+
+    /**
+     * <p>
+     * A string containing one or more DNS names (or IP) and TLS port pairs.
+     * </p>
+     * 
+     * @return <p>
+     *         A string containing one or more DNS names (or IP) and TLS port pairs.
+     *         </p>
+     */
+
+    public String getBootstrapBrokerStringTls() {
+        return this.bootstrapBrokerStringTls;
+    }
+
+    /**
+     * <p>
+     * A string containing one or more DNS names (or IP) and TLS port pairs.
+     * </p>
+     * 
+     * @param bootstrapBrokerStringTls
+     *        <p>
+     *        A string containing one or more DNS names (or IP) and TLS port pairs.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBootstrapBrokersResult withBootstrapBrokerStringTls(String bootstrapBrokerStringTls) {
+        setBootstrapBrokerStringTls(bootstrapBrokerStringTls);
         return this;
     }
 
@@ -83,7 +141,9 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBootstrapBrokerString() != null)
-            sb.append("BootstrapBrokerString: ").append(getBootstrapBrokerString());
+            sb.append("BootstrapBrokerString: ").append(getBootstrapBrokerString()).append(",");
+        if (getBootstrapBrokerStringTls() != null)
+            sb.append("BootstrapBrokerStringTls: ").append(getBootstrapBrokerStringTls());
         sb.append("}");
         return sb.toString();
     }
@@ -102,6 +162,10 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getBootstrapBrokerString() != null && other.getBootstrapBrokerString().equals(this.getBootstrapBrokerString()) == false)
             return false;
+        if (other.getBootstrapBrokerStringTls() == null ^ this.getBootstrapBrokerStringTls() == null)
+            return false;
+        if (other.getBootstrapBrokerStringTls() != null && other.getBootstrapBrokerStringTls().equals(this.getBootstrapBrokerStringTls()) == false)
+            return false;
         return true;
     }
 
@@ -111,6 +175,7 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBootstrapBrokerString() == null) ? 0 : getBootstrapBrokerString().hashCode());
+        hashCode = prime * hashCode + ((getBootstrapBrokerStringTls() == null) ? 0 : getBootstrapBrokerStringTls().hashCode());
         return hashCode;
     }
 

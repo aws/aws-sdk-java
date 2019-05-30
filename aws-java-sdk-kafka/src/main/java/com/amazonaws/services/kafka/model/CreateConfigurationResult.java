@@ -54,7 +54,9 @@ public class CreateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param arn
+     *        <p>
      *        The Amazon Resource Name (ARN) of the configuration.
+     *        </p>
      */
 
     public void setArn(String arn) {
@@ -66,7 +68,9 @@ public class CreateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
      * The Amazon Resource Name (ARN) of the configuration.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the configuration.
+     * @return <p>
+     *         The Amazon Resource Name (ARN) of the configuration.
+     *         </p>
      */
 
     public String getArn() {
@@ -79,7 +83,9 @@ public class CreateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param arn
+     *        <p>
      *        The Amazon Resource Name (ARN) of the configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,7 +100,9 @@ public class CreateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param creationTime
+     *        <p>
      *        The time when the configuration was created.
+     *        </p>
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -106,7 +114,9 @@ public class CreateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
      * The time when the configuration was created.
      * </p>
      * 
-     * @return The time when the configuration was created.
+     * @return <p>
+     *         The time when the configuration was created.
+     *         </p>
      */
 
     public java.util.Date getCreationTime() {
@@ -119,7 +129,9 @@ public class CreateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param creationTime
+     *        <p>
      *        The time when the configuration was created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,7 +146,9 @@ public class CreateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param latestRevision
+     *        <p>
      *        Latest revision of the configuration.
+     *        </p>
      */
 
     public void setLatestRevision(ConfigurationRevision latestRevision) {
@@ -146,7 +160,9 @@ public class CreateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
      * Latest revision of the configuration.
      * </p>
      * 
-     * @return Latest revision of the configuration.
+     * @return <p>
+     *         Latest revision of the configuration.
+     *         </p>
      */
 
     public ConfigurationRevision getLatestRevision() {
@@ -159,7 +175,9 @@ public class CreateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param latestRevision
+     *        <p>
      *        Latest revision of the configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,7 +192,9 @@ public class CreateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param name
+     *        <p>
      *        The name of the configuration.
+     *        </p>
      */
 
     public void setName(String name) {
@@ -186,7 +206,9 @@ public class CreateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
      * The name of the configuration.
      * </p>
      * 
-     * @return The name of the configuration.
+     * @return <p>
+     *         The name of the configuration.
+     *         </p>
      */
 
     public String getName() {
@@ -199,7 +221,9 @@ public class CreateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param name
+     *        <p>
      *        The name of the configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

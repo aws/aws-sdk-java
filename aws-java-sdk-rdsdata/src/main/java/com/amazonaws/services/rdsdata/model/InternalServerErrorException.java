@@ -15,7 +15,9 @@ package com.amazonaws.services.rdsdata.model;
 import javax.annotation.Generated;
 
 /**
- * Internal service error
+ * <p>
+ * An internal error occurred.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalServerErrorException extends com.amazonaws.services.rdsdata.model.AWSRDSDataException {

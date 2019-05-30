@@ -48,7 +48,9 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param clusterArn
+     *        <p>
      *        The Amazon Resource Name (ARN) of the cluster.
+     *        </p>
      */
 
     public void setClusterArn(String clusterArn) {
@@ -60,7 +62,9 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
      * The Amazon Resource Name (ARN) of the cluster.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the cluster.
+     * @return <p>
+     *         The Amazon Resource Name (ARN) of the cluster.
+     *         </p>
      */
 
     public String getClusterArn() {
@@ -73,7 +77,9 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param clusterArn
+     *        <p>
      *        The Amazon Resource Name (ARN) of the cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,7 +94,9 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param clusterName
+     *        <p>
      *        The name of the MSK cluster.
+     *        </p>
      */
 
     public void setClusterName(String clusterName) {
@@ -100,7 +108,9 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
      * The name of the MSK cluster.
      * </p>
      * 
-     * @return The name of the MSK cluster.
+     * @return <p>
+     *         The name of the MSK cluster.
+     *         </p>
      */
 
     public String getClusterName() {
@@ -113,7 +123,9 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param clusterName
+     *        <p>
      *        The name of the MSK cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,7 +140,9 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param state
+     *        <p>
      *        The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     *        </p>
      * @see ClusterState
      */
 
@@ -141,7 +155,9 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
      * The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
      * </p>
      * 
-     * @return The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     * @return <p>
+     *         The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     *         </p>
      * @see ClusterState
      */
 
@@ -155,7 +171,9 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param state
+     *        <p>
      *        The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ClusterState
      */
@@ -171,7 +189,9 @@ public class CreateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param state
+     *        <p>
      *        The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ClusterState
      */

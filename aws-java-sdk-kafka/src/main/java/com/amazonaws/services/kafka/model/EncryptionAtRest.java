@@ -18,8 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
- * The data volume encryption details.
+ * 
+ <p>
+ * The data-volume encryption details.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/EncryptionAtRest" target="_top">AWS API
@@ -30,18 +31,23 @@ public class EncryptionAtRest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The AWS KMS key used for data encryption.
+     * The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you
+     * and uses it.
      * </p>
      */
     private String dataVolumeKMSKeyId;
 
     /**
      * <p>
-     * The AWS KMS key used for data encryption.
+     * The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you
+     * and uses it.
      * </p>
      * 
      * @param dataVolumeKMSKeyId
-     *        The AWS KMS key used for data encryption.
+     *        <p>
+     *        The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one
+     *        for you and uses it.
+     *        </p>
      */
 
     public void setDataVolumeKMSKeyId(String dataVolumeKMSKeyId) {
@@ -50,10 +56,14 @@ public class EncryptionAtRest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The AWS KMS key used for data encryption.
+     * The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you
+     * and uses it.
      * </p>
      * 
-     * @return The AWS KMS key used for data encryption.
+     * @return <p>
+     *         The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one
+     *         for you and uses it.
+     *         </p>
      */
 
     public String getDataVolumeKMSKeyId() {
@@ -62,11 +72,15 @@ public class EncryptionAtRest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The AWS KMS key used for data encryption.
+     * The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you
+     * and uses it.
      * </p>
      * 
      * @param dataVolumeKMSKeyId
-     *        The AWS KMS key used for data encryption.
+     *        <p>
+     *        The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one
+     *        for you and uses it.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

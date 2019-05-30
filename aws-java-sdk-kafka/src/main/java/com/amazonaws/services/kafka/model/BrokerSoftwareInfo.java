@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
+ * 
+ <p>
  * Information about the current software installed on the cluster.
  * </p>
  * 
@@ -30,13 +31,14 @@ public class BrokerSoftwareInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the configuration used for the cluster.
+     * The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this
+     * preview release.
      * </p>
      */
     private String configurationArn;
     /**
      * <p>
-     * The revision of the configuration to use.
+     * The revision of the configuration to use. This field isn't visible in this preview release.
      * </p>
      */
     private Long configurationRevision;
@@ -49,11 +51,15 @@ public class BrokerSoftwareInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the configuration used for the cluster.
+     * The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this
+     * preview release.
      * </p>
      * 
      * @param configurationArn
-     *        The Amazon Resource Name (ARN) of the configuration used for the cluster.
+     *        <p>
+     *        The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this
+     *        preview release.
+     *        </p>
      */
 
     public void setConfigurationArn(String configurationArn) {
@@ -62,10 +68,14 @@ public class BrokerSoftwareInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the configuration used for the cluster.
+     * The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this
+     * preview release.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the configuration used for the cluster.
+     * @return <p>
+     *         The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in
+     *         this preview release.
+     *         </p>
      */
 
     public String getConfigurationArn() {
@@ -74,11 +84,15 @@ public class BrokerSoftwareInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the configuration used for the cluster.
+     * The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this
+     * preview release.
      * </p>
      * 
      * @param configurationArn
-     *        The Amazon Resource Name (ARN) of the configuration used for the cluster.
+     *        <p>
+     *        The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this
+     *        preview release.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +103,13 @@ public class BrokerSoftwareInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The revision of the configuration to use.
+     * The revision of the configuration to use. This field isn't visible in this preview release.
      * </p>
      * 
      * @param configurationRevision
-     *        The revision of the configuration to use.
+     *        <p>
+     *        The revision of the configuration to use. This field isn't visible in this preview release.
+     *        </p>
      */
 
     public void setConfigurationRevision(Long configurationRevision) {
@@ -102,10 +118,12 @@ public class BrokerSoftwareInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The revision of the configuration to use.
+     * The revision of the configuration to use. This field isn't visible in this preview release.
      * </p>
      * 
-     * @return The revision of the configuration to use.
+     * @return <p>
+     *         The revision of the configuration to use. This field isn't visible in this preview release.
+     *         </p>
      */
 
     public Long getConfigurationRevision() {
@@ -114,11 +132,13 @@ public class BrokerSoftwareInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The revision of the configuration to use.
+     * The revision of the configuration to use. This field isn't visible in this preview release.
      * </p>
      * 
      * @param configurationRevision
-     *        The revision of the configuration to use.
+     *        <p>
+     *        The revision of the configuration to use. This field isn't visible in this preview release.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,7 +153,9 @@ public class BrokerSoftwareInfo implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param kafkaVersion
+     *        <p>
      *        The version of Apache Kafka.
+     *        </p>
      */
 
     public void setKafkaVersion(String kafkaVersion) {
@@ -145,7 +167,9 @@ public class BrokerSoftwareInfo implements Serializable, Cloneable, StructuredPo
      * The version of Apache Kafka.
      * </p>
      * 
-     * @return The version of Apache Kafka.
+     * @return <p>
+     *         The version of Apache Kafka.
+     *         </p>
      */
 
     public String getKafkaVersion() {
@@ -158,7 +182,9 @@ public class BrokerSoftwareInfo implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param kafkaVersion
+     *        <p>
      *        The version of Apache Kafka.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

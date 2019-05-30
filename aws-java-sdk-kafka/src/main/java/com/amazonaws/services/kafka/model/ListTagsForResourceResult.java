@@ -25,17 +25,19 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The key-value pairs for the resource tags
+     * The key-value pair for the resource tag.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The key-value pairs for the resource tags
+     * The key-value pair for the resource tag.
      * </p>
      * 
-     * @return The key-value pairs for the resource tags
+     * @return <p>
+     *         The key-value pair for the resource tag.
+     *         </p>
      */
 
     public java.util.Map<String, String> getTags() {
@@ -44,11 +46,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The key-value pairs for the resource tags
+     * The key-value pair for the resource tag.
      * </p>
      * 
      * @param tags
-     *        The key-value pairs for the resource tags
+     *        <p>
+     *        The key-value pair for the resource tag.
+     *        </p>
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -57,11 +61,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The key-value pairs for the resource tags
+     * The key-value pair for the resource tag.
      * </p>
      * 
      * @param tags
-     *        The key-value pairs for the resource tags
+     *        <p>
+     *        The key-value pair for the resource tag.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

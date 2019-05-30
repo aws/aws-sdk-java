@@ -5467,6 +5467,41 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Starts a database activity stream to monitor activity on the database. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database Activity
+     * Streams</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param startActivityStreamRequest
+     * @return A Java Future containing the result of the StartActivityStream operation returned by the service.
+     * @sample AmazonRDSAsync.StartActivityStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartActivityStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartActivityStreamResult> startActivityStreamAsync(StartActivityStreamRequest startActivityStreamRequest);
+
+    /**
+     * <p>
+     * Starts a database activity stream to monitor activity on the database. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database Activity
+     * Streams</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param startActivityStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartActivityStream operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.StartActivityStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartActivityStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartActivityStreamResult> startActivityStreamAsync(StartActivityStreamRequest startActivityStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<StartActivityStreamRequest, StartActivityStreamResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster AWS CLI command,
      * or the StopDBCluster action.
      * </p>
@@ -5572,6 +5607,49 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DBInstance> startDBInstanceAsync(StartDBInstanceRequest startDBInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<StartDBInstanceRequest, DBInstance> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a database activity stream that was started using the AWS console, the <code>start-activity-stream</code>
+     * AWS CLI command, or the <code>StartActivityStream</code> action.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database Activity
+     * Streams</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param stopActivityStreamRequest
+     * @return A Java Future containing the result of the StopActivityStream operation returned by the service.
+     * @sample AmazonRDSAsync.StopActivityStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopActivityStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopActivityStreamResult> stopActivityStreamAsync(StopActivityStreamRequest stopActivityStreamRequest);
+
+    /**
+     * <p>
+     * Stops a database activity stream that was started using the AWS console, the <code>start-activity-stream</code>
+     * AWS CLI command, or the <code>StartActivityStream</code> action.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database Activity
+     * Streams</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param stopActivityStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopActivityStream operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.StopActivityStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopActivityStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopActivityStreamResult> stopActivityStreamAsync(StopActivityStreamRequest stopActivityStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<StopActivityStreamRequest, StopActivityStreamResult> asyncHandler);
 
     /**
      * <p>

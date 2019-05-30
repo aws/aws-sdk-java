@@ -33,6 +33,12 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
     private String datastoreName;
     /**
      * <p>
+     * Where data store data is stored.
+     * </p>
+     */
+    private DatastoreStorage datastoreStorage;
+    /**
+     * <p>
      * How long, in days, message data is kept for the data store.
      * </p>
      */
@@ -81,6 +87,46 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreateDatastoreRequest withDatastoreName(String datastoreName) {
         setDatastoreName(datastoreName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Where data store data is stored.
+     * </p>
+     * 
+     * @param datastoreStorage
+     *        Where data store data is stored.
+     */
+
+    public void setDatastoreStorage(DatastoreStorage datastoreStorage) {
+        this.datastoreStorage = datastoreStorage;
+    }
+
+    /**
+     * <p>
+     * Where data store data is stored.
+     * </p>
+     * 
+     * @return Where data store data is stored.
+     */
+
+    public DatastoreStorage getDatastoreStorage() {
+        return this.datastoreStorage;
+    }
+
+    /**
+     * <p>
+     * Where data store data is stored.
+     * </p>
+     * 
+     * @param datastoreStorage
+     *        Where data store data is stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatastoreRequest withDatastoreStorage(DatastoreStorage datastoreStorage) {
+        setDatastoreStorage(datastoreStorage);
         return this;
     }
 
@@ -208,6 +254,8 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
         sb.append("{");
         if (getDatastoreName() != null)
             sb.append("DatastoreName: ").append(getDatastoreName()).append(",");
+        if (getDatastoreStorage() != null)
+            sb.append("DatastoreStorage: ").append(getDatastoreStorage()).append(",");
         if (getRetentionPeriod() != null)
             sb.append("RetentionPeriod: ").append(getRetentionPeriod()).append(",");
         if (getTags() != null)
@@ -230,6 +278,10 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDatastoreName() != null && other.getDatastoreName().equals(this.getDatastoreName()) == false)
             return false;
+        if (other.getDatastoreStorage() == null ^ this.getDatastoreStorage() == null)
+            return false;
+        if (other.getDatastoreStorage() != null && other.getDatastoreStorage().equals(this.getDatastoreStorage()) == false)
+            return false;
         if (other.getRetentionPeriod() == null ^ this.getRetentionPeriod() == null)
             return false;
         if (other.getRetentionPeriod() != null && other.getRetentionPeriod().equals(this.getRetentionPeriod()) == false)
@@ -247,6 +299,7 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDatastoreName() == null) ? 0 : getDatastoreName().hashCode());
+        hashCode = prime * hashCode + ((getDatastoreStorage() == null) ? 0 : getDatastoreStorage().hashCode());
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

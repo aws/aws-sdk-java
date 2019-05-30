@@ -18,8 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
- * Specifies the Kafka configuration to use for the brokers.
+ * 
+ <p>
+ * Specifies the configuration to use for the brokers.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ConfigurationInfo" target="_top">AWS API
@@ -47,7 +48,9 @@ public class ConfigurationInfo implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param arn
+     *        <p>
      *        ARN of the configuration to use.
+     *        </p>
      */
 
     public void setArn(String arn) {
@@ -59,7 +62,9 @@ public class ConfigurationInfo implements Serializable, Cloneable, StructuredPoj
      * ARN of the configuration to use.
      * </p>
      * 
-     * @return ARN of the configuration to use.
+     * @return <p>
+     *         ARN of the configuration to use.
+     *         </p>
      */
 
     public String getArn() {
@@ -72,7 +77,9 @@ public class ConfigurationInfo implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param arn
+     *        <p>
      *        ARN of the configuration to use.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,7 +94,9 @@ public class ConfigurationInfo implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param revision
+     *        <p>
      *        The revision of the configuration to use.
+     *        </p>
      */
 
     public void setRevision(Long revision) {
@@ -99,7 +108,9 @@ public class ConfigurationInfo implements Serializable, Cloneable, StructuredPoj
      * The revision of the configuration to use.
      * </p>
      * 
-     * @return The revision of the configuration to use.
+     * @return <p>
+     *         The revision of the configuration to use.
+     *         </p>
      */
 
     public Long getRevision() {
@@ -112,7 +123,9 @@ public class ConfigurationInfo implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param revision
+     *        <p>
      *        The revision of the configuration to use.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

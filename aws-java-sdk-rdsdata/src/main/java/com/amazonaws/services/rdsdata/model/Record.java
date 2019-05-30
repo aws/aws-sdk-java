@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Row or Record
+ * <p>
+ * A record returned by a call.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/Record" target="_top">AWS API
  *      Documentation</a>
@@ -26,13 +28,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Record implements Serializable, Cloneable, StructuredPojo {
 
-    /** Record */
+    /**
+     * <p>
+     * The values returned in the record.
+     * </p>
+     */
     private java.util.List<Value> values;
 
     /**
-     * Record
+     * <p>
+     * The values returned in the record.
+     * </p>
      * 
-     * @return Record
+     * @return The values returned in the record.
      */
 
     public java.util.List<Value> getValues() {
@@ -40,10 +48,12 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Record
+     * <p>
+     * The values returned in the record.
+     * </p>
      * 
      * @param values
-     *        Record
+     *        The values returned in the record.
      */
 
     public void setValues(java.util.Collection<Value> values) {
@@ -56,7 +66,9 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Record
+     * <p>
+     * The values returned in the record.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
@@ -64,7 +76,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param values
-     *        Record
+     *        The values returned in the record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +91,12 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Record
+     * <p>
+     * The values returned in the record.
+     * </p>
      * 
      * @param values
-     *        Record
+     *        The values returned in the record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

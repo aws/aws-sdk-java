@@ -367,6 +367,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
     }
 
     @Override
+    public ListStackInstancesForProvisionedProductResult listStackInstancesForProvisionedProduct(ListStackInstancesForProvisionedProductRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagOptionsResult listTagOptions(ListTagOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
+ * 
+ <p>
  * Returns information about a cluster.
  * </p>
  * 
@@ -30,10 +31,22 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Arn of active cluster operation.
+     * </p>
+     */
+    private String activeOperationArn;
+    /**
+     * <p>
      * Information about the broker nodes.
      * </p>
      */
     private BrokerNodeGroupInfo brokerNodeGroupInfo;
+    /**
+     * <p>
+     * Includes all client authentication information.
+     * </p>
+     */
+    private ClientAuthentication clientAuthentication;
     /**
      * <p>
      * The Amazon Resource Name (ARN) that uniquely identifies the cluster.
@@ -73,13 +86,14 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT,
-     * PER_BROKER, and PER_TOPIC_PER_BROKER.
+     * PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of
+     * monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
      * </p>
      */
     private String enhancedMonitoring;
     /**
      * <p>
-     * The number of Kafka broker nodes in the cluster.
+     * The number of broker nodes in the cluster.
      * </p>
      */
     private Integer numberOfBrokerNodes;
@@ -91,6 +105,12 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
     private String state;
     /**
      * <p>
+     * Tags attached to the cluster.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
      * The connection string to use to connect to the Apache ZooKeeper cluster.
      * </p>
      */
@@ -98,11 +118,59 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Arn of active cluster operation.
+     * </p>
+     * 
+     * @param activeOperationArn
+     *        <p>
+     *        Arn of active cluster operation.
+     *        </p>
+     */
+
+    public void setActiveOperationArn(String activeOperationArn) {
+        this.activeOperationArn = activeOperationArn;
+    }
+
+    /**
+     * <p>
+     * Arn of active cluster operation.
+     * </p>
+     * 
+     * @return <p>
+     *         Arn of active cluster operation.
+     *         </p>
+     */
+
+    public String getActiveOperationArn() {
+        return this.activeOperationArn;
+    }
+
+    /**
+     * <p>
+     * Arn of active cluster operation.
+     * </p>
+     * 
+     * @param activeOperationArn
+     *        <p>
+     *        Arn of active cluster operation.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterInfo withActiveOperationArn(String activeOperationArn) {
+        setActiveOperationArn(activeOperationArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * Information about the broker nodes.
      * </p>
      * 
      * @param brokerNodeGroupInfo
+     *        <p>
      *        Information about the broker nodes.
+     *        </p>
      */
 
     public void setBrokerNodeGroupInfo(BrokerNodeGroupInfo brokerNodeGroupInfo) {
@@ -114,7 +182,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * Information about the broker nodes.
      * </p>
      * 
-     * @return Information about the broker nodes.
+     * @return <p>
+     *         Information about the broker nodes.
+     *         </p>
      */
 
     public BrokerNodeGroupInfo getBrokerNodeGroupInfo() {
@@ -127,7 +197,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param brokerNodeGroupInfo
+     *        <p>
      *        Information about the broker nodes.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +210,59 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Includes all client authentication information.
+     * </p>
+     * 
+     * @param clientAuthentication
+     *        <p>
+     *        Includes all client authentication information.
+     *        </p>
+     */
+
+    public void setClientAuthentication(ClientAuthentication clientAuthentication) {
+        this.clientAuthentication = clientAuthentication;
+    }
+
+    /**
+     * <p>
+     * Includes all client authentication information.
+     * </p>
+     * 
+     * @return <p>
+     *         Includes all client authentication information.
+     *         </p>
+     */
+
+    public ClientAuthentication getClientAuthentication() {
+        return this.clientAuthentication;
+    }
+
+    /**
+     * <p>
+     * Includes all client authentication information.
+     * </p>
+     * 
+     * @param clientAuthentication
+     *        <p>
+     *        Includes all client authentication information.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterInfo withClientAuthentication(ClientAuthentication clientAuthentication) {
+        setClientAuthentication(clientAuthentication);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) that uniquely identifies the cluster.
      * </p>
      * 
      * @param clusterArn
+     *        <p>
      *        The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     *        </p>
      */
 
     public void setClusterArn(String clusterArn) {
@@ -154,7 +274,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) that uniquely identifies the cluster.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     * @return <p>
+     *         The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     *         </p>
      */
 
     public String getClusterArn() {
@@ -167,7 +289,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param clusterArn
+     *        <p>
      *        The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,7 +306,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param clusterName
+     *        <p>
      *        The name of the cluster.
+     *        </p>
      */
 
     public void setClusterName(String clusterName) {
@@ -194,7 +320,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * The name of the cluster.
      * </p>
      * 
-     * @return The name of the cluster.
+     * @return <p>
+     *         The name of the cluster.
+     *         </p>
      */
 
     public String getClusterName() {
@@ -207,7 +335,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param clusterName
+     *        <p>
      *        The name of the cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,7 +352,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param creationTime
+     *        <p>
      *        The time when the cluster was created.
+     *        </p>
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -234,7 +366,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * The time when the cluster was created.
      * </p>
      * 
-     * @return The time when the cluster was created.
+     * @return <p>
+     *         The time when the cluster was created.
+     *         </p>
      */
 
     public java.util.Date getCreationTime() {
@@ -247,7 +381,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param creationTime
+     *        <p>
      *        The time when the cluster was created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,7 +398,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param currentBrokerSoftwareInfo
+     *        <p>
      *        Information about the version of software currently deployed on the Kafka brokers in the cluster.
+     *        </p>
      */
 
     public void setCurrentBrokerSoftwareInfo(BrokerSoftwareInfo currentBrokerSoftwareInfo) {
@@ -274,7 +412,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * Information about the version of software currently deployed on the Kafka brokers in the cluster.
      * </p>
      * 
-     * @return Information about the version of software currently deployed on the Kafka brokers in the cluster.
+     * @return <p>
+     *         Information about the version of software currently deployed on the Kafka brokers in the cluster.
+     *         </p>
      */
 
     public BrokerSoftwareInfo getCurrentBrokerSoftwareInfo() {
@@ -287,7 +427,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param currentBrokerSoftwareInfo
+     *        <p>
      *        Information about the version of software currently deployed on the Kafka brokers in the cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,7 +444,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param currentVersion
+     *        <p>
      *        The current version of the MSK cluster.
+     *        </p>
      */
 
     public void setCurrentVersion(String currentVersion) {
@@ -314,7 +458,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * The current version of the MSK cluster.
      * </p>
      * 
-     * @return The current version of the MSK cluster.
+     * @return <p>
+     *         The current version of the MSK cluster.
+     *         </p>
      */
 
     public String getCurrentVersion() {
@@ -327,7 +473,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param currentVersion
+     *        <p>
      *        The current version of the MSK cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,7 +490,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param encryptionInfo
+     *        <p>
      *        Includes all encryption-related information.
+     *        </p>
      */
 
     public void setEncryptionInfo(EncryptionInfo encryptionInfo) {
@@ -354,7 +504,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * Includes all encryption-related information.
      * </p>
      * 
-     * @return Includes all encryption-related information.
+     * @return <p>
+     *         Includes all encryption-related information.
+     *         </p>
      */
 
     public EncryptionInfo getEncryptionInfo() {
@@ -367,7 +519,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param encryptionInfo
+     *        <p>
      *        Includes all encryption-related information.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,12 +533,17 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT,
-     * PER_BROKER, and PER_TOPIC_PER_BROKER.
+     * PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of
+     * monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
      * </p>
      * 
      * @param enhancedMonitoring
+     *        <p>
      *        Specifies which metrics are gathered for the MSK cluster. This property has three possible values:
-     *        DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.
+     *        DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these
+     *        three levels of monitoring, see <a
+     *        href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
+     *        </p>
      * @see EnhancedMonitoring
      */
 
@@ -395,11 +554,16 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT,
-     * PER_BROKER, and PER_TOPIC_PER_BROKER.
+     * PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of
+     * monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
      * </p>
      * 
-     * @return Specifies which metrics are gathered for the MSK cluster. This property has three possible values:
-     *         DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.
+     * @return <p>
+     *         Specifies which metrics are gathered for the MSK cluster. This property has three possible values:
+     *         DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these
+     *         three levels of monitoring, see <a
+     *         href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
+     *         </p>
      * @see EnhancedMonitoring
      */
 
@@ -410,12 +574,17 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT,
-     * PER_BROKER, and PER_TOPIC_PER_BROKER.
+     * PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of
+     * monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
      * </p>
      * 
      * @param enhancedMonitoring
+     *        <p>
      *        Specifies which metrics are gathered for the MSK cluster. This property has three possible values:
-     *        DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.
+     *        DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these
+     *        three levels of monitoring, see <a
+     *        href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnhancedMonitoring
      */
@@ -428,12 +597,17 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT,
-     * PER_BROKER, and PER_TOPIC_PER_BROKER.
+     * PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of
+     * monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
      * </p>
      * 
      * @param enhancedMonitoring
+     *        <p>
      *        Specifies which metrics are gathered for the MSK cluster. This property has three possible values:
-     *        DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.
+     *        DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these
+     *        three levels of monitoring, see <a
+     *        href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnhancedMonitoring
      */
@@ -445,11 +619,13 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of Kafka broker nodes in the cluster.
+     * The number of broker nodes in the cluster.
      * </p>
      * 
      * @param numberOfBrokerNodes
-     *        The number of Kafka broker nodes in the cluster.
+     *        <p>
+     *        The number of broker nodes in the cluster.
+     *        </p>
      */
 
     public void setNumberOfBrokerNodes(Integer numberOfBrokerNodes) {
@@ -458,10 +634,12 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of Kafka broker nodes in the cluster.
+     * The number of broker nodes in the cluster.
      * </p>
      * 
-     * @return The number of Kafka broker nodes in the cluster.
+     * @return <p>
+     *         The number of broker nodes in the cluster.
+     *         </p>
      */
 
     public Integer getNumberOfBrokerNodes() {
@@ -470,11 +648,13 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of Kafka broker nodes in the cluster.
+     * The number of broker nodes in the cluster.
      * </p>
      * 
      * @param numberOfBrokerNodes
-     *        The number of Kafka broker nodes in the cluster.
+     *        <p>
+     *        The number of broker nodes in the cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -489,7 +669,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param state
+     *        <p>
      *        The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     *        </p>
      * @see ClusterState
      */
 
@@ -502,7 +684,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
      * </p>
      * 
-     * @return The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     * @return <p>
+     *         The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     *         </p>
      * @see ClusterState
      */
 
@@ -516,7 +700,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param state
+     *        <p>
      *        The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ClusterState
      */
@@ -532,7 +718,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param state
+     *        <p>
      *        The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ClusterState
      */
@@ -544,11 +732,80 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Tags attached to the cluster.
+     * </p>
+     * 
+     * @return <p>
+     *         Tags attached to the cluster.
+     *         </p>
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Tags attached to the cluster.
+     * </p>
+     * 
+     * @param tags
+     *        <p>
+     *        Tags attached to the cluster.
+     *        </p>
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * Tags attached to the cluster.
+     * </p>
+     * 
+     * @param tags
+     *        <p>
+     *        Tags attached to the cluster.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterInfo withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public ClusterInfo addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterInfo clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * The connection string to use to connect to the Apache ZooKeeper cluster.
      * </p>
      * 
      * @param zookeeperConnectString
+     *        <p>
      *        The connection string to use to connect to the Apache ZooKeeper cluster.
+     *        </p>
      */
 
     public void setZookeeperConnectString(String zookeeperConnectString) {
@@ -560,7 +817,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * The connection string to use to connect to the Apache ZooKeeper cluster.
      * </p>
      * 
-     * @return The connection string to use to connect to the Apache ZooKeeper cluster.
+     * @return <p>
+     *         The connection string to use to connect to the Apache ZooKeeper cluster.
+     *         </p>
      */
 
     public String getZookeeperConnectString() {
@@ -573,7 +832,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param zookeeperConnectString
+     *        <p>
      *        The connection string to use to connect to the Apache ZooKeeper cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -594,8 +855,12 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getActiveOperationArn() != null)
+            sb.append("ActiveOperationArn: ").append(getActiveOperationArn()).append(",");
         if (getBrokerNodeGroupInfo() != null)
             sb.append("BrokerNodeGroupInfo: ").append(getBrokerNodeGroupInfo()).append(",");
+        if (getClientAuthentication() != null)
+            sb.append("ClientAuthentication: ").append(getClientAuthentication()).append(",");
         if (getClusterArn() != null)
             sb.append("ClusterArn: ").append(getClusterArn()).append(",");
         if (getClusterName() != null)
@@ -614,6 +879,8 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
             sb.append("NumberOfBrokerNodes: ").append(getNumberOfBrokerNodes()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getZookeeperConnectString() != null)
             sb.append("ZookeeperConnectString: ").append(getZookeeperConnectString());
         sb.append("}");
@@ -630,9 +897,17 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof ClusterInfo == false)
             return false;
         ClusterInfo other = (ClusterInfo) obj;
+        if (other.getActiveOperationArn() == null ^ this.getActiveOperationArn() == null)
+            return false;
+        if (other.getActiveOperationArn() != null && other.getActiveOperationArn().equals(this.getActiveOperationArn()) == false)
+            return false;
         if (other.getBrokerNodeGroupInfo() == null ^ this.getBrokerNodeGroupInfo() == null)
             return false;
         if (other.getBrokerNodeGroupInfo() != null && other.getBrokerNodeGroupInfo().equals(this.getBrokerNodeGroupInfo()) == false)
+            return false;
+        if (other.getClientAuthentication() == null ^ this.getClientAuthentication() == null)
+            return false;
+        if (other.getClientAuthentication() != null && other.getClientAuthentication().equals(this.getClientAuthentication()) == false)
             return false;
         if (other.getClusterArn() == null ^ this.getClusterArn() == null)
             return false;
@@ -670,6 +945,10 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getZookeeperConnectString() == null ^ this.getZookeeperConnectString() == null)
             return false;
         if (other.getZookeeperConnectString() != null && other.getZookeeperConnectString().equals(this.getZookeeperConnectString()) == false)
@@ -682,7 +961,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getActiveOperationArn() == null) ? 0 : getActiveOperationArn().hashCode());
         hashCode = prime * hashCode + ((getBrokerNodeGroupInfo() == null) ? 0 : getBrokerNodeGroupInfo().hashCode());
+        hashCode = prime * hashCode + ((getClientAuthentication() == null) ? 0 : getClientAuthentication().hashCode());
         hashCode = prime * hashCode + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode());
         hashCode = prime * hashCode + ((getClusterName() == null) ? 0 : getClusterName().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
@@ -692,6 +973,7 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEnhancedMonitoring() == null) ? 0 : getEnhancedMonitoring().hashCode());
         hashCode = prime * hashCode + ((getNumberOfBrokerNodes() == null) ? 0 : getNumberOfBrokerNodes().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getZookeeperConnectString() == null) ? 0 : getZookeeperConnectString().hashCode());
         return hashCode;
     }

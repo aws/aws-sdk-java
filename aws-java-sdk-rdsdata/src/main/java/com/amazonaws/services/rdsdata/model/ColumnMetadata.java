@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Column Metadata
+ * <p>
+ * Contains the metadata for a column.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ColumnMetadata" target="_top">AWS API
  *      Documentation</a>
@@ -26,52 +28,98 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
 
-    /** Homogenous array base SQL type from java.sql.Types. */
+    /**
+     * <p>
+     * The type of the column.
+     * </p>
+     */
     private Integer arrayBaseColumnType;
-    /** Whether the designated column is automatically numbered */
+    /**
+     * <p>
+     * A value that indicates whether the column increments automatically.
+     * </p>
+     */
     private Boolean isAutoIncrement;
-    /** Whether values in the designated column's case matters */
+    /**
+     * <p>
+     * A value that indicates whether the column is case-sensitive.
+     * </p>
+     */
     private Boolean isCaseSensitive;
-    /** Whether values in the designated column is a cash value */
+    /**
+     * <p>
+     * A value that indicates whether the column contains currency values.
+     * </p>
+     */
     private Boolean isCurrency;
-    /** Whether values in the designated column are signed numbers */
+    /**
+     * <p>
+     * A value that indicates whether an integer column is signed.
+     * </p>
+     */
     private Boolean isSigned;
-    /** Usually specified by the SQL AS. If not specified, return column name. */
+    /**
+     * <p>
+     * The label for the column.
+     * </p>
+     */
     private String label;
-    /** Name of the column. */
+    /**
+     * <p>
+     * The name of the column.
+     * </p>
+     */
     private String name;
     /**
-     * Indicates the nullability of values in the designated column. One of columnNoNulls (0), columnNullable (1),
-     * columnNullableUnknown (2)
+     * <p>
+     * A value that indicates whether the column is nullable.
+     * </p>
      */
     private Integer nullable;
     /**
-     * Get the designated column's specified column size.For numeric data, this is the maximum precision. For character
-     * data, this is the length in characters. For datetime datatypes, this is the length in characters of the String
-     * representation (assuming the maximum allowed precision of the fractional seconds component). For binary data, this
-     * is the length in bytes. For the ROWID datatype, this is the length in bytes. 0 is returned for data types where
-     * the column size is not applicable.
+     * <p>
+     * The precision value of a decimal number column.
+     * </p>
      */
     private Integer precision;
     /**
-     * Designated column's number of digits to right of the decimal point. 0 is returned for data types where the scale
-     * is not applicable.
+     * <p>
+     * The scale value of a decimal number column.
+     * </p>
      */
     private Integer scale;
-    /** Designated column's table's schema */
+    /**
+     * <p>
+     * The name of the schema that owns the table that includes the column.
+     * </p>
+     */
     private String schemaName;
-    /** Designated column's table name */
+    /**
+     * <p>
+     * The name of the table that includes the column.
+     * </p>
+     */
     private String tableName;
-    /** SQL type from java.sql.Types. */
+    /**
+     * <p>
+     * The type of the column.
+     * </p>
+     */
     private Integer type;
-    /** Database-specific type name. */
+    /**
+     * <p>
+     * The database-specific data type of the column.
+     * </p>
+     */
     private String typeName;
 
     /**
-     * Homogenous array base SQL type from java.sql.Types.
+     * <p>
+     * The type of the column.
+     * </p>
      * 
      * @param arrayBaseColumnType
-     *        Homogenous array base SQL type from java.sql.Types.
+     *        The type of the column.
      */
 
     public void setArrayBaseColumnType(Integer arrayBaseColumnType) {
@@ -79,9 +127,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Homogenous array base SQL type from java.sql.Types.
+     * <p>
+     * The type of the column.
+     * </p>
      * 
-     * @return Homogenous array base SQL type from java.sql.Types.
+     * @return The type of the column.
      */
 
     public Integer getArrayBaseColumnType() {
@@ -89,10 +139,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Homogenous array base SQL type from java.sql.Types.
+     * <p>
+     * The type of the column.
+     * </p>
      * 
      * @param arrayBaseColumnType
-     *        Homogenous array base SQL type from java.sql.Types.
+     *        The type of the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,10 +154,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether the designated column is automatically numbered
+     * <p>
+     * A value that indicates whether the column increments automatically.
+     * </p>
      * 
      * @param isAutoIncrement
-     *        Whether the designated column is automatically numbered
+     *        A value that indicates whether the column increments automatically.
      */
 
     public void setIsAutoIncrement(Boolean isAutoIncrement) {
@@ -113,9 +167,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether the designated column is automatically numbered
+     * <p>
+     * A value that indicates whether the column increments automatically.
+     * </p>
      * 
-     * @return Whether the designated column is automatically numbered
+     * @return A value that indicates whether the column increments automatically.
      */
 
     public Boolean getIsAutoIncrement() {
@@ -123,10 +179,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether the designated column is automatically numbered
+     * <p>
+     * A value that indicates whether the column increments automatically.
+     * </p>
      * 
      * @param isAutoIncrement
-     *        Whether the designated column is automatically numbered
+     *        A value that indicates whether the column increments automatically.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,9 +194,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether the designated column is automatically numbered
+     * <p>
+     * A value that indicates whether the column increments automatically.
+     * </p>
      * 
-     * @return Whether the designated column is automatically numbered
+     * @return A value that indicates whether the column increments automatically.
      */
 
     public Boolean isAutoIncrement() {
@@ -146,10 +206,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether values in the designated column's case matters
+     * <p>
+     * A value that indicates whether the column is case-sensitive.
+     * </p>
      * 
      * @param isCaseSensitive
-     *        Whether values in the designated column's case matters
+     *        A value that indicates whether the column is case-sensitive.
      */
 
     public void setIsCaseSensitive(Boolean isCaseSensitive) {
@@ -157,9 +219,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether values in the designated column's case matters
+     * <p>
+     * A value that indicates whether the column is case-sensitive.
+     * </p>
      * 
-     * @return Whether values in the designated column's case matters
+     * @return A value that indicates whether the column is case-sensitive.
      */
 
     public Boolean getIsCaseSensitive() {
@@ -167,10 +231,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether values in the designated column's case matters
+     * <p>
+     * A value that indicates whether the column is case-sensitive.
+     * </p>
      * 
      * @param isCaseSensitive
-     *        Whether values in the designated column's case matters
+     *        A value that indicates whether the column is case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,9 +246,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether values in the designated column's case matters
+     * <p>
+     * A value that indicates whether the column is case-sensitive.
+     * </p>
      * 
-     * @return Whether values in the designated column's case matters
+     * @return A value that indicates whether the column is case-sensitive.
      */
 
     public Boolean isCaseSensitive() {
@@ -190,10 +258,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether values in the designated column is a cash value
+     * <p>
+     * A value that indicates whether the column contains currency values.
+     * </p>
      * 
      * @param isCurrency
-     *        Whether values in the designated column is a cash value
+     *        A value that indicates whether the column contains currency values.
      */
 
     public void setIsCurrency(Boolean isCurrency) {
@@ -201,9 +271,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether values in the designated column is a cash value
+     * <p>
+     * A value that indicates whether the column contains currency values.
+     * </p>
      * 
-     * @return Whether values in the designated column is a cash value
+     * @return A value that indicates whether the column contains currency values.
      */
 
     public Boolean getIsCurrency() {
@@ -211,10 +283,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether values in the designated column is a cash value
+     * <p>
+     * A value that indicates whether the column contains currency values.
+     * </p>
      * 
      * @param isCurrency
-     *        Whether values in the designated column is a cash value
+     *        A value that indicates whether the column contains currency values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,9 +298,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether values in the designated column is a cash value
+     * <p>
+     * A value that indicates whether the column contains currency values.
+     * </p>
      * 
-     * @return Whether values in the designated column is a cash value
+     * @return A value that indicates whether the column contains currency values.
      */
 
     public Boolean isCurrency() {
@@ -234,10 +310,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether values in the designated column are signed numbers
+     * <p>
+     * A value that indicates whether an integer column is signed.
+     * </p>
      * 
      * @param isSigned
-     *        Whether values in the designated column are signed numbers
+     *        A value that indicates whether an integer column is signed.
      */
 
     public void setIsSigned(Boolean isSigned) {
@@ -245,9 +323,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether values in the designated column are signed numbers
+     * <p>
+     * A value that indicates whether an integer column is signed.
+     * </p>
      * 
-     * @return Whether values in the designated column are signed numbers
+     * @return A value that indicates whether an integer column is signed.
      */
 
     public Boolean getIsSigned() {
@@ -255,10 +335,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether values in the designated column are signed numbers
+     * <p>
+     * A value that indicates whether an integer column is signed.
+     * </p>
      * 
      * @param isSigned
-     *        Whether values in the designated column are signed numbers
+     *        A value that indicates whether an integer column is signed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,9 +350,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Whether values in the designated column are signed numbers
+     * <p>
+     * A value that indicates whether an integer column is signed.
+     * </p>
      * 
-     * @return Whether values in the designated column are signed numbers
+     * @return A value that indicates whether an integer column is signed.
      */
 
     public Boolean isSigned() {
@@ -278,10 +362,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Usually specified by the SQL AS. If not specified, return column name.
+     * <p>
+     * The label for the column.
+     * </p>
      * 
      * @param label
-     *        Usually specified by the SQL AS. If not specified, return column name.
+     *        The label for the column.
      */
 
     public void setLabel(String label) {
@@ -289,9 +375,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Usually specified by the SQL AS. If not specified, return column name.
+     * <p>
+     * The label for the column.
+     * </p>
      * 
-     * @return Usually specified by the SQL AS. If not specified, return column name.
+     * @return The label for the column.
      */
 
     public String getLabel() {
@@ -299,10 +387,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Usually specified by the SQL AS. If not specified, return column name.
+     * <p>
+     * The label for the column.
+     * </p>
      * 
      * @param label
-     *        Usually specified by the SQL AS. If not specified, return column name.
+     *        The label for the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -312,10 +402,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Name of the column.
+     * <p>
+     * The name of the column.
+     * </p>
      * 
      * @param name
-     *        Name of the column.
+     *        The name of the column.
      */
 
     public void setName(String name) {
@@ -323,9 +415,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Name of the column.
+     * <p>
+     * The name of the column.
+     * </p>
      * 
-     * @return Name of the column.
+     * @return The name of the column.
      */
 
     public String getName() {
@@ -333,10 +427,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Name of the column.
+     * <p>
+     * The name of the column.
+     * </p>
      * 
      * @param name
-     *        Name of the column.
+     *        The name of the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,12 +442,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Indicates the nullability of values in the designated column. One of columnNoNulls (0), columnNullable (1),
-     * columnNullableUnknown (2)
+     * <p>
+     * A value that indicates whether the column is nullable.
+     * </p>
      * 
      * @param nullable
-     *        Indicates the nullability of values in the designated column. One of columnNoNulls (0), columnNullable
-     *        (1), columnNullableUnknown (2)
+     *        A value that indicates whether the column is nullable.
      */
 
     public void setNullable(Integer nullable) {
@@ -359,11 +455,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Indicates the nullability of values in the designated column. One of columnNoNulls (0), columnNullable (1),
-     * columnNullableUnknown (2)
+     * <p>
+     * A value that indicates whether the column is nullable.
+     * </p>
      * 
-     * @return Indicates the nullability of values in the designated column. One of columnNoNulls (0), columnNullable
-     *         (1), columnNullableUnknown (2)
+     * @return A value that indicates whether the column is nullable.
      */
 
     public Integer getNullable() {
@@ -371,12 +467,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Indicates the nullability of values in the designated column. One of columnNoNulls (0), columnNullable (1),
-     * columnNullableUnknown (2)
+     * <p>
+     * A value that indicates whether the column is nullable.
+     * </p>
      * 
      * @param nullable
-     *        Indicates the nullability of values in the designated column. One of columnNoNulls (0), columnNullable
-     *        (1), columnNullableUnknown (2)
+     *        A value that indicates whether the column is nullable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,18 +482,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Get the designated column's specified column size.For numeric data, this is the maximum precision. For character
-     * data, this is the length in characters. For datetime datatypes, this is the length in characters of the String
-     * representation (assuming the maximum allowed precision of the fractional seconds component). For binary data, this
-     * is the length in bytes. For the ROWID datatype, this is the length in bytes. 0 is returned for data types where
-     * the column size is not applicable.
+     * <p>
+     * The precision value of a decimal number column.
+     * </p>
      * 
      * @param precision
-     *        Get the designated column's specified column size.For numeric data, this is the maximum precision. For
-     *        character data, this is the length in characters. For datetime datatypes, this is the length in characters
-     *        of the String representation (assuming the maximum allowed precision of the fractional seconds component).
-     *        For binary data, this is the length in bytes. For the ROWID datatype, this is the length in bytes. 0 is
-     *        returned for data types where the column size is not applicable.
+     *        The precision value of a decimal number column.
      */
 
     public void setPrecision(Integer precision) {
@@ -405,17 +495,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Get the designated column's specified column size.For numeric data, this is the maximum precision. For character
-     * data, this is the length in characters. For datetime datatypes, this is the length in characters of the String
-     * representation (assuming the maximum allowed precision of the fractional seconds component). For binary data, this
-     * is the length in bytes. For the ROWID datatype, this is the length in bytes. 0 is returned for data types where
-     * the column size is not applicable.
+     * <p>
+     * The precision value of a decimal number column.
+     * </p>
      * 
-     * @return Get the designated column's specified column size.For numeric data, this is the maximum precision. For
-     *         character data, this is the length in characters. For datetime datatypes, this is the length in
-     *         characters of the String representation (assuming the maximum allowed precision of the fractional seconds
-     *         component). For binary data, this is the length in bytes. For the ROWID datatype, this is the length in
-     *         bytes. 0 is returned for data types where the column size is not applicable.
+     * @return The precision value of a decimal number column.
      */
 
     public Integer getPrecision() {
@@ -423,18 +507,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Get the designated column's specified column size.For numeric data, this is the maximum precision. For character
-     * data, this is the length in characters. For datetime datatypes, this is the length in characters of the String
-     * representation (assuming the maximum allowed precision of the fractional seconds component). For binary data, this
-     * is the length in bytes. For the ROWID datatype, this is the length in bytes. 0 is returned for data types where
-     * the column size is not applicable.
+     * <p>
+     * The precision value of a decimal number column.
+     * </p>
      * 
      * @param precision
-     *        Get the designated column's specified column size.For numeric data, this is the maximum precision. For
-     *        character data, this is the length in characters. For datetime datatypes, this is the length in characters
-     *        of the String representation (assuming the maximum allowed precision of the fractional seconds component).
-     *        For binary data, this is the length in bytes. For the ROWID datatype, this is the length in bytes. 0 is
-     *        returned for data types where the column size is not applicable.
+     *        The precision value of a decimal number column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -444,12 +522,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Designated column's number of digits to right of the decimal point. 0 is returned for data types where the scale
-     * is not applicable.
+     * <p>
+     * The scale value of a decimal number column.
+     * </p>
      * 
      * @param scale
-     *        Designated column's number of digits to right of the decimal point. 0 is returned for data types where the
-     *        scale is not applicable.
+     *        The scale value of a decimal number column.
      */
 
     public void setScale(Integer scale) {
@@ -457,11 +535,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Designated column's number of digits to right of the decimal point. 0 is returned for data types where the scale
-     * is not applicable.
+     * <p>
+     * The scale value of a decimal number column.
+     * </p>
      * 
-     * @return Designated column's number of digits to right of the decimal point. 0 is returned for data types where
-     *         the scale is not applicable.
+     * @return The scale value of a decimal number column.
      */
 
     public Integer getScale() {
@@ -469,12 +547,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Designated column's number of digits to right of the decimal point. 0 is returned for data types where the scale
-     * is not applicable.
+     * <p>
+     * The scale value of a decimal number column.
+     * </p>
      * 
      * @param scale
-     *        Designated column's number of digits to right of the decimal point. 0 is returned for data types where the
-     *        scale is not applicable.
+     *        The scale value of a decimal number column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,10 +562,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Designated column's table's schema
+     * <p>
+     * The name of the schema that owns the table that includes the column.
+     * </p>
      * 
      * @param schemaName
-     *        Designated column's table's schema
+     *        The name of the schema that owns the table that includes the column.
      */
 
     public void setSchemaName(String schemaName) {
@@ -495,9 +575,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Designated column's table's schema
+     * <p>
+     * The name of the schema that owns the table that includes the column.
+     * </p>
      * 
-     * @return Designated column's table's schema
+     * @return The name of the schema that owns the table that includes the column.
      */
 
     public String getSchemaName() {
@@ -505,10 +587,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Designated column's table's schema
+     * <p>
+     * The name of the schema that owns the table that includes the column.
+     * </p>
      * 
      * @param schemaName
-     *        Designated column's table's schema
+     *        The name of the schema that owns the table that includes the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -518,10 +602,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Designated column's table name
+     * <p>
+     * The name of the table that includes the column.
+     * </p>
      * 
      * @param tableName
-     *        Designated column's table name
+     *        The name of the table that includes the column.
      */
 
     public void setTableName(String tableName) {
@@ -529,9 +615,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Designated column's table name
+     * <p>
+     * The name of the table that includes the column.
+     * </p>
      * 
-     * @return Designated column's table name
+     * @return The name of the table that includes the column.
      */
 
     public String getTableName() {
@@ -539,10 +627,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Designated column's table name
+     * <p>
+     * The name of the table that includes the column.
+     * </p>
      * 
      * @param tableName
-     *        Designated column's table name
+     *        The name of the table that includes the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -552,10 +642,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * SQL type from java.sql.Types.
+     * <p>
+     * The type of the column.
+     * </p>
      * 
      * @param type
-     *        SQL type from java.sql.Types.
+     *        The type of the column.
      */
 
     public void setType(Integer type) {
@@ -563,9 +655,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * SQL type from java.sql.Types.
+     * <p>
+     * The type of the column.
+     * </p>
      * 
-     * @return SQL type from java.sql.Types.
+     * @return The type of the column.
      */
 
     public Integer getType() {
@@ -573,10 +667,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * SQL type from java.sql.Types.
+     * <p>
+     * The type of the column.
+     * </p>
      * 
      * @param type
-     *        SQL type from java.sql.Types.
+     *        The type of the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -586,10 +682,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Database-specific type name.
+     * <p>
+     * The database-specific data type of the column.
+     * </p>
      * 
      * @param typeName
-     *        Database-specific type name.
+     *        The database-specific data type of the column.
      */
 
     public void setTypeName(String typeName) {
@@ -597,9 +695,11 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Database-specific type name.
+     * <p>
+     * The database-specific data type of the column.
+     * </p>
      * 
-     * @return Database-specific type name.
+     * @return The database-specific data type of the column.
      */
 
     public String getTypeName() {
@@ -607,10 +707,12 @@ public class ColumnMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Database-specific type name.
+     * <p>
+     * The database-specific data type of the column.
+     * </p>
      * 
      * @param typeName
-     *        Database-specific type name.
+     *        The database-specific data type of the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

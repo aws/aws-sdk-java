@@ -45,9 +45,9 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     private String name;
     /**
      * <p>
-     * Contents of the server.properties file. When using the API, you must ensure that the contents of the file are
-     * base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of server.properties
-     * can be in plaintext.
+     * Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the
+     * contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the
+     * contents of <filename>server.properties</filename> can be in plaintext.
      * </p>
      */
     private java.nio.ByteBuffer serverProperties;
@@ -58,7 +58,9 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param description
+     *        <p>
      *        The description of the configuration.
+     *        </p>
      */
 
     public void setDescription(String description) {
@@ -70,7 +72,9 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
      * The description of the configuration.
      * </p>
      * 
-     * @return The description of the configuration.
+     * @return <p>
+     *         The description of the configuration.
+     *         </p>
      */
 
     public String getDescription() {
@@ -83,7 +87,9 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param description
+     *        <p>
      *        The description of the configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,7 +103,9 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
      * The versions of Apache Kafka with which you can use this MSK configuration.
      * </p>
      * 
-     * @return The versions of Apache Kafka with which you can use this MSK configuration.
+     * @return <p>
+     *         The versions of Apache Kafka with which you can use this MSK configuration.
+     *         </p>
      */
 
     public java.util.List<String> getKafkaVersions() {
@@ -110,7 +118,9 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param kafkaVersions
+     *        <p>
      *        The versions of Apache Kafka with which you can use this MSK configuration.
+     *        </p>
      */
 
     public void setKafkaVersions(java.util.Collection<String> kafkaVersions) {
@@ -126,6 +136,7 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The versions of Apache Kafka with which you can use this MSK configuration.
      * </p>
+     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setKafkaVersions(java.util.Collection)} or {@link #withKafkaVersions(java.util.Collection)} if you want
@@ -133,7 +144,9 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param kafkaVersions
+     *        <p>
      *        The versions of Apache Kafka with which you can use this MSK configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,7 +166,9 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param kafkaVersions
+     *        <p>
      *        The versions of Apache Kafka with which you can use this MSK configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,7 +183,9 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param name
+     *        <p>
      *        The name of the configuration.
+     *        </p>
      */
 
     public void setName(String name) {
@@ -180,7 +197,9 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
      * The name of the configuration.
      * </p>
      * 
-     * @return The name of the configuration.
+     * @return <p>
+     *         The name of the configuration.
+     *         </p>
      */
 
     public String getName() {
@@ -193,7 +212,9 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param name
+     *        <p>
      *        The name of the configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,9 +225,9 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Contents of the server.properties file. When using the API, you must ensure that the contents of the file are
-     * base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of server.properties
-     * can be in plaintext.
+     * Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the
+     * contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the
+     * contents of <filename>server.properties</filename> can be in plaintext.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -220,9 +241,11 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param serverProperties
-     *        Contents of the server.properties file. When using the API, you must ensure that the contents of the file
-     *        are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of
-     *        server.properties can be in plaintext.
+     *        <p>
+     *        Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the
+     *        contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI,
+     *        the contents of <filename>server.properties</filename> can be in plaintext.
+     *        </p>
      */
 
     public void setServerProperties(java.nio.ByteBuffer serverProperties) {
@@ -231,21 +254,24 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Contents of the server.properties file. When using the API, you must ensure that the contents of the file are
-     * base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of server.properties
-     * can be in plaintext.
+     * Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the
+     * contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the
+     * contents of <filename>server.properties</filename> can be in plaintext.
      * </p>
+     * 
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
-     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
-     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}
+     * . Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
      * {@code position}.
      * </p>
      * 
-     * @return Contents of the server.properties file. When using the API, you must ensure that the contents of the file
-     *         are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of
-     *         server.properties can be in plaintext.
+     * @return <p>
+     *         Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the
+     *         contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI,
+     *         the contents of <filename>server.properties</filename> can be in plaintext.
+     *         </p>
      */
 
     public java.nio.ByteBuffer getServerProperties() {
@@ -254,9 +280,9 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Contents of the server.properties file. When using the API, you must ensure that the contents of the file are
-     * base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of server.properties
-     * can be in plaintext.
+     * Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the
+     * contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the
+     * contents of <filename>server.properties</filename> can be in plaintext.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -270,9 +296,11 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param serverProperties
-     *        Contents of the server.properties file. When using the API, you must ensure that the contents of the file
-     *        are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of
-     *        server.properties can be in plaintext.
+     *        <p>
+     *        Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the
+     *        contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI,
+     *        the contents of <filename>server.properties</filename> can be in plaintext.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -257,6 +257,27 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * </ul>
  * <p>
+ * Tags used to tag resources in AWS CodeCommit (not Git tags), by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ListTagsForResource</a>, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
+ * CodeCommit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeCommit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UntagResource</a>, which removes tags for a resource in AWS CodeCommit.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * Triggers, by calling the following:
  * </p>
  * <ul>
@@ -280,7 +301,7 @@ import com.amazonaws.services.codecommit.model.*;
  * </ul>
  * <p>
  * For information about how to use AWS CodeCommit, see the <a
- * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
+ * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -1190,6 +1211,43 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
+     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit. For a list of valid
+     * resources in AWS CodeCommit, see <a href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSCodeCommitAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit. For a list of valid
+     * resources in AWS CodeCommit, see <a href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Closes a pull request and attempts to merge the source commit of a pull request into the specified destination
      * branch for that pull request at the specified commit using the fast-forward merge option.
      * </p>
@@ -1392,6 +1450,43 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
+     * Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
+     * href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSCodeCommitAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
+     * href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Tests the functionality of repository triggers by sending information to the trigger target. If real data is
      * available in the repository, the test will send data from the last commit. If no data is available, sample data
      * will be generated.
@@ -1426,6 +1521,41 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      */
     java.util.concurrent.Future<TestRepositoryTriggersResult> testRepositoryTriggersAsync(TestRepositoryTriggersRequest testRepositoryTriggersRequest,
             com.amazonaws.handlers.AsyncHandler<TestRepositoryTriggersRequest, TestRepositoryTriggersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSCodeCommitAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -1656,7 +1786,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository
      * names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters.
      * The suffix ".git" is prohibited. For a full description of the limits on repository names, see <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
      * Guide.
      * </p>
      * 
@@ -1674,7 +1804,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository
      * names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters.
      * The suffix ".git" is prohibited. For a full description of the limits on repository names, see <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
      * Guide.
      * </p>
      * 

@@ -29,6 +29,8 @@ public class EncryptionInfoMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> ENCRYPTIONATREST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionAtRest").build();
+    private static final MarshallingInfo<StructuredPojo> ENCRYPTIONINTRANSIT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionInTransit").build();
 
     private static final EncryptionInfoMarshaller instance = new EncryptionInfoMarshaller();
 
@@ -47,6 +49,7 @@ public class EncryptionInfoMarshaller {
 
         try {
             protocolMarshaller.marshall(encryptionInfo.getEncryptionAtRest(), ENCRYPTIONATREST_BINDING);
+            protocolMarshaller.marshall(encryptionInfo.getEncryptionInTransit(), ENCRYPTIONINTRANSIT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

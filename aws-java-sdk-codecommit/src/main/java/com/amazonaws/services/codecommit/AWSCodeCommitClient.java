@@ -282,6 +282,27 @@ import com.amazonaws.services.codecommit.model.transform.*;
  * </li>
  * </ul>
  * <p>
+ * Tags used to tag resources in AWS CodeCommit (not Git tags), by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ListTagsForResource</a>, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
+ * CodeCommit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeCommit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UntagResource</a>, which removes tags for a resource in AWS CodeCommit.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * Triggers, by calling the following:
  * </p>
  * <ul>
@@ -305,7 +326,7 @@ import com.amazonaws.services.codecommit.model.transform.*;
  * </ul>
  * <p>
  * For information about how to use AWS CodeCommit, see the <a
- * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
+ * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -385,6 +406,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("FileNameConflictsWithDirectoryNameException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.FileNameConflictsWithDirectoryNameException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceArnException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.InvalidResourceArnException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("EncryptionKeyAccessDeniedException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.EncryptionKeyAccessDeniedException.class))
                     .addErrorMetadata(
@@ -411,6 +435,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CommitDoesNotExistException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.CommitDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceArnRequiredException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.ResourceArnRequiredException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryTriggerCustomDataException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerCustomDataException.class))
@@ -448,6 +475,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRelativeFileVersionEnumException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidRelativeFileVersionEnumException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TagKeysListRequiredException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.TagKeysListRequiredException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidClientRequestTokenException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidClientRequestTokenException.class))
                     .addErrorMetadata(
@@ -469,8 +499,17 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("CommentContentRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.CommentContentRequiredException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagKeysListException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.InvalidTagKeysListException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TagsMapRequiredException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.TagsMapRequiredException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PathRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.PathRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSystemTagUsageException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.InvalidSystemTagUsageException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RepositoryTriggerNameRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.RepositoryTriggerNameRequiredException.class))
@@ -607,6 +646,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("EncryptionKeyDisabledException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.EncryptionKeyDisabledException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.TooManyTagsException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CommentNotCreatedByCallerException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.CommentNotCreatedByCallerException.class))
                     .addErrorMetadata(
@@ -615,6 +657,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TargetRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.TargetRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagsMapException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.InvalidTagsMapException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RestrictedSourceFileException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.RestrictedSourceFileException.class))
@@ -675,6 +720,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDestinationCommitSpecifierException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidDestinationCommitSpecifierException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TagPolicyException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.TagPolicyException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RepositoryTriggerBranchNameListRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.RepositoryTriggerBranchNameListRequiredException.class))
@@ -1391,6 +1439,14 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @throws InvalidTagsMapException
+     *         The map of tags is not valid.
+     * @throws TooManyTagsException
+     *         The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+     * @throws InvalidSystemTagUsageException
+     *         The specified tag is not valid. Key names cannot be prefixed with aws:.
+     * @throws TagPolicyException
+     *         The tag policy is not valid.
      * @sample AWSCodeCommit.CreateRepository
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository" target="_top">AWS
      *      API Documentation</a>
@@ -1887,7 +1943,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The encryption key is not available.
      * @throws FileTooLargeException
      *         The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in
-     *         AWS CodeCommit, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+     *         AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
      *         CodeCommit User Guide</a>.
      * @sample AWSCodeCommit.GetBlob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlob" target="_top">AWS API
@@ -2471,7 +2527,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The encryption key is not available.
      * @throws FileTooLargeException
      *         The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in
-     *         AWS CodeCommit, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+     *         AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
      *         CodeCommit User Guide</a>.
      * @sample AWSCodeCommit.GetFile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile" target="_top">AWS API
@@ -3149,6 +3205,80 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
 
     /**
      * <p>
+     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit. For a list of valid
+     * resources in AWS CodeCommit, see <a href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws ResourceArnRequiredException
+     *         A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid
+     *         resources in AWS CodeCommit, see <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @throws InvalidResourceArnException
+     *         The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @sample AWSCodeCommit.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Closes a pull request and attempts to merge the source commit of a pull request into the specified destination
      * branch for that pull request at the specified commit using the fast-forward merge option.
      * </p>
@@ -3801,6 +3931,90 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
 
     /**
      * <p>
+     * Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
+     * href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws ResourceArnRequiredException
+     *         A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid
+     *         resources in AWS CodeCommit, see <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @throws InvalidResourceArnException
+     *         The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @throws TagsMapRequiredException
+     *         A map of tags is required.
+     * @throws InvalidTagsMapException
+     *         The map of tags is not valid.
+     * @throws TooManyTagsException
+     *         The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+     * @throws InvalidSystemTagUsageException
+     *         The specified tag is not valid. Key names cannot be prefixed with aws:.
+     * @throws TagPolicyException
+     *         The tag policy is not valid.
+     * @sample AWSCodeCommit.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Tests the functionality of repository triggers by sending information to the trigger target. If real data is
      * available in the repository, the test will send data from the last commit. If no data is available, sample data
      * will be generated.
@@ -3895,6 +4109,89 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
             HttpResponseHandler<AmazonWebServiceResponse<TestRepositoryTriggersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new TestRepositoryTriggersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws ResourceArnRequiredException
+     *         A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid
+     *         resources in AWS CodeCommit, see <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @throws InvalidResourceArnException
+     *         The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @throws TagKeysListRequiredException
+     *         A list of tag keys is required. The list cannot be empty or null.
+     * @throws InvalidTagKeysListException
+     *         The list of tags is not valid.
+     * @throws TooManyTagsException
+     *         The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+     * @throws InvalidSystemTagUsageException
+     *         The specified tag is not valid. Key names cannot be prefixed with aws:.
+     * @throws TagPolicyException
+     *         The tag policy is not valid.
+     * @sample AWSCodeCommit.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4365,7 +4662,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository
      * names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters.
      * The suffix ".git" is prohibited. For a full description of the limits on repository names, see <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
      * Guide.
      * </p>
      * 

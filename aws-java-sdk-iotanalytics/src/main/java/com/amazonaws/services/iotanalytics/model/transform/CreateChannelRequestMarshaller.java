@@ -30,6 +30,8 @@ public class CreateChannelRequestMarshaller {
 
     private static final MarshallingInfo<String> CHANNELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("channelName").build();
+    private static final MarshallingInfo<StructuredPojo> CHANNELSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("channelStorage").build();
     private static final MarshallingInfo<StructuredPojo> RETENTIONPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retentionPeriod").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -52,6 +54,7 @@ public class CreateChannelRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createChannelRequest.getChannelName(), CHANNELNAME_BINDING);
+            protocolMarshaller.marshall(createChannelRequest.getChannelStorage(), CHANNELSTORAGE_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getRetentionPeriod(), RETENTIONPERIOD_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

@@ -28,14 +28,81 @@ public class AbstractAWSRDSDataAsync extends AbstractAWSRDSData implements AWSRD
     }
 
     @Override
+    public java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(BatchExecuteStatementRequest request) {
+
+        return batchExecuteStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(BatchExecuteStatementRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchExecuteStatementRequest, BatchExecuteStatementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BeginTransactionResult> beginTransactionAsync(BeginTransactionRequest request) {
+
+        return beginTransactionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BeginTransactionResult> beginTransactionAsync(BeginTransactionRequest request,
+            com.amazonaws.handlers.AsyncHandler<BeginTransactionRequest, BeginTransactionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CommitTransactionResult> commitTransactionAsync(CommitTransactionRequest request) {
+
+        return commitTransactionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CommitTransactionResult> commitTransactionAsync(CommitTransactionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CommitTransactionRequest, CommitTransactionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    @Deprecated
     public java.util.concurrent.Future<ExecuteSqlResult> executeSqlAsync(ExecuteSqlRequest request) {
 
         return executeSqlAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ExecuteSqlResult> executeSqlAsync(ExecuteSqlRequest request,
             com.amazonaws.handlers.AsyncHandler<ExecuteSqlRequest, ExecuteSqlResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteStatementResult> executeStatementAsync(ExecuteStatementRequest request) {
+
+        return executeStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteStatementResult> executeStatementAsync(ExecuteStatementRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExecuteStatementRequest, ExecuteStatementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RollbackTransactionResult> rollbackTransactionAsync(RollbackTransactionRequest request) {
+
+        return rollbackTransactionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RollbackTransactionResult> rollbackTransactionAsync(RollbackTransactionRequest request,
+            com.amazonaws.handlers.AsyncHandler<RollbackTransactionRequest, RollbackTransactionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

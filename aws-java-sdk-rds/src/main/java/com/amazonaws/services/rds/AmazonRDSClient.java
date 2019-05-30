@@ -7781,6 +7781,73 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
+     * Starts a database activity stream to monitor activity on the database. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database Activity
+     * Streams</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param startActivityStreamRequest
+     * @return Result of the StartActivityStream operation returned by the service.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws ResourceNotFoundException
+     *         The specified resource ID was not found.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+     * @throws KMSKeyNotAccessibleException
+     *         An error occurred accessing an AWS KMS key.
+     * @sample AmazonRDS.StartActivityStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartActivityStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartActivityStreamResult startActivityStream(StartActivityStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartActivityStream(request);
+    }
+
+    @SdkInternalApi
+    final StartActivityStreamResult executeStartActivityStream(StartActivityStreamRequest startActivityStreamRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startActivityStreamRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartActivityStreamRequest> request = null;
+        Response<StartActivityStreamResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartActivityStreamRequestMarshaller().marshall(super.beforeMarshalling(startActivityStreamRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartActivityStream");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<StartActivityStreamResult> responseHandler = new StaxResponseHandler<StartActivityStreamResult>(
+                    new StartActivityStreamResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster AWS CLI command,
      * or the StopDBCluster action.
      * </p>
@@ -7928,6 +7995,75 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a database activity stream that was started using the AWS console, the <code>start-activity-stream</code>
+     * AWS CLI command, or the <code>StartActivityStream</code> action.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database Activity
+     * Streams</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param stopActivityStreamRequest
+     * @return Result of the StopActivityStream operation returned by the service.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws ResourceNotFoundException
+     *         The specified resource ID was not found.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+     * @sample AmazonRDS.StopActivityStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopActivityStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StopActivityStreamResult stopActivityStream(StopActivityStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopActivityStream(request);
+    }
+
+    @SdkInternalApi
+    final StopActivityStreamResult executeStopActivityStream(StopActivityStreamRequest stopActivityStreamRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopActivityStreamRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopActivityStreamRequest> request = null;
+        Response<StopActivityStreamResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopActivityStreamRequestMarshaller().marshall(super.beforeMarshalling(stopActivityStreamRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopActivityStream");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<StopActivityStreamResult> responseHandler = new StaxResponseHandler<StopActivityStreamResult>(
+                    new StopActivityStreamResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

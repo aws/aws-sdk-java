@@ -48,6 +48,11 @@ public class AbstractAWSKafka implements AWSKafka {
     }
 
     @Override
+    public DescribeClusterOperationResult describeClusterOperation(DescribeClusterOperationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeConfigurationResult describeConfiguration(DescribeConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -63,7 +68,17 @@ public class AbstractAWSKafka implements AWSKafka {
     }
 
     @Override
+    public ListClusterOperationsResult listClusterOperations(ListClusterOperationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListClustersResult listClusters(ListClustersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListConfigurationRevisionsResult listConfigurationRevisions(ListConfigurationRevisionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,6 +104,16 @@ public class AbstractAWSKafka implements AWSKafka {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateBrokerStorageResult updateBrokerStorage(UpdateBrokerStorageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateClusterConfigurationResult updateClusterConfiguration(UpdateClusterConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

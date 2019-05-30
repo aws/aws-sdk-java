@@ -27,24 +27,51 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that uniquely identifies the resource.
+     * The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The list of tag keys.
+     * Tag keys must be unique for a given cluster. In addition, the following restrictions apply:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Each tag key must be unique. If you add a tag with a key that's already in use, your new tag overwrites the
+     * existing key-value pair.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't start a tag key with aws: because this prefix is reserved for use by AWS. AWS creates tags that begin
+     * with this prefix on your behalf, but you can't edit or delete them.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys must be between 1 and 128 Unicode characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following
+     * special characters: _ . / = + -
+     * 
+     * @.</p> </li>
+     *        </ul>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that uniquely identifies the resource.
+     * The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) that uniquely identifies the resource.
+     *        <p>
+     *        The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
+     *        </p>
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +80,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that uniquely identifies the resource.
+     * The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that uniquely identifies the resource.
+     * @return <p>
+     *         The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
+     *         </p>
      */
 
     public String getResourceArn() {
@@ -65,11 +94,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that uniquely identifies the resource.
+     * The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) that uniquely identifies the resource.
+     *        <p>
+     *        The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +111,60 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of tag keys.
+     * Tag keys must be unique for a given cluster. In addition, the following restrictions apply:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Each tag key must be unique. If you add a tag with a key that's already in use, your new tag overwrites the
+     * existing key-value pair.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't start a tag key with aws: because this prefix is reserved for use by AWS. AWS creates tags that begin
+     * with this prefix on your behalf, but you can't edit or delete them.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys must be between 1 and 128 Unicode characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following
+     * special characters: _ . / = + -
      * 
-     * @return The list of tag keys.
+     * @.</p> </li>
+     *        </ul>
+     * @return <p>
+     *         Tag keys must be unique for a given cluster. In addition, the following restrictions apply:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Each tag key must be unique. If you add a tag with a key that's already in use, your new tag overwrites
+     *         the existing key-value pair.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You can't start a tag key with aws: because this prefix is reserved for use by AWS. AWS creates tags that
+     *         begin with this prefix on your behalf, but you can't edit or delete them.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Tag keys must be between 1 and 128 Unicode characters in length.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Tag keys must consist of the following characters: Unicode letters, digits, white space, and the
+     *         following special characters: _ . / = + -
+     * @.</p> </li>
+     *        </ul>
      */
 
     public java.util.List<String> getTagKeys() {
@@ -92,11 +173,61 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of tag keys.
+     * Tag keys must be unique for a given cluster. In addition, the following restrictions apply:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Each tag key must be unique. If you add a tag with a key that's already in use, your new tag overwrites the
+     * existing key-value pair.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't start a tag key with aws: because this prefix is reserved for use by AWS. AWS creates tags that begin
+     * with this prefix on your behalf, but you can't edit or delete them.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys must be between 1 and 128 Unicode characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following
+     * special characters: _ . / = + -
      * 
+     * @.</p> </li>
+     *        </ul>
      * @param tagKeys
-     *        The list of tag keys.
+     *        <p>
+     *        Tag keys must be unique for a given cluster. In addition, the following restrictions apply:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Each tag key must be unique. If you add a tag with a key that's already in use, your new tag overwrites
+     *        the existing key-value pair.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can't start a tag key with aws: because this prefix is reserved for use by AWS. AWS creates tags that
+     *        begin with this prefix on your behalf, but you can't edit or delete them.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys must be between 1 and 128 Unicode characters in length.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following
+     *        special characters: _ . / = + -
+     * @.</p> </li>
+     *        </ul>
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -110,16 +241,67 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of tag keys.
+     * Tag keys must be unique for a given cluster. In addition, the following restrictions apply:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override
-     * the existing values.
+     * Each tag key must be unique. If you add a tag with a key that's already in use, your new tag overwrites the
+     * existing key-value pair.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't start a tag key with aws: because this prefix is reserved for use by AWS. AWS creates tags that begin
+     * with this prefix on your behalf, but you can't edit or delete them.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys must be between 1 and 128 Unicode characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following
+     * special characters: _ . / = + -
      * 
+     * @.</p> </li>
+     *        </ul>
+     * 
+     *        <p>
+     *        <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     *        {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to
+     *        override the existing values.
+     *        </p>
      * @param tagKeys
-     *        The list of tag keys.
+     *        <p>
+     *        Tag keys must be unique for a given cluster. In addition, the following restrictions apply:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Each tag key must be unique. If you add a tag with a key that's already in use, your new tag overwrites
+     *        the existing key-value pair.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can't start a tag key with aws: because this prefix is reserved for use by AWS. AWS creates tags that
+     *        begin with this prefix on your behalf, but you can't edit or delete them.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys must be between 1 and 128 Unicode characters in length.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following
+     *        special characters: _ . / = + -
+     * @.</p> </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +317,61 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of tag keys.
+     * Tag keys must be unique for a given cluster. In addition, the following restrictions apply:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Each tag key must be unique. If you add a tag with a key that's already in use, your new tag overwrites the
+     * existing key-value pair.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't start a tag key with aws: because this prefix is reserved for use by AWS. AWS creates tags that begin
+     * with this prefix on your behalf, but you can't edit or delete them.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys must be between 1 and 128 Unicode characters in length.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following
+     * special characters: _ . / = + -
      * 
+     * @.</p> </li>
+     *        </ul>
      * @param tagKeys
-     *        The list of tag keys.
+     *        <p>
+     *        Tag keys must be unique for a given cluster. In addition, the following restrictions apply:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Each tag key must be unique. If you add a tag with a key that's already in use, your new tag overwrites
+     *        the existing key-value pair.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can't start a tag key with aws: because this prefix is reserved for use by AWS. AWS creates tags that
+     *        begin with this prefix on your behalf, but you can't edit or delete them.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys must be between 1 and 128 Unicode characters in length.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following
+     *        special characters: _ . / = + -
+     * @.</p> </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

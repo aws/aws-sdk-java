@@ -342,6 +342,31 @@ public class DBCluster implements Serializable, Cloneable {
     private Boolean httpEndpointEnabled;
     /**
      * <p>
+     * The mode of the database activity stream. Database events such as a change or access generate an activity stream
+     * event. The database session can handle these events either synchronously or asynchronously.
+     * </p>
+     */
+    private String activityStreamMode;
+    /**
+     * <p>
+     * The status of the database activity stream.
+     * </p>
+     */
+    private String activityStreamStatus;
+    /**
+     * <p>
+     * The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * </p>
+     */
+    private String activityStreamKmsKeyId;
+    /**
+     * <p>
+     * The name of the Amazon Kinesis data stream used for the database activity stream.
+     * </p>
+     */
+    private String activityStreamKinesisStreamName;
+    /**
+     * <p>
      * Specifies whether tags are copied from the DB cluster to snapshots of the DB cluster.
      * </p>
      */
@@ -2775,6 +2800,212 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The mode of the database activity stream. Database events such as a change or access generate an activity stream
+     * event. The database session can handle these events either synchronously or asynchronously.
+     * </p>
+     * 
+     * @param activityStreamMode
+     *        The mode of the database activity stream. Database events such as a change or access generate an activity
+     *        stream event. The database session can handle these events either synchronously or asynchronously.
+     * @see ActivityStreamMode
+     */
+
+    public void setActivityStreamMode(String activityStreamMode) {
+        this.activityStreamMode = activityStreamMode;
+    }
+
+    /**
+     * <p>
+     * The mode of the database activity stream. Database events such as a change or access generate an activity stream
+     * event. The database session can handle these events either synchronously or asynchronously.
+     * </p>
+     * 
+     * @return The mode of the database activity stream. Database events such as a change or access generate an activity
+     *         stream event. The database session can handle these events either synchronously or asynchronously.
+     * @see ActivityStreamMode
+     */
+
+    public String getActivityStreamMode() {
+        return this.activityStreamMode;
+    }
+
+    /**
+     * <p>
+     * The mode of the database activity stream. Database events such as a change or access generate an activity stream
+     * event. The database session can handle these events either synchronously or asynchronously.
+     * </p>
+     * 
+     * @param activityStreamMode
+     *        The mode of the database activity stream. Database events such as a change or access generate an activity
+     *        stream event. The database session can handle these events either synchronously or asynchronously.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActivityStreamMode
+     */
+
+    public DBCluster withActivityStreamMode(String activityStreamMode) {
+        setActivityStreamMode(activityStreamMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mode of the database activity stream. Database events such as a change or access generate an activity stream
+     * event. The database session can handle these events either synchronously or asynchronously.
+     * </p>
+     * 
+     * @param activityStreamMode
+     *        The mode of the database activity stream. Database events such as a change or access generate an activity
+     *        stream event. The database session can handle these events either synchronously or asynchronously.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActivityStreamMode
+     */
+
+    public DBCluster withActivityStreamMode(ActivityStreamMode activityStreamMode) {
+        this.activityStreamMode = activityStreamMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamStatus
+     *        The status of the database activity stream.
+     * @see ActivityStreamStatus
+     */
+
+    public void setActivityStreamStatus(String activityStreamStatus) {
+        this.activityStreamStatus = activityStreamStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the database activity stream.
+     * </p>
+     * 
+     * @return The status of the database activity stream.
+     * @see ActivityStreamStatus
+     */
+
+    public String getActivityStreamStatus() {
+        return this.activityStreamStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamStatus
+     *        The status of the database activity stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActivityStreamStatus
+     */
+
+    public DBCluster withActivityStreamStatus(String activityStreamStatus) {
+        setActivityStreamStatus(activityStreamStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamStatus
+     *        The status of the database activity stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActivityStreamStatus
+     */
+
+    public DBCluster withActivityStreamStatus(ActivityStreamStatus activityStreamStatus) {
+        this.activityStreamStatus = activityStreamStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamKmsKeyId
+     *        The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     */
+
+    public void setActivityStreamKmsKeyId(String activityStreamKmsKeyId) {
+        this.activityStreamKmsKeyId = activityStreamKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * </p>
+     * 
+     * @return The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     */
+
+    public String getActivityStreamKmsKeyId() {
+        return this.activityStreamKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamKmsKeyId
+     *        The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withActivityStreamKmsKeyId(String activityStreamKmsKeyId) {
+        setActivityStreamKmsKeyId(activityStreamKmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Kinesis data stream used for the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamKinesisStreamName
+     *        The name of the Amazon Kinesis data stream used for the database activity stream.
+     */
+
+    public void setActivityStreamKinesisStreamName(String activityStreamKinesisStreamName) {
+        this.activityStreamKinesisStreamName = activityStreamKinesisStreamName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Kinesis data stream used for the database activity stream.
+     * </p>
+     * 
+     * @return The name of the Amazon Kinesis data stream used for the database activity stream.
+     */
+
+    public String getActivityStreamKinesisStreamName() {
+        return this.activityStreamKinesisStreamName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Kinesis data stream used for the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamKinesisStreamName
+     *        The name of the Amazon Kinesis data stream used for the database activity stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withActivityStreamKinesisStreamName(String activityStreamKinesisStreamName) {
+        setActivityStreamKinesisStreamName(activityStreamKinesisStreamName);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies whether tags are copied from the DB cluster to snapshots of the DB cluster.
      * </p>
      * 
@@ -2927,6 +3158,14 @@ public class DBCluster implements Serializable, Cloneable {
             sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
         if (getHttpEndpointEnabled() != null)
             sb.append("HttpEndpointEnabled: ").append(getHttpEndpointEnabled()).append(",");
+        if (getActivityStreamMode() != null)
+            sb.append("ActivityStreamMode: ").append(getActivityStreamMode()).append(",");
+        if (getActivityStreamStatus() != null)
+            sb.append("ActivityStreamStatus: ").append(getActivityStreamStatus()).append(",");
+        if (getActivityStreamKmsKeyId() != null)
+            sb.append("ActivityStreamKmsKeyId: ").append(getActivityStreamKmsKeyId()).append(",");
+        if (getActivityStreamKinesisStreamName() != null)
+            sb.append("ActivityStreamKinesisStreamName: ").append(getActivityStreamKinesisStreamName()).append(",");
         if (getCopyTagsToSnapshot() != null)
             sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot());
         sb.append("}");
@@ -3126,6 +3365,23 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getHttpEndpointEnabled() != null && other.getHttpEndpointEnabled().equals(this.getHttpEndpointEnabled()) == false)
             return false;
+        if (other.getActivityStreamMode() == null ^ this.getActivityStreamMode() == null)
+            return false;
+        if (other.getActivityStreamMode() != null && other.getActivityStreamMode().equals(this.getActivityStreamMode()) == false)
+            return false;
+        if (other.getActivityStreamStatus() == null ^ this.getActivityStreamStatus() == null)
+            return false;
+        if (other.getActivityStreamStatus() != null && other.getActivityStreamStatus().equals(this.getActivityStreamStatus()) == false)
+            return false;
+        if (other.getActivityStreamKmsKeyId() == null ^ this.getActivityStreamKmsKeyId() == null)
+            return false;
+        if (other.getActivityStreamKmsKeyId() != null && other.getActivityStreamKmsKeyId().equals(this.getActivityStreamKmsKeyId()) == false)
+            return false;
+        if (other.getActivityStreamKinesisStreamName() == null ^ this.getActivityStreamKinesisStreamName() == null)
+            return false;
+        if (other.getActivityStreamKinesisStreamName() != null
+                && other.getActivityStreamKinesisStreamName().equals(this.getActivityStreamKinesisStreamName()) == false)
+            return false;
         if (other.getCopyTagsToSnapshot() == null ^ this.getCopyTagsToSnapshot() == null)
             return false;
         if (other.getCopyTagsToSnapshot() != null && other.getCopyTagsToSnapshot().equals(this.getCopyTagsToSnapshot()) == false)
@@ -3183,6 +3439,10 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getScalingConfigurationInfo() == null) ? 0 : getScalingConfigurationInfo().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getHttpEndpointEnabled() == null) ? 0 : getHttpEndpointEnabled().hashCode());
+        hashCode = prime * hashCode + ((getActivityStreamMode() == null) ? 0 : getActivityStreamMode().hashCode());
+        hashCode = prime * hashCode + ((getActivityStreamStatus() == null) ? 0 : getActivityStreamStatus().hashCode());
+        hashCode = prime * hashCode + ((getActivityStreamKmsKeyId() == null) ? 0 : getActivityStreamKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getActivityStreamKinesisStreamName() == null) ? 0 : getActivityStreamKinesisStreamName().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         return hashCode;
     }

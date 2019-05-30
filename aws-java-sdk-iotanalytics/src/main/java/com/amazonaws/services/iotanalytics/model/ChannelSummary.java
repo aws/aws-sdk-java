@@ -36,6 +36,12 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
     private String channelName;
     /**
      * <p>
+     * Where channel data is stored.
+     * </p>
+     */
+    private ChannelStorageSummary channelStorage;
+    /**
+     * <p>
      * The status of the channel.
      * </p>
      */
@@ -90,6 +96,46 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     public ChannelSummary withChannelName(String channelName) {
         setChannelName(channelName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Where channel data is stored.
+     * </p>
+     * 
+     * @param channelStorage
+     *        Where channel data is stored.
+     */
+
+    public void setChannelStorage(ChannelStorageSummary channelStorage) {
+        this.channelStorage = channelStorage;
+    }
+
+    /**
+     * <p>
+     * Where channel data is stored.
+     * </p>
+     * 
+     * @return Where channel data is stored.
+     */
+
+    public ChannelStorageSummary getChannelStorage() {
+        return this.channelStorage;
+    }
+
+    /**
+     * <p>
+     * Where channel data is stored.
+     * </p>
+     * 
+     * @param channelStorage
+     *        Where channel data is stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ChannelSummary withChannelStorage(ChannelStorageSummary channelStorage) {
+        setChannelStorage(channelStorage);
         return this;
     }
 
@@ -246,6 +292,8 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getChannelName() != null)
             sb.append("ChannelName: ").append(getChannelName()).append(",");
+        if (getChannelStorage() != null)
+            sb.append("ChannelStorage: ").append(getChannelStorage()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getCreationTime() != null)
@@ -270,6 +318,10 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getChannelName() != null && other.getChannelName().equals(this.getChannelName()) == false)
             return false;
+        if (other.getChannelStorage() == null ^ this.getChannelStorage() == null)
+            return false;
+        if (other.getChannelStorage() != null && other.getChannelStorage().equals(this.getChannelStorage()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -291,6 +343,7 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getChannelName() == null) ? 0 : getChannelName().hashCode());
+        hashCode = prime * hashCode + ((getChannelStorage() == null) ? 0 : getChannelStorage().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());

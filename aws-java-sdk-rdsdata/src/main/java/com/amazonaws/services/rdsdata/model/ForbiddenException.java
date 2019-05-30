@@ -15,7 +15,9 @@ package com.amazonaws.services.rdsdata.model;
 import javax.annotation.Generated;
 
 /**
- * Access denied exception
+ * <p>
+ * There are insufficient privileges to make the call.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ForbiddenException extends com.amazonaws.services.rdsdata.model.AWSRDSDataException {

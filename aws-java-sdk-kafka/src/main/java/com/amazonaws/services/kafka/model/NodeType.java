@@ -15,7 +15,8 @@ package com.amazonaws.services.kafka.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
+ * 
+ <p>
  * The broker or Zookeeper node.
  * </p>
  */

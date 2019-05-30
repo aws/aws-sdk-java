@@ -52,6 +52,10 @@ public class ChannelSummaryJsonUnmarshaller implements Unmarshaller<ChannelSumma
                     context.nextToken();
                     channelSummary.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("channelStorage", targetDepth)) {
+                    context.nextToken();
+                    channelSummary.setChannelStorage(ChannelStorageSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     channelSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

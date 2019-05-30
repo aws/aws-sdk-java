@@ -139,7 +139,7 @@ public final class ProcessCredentialsProvider implements AWSCredentialsProvider 
      * Parse the output from the credentials process.
      */
     private JsonNode parseProcessOutput(String processOutput) {
-        JsonNode credentialsJson = Jackson.jsonNodeOf(processOutput);
+        JsonNode credentialsJson = Jackson.fromSensitiveJsonString(processOutput, JsonNode.class);
 
         if (!credentialsJson.isObject()) {
             throw new IllegalStateException("Process did not return a JSON object.");
@@ -161,7 +161,7 @@ public final class ProcessCredentialsProvider implements AWSCredentialsProvider 
         String sessionToken = getText(credentialsJson, "SessionToken");
 
         ValidationUtils.assertStringNotEmpty(accessKeyId, "AccessKeyId");
-        ValidationUtils.assertStringNotEmpty(accessKeyId, "SecretAccessKey");
+        ValidationUtils.assertStringNotEmpty(secretAccessKey, "SecretAccessKey");
 
         if (sessionToken != null) {
             return new BasicSessionCredentials(accessKeyId, secretAccessKey, sessionToken);

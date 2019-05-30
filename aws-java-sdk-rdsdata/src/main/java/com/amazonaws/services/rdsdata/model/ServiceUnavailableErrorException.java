@@ -15,7 +15,9 @@ package com.amazonaws.services.rdsdata.model;
 import javax.annotation.Generated;
 
 /**
- * Internal service unavailable error
+ * <p>
+ * The service specified by the <code>resourceArn</code> parameter is not available.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServiceUnavailableErrorException extends com.amazonaws.services.rdsdata.model.AWSRDSDataException {

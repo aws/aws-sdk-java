@@ -2428,6 +2428,41 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListStackInstancesForProvisionedProductResult> listStackInstancesForProvisionedProductAsync(
+            ListStackInstancesForProvisionedProductRequest request) {
+
+        return listStackInstancesForProvisionedProductAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStackInstancesForProvisionedProductResult> listStackInstancesForProvisionedProductAsync(
+            final ListStackInstancesForProvisionedProductRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListStackInstancesForProvisionedProductRequest, ListStackInstancesForProvisionedProductResult> asyncHandler) {
+        final ListStackInstancesForProvisionedProductRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListStackInstancesForProvisionedProductResult>() {
+            @Override
+            public ListStackInstancesForProvisionedProductResult call() throws Exception {
+                ListStackInstancesForProvisionedProductResult result = null;
+
+                try {
+                    result = executeListStackInstancesForProvisionedProduct(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagOptionsResult> listTagOptionsAsync(ListTagOptionsRequest request) {
 
         return listTagOptionsAsync(request, null);

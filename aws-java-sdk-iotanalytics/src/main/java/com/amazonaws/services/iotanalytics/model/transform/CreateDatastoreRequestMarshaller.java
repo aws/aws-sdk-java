@@ -30,6 +30,8 @@ public class CreateDatastoreRequestMarshaller {
 
     private static final MarshallingInfo<String> DATASTORENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("datastoreName").build();
+    private static final MarshallingInfo<StructuredPojo> DATASTORESTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("datastoreStorage").build();
     private static final MarshallingInfo<StructuredPojo> RETENTIONPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retentionPeriod").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -52,6 +54,7 @@ public class CreateDatastoreRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createDatastoreRequest.getDatastoreName(), DATASTORENAME_BINDING);
+            protocolMarshaller.marshall(createDatastoreRequest.getDatastoreStorage(), DATASTORESTORAGE_BINDING);
             protocolMarshaller.marshall(createDatastoreRequest.getRetentionPeriod(), RETENTIONPERIOD_BINDING);
             protocolMarshaller.marshall(createDatastoreRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

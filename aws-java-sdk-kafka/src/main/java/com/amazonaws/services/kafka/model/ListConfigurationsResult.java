@@ -42,7 +42,9 @@ public class ListConfigurationsResult extends com.amazonaws.AmazonWebServiceResu
      * An array of MSK configurations.
      * </p>
      * 
-     * @return An array of MSK configurations.
+     * @return <p>
+     *         An array of MSK configurations.
+     *         </p>
      */
 
     public java.util.List<Configuration> getConfigurations() {
@@ -55,7 +57,9 @@ public class ListConfigurationsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param configurations
+     *        <p>
      *        An array of MSK configurations.
+     *        </p>
      */
 
     public void setConfigurations(java.util.Collection<Configuration> configurations) {
@@ -71,6 +75,7 @@ public class ListConfigurationsResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * An array of MSK configurations.
      * </p>
+     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setConfigurations(java.util.Collection)} or {@link #withConfigurations(java.util.Collection)} if you want
@@ -78,7 +83,9 @@ public class ListConfigurationsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param configurations
+     *        <p>
      *        An array of MSK configurations.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,7 +105,9 @@ public class ListConfigurationsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param configurations
+     *        <p>
      *        An array of MSK configurations.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,9 +123,11 @@ public class ListConfigurationsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param nextToken
+     *        <p>
      *        The paginated results marker. When the result of a ListConfigurations operation is truncated, the call
      *        returns NextToken in the response. To get another batch of configurations, provide this token in your next
      *        request.
+     *        </p>
      */
 
     public void setNextToken(String nextToken) {
@@ -129,9 +140,11 @@ public class ListConfigurationsResult extends com.amazonaws.AmazonWebServiceResu
      * NextToken in the response. To get another batch of configurations, provide this token in your next request.
      * </p>
      * 
-     * @return The paginated results marker. When the result of a ListConfigurations operation is truncated, the call
+     * @return <p>
+     *         The paginated results marker. When the result of a ListConfigurations operation is truncated, the call
      *         returns NextToken in the response. To get another batch of configurations, provide this token in your
      *         next request.
+     *         </p>
      */
 
     public String getNextToken() {
@@ -145,9 +158,11 @@ public class ListConfigurationsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param nextToken
+     *        <p>
      *        The paginated results marker. When the result of a ListConfigurations operation is truncated, the call
      *        returns NextToken in the response. To get another batch of configurations, provide this token in your next
      *        request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

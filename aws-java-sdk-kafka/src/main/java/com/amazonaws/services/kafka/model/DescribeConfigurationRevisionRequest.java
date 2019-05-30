@@ -44,7 +44,9 @@ public class DescribeConfigurationRevisionRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param arn
+     *        <p>
      *        The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
+     *        </p>
      */
 
     public void setArn(String arn) {
@@ -56,7 +58,9 @@ public class DescribeConfigurationRevisionRequest extends com.amazonaws.AmazonWe
      * The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
+     * @return <p>
+     *         The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
+     *         </p>
      */
 
     public String getArn() {
@@ -69,7 +73,9 @@ public class DescribeConfigurationRevisionRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param arn
+     *        <p>
      *        The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +90,9 @@ public class DescribeConfigurationRevisionRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param revision
+     *        <p>
      *        A string that uniquely identifies a revision of an MSK configuration.
+     *        </p>
      */
 
     public void setRevision(Long revision) {
@@ -96,7 +104,9 @@ public class DescribeConfigurationRevisionRequest extends com.amazonaws.AmazonWe
      * A string that uniquely identifies a revision of an MSK configuration.
      * </p>
      * 
-     * @return A string that uniquely identifies a revision of an MSK configuration.
+     * @return <p>
+     *         A string that uniquely identifies a revision of an MSK configuration.
+     *         </p>
      */
 
     public Long getRevision() {
@@ -109,7 +119,9 @@ public class DescribeConfigurationRevisionRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param revision
+     *        <p>
      *        A string that uniquely identifies a revision of an MSK configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

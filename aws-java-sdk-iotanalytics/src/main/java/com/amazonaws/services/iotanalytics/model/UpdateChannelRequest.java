@@ -33,6 +33,12 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String channelName;
     /**
      * <p>
+     * Where channel data is stored.
+     * </p>
+     */
+    private ChannelStorage channelStorage;
+    /**
+     * <p>
      * How long, in days, message data is kept for the channel.
      * </p>
      */
@@ -75,6 +81,46 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public UpdateChannelRequest withChannelName(String channelName) {
         setChannelName(channelName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Where channel data is stored.
+     * </p>
+     * 
+     * @param channelStorage
+     *        Where channel data is stored.
+     */
+
+    public void setChannelStorage(ChannelStorage channelStorage) {
+        this.channelStorage = channelStorage;
+    }
+
+    /**
+     * <p>
+     * Where channel data is stored.
+     * </p>
+     * 
+     * @return Where channel data is stored.
+     */
+
+    public ChannelStorage getChannelStorage() {
+        return this.channelStorage;
+    }
+
+    /**
+     * <p>
+     * Where channel data is stored.
+     * </p>
+     * 
+     * @param channelStorage
+     *        Where channel data is stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateChannelRequest withChannelStorage(ChannelStorage channelStorage) {
+        setChannelStorage(channelStorage);
         return this;
     }
 
@@ -132,6 +178,8 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         sb.append("{");
         if (getChannelName() != null)
             sb.append("ChannelName: ").append(getChannelName()).append(",");
+        if (getChannelStorage() != null)
+            sb.append("ChannelStorage: ").append(getChannelStorage()).append(",");
         if (getRetentionPeriod() != null)
             sb.append("RetentionPeriod: ").append(getRetentionPeriod());
         sb.append("}");
@@ -152,6 +200,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getChannelName() != null && other.getChannelName().equals(this.getChannelName()) == false)
             return false;
+        if (other.getChannelStorage() == null ^ this.getChannelStorage() == null)
+            return false;
+        if (other.getChannelStorage() != null && other.getChannelStorage().equals(this.getChannelStorage()) == false)
+            return false;
         if (other.getRetentionPeriod() == null ^ this.getRetentionPeriod() == null)
             return false;
         if (other.getRetentionPeriod() != null && other.getRetentionPeriod().equals(this.getRetentionPeriod()) == false)
@@ -165,6 +217,7 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getChannelName() == null) ? 0 : getChannelName().hashCode());
+        hashCode = prime * hashCode + ((getChannelStorage() == null) ? 0 : getChannelStorage().hashCode());
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         return hashCode;
     }

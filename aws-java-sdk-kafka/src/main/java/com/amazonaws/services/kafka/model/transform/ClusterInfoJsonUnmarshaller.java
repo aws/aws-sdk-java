@@ -48,9 +48,17 @@ public class ClusterInfoJsonUnmarshaller implements Unmarshaller<ClusterInfo, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("activeOperationArn", targetDepth)) {
+                    context.nextToken();
+                    clusterInfo.setActiveOperationArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("brokerNodeGroupInfo", targetDepth)) {
                     context.nextToken();
                     clusterInfo.setBrokerNodeGroupInfo(BrokerNodeGroupInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("clientAuthentication", targetDepth)) {
+                    context.nextToken();
+                    clusterInfo.setClientAuthentication(ClientAuthenticationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("clusterArn", targetDepth)) {
                     context.nextToken();
@@ -87,6 +95,11 @@ public class ClusterInfoJsonUnmarshaller implements Unmarshaller<ClusterInfo, Js
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();
                     clusterInfo.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    clusterInfo.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
                 }
                 if (context.testExpression("zookeeperConnectString", targetDepth)) {
                     context.nextToken();

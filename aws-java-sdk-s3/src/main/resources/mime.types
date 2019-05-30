@@ -38,6 +38,7 @@ application/index.vnd
 application/iotp
 application/ipp
 application/isup
+application/json		json
 application/mac-binhex40	hqx
 application/mac-compactpro	cpt
 application/macwriteii

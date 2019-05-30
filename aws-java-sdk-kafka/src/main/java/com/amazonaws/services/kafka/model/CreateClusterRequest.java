@@ -33,13 +33,19 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private BrokerNodeGroupInfo brokerNodeGroupInfo;
     /**
      * <p>
+     * Includes all client authentication related information.
+     * </p>
+     */
+    private ClientAuthentication clientAuthentication;
+    /**
+     * <p>
      * The name of the cluster.
      * </p>
      */
     private String clusterName;
     /**
      * <p>
-     * Comprises of the Configuration to be used on Kafka brokers in a cluster.
+     * Represents the configuration that you want MSK to use for the brokers in a cluster.
      * </p>
      */
     private ConfigurationInfo configurationInfo;
@@ -64,10 +70,16 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String kafkaVersion;
     /**
      * <p>
-     * The number of Kafka broker nodes in the Amazon MSK cluster.
+     * The number of broker nodes in the cluster.
      * </p>
      */
     private Integer numberOfBrokerNodes;
+    /**
+     * <p>
+     * Create tags when creating the cluster.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -75,7 +87,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param brokerNodeGroupInfo
+     *        <p>
      *        Information about the broker nodes in the cluster.
+     *        </p>
      */
 
     public void setBrokerNodeGroupInfo(BrokerNodeGroupInfo brokerNodeGroupInfo) {
@@ -87,7 +101,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Information about the broker nodes in the cluster.
      * </p>
      * 
-     * @return Information about the broker nodes in the cluster.
+     * @return <p>
+     *         Information about the broker nodes in the cluster.
+     *         </p>
      */
 
     public BrokerNodeGroupInfo getBrokerNodeGroupInfo() {
@@ -100,7 +116,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param brokerNodeGroupInfo
+     *        <p>
      *        Information about the broker nodes in the cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +129,59 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * Includes all client authentication related information.
+     * </p>
+     * 
+     * @param clientAuthentication
+     *        <p>
+     *        Includes all client authentication related information.
+     *        </p>
+     */
+
+    public void setClientAuthentication(ClientAuthentication clientAuthentication) {
+        this.clientAuthentication = clientAuthentication;
+    }
+
+    /**
+     * <p>
+     * Includes all client authentication related information.
+     * </p>
+     * 
+     * @return <p>
+     *         Includes all client authentication related information.
+     *         </p>
+     */
+
+    public ClientAuthentication getClientAuthentication() {
+        return this.clientAuthentication;
+    }
+
+    /**
+     * <p>
+     * Includes all client authentication related information.
+     * </p>
+     * 
+     * @param clientAuthentication
+     *        <p>
+     *        Includes all client authentication related information.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withClientAuthentication(ClientAuthentication clientAuthentication) {
+        setClientAuthentication(clientAuthentication);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the cluster.
      * </p>
      * 
      * @param clusterName
+     *        <p>
      *        The name of the cluster.
+     *        </p>
      */
 
     public void setClusterName(String clusterName) {
@@ -127,7 +193,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The name of the cluster.
      * </p>
      * 
-     * @return The name of the cluster.
+     * @return <p>
+     *         The name of the cluster.
+     *         </p>
      */
 
     public String getClusterName() {
@@ -140,7 +208,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param clusterName
+     *        <p>
      *        The name of the cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,11 +221,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Comprises of the Configuration to be used on Kafka brokers in a cluster.
+     * Represents the configuration that you want MSK to use for the brokers in a cluster.
      * </p>
      * 
      * @param configurationInfo
-     *        Comprises of the Configuration to be used on Kafka brokers in a cluster.
+     *        <p>
+     *        Represents the configuration that you want MSK to use for the brokers in a cluster.
+     *        </p>
      */
 
     public void setConfigurationInfo(ConfigurationInfo configurationInfo) {
@@ -164,10 +236,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Comprises of the Configuration to be used on Kafka brokers in a cluster.
+     * Represents the configuration that you want MSK to use for the brokers in a cluster.
      * </p>
      * 
-     * @return Comprises of the Configuration to be used on Kafka brokers in a cluster.
+     * @return <p>
+     *         Represents the configuration that you want MSK to use for the brokers in a cluster.
+     *         </p>
      */
 
     public ConfigurationInfo getConfigurationInfo() {
@@ -176,11 +250,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Comprises of the Configuration to be used on Kafka brokers in a cluster.
+     * Represents the configuration that you want MSK to use for the brokers in a cluster.
      * </p>
      * 
      * @param configurationInfo
-     *        Comprises of the Configuration to be used on Kafka brokers in a cluster.
+     *        <p>
+     *        Represents the configuration that you want MSK to use for the brokers in a cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,7 +271,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param encryptionInfo
+     *        <p>
      *        Includes all encryption-related information.
+     *        </p>
      */
 
     public void setEncryptionInfo(EncryptionInfo encryptionInfo) {
@@ -207,7 +285,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Includes all encryption-related information.
      * </p>
      * 
-     * @return Includes all encryption-related information.
+     * @return <p>
+     *         Includes all encryption-related information.
+     *         </p>
      */
 
     public EncryptionInfo getEncryptionInfo() {
@@ -220,7 +300,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param encryptionInfo
+     *        <p>
      *        Includes all encryption-related information.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,8 +318,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param enhancedMonitoring
+     *        <p>
      *        Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and
      *        PER_TOPIC_PER_BROKER.
+     *        </p>
      * @see EnhancedMonitoring
      */
 
@@ -251,8 +335,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * PER_TOPIC_PER_BROKER.
      * </p>
      * 
-     * @return Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and
+     * @return <p>
+     *         Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and
      *         PER_TOPIC_PER_BROKER.
+     *         </p>
      * @see EnhancedMonitoring
      */
 
@@ -267,8 +353,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param enhancedMonitoring
+     *        <p>
      *        Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and
      *        PER_TOPIC_PER_BROKER.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnhancedMonitoring
      */
@@ -285,8 +373,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param enhancedMonitoring
+     *        <p>
      *        Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and
      *        PER_TOPIC_PER_BROKER.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnhancedMonitoring
      */
@@ -302,7 +392,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param kafkaVersion
+     *        <p>
      *        The version of Apache Kafka.
+     *        </p>
      */
 
     public void setKafkaVersion(String kafkaVersion) {
@@ -314,7 +406,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The version of Apache Kafka.
      * </p>
      * 
-     * @return The version of Apache Kafka.
+     * @return <p>
+     *         The version of Apache Kafka.
+     *         </p>
      */
 
     public String getKafkaVersion() {
@@ -327,7 +421,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param kafkaVersion
+     *        <p>
      *        The version of Apache Kafka.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,11 +434,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of Kafka broker nodes in the Amazon MSK cluster.
+     * The number of broker nodes in the cluster.
      * </p>
      * 
      * @param numberOfBrokerNodes
-     *        The number of Kafka broker nodes in the Amazon MSK cluster.
+     *        <p>
+     *        The number of broker nodes in the cluster.
+     *        </p>
      */
 
     public void setNumberOfBrokerNodes(Integer numberOfBrokerNodes) {
@@ -351,10 +449,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of Kafka broker nodes in the Amazon MSK cluster.
+     * The number of broker nodes in the cluster.
      * </p>
      * 
-     * @return The number of Kafka broker nodes in the Amazon MSK cluster.
+     * @return <p>
+     *         The number of broker nodes in the cluster.
+     *         </p>
      */
 
     public Integer getNumberOfBrokerNodes() {
@@ -363,16 +463,85 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of Kafka broker nodes in the Amazon MSK cluster.
+     * The number of broker nodes in the cluster.
      * </p>
      * 
      * @param numberOfBrokerNodes
-     *        The number of Kafka broker nodes in the Amazon MSK cluster.
+     *        <p>
+     *        The number of broker nodes in the cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateClusterRequest withNumberOfBrokerNodes(Integer numberOfBrokerNodes) {
         setNumberOfBrokerNodes(numberOfBrokerNodes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Create tags when creating the cluster.
+     * </p>
+     * 
+     * @return <p>
+     *         Create tags when creating the cluster.
+     *         </p>
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Create tags when creating the cluster.
+     * </p>
+     * 
+     * @param tags
+     *        <p>
+     *        Create tags when creating the cluster.
+     *        </p>
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * Create tags when creating the cluster.
+     * </p>
+     * 
+     * @param tags
+     *        <p>
+     *        Create tags when creating the cluster.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateClusterRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest clearTagsEntries() {
+        this.tags = null;
         return this;
     }
 
@@ -390,6 +559,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         sb.append("{");
         if (getBrokerNodeGroupInfo() != null)
             sb.append("BrokerNodeGroupInfo: ").append(getBrokerNodeGroupInfo()).append(",");
+        if (getClientAuthentication() != null)
+            sb.append("ClientAuthentication: ").append(getClientAuthentication()).append(",");
         if (getClusterName() != null)
             sb.append("ClusterName: ").append(getClusterName()).append(",");
         if (getConfigurationInfo() != null)
@@ -401,7 +572,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getKafkaVersion() != null)
             sb.append("KafkaVersion: ").append(getKafkaVersion()).append(",");
         if (getNumberOfBrokerNodes() != null)
-            sb.append("NumberOfBrokerNodes: ").append(getNumberOfBrokerNodes());
+            sb.append("NumberOfBrokerNodes: ").append(getNumberOfBrokerNodes()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +592,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getBrokerNodeGroupInfo() == null ^ this.getBrokerNodeGroupInfo() == null)
             return false;
         if (other.getBrokerNodeGroupInfo() != null && other.getBrokerNodeGroupInfo().equals(this.getBrokerNodeGroupInfo()) == false)
+            return false;
+        if (other.getClientAuthentication() == null ^ this.getClientAuthentication() == null)
+            return false;
+        if (other.getClientAuthentication() != null && other.getClientAuthentication().equals(this.getClientAuthentication()) == false)
             return false;
         if (other.getClusterName() == null ^ this.getClusterName() == null)
             return false;
@@ -444,6 +621,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getNumberOfBrokerNodes() != null && other.getNumberOfBrokerNodes().equals(this.getNumberOfBrokerNodes()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -453,12 +634,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBrokerNodeGroupInfo() == null) ? 0 : getBrokerNodeGroupInfo().hashCode());
+        hashCode = prime * hashCode + ((getClientAuthentication() == null) ? 0 : getClientAuthentication().hashCode());
         hashCode = prime * hashCode + ((getClusterName() == null) ? 0 : getClusterName().hashCode());
         hashCode = prime * hashCode + ((getConfigurationInfo() == null) ? 0 : getConfigurationInfo().hashCode());
         hashCode = prime * hashCode + ((getEncryptionInfo() == null) ? 0 : getEncryptionInfo().hashCode());
         hashCode = prime * hashCode + ((getEnhancedMonitoring() == null) ? 0 : getEnhancedMonitoring().hashCode());
         hashCode = prime * hashCode + ((getKafkaVersion() == null) ? 0 : getKafkaVersion().hashCode());
         hashCode = prime * hashCode + ((getNumberOfBrokerNodes() == null) ? 0 : getNumberOfBrokerNodes().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

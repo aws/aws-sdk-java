@@ -36,6 +36,13 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
     private String configurationSetName;
     /**
      * <p>
+     * Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
+     * Transport Layer Security (TLS).
+     * </p>
+     */
+    private String tlsPolicy;
+    /**
+     * <p>
      * The name of the dedicated IP pool that you want to associate with the configuration set.
      * </p>
      */
@@ -78,6 +85,73 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
 
     public PutConfigurationSetDeliveryOptionsRequest withConfigurationSetName(String configurationSetName) {
         setConfigurationSetName(configurationSetName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
+     * Transport Layer Security (TLS).
+     * </p>
+     * 
+     * @param tlsPolicy
+     *        Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
+     *        Transport Layer Security (TLS).
+     * @see TlsPolicy
+     */
+
+    public void setTlsPolicy(String tlsPolicy) {
+        this.tlsPolicy = tlsPolicy;
+    }
+
+    /**
+     * <p>
+     * Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
+     * Transport Layer Security (TLS).
+     * </p>
+     * 
+     * @return Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
+     *         Transport Layer Security (TLS).
+     * @see TlsPolicy
+     */
+
+    public String getTlsPolicy() {
+        return this.tlsPolicy;
+    }
+
+    /**
+     * <p>
+     * Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
+     * Transport Layer Security (TLS).
+     * </p>
+     * 
+     * @param tlsPolicy
+     *        Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
+     *        Transport Layer Security (TLS).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TlsPolicy
+     */
+
+    public PutConfigurationSetDeliveryOptionsRequest withTlsPolicy(String tlsPolicy) {
+        setTlsPolicy(tlsPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
+     * Transport Layer Security (TLS).
+     * </p>
+     * 
+     * @param tlsPolicy
+     *        Whether Amazon Pinpoint should require that incoming email is delivered over a connection encrypted with
+     *        Transport Layer Security (TLS).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TlsPolicy
+     */
+
+    public PutConfigurationSetDeliveryOptionsRequest withTlsPolicy(TlsPolicy tlsPolicy) {
+        this.tlsPolicy = tlsPolicy.toString();
         return this;
     }
 
@@ -135,6 +209,8 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
         sb.append("{");
         if (getConfigurationSetName() != null)
             sb.append("ConfigurationSetName: ").append(getConfigurationSetName()).append(",");
+        if (getTlsPolicy() != null)
+            sb.append("TlsPolicy: ").append(getTlsPolicy()).append(",");
         if (getSendingPoolName() != null)
             sb.append("SendingPoolName: ").append(getSendingPoolName());
         sb.append("}");
@@ -155,6 +231,10 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
             return false;
         if (other.getConfigurationSetName() != null && other.getConfigurationSetName().equals(this.getConfigurationSetName()) == false)
             return false;
+        if (other.getTlsPolicy() == null ^ this.getTlsPolicy() == null)
+            return false;
+        if (other.getTlsPolicy() != null && other.getTlsPolicy().equals(this.getTlsPolicy()) == false)
+            return false;
         if (other.getSendingPoolName() == null ^ this.getSendingPoolName() == null)
             return false;
         if (other.getSendingPoolName() != null && other.getSendingPoolName().equals(this.getSendingPoolName()) == false)
@@ -168,6 +248,7 @@ public class PutConfigurationSetDeliveryOptionsRequest extends com.amazonaws.Ama
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getConfigurationSetName() == null) ? 0 : getConfigurationSetName().hashCode());
+        hashCode = prime * hashCode + ((getTlsPolicy() == null) ? 0 : getTlsPolicy().hashCode());
         hashCode = prime * hashCode + ((getSendingPoolName() == null) ? 0 : getSendingPoolName().hashCode());
         return hashCode;
     }

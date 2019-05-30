@@ -14,6 +14,10 @@
  */
 package com.amazonaws.util.json;
 
+import com.amazonaws.log.InternalLogApi;
+import com.amazonaws.log.InternalLogFactory;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
@@ -29,11 +33,12 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 
 public enum Jackson {
     ;
+    private static final InternalLogApi log = InternalLogFactory.getLog(Jackson.class);
     private static final ObjectMapper objectMapper = new ObjectMapper();
     static {
         objectMapper.configure(JsonParser.Feature.ALLOW_COMMENTS, true);
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-    };
+    }
     private static final ObjectWriter writer = objectMapper.writer();
     private static final ObjectWriter prettyWriter = objectMapper.writerWithDefaultPrettyPrinter();
 
@@ -63,6 +68,28 @@ public enum Jackson {
         try {
             return objectMapper.readValue(json, clazz);
         } catch (Exception e) {
+            throw new SdkClientException("Unable to parse Json String.", e);
+        }
+    }
+
+    /**
+     * Returns the deserialized object from the given json string and target
+     * class; or null if the given json string is null. Clears the JSON location in the event of an error
+     */
+    public static <T> T fromSensitiveJsonString(String json, Class<T> clazz) {
+        if (json == null) {
+            return null;
+        }
+        try {
+            return objectMapper.readValue(json, clazz);
+        } catch (IOException e) {
+            // If underlying exception is a json parsing issue, clear out the location so that the exception message
+            // does not contain the raw json
+            if (e instanceof JsonProcessingException) {
+                log.debug("Failed to parse JSON string.", e);
+                throw new SdkClientException("Unable to parse Json string. See debug-level logs for the exact error " +
+                                             "details, which may include sensitive information.");
+            }
             throw new SdkClientException("Unable to parse Json String.", e);
         }
     }

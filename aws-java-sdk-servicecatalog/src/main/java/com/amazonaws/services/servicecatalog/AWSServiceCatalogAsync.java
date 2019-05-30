@@ -2334,6 +2334,47 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
+     * Returns summary information about stack instances that are associated with the specified
+     * <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances that are associated with a
+     * specific AWS account name or region.
+     * </p>
+     * 
+     * @param listStackInstancesForProvisionedProductRequest
+     * @return A Java Future containing the result of the ListStackInstancesForProvisionedProduct operation returned by
+     *         the service.
+     * @sample AWSServiceCatalogAsync.ListStackInstancesForProvisionedProduct
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListStackInstancesForProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStackInstancesForProvisionedProductResult> listStackInstancesForProvisionedProductAsync(
+            ListStackInstancesForProvisionedProductRequest listStackInstancesForProvisionedProductRequest);
+
+    /**
+     * <p>
+     * Returns summary information about stack instances that are associated with the specified
+     * <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances that are associated with a
+     * specific AWS account name or region.
+     * </p>
+     * 
+     * @param listStackInstancesForProvisionedProductRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStackInstancesForProvisionedProduct operation returned by
+     *         the service.
+     * @sample AWSServiceCatalogAsyncHandler.ListStackInstancesForProvisionedProduct
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListStackInstancesForProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStackInstancesForProvisionedProductResult> listStackInstancesForProvisionedProductAsync(
+            ListStackInstancesForProvisionedProductRequest listStackInstancesForProvisionedProductRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStackInstancesForProvisionedProductRequest, ListStackInstancesForProvisionedProductResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the specified TagOptions or all TagOptions.
      * </p>
      * 

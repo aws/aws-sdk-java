@@ -48,6 +48,10 @@ public class DeliveryOptionsJsonUnmarshaller implements Unmarshaller<DeliveryOpt
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("TlsPolicy", targetDepth)) {
+                    context.nextToken();
+                    deliveryOptions.setTlsPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SendingPoolName", targetDepth)) {
                     context.nextToken();
                     deliveryOptions.setSendingPoolName(context.getUnmarshaller(String.class).unmarshall(context));

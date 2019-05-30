@@ -258,6 +258,27 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * </ul>
  * <p>
+ * Tags used to tag resources in AWS CodeCommit (not Git tags), by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ListTagsForResource</a>, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
+ * CodeCommit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeCommit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UntagResource</a>, which removes tags for a resource in AWS CodeCommit.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * Triggers, by calling the following:
  * </p>
  * <ul>
@@ -281,7 +302,7 @@ import com.amazonaws.services.codecommit.model.*;
  * </ul>
  * <p>
  * For information about how to use AWS CodeCommit, see the <a
- * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
+ * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -675,6 +696,14 @@ public interface AWSCodeCommit {
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @throws InvalidTagsMapException
+     *         The map of tags is not valid.
+     * @throws TooManyTagsException
+     *         The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+     * @throws InvalidSystemTagUsageException
+     *         The specified tag is not valid. Key names cannot be prefixed with aws:.
+     * @throws TagPolicyException
+     *         The tag policy is not valid.
      * @sample AWSCodeCommit.CreateRepository
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository" target="_top">AWS
      *      API Documentation</a>
@@ -929,7 +958,7 @@ public interface AWSCodeCommit {
      *         The encryption key is not available.
      * @throws FileTooLargeException
      *         The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in
-     *         AWS CodeCommit, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+     *         AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
      *         CodeCommit User Guide</a>.
      * @sample AWSCodeCommit.GetBlob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlob" target="_top">AWS API
@@ -1229,7 +1258,7 @@ public interface AWSCodeCommit {
      *         The encryption key is not available.
      * @throws FileTooLargeException
      *         The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in
-     *         AWS CodeCommit, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+     *         AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
      *         CodeCommit User Guide</a>.
      * @sample AWSCodeCommit.GetFile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile" target="_top">AWS API
@@ -1543,6 +1572,40 @@ public interface AWSCodeCommit {
      *      API Documentation</a>
      */
     ListRepositoriesResult listRepositories(ListRepositoriesRequest listRepositoriesRequest);
+
+    /**
+     * <p>
+     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit. For a list of valid
+     * resources in AWS CodeCommit, see <a href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws ResourceArnRequiredException
+     *         A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid
+     *         resources in AWS CodeCommit, see <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @throws InvalidResourceArnException
+     *         The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @sample AWSCodeCommit.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
      * <p>
@@ -1951,6 +2014,50 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
+     * href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws ResourceArnRequiredException
+     *         A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid
+     *         resources in AWS CodeCommit, see <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @throws InvalidResourceArnException
+     *         The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @throws TagsMapRequiredException
+     *         A map of tags is required.
+     * @throws InvalidTagsMapException
+     *         The map of tags is not valid.
+     * @throws TooManyTagsException
+     *         The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+     * @throws InvalidSystemTagUsageException
+     *         The specified tag is not valid. Key names cannot be prefixed with aws:.
+     * @throws TagPolicyException
+     *         The tag policy is not valid.
+     * @sample AWSCodeCommit.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
      * Tests the functionality of repository triggers by sending information to the trigger target. If real data is
      * available in the repository, the test will send data from the last commit. If no data is available, sample data
      * will be generated.
@@ -2013,6 +2120,49 @@ public interface AWSCodeCommit {
      *      target="_top">AWS API Documentation</a>
      */
     TestRepositoryTriggersResult testRepositoryTriggers(TestRepositoryTriggersRequest testRepositoryTriggersRequest);
+
+    /**
+     * <p>
+     * Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws ResourceArnRequiredException
+     *         A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid
+     *         resources in AWS CodeCommit, see <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @throws InvalidResourceArnException
+     *         The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * @throws TagKeysListRequiredException
+     *         A list of tag keys is required. The list cannot be empty or null.
+     * @throws InvalidTagKeysListException
+     *         The list of tags is not valid.
+     * @throws TooManyTagsException
+     *         The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+     * @throws InvalidSystemTagUsageException
+     *         The specified tag is not valid. Key names cannot be prefixed with aws:.
+     * @throws TagPolicyException
+     *         The tag policy is not valid.
+     * @sample AWSCodeCommit.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>
@@ -2227,7 +2377,7 @@ public interface AWSCodeCommit {
      * Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository
      * names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters.
      * The suffix ".git" is prohibited. For a full description of the limits on repository names, see <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
      * Guide.
      * </p>
      * 

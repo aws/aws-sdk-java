@@ -29,6 +29,8 @@ public class PutConfigurationSetDeliveryOptionsRequestMarshaller {
 
     private static final MarshallingInfo<String> CONFIGURATIONSETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("ConfigurationSetName").build();
+    private static final MarshallingInfo<String> TLSPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TlsPolicy").build();
     private static final MarshallingInfo<String> SENDINGPOOLNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SendingPoolName").build();
 
@@ -49,6 +51,7 @@ public class PutConfigurationSetDeliveryOptionsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(putConfigurationSetDeliveryOptionsRequest.getConfigurationSetName(), CONFIGURATIONSETNAME_BINDING);
+            protocolMarshaller.marshall(putConfigurationSetDeliveryOptionsRequest.getTlsPolicy(), TLSPOLICY_BINDING);
             protocolMarshaller.marshall(putConfigurationSetDeliveryOptionsRequest.getSendingPoolName(), SENDINGPOOLNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

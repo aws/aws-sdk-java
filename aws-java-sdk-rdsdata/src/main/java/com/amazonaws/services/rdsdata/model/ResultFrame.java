@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Result Frame
+ * <p>
+ * The result set returned by a SQL statement.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ResultFrame" target="_top">AWS API
  *      Documentation</a>
@@ -26,15 +28,25 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResultFrame implements Serializable, Cloneable, StructuredPojo {
 
-    /** ResultSet Metadata. */
+    /**
+     * <p>
+     * The records in the result set.
+     * </p>
+     */
     private java.util.List<Record> records;
-    /** ResultSet Metadata. */
+    /**
+     * <p>
+     * The result-set metadata in the result set.
+     * </p>
+     */
     private ResultSetMetadata resultSetMetadata;
 
     /**
-     * ResultSet Metadata.
+     * <p>
+     * The records in the result set.
+     * </p>
      * 
-     * @return ResultSet Metadata.
+     * @return The records in the result set.
      */
 
     public java.util.List<Record> getRecords() {
@@ -42,10 +54,12 @@ public class ResultFrame implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * ResultSet Metadata.
+     * <p>
+     * The records in the result set.
+     * </p>
      * 
      * @param records
-     *        ResultSet Metadata.
+     *        The records in the result set.
      */
 
     public void setRecords(java.util.Collection<Record> records) {
@@ -58,7 +72,9 @@ public class ResultFrame implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * ResultSet Metadata.
+     * <p>
+     * The records in the result set.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRecords(java.util.Collection)} or {@link #withRecords(java.util.Collection)} if you want to override
@@ -66,7 +82,7 @@ public class ResultFrame implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param records
-     *        ResultSet Metadata.
+     *        The records in the result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +97,12 @@ public class ResultFrame implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * ResultSet Metadata.
+     * <p>
+     * The records in the result set.
+     * </p>
      * 
      * @param records
-     *        ResultSet Metadata.
+     *        The records in the result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,10 +112,12 @@ public class ResultFrame implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * ResultSet Metadata.
+     * <p>
+     * The result-set metadata in the result set.
+     * </p>
      * 
      * @param resultSetMetadata
-     *        ResultSet Metadata.
+     *        The result-set metadata in the result set.
      */
 
     public void setResultSetMetadata(ResultSetMetadata resultSetMetadata) {
@@ -105,9 +125,11 @@ public class ResultFrame implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * ResultSet Metadata.
+     * <p>
+     * The result-set metadata in the result set.
+     * </p>
      * 
-     * @return ResultSet Metadata.
+     * @return The result-set metadata in the result set.
      */
 
     public ResultSetMetadata getResultSetMetadata() {
@@ -115,10 +137,12 @@ public class ResultFrame implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * ResultSet Metadata.
+     * <p>
+     * The result-set metadata in the result set.
+     * </p>
      * 
      * @param resultSetMetadata
-     *        ResultSet Metadata.
+     *        The result-set metadata in the result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

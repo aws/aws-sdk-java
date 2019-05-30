@@ -38,7 +38,9 @@ public class DescribeClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param clusterArn
+     *        <p>
      *        The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     *        </p>
      */
 
     public void setClusterArn(String clusterArn) {
@@ -50,7 +52,9 @@ public class DescribeClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The Amazon Resource Name (ARN) that uniquely identifies the cluster.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     * @return <p>
+     *         The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     *         </p>
      */
 
     public String getClusterArn() {
@@ -63,7 +67,9 @@ public class DescribeClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param clusterArn
+     *        <p>
      *        The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

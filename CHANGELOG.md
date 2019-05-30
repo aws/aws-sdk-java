@@ -1,3 +1,44 @@
+# __1.11.563__ __2019-05-30__
+## __AWS CodeCommit__
+  - ### Features
+    - This release adds APIs that allow adding and removing tags to a repository, and viewing tags for a repository. It also enables adding tags when creating a repository.
+
+## __AWS IoT Analytics__
+  - ### Features
+    - IoT Analytics adds the option to use your own S3 bucket to store channel and data store resources. Previously, only service-managed storage was used.
+
+## __AWS IoT Events__
+  - ### Features
+    - The AWS IoT Events service allows customers to monitor their IoT devices and sensors to detect failures or changes in operation and to trigger actions when these events occur
+
+## __AWS IoT Events Data__
+  - ### Features
+    - The AWS IoT Events service allows customers to monitor their IoT devices and sensors to detect failures or changes in operation and to trigger actions when these events occur
+
+## __AWS RDS DataService__
+  - ### Features
+    - The RDS Data API is generally available for the MySQL-compatible edition of Amazon Aurora Serverless in the US East (N. Virginia and Ohio), US West (Oregon), EU (Ireland), and Asia Pacific (Tokyo) regions. This service enables you to easily access Aurora Serverless clusters with web services-based applications including AWS Lambda and AWS AppSync. The new APIs included in this SDK release are ExecuteStatement, BatchExecuteStatement, BeginTransaction, CommitTransaction, and RollbackTransaction. The ExecuteSql API is deprecated; instead use ExecuteStatement which provides additional functionality including transaction support.
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Improved exception messages in credential providers to exclude detailed parse errors that may contain sensitive information.
+
+## __AWS Service Catalog__
+  - ### Features
+    - Service Catalog ListStackInstancesForProvisionedProduct API enables customers to get details of a provisioned product with type "CFN_STACKSET". By passing the provisioned product id, the API will list account, region and status of each stack instances that are associated with this provisioned product.
+
+## __Amazon Pinpoint Email Service__
+  - ### Features
+    - You can now specify whether the Amazon Pinpoint Email service must deliver email over a connection that is encrypted using Transport Layer Security (TLS).
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release adds support for Activity Streams for database clusters.
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - Updated APIs for Amazon MSK to enable new features such as encryption in transit, client authentication, and scaling storage.
+
 # __1.11.562__ __2019-05-29__
 ## __AWS IoT Things Graph__
   - ### Features

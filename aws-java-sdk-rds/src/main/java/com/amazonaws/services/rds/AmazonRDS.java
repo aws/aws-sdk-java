@@ -3374,6 +3374,33 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Starts a database activity stream to monitor activity on the database. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database Activity
+     * Streams</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param startActivityStreamRequest
+     * @return Result of the StartActivityStream operation returned by the service.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws ResourceNotFoundException
+     *         The specified resource ID was not found.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+     * @throws KMSKeyNotAccessibleException
+     *         An error occurred accessing an AWS KMS key.
+     * @sample AmazonRDS.StartActivityStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartActivityStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartActivityStreamResult startActivityStream(StartActivityStreamRequest startActivityStreamRequest);
+
+    /**
+     * <p>
      * Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster AWS CLI command,
      * or the StopDBCluster action.
      * </p>
@@ -3452,6 +3479,35 @@ public interface AmazonRDS {
      *      Documentation</a>
      */
     DBInstance startDBInstance(StartDBInstanceRequest startDBInstanceRequest);
+
+    /**
+     * <p>
+     * Stops a database activity stream that was started using the AWS console, the <code>start-activity-stream</code>
+     * AWS CLI command, or the <code>StartActivityStream</code> action.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html">Database Activity
+     * Streams</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param stopActivityStreamRequest
+     * @return Result of the StopActivityStream operation returned by the service.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws ResourceNotFoundException
+     *         The specified resource ID was not found.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+     * @sample AmazonRDS.StopActivityStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopActivityStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopActivityStreamResult stopActivityStream(StopActivityStreamRequest stopActivityStreamRequest);
 
     /**
      * <p>

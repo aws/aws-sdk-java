@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
+ * 
+ <p>
  * Describes a configuration revision.
  * </p>
  * 
@@ -53,7 +54,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param creationTime
+     *        <p>
      *        The time when the configuration revision was created.
+     *        </p>
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -65,7 +68,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
      * The time when the configuration revision was created.
      * </p>
      * 
-     * @return The time when the configuration revision was created.
+     * @return <p>
+     *         The time when the configuration revision was created.
+     *         </p>
      */
 
     public java.util.Date getCreationTime() {
@@ -78,7 +83,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param creationTime
+     *        <p>
      *        The time when the configuration revision was created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,7 +100,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param description
+     *        <p>
      *        The description of the configuration revision.
+     *        </p>
      */
 
     public void setDescription(String description) {
@@ -105,7 +114,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
      * The description of the configuration revision.
      * </p>
      * 
-     * @return The description of the configuration revision.
+     * @return <p>
+     *         The description of the configuration revision.
+     *         </p>
      */
 
     public String getDescription() {
@@ -118,7 +129,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param description
+     *        <p>
      *        The description of the configuration revision.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,7 +146,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param revision
+     *        <p>
      *        The revision number.
+     *        </p>
      */
 
     public void setRevision(Long revision) {
@@ -145,7 +160,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
      * The revision number.
      * </p>
      * 
-     * @return The revision number.
+     * @return <p>
+     *         The revision number.
+     *         </p>
      */
 
     public Long getRevision() {
@@ -158,7 +175,9 @@ public class ConfigurationRevision implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param revision
+     *        <p>
      *        The revision number.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

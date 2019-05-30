@@ -66,7 +66,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param arn
+     *        <p>
      *        The Amazon Resource Name (ARN) of the configuration.
+     *        </p>
      */
 
     public void setArn(String arn) {
@@ -78,7 +80,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * The Amazon Resource Name (ARN) of the configuration.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the configuration.
+     * @return <p>
+     *         The Amazon Resource Name (ARN) of the configuration.
+     *         </p>
      */
 
     public String getArn() {
@@ -91,7 +95,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param arn
+     *        <p>
      *        The Amazon Resource Name (ARN) of the configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,7 +112,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param creationTime
+     *        <p>
      *        The time when the configuration was created.
+     *        </p>
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -118,7 +126,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * The time when the configuration was created.
      * </p>
      * 
-     * @return The time when the configuration was created.
+     * @return <p>
+     *         The time when the configuration was created.
+     *         </p>
      */
 
     public java.util.Date getCreationTime() {
@@ -131,7 +141,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param creationTime
+     *        <p>
      *        The time when the configuration was created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,7 +158,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param description
+     *        <p>
      *        The description of the configuration.
+     *        </p>
      */
 
     public void setDescription(String description) {
@@ -158,7 +172,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * The description of the configuration.
      * </p>
      * 
-     * @return The description of the configuration.
+     * @return <p>
+     *         The description of the configuration.
+     *         </p>
      */
 
     public String getDescription() {
@@ -171,7 +187,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param description
+     *        <p>
      *        The description of the configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,7 +203,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * The versions of Apache Kafka with which you can use this MSK configuration.
      * </p>
      * 
-     * @return The versions of Apache Kafka with which you can use this MSK configuration.
+     * @return <p>
+     *         The versions of Apache Kafka with which you can use this MSK configuration.
+     *         </p>
      */
 
     public java.util.List<String> getKafkaVersions() {
@@ -198,7 +218,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param kafkaVersions
+     *        <p>
      *        The versions of Apache Kafka with which you can use this MSK configuration.
+     *        </p>
      */
 
     public void setKafkaVersions(java.util.Collection<String> kafkaVersions) {
@@ -214,6 +236,7 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The versions of Apache Kafka with which you can use this MSK configuration.
      * </p>
+     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setKafkaVersions(java.util.Collection)} or {@link #withKafkaVersions(java.util.Collection)} if you want
@@ -221,7 +244,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param kafkaVersions
+     *        <p>
      *        The versions of Apache Kafka with which you can use this MSK configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,7 +266,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param kafkaVersions
+     *        <p>
      *        The versions of Apache Kafka with which you can use this MSK configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,7 +283,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param latestRevision
+     *        <p>
      *        Latest revision of the configuration.
+     *        </p>
      */
 
     public void setLatestRevision(ConfigurationRevision latestRevision) {
@@ -268,7 +297,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * Latest revision of the configuration.
      * </p>
      * 
-     * @return Latest revision of the configuration.
+     * @return <p>
+     *         Latest revision of the configuration.
+     *         </p>
      */
 
     public ConfigurationRevision getLatestRevision() {
@@ -281,7 +312,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param latestRevision
+     *        <p>
      *        Latest revision of the configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,7 +329,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param name
+     *        <p>
      *        The name of the configuration.
+     *        </p>
      */
 
     public void setName(String name) {
@@ -308,7 +343,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * The name of the configuration.
      * </p>
      * 
-     * @return The name of the configuration.
+     * @return <p>
+     *         The name of the configuration.
+     *         </p>
      */
 
     public String getName() {
@@ -321,7 +358,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param name
+     *        <p>
      *        The name of the configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

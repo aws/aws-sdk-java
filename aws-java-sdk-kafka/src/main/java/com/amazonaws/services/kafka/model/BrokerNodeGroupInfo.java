@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
+ * 
+ <p>
  * Describes the setup to be used for Kafka broker nodes in the cluster.
  * </p>
  * 
@@ -52,7 +53,8 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to
-     * and communicate with the Amazon MSK cluster.
+     * and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default
+     * security group associated with the VPC.
      * </p>
      */
     private java.util.List<String> securityGroups;
@@ -69,7 +71,9 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param brokerAZDistribution
+     *        <p>
      *        The distribution of broker nodes across Availability Zones.
+     *        </p>
      * @see BrokerAZDistribution
      */
 
@@ -82,7 +86,9 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * The distribution of broker nodes across Availability Zones.
      * </p>
      * 
-     * @return The distribution of broker nodes across Availability Zones.
+     * @return <p>
+     *         The distribution of broker nodes across Availability Zones.
+     *         </p>
      * @see BrokerAZDistribution
      */
 
@@ -96,7 +102,9 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param brokerAZDistribution
+     *        <p>
      *        The distribution of broker nodes across Availability Zones.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BrokerAZDistribution
      */
@@ -112,7 +120,9 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param brokerAZDistribution
+     *        <p>
      *        The distribution of broker nodes across Availability Zones.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BrokerAZDistribution
      */
@@ -129,9 +139,11 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * Client subnets can't be in Availability Zone us-east-1e.
      * </p>
      * 
-     * @return The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network
+     * @return <p>
+     *         The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network
      *         interfaces inside these subnets. Client applications use elastic network interfaces to produce and
      *         consume data. Client subnets can't be in Availability Zone us-east-1e.
+     *         </p>
      */
 
     public java.util.List<String> getClientSubnets() {
@@ -146,9 +158,11 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param clientSubnets
+     *        <p>
      *        The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network
      *        interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume
      *        data. Client subnets can't be in Availability Zone us-east-1e.
+     *        </p>
      */
 
     public void setClientSubnets(java.util.Collection<String> clientSubnets) {
@@ -166,6 +180,7 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data.
      * Client subnets can't be in Availability Zone us-east-1e.
      * </p>
+     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setClientSubnets(java.util.Collection)} or {@link #withClientSubnets(java.util.Collection)} if you want
@@ -173,9 +188,11 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param clientSubnets
+     *        <p>
      *        The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network
      *        interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume
      *        data. Client subnets can't be in Availability Zone us-east-1e.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,9 +214,11 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param clientSubnets
+     *        <p>
      *        The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network
      *        interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume
      *        data. Client subnets can't be in Availability Zone us-east-1e.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,9 +234,11 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param instanceType
+     *        <p>
      *        The type of Amazon EC2 instances to use for Kafka brokers. The following instance types are allowed:
      *        kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and
      *        kafka.m5.24xlarge.
+     *        </p>
      */
 
     public void setInstanceType(String instanceType) {
@@ -230,9 +251,11 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.
      * </p>
      * 
-     * @return The type of Amazon EC2 instances to use for Kafka brokers. The following instance types are allowed:
+     * @return <p>
+     *         The type of Amazon EC2 instances to use for Kafka brokers. The following instance types are allowed:
      *         kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and
      *         kafka.m5.24xlarge.
+     *         </p>
      */
 
     public String getInstanceType() {
@@ -246,9 +269,11 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param instanceType
+     *        <p>
      *        The type of Amazon EC2 instances to use for Kafka brokers. The following instance types are allowed:
      *        kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge, kafka.m5.4xlarge, kafka.m5.12xlarge, and
      *        kafka.m5.24xlarge.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,11 +285,15 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to
-     * and communicate with the Amazon MSK cluster.
+     * and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default
+     * security group associated with the VPC.
      * </p>
      * 
-     * @return The AWS security groups to associate with the elastic network interfaces in order to specify who can
-     *         connect to and communicate with the Amazon MSK cluster.
+     * @return <p>
+     *         The AWS security groups to associate with the elastic network interfaces in order to specify who can
+     *         connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK
+     *         uses the default security group associated with the VPC.
+     *         </p>
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -274,12 +303,16 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to
-     * and communicate with the Amazon MSK cluster.
+     * and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default
+     * security group associated with the VPC.
      * </p>
      * 
      * @param securityGroups
+     *        <p>
      *        The AWS security groups to associate with the elastic network interfaces in order to specify who can
-     *        connect to and communicate with the Amazon MSK cluster.
+     *        connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK
+     *        uses the default security group associated with the VPC.
+     *        </p>
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -294,8 +327,10 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to
-     * and communicate with the Amazon MSK cluster.
+     * and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default
+     * security group associated with the VPC.
      * </p>
+     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
@@ -303,8 +338,11 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param securityGroups
+     *        <p>
      *        The AWS security groups to associate with the elastic network interfaces in order to specify who can
-     *        connect to and communicate with the Amazon MSK cluster.
+     *        connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK
+     *        uses the default security group associated with the VPC.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,12 +359,16 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to
-     * and communicate with the Amazon MSK cluster.
+     * and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default
+     * security group associated with the VPC.
      * </p>
      * 
      * @param securityGroups
+     *        <p>
      *        The AWS security groups to associate with the elastic network interfaces in order to specify who can
-     *        connect to and communicate with the Amazon MSK cluster.
+     *        connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK
+     *        uses the default security group associated with the VPC.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -341,7 +383,9 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param storageInfo
+     *        <p>
      *        Contains information about storage volumes attached to MSK broker nodes.
+     *        </p>
      */
 
     public void setStorageInfo(StorageInfo storageInfo) {
@@ -353,7 +397,9 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * Contains information about storage volumes attached to MSK broker nodes.
      * </p>
      * 
-     * @return Contains information about storage volumes attached to MSK broker nodes.
+     * @return <p>
+     *         Contains information about storage volumes attached to MSK broker nodes.
+     *         </p>
      */
 
     public StorageInfo getStorageInfo() {
@@ -366,7 +412,9 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param storageInfo
+     *        <p>
      *        Contains information about storage volumes attached to MSK broker nodes.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

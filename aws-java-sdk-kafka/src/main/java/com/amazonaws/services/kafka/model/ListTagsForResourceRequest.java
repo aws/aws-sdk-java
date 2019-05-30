@@ -27,18 +27,20 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that uniquely identifies the resource.
+     * The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that uniquely identifies the resource.
+     * The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) that uniquely identifies the resource.
+     *        <p>
+     *        The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
+     *        </p>
      */
 
     public void setResourceArn(String resourceArn) {
@@ -47,10 +49,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that uniquely identifies the resource.
+     * The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that uniquely identifies the resource.
+     * @return <p>
+     *         The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
+     *         </p>
      */
 
     public String getResourceArn() {
@@ -59,11 +63,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that uniquely identifies the resource.
+     * The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) that uniquely identifies the resource.
+     *        <p>
+     *        The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -4260,6 +4260,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<StartActivityStreamResult> startActivityStreamAsync(StartActivityStreamRequest request) {
+
+        return startActivityStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartActivityStreamResult> startActivityStreamAsync(final StartActivityStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartActivityStreamRequest, StartActivityStreamResult> asyncHandler) {
+        final StartActivityStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartActivityStreamResult>() {
+            @Override
+            public StartActivityStreamResult call() throws Exception {
+                StartActivityStreamResult result = null;
+
+                try {
+                    result = executeStartActivityStream(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DBCluster> startDBClusterAsync(StartDBClusterRequest request) {
 
         return startDBClusterAsync(request, null);
@@ -4310,6 +4343,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
 
                 try {
                     result = executeStartDBInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopActivityStreamResult> stopActivityStreamAsync(StopActivityStreamRequest request) {
+
+        return stopActivityStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopActivityStreamResult> stopActivityStreamAsync(final StopActivityStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopActivityStreamRequest, StopActivityStreamResult> asyncHandler) {
+        final StopActivityStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopActivityStreamResult>() {
+            @Override
+            public StopActivityStreamResult call() throws Exception {
+                StopActivityStreamResult result = null;
+
+                try {
+                    result = executeStopActivityStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

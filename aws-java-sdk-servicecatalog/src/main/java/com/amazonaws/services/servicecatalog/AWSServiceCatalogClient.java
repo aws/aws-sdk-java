@@ -4262,6 +4262,69 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Returns summary information about stack instances that are associated with the specified
+     * <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances that are associated with a
+     * specific AWS account name or region.
+     * </p>
+     * 
+     * @param listStackInstancesForProvisionedProductRequest
+     * @return Result of the ListStackInstancesForProvisionedProduct operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.ListStackInstancesForProvisionedProduct
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListStackInstancesForProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListStackInstancesForProvisionedProductResult listStackInstancesForProvisionedProduct(ListStackInstancesForProvisionedProductRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStackInstancesForProvisionedProduct(request);
+    }
+
+    @SdkInternalApi
+    final ListStackInstancesForProvisionedProductResult executeListStackInstancesForProvisionedProduct(
+            ListStackInstancesForProvisionedProductRequest listStackInstancesForProvisionedProductRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listStackInstancesForProvisionedProductRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListStackInstancesForProvisionedProductRequest> request = null;
+        Response<ListStackInstancesForProvisionedProductResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListStackInstancesForProvisionedProductRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listStackInstancesForProvisionedProductRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackInstancesForProvisionedProduct");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListStackInstancesForProvisionedProductResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListStackInstancesForProvisionedProductResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the specified TagOptions or all TagOptions.
      * </p>
      * 

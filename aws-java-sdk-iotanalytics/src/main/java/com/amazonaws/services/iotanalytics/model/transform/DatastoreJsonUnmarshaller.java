@@ -52,6 +52,10 @@ public class DatastoreJsonUnmarshaller implements Unmarshaller<Datastore, JsonUn
                     context.nextToken();
                     datastore.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("storage", targetDepth)) {
+                    context.nextToken();
+                    datastore.setStorage(DatastoreStorageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     datastore.setArn(context.getUnmarshaller(String.class).unmarshall(context));

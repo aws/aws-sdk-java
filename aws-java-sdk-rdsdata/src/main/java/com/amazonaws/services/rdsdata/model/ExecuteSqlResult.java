@@ -16,7 +16,9 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * Execute SQL response
+ * <p>
+ * The response elements represent the output of a request to run one or more SQL statements.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteSql" target="_top">AWS API
  *      Documentation</a>
@@ -24,13 +26,19 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExecuteSqlResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Results returned by executing the sql statement(s) */
+    /**
+     * <p>
+     * The results of the SQL statement or statements.
+     * </p>
+     */
     private java.util.List<SqlStatementResult> sqlStatementResults;
 
     /**
-     * Results returned by executing the sql statement(s)
+     * <p>
+     * The results of the SQL statement or statements.
+     * </p>
      * 
-     * @return Results returned by executing the sql statement(s)
+     * @return The results of the SQL statement or statements.
      */
 
     public java.util.List<SqlStatementResult> getSqlStatementResults() {
@@ -38,10 +46,12 @@ public class ExecuteSqlResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * Results returned by executing the sql statement(s)
+     * <p>
+     * The results of the SQL statement or statements.
+     * </p>
      * 
      * @param sqlStatementResults
-     *        Results returned by executing the sql statement(s)
+     *        The results of the SQL statement or statements.
      */
 
     public void setSqlStatementResults(java.util.Collection<SqlStatementResult> sqlStatementResults) {
@@ -54,7 +64,9 @@ public class ExecuteSqlResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * Results returned by executing the sql statement(s)
+     * <p>
+     * The results of the SQL statement or statements.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSqlStatementResults(java.util.Collection)} or {@link #withSqlStatementResults(java.util.Collection)}
@@ -62,7 +74,7 @@ public class ExecuteSqlResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param sqlStatementResults
-     *        Results returned by executing the sql statement(s)
+     *        The results of the SQL statement or statements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,10 +89,12 @@ public class ExecuteSqlResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * Results returned by executing the sql statement(s)
+     * <p>
+     * The results of the SQL statement or statements.
+     * </p>
      * 
      * @param sqlStatementResults
-     *        Results returned by executing the sql statement(s)
+     *        The results of the SQL statement or statements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -90,7 +90,9 @@ public abstract class AbstractProfilesConfigFileScanner {
         String currentProfileName = null;
 
         try {
+            int lineNumber = 0;
             while(scanner.hasNextLine()) {
+                ++lineNumber;
                 String line = scanner.nextLine().trim();
 
                 // Empty or comment lines
@@ -114,12 +116,11 @@ public abstract class AbstractProfilesConfigFileScanner {
                     currentProfileName = newProfileName;
                 } else {
                     // Parse the property line
-                    Entry<String, String> property = parsePropertyLine(line);
+                    Entry<String, String> property = parsePropertyLine(line, lineNumber);
 
                     if (currentProfileName == null) {
-                        throw new IllegalArgumentException(
-                                "Property is defined without a preceding profile name. "
-                                + "Current line: " + line);
+                        throw new IllegalArgumentException("Property is defined without a preceding profile name on line " +
+                                                           lineNumber);
                     }
 
                     onProfileProperty(currentProfileName,
@@ -155,12 +156,10 @@ public abstract class AbstractProfilesConfigFileScanner {
         return null;
     }
 
-    private static Entry<String, String> parsePropertyLine(String propertyLine) {
+    private static Entry<String, String> parsePropertyLine(String propertyLine, int lineNumber) {
         String[] pair = propertyLine.split("=", 2);
         if (pair.length != 2) {
-            throw new IllegalArgumentException(
-                    "Invalid property format: no '=' character is found in the line ["
-                    + propertyLine + "].");
+            throw new IllegalArgumentException("Invalid property format: no '=' character is found on line " + lineNumber);
         }
 
         String propertyKey   = pair[0].trim();

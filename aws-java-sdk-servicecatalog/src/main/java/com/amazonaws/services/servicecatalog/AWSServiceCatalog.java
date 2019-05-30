@@ -1367,6 +1367,27 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Returns summary information about stack instances that are associated with the specified
+     * <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances that are associated with a
+     * specific AWS account name or region.
+     * </p>
+     * 
+     * @param listStackInstancesForProvisionedProductRequest
+     * @return Result of the ListStackInstancesForProvisionedProduct operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.ListStackInstancesForProvisionedProduct
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListStackInstancesForProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListStackInstancesForProvisionedProductResult listStackInstancesForProvisionedProduct(
+            ListStackInstancesForProvisionedProductRequest listStackInstancesForProvisionedProductRequest);
+
+    /**
+     * <p>
      * Lists the specified TagOptions or all TagOptions.
      * </p>
      * 

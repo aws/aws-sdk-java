@@ -15,7 +15,8 @@ package com.amazonaws.services.kafka.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
+ * 
+ <p>
  * Returns information about an error.
  * </p>
  */
@@ -46,7 +47,9 @@ public class NotFoundException extends com.amazonaws.services.kafka.model.AWSKaf
      * </p>
      * 
      * @param invalidParameter
+     *        <p>
      *        The parameter that caused the error.
+     *        </p>
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("invalidParameter")
@@ -59,7 +62,9 @@ public class NotFoundException extends com.amazonaws.services.kafka.model.AWSKaf
      * The parameter that caused the error.
      * </p>
      * 
-     * @return The parameter that caused the error.
+     * @return <p>
+     *         The parameter that caused the error.
+     *         </p>
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("invalidParameter")
@@ -73,7 +78,9 @@ public class NotFoundException extends com.amazonaws.services.kafka.model.AWSKaf
      * </p>
      * 
      * @param invalidParameter
+     *        <p>
      *        The parameter that caused the error.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
