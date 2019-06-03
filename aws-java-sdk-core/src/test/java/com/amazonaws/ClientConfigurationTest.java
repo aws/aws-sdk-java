@@ -41,6 +41,7 @@ import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.junit.Test;
 import org.mockito.Mockito;
+import utils.EnvironmentVariableHelper;
 
 public class ClientConfigurationTest {
 
@@ -185,12 +186,23 @@ public class ClientConfigurationTest {
         assertEquals(config.getProxyHost(), "foo");
         System.clearProperty("http.proxyHost");
 
+        System.setProperty("https.proxyPort", "bad");
+        config = new ClientConfiguration();
+        assertEquals(config.getProxyPort(), -1);
+        System.clearProperty("https.proxyPort");
+
         System.setProperty("https.proxyPort", "8443");
         config = new ClientConfiguration();
         assertEquals(config.getProxyPort(), 8443);
         config.setProtocol(Protocol.HTTP);
         assertEquals(config.getProxyPort(), -1);
         System.clearProperty("https.proxyPort");
+
+        System.setProperty("http.proxyPort", "bad");
+        config = new ClientConfiguration();
+        config.setProtocol(Protocol.HTTP);
+        assertEquals(config.getProxyPort(), -1);
+        System.clearProperty("http.proxyPort");
 
         System.setProperty("http.proxyPort", "8080");
         config = new ClientConfiguration();
@@ -226,6 +238,187 @@ public class ClientConfigurationTest {
         config.setProtocol(Protocol.HTTP);
         assertEquals(config.getProxyPassword(), "foo");
         System.clearProperty("http.proxyPassword");
+    }
+
+    @Test
+    public void testProxyHostEnvironmentVariables() {
+        clearProxyProperties();
+        EnvironmentVariableHelper environmentVariableHelper = new EnvironmentVariableHelper();
+        ClientConfiguration config;
+
+        config = new ClientConfiguration();
+        assertNull(config.getProxyHost());
+        environmentVariableHelper.set("https_proxy", "bad-url");
+        assertNull(config.getProxyHost());
+        environmentVariableHelper.set("https_proxy", "https://test1:1234");
+        assertEquals("test1", config.getProxyHost());
+        environmentVariableHelper.set("HTTPS_PROXY", "https://test2:1234");
+        assertEquals("test2", config.getProxyHost());
+        System.setProperty("https.proxyHost", "test3");
+        assertEquals("test3", config.getProxyHost());
+        config.setProxyHost("test4");
+        assertEquals("test4", config.getProxyHost());
+        System.clearProperty("https.proxyHost");
+        environmentVariableHelper.reset();
+
+        config = new ClientConfiguration();
+        config.setProtocol(Protocol.HTTP);
+        assertNull(config.getProxyHost());
+        environmentVariableHelper.set("http_proxy", "http://test1:1234");
+        assertEquals("test1", config.getProxyHost());
+        environmentVariableHelper.set("HTTP_PROXY", "http://test2:1234");
+        assertEquals("test2", config.getProxyHost());
+        System.setProperty("http.proxyHost", "test3");
+        assertEquals("test3", config.getProxyHost());
+        config.setProxyHost("test4");
+        assertEquals("test4", config.getProxyHost());
+        System.clearProperty("http.proxyHost");
+        environmentVariableHelper.reset();
+    }
+
+    @Test
+    public void testProxyPortEnvironmentVariables() {
+        clearProxyProperties();
+        EnvironmentVariableHelper environmentVariableHelper = new EnvironmentVariableHelper();
+        ClientConfiguration config;
+
+        config = new ClientConfiguration();
+        assertEquals(-1, config.getProxyPort());
+        environmentVariableHelper.set("https_proxy", "bad-url");
+        assertEquals(-1, config.getProxyPort());
+        environmentVariableHelper.set("https_proxy", "https://test1:1");
+        assertEquals(1, config.getProxyPort());
+        environmentVariableHelper.set("HTTPS_PROXY", "https://test2:2");
+        assertEquals(2, config.getProxyPort());
+        System.setProperty("https.proxyPort", "3");
+        assertEquals(3, config.getProxyPort());
+        config.setProxyPort(4);
+        assertEquals(4, config.getProxyPort());
+        System.clearProperty("https.proxyPort");
+        environmentVariableHelper.reset();
+
+        config = new ClientConfiguration();
+        config.setProtocol(Protocol.HTTP);
+        assertEquals(-1, config.getProxyPort());
+        environmentVariableHelper.set("http_proxy", "http://test1:1");
+        assertEquals(1, config.getProxyPort());
+        environmentVariableHelper.set("HTTP_PROXY", "http://test2:2");
+        assertEquals(2, config.getProxyPort());
+        System.setProperty("http.proxyPort", "3");
+        assertEquals(3, config.getProxyPort());
+        config.setProxyPort(4);
+        assertEquals(4, config.getProxyPort());
+        System.clearProperty("http.proxyPort");
+        environmentVariableHelper.reset();
+    }
+
+    @Test
+    public void testProxyUsernameEnvironmentVariables() {
+        clearProxyProperties();
+        EnvironmentVariableHelper environmentVariableHelper = new EnvironmentVariableHelper();
+        ClientConfiguration config;
+
+        config = new ClientConfiguration();
+        assertNull(config.getProxyUsername());
+        environmentVariableHelper.set("https_proxy", "bad-url");
+        assertNull(config.getProxyUsername());
+        environmentVariableHelper.set("https_proxy", "https://user1:pass@test:1234");
+        assertEquals("user1", config.getProxyUsername());
+        environmentVariableHelper.set("HTTPS_PROXY", "https://user2:pass@test:1234");
+        assertEquals("user2", config.getProxyUsername());
+        System.setProperty("https.proxyUser", "user3");
+        assertEquals("user3", config.getProxyUsername());
+        config.setProxyUsername("user4");
+        assertEquals("user4", config.getProxyUsername());
+        System.clearProperty("https.proxyUser");
+        environmentVariableHelper.reset();
+
+        config = new ClientConfiguration();
+        config.setProtocol(Protocol.HTTP);
+        assertNull(config.getProxyUsername());
+        environmentVariableHelper.set("http_proxy", "http://user1:pass@test:1234");
+        assertEquals("user1", config.getProxyUsername());
+        environmentVariableHelper.set("HTTP_PROXY", "http://user2:pass@test:1234");
+        assertEquals("user2", config.getProxyUsername());
+        System.setProperty("http.proxyUser", "user3");
+        assertEquals("user3", config.getProxyUsername());
+        config.setProxyUsername("user4");
+        assertEquals("user4", config.getProxyUsername());
+        System.clearProperty("http.proxyUser");
+        environmentVariableHelper.reset();
+    }
+
+    @Test
+    public void testProxyPasswordEnvironmentVariables() {
+        clearProxyProperties();
+        EnvironmentVariableHelper environmentVariableHelper = new EnvironmentVariableHelper();
+        ClientConfiguration config;
+
+        config = new ClientConfiguration();
+        assertNull(config.getProxyPassword());
+        environmentVariableHelper.set("https_proxy", "bad-url");
+        assertNull(config.getProxyPassword());
+        environmentVariableHelper.set("https_proxy", "https://user:pass1@test:1234");
+        assertEquals("pass1", config.getProxyPassword());
+        environmentVariableHelper.set("HTTPS_PROXY", "https://user:pass2@test:1234");
+        assertEquals("pass2", config.getProxyPassword());
+        System.setProperty("https.proxyPassword", "pass3");
+        assertEquals("pass3", config.getProxyPassword());
+        config.setProxyPassword("pass4");
+        assertEquals("pass4", config.getProxyPassword());
+        System.clearProperty("https.proxyPassword");
+        environmentVariableHelper.reset();
+
+        config = new ClientConfiguration();
+        config.setProtocol(Protocol.HTTP);
+        assertNull(config.getProxyPassword());
+        environmentVariableHelper.set("http_proxy", "http://user:pass1@test:1234");
+        assertEquals("pass1", config.getProxyPassword());
+        environmentVariableHelper.set("HTTP_PROXY", "http://user:pass2@test:1234");
+        assertEquals("pass2", config.getProxyPassword());
+        System.setProperty("http.proxyPassword", "pass3");
+        assertEquals("pass3", config.getProxyPassword());
+        config.setProxyPassword("pass4");
+        assertEquals("pass4", config.getProxyPassword());
+        System.clearProperty("http.proxyPassword");
+        environmentVariableHelper.reset();
+
+        config = new ClientConfiguration();
+        assertNull(config.getProxyPassword());
+        environmentVariableHelper.set("https_proxy", "http://user:pass:with:colon@test:1234");
+        assertEquals("pass:with:colon", config.getProxyPassword());
+        environmentVariableHelper.reset();
+    }
+
+    @Test
+    public void testNonProxyHostsEnvironmentVariables() {
+        clearProxyProperties();
+        EnvironmentVariableHelper environmentVariableHelper = new EnvironmentVariableHelper();
+        ClientConfiguration config;
+
+        config = new ClientConfiguration();
+        assertNull(config.getNonProxyHosts());
+        config.setProtocol(Protocol.HTTP);
+        assertNull(config.getNonProxyHosts());
+        environmentVariableHelper.set("no_proxy", "test1.com");
+        assertEquals("test1.com", config.getNonProxyHosts());
+        environmentVariableHelper.set("NO_PROXY", "test2.com");
+        assertEquals("test2.com", config.getNonProxyHosts());
+        System.setProperty("http.nonProxyHosts", "test3.com");
+        assertEquals("test3.com", config.getNonProxyHosts());
+        config.setNonProxyHosts("test4.com");
+        assertEquals("test4.com", config.getNonProxyHosts());
+        System.clearProperty("http.nonProxyHosts");
+        environmentVariableHelper.reset();
+
+        config = new ClientConfiguration();
+        assertNull(config.getNonProxyHosts());
+        config.setProtocol(Protocol.HTTP);
+        environmentVariableHelper.set("no_proxy", "test1.com,test2.com,test3.com");
+        assertEquals("test1.com|test2.com|test3.com", config.getNonProxyHosts());
+        environmentVariableHelper.set("no_proxy", "test1.com|test2.com|test3.com");
+        assertEquals("test1.com|test2.com|test3.com", config.getNonProxyHosts());
+        environmentVariableHelper.reset();
     }
 
     @Test
