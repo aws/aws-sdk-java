@@ -21,8 +21,6 @@ import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.util.ValidationUtils;
 import com.amazonaws.util.VersionInfoUtils;
 import java.net.InetAddress;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -619,23 +617,6 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the value for the given environment variable.
-     */
-    private String getEnvironmentVariable(String environmentVariable) {
-        return System.getenv(environmentVariable);
-    }
-
-    /**
-     * Returns the value for the given environment variable if its set, otherwise returns
-     * the lowercase version of variable.
-     */
-    private String getEnvironmentVariableCaseInsensitive(String environmentVariable) {
-        return getEnvironmentVariable(environmentVariable) != null
-                ? getEnvironmentVariable(environmentVariable)
-                : getEnvironmentVariable(environmentVariable.toLowerCase());
-    }
-
-    /**
      * @return The {@link Protocol} to use for connecting to the proxy.
      */
     public Protocol getProxyProtocol() {
@@ -675,45 +656,17 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the environment variable for proxy host depending on
-     * {@link #getProtocol()}: i.e. if protocol is https, returns
-     * the host in the value of the environment variable HTTPS_PROXY/https_proxy,
-     * otherwise, returns the host in the value of the environment
-     * variable HTTP_PROXY/http_proxy.
-     */
-    private String getProxyHostEnvironment() {
-        try {
-            return getProtocol() == Protocol.HTTPS
-                    ? new URL(getEnvironmentVariableCaseInsensitive("HTTPS_PROXY")).getHost()
-                    : new URL(getEnvironmentVariableCaseInsensitive("HTTP_PROXY")).getHost();
-        } catch (MalformedURLException e) {
-            return null;
-        }
-    }
-
-    /**
      * Returns the optional proxy host the client will connect
      * through.  Returns either the proxyHost set on this object, or
      * if not provided, checks the value of the Java system property
      * for proxy host according to {@link #getProtocol()}: i.e. if
      * protocol is https, returns the value of the system property
      * https.proxyHost, otherwise returns value of http.proxyHost.
-     * If neither are set, checks the value of the environment variable
-     * according to {@link #getProtocol()}: i.e. if protocol is https,
-     * returns the host in the value of the HTTPS_PROXY/https_proxy
-     * environment variable, otherwise returns the host in the value
-     * of the HTTP_PROXY/http_proxy environment variable.
      *
      * @return The proxy host the client will connect through.
      */
     public String getProxyHost() {
-        if (proxyHost != null) {
-            return proxyHost;
-        } else if (getProxyHostProperty() != null) {
-            return getProxyHostProperty();
-        } else {
-            return getProxyHostEnvironment();
-        }
+        return (proxyHost != null) ? proxyHost : getProxyHostProperty();
     }
 
     /**
@@ -747,28 +700,12 @@ public class ClientConfiguration {
      * if the system property is not set with a valid port number.
      */
     private int getProxyPortProperty() {
+        final String proxyPortString = (getProtocol() == Protocol.HTTPS)
+                    ? getSystemProperty("https.proxyPort")
+                    : getSystemProperty("http.proxyPort");
         try {
-            return getProtocol() == Protocol.HTTPS
-                    ? Integer.parseInt(getSystemProperty("https.proxyPort"))
-                    : Integer.parseInt(getSystemProperty("http.proxyPort"));
+            return Integer.parseInt(proxyPortString);
         } catch (NumberFormatException e) {
-            return proxyPort;
-        }
-    }
-
-    /**
-     * Returns the environment variable for proxy host depending on
-     * {@link #getProtocol()}: i.e. if protocol is https, returns
-     * the port in the value of the environment variable HTTPS_PROXY/https_proxy,
-     * otherwise, returns the port in the value of the environment
-     * variable HTTP_PROXY/http_proxy.
-     */
-    private int getProxyPortEnvironment() {
-        try {
-            return getProtocol() == Protocol.HTTPS
-                    ? new URL(getEnvironmentVariableCaseInsensitive("HTTPS_PROXY")).getPort()
-                    : new URL(getEnvironmentVariableCaseInsensitive("HTTP_PROXY")).getPort();
-        } catch (MalformedURLException e) {
             return proxyPort;
         }
     }
@@ -780,22 +717,11 @@ public class ClientConfiguration {
      * for proxy port according to {@link #getProtocol()}: i.e. if
      * protocol is https, returns the value of the system property
      * https.proxyPort, otherwise returns value of http.proxyPort.
-     * If neither are set, checks the value of the environment variable
-     * according to {@link #getProtocol()}: i.e. if protocol is https,
-     * returns the port in the value of the HTTPS_PROXY/https_proxy
-     * environment variable, otherwise returns the port in the value
-     * of the HTTP_PROXY/http_proxy environment variable.
      *
      * @return The proxy port the client will connect through.
      */
     public int getProxyPort() {
-        if (proxyPort >= 0) {
-            return proxyPort;
-        } else if (getProxyPortProperty() >= 0) {
-            return getProxyPortProperty();
-        } else {
-            return getProxyPortEnvironment();
-        }
+        return (proxyPort >= 0) ? proxyPort : getProxyPortProperty();
     }
 
     /**
@@ -862,47 +788,19 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the environment variable for proxy host depending on
-     * {@link #getProtocol()}: i.e. if protocol is https, returns
-     * the user name in the value of the environment variable
-     * HTTPS_PROXY/https_proxy, otherwise, returns the user name in
-     * the value of the environment variable HTTP_PROXY/http_proxy.
-     */
-    private String getProxyUsernameEnvironment() {
-        try {
-            return getProtocol() == Protocol.HTTPS
-                    ? new URL(getEnvironmentVariableCaseInsensitive("HTTPS_PROXY")).getUserInfo().split(":", 2)[0]
-                    : new URL(getEnvironmentVariableCaseInsensitive("HTTP_PROXY")).getUserInfo().split(":", 2)[0];
-        } catch (MalformedURLException e) {
-            return null;
-        }
-    }
-
-    /**
      * Returns the optional proxy user name to use if connecting
      * through a proxy.  Returns either the proxyUsername set on this
      * object, or if not provided, checks the value of the Java system
      * property for proxy user name according to {@link #getProtocol()}:
      * i.e. if protocol is https, returns the value of the system
      * property https.proxyUser, otherwise returns value of
-     * http.proxyUser. If neither are set, checks the value of the
-     * environment variable according to {@link #getProtocol()}: i.e.
-     * if protocol is https, returns the user name in the value of the
-     * HTTPS_PROXY/https_proxy environment variable, otherwise returns
-     * the user name in the value of the HTTP_PROXY/http_proxy environment
-     * variable.
+     * http.proxyUser.
      *
      * @return The optional proxy user name the configured client will use if connecting through a
      *         proxy.
      */
     public String getProxyUsername() {
-        if (proxyUsername != null) {
-            return proxyUsername;
-        } else if (getProxyUsernameProperty() != null) {
-            return getProxyUsernameProperty();
-        } else {
-            return getProxyUsernameEnvironment();
-        }
+        return (proxyUsername != null) ? proxyUsername : getProxyUsernameProperty();
     }
 
     /**
@@ -940,46 +838,18 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the environment variable for proxy host depending on
-     * {@link #getProtocol()}: i.e. if protocol is https, returns
-     * the password in the value of the environment variable HTTPS_PROXY/https_proxy,
-     * otherwise, returns the password in the value of the environment
-     * variable HTTP_PROXY/http_proxy.
-     */
-    private String getProxyPasswordEnvironment() {
-        try {
-            return getProtocol() == Protocol.HTTPS
-                    ? new URL(getEnvironmentVariableCaseInsensitive("HTTPS_PROXY")).getUserInfo().split(":", 2)[1]
-                    : new URL(getEnvironmentVariableCaseInsensitive("HTTP_PROXY")).getUserInfo().split(":", 2)[1];
-        } catch (MalformedURLException e) {
-            return null;
-        }
-    }
-
-    /**
      * Returns the optional proxy password to use if connecting
      * through a proxy.  Returns either the proxyPassword set on this
      * object, or if not provided, checks the value of the Java system
      * property for proxy password according to {@link #getProtocol()}:
      * i.e. if protocol is https, returns the value of the system
      * property https.proxyPassword, otherwise returns value of
-     * http.proxyPassword. If neither are set, checks the value of the
-     * environment variable according to {@link #getProtocol()}: i.e. if
-     * protocol is https, returns the password in the value of the
-     * HTTPS_PROXY/https_proxy environment variable, otherwise returns
-     * the password in the value of the HTTP_PROXY/http_proxy environment
-     * variable.
+     * http.proxyPassword.
      *
      * @return The password to use when connecting through a proxy.
      */
     public String getProxyPassword() {
-        if (proxyPassword != null) {
-            return proxyPassword;
-        } else if (getProxyPasswordProperty() != null) {
-            return getProxyPasswordProperty();
-        } else {
-            return getProxyPasswordEnvironment();
-        }
+        return (proxyPassword != null) ? proxyPassword : getProxyPasswordProperty();
     }
 
     /**
@@ -1078,46 +948,22 @@ public class ClientConfiguration {
     /**
      * Returns the Java system property for nonProxyHosts. We still honor this property even
      * {@link #getProtocol()} is https, see http://docs.oracle.com/javase/7/docs/api/java/net/doc-files/net-properties.html.
-     * This method expects the property to be set as pipe separated list.
      */
     private String getNonProxyHostsProperty() {
         return getSystemProperty("http.nonProxyHosts");
     }
 
     /**
-     * Returns the value of the environment variable NO_PROXY/no_proxy. This method expects
-     * the environment variable to be set as a comma separated list, so this method
-     * converts the comma separated list to pipe separated list to be used internally.
-     */
-    private String getNonProxyHostsEnvironment() {
-        String nonProxyHosts = getEnvironmentVariableCaseInsensitive("NO_PROXY");
-        if (nonProxyHosts != null) {
-            nonProxyHosts = nonProxyHosts.replace(",", "|");
-        }
-
-        return nonProxyHosts;
-    }
-
-    /**
      * Returns the optional hosts the client will access without going
      * through the proxy. Returns either the nonProxyHosts set on this
-     * object, or if not provided, returns the value of the Java system property
-     * http.nonProxyHosts. We still honor this property even
-     * {@link #getProtocol()} is https, see http://docs.oracle.com/javase/7/docs/api/java/net/doc-files/net-properties.html.
-     * This property is expected to be set as a pipe separated list. If neither are set,
-     * returns the value of the environment variable NO_PROXY/no_proxy. This environment
-     * variable is expected to be set as a comma separated list.
+     * object, or if not provided, checks the value of the Java system property
+     * for nonProxyHosts according to {@link #getProtocol()}: i.e. if
+     * protocol is https, returns null, otherwise returns value of http.nonProxyHosts.
      *
      * @return The hosts the client will connect through bypassing the proxy.
      */
     public String getNonProxyHosts() {
-        if (nonProxyHosts != null) {
-            return nonProxyHosts;
-        } else if (getNonProxyHostsProperty() != null) {
-            return getNonProxyHostsProperty();
-        } else {
-            return getNonProxyHostsEnvironment();
-        }
+        return nonProxyHosts != null ? nonProxyHosts : getNonProxyHostsProperty();
     }
 
     /**

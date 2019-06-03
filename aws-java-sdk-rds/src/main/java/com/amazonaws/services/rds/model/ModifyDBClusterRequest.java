@@ -275,11 +275,6 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      */
     private Boolean deletionProtection;
     /**
-     * <note>
-     * <p>
-     * HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     * </p>
-     * </note>
      * <p>
      * A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the
      * HTTP endpoint is disabled.
@@ -289,8 +284,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
      * </p>
      * <p>
-     * For more information about Aurora Serverless, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      */
@@ -1930,11 +1925,6 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * <note>
-     * <p>
-     * HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     * </p>
-     * </note>
      * <p>
      * A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the
      * HTTP endpoint is disabled.
@@ -1944,28 +1934,22 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
      * </p>
      * <p>
-     * For more information about Aurora Serverless, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @param enableHttpEndpoint
-     *        <p>
-     *        HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     *        </p>
-     *        </note>
-     *        <p>
      *        A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By
-     *        default, the HTTP endpoint is disabled.
-     *        </p>
+     *        default, the HTTP endpoint is disabled.</p>
      *        <p>
      *        When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the
      *        Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query
      *        editor.
      *        </p>
      *        <p>
-     *        For more information about Aurora Serverless, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for
      *        Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
@@ -1974,11 +1958,6 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * <note>
-     * <p>
-     * HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     * </p>
-     * </note>
      * <p>
      * A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the
      * HTTP endpoint is disabled.
@@ -1988,27 +1967,21 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
      * </p>
      * <p>
-     * For more information about Aurora Serverless, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
-     * @return <p>
-     *         HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     *         </p>
-     *         </note>
-     *         <p>
-     *         A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By
-     *         default, the HTTP endpoint is disabled.
-     *         </p>
+     * @return A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By
+     *         default, the HTTP endpoint is disabled.</p>
      *         <p>
      *         When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the
      *         Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query
      *         editor.
      *         </p>
      *         <p>
-     *         For more information about Aurora Serverless, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for
      *         Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
@@ -2017,11 +1990,6 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * <note>
-     * <p>
-     * HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     * </p>
-     * </note>
      * <p>
      * A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the
      * HTTP endpoint is disabled.
@@ -2031,28 +1999,22 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
      * </p>
      * <p>
-     * For more information about Aurora Serverless, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @param enableHttpEndpoint
-     *        <p>
-     *        HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     *        </p>
-     *        </note>
-     *        <p>
      *        A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By
-     *        default, the HTTP endpoint is disabled.
-     *        </p>
+     *        default, the HTTP endpoint is disabled.</p>
      *        <p>
      *        When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the
      *        Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query
      *        editor.
      *        </p>
      *        <p>
-     *        For more information about Aurora Serverless, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for
      *        Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2063,11 +2025,6 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * <note>
-     * <p>
-     * HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     * </p>
-     * </note>
      * <p>
      * A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the
      * HTTP endpoint is disabled.
@@ -2077,27 +2034,21 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
      * </p>
      * <p>
-     * For more information about Aurora Serverless, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
      * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
-     * @return <p>
-     *         HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
-     *         </p>
-     *         </note>
-     *         <p>
-     *         A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By
-     *         default, the HTTP endpoint is disabled.
-     *         </p>
+     * @return A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By
+     *         default, the HTTP endpoint is disabled.</p>
      *         <p>
      *         When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the
      *         Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query
      *         editor.
      *         </p>
      *         <p>
-     *         For more information about Aurora Serverless, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for
      *         Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
      */
 

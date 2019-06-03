@@ -1,3 +1,12 @@
+# __1.11.564__ __2019-06-03__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Amazon EC2 I3en instances are the new storage-optimized instances offering up to 60 TB NVMe SSD instance storage and up to 100 Gbps of network bandwidth.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Amazon RDS Data API is generally available. Removing beta notes in the documentation.
+
 # __1.11.563__ __2019-05-30__
 ## __AWS CodeCommit__
   - ### Features
