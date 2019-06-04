@@ -16,7 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The requested cache node type is not available in the specified Availability Zone.
+ * The requested cache node type is not available in the specified Availability Zone. For more information, see <a href=
+ * "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY"
+ * >InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -74,7 +74,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
      * </li>
      * <li>
@@ -212,8 +212,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a
-     * Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
      * earlier engine version, you must delete the existing replication group and create it anew with the earlier engine
      * version.
      * </p>
@@ -460,7 +460,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
      * </li>
      * <li>
@@ -487,7 +487,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Redis (cluster mode disabled): T1 and T2 cache node types.
+     *        Redis (cluster mode disabled): T1 node types.
      *        </p>
      *        </li>
      *        <li>
@@ -520,7 +520,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
      * </li>
      * <li>
@@ -546,7 +546,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         Redis (cluster mode disabled): T1 and T2 cache node types.
+     *         Redis (cluster mode disabled): T1 node types.
      *         </p>
      *         </li>
      *         <li>
@@ -579,7 +579,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
      * </li>
      * <li>
@@ -606,7 +606,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Redis (cluster mode disabled): T1 and T2 cache node types.
+     *        Redis (cluster mode disabled): T1 node types.
      *        </p>
      *        </li>
      *        <li>
@@ -641,7 +641,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
      * </li>
      * <li>
@@ -667,7 +667,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         Redis (cluster mode disabled): T1 and T2 cache node types.
+     *         Redis (cluster mode disabled): T1 node types.
      *         </p>
      *         </li>
      *         <li>
@@ -1546,8 +1546,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a
-     * Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
      * earlier engine version, you must delete the existing replication group and create it anew with the earlier engine
      * version.
      * </p>
@@ -1556,7 +1556,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
      *        <p>
      *        <b>Important:</b> You can upgrade to a newer engine version (see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement"
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement"
      *        >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you
      *        want to use an earlier engine version, you must delete the existing replication group and create it anew
      *        with the earlier engine version.
@@ -1572,8 +1572,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a
-     * Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
      * earlier engine version, you must delete the existing replication group and create it anew with the earlier engine
      * version.
      * </p>
@@ -1581,7 +1581,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * @return The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
      *         <p>
      *         <b>Important:</b> You can upgrade to a newer engine version (see <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement"
+     *         href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement"
      *         >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you
      *         want to use an earlier engine version, you must delete the existing replication group and create it anew
      *         with the earlier engine version.
@@ -1597,8 +1597,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a
-     * Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
      * earlier engine version, you must delete the existing replication group and create it anew with the earlier engine
      * version.
      * </p>
@@ -1607,7 +1607,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
      *        <p>
      *        <b>Important:</b> You can upgrade to a newer engine version (see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement"
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement"
      *        >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you
      *        want to use an earlier engine version, you must delete the existing replication group and create it anew
      *        with the earlier engine version.

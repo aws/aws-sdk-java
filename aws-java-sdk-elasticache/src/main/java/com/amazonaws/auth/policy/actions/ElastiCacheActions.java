@@ -29,6 +29,10 @@ public enum ElastiCacheActions implements Action {
     AddTagsToResource("elasticache:AddTagsToResource"),
     /** Action for the AuthorizeCacheSecurityGroupIngress operation. */
     AuthorizeCacheSecurityGroupIngress("elasticache:AuthorizeCacheSecurityGroupIngress"),
+    /** Action for the BatchApplyUpdateAction operation. */
+    BatchApplyUpdateAction("elasticache:BatchApplyUpdateAction"),
+    /** Action for the BatchStopUpdateAction operation. */
+    BatchStopUpdateAction("elasticache:BatchStopUpdateAction"),
     /** Action for the CopySnapshot operation. */
     CopySnapshot("elasticache:CopySnapshot"),
     /** Action for the CreateCacheCluster operation. */
@@ -79,8 +83,12 @@ public enum ElastiCacheActions implements Action {
     DescribeReservedCacheNodes("elasticache:DescribeReservedCacheNodes"),
     /** Action for the DescribeReservedCacheNodesOfferings operation. */
     DescribeReservedCacheNodesOfferings("elasticache:DescribeReservedCacheNodesOfferings"),
+    /** Action for the DescribeServiceUpdates operation. */
+    DescribeServiceUpdates("elasticache:DescribeServiceUpdates"),
     /** Action for the DescribeSnapshots operation. */
     DescribeSnapshots("elasticache:DescribeSnapshots"),
+    /** Action for the DescribeUpdateActions operation. */
+    DescribeUpdateActions("elasticache:DescribeUpdateActions"),
     /** Action for the IncreaseReplicaCount operation. */
     IncreaseReplicaCount("elasticache:IncreaseReplicaCount"),
     /** Action for the ListAllowedNodeTypeModifications operation. */

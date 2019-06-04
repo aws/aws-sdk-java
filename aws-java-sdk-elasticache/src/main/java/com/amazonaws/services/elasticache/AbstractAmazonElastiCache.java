@@ -49,6 +49,16 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
+    public BatchApplyUpdateActionResult batchApplyUpdateAction(BatchApplyUpdateActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchStopUpdateActionResult batchStopUpdateAction(BatchStopUpdateActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public Snapshot copySnapshot(CopySnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -219,6 +229,11 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
+    public DescribeServiceUpdatesResult describeServiceUpdates(DescribeServiceUpdatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -226,6 +241,11 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     @Override
     public DescribeSnapshotsResult describeSnapshots() {
         return describeSnapshots(new DescribeSnapshotsRequest());
+    }
+
+    @Override
+    public DescribeUpdateActionsResult describeUpdateActions(DescribeUpdateActionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

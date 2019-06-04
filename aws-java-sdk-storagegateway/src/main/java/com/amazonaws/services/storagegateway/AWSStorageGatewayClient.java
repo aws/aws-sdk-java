@@ -5357,6 +5357,67 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Updates the SMB security strategy on a file gateway. This action is only supported in file gateways.
+     * </p>
+     * 
+     * @param updateSMBSecurityStrategyRequest
+     * @return Result of the UpdateSMBSecurityStrategy operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.UpdateSMBSecurityStrategy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBSecurityStrategy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateSMBSecurityStrategyResult updateSMBSecurityStrategy(UpdateSMBSecurityStrategyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSMBSecurityStrategy(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSMBSecurityStrategyResult executeUpdateSMBSecurityStrategy(UpdateSMBSecurityStrategyRequest updateSMBSecurityStrategyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSMBSecurityStrategyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSMBSecurityStrategyRequest> request = null;
+        Response<UpdateSMBSecurityStrategyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSMBSecurityStrategyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateSMBSecurityStrategyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSMBSecurityStrategy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSMBSecurityStrategyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateSMBSecurityStrategyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates a snapshot schedule configured for a gateway volume. This operation is only supported in the cached
      * volume and stored volume gateway types.
      * </p>

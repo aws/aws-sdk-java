@@ -27,7 +27,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or
+     * The block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or
      * snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      * </p>
      */
@@ -89,11 +89,11 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or
+     * The block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or
      * snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      * </p>
      * 
-     * @return Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing
+     * @return The block device mappings. This parameter cannot be used to modify the encryption status of existing
      *         volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      */
 
@@ -106,12 +106,12 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or
+     * The block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or
      * snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing
+     *        The block device mappings. This parameter cannot be used to modify the encryption status of existing
      *        volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      */
 
@@ -126,7 +126,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or
+     * The block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or
      * snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      * </p>
      * <p>
@@ -136,7 +136,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      * 
      * @param blockDeviceMappings
-     *        Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing
+     *        The block device mappings. This parameter cannot be used to modify the encryption status of existing
      *        volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -153,12 +153,12 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or
+     * The block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or
      * snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing
+     *        The block device mappings. This parameter cannot be used to modify the encryption status of existing
      *        volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

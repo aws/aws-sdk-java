@@ -1,3 +1,24 @@
+# __1.11.565__ __2019-06-04__
+## __AWS Identity and Access Management__
+  - ### Features
+    - This release adds validation for policy path field. This field is now restricted to be max 512 characters.
+
+## __AWS Storage Gateway__
+  - ### Features
+    - AWS Storage Gateway now supports AWS PrivateLink, enabling you to administer and use gateways without needing to use public IP addresses or a NAT/Internet Gateway, while avoiding traffic from going over the internet.
+
+## __Amazon ElastiCache__
+  - ### Features
+    - Amazon ElastiCache now allows you to apply available service updates on demand. Features included: (1) Access to the list of applicable service updates and their priorities. (2) Service update monitoring and regular status updates. (3) Recommended apply-by-dates for scheduling the service updates, which is critical if your cluster is in ElastiCache-supported compliance programs. (4) Ability to stop and later re-apply updates. For more information, see https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Self-Service-Updates.html
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for Host Recovery feature which automatically restarts instances on to a new replacement host if failures are detected on Dedicated Host.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Documentation updates for s3
+
 # __1.11.564__ __2019-06-03__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

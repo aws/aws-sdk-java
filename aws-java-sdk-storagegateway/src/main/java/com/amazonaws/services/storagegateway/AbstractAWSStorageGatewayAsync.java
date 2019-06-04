@@ -1032,6 +1032,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateSMBSecurityStrategyResult> updateSMBSecurityStrategyAsync(UpdateSMBSecurityStrategyRequest request) {
+
+        return updateSMBSecurityStrategyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSMBSecurityStrategyResult> updateSMBSecurityStrategyAsync(UpdateSMBSecurityStrategyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateSMBSecurityStrategyRequest, UpdateSMBSecurityStrategyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateSnapshotScheduleResult> updateSnapshotScheduleAsync(UpdateSnapshotScheduleRequest request) {
 
         return updateSnapshotScheduleAsync(request, null);

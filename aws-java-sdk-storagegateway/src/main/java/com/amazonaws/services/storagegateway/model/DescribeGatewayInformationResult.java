@@ -98,6 +98,12 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
+     * </p>
+     */
+    private String vPCEndpoint;
 
     /**
      * @param gatewayARN
@@ -666,6 +672,46 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
+     * </p>
+     * 
+     * @param vPCEndpoint
+     *        The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
+     */
+
+    public void setVPCEndpoint(String vPCEndpoint) {
+        this.vPCEndpoint = vPCEndpoint;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
+     * </p>
+     * 
+     * @return The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
+     */
+
+    public String getVPCEndpoint() {
+        return this.vPCEndpoint;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
+     * </p>
+     * 
+     * @param vPCEndpoint
+     *        The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGatewayInformationResult withVPCEndpoint(String vPCEndpoint) {
+        setVPCEndpoint(vPCEndpoint);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -700,7 +746,9 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         if (getEc2InstanceRegion() != null)
             sb.append("Ec2InstanceRegion: ").append(getEc2InstanceRegion()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getVPCEndpoint() != null)
+            sb.append("VPCEndpoint: ").append(getVPCEndpoint());
         sb.append("}");
         return sb.toString();
     }
@@ -763,6 +811,10 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getVPCEndpoint() == null ^ this.getVPCEndpoint() == null)
+            return false;
+        if (other.getVPCEndpoint() != null && other.getVPCEndpoint().equals(this.getVPCEndpoint()) == false)
+            return false;
         return true;
     }
 
@@ -783,6 +835,7 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId().hashCode());
         hashCode = prime * hashCode + ((getEc2InstanceRegion() == null) ? 0 : getEc2InstanceRegion().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVPCEndpoint() == null) ? 0 : getVPCEndpoint().hashCode());
         return hashCode;
     }
 

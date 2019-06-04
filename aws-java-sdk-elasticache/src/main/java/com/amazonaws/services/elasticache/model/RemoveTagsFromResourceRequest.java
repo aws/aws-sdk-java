@@ -36,8 +36,8 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      */
     private String resourceName;
@@ -56,8 +56,8 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param resourceName
@@ -66,7 +66,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      *        <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a>.
      */
 
@@ -82,8 +82,8 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the resource from which you want the tags removed, for example
@@ -91,7 +91,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      *         <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      *         <p>
      *         For more information about ARNs, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and AWS Service Namespaces</a>.
      */
 
@@ -107,8 +107,8 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param resourceName
@@ -117,7 +117,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      *        <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

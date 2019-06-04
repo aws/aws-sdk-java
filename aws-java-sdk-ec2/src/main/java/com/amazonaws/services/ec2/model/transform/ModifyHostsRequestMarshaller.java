@@ -57,6 +57,10 @@ public class ModifyHostsRequestMarshaller implements Marshaller<Request<ModifyHo
             }
         }
 
+        if (modifyHostsRequest.getHostRecovery() != null) {
+            request.addParameter("HostRecovery", StringUtils.fromString(modifyHostsRequest.getHostRecovery()));
+        }
+
         return request;
     }
 

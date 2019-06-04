@@ -54,6 +54,32 @@ public class AbstractAmazonElastiCacheAsync extends AbstractAmazonElastiCache im
     }
 
     @Override
+    public java.util.concurrent.Future<BatchApplyUpdateActionResult> batchApplyUpdateActionAsync(BatchApplyUpdateActionRequest request) {
+
+        return batchApplyUpdateActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchApplyUpdateActionResult> batchApplyUpdateActionAsync(BatchApplyUpdateActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchApplyUpdateActionRequest, BatchApplyUpdateActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStopUpdateActionResult> batchStopUpdateActionAsync(BatchStopUpdateActionRequest request) {
+
+        return batchStopUpdateActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStopUpdateActionResult> batchStopUpdateActionAsync(BatchStopUpdateActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchStopUpdateActionRequest, BatchStopUpdateActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<Snapshot> copySnapshotAsync(CopySnapshotRequest request) {
 
         return copySnapshotAsync(request, null);
@@ -589,6 +615,19 @@ public class AbstractAmazonElastiCacheAsync extends AbstractAmazonElastiCache im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeServiceUpdatesResult> describeServiceUpdatesAsync(DescribeServiceUpdatesRequest request) {
+
+        return describeServiceUpdatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeServiceUpdatesResult> describeServiceUpdatesAsync(DescribeServiceUpdatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeServiceUpdatesRequest, DescribeServiceUpdatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSnapshotsResult> describeSnapshotsAsync(DescribeSnapshotsRequest request) {
 
         return describeSnapshotsAsync(request, null);
@@ -622,6 +661,19 @@ public class AbstractAmazonElastiCacheAsync extends AbstractAmazonElastiCache im
             com.amazonaws.handlers.AsyncHandler<DescribeSnapshotsRequest, DescribeSnapshotsResult> asyncHandler) {
 
         return describeSnapshotsAsync(new DescribeSnapshotsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUpdateActionsResult> describeUpdateActionsAsync(DescribeUpdateActionsRequest request) {
+
+        return describeUpdateActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUpdateActionsResult> describeUpdateActionsAsync(DescribeUpdateActionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeUpdateActionsRequest, DescribeUpdateActionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

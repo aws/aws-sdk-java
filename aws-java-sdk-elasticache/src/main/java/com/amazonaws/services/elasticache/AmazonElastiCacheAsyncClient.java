@@ -322,6 +322,72 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<BatchApplyUpdateActionResult> batchApplyUpdateActionAsync(BatchApplyUpdateActionRequest request) {
+
+        return batchApplyUpdateActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchApplyUpdateActionResult> batchApplyUpdateActionAsync(final BatchApplyUpdateActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchApplyUpdateActionRequest, BatchApplyUpdateActionResult> asyncHandler) {
+        final BatchApplyUpdateActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchApplyUpdateActionResult>() {
+            @Override
+            public BatchApplyUpdateActionResult call() throws Exception {
+                BatchApplyUpdateActionResult result = null;
+
+                try {
+                    result = executeBatchApplyUpdateAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStopUpdateActionResult> batchStopUpdateActionAsync(BatchStopUpdateActionRequest request) {
+
+        return batchStopUpdateActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStopUpdateActionResult> batchStopUpdateActionAsync(final BatchStopUpdateActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchStopUpdateActionRequest, BatchStopUpdateActionResult> asyncHandler) {
+        final BatchStopUpdateActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchStopUpdateActionResult>() {
+            @Override
+            public BatchStopUpdateActionResult call() throws Exception {
+                BatchStopUpdateActionResult result = null;
+
+                try {
+                    result = executeBatchStopUpdateAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<Snapshot> copySnapshotAsync(CopySnapshotRequest request) {
 
         return copySnapshotAsync(request, null);
@@ -1357,6 +1423,39 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeServiceUpdatesResult> describeServiceUpdatesAsync(DescribeServiceUpdatesRequest request) {
+
+        return describeServiceUpdatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeServiceUpdatesResult> describeServiceUpdatesAsync(final DescribeServiceUpdatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeServiceUpdatesRequest, DescribeServiceUpdatesResult> asyncHandler) {
+        final DescribeServiceUpdatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeServiceUpdatesResult>() {
+            @Override
+            public DescribeServiceUpdatesResult call() throws Exception {
+                DescribeServiceUpdatesResult result = null;
+
+                try {
+                    result = executeDescribeServiceUpdates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSnapshotsResult> describeSnapshotsAsync(DescribeSnapshotsRequest request) {
 
         return describeSnapshotsAsync(request, null);
@@ -1410,6 +1509,39 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
             com.amazonaws.handlers.AsyncHandler<DescribeSnapshotsRequest, DescribeSnapshotsResult> asyncHandler) {
 
         return describeSnapshotsAsync(new DescribeSnapshotsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUpdateActionsResult> describeUpdateActionsAsync(DescribeUpdateActionsRequest request) {
+
+        return describeUpdateActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUpdateActionsResult> describeUpdateActionsAsync(final DescribeUpdateActionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeUpdateActionsRequest, DescribeUpdateActionsResult> asyncHandler) {
+        final DescribeUpdateActionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeUpdateActionsResult>() {
+            @Override
+            public DescribeUpdateActionsResult call() throws Exception {
+                DescribeUpdateActionsResult result = null;
+
+                try {
+                    result = executeDescribeUpdateActions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

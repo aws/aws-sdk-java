@@ -2722,6 +2722,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateSMBSecurityStrategyResult> updateSMBSecurityStrategyAsync(UpdateSMBSecurityStrategyRequest request) {
+
+        return updateSMBSecurityStrategyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSMBSecurityStrategyResult> updateSMBSecurityStrategyAsync(final UpdateSMBSecurityStrategyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSMBSecurityStrategyRequest, UpdateSMBSecurityStrategyResult> asyncHandler) {
+        final UpdateSMBSecurityStrategyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSMBSecurityStrategyResult>() {
+            @Override
+            public UpdateSMBSecurityStrategyResult call() throws Exception {
+                UpdateSMBSecurityStrategyResult result = null;
+
+                try {
+                    result = executeUpdateSMBSecurityStrategy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateSnapshotScheduleResult> updateSnapshotScheduleAsync(UpdateSnapshotScheduleRequest request) {
 
         return updateSnapshotScheduleAsync(request, null);

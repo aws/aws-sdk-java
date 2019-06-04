@@ -49,8 +49,8 @@ public class IncreaseReplicaCountRequest extends com.amazonaws.AmazonWebServiceR
     private com.amazonaws.internal.SdkInternalList<ConfigureShard> replicaConfiguration;
     /**
      * <p>
-     * If <code>True</code>, the number of replica nodes is increased immediately. If <code>False</code>, the number of
-     * replica nodes is increased during the next maintenance window.
+     * If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code>
+     * is not currently supported.
      * </p>
      */
     private Boolean applyImmediately;
@@ -241,13 +241,13 @@ public class IncreaseReplicaCountRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If <code>True</code>, the number of replica nodes is increased immediately. If <code>False</code>, the number of
-     * replica nodes is increased during the next maintenance window.
+     * If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code>
+     * is not currently supported.
      * </p>
      * 
      * @param applyImmediately
-     *        If <code>True</code>, the number of replica nodes is increased immediately. If <code>False</code>, the
-     *        number of replica nodes is increased during the next maintenance window.
+     *        If <code>True</code>, the number of replica nodes is increased immediately.
+     *        <code>ApplyImmediately=False</code> is not currently supported.
      */
 
     public void setApplyImmediately(Boolean applyImmediately) {
@@ -256,12 +256,12 @@ public class IncreaseReplicaCountRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If <code>True</code>, the number of replica nodes is increased immediately. If <code>False</code>, the number of
-     * replica nodes is increased during the next maintenance window.
+     * If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code>
+     * is not currently supported.
      * </p>
      * 
-     * @return If <code>True</code>, the number of replica nodes is increased immediately. If <code>False</code>, the
-     *         number of replica nodes is increased during the next maintenance window.
+     * @return If <code>True</code>, the number of replica nodes is increased immediately.
+     *         <code>ApplyImmediately=False</code> is not currently supported.
      */
 
     public Boolean getApplyImmediately() {
@@ -270,13 +270,13 @@ public class IncreaseReplicaCountRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If <code>True</code>, the number of replica nodes is increased immediately. If <code>False</code>, the number of
-     * replica nodes is increased during the next maintenance window.
+     * If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code>
+     * is not currently supported.
      * </p>
      * 
      * @param applyImmediately
-     *        If <code>True</code>, the number of replica nodes is increased immediately. If <code>False</code>, the
-     *        number of replica nodes is increased during the next maintenance window.
+     *        If <code>True</code>, the number of replica nodes is increased immediately.
+     *        <code>ApplyImmediately=False</code> is not currently supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,12 +287,12 @@ public class IncreaseReplicaCountRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If <code>True</code>, the number of replica nodes is increased immediately. If <code>False</code>, the number of
-     * replica nodes is increased during the next maintenance window.
+     * If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code>
+     * is not currently supported.
      * </p>
      * 
-     * @return If <code>True</code>, the number of replica nodes is increased immediately. If <code>False</code>, the
-     *         number of replica nodes is increased during the next maintenance window.
+     * @return If <code>True</code>, the number of replica nodes is increased immediately.
+     *         <code>ApplyImmediately=False</code> is not currently supported.
      */
 
     public Boolean isApplyImmediately() {

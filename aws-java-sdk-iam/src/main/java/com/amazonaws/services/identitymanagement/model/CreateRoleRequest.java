@@ -57,9 +57,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
-     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.
+     * in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -82,6 +82,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+     * </p>
      */
     private String assumeRolePolicyDocument;
     /**
@@ -299,9 +302,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
-     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.
+     * in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -324,13 +327,16 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+     * </p>
      * 
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
      *        <p>
-     *        You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
-     *        YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     *        to JSON format before submitting it to IAM.
+     *        in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS
+     *        CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
+     *        CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -353,6 +359,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The special characters tab ( ), line feed ( ), and carriage return ( )
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Upon success, the response includes the same trust policy as a URL-encoded JSON string.
      */
 
     public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
@@ -364,9 +373,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
-     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.
+     * in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -389,12 +398,15 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+     * </p>
      * 
      * @return The trust relationship policy document that grants an entity permission to assume the role.</p>
      *         <p>
-     *         You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
-     *         YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     *         to JSON format before submitting it to IAM.
+     *         in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS
+     *         CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
+     *         CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.
      *         </p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -417,6 +429,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         The special characters tab ( ), line feed ( ), and carriage return ( )
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Upon success, the response includes the same trust policy as a URL-encoded JSON string.
      */
 
     public String getAssumeRolePolicyDocument() {
@@ -428,9 +443,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in YAML, you
-     * can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.
+     * in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS CloudFormation
+     * templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always
+     * converts a YAML policy to JSON format before submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -453,13 +468,16 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+     * </p>
      * 
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
      *        <p>
-     *        You must provide policies in JSON format in IAM. However, for AWS CloudFormation templates formatted in
-     *        YAML, you can provide the policy in JSON or YAML format. AWS CloudFormation always converts a YAML policy
-     *        to JSON format before submitting it to IAM.
+     *        in IAM, you must provide a JSON policy that has been converted to a string. However, for AWS
+     *        CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. AWS
+     *        CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -482,6 +500,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The special characters tab ( ), line feed ( ), and carriage return ( )
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Upon success, the response includes the same trust policy as a URL-encoded JSON string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

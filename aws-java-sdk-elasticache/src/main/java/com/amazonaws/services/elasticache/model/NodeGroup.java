@@ -31,7 +31,7 @@ public class NodeGroup implements Serializable, Cloneable {
      * <p>
      * The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node
      * group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 15
-     * node groups numbered 0001 to 0015.
+     * node groups numbered 0001 to 0015. Optionally, the user can provide the id for a node group.
      * </p>
      */
     private String nodeGroupId;
@@ -64,13 +64,14 @@ public class NodeGroup implements Serializable, Cloneable {
      * <p>
      * The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node
      * group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 15
-     * node groups numbered 0001 to 0015.
+     * node groups numbered 0001 to 0015. Optionally, the user can provide the id for a node group.
      * </p>
      * 
      * @param nodeGroupId
      *        The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only
      *        1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group
-     *        contains 1 to 15 node groups numbered 0001 to 0015.
+     *        contains 1 to 15 node groups numbered 0001 to 0015. Optionally, the user can provide the id for a node
+     *        group.
      */
 
     public void setNodeGroupId(String nodeGroupId) {
@@ -81,12 +82,13 @@ public class NodeGroup implements Serializable, Cloneable {
      * <p>
      * The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node
      * group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 15
-     * node groups numbered 0001 to 0015.
+     * node groups numbered 0001 to 0015. Optionally, the user can provide the id for a node group.
      * </p>
      * 
      * @return The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains
      *         only 1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group
-     *         contains 1 to 15 node groups numbered 0001 to 0015.
+     *         contains 1 to 15 node groups numbered 0001 to 0015. Optionally, the user can provide the id for a node
+     *         group.
      */
 
     public String getNodeGroupId() {
@@ -97,13 +99,14 @@ public class NodeGroup implements Serializable, Cloneable {
      * <p>
      * The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node
      * group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 15
-     * node groups numbered 0001 to 0015.
+     * node groups numbered 0001 to 0015. Optionally, the user can provide the id for a node group.
      * </p>
      * 
      * @param nodeGroupId
      *        The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only
      *        1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group
-     *        contains 1 to 15 node groups numbered 0001 to 0015.
+     *        contains 1 to 15 node groups numbered 0001 to 0015. Optionally, the user can provide the id for a node
+     *        group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

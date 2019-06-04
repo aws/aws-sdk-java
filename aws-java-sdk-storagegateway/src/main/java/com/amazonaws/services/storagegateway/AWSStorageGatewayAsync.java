@@ -3942,6 +3942,39 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
+     * Updates the SMB security strategy on a file gateway. This action is only supported in file gateways.
+     * </p>
+     * 
+     * @param updateSMBSecurityStrategyRequest
+     * @return A Java Future containing the result of the UpdateSMBSecurityStrategy operation returned by the service.
+     * @sample AWSStorageGatewayAsync.UpdateSMBSecurityStrategy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBSecurityStrategy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSMBSecurityStrategyResult> updateSMBSecurityStrategyAsync(
+            UpdateSMBSecurityStrategyRequest updateSMBSecurityStrategyRequest);
+
+    /**
+     * <p>
+     * Updates the SMB security strategy on a file gateway. This action is only supported in file gateways.
+     * </p>
+     * 
+     * @param updateSMBSecurityStrategyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSMBSecurityStrategy operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.UpdateSMBSecurityStrategy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBSecurityStrategy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSMBSecurityStrategyResult> updateSMBSecurityStrategyAsync(
+            UpdateSMBSecurityStrategyRequest updateSMBSecurityStrategyRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSMBSecurityStrategyRequest, UpdateSMBSecurityStrategyResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates a snapshot schedule configured for a gateway volume. This operation is only supported in the cached
      * volume and stored volume gateway types.
      * </p>

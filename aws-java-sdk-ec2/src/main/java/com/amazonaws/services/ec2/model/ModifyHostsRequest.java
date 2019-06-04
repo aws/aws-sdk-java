@@ -37,6 +37,14 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> hostIds;
+    /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private String hostRecovery;
 
     /**
      * <p>
@@ -185,6 +193,99 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
+     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @see HostRecovery
+     */
+
+    public void setHostRecovery(String hostRecovery) {
+        this.hostRecovery = hostRecovery;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
+     *         Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @see HostRecovery
+     */
+
+    public String getHostRecovery() {
+        return this.hostRecovery;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
+     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostRecovery
+     */
+
+    public ModifyHostsRequest withHostRecovery(String hostRecovery) {
+        setHostRecovery(hostRecovery);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
+     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @see HostRecovery
+     */
+
+    public void setHostRecovery(HostRecovery hostRecovery) {
+        withHostRecovery(hostRecovery);
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
+     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostRecovery
+     */
+
+    public ModifyHostsRequest withHostRecovery(HostRecovery hostRecovery) {
+        this.hostRecovery = hostRecovery.toString();
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -210,7 +311,9 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
         if (getAutoPlacement() != null)
             sb.append("AutoPlacement: ").append(getAutoPlacement()).append(",");
         if (getHostIds() != null)
-            sb.append("HostIds: ").append(getHostIds());
+            sb.append("HostIds: ").append(getHostIds()).append(",");
+        if (getHostRecovery() != null)
+            sb.append("HostRecovery: ").append(getHostRecovery());
         sb.append("}");
         return sb.toString();
     }
@@ -233,6 +336,10 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
             return false;
         if (other.getHostIds() != null && other.getHostIds().equals(this.getHostIds()) == false)
             return false;
+        if (other.getHostRecovery() == null ^ this.getHostRecovery() == null)
+            return false;
+        if (other.getHostRecovery() != null && other.getHostRecovery().equals(this.getHostRecovery()) == false)
+            return false;
         return true;
     }
 
@@ -243,6 +350,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
 
         hashCode = prime * hashCode + ((getAutoPlacement() == null) ? 0 : getAutoPlacement().hashCode());
         hashCode = prime * hashCode + ((getHostIds() == null) ? 0 : getHostIds().hashCode());
+        hashCode = prime * hashCode + ((getHostRecovery() == null) ? 0 : getHostRecovery().hashCode());
         return hashCode;
     }
 

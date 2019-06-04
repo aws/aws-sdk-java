@@ -27,9 +27,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because
-     * only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its
-     * encryption status is used for the volume encryption status.
+     * The block device mapping entries.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
@@ -406,14 +404,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because
-     * only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its
-     * encryption status is used for the volume encryption status.
+     * The block device mapping entries.
      * </p>
      * 
-     * @return The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
-     *         because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is
-     *         not blank and its encryption status is used for the volume encryption status.
+     * @return The block device mapping entries.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -425,15 +419,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because
-     * only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its
-     * encryption status is used for the volume encryption status.
+     * The block device mapping entries.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
-     *        because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is
-     *        not blank and its encryption status is used for the volume encryption status.
+     *        The block device mapping entries.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -447,9 +437,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because
-     * only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its
-     * encryption status is used for the volume encryption status.
+     * The block device mapping entries.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -458,9 +446,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param blockDeviceMappings
-     *        The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
-     *        because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is
-     *        not blank and its encryption status is used for the volume encryption status.
+     *        The block device mapping entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -476,15 +462,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because
-     * only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its
-     * encryption status is used for the volume encryption status.
+     * The block device mapping entries.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
-     *        because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is
-     *        not blank and its encryption status is used for the volume encryption status.
+     *        The block device mapping entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

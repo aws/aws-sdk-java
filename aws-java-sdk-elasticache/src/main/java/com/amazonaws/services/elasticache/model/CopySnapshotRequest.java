@@ -49,12 +49,12 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3
      * bucket. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess"
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      * >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
      * Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      */
@@ -154,12 +154,12 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3
      * bucket. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess"
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      * >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
      * Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      * 
@@ -169,13 +169,13 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to
      *        this S3 bucket. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess"
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      *        >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User
      *        Guide</i>.
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
      *        Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
      */
 
@@ -191,12 +191,12 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3
      * bucket. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess"
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      * >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
      * Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      * 
@@ -205,13 +205,13 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to
      *         this S3 bucket. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess"
+     *         "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      *         >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User
      *         Guide</i>.
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
+     *         href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
      *         Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
      */
 
@@ -227,12 +227,12 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3
      * bucket. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess"
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      * >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
      * Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      * 
@@ -242,13 +242,13 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to
      *        this S3 bucket. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess"
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      *        >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User
      *        Guide</i>.
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
      *        Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
