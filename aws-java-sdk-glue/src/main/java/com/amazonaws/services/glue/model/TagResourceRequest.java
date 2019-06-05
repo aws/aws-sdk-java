@@ -29,7 +29,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The ARN of the AWS Glue resource to which to add the tags. For more information about AWS Glue resource ARNs, see
      * the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
      * Glue ARN string pattern</a>.
      * </p>
      */
@@ -45,14 +45,14 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The ARN of the AWS Glue resource to which to add the tags. For more information about AWS Glue resource ARNs, see
      * the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
      * Glue ARN string pattern</a>.
      * </p>
      * 
      * @param resourceArn
      *        The ARN of the AWS Glue resource to which to add the tags. For more information about AWS Glue resource
      *        ARNs, see the <a href=
-     *        "http://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
+     *        "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
      *        >AWS Glue ARN string pattern</a>.
      */
 
@@ -64,13 +64,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The ARN of the AWS Glue resource to which to add the tags. For more information about AWS Glue resource ARNs, see
      * the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
      * Glue ARN string pattern</a>.
      * </p>
      * 
      * @return The ARN of the AWS Glue resource to which to add the tags. For more information about AWS Glue resource
      *         ARNs, see the <a href=
-     *         "http://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
+     *         "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
      *         >AWS Glue ARN string pattern</a>.
      */
 
@@ -82,14 +82,14 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The ARN of the AWS Glue resource to which to add the tags. For more information about AWS Glue resource ARNs, see
      * the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
      * Glue ARN string pattern</a>.
      * </p>
      * 
      * @param resourceArn
      *        The ARN of the AWS Glue resource to which to add the tags. For more information about AWS Glue resource
      *        ARNs, see the <a href=
-     *        "http://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
+     *        "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
      *        >AWS Glue ARN string pattern</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

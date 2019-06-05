@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure used to provide information used to update a trigger. This object will update the the previous trigger
- * definition by overwriting it completely.
+ * A structure used to provide information used to update a trigger. This object updates the previous trigger definition
+ * by overwriting it completely.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TriggerUpdate" target="_top">AWS API
@@ -44,7 +44,7 @@ public class TriggerUpdate implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <code>cron</code> expression used to specify the schedule (see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
      * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
@@ -146,16 +146,16 @@ public class TriggerUpdate implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <code>cron</code> expression used to specify the schedule (see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
      * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
      * @param schedule
      *        A <code>cron</code> expression used to specify the schedule (see <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules
-     *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
-     *        <code>cron(15 12 * * ? *)</code>.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     *        Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would
+     *        specify: <code>cron(15 12 * * ? *)</code>.
      */
 
     public void setSchedule(String schedule) {
@@ -165,13 +165,13 @@ public class TriggerUpdate implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <code>cron</code> expression used to specify the schedule (see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
      * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
      * @return A <code>cron</code> expression used to specify the schedule (see <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      *         Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would
      *         specify: <code>cron(15 12 * * ? *)</code>.
      */
@@ -183,16 +183,16 @@ public class TriggerUpdate implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <code>cron</code> expression used to specify the schedule (see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
      * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
      * @param schedule
      *        A <code>cron</code> expression used to specify the schedule (see <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules
-     *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
-     *        <code>cron(15 12 * * ? *)</code>.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     *        Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would
+     *        specify: <code>cron(15 12 * * ? *)</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

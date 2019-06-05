@@ -27,7 +27,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of the job definition to update.
+     * The name of the job definition to update.
      * </p>
      */
     private String jobName;
@@ -40,11 +40,11 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of the job definition to update.
+     * The name of the job definition to update.
      * </p>
      * 
      * @param jobName
-     *        Name of the job definition to update.
+     *        The name of the job definition to update.
      */
 
     public void setJobName(String jobName) {
@@ -53,10 +53,10 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of the job definition to update.
+     * The name of the job definition to update.
      * </p>
      * 
-     * @return Name of the job definition to update.
+     * @return The name of the job definition to update.
      */
 
     public String getJobName() {
@@ -65,11 +65,11 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of the job definition to update.
+     * The name of the job definition to update.
      * </p>
      * 
      * @param jobName
-     *        Name of the job definition to update.
+     *        The name of the job definition to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

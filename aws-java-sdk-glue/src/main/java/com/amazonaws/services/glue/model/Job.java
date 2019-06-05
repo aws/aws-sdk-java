@@ -35,7 +35,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Description of the job being defined.
+     * A description of the job.
      * </p>
      */
     private String description;
@@ -47,7 +47,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private String logUri;
     /**
      * <p>
-     * The name or ARN of the IAM role associated with this job.
+     * The name or Amazon Resource Name (ARN) of the IAM role associated with this job.
      * </p>
      */
     private String role;
@@ -65,13 +65,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastModifiedOn;
     /**
      * <p>
-     * An ExecutionProperty specifying the maximum number of concurrent runs allowed for this job.
+     * An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.
      * </p>
      */
     private ExecutionProperty executionProperty;
     /**
      * <p>
-     * The JobCommand that executes this job.
+     * The <code>JobCommand</code> that executes this job.
      * </p>
      */
     private JobCommand command;
@@ -85,12 +85,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
      * in Python</a> topic in the developer guide.
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
      * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      */
@@ -109,11 +109,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private Integer maxRetries;
     /**
      * <p>
-     * This field is deprecated, use <code>MaxCapacity</code> instead.
+     * This field is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
-     * The number of AWS Glue data processing units (DPUs) allocated to runs of this job. From 2 to 100 DPUs can be
-     * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
+     * The number of AWS Glue data processing units (DPUs) allocated to runs of this job. You can allocate from 2 to 100
+     * DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
      * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
      * Glue pricing page</a>.
      * </p>
@@ -138,13 +138,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
-     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
-     * job, or an Apache Spark ETL job:
+     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
+     * job or an Apache Spark ETL job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
+     * When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
      * or 1 DPU. The default is 0.0625 DPU.
      * </p>
      * </li>
@@ -170,14 +170,14 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
-     * executor per worker.
+     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1
-     * executor per worker.
+     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
      * </ul>
@@ -194,7 +194,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private Integer numberOfWorkers;
     /**
      * <p>
-     * The name of the SecurityConfiguration structure to be used with this job.
+     * The name of the <code>SecurityConfiguration</code> structure to be used with this job.
      * </p>
      */
     private String securityConfiguration;
@@ -247,11 +247,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of the job being defined.
+     * A description of the job.
      * </p>
      * 
      * @param description
-     *        Description of the job being defined.
+     *        A description of the job.
      */
 
     public void setDescription(String description) {
@@ -260,10 +260,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of the job being defined.
+     * A description of the job.
      * </p>
      * 
-     * @return Description of the job being defined.
+     * @return A description of the job.
      */
 
     public String getDescription() {
@@ -272,11 +272,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of the job being defined.
+     * A description of the job.
      * </p>
      * 
      * @param description
-     *        Description of the job being defined.
+     *        A description of the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,11 +327,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name or ARN of the IAM role associated with this job.
+     * The name or Amazon Resource Name (ARN) of the IAM role associated with this job.
      * </p>
      * 
      * @param role
-     *        The name or ARN of the IAM role associated with this job.
+     *        The name or Amazon Resource Name (ARN) of the IAM role associated with this job.
      */
 
     public void setRole(String role) {
@@ -340,10 +340,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name or ARN of the IAM role associated with this job.
+     * The name or Amazon Resource Name (ARN) of the IAM role associated with this job.
      * </p>
      * 
-     * @return The name or ARN of the IAM role associated with this job.
+     * @return The name or Amazon Resource Name (ARN) of the IAM role associated with this job.
      */
 
     public String getRole() {
@@ -352,11 +352,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name or ARN of the IAM role associated with this job.
+     * The name or Amazon Resource Name (ARN) of the IAM role associated with this job.
      * </p>
      * 
      * @param role
-     *        The name or ARN of the IAM role associated with this job.
+     *        The name or Amazon Resource Name (ARN) of the IAM role associated with this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -447,11 +447,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An ExecutionProperty specifying the maximum number of concurrent runs allowed for this job.
+     * An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.
      * </p>
      * 
      * @param executionProperty
-     *        An ExecutionProperty specifying the maximum number of concurrent runs allowed for this job.
+     *        An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.
      */
 
     public void setExecutionProperty(ExecutionProperty executionProperty) {
@@ -460,10 +460,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An ExecutionProperty specifying the maximum number of concurrent runs allowed for this job.
+     * An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.
      * </p>
      * 
-     * @return An ExecutionProperty specifying the maximum number of concurrent runs allowed for this job.
+     * @return An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.
      */
 
     public ExecutionProperty getExecutionProperty() {
@@ -472,11 +472,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An ExecutionProperty specifying the maximum number of concurrent runs allowed for this job.
+     * An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.
      * </p>
      * 
      * @param executionProperty
-     *        An ExecutionProperty specifying the maximum number of concurrent runs allowed for this job.
+     *        An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -487,11 +487,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The JobCommand that executes this job.
+     * The <code>JobCommand</code> that executes this job.
      * </p>
      * 
      * @param command
-     *        The JobCommand that executes this job.
+     *        The <code>JobCommand</code> that executes this job.
      */
 
     public void setCommand(JobCommand command) {
@@ -500,10 +500,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The JobCommand that executes this job.
+     * The <code>JobCommand</code> that executes this job.
      * </p>
      * 
-     * @return The JobCommand that executes this job.
+     * @return The <code>JobCommand</code> that executes this job.
      */
 
     public JobCommand getCommand() {
@@ -512,11 +512,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The JobCommand that executes this job.
+     * The <code>JobCommand</code> that executes this job.
      * </p>
      * 
      * @param command
-     *        The JobCommand that executes this job.
+     *        The <code>JobCommand</code> that executes this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -535,12 +535,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
      * in Python</a> topic in the developer guide.
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
      * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
@@ -551,12 +551,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         For information about how to specify and consume your own Job arguments, see the <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS
      *         Glue APIs in Python</a> topic in the developer guide.
      *         </p>
      *         <p>
      *         For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *         Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
@@ -574,12 +574,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
      * in Python</a> topic in the developer guide.
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
      * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
@@ -591,12 +591,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For information about how to specify and consume your own Job arguments, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue
-     *        APIs in Python</a> topic in the developer guide.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS
+     *        Glue APIs in Python</a> topic in the developer guide.
      *        </p>
      *        <p>
      *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
@@ -614,12 +614,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
      * in Python</a> topic in the developer guide.
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
      * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
@@ -631,12 +631,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For information about how to specify and consume your own Job arguments, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue
-     *        APIs in Python</a> topic in the developer guide.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS
+     *        Glue APIs in Python</a> topic in the developer guide.
      *        </p>
      *        <p>
      *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by AWS Glue</a> topic in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -749,22 +749,22 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is deprecated, use <code>MaxCapacity</code> instead.
+     * This field is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
-     * The number of AWS Glue data processing units (DPUs) allocated to runs of this job. From 2 to 100 DPUs can be
-     * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
+     * The number of AWS Glue data processing units (DPUs) allocated to runs of this job. You can allocate from 2 to 100
+     * DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
      * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
      * Glue pricing page</a>.
      * </p>
      * <p/>
      * 
      * @param allocatedCapacity
-     *        This field is deprecated, use <code>MaxCapacity</code> instead.
+     *        This field is deprecated. Use <code>MaxCapacity</code> instead.
      *        </p>
      *        <p>
-     *        The number of AWS Glue data processing units (DPUs) allocated to runs of this job. From 2 to 100 DPUs can
-     *        be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
+     *        The number of AWS Glue data processing units (DPUs) allocated to runs of this job. You can allocate from 2
+     *        to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
      *        of compute capacity and 16 GB of memory. For more information, see the <a
      *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      *        </p>
@@ -776,22 +776,22 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is deprecated, use <code>MaxCapacity</code> instead.
+     * This field is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
-     * The number of AWS Glue data processing units (DPUs) allocated to runs of this job. From 2 to 100 DPUs can be
-     * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
+     * The number of AWS Glue data processing units (DPUs) allocated to runs of this job. You can allocate from 2 to 100
+     * DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
      * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
      * Glue pricing page</a>.
      * </p>
      * <p/>
      * 
-     * @return This field is deprecated, use <code>MaxCapacity</code> instead.
+     * @return This field is deprecated. Use <code>MaxCapacity</code> instead.
      *         </p>
      *         <p>
-     *         The number of AWS Glue data processing units (DPUs) allocated to runs of this job. From 2 to 100 DPUs can
-     *         be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
-     *         of compute capacity and 16 GB of memory. For more information, see the <a
+     *         The number of AWS Glue data processing units (DPUs) allocated to runs of this job. You can allocate from
+     *         2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4
+     *         vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
      *         href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      *         </p>
      */
@@ -802,22 +802,22 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is deprecated, use <code>MaxCapacity</code> instead.
+     * This field is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
-     * The number of AWS Glue data processing units (DPUs) allocated to runs of this job. From 2 to 100 DPUs can be
-     * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
+     * The number of AWS Glue data processing units (DPUs) allocated to runs of this job. You can allocate from 2 to 100
+     * DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
      * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
      * Glue pricing page</a>.
      * </p>
      * <p/>
      * 
      * @param allocatedCapacity
-     *        This field is deprecated, use <code>MaxCapacity</code> instead.
+     *        This field is deprecated. Use <code>MaxCapacity</code> instead.
      *        </p>
      *        <p>
-     *        The number of AWS Glue data processing units (DPUs) allocated to runs of this job. From 2 to 100 DPUs can
-     *        be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
+     *        The number of AWS Glue data processing units (DPUs) allocated to runs of this job. You can allocate from 2
+     *        to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
      *        of compute capacity and 16 GB of memory. For more information, see the <a
      *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      *        </p>
@@ -885,13 +885,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
-     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
-     * job, or an Apache Spark ETL job:
+     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
+     * job or an Apache Spark ETL job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
+     * When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
      * or 1 DPU. The default is 0.0625 DPU.
      * </p>
      * </li>
@@ -911,13 +911,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      *        </p>
      *        <p>
-     *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python
-     *        shell job, or an Apache Spark ETL job:
+     *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python
+     *        shell job or an Apache Spark ETL job:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either
+     *        When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either
      *        0.0625 or 1 DPU. The default is 0.0625 DPU.
      *        </p>
      *        </li>
@@ -943,13 +943,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
-     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
-     * job, or an Apache Spark ETL job:
+     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
+     * job or an Apache Spark ETL job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
+     * When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
      * or 1 DPU. The default is 0.0625 DPU.
      * </p>
      * </li>
@@ -969,13 +969,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *         Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      *         </p>
      *         <p>
-     *         The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python
-     *         shell job, or an Apache Spark ETL job:
+     *         The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python
+     *         shell job or an Apache Spark ETL job:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either
+     *         When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either
      *         0.0625 or 1 DPU. The default is 0.0625 DPU.
      *         </p>
      *         </li>
@@ -1001,13 +1001,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
-     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
-     * job, or an Apache Spark ETL job:
+     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
+     * job or an Apache Spark ETL job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
+     * When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
      * or 1 DPU. The default is 0.0625 DPU.
      * </p>
      * </li>
@@ -1027,13 +1027,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      *        </p>
      *        <p>
-     *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python
-     *        shell job, or an Apache Spark ETL job:
+     *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python
+     *        shell job or an Apache Spark ETL job:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either
+     *        When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either
      *        0.0625 or 1 DPU. The default is 0.0625 DPU.
      *        </p>
      *        </li>
@@ -1064,14 +1064,14 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
-     * executor per worker.
+     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1
-     * executor per worker.
+     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
      * </ul>
@@ -1088,14 +1088,14 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
-     *        executor per worker.
+     *        For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk),
+     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and
-     *        1 executor per worker.
+     *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
+     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *        </p>
      *        </li>
      * @see WorkerType
@@ -1118,14 +1118,14 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
-     * executor per worker.
+     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1
-     * executor per worker.
+     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
      * </ul>
@@ -1141,14 +1141,14 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and
-     *         1 executor per worker.
+     *         For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk),
+     *         and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and
-     *         1 executor per worker.
+     *         For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
+     *         and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *         </p>
      *         </li>
      * @see WorkerType
@@ -1171,14 +1171,14 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
-     * executor per worker.
+     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1
-     * executor per worker.
+     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
      * </ul>
@@ -1195,14 +1195,14 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
-     *        executor per worker.
+     *        For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk),
+     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and
-     *        1 executor per worker.
+     *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
+     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1227,14 +1227,14 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
-     * executor per worker.
+     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1
-     * executor per worker.
+     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      * </p>
      * </li>
      * </ul>
@@ -1251,14 +1251,14 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1
-     *        executor per worker.
+     *        For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk),
+     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and
-     *        1 executor per worker.
+     *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
+     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1327,11 +1327,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the SecurityConfiguration structure to be used with this job.
+     * The name of the <code>SecurityConfiguration</code> structure to be used with this job.
      * </p>
      * 
      * @param securityConfiguration
-     *        The name of the SecurityConfiguration structure to be used with this job.
+     *        The name of the <code>SecurityConfiguration</code> structure to be used with this job.
      */
 
     public void setSecurityConfiguration(String securityConfiguration) {
@@ -1340,10 +1340,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the SecurityConfiguration structure to be used with this job.
+     * The name of the <code>SecurityConfiguration</code> structure to be used with this job.
      * </p>
      * 
-     * @return The name of the SecurityConfiguration structure to be used with this job.
+     * @return The name of the <code>SecurityConfiguration</code> structure to be used with this job.
      */
 
     public String getSecurityConfiguration() {
@@ -1352,11 +1352,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the SecurityConfiguration structure to be used with this job.
+     * The name of the <code>SecurityConfiguration</code> structure to be used with this job.
      * </p>
      * 
      * @param securityConfiguration
-     *        The name of the SecurityConfiguration structure to be used with this job.
+     *        The name of the <code>SecurityConfiguration</code> structure to be used with this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

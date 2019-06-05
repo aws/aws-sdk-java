@@ -31,6 +31,8 @@ public class JobCommandMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> SCRIPTLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScriptLocation").build();
+    private static final MarshallingInfo<String> PYTHONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PythonVersion").build();
 
     private static final JobCommandMarshaller instance = new JobCommandMarshaller();
 
@@ -50,6 +52,7 @@ public class JobCommandMarshaller {
         try {
             protocolMarshaller.marshall(jobCommand.getName(), NAME_BINDING);
             protocolMarshaller.marshall(jobCommand.getScriptLocation(), SCRIPTLOCATION_BINDING);
+            protocolMarshaller.marshall(jobCommand.getPythonVersion(), PYTHONVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

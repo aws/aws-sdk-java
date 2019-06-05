@@ -56,6 +56,10 @@ public class JobCommandJsonUnmarshaller implements Unmarshaller<JobCommand, Json
                     context.nextToken();
                     jobCommand.setScriptLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PythonVersion", targetDepth)) {
+                    context.nextToken();
+                    jobCommand.setPythonVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

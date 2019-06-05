@@ -33,7 +33,7 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String jobName;
     /**
      * <p>
-     * The ID of a previous JobRun to retry.
+     * The ID of a previous <code>JobRun</code> to retry.
      * </p>
      */
     private String jobRunId;
@@ -48,34 +48,34 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
      * in Python</a> topic in the developer guide.
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
      * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      */
     private java.util.Map<String, String> arguments;
     /**
      * <p>
-     * This field is deprecated, use <code>MaxCapacity</code> instead.
+     * This field is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
      * The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be
      * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
-     * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
-     * Glue pricing page</a>.
+     * capacity and 16 GB of memory. For more information, see the <a
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
      */
     @Deprecated
     private Integer allocatedCapacity;
     /**
      * <p>
-     * The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
-     * terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the
-     * timeout value set in the parent job.
+     * The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before
+     * it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides
+     * the timeout value set in the parent job.
      * </p>
      */
     private Integer timeout;
@@ -83,19 +83,20 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative
      * measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * information, see the <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue pricing
+     * page</a>.
      * </p>
      * <p>
      * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
-     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
+     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
      * job, or an Apache Spark ETL job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
+     * When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
      * or 1 DPU. The default is 0.0625 DPU.
      * </p>
      * </li>
@@ -145,7 +146,7 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Integer numberOfWorkers;
     /**
      * <p>
-     * The name of the SecurityConfiguration structure to be used with this job run.
+     * The name of the <code>SecurityConfiguration</code> structure to be used with this job run.
      * </p>
      */
     private String securityConfiguration;
@@ -198,11 +199,11 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of a previous JobRun to retry.
+     * The ID of a previous <code>JobRun</code> to retry.
      * </p>
      * 
      * @param jobRunId
-     *        The ID of a previous JobRun to retry.
+     *        The ID of a previous <code>JobRun</code> to retry.
      */
 
     public void setJobRunId(String jobRunId) {
@@ -211,10 +212,10 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of a previous JobRun to retry.
+     * The ID of a previous <code>JobRun</code> to retry.
      * </p>
      * 
-     * @return The ID of a previous JobRun to retry.
+     * @return The ID of a previous <code>JobRun</code> to retry.
      */
 
     public String getJobRunId() {
@@ -223,11 +224,11 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of a previous JobRun to retry.
+     * The ID of a previous <code>JobRun</code> to retry.
      * </p>
      * 
      * @param jobRunId
-     *        The ID of a previous JobRun to retry.
+     *        The ID of a previous <code>JobRun</code> to retry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,12 +248,12 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
      * in Python</a> topic in the developer guide.
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
      * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
@@ -264,12 +265,12 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </p>
      *         <p>
      *         For information about how to specify and consume your own Job arguments, see the <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS
      *         Glue APIs in Python</a> topic in the developer guide.
      *         </p>
      *         <p>
      *         For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *         Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
@@ -288,12 +289,12 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
      * in Python</a> topic in the developer guide.
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
      * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
@@ -306,12 +307,12 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For information about how to specify and consume your own Job arguments, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue
-     *        APIs in Python</a> topic in the developer guide.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS
+     *        Glue APIs in Python</a> topic in the developer guide.
      *        </p>
      *        <p>
      *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
@@ -330,12 +331,12 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For information about how to specify and consume your own Job arguments, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
      * in Python</a> topic in the developer guide.
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
      * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
@@ -348,12 +349,12 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For information about how to specify and consume your own Job arguments, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue
-     *        APIs in Python</a> topic in the developer guide.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS
+     *        Glue APIs in Python</a> topic in the developer guide.
      *        </p>
      *        <p>
      *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by AWS Glue</a> topic in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -386,22 +387,22 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * This field is deprecated, use <code>MaxCapacity</code> instead.
+     * This field is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
      * The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be
      * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
-     * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
-     * Glue pricing page</a>.
+     * capacity and 16 GB of memory. For more information, see the <a
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
      * 
      * @param allocatedCapacity
-     *        This field is deprecated, use <code>MaxCapacity</code> instead.</p>
+     *        This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
      *        <p>
      *        The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be
      *        allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
      *        compute capacity and 16 GB of memory. For more information, see the <a
-     *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     *        href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      */
     @Deprecated
     public void setAllocatedCapacity(Integer allocatedCapacity) {
@@ -410,21 +411,21 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * This field is deprecated, use <code>MaxCapacity</code> instead.
+     * This field is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
      * The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be
      * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
-     * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
-     * Glue pricing page</a>.
+     * capacity and 16 GB of memory. For more information, see the <a
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
      * 
-     * @return This field is deprecated, use <code>MaxCapacity</code> instead.</p>
+     * @return This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
      *         <p>
      *         The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be
      *         allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
      *         compute capacity and 16 GB of memory. For more information, see the <a
-     *         href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     *         href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      */
     @Deprecated
     public Integer getAllocatedCapacity() {
@@ -433,22 +434,22 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * This field is deprecated, use <code>MaxCapacity</code> instead.
+     * This field is deprecated. Use <code>MaxCapacity</code> instead.
      * </p>
      * <p>
      * The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be
      * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
-     * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
-     * Glue pricing page</a>.
+     * capacity and 16 GB of memory. For more information, see the <a
+     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
      * 
      * @param allocatedCapacity
-     *        This field is deprecated, use <code>MaxCapacity</code> instead.</p>
+     *        This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
      *        <p>
      *        The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be
      *        allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
      *        compute capacity and 16 GB of memory. For more information, see the <a
-     *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     *        href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -459,15 +460,15 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
-     * terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the
-     * timeout value set in the parent job.
+     * The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before
+     * it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides
+     * the timeout value set in the parent job.
      * </p>
      * 
      * @param timeout
-     *        The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
-     *        terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides
-     *        the timeout value set in the parent job.
+     *        The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources
+     *        before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).
+     *        This overrides the timeout value set in the parent job.
      */
 
     public void setTimeout(Integer timeout) {
@@ -476,14 +477,14 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
-     * terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the
-     * timeout value set in the parent job.
+     * The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before
+     * it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides
+     * the timeout value set in the parent job.
      * </p>
      * 
-     * @return The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
-     *         terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This
-     *         overrides the timeout value set in the parent job.
+     * @return The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources
+     *         before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).
+     *         This overrides the timeout value set in the parent job.
      */
 
     public Integer getTimeout() {
@@ -492,15 +493,15 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
-     * terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the
-     * timeout value set in the parent job.
+     * The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before
+     * it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides
+     * the timeout value set in the parent job.
      * </p>
      * 
      * @param timeout
-     *        The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is
-     *        terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides
-     *        the timeout value set in the parent job.
+     *        The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources
+     *        before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).
+     *        This overrides the timeout value set in the parent job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -513,19 +514,20 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative
      * measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * information, see the <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue pricing
+     * page</a>.
      * </p>
      * <p>
      * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
-     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
+     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
      * job, or an Apache Spark ETL job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
+     * When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
      * or 1 DPU. The default is 0.0625 DPU.
      * </p>
      * </li>
@@ -540,18 +542,19 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param maxCapacity
      *        The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a
      *        relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For
-     *        more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
+     *        more information, see the <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS
+     *        Glue pricing page</a>.</p>
      *        <p>
      *        Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      *        </p>
      *        <p>
-     *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python
+     *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python
      *        shell job, or an Apache Spark ETL job:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either
+     *        When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either
      *        0.0625 or 1 DPU. The default is 0.0625 DPU.
      *        </p>
      *        </li>
@@ -571,19 +574,20 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative
      * measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * information, see the <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue pricing
+     * page</a>.
      * </p>
      * <p>
      * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
-     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
+     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
      * job, or an Apache Spark ETL job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
+     * When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
      * or 1 DPU. The default is 0.0625 DPU.
      * </p>
      * </li>
@@ -597,19 +601,19 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a
      *         relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-     *         For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing
-     *         page</a>.</p>
+     *         For more information, see the <a
+     *         href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
      *         <p>
      *         Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      *         </p>
      *         <p>
-     *         The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python
+     *         The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python
      *         shell job, or an Apache Spark ETL job:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either
+     *         When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either
      *         0.0625 or 1 DPU. The default is 0.0625 DPU.
      *         </p>
      *         </li>
@@ -629,19 +633,20 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative
      * measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
+     * information, see the <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue pricing
+     * page</a>.
      * </p>
      * <p>
      * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
-     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
+     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
      * job, or an Apache Spark ETL job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
+     * When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
      * or 1 DPU. The default is 0.0625 DPU.
      * </p>
      * </li>
@@ -656,18 +661,19 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param maxCapacity
      *        The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a
      *        relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For
-     *        more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
+     *        more information, see the <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS
+     *        Glue pricing page</a>.</p>
      *        <p>
      *        Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      *        </p>
      *        <p>
-     *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python
+     *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python
      *        shell job, or an Apache Spark ETL job:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either
+     *        When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either
      *        0.0625 or 1 DPU. The default is 0.0625 DPU.
      *        </p>
      *        </li>
@@ -961,11 +967,11 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the SecurityConfiguration structure to be used with this job run.
+     * The name of the <code>SecurityConfiguration</code> structure to be used with this job run.
      * </p>
      * 
      * @param securityConfiguration
-     *        The name of the SecurityConfiguration structure to be used with this job run.
+     *        The name of the <code>SecurityConfiguration</code> structure to be used with this job run.
      */
 
     public void setSecurityConfiguration(String securityConfiguration) {
@@ -974,10 +980,10 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the SecurityConfiguration structure to be used with this job run.
+     * The name of the <code>SecurityConfiguration</code> structure to be used with this job run.
      * </p>
      * 
-     * @return The name of the SecurityConfiguration structure to be used with this job run.
+     * @return The name of the <code>SecurityConfiguration</code> structure to be used with this job run.
      */
 
     public String getSecurityConfiguration() {
@@ -986,11 +992,11 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the SecurityConfiguration structure to be used with this job run.
+     * The name of the <code>SecurityConfiguration</code> structure to be used with this job run.
      * </p>
      * 
      * @param securityConfiguration
-     *        The name of the SecurityConfiguration structure to be used with this job run.
+     *        The name of the <code>SecurityConfiguration</code> structure to be used with this job run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

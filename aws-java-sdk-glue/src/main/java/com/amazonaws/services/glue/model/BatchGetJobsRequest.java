@@ -27,17 +27,17 @@ public class BatchGetJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of job names, which may be the names returned from the <code>ListJobs</code> operation.
+     * A list of job names, which might be the names returned from the <code>ListJobs</code> operation.
      * </p>
      */
     private java.util.List<String> jobNames;
 
     /**
      * <p>
-     * A list of job names, which may be the names returned from the <code>ListJobs</code> operation.
+     * A list of job names, which might be the names returned from the <code>ListJobs</code> operation.
      * </p>
      * 
-     * @return A list of job names, which may be the names returned from the <code>ListJobs</code> operation.
+     * @return A list of job names, which might be the names returned from the <code>ListJobs</code> operation.
      */
 
     public java.util.List<String> getJobNames() {
@@ -46,11 +46,11 @@ public class BatchGetJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of job names, which may be the names returned from the <code>ListJobs</code> operation.
+     * A list of job names, which might be the names returned from the <code>ListJobs</code> operation.
      * </p>
      * 
      * @param jobNames
-     *        A list of job names, which may be the names returned from the <code>ListJobs</code> operation.
+     *        A list of job names, which might be the names returned from the <code>ListJobs</code> operation.
      */
 
     public void setJobNames(java.util.Collection<String> jobNames) {
@@ -64,7 +64,7 @@ public class BatchGetJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of job names, which may be the names returned from the <code>ListJobs</code> operation.
+     * A list of job names, which might be the names returned from the <code>ListJobs</code> operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class BatchGetJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param jobNames
-     *        A list of job names, which may be the names returned from the <code>ListJobs</code> operation.
+     *        A list of job names, which might be the names returned from the <code>ListJobs</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class BatchGetJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of job names, which may be the names returned from the <code>ListJobs</code> operation.
+     * A list of job names, which might be the names returned from the <code>ListJobs</code> operation.
      * </p>
      * 
      * @param jobNames
-     *        A list of job names, which may be the names returned from the <code>ListJobs</code> operation.
+     *        A list of job names, which might be the names returned from the <code>ListJobs</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

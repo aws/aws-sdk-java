@@ -26,18 +26,18 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The Amazon ARN of the resource for which to retrieve tags.
+     * The Amazon Resource Name (ARN) of the resource for which to retrieve tags.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The Amazon ARN of the resource for which to retrieve tags.
+     * The Amazon Resource Name (ARN) of the resource for which to retrieve tags.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon ARN of the resource for which to retrieve tags.
+     *        The Amazon Resource Name (ARN) of the resource for which to retrieve tags.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -46,10 +46,10 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The Amazon ARN of the resource for which to retrieve tags.
+     * The Amazon Resource Name (ARN) of the resource for which to retrieve tags.
      * </p>
      * 
-     * @return The Amazon ARN of the resource for which to retrieve tags.
+     * @return The Amazon Resource Name (ARN) of the resource for which to retrieve tags.
      */
 
     public String getResourceArn() {
@@ -58,11 +58,11 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The Amazon ARN of the resource for which to retrieve tags.
+     * The Amazon Resource Name (ARN) of the resource for which to retrieve tags.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon ARN of the resource for which to retrieve tags.
+     *        The Amazon Resource Name (ARN) of the resource for which to retrieve tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
