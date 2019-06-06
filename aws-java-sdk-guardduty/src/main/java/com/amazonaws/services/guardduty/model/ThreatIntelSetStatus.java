@@ -15,7 +15,7 @@ package com.amazonaws.services.guardduty.model;
 import javax.annotation.Generated;
 
 /**
- * The status of threatIntelSet file uploaded.
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ThreatIntelSetStatus {

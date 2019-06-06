@@ -28,10 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeleteMembersRequestMarshaller {
 
-    private static final MarshallingInfo<List> ACCOUNTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("accountIds").build();
     private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("detectorId").build();
+    private static final MarshallingInfo<List> ACCOUNTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountIds").build();
 
     private static final DeleteMembersRequestMarshaller instance = new DeleteMembersRequestMarshaller();
 
@@ -49,8 +49,8 @@ public class DeleteMembersRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(deleteMembersRequest.getAccountIds(), ACCOUNTIDS_BINDING);
             protocolMarshaller.marshall(deleteMembersRequest.getDetectorId(), DETECTORID_BINDING);
+            protocolMarshaller.marshall(deleteMembersRequest.getAccountIds(), ACCOUNTIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

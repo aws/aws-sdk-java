@@ -25,22 +25,35 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListFiltersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The ID of the detector that specifies the GuardDuty service where you want to list filters. */
+    /**
+     * <p>
+     * The unique ID of the detector the filter is associated with.
+     * </p>
+     */
     private String detectorId;
-    /** Indicates the maximum number of items that you want in the response. The maximum value is 50. */
+    /**
+     * <p>
+     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
+     * 50. The maximum value is 50.
+     * </p>
+     */
     private Integer maxResults;
     /**
-     * Paginates results. Set the value of this parameter to NULL on your first call to the ListFilters operation.For
-     * subsequent calls to the operation, fill nextToken in the request with the value of nextToken from the previous
-     * response to continue listing data.
+     * <p>
+     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
      */
     private String nextToken;
 
     /**
-     * The ID of the detector that specifies the GuardDuty service where you want to list filters.
+     * <p>
+     * The unique ID of the detector the filter is associated with.
+     * </p>
      * 
      * @param detectorId
-     *        The ID of the detector that specifies the GuardDuty service where you want to list filters.
+     *        The unique ID of the detector the filter is associated with.
      */
 
     public void setDetectorId(String detectorId) {
@@ -48,9 +61,11 @@ public class ListFiltersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service where you want to list filters.
+     * <p>
+     * The unique ID of the detector the filter is associated with.
+     * </p>
      * 
-     * @return The ID of the detector that specifies the GuardDuty service where you want to list filters.
+     * @return The unique ID of the detector the filter is associated with.
      */
 
     public String getDetectorId() {
@@ -58,10 +73,12 @@ public class ListFiltersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The ID of the detector that specifies the GuardDuty service where you want to list filters.
+     * <p>
+     * The unique ID of the detector the filter is associated with.
+     * </p>
      * 
      * @param detectorId
-     *        The ID of the detector that specifies the GuardDuty service where you want to list filters.
+     *        The unique ID of the detector the filter is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,10 +88,14 @@ public class ListFiltersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Indicates the maximum number of items that you want in the response. The maximum value is 50.
+     * <p>
+     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
+     * 50. The maximum value is 50.
+     * </p>
      * 
      * @param maxResults
-     *        Indicates the maximum number of items that you want in the response. The maximum value is 50.
+     *        You can use this parameter to indicate the maximum number of items you want in the response. The default
+     *        value is 50. The maximum value is 50.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -82,9 +103,13 @@ public class ListFiltersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Indicates the maximum number of items that you want in the response. The maximum value is 50.
+     * <p>
+     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
+     * 50. The maximum value is 50.
+     * </p>
      * 
-     * @return Indicates the maximum number of items that you want in the response. The maximum value is 50.
+     * @return You can use this parameter to indicate the maximum number of items you want in the response. The default
+     *         value is 50. The maximum value is 50.
      */
 
     public Integer getMaxResults() {
@@ -92,10 +117,14 @@ public class ListFiltersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Indicates the maximum number of items that you want in the response. The maximum value is 50.
+     * <p>
+     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
+     * 50. The maximum value is 50.
+     * </p>
      * 
      * @param maxResults
-     *        Indicates the maximum number of items that you want in the response. The maximum value is 50.
+     *        You can use this parameter to indicate the maximum number of items you want in the response. The default
+     *        value is 50. The maximum value is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,14 +134,16 @@ public class ListFiltersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Paginates results. Set the value of this parameter to NULL on your first call to the ListFilters operation.For
-     * subsequent calls to the operation, fill nextToken in the request with the value of nextToken from the previous
-     * response to continue listing data.
+     * <p>
+     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
      * 
      * @param nextToken
-     *        Paginates results. Set the value of this parameter to NULL on your first call to the ListFilters
-     *        operation.For subsequent calls to the operation, fill nextToken in the request with the value of nextToken
-     *        from the previous response to continue listing data.
+     *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
+     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        of NextToken from the previous response to continue listing data.
      */
 
     public void setNextToken(String nextToken) {
@@ -120,13 +151,15 @@ public class ListFiltersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Paginates results. Set the value of this parameter to NULL on your first call to the ListFilters operation.For
-     * subsequent calls to the operation, fill nextToken in the request with the value of nextToken from the previous
-     * response to continue listing data.
+     * <p>
+     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
      * 
-     * @return Paginates results. Set the value of this parameter to NULL on your first call to the ListFilters
-     *         operation.For subsequent calls to the operation, fill nextToken in the request with the value of
-     *         nextToken from the previous response to continue listing data.
+     * @return You can use this parameter when paginating results. Set the value of this parameter to null on your first
+     *         call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *         of NextToken from the previous response to continue listing data.
      */
 
     public String getNextToken() {
@@ -134,14 +167,16 @@ public class ListFiltersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Paginates results. Set the value of this parameter to NULL on your first call to the ListFilters operation.For
-     * subsequent calls to the operation, fill nextToken in the request with the value of nextToken from the previous
-     * response to continue listing data.
+     * <p>
+     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
      * 
      * @param nextToken
-     *        Paginates results. Set the value of this parameter to NULL on your first call to the ListFilters
-     *        operation.For subsequent calls to the operation, fill nextToken in the request with the value of nextToken
-     *        from the previous response to continue listing data.
+     *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
+     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        of NextToken from the previous response to continue listing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

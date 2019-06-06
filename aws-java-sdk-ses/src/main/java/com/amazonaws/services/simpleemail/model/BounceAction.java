@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For information about sending a bounce message in response to a received email, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html">Amazon SES Developer
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html">Amazon SES Developer
  * Guide</a>.
  * </p>
  * 
@@ -36,7 +36,7 @@ public class BounceAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An example of
      * an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
-     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.
      * </p>
      */
@@ -71,7 +71,7 @@ public class BounceAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An example of
      * an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
-     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.
      * </p>
      * 
@@ -79,7 +79,7 @@ public class BounceAction implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An
      *        example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
      *        information about Amazon SNS topics, see the <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      */
 
     public void setTopicArn(String topicArn) {
@@ -90,14 +90,14 @@ public class BounceAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An example of
      * an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
-     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An
      *         example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
      *         information about Amazon SNS topics, see the <a
-     *         href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      */
 
     public String getTopicArn() {
@@ -108,7 +108,7 @@ public class BounceAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An example of
      * an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
-     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.
      * </p>
      * 
@@ -116,7 +116,7 @@ public class BounceAction implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the bounce action is taken. An
      *        example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
      *        information about Amazon SNS topics, see the <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

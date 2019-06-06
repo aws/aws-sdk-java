@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * UpdateThreatIntelSet request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateThreatIntelSet" target="_top">AWS API
  *      Documentation</a>
@@ -26,66 +25,42 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The updated boolean value that specifies whether the ThreateIntelSet is active or not. */
-    private Boolean activate;
-    /** The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update. */
+    /**
+     * <p>
+     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.
+     * </p>
+     */
     private String detectorId;
     /**
+     * <p>
+     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * </p>
+     */
+    private String threatIntelSetId;
+    /**
+     * <p>
+     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
      * The updated URI of the file that contains the ThreateIntelSet. For example
      * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * </p>
      */
     private String location;
-    /** The unique ID that specifies the ThreatIntelSet that you want to update. */
-    private String name;
-    /** The unique ID that specifies the ThreatIntelSet that you want to update. */
-    private String threatIntelSetId;
-
     /**
+     * <p>
      * The updated boolean value that specifies whether the ThreateIntelSet is active or not.
-     * 
-     * @param activate
-     *        The updated boolean value that specifies whether the ThreateIntelSet is active or not.
+     * </p>
      */
-
-    public void setActivate(Boolean activate) {
-        this.activate = activate;
-    }
+    private Boolean activate;
 
     /**
-     * The updated boolean value that specifies whether the ThreateIntelSet is active or not.
-     * 
-     * @return The updated boolean value that specifies whether the ThreateIntelSet is active or not.
-     */
-
-    public Boolean getActivate() {
-        return this.activate;
-    }
-
-    /**
-     * The updated boolean value that specifies whether the ThreateIntelSet is active or not.
-     * 
-     * @param activate
-     *        The updated boolean value that specifies whether the ThreateIntelSet is active or not.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateThreatIntelSetRequest withActivate(Boolean activate) {
-        setActivate(activate);
-        return this;
-    }
-
-    /**
-     * The updated boolean value that specifies whether the ThreateIntelSet is active or not.
-     * 
-     * @return The updated boolean value that specifies whether the ThreateIntelSet is active or not.
-     */
-
-    public Boolean isActivate() {
-        return this.activate;
-    }
-
-    /**
+     * <p>
      * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.
+     * </p>
      * 
      * @param detectorId
      *        The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.
@@ -96,7 +71,9 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.
+     * </p>
      * 
      * @return The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.
      */
@@ -106,7 +83,9 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.
+     * </p>
      * 
      * @param detectorId
      *        The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.
@@ -119,8 +98,90 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * </p>
+     * 
+     * @param threatIntelSetId
+     *        The unique ID that specifies the ThreatIntelSet that you want to update.
+     */
+
+    public void setThreatIntelSetId(String threatIntelSetId) {
+        this.threatIntelSetId = threatIntelSetId;
+    }
+
+    /**
+     * <p>
+     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * </p>
+     * 
+     * @return The unique ID that specifies the ThreatIntelSet that you want to update.
+     */
+
+    public String getThreatIntelSetId() {
+        return this.threatIntelSetId;
+    }
+
+    /**
+     * <p>
+     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * </p>
+     * 
+     * @param threatIntelSetId
+     *        The unique ID that specifies the ThreatIntelSet that you want to update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateThreatIntelSetRequest withThreatIntelSetId(String threatIntelSetId) {
+        setThreatIntelSetId(threatIntelSetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * </p>
+     * 
+     * @param name
+     *        The unique ID that specifies the ThreatIntelSet that you want to update.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * </p>
+     * 
+     * @return The unique ID that specifies the ThreatIntelSet that you want to update.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * </p>
+     * 
+     * @param name
+     *        The unique ID that specifies the ThreatIntelSet that you want to update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateThreatIntelSetRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
      * The updated URI of the file that contains the ThreateIntelSet. For example
      * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * </p>
      * 
      * @param location
      *        The updated URI of the file that contains the ThreateIntelSet. For example
@@ -132,8 +193,10 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * The updated URI of the file that contains the ThreateIntelSet. For example
      * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * </p>
      * 
      * @return The updated URI of the file that contains the ThreateIntelSet. For example
      *         (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
@@ -144,8 +207,10 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * The updated URI of the file that contains the ThreateIntelSet. For example
      * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * </p>
      * 
      * @param location
      *        The updated URI of the file that contains the ThreateIntelSet. For example
@@ -159,71 +224,55 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>
+     * The updated boolean value that specifies whether the ThreateIntelSet is active or not.
+     * </p>
      * 
-     * @param name
-     *        The unique ID that specifies the ThreatIntelSet that you want to update.
+     * @param activate
+     *        The updated boolean value that specifies whether the ThreateIntelSet is active or not.
      */
 
-    public void setName(String name) {
-        this.name = name;
+    public void setActivate(Boolean activate) {
+        this.activate = activate;
     }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>
+     * The updated boolean value that specifies whether the ThreateIntelSet is active or not.
+     * </p>
      * 
-     * @return The unique ID that specifies the ThreatIntelSet that you want to update.
+     * @return The updated boolean value that specifies whether the ThreateIntelSet is active or not.
      */
 
-    public String getName() {
-        return this.name;
+    public Boolean getActivate() {
+        return this.activate;
     }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>
+     * The updated boolean value that specifies whether the ThreateIntelSet is active or not.
+     * </p>
      * 
-     * @param name
-     *        The unique ID that specifies the ThreatIntelSet that you want to update.
+     * @param activate
+     *        The updated boolean value that specifies whether the ThreateIntelSet is active or not.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateThreatIntelSetRequest withName(String name) {
-        setName(name);
+    public UpdateThreatIntelSetRequest withActivate(Boolean activate) {
+        setActivate(activate);
         return this;
     }
 
     /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     * <p>
+     * The updated boolean value that specifies whether the ThreateIntelSet is active or not.
+     * </p>
      * 
-     * @param threatIntelSetId
-     *        The unique ID that specifies the ThreatIntelSet that you want to update.
+     * @return The updated boolean value that specifies whether the ThreateIntelSet is active or not.
      */
 
-    public void setThreatIntelSetId(String threatIntelSetId) {
-        this.threatIntelSetId = threatIntelSetId;
-    }
-
-    /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
-     * 
-     * @return The unique ID that specifies the ThreatIntelSet that you want to update.
-     */
-
-    public String getThreatIntelSetId() {
-        return this.threatIntelSetId;
-    }
-
-    /**
-     * The unique ID that specifies the ThreatIntelSet that you want to update.
-     * 
-     * @param threatIntelSetId
-     *        The unique ID that specifies the ThreatIntelSet that you want to update.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateThreatIntelSetRequest withThreatIntelSetId(String threatIntelSetId) {
-        setThreatIntelSetId(threatIntelSetId);
-        return this;
+    public Boolean isActivate() {
+        return this.activate;
     }
 
     /**
@@ -238,16 +287,16 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getActivate() != null)
-            sb.append("Activate: ").append(getActivate()).append(",");
         if (getDetectorId() != null)
             sb.append("DetectorId: ").append(getDetectorId()).append(",");
-        if (getLocation() != null)
-            sb.append("Location: ").append(getLocation()).append(",");
+        if (getThreatIntelSetId() != null)
+            sb.append("ThreatIntelSetId: ").append(getThreatIntelSetId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
-        if (getThreatIntelSetId() != null)
-            sb.append("ThreatIntelSetId: ").append(getThreatIntelSetId());
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation()).append(",");
+        if (getActivate() != null)
+            sb.append("Activate: ").append(getActivate());
         sb.append("}");
         return sb.toString();
     }
@@ -262,25 +311,25 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof UpdateThreatIntelSetRequest == false)
             return false;
         UpdateThreatIntelSetRequest other = (UpdateThreatIntelSetRequest) obj;
-        if (other.getActivate() == null ^ this.getActivate() == null)
-            return false;
-        if (other.getActivate() != null && other.getActivate().equals(this.getActivate()) == false)
-            return false;
         if (other.getDetectorId() == null ^ this.getDetectorId() == null)
             return false;
         if (other.getDetectorId() != null && other.getDetectorId().equals(this.getDetectorId()) == false)
             return false;
-        if (other.getLocation() == null ^ this.getLocation() == null)
+        if (other.getThreatIntelSetId() == null ^ this.getThreatIntelSetId() == null)
             return false;
-        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
+        if (other.getThreatIntelSetId() != null && other.getThreatIntelSetId().equals(this.getThreatIntelSetId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getThreatIntelSetId() == null ^ this.getThreatIntelSetId() == null)
+        if (other.getLocation() == null ^ this.getLocation() == null)
             return false;
-        if (other.getThreatIntelSetId() != null && other.getThreatIntelSetId().equals(this.getThreatIntelSetId()) == false)
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
+            return false;
+        if (other.getActivate() == null ^ this.getActivate() == null)
+            return false;
+        if (other.getActivate() != null && other.getActivate().equals(this.getActivate()) == false)
             return false;
         return true;
     }
@@ -290,11 +339,11 @@ public class UpdateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getActivate() == null) ? 0 : getActivate().hashCode());
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
-        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getThreatIntelSetId() == null) ? 0 : getThreatIntelSetId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getActivate() == null) ? 0 : getActivate().hashCode());
         return hashCode;
     }
 

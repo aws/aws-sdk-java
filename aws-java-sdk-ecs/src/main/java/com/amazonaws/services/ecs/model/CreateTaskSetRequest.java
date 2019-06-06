@@ -64,7 +64,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ServiceRegistry> serviceRegistries;
@@ -382,11 +382,11 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * 
      * @return The details of the service discovery registries to assign to this task set. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *         Discovery</a>.
      */
 
@@ -400,12 +400,12 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this task set. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.
      */
 
@@ -421,7 +421,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -431,7 +431,7 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this task set. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -449,12 +449,12 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this task set. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

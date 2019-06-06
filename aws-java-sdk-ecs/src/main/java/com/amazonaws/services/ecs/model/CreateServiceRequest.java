@@ -34,9 +34,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String cluster;
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
+     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
+     * Region or across multiple Regions.
      * </p>
      */
     private String serviceName;
@@ -96,12 +96,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries to assign to this service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * <note>
      * <p>
      * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a>.
      * </p>
      * </note>
@@ -150,7 +150,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
      * service unless you specify a role here. The service-linked role is required if your task definition uses the
      * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
@@ -190,8 +190,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private NetworkConfiguration networkConfiguration;
@@ -209,7 +209,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -257,7 +257,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more information, see
-     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
      * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -319,15 +319,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
+     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
+     * Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
-     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores
-     *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
-     *        multiple clusters within a Region or across multiple Regions.
+     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     *        Service names must be unique within a cluster, but you can have similarly named services in multiple
+     *        clusters within a Region or across multiple Regions.
      */
 
     public void setServiceName(String serviceName) {
@@ -336,14 +336,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
+     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
+     * Region or across multiple Regions.
      * </p>
      * 
-     * @return The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores
-     *         are allowed. Service names must be unique within a cluster, but you can have similarly named services in
-     *         multiple clusters within a Region or across multiple Regions.
+     * @return The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     *         Service names must be unique within a cluster, but you can have similarly named services in multiple
+     *         clusters within a Region or across multiple Regions.
      */
 
     public String getServiceName() {
@@ -352,15 +352,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
+     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
+     * Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
-     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores
-     *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
-     *        multiple clusters within a Region or across multiple Regions.
+     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     *        Service names must be unique within a cluster, but you can have similarly named services in multiple
+     *        clusters within a Region or across multiple Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -812,23 +812,23 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries to assign to this service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * <note>
      * <p>
      * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a>.
      * </p>
      * </note>
      * 
      * @return The details of the service discovery registries to assign to this service. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *         Discovery</a>.</p> <note>
      *         <p>
      *         Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
      *         more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *         Platform Versions</a>.
      *         </p>
      */
@@ -843,24 +843,24 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries to assign to this service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * <note>
      * <p>
      * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a>.
      * </p>
      * </note>
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.</p> <note>
      *        <p>
      *        Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a>.
      *        </p>
      */
@@ -877,12 +877,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries to assign to this service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * <note>
      * <p>
      * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a>.
      * </p>
      * </note>
@@ -894,12 +894,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.</p> <note>
      *        <p>
      *        Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -918,24 +918,24 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries to assign to this service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * <note>
      * <p>
      * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a>.
      * </p>
      * </note>
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.</p> <note>
      *        <p>
      *        Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1183,7 +1183,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
      * service unless you specify a role here. The service-linked role is required if your task definition uses the
      * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
@@ -1207,7 +1207,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        your service unless you specify a role here. The service-linked role is required if your task definition
      *        uses the <code>awsvpc</code> network mode, in which case you should not specify a role here. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        </important>
@@ -1236,7 +1236,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
      * service unless you specify a role here. The service-linked role is required if your task definition uses the
      * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
@@ -1259,7 +1259,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         your service unless you specify a role here. The service-linked role is required if your task definition
      *         uses the <code>awsvpc</code> network mode, in which case you should not specify a role here. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      *         Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         </important>
@@ -1288,7 +1288,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
      * service unless you specify a role here. The service-linked role is required if your task definition uses the
      * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
@@ -1312,7 +1312,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        your service unless you specify a role here. The service-linked role is required if your task definition
      *        uses the <code>awsvpc</code> network mode, in which case you should not specify a role here. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        </important>
@@ -1548,16 +1548,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param networkConfiguration
      *        The network configuration for the service. This parameter is required for task definitions that use the
      *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
      *        for other network modes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
-     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
@@ -1569,14 +1569,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The network configuration for the service. This parameter is required for task definitions that use the
      *         <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
      *         for other network modes. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      *         Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -1589,16 +1589,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param networkConfiguration
      *        The network configuration for the service. This parameter is required for task definitions that use the
      *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
      *        for other network modes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
-     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1681,7 +1681,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1712,7 +1712,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param schedulingStrategy
      *        The scheduling strategy to use for the service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *        <p>
      *        There are two service scheduler strategies available:
      *        </p>
@@ -1749,7 +1749,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1779,7 +1779,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * 
      * @return The scheduling strategy to use for the service. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *         <p>
      *         There are two service scheduler strategies available:
      *         </p>
@@ -1816,7 +1816,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1847,7 +1847,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param schedulingStrategy
      *        The scheduling strategy to use for the service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *        <p>
      *        There are two service scheduler strategies available:
      *        </p>
@@ -1886,7 +1886,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1917,7 +1917,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param schedulingStrategy
      *        The scheduling strategy to use for the service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *        <p>
      *        There are two service scheduler strategies available:
      *        </p>
@@ -2093,14 +2093,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more information, see
-     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
      * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param enableECSManagedTags
      *        Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon
      *        ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -2111,14 +2111,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more information, see
-     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
      * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon
-     *         ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
+     *         Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public Boolean getEnableECSManagedTags() {
@@ -2128,14 +2128,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more information, see
-     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
      * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param enableECSManagedTags
      *        Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon
      *        ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2148,14 +2148,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more information, see
-     * <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
      * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return Specifies whether to enable Amazon ECS managed tags for the tasks within the service. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon
-     *         ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
+     *         Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public Boolean isEnableECSManagedTags() {

@@ -23,12 +23,25 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The IDs of the IPSet resources.
+     * </p>
+     */
     private java.util.List<String> ipSetIds;
-
+    /**
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The IDs of the IPSet resources.
+     * </p>
+     * 
+     * @return The IDs of the IPSet resources.
      */
 
     public java.util.List<String> getIpSetIds() {
@@ -36,7 +49,12 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * The IDs of the IPSet resources.
+     * </p>
+     * 
      * @param ipSetIds
+     *        The IDs of the IPSet resources.
      */
 
     public void setIpSetIds(java.util.Collection<String> ipSetIds) {
@@ -50,12 +68,16 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
+     * The IDs of the IPSet resources.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setIpSetIds(java.util.Collection)} or {@link #withIpSetIds(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param ipSetIds
+     *        The IDs of the IPSet resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +92,12 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * The IDs of the IPSet resources.
+     * </p>
+     * 
      * @param ipSetIds
+     *        The IDs of the IPSet resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +107,12 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     * 
      * @param nextToken
+     *        Pagination parameter to be used on the next list operation to retrieve more items.
      */
 
     public void setNextToken(String nextToken) {
@@ -88,7 +120,11 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * @return
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     * 
+     * @return Pagination parameter to be used on the next list operation to retrieve more items.
      */
 
     public String getNextToken() {
@@ -96,7 +132,12 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     * 
      * @param nextToken
+     *        Pagination parameter to be used on the next list operation to retrieve more items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * CreateFilterRequest request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter" target="_top">AWS API
  *      Documentation</a>
@@ -26,26 +25,174 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** Specifies the action that is to be applied to the findings that match the filter. */
-    private String action;
-    /** The idempotency token for the create request. */
-    private String clientToken;
-    /** The description of the filter. */
-    private String description;
-    /** The unique ID of the detector that you want to update. */
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account for which you want to create a filter.
+     * </p>
+     */
     private String detectorId;
-    /** Represents the criteria to be used in the filter for querying findings. */
-    private FindingCriteria findingCriteria;
-    /** The name of the filter. */
+    /**
+     * <p>
+     * The name of the filter.
+     * </p>
+     */
     private String name;
     /**
+     * <p>
+     * The description of the filter.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * Specifies the action that is to be applied to the findings that match the filter.
+     * </p>
+     */
+    private String action;
+    /**
+     * <p>
      * Specifies the position of the filter in the list of current filters. Also specifies the order in which this
      * filter is applied to the findings.
+     * </p>
      */
     private Integer rank;
+    /**
+     * <p>
+     * Represents the criteria to be used in the filter for querying findings.
+     * </p>
+     */
+    private FindingCriteria findingCriteria;
+    /**
+     * <p>
+     * The idempotency token for the create request.
+     * </p>
+     */
+    private String clientToken;
 
     /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account for which you want to create a filter.
+     * </p>
+     * 
+     * @param detectorId
+     *        The unique ID of the detector of the GuardDuty account for which you want to create a filter.
+     */
+
+    public void setDetectorId(String detectorId) {
+        this.detectorId = detectorId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account for which you want to create a filter.
+     * </p>
+     * 
+     * @return The unique ID of the detector of the GuardDuty account for which you want to create a filter.
+     */
+
+    public String getDetectorId() {
+        return this.detectorId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account for which you want to create a filter.
+     * </p>
+     * 
+     * @param detectorId
+     *        The unique ID of the detector of the GuardDuty account for which you want to create a filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFilterRequest withDetectorId(String detectorId) {
+        setDetectorId(detectorId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the filter.
+     * </p>
+     * 
+     * @param name
+     *        The name of the filter.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the filter.
+     * </p>
+     * 
+     * @return The name of the filter.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the filter.
+     * </p>
+     * 
+     * @param name
+     *        The name of the filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFilterRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description of the filter.
+     * </p>
+     * 
+     * @param description
+     *        The description of the filter.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The description of the filter.
+     * </p>
+     * 
+     * @return The description of the filter.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description of the filter.
+     * </p>
+     * 
+     * @param description
+     *        The description of the filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFilterRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the action that is to be applied to the findings that match the filter.
+     * </p>
      * 
      * @param action
      *        Specifies the action that is to be applied to the findings that match the filter.
@@ -57,7 +204,9 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Specifies the action that is to be applied to the findings that match the filter.
+     * </p>
      * 
      * @return Specifies the action that is to be applied to the findings that match the filter.
      * @see FilterAction
@@ -68,7 +217,9 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Specifies the action that is to be applied to the findings that match the filter.
+     * </p>
      * 
      * @param action
      *        Specifies the action that is to be applied to the findings that match the filter.
@@ -82,7 +233,9 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Specifies the action that is to be applied to the findings that match the filter.
+     * </p>
      * 
      * @param action
      *        Specifies the action that is to be applied to the findings that match the filter.
@@ -96,109 +249,55 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The idempotency token for the create request.
+     * <p>
+     * Specifies the position of the filter in the list of current filters. Also specifies the order in which this
+     * filter is applied to the findings.
+     * </p>
      * 
-     * @param clientToken
-     *        The idempotency token for the create request.
+     * @param rank
+     *        Specifies the position of the filter in the list of current filters. Also specifies the order in which
+     *        this filter is applied to the findings.
      */
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
+    public void setRank(Integer rank) {
+        this.rank = rank;
     }
 
     /**
-     * The idempotency token for the create request.
+     * <p>
+     * Specifies the position of the filter in the list of current filters. Also specifies the order in which this
+     * filter is applied to the findings.
+     * </p>
      * 
-     * @return The idempotency token for the create request.
+     * @return Specifies the position of the filter in the list of current filters. Also specifies the order in which
+     *         this filter is applied to the findings.
      */
 
-    public String getClientToken() {
-        return this.clientToken;
+    public Integer getRank() {
+        return this.rank;
     }
 
     /**
-     * The idempotency token for the create request.
+     * <p>
+     * Specifies the position of the filter in the list of current filters. Also specifies the order in which this
+     * filter is applied to the findings.
+     * </p>
      * 
-     * @param clientToken
-     *        The idempotency token for the create request.
+     * @param rank
+     *        Specifies the position of the filter in the list of current filters. Also specifies the order in which
+     *        this filter is applied to the findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateFilterRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
+    public CreateFilterRequest withRank(Integer rank) {
+        setRank(rank);
         return this;
     }
 
     /**
-     * The description of the filter.
-     * 
-     * @param description
-     *        The description of the filter.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * The description of the filter.
-     * 
-     * @return The description of the filter.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * The description of the filter.
-     * 
-     * @param description
-     *        The description of the filter.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateFilterRequest withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    /**
-     * The unique ID of the detector that you want to update.
-     * 
-     * @param detectorId
-     *        The unique ID of the detector that you want to update.
-     */
-
-    public void setDetectorId(String detectorId) {
-        this.detectorId = detectorId;
-    }
-
-    /**
-     * The unique ID of the detector that you want to update.
-     * 
-     * @return The unique ID of the detector that you want to update.
-     */
-
-    public String getDetectorId() {
-        return this.detectorId;
-    }
-
-    /**
-     * The unique ID of the detector that you want to update.
-     * 
-     * @param detectorId
-     *        The unique ID of the detector that you want to update.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateFilterRequest withDetectorId(String detectorId) {
-        setDetectorId(detectorId);
-        return this;
-    }
-
-    /**
+     * <p>
      * Represents the criteria to be used in the filter for querying findings.
+     * </p>
      * 
      * @param findingCriteria
      *        Represents the criteria to be used in the filter for querying findings.
@@ -209,7 +308,9 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Represents the criteria to be used in the filter for querying findings.
+     * </p>
      * 
      * @return Represents the criteria to be used in the filter for querying findings.
      */
@@ -219,7 +320,9 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Represents the criteria to be used in the filter for querying findings.
+     * </p>
      * 
      * @param findingCriteria
      *        Represents the criteria to be used in the filter for querying findings.
@@ -232,76 +335,42 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The name of the filter.
+     * <p>
+     * The idempotency token for the create request.
+     * </p>
      * 
-     * @param name
-     *        The name of the filter.
+     * @param clientToken
+     *        The idempotency token for the create request.
      */
 
-    public void setName(String name) {
-        this.name = name;
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
     }
 
     /**
-     * The name of the filter.
+     * <p>
+     * The idempotency token for the create request.
+     * </p>
      * 
-     * @return The name of the filter.
+     * @return The idempotency token for the create request.
      */
 
-    public String getName() {
-        return this.name;
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     /**
-     * The name of the filter.
+     * <p>
+     * The idempotency token for the create request.
+     * </p>
      * 
-     * @param name
-     *        The name of the filter.
+     * @param clientToken
+     *        The idempotency token for the create request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateFilterRequest withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * Specifies the position of the filter in the list of current filters. Also specifies the order in which this
-     * filter is applied to the findings.
-     * 
-     * @param rank
-     *        Specifies the position of the filter in the list of current filters. Also specifies the order in which
-     *        this filter is applied to the findings.
-     */
-
-    public void setRank(Integer rank) {
-        this.rank = rank;
-    }
-
-    /**
-     * Specifies the position of the filter in the list of current filters. Also specifies the order in which this
-     * filter is applied to the findings.
-     * 
-     * @return Specifies the position of the filter in the list of current filters. Also specifies the order in which
-     *         this filter is applied to the findings.
-     */
-
-    public Integer getRank() {
-        return this.rank;
-    }
-
-    /**
-     * Specifies the position of the filter in the list of current filters. Also specifies the order in which this
-     * filter is applied to the findings.
-     * 
-     * @param rank
-     *        Specifies the position of the filter in the list of current filters. Also specifies the order in which
-     *        this filter is applied to the findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateFilterRequest withRank(Integer rank) {
-        setRank(rank);
+    public CreateFilterRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -317,20 +386,20 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAction() != null)
-            sb.append("Action: ").append(getAction()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
         if (getDetectorId() != null)
             sb.append("DetectorId: ").append(getDetectorId()).append(",");
-        if (getFindingCriteria() != null)
-            sb.append("FindingCriteria: ").append(getFindingCriteria()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getAction() != null)
+            sb.append("Action: ").append(getAction()).append(",");
         if (getRank() != null)
-            sb.append("Rank: ").append(getRank());
+            sb.append("Rank: ").append(getRank()).append(",");
+        if (getFindingCriteria() != null)
+            sb.append("FindingCriteria: ").append(getFindingCriteria()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -345,33 +414,33 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (obj instanceof CreateFilterRequest == false)
             return false;
         CreateFilterRequest other = (CreateFilterRequest) obj;
-        if (other.getAction() == null ^ this.getAction() == null)
-            return false;
-        if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
-            return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
         if (other.getDetectorId() == null ^ this.getDetectorId() == null)
             return false;
         if (other.getDetectorId() != null && other.getDetectorId().equals(this.getDetectorId()) == false)
-            return false;
-        if (other.getFindingCriteria() == null ^ this.getFindingCriteria() == null)
-            return false;
-        if (other.getFindingCriteria() != null && other.getFindingCriteria().equals(this.getFindingCriteria()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getAction() == null ^ this.getAction() == null)
+            return false;
+        if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
+            return false;
         if (other.getRank() == null ^ this.getRank() == null)
             return false;
         if (other.getRank() != null && other.getRank().equals(this.getRank()) == false)
+            return false;
+        if (other.getFindingCriteria() == null ^ this.getFindingCriteria() == null)
+            return false;
+        if (other.getFindingCriteria() != null && other.getFindingCriteria().equals(this.getFindingCriteria()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -381,13 +450,13 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
-        hashCode = prime * hashCode + ((getFindingCriteria() == null) ? 0 : getFindingCriteria().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getRank() == null) ? 0 : getRank().hashCode());
+        hashCode = prime * hashCode + ((getFindingCriteria() == null) ? 0 : getFindingCriteria().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

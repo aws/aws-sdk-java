@@ -254,6 +254,11 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public SubmitAttachmentStateChangesResult submitAttachmentStateChanges(SubmitAttachmentStateChangesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SubmitContainerStateChangeResult submitContainerStateChange(SubmitContainerStateChangeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

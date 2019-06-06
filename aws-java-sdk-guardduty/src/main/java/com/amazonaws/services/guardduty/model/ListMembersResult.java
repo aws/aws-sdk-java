@@ -23,12 +23,25 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A list of members.
+     * </p>
+     */
     private java.util.List<Member> members;
-
+    /**
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * A list of members.
+     * </p>
+     * 
+     * @return A list of members.
      */
 
     public java.util.List<Member> getMembers() {
@@ -36,7 +49,12 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * A list of members.
+     * </p>
+     * 
      * @param members
+     *        A list of members.
      */
 
     public void setMembers(java.util.Collection<Member> members) {
@@ -50,12 +68,16 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * A list of members.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setMembers(java.util.Collection)} or {@link #withMembers(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param members
+     *        A list of members.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +92,12 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * A list of members.
+     * </p>
+     * 
      * @param members
+     *        A list of members.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +107,12 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     * 
      * @param nextToken
+     *        Pagination parameter to be used on the next list operation to retrieve more items.
      */
 
     public void setNextToken(String nextToken) {
@@ -88,7 +120,11 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     * 
+     * @return Pagination parameter to be used on the next list operation to retrieve more items.
      */
 
     public String getNextToken() {
@@ -96,7 +132,12 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     * 
      * @param nextToken
+     *        Pagination parameter to be used on the next list operation to retrieve more items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

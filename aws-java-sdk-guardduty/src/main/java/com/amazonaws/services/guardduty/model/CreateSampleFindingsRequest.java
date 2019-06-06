@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * CreateSampleFindings request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateSampleFindings" target="_top">AWS API
  *      Documentation</a>
@@ -26,13 +25,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateSampleFindingsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The ID of the detector to create sample findings for. */
+    /**
+     * <p>
+     * The ID of the detector to create sample findings for.
+     * </p>
+     */
     private String detectorId;
-    /** Types of sample findings that you want to generate. */
+    /**
+     * <p>
+     * Types of sample findings that you want to generate.
+     * </p>
+     */
     private java.util.List<String> findingTypes;
 
     /**
+     * <p>
      * The ID of the detector to create sample findings for.
+     * </p>
      * 
      * @param detectorId
      *        The ID of the detector to create sample findings for.
@@ -43,7 +52,9 @@ public class CreateSampleFindingsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * The ID of the detector to create sample findings for.
+     * </p>
      * 
      * @return The ID of the detector to create sample findings for.
      */
@@ -53,7 +64,9 @@ public class CreateSampleFindingsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * The ID of the detector to create sample findings for.
+     * </p>
      * 
      * @param detectorId
      *        The ID of the detector to create sample findings for.
@@ -66,7 +79,9 @@ public class CreateSampleFindingsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * Types of sample findings that you want to generate.
+     * </p>
      * 
      * @return Types of sample findings that you want to generate.
      */
@@ -76,7 +91,9 @@ public class CreateSampleFindingsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * Types of sample findings that you want to generate.
+     * </p>
      * 
      * @param findingTypes
      *        Types of sample findings that you want to generate.
@@ -92,7 +109,9 @@ public class CreateSampleFindingsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * Types of sample findings that you want to generate.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFindingTypes(java.util.Collection)} or {@link #withFindingTypes(java.util.Collection)} if you want to
@@ -115,7 +134,9 @@ public class CreateSampleFindingsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * Types of sample findings that you want to generate.
+     * </p>
      * 
      * @param findingTypes
      *        Types of sample findings that you want to generate.

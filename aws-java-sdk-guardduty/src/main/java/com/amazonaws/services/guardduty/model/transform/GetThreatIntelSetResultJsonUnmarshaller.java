@@ -48,6 +48,10 @@ public class GetThreatIntelSetResultJsonUnmarshaller implements Unmarshaller<Get
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    getThreatIntelSetResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("format", targetDepth)) {
                     context.nextToken();
                     getThreatIntelSetResult.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
@@ -55,10 +59,6 @@ public class GetThreatIntelSetResultJsonUnmarshaller implements Unmarshaller<Get
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
                     getThreatIntelSetResult.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    getThreatIntelSetResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

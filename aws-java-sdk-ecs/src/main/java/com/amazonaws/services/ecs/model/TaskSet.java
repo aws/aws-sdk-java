@@ -177,7 +177,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ServiceRegistry> serviceRegistries;
@@ -212,7 +212,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     * <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be ignored
+     * until it expires.
+     * </p>
+     * </note></li>
      * </ul>
      * <p>
      * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1220,11 +1226,11 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * 
      * @return The details of the service discovery registries to assign to this task set. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *         Discovery</a>.
      */
 
@@ -1238,12 +1244,12 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this task set. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.
      */
 
@@ -1259,7 +1265,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1269,7 +1275,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this task set. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1287,12 +1293,12 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this task set. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1367,7 +1373,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     * <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be ignored
+     * until it expires.
+     * </p>
+     * </note></li>
      * </ul>
      * <p>
      * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1397,7 +1409,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        All tasks are reporting a healthy status from the load balancers, service discovery, and container health
      *        checks.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     *        <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be
+     *        ignored until it expires.
+     *        </p>
+     *        </note></li>
      *        </ul>
      *        <p>
      *        If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1433,7 +1451,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     * <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be ignored
+     * until it expires.
+     * </p>
+     * </note></li>
      * </ul>
      * <p>
      * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1462,7 +1486,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *         All tasks are reporting a healthy status from the load balancers, service discovery, and container health
      *         checks.
      *         </p>
-     *         </li>
+     *         <note>
+     *         <p>
+     *         If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     *         <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be
+     *         ignored until it expires.
+     *         </p>
+     *         </note></li>
      *         </ul>
      *         <p>
      *         If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1498,7 +1528,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     * <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be ignored
+     * until it expires.
+     * </p>
+     * </note></li>
      * </ul>
      * <p>
      * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1528,7 +1564,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        All tasks are reporting a healthy status from the load balancers, service discovery, and container health
      *        checks.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     *        <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be
+     *        ignored until it expires.
+     *        </p>
+     *        </note></li>
      *        </ul>
      *        <p>
      *        If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1566,7 +1608,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     * <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be ignored
+     * until it expires.
+     * </p>
+     * </note></li>
      * </ul>
      * <p>
      * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1596,7 +1644,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        All tasks are reporting a healthy status from the load balancers, service discovery, and container health
      *        checks.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
+     *        <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be
+     *        ignored until it expires.
+     *        </p>
+     *        </note></li>
      *        </ul>
      *        <p>
      *        If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.

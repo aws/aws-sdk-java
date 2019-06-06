@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * ListFindings request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFindings" target="_top">AWS API
  *      Documentation</a>
@@ -26,26 +25,44 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The ID of the detector that specifies the GuardDuty service whose findings you want to list. */
+    /**
+     * <p>
+     * The ID of the detector that specifies the GuardDuty service whose findings you want to list.
+     * </p>
+     */
     private String detectorId;
-    /** Represents the criteria used for querying findings. */
+    /**
+     * <p>
+     * Represents the criteria used for querying findings.
+     * </p>
+     */
     private FindingCriteria findingCriteria;
     /**
+     * <p>
+     * Represents the criteria used for sorting findings.
+     * </p>
+     */
+    private SortCriteria sortCriteria;
+    /**
+     * <p>
      * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
      * 50. The maximum value is 50.
+     * </p>
      */
     private Integer maxResults;
     /**
+     * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the ListFindings action. For subsequent calls to the action fill nextToken in the request with the value of
-     * nextToken from the previous response to continue listing data.
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
      */
     private String nextToken;
-    /** Represents the criteria used for sorting findings. */
-    private SortCriteria sortCriteria;
 
     /**
+     * <p>
      * The ID of the detector that specifies the GuardDuty service whose findings you want to list.
+     * </p>
      * 
      * @param detectorId
      *        The ID of the detector that specifies the GuardDuty service whose findings you want to list.
@@ -56,7 +73,9 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The ID of the detector that specifies the GuardDuty service whose findings you want to list.
+     * </p>
      * 
      * @return The ID of the detector that specifies the GuardDuty service whose findings you want to list.
      */
@@ -66,7 +85,9 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * The ID of the detector that specifies the GuardDuty service whose findings you want to list.
+     * </p>
      * 
      * @param detectorId
      *        The ID of the detector that specifies the GuardDuty service whose findings you want to list.
@@ -79,7 +100,9 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Represents the criteria used for querying findings.
+     * </p>
      * 
      * @param findingCriteria
      *        Represents the criteria used for querying findings.
@@ -90,7 +113,9 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Represents the criteria used for querying findings.
+     * </p>
      * 
      * @return Represents the criteria used for querying findings.
      */
@@ -100,7 +125,9 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * Represents the criteria used for querying findings.
+     * </p>
      * 
      * @param findingCriteria
      *        Represents the criteria used for querying findings.
@@ -113,8 +140,50 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Represents the criteria used for sorting findings.
+     * </p>
+     * 
+     * @param sortCriteria
+     *        Represents the criteria used for sorting findings.
+     */
+
+    public void setSortCriteria(SortCriteria sortCriteria) {
+        this.sortCriteria = sortCriteria;
+    }
+
+    /**
+     * <p>
+     * Represents the criteria used for sorting findings.
+     * </p>
+     * 
+     * @return Represents the criteria used for sorting findings.
+     */
+
+    public SortCriteria getSortCriteria() {
+        return this.sortCriteria;
+    }
+
+    /**
+     * <p>
+     * Represents the criteria used for sorting findings.
+     * </p>
+     * 
+     * @param sortCriteria
+     *        Represents the criteria used for sorting findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListFindingsRequest withSortCriteria(SortCriteria sortCriteria) {
+        setSortCriteria(sortCriteria);
+        return this;
+    }
+
+    /**
+     * <p>
      * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
      * 50. The maximum value is 50.
+     * </p>
      * 
      * @param maxResults
      *        You can use this parameter to indicate the maximum number of items you want in the response. The default
@@ -126,8 +195,10 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
      * 50. The maximum value is 50.
+     * </p>
      * 
      * @return You can use this parameter to indicate the maximum number of items you want in the response. The default
      *         value is 50. The maximum value is 50.
@@ -138,8 +209,10 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
      * 50. The maximum value is 50.
+     * </p>
      * 
      * @param maxResults
      *        You can use this parameter to indicate the maximum number of items you want in the response. The default
@@ -153,14 +226,16 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the ListFindings action. For subsequent calls to the action fill nextToken in the request with the value of
-     * nextToken from the previous response to continue listing data.
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *        call to the ListFindings action. For subsequent calls to the action fill nextToken in the request with the
-     *        value of nextToken from the previous response to continue listing data.
+     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        of NextToken from the previous response to continue listing data.
      */
 
     public void setNextToken(String nextToken) {
@@ -168,13 +243,15 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the ListFindings action. For subsequent calls to the action fill nextToken in the request with the value of
-     * nextToken from the previous response to continue listing data.
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
      * 
      * @return You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *         call to the ListFindings action. For subsequent calls to the action fill nextToken in the request with
-     *         the value of nextToken from the previous response to continue listing data.
+     *         call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *         of NextToken from the previous response to continue listing data.
      */
 
     public String getNextToken() {
@@ -182,53 +259,21 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the ListFindings action. For subsequent calls to the action fill nextToken in the request with the value of
-     * nextToken from the previous response to continue listing data.
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *        call to the ListFindings action. For subsequent calls to the action fill nextToken in the request with the
-     *        value of nextToken from the previous response to continue listing data.
+     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        of NextToken from the previous response to continue listing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListFindingsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
-        return this;
-    }
-
-    /**
-     * Represents the criteria used for sorting findings.
-     * 
-     * @param sortCriteria
-     *        Represents the criteria used for sorting findings.
-     */
-
-    public void setSortCriteria(SortCriteria sortCriteria) {
-        this.sortCriteria = sortCriteria;
-    }
-
-    /**
-     * Represents the criteria used for sorting findings.
-     * 
-     * @return Represents the criteria used for sorting findings.
-     */
-
-    public SortCriteria getSortCriteria() {
-        return this.sortCriteria;
-    }
-
-    /**
-     * Represents the criteria used for sorting findings.
-     * 
-     * @param sortCriteria
-     *        Represents the criteria used for sorting findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListFindingsRequest withSortCriteria(SortCriteria sortCriteria) {
-        setSortCriteria(sortCriteria);
         return this;
     }
 
@@ -248,12 +293,12 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("DetectorId: ").append(getDetectorId()).append(",");
         if (getFindingCriteria() != null)
             sb.append("FindingCriteria: ").append(getFindingCriteria()).append(",");
+        if (getSortCriteria() != null)
+            sb.append("SortCriteria: ").append(getSortCriteria()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getSortCriteria() != null)
-            sb.append("SortCriteria: ").append(getSortCriteria());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -276,6 +321,10 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getFindingCriteria() != null && other.getFindingCriteria().equals(this.getFindingCriteria()) == false)
             return false;
+        if (other.getSortCriteria() == null ^ this.getSortCriteria() == null)
+            return false;
+        if (other.getSortCriteria() != null && other.getSortCriteria().equals(this.getSortCriteria()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -283,10 +332,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
-        if (other.getSortCriteria() == null ^ this.getSortCriteria() == null)
-            return false;
-        if (other.getSortCriteria() != null && other.getSortCriteria().equals(this.getSortCriteria()) == false)
             return false;
         return true;
     }
@@ -298,9 +343,9 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
         hashCode = prime * hashCode + ((getFindingCriteria() == null) ? 0 : getFindingCriteria().hashCode());
+        hashCode = prime * hashCode + ((getSortCriteria() == null) ? 0 : getSortCriteria().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getSortCriteria() == null) ? 0 : getSortCriteria().hashCode());
         return hashCode;
     }
 

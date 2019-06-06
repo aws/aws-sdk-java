@@ -58,7 +58,7 @@ import com.amazonaws.services.ecs.model.transform.*;
  * infrastructure that is managed by Amazon ECS by launching your services or tasks using the Fargate launch type. For
  * more control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you
  * manage by using the EC2 launch type. For more information about launch types, see <a
- * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>.
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>.
  * </p>
  * <p>
  * Amazon ECS lets you launch and stop container-based applications with simple API calls, allows you to get the state
@@ -369,7 +369,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * your account so that required resources in other AWS services can be managed on your behalf. However, if the IAM
      * user that makes the call does not have permissions to create the service-linked role, it is not created. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </note>
@@ -626,7 +626,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <p>
      * Create a task set in the specified cluster and service. This is used when a service uses the
      * <code>EXTERNAL</code> deployment controller type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
      * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -705,9 +705,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
-     * Modifies the ARN and resource ID format of a resource for a specified IAM user, IAM role, or the root user for an
-     * account. You can specify whether the new ARN and resource ID format are disabled for new resources that are
-     * created.
+     * Disables an account setting for a specified IAM user, IAM role, or the root user for an account.
      * </p>
      * 
      * @param deleteAccountSettingRequest
@@ -992,7 +990,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <p>
      * Deletes a specified task set within a service. This is used when a service uses the <code>EXTERNAL</code>
      * deployment controller type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
      * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -1500,7 +1498,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <p>
      * Describes the task sets in the specified cluster and service. This is used when a service uses the
      * <code>EXTERNAL</code> deployment controller type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
      * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -1708,7 +1706,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
-     * Lists the account settings for an Amazon ECS resource for a specified principal.
+     * Lists the account settings for a specified principal.
      * </p>
      * 
      * @param listAccountSettingsRequest
@@ -2323,14 +2321,27 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
-     * Modifies the ARN and resource ID format of a resource type for a specified IAM user, IAM role, or the root user
-     * for an account. If the account setting for the root user is changed, it sets the default setting for all of the
-     * IAM users and roles for which no individual account setting has been set. The opt-in and opt-out account setting
-     * can be set for each Amazon ECS resource separately. The ARN and resource ID format of a resource will be defined
-     * by the opt-in status of the IAM user or role that created the resource. Enabling this setting is required to use
-     * new Amazon ECS features such as resource tagging. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon Resource Names
-     * (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * Modifies an account setting. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account Settings</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
+     * <code>containerInstanceLongArnFormat</code> are specified, the ARN and resource ID format of the resource type
+     * for a specified IAM user, IAM role, or the root user for an account is changed. If you change the account setting
+     * for the root user, the default settings for all of the IAM users and roles for which no individual account
+     * setting has been specified are reset. The opt-in and opt-out account setting can be specified for each Amazon ECS
+     * resource separately. The ARN and resource ID format of a resource will be defined by the opt-in status of the IAM
+     * user or role that created the resource. You must enable this setting to use Amazon ECS features such as resource
+     * tagging.
+     * </p>
+     * <p>
+     * When <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for any new container
+     * instances that support the feature is changed. If <code>awsvpcTrunking</code> is enabled, any new container
+     * instances that support the feature are launched have the increased ENI limits available to them. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic Network
+     * Interface Trunking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param putAccountSettingRequest
@@ -2391,9 +2402,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
-     * Modifies the ARN and resource ID format of a resource type for all IAM users on an account for which no
-     * individual account setting has been set. Enabling this setting is required to use new Amazon ECS features such as
-     * resource tagging.
+     * Modifies an account setting for all IAM users on an account for whom no individual account setting has been
+     * specified.
      * </p>
      * 
      * @param putAccountSettingDefaultRequest
@@ -2612,8 +2622,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * reference. If you specify the <code>awsvpc</code> network mode, the task is allocated an elastic network
      * interface, and you must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the
      * task definition. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param registerTaskDefinitionRequest
@@ -2922,6 +2932,76 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
             HttpResponseHandler<AmazonWebServiceResponse<StopTaskResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.
+     * </p>
+     * </note>
+     * <p>
+     * Sent to acknowledge that an attachment changed states.
+     * </p>
+     * 
+     * @param submitAttachmentStateChangesRequest
+     * @return Result of the SubmitAttachmentStateChanges operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws AccessDeniedException
+     *         You do not have authorization to perform the requested action.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.SubmitAttachmentStateChanges
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitAttachmentStateChanges"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SubmitAttachmentStateChangesResult submitAttachmentStateChanges(SubmitAttachmentStateChangesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSubmitAttachmentStateChanges(request);
+    }
+
+    @SdkInternalApi
+    final SubmitAttachmentStateChangesResult executeSubmitAttachmentStateChanges(SubmitAttachmentStateChangesRequest submitAttachmentStateChangesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(submitAttachmentStateChangesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SubmitAttachmentStateChangesRequest> request = null;
+        Response<SubmitAttachmentStateChangesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SubmitAttachmentStateChangesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(submitAttachmentStateChangesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubmitAttachmentStateChanges");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SubmitAttachmentStateChangesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SubmitAttachmentStateChangesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3299,9 +3379,16 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * Modifies the status of an Amazon ECS container instance.
      * </p>
      * <p>
-     * You can change the status of a container instance to <code>DRAINING</code> to manually remove an instance from a
-     * cluster, for example to perform system updates, update the Docker daemon, or scale down the cluster size.
+     * Once a container instance has reached an <code>ACTIVE</code> state, you can change the status of a container
+     * instance to <code>DRAINING</code> to manually remove an instance from a cluster, for example to perform system
+     * updates, update the Docker daemon, or scale down the cluster size.
      * </p>
+     * <important>
+     * <p>
+     * A container instance cannot be changed to <code>DRAINING</code> until it has reached an <code>ACTIVE</code>
+     * status. If the instance is in any other status, an error will be received.
+     * </p>
+     * </important>
      * <p>
      * When you set a container instance to <code>DRAINING</code>, Amazon ECS prevents new tasks from being scheduled
      * for placement on the container instance and replacement service tasks are started on other container instances in
@@ -3345,8 +3432,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * using <a>ListTasks</a>.
      * </p>
      * <p>
-     * When you set a container instance to <code>ACTIVE</code>, the Amazon ECS scheduler can begin scheduling tasks on
-     * the instance again.
+     * When a container instance has been drained, you can set a container instance to <code>ACTIVE</code> status and
+     * once it has reached that status the Amazon ECS scheduler can begin scheduling tasks on the instance again.
      * </p>
      * 
      * @param updateContainerInstancesStateRequest
@@ -3608,7 +3695,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * Modifies which task set in a service is the primary task set. Any parameters that are updated on the primary task
      * set in a service will transition to the service. This is used when a service uses the <code>EXTERNAL</code>
      * deployment controller type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
      * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -3692,7 +3779,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <p>
      * Modifies a task set. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
      * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 

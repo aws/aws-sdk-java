@@ -27,7 +27,7 @@ public class ListTargetsForPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The unique identifier (ID) of the policy for which you want to know its attachments.
+     * The unique identifier (ID) of the policy whose attachments you want to know.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by
@@ -58,7 +58,7 @@ public class ListTargetsForPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The unique identifier (ID) of the policy for which you want to know its attachments.
+     * The unique identifier (ID) of the policy whose attachments you want to know.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by
@@ -66,7 +66,7 @@ public class ListTargetsForPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param policyId
-     *        The unique identifier (ID) of the policy for which you want to know its attachments.</p>
+     *        The unique identifier (ID) of the policy whose attachments you want to know.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-"
      *        followed by from 8 to 128 lower-case letters or digits.
@@ -78,14 +78,14 @@ public class ListTargetsForPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The unique identifier (ID) of the policy for which you want to know its attachments.
+     * The unique identifier (ID) of the policy whose attachments you want to know.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by
      * from 8 to 128 lower-case letters or digits.
      * </p>
      * 
-     * @return The unique identifier (ID) of the policy for which you want to know its attachments.</p>
+     * @return The unique identifier (ID) of the policy whose attachments you want to know.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-"
      *         followed by from 8 to 128 lower-case letters or digits.
@@ -97,7 +97,7 @@ public class ListTargetsForPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The unique identifier (ID) of the policy for which you want to know its attachments.
+     * The unique identifier (ID) of the policy whose attachments you want to know.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by
@@ -105,7 +105,7 @@ public class ListTargetsForPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param policyId
-     *        The unique identifier (ID) of the policy for which you want to know its attachments.</p>
+     *        The unique identifier (ID) of the policy whose attachments you want to know.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-"
      *        followed by from 8 to 128 lower-case letters or digits.

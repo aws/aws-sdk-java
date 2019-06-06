@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * The provided policy document doesn't meet the requirements of the specified policy type. For example, the syntax
  * might be incorrect. For details about service control policy syntax, see <a
  * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
- * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+ * Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

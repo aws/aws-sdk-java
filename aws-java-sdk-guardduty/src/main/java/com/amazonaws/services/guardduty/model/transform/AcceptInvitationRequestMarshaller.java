@@ -29,10 +29,10 @@ public class AcceptInvitationRequestMarshaller {
 
     private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("detectorId").build();
-    private static final MarshallingInfo<String> INVITATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("invitationId").build();
     private static final MarshallingInfo<String> MASTERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("masterId").build();
+    private static final MarshallingInfo<String> INVITATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("invitationId").build();
 
     private static final AcceptInvitationRequestMarshaller instance = new AcceptInvitationRequestMarshaller();
 
@@ -51,8 +51,8 @@ public class AcceptInvitationRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(acceptInvitationRequest.getDetectorId(), DETECTORID_BINDING);
-            protocolMarshaller.marshall(acceptInvitationRequest.getInvitationId(), INVITATIONID_BINDING);
             protocolMarshaller.marshall(acceptInvitationRequest.getMasterId(), MASTERID_BINDING);
+            protocolMarshaller.marshall(acceptInvitationRequest.getInvitationId(), INVITATIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

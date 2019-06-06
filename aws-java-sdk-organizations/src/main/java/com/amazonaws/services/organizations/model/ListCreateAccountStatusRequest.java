@@ -27,7 +27,7 @@ public class ListCreateAccountStatusRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of one or more states that you want included in the response. If this parameter is not present, then all
+     * A list of one or more states that you want included in the response. If this parameter isn't present, all
      * requests are included in the response.
      * </p>
      */
@@ -55,12 +55,12 @@ public class ListCreateAccountStatusRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of one or more states that you want included in the response. If this parameter is not present, then all
+     * A list of one or more states that you want included in the response. If this parameter isn't present, all
      * requests are included in the response.
      * </p>
      * 
-     * @return A list of one or more states that you want included in the response. If this parameter is not present,
-     *         then all requests are included in the response.
+     * @return A list of one or more states that you want included in the response. If this parameter isn't present, all
+     *         requests are included in the response.
      * @see CreateAccountState
      */
 
@@ -70,13 +70,13 @@ public class ListCreateAccountStatusRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of one or more states that you want included in the response. If this parameter is not present, then all
+     * A list of one or more states that you want included in the response. If this parameter isn't present, all
      * requests are included in the response.
      * </p>
      * 
      * @param states
-     *        A list of one or more states that you want included in the response. If this parameter is not present,
-     *        then all requests are included in the response.
+     *        A list of one or more states that you want included in the response. If this parameter isn't present, all
+     *        requests are included in the response.
      * @see CreateAccountState
      */
 
@@ -91,7 +91,7 @@ public class ListCreateAccountStatusRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of one or more states that you want included in the response. If this parameter is not present, then all
+     * A list of one or more states that you want included in the response. If this parameter isn't present, all
      * requests are included in the response.
      * </p>
      * <p>
@@ -101,8 +101,8 @@ public class ListCreateAccountStatusRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param states
-     *        A list of one or more states that you want included in the response. If this parameter is not present,
-     *        then all requests are included in the response.
+     *        A list of one or more states that you want included in the response. If this parameter isn't present, all
+     *        requests are included in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CreateAccountState
      */
@@ -119,13 +119,13 @@ public class ListCreateAccountStatusRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of one or more states that you want included in the response. If this parameter is not present, then all
+     * A list of one or more states that you want included in the response. If this parameter isn't present, all
      * requests are included in the response.
      * </p>
      * 
      * @param states
-     *        A list of one or more states that you want included in the response. If this parameter is not present,
-     *        then all requests are included in the response.
+     *        A list of one or more states that you want included in the response. If this parameter isn't present, all
+     *        requests are included in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CreateAccountState
      */
@@ -137,13 +137,13 @@ public class ListCreateAccountStatusRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of one or more states that you want included in the response. If this parameter is not present, then all
+     * A list of one or more states that you want included in the response. If this parameter isn't present, all
      * requests are included in the response.
      * </p>
      * 
      * @param states
-     *        A list of one or more states that you want included in the response. If this parameter is not present,
-     *        then all requests are included in the response.
+     *        A list of one or more states that you want included in the response. If this parameter isn't present, all
+     *        requests are included in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CreateAccountState
      */

@@ -30,10 +30,10 @@ public class GetFindingsStatisticsRequestMarshaller {
 
     private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("detectorId").build();
-    private static final MarshallingInfo<StructuredPojo> FINDINGCRITERIA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingCriteria").build();
     private static final MarshallingInfo<List> FINDINGSTATISTICTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingStatisticTypes").build();
+    private static final MarshallingInfo<StructuredPojo> FINDINGCRITERIA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingCriteria").build();
 
     private static final GetFindingsStatisticsRequestMarshaller instance = new GetFindingsStatisticsRequestMarshaller();
 
@@ -52,8 +52,8 @@ public class GetFindingsStatisticsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getFindingsStatisticsRequest.getDetectorId(), DETECTORID_BINDING);
-            protocolMarshaller.marshall(getFindingsStatisticsRequest.getFindingCriteria(), FINDINGCRITERIA_BINDING);
             protocolMarshaller.marshall(getFindingsStatisticsRequest.getFindingStatisticTypes(), FINDINGSTATISTICTYPES_BINDING);
+            protocolMarshaller.marshall(getFindingsStatisticsRequest.getFindingCriteria(), FINDINGCRITERIA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

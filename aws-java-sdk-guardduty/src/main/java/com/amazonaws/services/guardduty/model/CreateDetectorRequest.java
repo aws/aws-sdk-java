@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * CreateDetector request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateDetector" target="_top">AWS API
  *      Documentation</a>
@@ -26,49 +25,29 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The idempotency token for the create request. */
-    private String clientToken;
-    /** A boolean value that specifies whether the detector is to be enabled. */
+    /**
+     * <p>
+     * A boolean value that specifies whether the detector is to be enabled.
+     * </p>
+     */
     private Boolean enable;
-    /** A enum value that specifies how frequently customer got Finding updates published. */
+    /**
+     * <p>
+     * The idempotency token for the create request.
+     * </p>
+     */
+    private String clientToken;
+    /**
+     * <p>
+     * A enum value that specifies how frequently customer got Finding updates published.
+     * </p>
+     */
     private String findingPublishingFrequency;
 
     /**
-     * The idempotency token for the create request.
-     * 
-     * @param clientToken
-     *        The idempotency token for the create request.
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * The idempotency token for the create request.
-     * 
-     * @return The idempotency token for the create request.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * The idempotency token for the create request.
-     * 
-     * @param clientToken
-     *        The idempotency token for the create request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateDetectorRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
-        return this;
-    }
-
-    /**
+     * <p>
      * A boolean value that specifies whether the detector is to be enabled.
+     * </p>
      * 
      * @param enable
      *        A boolean value that specifies whether the detector is to be enabled.
@@ -79,7 +58,9 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * A boolean value that specifies whether the detector is to be enabled.
+     * </p>
      * 
      * @return A boolean value that specifies whether the detector is to be enabled.
      */
@@ -89,7 +70,9 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * A boolean value that specifies whether the detector is to be enabled.
+     * </p>
      * 
      * @param enable
      *        A boolean value that specifies whether the detector is to be enabled.
@@ -102,7 +85,9 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * A boolean value that specifies whether the detector is to be enabled.
+     * </p>
      * 
      * @return A boolean value that specifies whether the detector is to be enabled.
      */
@@ -112,7 +97,49 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The idempotency token for the create request.
+     * </p>
+     * 
+     * @param clientToken
+     *        The idempotency token for the create request.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * The idempotency token for the create request.
+     * </p>
+     * 
+     * @return The idempotency token for the create request.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * The idempotency token for the create request.
+     * </p>
+     * 
+     * @param clientToken
+     *        The idempotency token for the create request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDetectorRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
      * A enum value that specifies how frequently customer got Finding updates published.
+     * </p>
      * 
      * @param findingPublishingFrequency
      *        A enum value that specifies how frequently customer got Finding updates published.
@@ -124,7 +151,9 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * A enum value that specifies how frequently customer got Finding updates published.
+     * </p>
      * 
      * @return A enum value that specifies how frequently customer got Finding updates published.
      * @see FindingPublishingFrequency
@@ -135,7 +164,9 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * A enum value that specifies how frequently customer got Finding updates published.
+     * </p>
      * 
      * @param findingPublishingFrequency
      *        A enum value that specifies how frequently customer got Finding updates published.
@@ -149,7 +180,9 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * A enum value that specifies how frequently customer got Finding updates published.
+     * </p>
      * 
      * @param findingPublishingFrequency
      *        A enum value that specifies how frequently customer got Finding updates published.
@@ -174,10 +207,10 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getEnable() != null)
             sb.append("Enable: ").append(getEnable()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getFindingPublishingFrequency() != null)
             sb.append("FindingPublishingFrequency: ").append(getFindingPublishingFrequency());
         sb.append("}");
@@ -194,13 +227,13 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof CreateDetectorRequest == false)
             return false;
         CreateDetectorRequest other = (CreateDetectorRequest) obj;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
         if (other.getEnable() == null ^ this.getEnable() == null)
             return false;
         if (other.getEnable() != null && other.getEnable().equals(this.getEnable()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getFindingPublishingFrequency() == null ^ this.getFindingPublishingFrequency() == null)
             return false;
@@ -214,8 +247,8 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getEnable() == null) ? 0 : getEnable().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getFindingPublishingFrequency() == null) ? 0 : getFindingPublishingFrequency().hashCode());
         return hashCode;
     }

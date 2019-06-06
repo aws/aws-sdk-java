@@ -28,10 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateMembersRequestMarshaller {
 
-    private static final MarshallingInfo<List> ACCOUNTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accountDetails").build();
     private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("detectorId").build();
+    private static final MarshallingInfo<List> ACCOUNTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accountDetails").build();
 
     private static final CreateMembersRequestMarshaller instance = new CreateMembersRequestMarshaller();
 
@@ -49,8 +49,8 @@ public class CreateMembersRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createMembersRequest.getAccountDetails(), ACCOUNTDETAILS_BINDING);
             protocolMarshaller.marshall(createMembersRequest.getDetectorId(), DETECTORID_BINDING);
+            protocolMarshaller.marshall(createMembersRequest.getAccountDetails(), ACCOUNTDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

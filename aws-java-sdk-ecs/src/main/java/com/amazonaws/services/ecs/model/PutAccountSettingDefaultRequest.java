@@ -27,10 +27,11 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The resource type to enable the new format for. If <code>serviceLongArnFormat</code> is specified, the ARN for
-     * your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
-     * your Amazon ECS tasks are affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and
-     * resource ID for your Amazon ECS container instances are affected.
+     * The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the
+     * ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and
+     * resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified,
+     * the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is
+     * specified, the ENI limit for your Amazon ECS container instances is affected.
      * </p>
      */
     private String name;
@@ -44,17 +45,20 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The resource type to enable the new format for. If <code>serviceLongArnFormat</code> is specified, the ARN for
-     * your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
-     * your Amazon ECS tasks are affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and
-     * resource ID for your Amazon ECS container instances are affected.
+     * The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the
+     * ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and
+     * resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified,
+     * the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is
+     * specified, the ENI limit for your Amazon ECS container instances is affected.
      * </p>
      * 
      * @param name
-     *        The resource type to enable the new format for. If <code>serviceLongArnFormat</code> is specified, the ARN
-     *        for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and
-     *        resource ID for your Amazon ECS tasks are affected. If <code>containerInstanceLongArnFormat</code> is
-     *        specified, the ARN and resource ID for your Amazon ECS container instances are affected.
+     *        The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is
+     *        specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is
+     *        specified, the ARN and resource ID for your Amazon ECS tasks is affected. If
+     *        <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
+     *        container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
+     *        Amazon ECS container instances is affected.
      * @see SettingName
      */
 
@@ -64,16 +68,19 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The resource type to enable the new format for. If <code>serviceLongArnFormat</code> is specified, the ARN for
-     * your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
-     * your Amazon ECS tasks are affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and
-     * resource ID for your Amazon ECS container instances are affected.
+     * The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the
+     * ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and
+     * resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified,
+     * the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is
+     * specified, the ENI limit for your Amazon ECS container instances is affected.
      * </p>
      * 
-     * @return The resource type to enable the new format for. If <code>serviceLongArnFormat</code> is specified, the
-     *         ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and
-     *         resource ID for your Amazon ECS tasks are affected. If <code>containerInstanceLongArnFormat</code> is
-     *         specified, the ARN and resource ID for your Amazon ECS container instances are affected.
+     * @return The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is
+     *         specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is
+     *         specified, the ARN and resource ID for your Amazon ECS tasks is affected. If
+     *         <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
+     *         container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
+     *         Amazon ECS container instances is affected.
      * @see SettingName
      */
 
@@ -83,17 +90,20 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The resource type to enable the new format for. If <code>serviceLongArnFormat</code> is specified, the ARN for
-     * your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
-     * your Amazon ECS tasks are affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and
-     * resource ID for your Amazon ECS container instances are affected.
+     * The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the
+     * ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and
+     * resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified,
+     * the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is
+     * specified, the ENI limit for your Amazon ECS container instances is affected.
      * </p>
      * 
      * @param name
-     *        The resource type to enable the new format for. If <code>serviceLongArnFormat</code> is specified, the ARN
-     *        for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and
-     *        resource ID for your Amazon ECS tasks are affected. If <code>containerInstanceLongArnFormat</code> is
-     *        specified, the ARN and resource ID for your Amazon ECS container instances are affected.
+     *        The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is
+     *        specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is
+     *        specified, the ARN and resource ID for your Amazon ECS tasks is affected. If
+     *        <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
+     *        container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
+     *        Amazon ECS container instances is affected.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SettingName
      */
@@ -105,17 +115,20 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The resource type to enable the new format for. If <code>serviceLongArnFormat</code> is specified, the ARN for
-     * your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for
-     * your Amazon ECS tasks are affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and
-     * resource ID for your Amazon ECS container instances are affected.
+     * The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the
+     * ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and
+     * resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified,
+     * the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is
+     * specified, the ENI limit for your Amazon ECS container instances is affected.
      * </p>
      * 
      * @param name
-     *        The resource type to enable the new format for. If <code>serviceLongArnFormat</code> is specified, the ARN
-     *        for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and
-     *        resource ID for your Amazon ECS tasks are affected. If <code>containerInstanceLongArnFormat</code> is
-     *        specified, the ARN and resource ID for your Amazon ECS container instances are affected.
+     *        The resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is
+     *        specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is
+     *        specified, the ARN and resource ID for your Amazon ECS tasks is affected. If
+     *        <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
+     *        container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
+     *        Amazon ECS container instances is affected.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SettingName
      */

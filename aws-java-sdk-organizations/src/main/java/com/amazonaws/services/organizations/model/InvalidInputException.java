@@ -52,13 +52,13 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a party.
+ * INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from the response to a previous call
+ * of the operation.
  * </p>
  * </li>
  * <li>
  * <p>
- * INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from the response to a previous call
- * of the operation.
+ * INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a party.
  * </p>
  * </li>
  * <li>
@@ -85,6 +85,12 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * INVALID_SYSTEM_TAGS_PARAMETER: You specified a tag key that is a system tag. You can’t add, edit, or delete system
+ * tag keys because they're reserved for AWS use. System tags don’t count against your tags per resource limit.
  * </p>
  * </li>
  * <li>

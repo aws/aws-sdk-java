@@ -269,6 +269,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
     }
 
     @Override
+    public PutConfigurationSetDeliveryOptionsResult putConfigurationSetDeliveryOptions(PutConfigurationSetDeliveryOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutIdentityPolicyResult putIdentityPolicy(PutIdentityPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

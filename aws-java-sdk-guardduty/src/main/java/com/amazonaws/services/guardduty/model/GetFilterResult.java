@@ -23,22 +23,122 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Specifies the action that is to be applied to the findings that match the filter. */
-    private String action;
-    /** The description of the filter. */
-    private String description;
-    /** Represents the criteria to be used in the filter for querying findings. */
-    private FindingCriteria findingCriteria;
-    /** The name of the filter. */
+    /**
+     * <p>
+     * The name of the filter.
+     * </p>
+     */
     private String name;
     /**
+     * <p>
+     * The description of the filter.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * Specifies the action that is to be applied to the findings that match the filter.
+     * </p>
+     */
+    private String action;
+    /**
+     * <p>
      * Specifies the position of the filter in the list of current filters. Also specifies the order in which this
      * filter is applied to the findings.
+     * </p>
      */
     private Integer rank;
+    /**
+     * <p>
+     * Represents the criteria to be used in the filter for querying findings.
+     * </p>
+     */
+    private FindingCriteria findingCriteria;
 
     /**
+     * <p>
+     * The name of the filter.
+     * </p>
+     * 
+     * @param name
+     *        The name of the filter.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the filter.
+     * </p>
+     * 
+     * @return The name of the filter.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the filter.
+     * </p>
+     * 
+     * @param name
+     *        The name of the filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFilterResult withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description of the filter.
+     * </p>
+     * 
+     * @param description
+     *        The description of the filter.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The description of the filter.
+     * </p>
+     * 
+     * @return The description of the filter.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description of the filter.
+     * </p>
+     * 
+     * @param description
+     *        The description of the filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFilterResult withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the action that is to be applied to the findings that match the filter.
+     * </p>
      * 
      * @param action
      *        Specifies the action that is to be applied to the findings that match the filter.
@@ -50,7 +150,9 @@ public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
      * Specifies the action that is to be applied to the findings that match the filter.
+     * </p>
      * 
      * @return Specifies the action that is to be applied to the findings that match the filter.
      * @see FilterAction
@@ -61,7 +163,9 @@ public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
      * Specifies the action that is to be applied to the findings that match the filter.
+     * </p>
      * 
      * @param action
      *        Specifies the action that is to be applied to the findings that match the filter.
@@ -75,7 +179,9 @@ public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
      * Specifies the action that is to be applied to the findings that match the filter.
+     * </p>
      * 
      * @param action
      *        Specifies the action that is to be applied to the findings that match the filter.
@@ -89,110 +195,10 @@ public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * The description of the filter.
-     * 
-     * @param description
-     *        The description of the filter.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * The description of the filter.
-     * 
-     * @return The description of the filter.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * The description of the filter.
-     * 
-     * @param description
-     *        The description of the filter.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetFilterResult withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    /**
-     * Represents the criteria to be used in the filter for querying findings.
-     * 
-     * @param findingCriteria
-     *        Represents the criteria to be used in the filter for querying findings.
-     */
-
-    public void setFindingCriteria(FindingCriteria findingCriteria) {
-        this.findingCriteria = findingCriteria;
-    }
-
-    /**
-     * Represents the criteria to be used in the filter for querying findings.
-     * 
-     * @return Represents the criteria to be used in the filter for querying findings.
-     */
-
-    public FindingCriteria getFindingCriteria() {
-        return this.findingCriteria;
-    }
-
-    /**
-     * Represents the criteria to be used in the filter for querying findings.
-     * 
-     * @param findingCriteria
-     *        Represents the criteria to be used in the filter for querying findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetFilterResult withFindingCriteria(FindingCriteria findingCriteria) {
-        setFindingCriteria(findingCriteria);
-        return this;
-    }
-
-    /**
-     * The name of the filter.
-     * 
-     * @param name
-     *        The name of the filter.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * The name of the filter.
-     * 
-     * @return The name of the filter.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * The name of the filter.
-     * 
-     * @param name
-     *        The name of the filter.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetFilterResult withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
+     * <p>
      * Specifies the position of the filter in the list of current filters. Also specifies the order in which this
      * filter is applied to the findings.
+     * </p>
      * 
      * @param rank
      *        Specifies the position of the filter in the list of current filters. Also specifies the order in which
@@ -204,8 +210,10 @@ public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
      * Specifies the position of the filter in the list of current filters. Also specifies the order in which this
      * filter is applied to the findings.
+     * </p>
      * 
      * @return Specifies the position of the filter in the list of current filters. Also specifies the order in which
      *         this filter is applied to the findings.
@@ -216,8 +224,10 @@ public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
      * Specifies the position of the filter in the list of current filters. Also specifies the order in which this
      * filter is applied to the findings.
+     * </p>
      * 
      * @param rank
      *        Specifies the position of the filter in the list of current filters. Also specifies the order in which
@@ -227,6 +237,46 @@ public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     public GetFilterResult withRank(Integer rank) {
         setRank(rank);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents the criteria to be used in the filter for querying findings.
+     * </p>
+     * 
+     * @param findingCriteria
+     *        Represents the criteria to be used in the filter for querying findings.
+     */
+
+    public void setFindingCriteria(FindingCriteria findingCriteria) {
+        this.findingCriteria = findingCriteria;
+    }
+
+    /**
+     * <p>
+     * Represents the criteria to be used in the filter for querying findings.
+     * </p>
+     * 
+     * @return Represents the criteria to be used in the filter for querying findings.
+     */
+
+    public FindingCriteria getFindingCriteria() {
+        return this.findingCriteria;
+    }
+
+    /**
+     * <p>
+     * Represents the criteria to be used in the filter for querying findings.
+     * </p>
+     * 
+     * @param findingCriteria
+     *        Represents the criteria to be used in the filter for querying findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFilterResult withFindingCriteria(FindingCriteria findingCriteria) {
+        setFindingCriteria(findingCriteria);
         return this;
     }
 
@@ -242,16 +292,16 @@ public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.am
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAction() != null)
-            sb.append("Action: ").append(getAction()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getFindingCriteria() != null)
-            sb.append("FindingCriteria: ").append(getFindingCriteria()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getAction() != null)
+            sb.append("Action: ").append(getAction()).append(",");
         if (getRank() != null)
-            sb.append("Rank: ").append(getRank());
+            sb.append("Rank: ").append(getRank()).append(",");
+        if (getFindingCriteria() != null)
+            sb.append("FindingCriteria: ").append(getFindingCriteria());
         sb.append("}");
         return sb.toString();
     }
@@ -266,25 +316,25 @@ public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (obj instanceof GetFilterResult == false)
             return false;
         GetFilterResult other = (GetFilterResult) obj;
-        if (other.getAction() == null ^ this.getAction() == null)
+        if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getFindingCriteria() == null ^ this.getFindingCriteria() == null)
+        if (other.getAction() == null ^ this.getAction() == null)
             return false;
-        if (other.getFindingCriteria() != null && other.getFindingCriteria().equals(this.getFindingCriteria()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+        if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
             return false;
         if (other.getRank() == null ^ this.getRank() == null)
             return false;
         if (other.getRank() != null && other.getRank().equals(this.getRank()) == false)
+            return false;
+        if (other.getFindingCriteria() == null ^ this.getFindingCriteria() == null)
+            return false;
+        if (other.getFindingCriteria() != null && other.getFindingCriteria().equals(this.getFindingCriteria()) == false)
             return false;
         return true;
     }
@@ -294,11 +344,11 @@ public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.am
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getFindingCriteria() == null) ? 0 : getFindingCriteria().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getRank() == null) ? 0 : getRank().hashCode());
+        hashCode = prime * hashCode + ((getFindingCriteria() == null) ? 0 : getFindingCriteria().hashCode());
         return hashCode;
     }
 

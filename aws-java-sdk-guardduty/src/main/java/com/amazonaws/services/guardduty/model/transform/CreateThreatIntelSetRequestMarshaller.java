@@ -29,19 +29,19 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateThreatIntelSetRequestMarshaller {
 
+    private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("detectorId").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("format").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("location").build();
     private static final MarshallingInfo<Boolean> ACTIVATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activate").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("detectorId").build();
-    private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("format").build();
-    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("location").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
 
     private static final CreateThreatIntelSetRequestMarshaller instance = new CreateThreatIntelSetRequestMarshaller();
 
@@ -59,12 +59,12 @@ public class CreateThreatIntelSetRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createThreatIntelSetRequest.getActivate(), ACTIVATE_BINDING);
-            protocolMarshaller.marshall(createThreatIntelSetRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createThreatIntelSetRequest.getDetectorId(), DETECTORID_BINDING);
+            protocolMarshaller.marshall(createThreatIntelSetRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createThreatIntelSetRequest.getFormat(), FORMAT_BINDING);
             protocolMarshaller.marshall(createThreatIntelSetRequest.getLocation(), LOCATION_BINDING);
-            protocolMarshaller.marshall(createThreatIntelSetRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createThreatIntelSetRequest.getActivate(), ACTIVATE_BINDING);
+            protocolMarshaller.marshall(createThreatIntelSetRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

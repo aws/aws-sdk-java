@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * StopMonitoringMembers request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers" target="_top">AWS
  *      API Documentation</a>
@@ -27,16 +26,67 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class StopMonitoringMembersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account that you want to stop from monitor members' findings.
+     * </p>
+     */
+    private String detectorId;
+    /**
+     * <p>
      * A list of account IDs of the GuardDuty member accounts whose findings you want the master account to stop
      * monitoring.
+     * </p>
      */
     private java.util.List<String> accountIds;
-    /** The unique ID of the detector of the GuardDuty account that you want to stop from monitor members' findings. */
-    private String detectorId;
 
     /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account that you want to stop from monitor members' findings.
+     * </p>
+     * 
+     * @param detectorId
+     *        The unique ID of the detector of the GuardDuty account that you want to stop from monitor members'
+     *        findings.
+     */
+
+    public void setDetectorId(String detectorId) {
+        this.detectorId = detectorId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account that you want to stop from monitor members' findings.
+     * </p>
+     * 
+     * @return The unique ID of the detector of the GuardDuty account that you want to stop from monitor members'
+     *         findings.
+     */
+
+    public String getDetectorId() {
+        return this.detectorId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account that you want to stop from monitor members' findings.
+     * </p>
+     * 
+     * @param detectorId
+     *        The unique ID of the detector of the GuardDuty account that you want to stop from monitor members'
+     *        findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StopMonitoringMembersRequest withDetectorId(String detectorId) {
+        setDetectorId(detectorId);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of account IDs of the GuardDuty member accounts whose findings you want the master account to stop
      * monitoring.
+     * </p>
      * 
      * @return A list of account IDs of the GuardDuty member accounts whose findings you want the master account to stop
      *         monitoring.
@@ -47,8 +97,10 @@ public class StopMonitoringMembersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
      * A list of account IDs of the GuardDuty member accounts whose findings you want the master account to stop
      * monitoring.
+     * </p>
      * 
      * @param accountIds
      *        A list of account IDs of the GuardDuty member accounts whose findings you want the master account to stop
@@ -65,8 +117,10 @@ public class StopMonitoringMembersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
      * A list of account IDs of the GuardDuty member accounts whose findings you want the master account to stop
      * monitoring.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAccountIds(java.util.Collection)} or {@link #withAccountIds(java.util.Collection)} if you want to
@@ -90,8 +144,10 @@ public class StopMonitoringMembersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
      * A list of account IDs of the GuardDuty member accounts whose findings you want the master account to stop
      * monitoring.
+     * </p>
      * 
      * @param accountIds
      *        A list of account IDs of the GuardDuty member accounts whose findings you want the master account to stop
@@ -101,43 +157,6 @@ public class StopMonitoringMembersRequest extends com.amazonaws.AmazonWebService
 
     public StopMonitoringMembersRequest withAccountIds(java.util.Collection<String> accountIds) {
         setAccountIds(accountIds);
-        return this;
-    }
-
-    /**
-     * The unique ID of the detector of the GuardDuty account that you want to stop from monitor members' findings.
-     * 
-     * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account that you want to stop from monitor members'
-     *        findings.
-     */
-
-    public void setDetectorId(String detectorId) {
-        this.detectorId = detectorId;
-    }
-
-    /**
-     * The unique ID of the detector of the GuardDuty account that you want to stop from monitor members' findings.
-     * 
-     * @return The unique ID of the detector of the GuardDuty account that you want to stop from monitor members'
-     *         findings.
-     */
-
-    public String getDetectorId() {
-        return this.detectorId;
-    }
-
-    /**
-     * The unique ID of the detector of the GuardDuty account that you want to stop from monitor members' findings.
-     * 
-     * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account that you want to stop from monitor members'
-     *        findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StopMonitoringMembersRequest withDetectorId(String detectorId) {
-        setDetectorId(detectorId);
         return this;
     }
 
@@ -153,10 +172,10 @@ public class StopMonitoringMembersRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAccountIds() != null)
-            sb.append("AccountIds: ").append(getAccountIds()).append(",");
         if (getDetectorId() != null)
-            sb.append("DetectorId: ").append(getDetectorId());
+            sb.append("DetectorId: ").append(getDetectorId()).append(",");
+        if (getAccountIds() != null)
+            sb.append("AccountIds: ").append(getAccountIds());
         sb.append("}");
         return sb.toString();
     }
@@ -171,13 +190,13 @@ public class StopMonitoringMembersRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof StopMonitoringMembersRequest == false)
             return false;
         StopMonitoringMembersRequest other = (StopMonitoringMembersRequest) obj;
-        if (other.getAccountIds() == null ^ this.getAccountIds() == null)
-            return false;
-        if (other.getAccountIds() != null && other.getAccountIds().equals(this.getAccountIds()) == false)
-            return false;
         if (other.getDetectorId() == null ^ this.getDetectorId() == null)
             return false;
         if (other.getDetectorId() != null && other.getDetectorId().equals(this.getDetectorId()) == false)
+            return false;
+        if (other.getAccountIds() == null ^ this.getAccountIds() == null)
+            return false;
+        if (other.getAccountIds() != null && other.getAccountIds().equals(this.getAccountIds()) == false)
             return false;
         return true;
     }
@@ -187,8 +206,8 @@ public class StopMonitoringMembersRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
+        hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
         return hashCode;
     }
 

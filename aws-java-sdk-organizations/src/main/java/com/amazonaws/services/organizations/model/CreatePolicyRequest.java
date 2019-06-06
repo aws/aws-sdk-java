@@ -32,7 +32,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in attached accounts
      * can delegate to their users, groups, and roles. For more information about the SCP syntax, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+     * Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      */
     private String content;
@@ -71,7 +71,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in attached accounts
      * can delegate to their users, groups, and roles. For more information about the SCP syntax, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+     * Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * 
      * @param content
@@ -81,7 +81,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        attached accounts can delegate to their users, groups, and roles. For more information about the SCP
      *        syntax, see <a
      *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     *        Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+     *        Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
      */
 
     public void setContent(String content) {
@@ -95,7 +95,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in attached accounts
      * can delegate to their users, groups, and roles. For more information about the SCP syntax, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+     * Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * 
      * @return The policy content to add to the new policy. For example, if you create a <a
@@ -104,7 +104,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         attached accounts can delegate to their users, groups, and roles. For more information about the SCP
      *         syntax, see <a
      *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     *         Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+     *         Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
      */
 
     public String getContent() {
@@ -118,7 +118,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in attached accounts
      * can delegate to their users, groups, and roles. For more information about the SCP syntax, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+     * Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * 
      * @param content
@@ -128,7 +128,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        attached accounts can delegate to their users, groups, and roles. For more information about the SCP
      *        syntax, see <a
      *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     *        Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+     *        Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

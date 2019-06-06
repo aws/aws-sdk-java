@@ -56,7 +56,7 @@ public class UpdatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the
      * syntax for the policy's type. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+     * Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      */
     private String content;
@@ -228,14 +228,14 @@ public class UpdatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the
      * syntax for the policy's type. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+     * Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * 
      * @param content
      *        If provided, the new content for the policy. The text must be correctly formatted JSON that complies with
      *        the syntax for the policy's type. For more information, see <a
      *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     *        Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+     *        Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
      */
 
     public void setContent(String content) {
@@ -247,13 +247,13 @@ public class UpdatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the
      * syntax for the policy's type. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+     * Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * 
      * @return If provided, the new content for the policy. The text must be correctly formatted JSON that complies with
      *         the syntax for the policy's type. For more information, see <a
      *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     *         Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+     *         Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
      */
 
     public String getContent() {
@@ -265,14 +265,14 @@ public class UpdatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the
      * syntax for the policy's type. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+     * Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * 
      * @param content
      *        If provided, the new content for the policy. The text must be correctly formatted JSON that complies with
      *        the syntax for the policy's type. For more information, see <a
      *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     *        Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+     *        Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

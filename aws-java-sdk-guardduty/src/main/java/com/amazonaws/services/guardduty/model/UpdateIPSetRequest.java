@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * UpdateIPSet request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateIPSet" target="_top">AWS API
  *      Documentation</a>
@@ -26,66 +25,42 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The updated boolean value that specifies whether the IPSet is active or not. */
-    private Boolean activate;
-    /** The detectorID that specifies the GuardDuty service whose IPSet you want to update. */
+    /**
+     * <p>
+     * The detectorID that specifies the GuardDuty service whose IPSet you want to update.
+     * </p>
+     */
     private String detectorId;
-    /** The unique ID that specifies the IPSet that you want to update. */
+    /**
+     * <p>
+     * The unique ID that specifies the IPSet that you want to update.
+     * </p>
+     */
     private String ipSetId;
     /**
+     * <p>
+     * The unique ID that specifies the IPSet that you want to update.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
      * The updated URI of the file that contains the IPSet. For example
      * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+     * </p>
      */
     private String location;
-    /** The unique ID that specifies the IPSet that you want to update. */
-    private String name;
-
     /**
+     * <p>
      * The updated boolean value that specifies whether the IPSet is active or not.
-     * 
-     * @param activate
-     *        The updated boolean value that specifies whether the IPSet is active or not.
+     * </p>
      */
-
-    public void setActivate(Boolean activate) {
-        this.activate = activate;
-    }
+    private Boolean activate;
 
     /**
-     * The updated boolean value that specifies whether the IPSet is active or not.
-     * 
-     * @return The updated boolean value that specifies whether the IPSet is active or not.
-     */
-
-    public Boolean getActivate() {
-        return this.activate;
-    }
-
-    /**
-     * The updated boolean value that specifies whether the IPSet is active or not.
-     * 
-     * @param activate
-     *        The updated boolean value that specifies whether the IPSet is active or not.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateIPSetRequest withActivate(Boolean activate) {
-        setActivate(activate);
-        return this;
-    }
-
-    /**
-     * The updated boolean value that specifies whether the IPSet is active or not.
-     * 
-     * @return The updated boolean value that specifies whether the IPSet is active or not.
-     */
-
-    public Boolean isActivate() {
-        return this.activate;
-    }
-
-    /**
+     * <p>
      * The detectorID that specifies the GuardDuty service whose IPSet you want to update.
+     * </p>
      * 
      * @param detectorId
      *        The detectorID that specifies the GuardDuty service whose IPSet you want to update.
@@ -96,7 +71,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * The detectorID that specifies the GuardDuty service whose IPSet you want to update.
+     * </p>
      * 
      * @return The detectorID that specifies the GuardDuty service whose IPSet you want to update.
      */
@@ -106,7 +83,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * The detectorID that specifies the GuardDuty service whose IPSet you want to update.
+     * </p>
      * 
      * @param detectorId
      *        The detectorID that specifies the GuardDuty service whose IPSet you want to update.
@@ -119,7 +98,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * The unique ID that specifies the IPSet that you want to update.
+     * </p>
      * 
      * @param ipSetId
      *        The unique ID that specifies the IPSet that you want to update.
@@ -130,7 +111,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * The unique ID that specifies the IPSet that you want to update.
+     * </p>
      * 
      * @return The unique ID that specifies the IPSet that you want to update.
      */
@@ -140,7 +123,9 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * The unique ID that specifies the IPSet that you want to update.
+     * </p>
      * 
      * @param ipSetId
      *        The unique ID that specifies the IPSet that you want to update.
@@ -153,8 +138,50 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The unique ID that specifies the IPSet that you want to update.
+     * </p>
+     * 
+     * @param name
+     *        The unique ID that specifies the IPSet that you want to update.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The unique ID that specifies the IPSet that you want to update.
+     * </p>
+     * 
+     * @return The unique ID that specifies the IPSet that you want to update.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The unique ID that specifies the IPSet that you want to update.
+     * </p>
+     * 
+     * @param name
+     *        The unique ID that specifies the IPSet that you want to update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIPSetRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
      * The updated URI of the file that contains the IPSet. For example
      * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+     * </p>
      * 
      * @param location
      *        The updated URI of the file that contains the IPSet. For example
@@ -166,8 +193,10 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * The updated URI of the file that contains the IPSet. For example
      * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+     * </p>
      * 
      * @return The updated URI of the file that contains the IPSet. For example
      *         (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
@@ -178,8 +207,10 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * The updated URI of the file that contains the IPSet. For example
      * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+     * </p>
      * 
      * @param location
      *        The updated URI of the file that contains the IPSet. For example
@@ -193,37 +224,55 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The unique ID that specifies the IPSet that you want to update.
+     * <p>
+     * The updated boolean value that specifies whether the IPSet is active or not.
+     * </p>
      * 
-     * @param name
-     *        The unique ID that specifies the IPSet that you want to update.
+     * @param activate
+     *        The updated boolean value that specifies whether the IPSet is active or not.
      */
 
-    public void setName(String name) {
-        this.name = name;
+    public void setActivate(Boolean activate) {
+        this.activate = activate;
     }
 
     /**
-     * The unique ID that specifies the IPSet that you want to update.
+     * <p>
+     * The updated boolean value that specifies whether the IPSet is active or not.
+     * </p>
      * 
-     * @return The unique ID that specifies the IPSet that you want to update.
+     * @return The updated boolean value that specifies whether the IPSet is active or not.
      */
 
-    public String getName() {
-        return this.name;
+    public Boolean getActivate() {
+        return this.activate;
     }
 
     /**
-     * The unique ID that specifies the IPSet that you want to update.
+     * <p>
+     * The updated boolean value that specifies whether the IPSet is active or not.
+     * </p>
      * 
-     * @param name
-     *        The unique ID that specifies the IPSet that you want to update.
+     * @param activate
+     *        The updated boolean value that specifies whether the IPSet is active or not.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateIPSetRequest withName(String name) {
-        setName(name);
+    public UpdateIPSetRequest withActivate(Boolean activate) {
+        setActivate(activate);
         return this;
+    }
+
+    /**
+     * <p>
+     * The updated boolean value that specifies whether the IPSet is active or not.
+     * </p>
+     * 
+     * @return The updated boolean value that specifies whether the IPSet is active or not.
+     */
+
+    public Boolean isActivate() {
+        return this.activate;
     }
 
     /**
@@ -238,16 +287,16 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getActivate() != null)
-            sb.append("Activate: ").append(getActivate()).append(",");
         if (getDetectorId() != null)
             sb.append("DetectorId: ").append(getDetectorId()).append(",");
         if (getIpSetId() != null)
             sb.append("IpSetId: ").append(getIpSetId()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getLocation() != null)
             sb.append("Location: ").append(getLocation()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName());
+        if (getActivate() != null)
+            sb.append("Activate: ").append(getActivate());
         sb.append("}");
         return sb.toString();
     }
@@ -262,10 +311,6 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (obj instanceof UpdateIPSetRequest == false)
             return false;
         UpdateIPSetRequest other = (UpdateIPSetRequest) obj;
-        if (other.getActivate() == null ^ this.getActivate() == null)
-            return false;
-        if (other.getActivate() != null && other.getActivate().equals(this.getActivate()) == false)
-            return false;
         if (other.getDetectorId() == null ^ this.getDetectorId() == null)
             return false;
         if (other.getDetectorId() != null && other.getDetectorId().equals(this.getDetectorId()) == false)
@@ -274,13 +319,17 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getIpSetId() != null && other.getIpSetId().equals(this.getIpSetId()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         if (other.getLocation() == null ^ this.getLocation() == null)
             return false;
         if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
-        if (other.getName() == null ^ this.getName() == null)
+        if (other.getActivate() == null ^ this.getActivate() == null)
             return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+        if (other.getActivate() != null && other.getActivate().equals(this.getActivate()) == false)
             return false;
         return true;
     }
@@ -290,11 +339,11 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getActivate() == null) ? 0 : getActivate().hashCode());
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
         hashCode = prime * hashCode + ((getIpSetId() == null) ? 0 : getIpSetId().hashCode());
-        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getActivate() == null) ? 0 : getActivate().hashCode());
         return hashCode;
     }
 

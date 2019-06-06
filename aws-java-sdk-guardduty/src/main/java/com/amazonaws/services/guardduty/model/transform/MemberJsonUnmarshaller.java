@@ -56,21 +56,21 @@ public class MemberJsonUnmarshaller implements Unmarshaller<Member, JsonUnmarsha
                     context.nextToken();
                     member.setDetectorId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("email", targetDepth)) {
-                    context.nextToken();
-                    member.setEmail(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("invitedAt", targetDepth)) {
-                    context.nextToken();
-                    member.setInvitedAt(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("masterId", targetDepth)) {
                     context.nextToken();
                     member.setMasterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("email", targetDepth)) {
+                    context.nextToken();
+                    member.setEmail(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("relationshipStatus", targetDepth)) {
                     context.nextToken();
                     member.setRelationshipStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("invitedAt", targetDepth)) {
+                    context.nextToken();
+                    member.setInvitedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();

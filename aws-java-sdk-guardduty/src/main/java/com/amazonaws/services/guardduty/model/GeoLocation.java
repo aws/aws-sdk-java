@@ -18,7 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Location information of the remote IP address.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GeoLocation" target="_top">AWS API
  *      Documentation</a>
@@ -26,13 +25,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GeoLocation implements Serializable, Cloneable, StructuredPojo {
 
-    /** Latitude information of remote IP address. */
+    /**
+     * <p>
+     * Latitude information of remote IP address.
+     * </p>
+     */
     private Double lat;
-    /** Longitude information of remote IP address. */
+    /**
+     * <p>
+     * Longitude information of remote IP address.
+     * </p>
+     */
     private Double lon;
 
     /**
+     * <p>
      * Latitude information of remote IP address.
+     * </p>
      * 
      * @param lat
      *        Latitude information of remote IP address.
@@ -43,7 +52,9 @@ public class GeoLocation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Latitude information of remote IP address.
+     * </p>
      * 
      * @return Latitude information of remote IP address.
      */
@@ -53,7 +64,9 @@ public class GeoLocation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Latitude information of remote IP address.
+     * </p>
      * 
      * @param lat
      *        Latitude information of remote IP address.
@@ -66,7 +79,9 @@ public class GeoLocation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Longitude information of remote IP address.
+     * </p>
      * 
      * @param lon
      *        Longitude information of remote IP address.
@@ -77,7 +92,9 @@ public class GeoLocation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Longitude information of remote IP address.
+     * </p>
      * 
      * @return Longitude information of remote IP address.
      */
@@ -87,7 +104,9 @@ public class GeoLocation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Longitude information of remote IP address.
+     * </p>
      * 
      * @param lon
      *        Longitude information of remote IP address.

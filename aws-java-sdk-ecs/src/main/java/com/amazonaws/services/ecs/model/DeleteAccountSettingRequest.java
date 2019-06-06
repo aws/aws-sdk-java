@@ -27,36 +27,40 @@ public class DeleteAccountSettingRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The resource name for which to disable the new format. If <code>serviceLongArnFormat</code> is specified, the ARN
-     * for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID
-     * for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and
-     * resource ID for your Amazon ECS container instances is affected.
+     * The resource name for which to disable the account setting. If <code>serviceLongArnFormat</code> is specified,
+     * the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and
+     * resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified,
+     * the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is
+     * specified, the ENI limit for your Amazon ECS container instances is affected.
      * </p>
      */
     private String name;
     /**
      * <p>
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root user, it
-     * modifies the ARN and resource ID format for all IAM users, IAM roles, and the root user of the account unless an
-     * IAM user or role explicitly overrides these settings for themselves. If this field is omitted, the setting are
-     * changed only for the authenticated user.
+     * disables the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or
+     * role explicitly overrides these settings. If this field is omitted, the setting is changed only for the
+     * authenticated user.
      * </p>
      */
     private String principalArn;
 
     /**
      * <p>
-     * The resource name for which to disable the new format. If <code>serviceLongArnFormat</code> is specified, the ARN
-     * for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID
-     * for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and
-     * resource ID for your Amazon ECS container instances is affected.
+     * The resource name for which to disable the account setting. If <code>serviceLongArnFormat</code> is specified,
+     * the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and
+     * resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified,
+     * the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is
+     * specified, the ENI limit for your Amazon ECS container instances is affected.
      * </p>
      * 
      * @param name
-     *        The resource name for which to disable the new format. If <code>serviceLongArnFormat</code> is specified,
-     *        the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN
-     *        and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
-     *        specified, the ARN and resource ID for your Amazon ECS container instances is affected.
+     *        The resource name for which to disable the account setting. If <code>serviceLongArnFormat</code> is
+     *        specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is
+     *        specified, the ARN and resource ID for your Amazon ECS tasks is affected. If
+     *        <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
+     *        container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
+     *        Amazon ECS container instances is affected.
      * @see SettingName
      */
 
@@ -66,16 +70,19 @@ public class DeleteAccountSettingRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The resource name for which to disable the new format. If <code>serviceLongArnFormat</code> is specified, the ARN
-     * for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID
-     * for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and
-     * resource ID for your Amazon ECS container instances is affected.
+     * The resource name for which to disable the account setting. If <code>serviceLongArnFormat</code> is specified,
+     * the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and
+     * resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified,
+     * the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is
+     * specified, the ENI limit for your Amazon ECS container instances is affected.
      * </p>
      * 
-     * @return The resource name for which to disable the new format. If <code>serviceLongArnFormat</code> is specified,
-     *         the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN
-     *         and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
-     *         specified, the ARN and resource ID for your Amazon ECS container instances is affected.
+     * @return The resource name for which to disable the account setting. If <code>serviceLongArnFormat</code> is
+     *         specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is
+     *         specified, the ARN and resource ID for your Amazon ECS tasks is affected. If
+     *         <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
+     *         container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
+     *         Amazon ECS container instances is affected.
      * @see SettingName
      */
 
@@ -85,17 +92,20 @@ public class DeleteAccountSettingRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The resource name for which to disable the new format. If <code>serviceLongArnFormat</code> is specified, the ARN
-     * for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID
-     * for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and
-     * resource ID for your Amazon ECS container instances is affected.
+     * The resource name for which to disable the account setting. If <code>serviceLongArnFormat</code> is specified,
+     * the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and
+     * resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified,
+     * the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is
+     * specified, the ENI limit for your Amazon ECS container instances is affected.
      * </p>
      * 
      * @param name
-     *        The resource name for which to disable the new format. If <code>serviceLongArnFormat</code> is specified,
-     *        the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN
-     *        and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
-     *        specified, the ARN and resource ID for your Amazon ECS container instances is affected.
+     *        The resource name for which to disable the account setting. If <code>serviceLongArnFormat</code> is
+     *        specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is
+     *        specified, the ARN and resource ID for your Amazon ECS tasks is affected. If
+     *        <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
+     *        container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
+     *        Amazon ECS container instances is affected.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SettingName
      */
@@ -107,17 +117,20 @@ public class DeleteAccountSettingRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The resource name for which to disable the new format. If <code>serviceLongArnFormat</code> is specified, the ARN
-     * for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID
-     * for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and
-     * resource ID for your Amazon ECS container instances is affected.
+     * The resource name for which to disable the account setting. If <code>serviceLongArnFormat</code> is specified,
+     * the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and
+     * resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified,
+     * the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is
+     * specified, the ENI limit for your Amazon ECS container instances is affected.
      * </p>
      * 
      * @param name
-     *        The resource name for which to disable the new format. If <code>serviceLongArnFormat</code> is specified,
-     *        the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN
-     *        and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is
-     *        specified, the ARN and resource ID for your Amazon ECS container instances is affected.
+     *        The resource name for which to disable the account setting. If <code>serviceLongArnFormat</code> is
+     *        specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is
+     *        specified, the ARN and resource ID for your Amazon ECS tasks is affected. If
+     *        <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
+     *        container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
+     *        Amazon ECS container instances is affected.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SettingName
      */
@@ -130,16 +143,16 @@ public class DeleteAccountSettingRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root user, it
-     * modifies the ARN and resource ID format for all IAM users, IAM roles, and the root user of the account unless an
-     * IAM user or role explicitly overrides these settings for themselves. If this field is omitted, the setting are
-     * changed only for the authenticated user.
+     * disables the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or
+     * role explicitly overrides these settings. If this field is omitted, the setting is changed only for the
+     * authenticated user.
      * </p>
      * 
      * @param principalArn
      *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root
-     *        user, it modifies the ARN and resource ID format for all IAM users, IAM roles, and the root user of the
-     *        account unless an IAM user or role explicitly overrides these settings for themselves. If this field is
-     *        omitted, the setting are changed only for the authenticated user.
+     *        user, it disables the account setting for all IAM users, IAM roles, and the root user of the account
+     *        unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is
+     *        changed only for the authenticated user.
      */
 
     public void setPrincipalArn(String principalArn) {
@@ -149,15 +162,15 @@ public class DeleteAccountSettingRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root user, it
-     * modifies the ARN and resource ID format for all IAM users, IAM roles, and the root user of the account unless an
-     * IAM user or role explicitly overrides these settings for themselves. If this field is omitted, the setting are
-     * changed only for the authenticated user.
+     * disables the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or
+     * role explicitly overrides these settings. If this field is omitted, the setting is changed only for the
+     * authenticated user.
      * </p>
      * 
      * @return The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root
-     *         user, it modifies the ARN and resource ID format for all IAM users, IAM roles, and the root user of the
-     *         account unless an IAM user or role explicitly overrides these settings for themselves. If this field is
-     *         omitted, the setting are changed only for the authenticated user.
+     *         user, it disables the account setting for all IAM users, IAM roles, and the root user of the account
+     *         unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is
+     *         changed only for the authenticated user.
      */
 
     public String getPrincipalArn() {
@@ -167,16 +180,16 @@ public class DeleteAccountSettingRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root user, it
-     * modifies the ARN and resource ID format for all IAM users, IAM roles, and the root user of the account unless an
-     * IAM user or role explicitly overrides these settings for themselves. If this field is omitted, the setting are
-     * changed only for the authenticated user.
+     * disables the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or
+     * role explicitly overrides these settings. If this field is omitted, the setting is changed only for the
+     * authenticated user.
      * </p>
      * 
      * @param principalArn
      *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root
-     *        user, it modifies the ARN and resource ID format for all IAM users, IAM roles, and the root user of the
-     *        account unless an IAM user or role explicitly overrides these settings for themselves. If this field is
-     *        omitted, the setting are changed only for the authenticated user.
+     *        user, it disables the account setting for all IAM users, IAM roles, and the root user of the account
+     *        unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is
+     *        changed only for the authenticated user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

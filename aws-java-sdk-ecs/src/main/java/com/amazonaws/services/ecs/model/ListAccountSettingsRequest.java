@@ -48,8 +48,9 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Specifies whether to return the effective settings. If <code>true</code>, the account settings for the root user
-     * or the default setting for the <code>principalArn</code>. If <code>false</code>, the account settings for the
-     * <code>principalArn</code> are returned if they are set. Otherwise, no account settings are returned.
+     * or the default setting for the <code>principalArn</code> are returned. If <code>false</code>, the account
+     * settings for the <code>principalArn</code> are returned if they are set. Otherwise, no account settings are
+     * returned.
      * </p>
      */
     private Boolean effectiveSettings;
@@ -233,15 +234,16 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Specifies whether to return the effective settings. If <code>true</code>, the account settings for the root user
-     * or the default setting for the <code>principalArn</code>. If <code>false</code>, the account settings for the
-     * <code>principalArn</code> are returned if they are set. Otherwise, no account settings are returned.
+     * or the default setting for the <code>principalArn</code> are returned. If <code>false</code>, the account
+     * settings for the <code>principalArn</code> are returned if they are set. Otherwise, no account settings are
+     * returned.
      * </p>
      * 
      * @param effectiveSettings
      *        Specifies whether to return the effective settings. If <code>true</code>, the account settings for the
-     *        root user or the default setting for the <code>principalArn</code>. If <code>false</code>, the account
-     *        settings for the <code>principalArn</code> are returned if they are set. Otherwise, no account settings
-     *        are returned.
+     *        root user or the default setting for the <code>principalArn</code> are returned. If <code>false</code>,
+     *        the account settings for the <code>principalArn</code> are returned if they are set. Otherwise, no account
+     *        settings are returned.
      */
 
     public void setEffectiveSettings(Boolean effectiveSettings) {
@@ -251,14 +253,15 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Specifies whether to return the effective settings. If <code>true</code>, the account settings for the root user
-     * or the default setting for the <code>principalArn</code>. If <code>false</code>, the account settings for the
-     * <code>principalArn</code> are returned if they are set. Otherwise, no account settings are returned.
+     * or the default setting for the <code>principalArn</code> are returned. If <code>false</code>, the account
+     * settings for the <code>principalArn</code> are returned if they are set. Otherwise, no account settings are
+     * returned.
      * </p>
      * 
      * @return Specifies whether to return the effective settings. If <code>true</code>, the account settings for the
-     *         root user or the default setting for the <code>principalArn</code>. If <code>false</code>, the account
-     *         settings for the <code>principalArn</code> are returned if they are set. Otherwise, no account settings
-     *         are returned.
+     *         root user or the default setting for the <code>principalArn</code> are returned. If <code>false</code>,
+     *         the account settings for the <code>principalArn</code> are returned if they are set. Otherwise, no
+     *         account settings are returned.
      */
 
     public Boolean getEffectiveSettings() {
@@ -268,15 +271,16 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Specifies whether to return the effective settings. If <code>true</code>, the account settings for the root user
-     * or the default setting for the <code>principalArn</code>. If <code>false</code>, the account settings for the
-     * <code>principalArn</code> are returned if they are set. Otherwise, no account settings are returned.
+     * or the default setting for the <code>principalArn</code> are returned. If <code>false</code>, the account
+     * settings for the <code>principalArn</code> are returned if they are set. Otherwise, no account settings are
+     * returned.
      * </p>
      * 
      * @param effectiveSettings
      *        Specifies whether to return the effective settings. If <code>true</code>, the account settings for the
-     *        root user or the default setting for the <code>principalArn</code>. If <code>false</code>, the account
-     *        settings for the <code>principalArn</code> are returned if they are set. Otherwise, no account settings
-     *        are returned.
+     *        root user or the default setting for the <code>principalArn</code> are returned. If <code>false</code>,
+     *        the account settings for the <code>principalArn</code> are returned if they are set. Otherwise, no account
+     *        settings are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,14 +292,15 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Specifies whether to return the effective settings. If <code>true</code>, the account settings for the root user
-     * or the default setting for the <code>principalArn</code>. If <code>false</code>, the account settings for the
-     * <code>principalArn</code> are returned if they are set. Otherwise, no account settings are returned.
+     * or the default setting for the <code>principalArn</code> are returned. If <code>false</code>, the account
+     * settings for the <code>principalArn</code> are returned if they are set. Otherwise, no account settings are
+     * returned.
      * </p>
      * 
      * @return Specifies whether to return the effective settings. If <code>true</code>, the account settings for the
-     *         root user or the default setting for the <code>principalArn</code>. If <code>false</code>, the account
-     *         settings for the <code>principalArn</code> are returned if they are set. Otherwise, no account settings
-     *         are returned.
+     *         root user or the default setting for the <code>principalArn</code> are returned. If <code>false</code>,
+     *         the account settings for the <code>principalArn</code> are returned if they are set. Otherwise, no
+     *         account settings are returned.
      */
 
     public Boolean isEffectiveSettings() {

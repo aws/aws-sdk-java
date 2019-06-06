@@ -29,12 +29,22 @@ public class EncryptionMarshaller {
 
     private static final MarshallingInfo<String> ALGORITHM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("algorithm").build();
+    private static final MarshallingInfo<String> CONSTANTINITIALIZATIONVECTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("constantInitializationVector").build();
+    private static final MarshallingInfo<String> DEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("deviceId").build();
     private static final MarshallingInfo<String> KEYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("keyType").build();
+    private static final MarshallingInfo<String> REGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("region").build();
+    private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceId").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<String> SECRETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("secretArn").build();
+    private static final MarshallingInfo<String> URL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("url").build();
 
     private static final EncryptionMarshaller instance = new EncryptionMarshaller();
 
@@ -53,9 +63,14 @@ public class EncryptionMarshaller {
 
         try {
             protocolMarshaller.marshall(encryption.getAlgorithm(), ALGORITHM_BINDING);
+            protocolMarshaller.marshall(encryption.getConstantInitializationVector(), CONSTANTINITIALIZATIONVECTOR_BINDING);
+            protocolMarshaller.marshall(encryption.getDeviceId(), DEVICEID_BINDING);
             protocolMarshaller.marshall(encryption.getKeyType(), KEYTYPE_BINDING);
+            protocolMarshaller.marshall(encryption.getRegion(), REGION_BINDING);
+            protocolMarshaller.marshall(encryption.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(encryption.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(encryption.getSecretArn(), SECRETARN_BINDING);
+            protocolMarshaller.marshall(encryption.getUrl(), URL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

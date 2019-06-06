@@ -394,6 +394,55 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Creates a new OpsItem. You must have permission in AWS Identity and Access Management (IAM) to create a new
+     * OpsItem. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting Started
+     * with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Operations engineers and IT professionals use the Systems Manager OpsItems capability to view, investigate, and
+     * remediate operational issues impacting the performance and health of their AWS resources. For more information,
+     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS Systems Manager
+     * OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param createOpsItemRequest
+     * @return A Java Future containing the result of the CreateOpsItem operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.CreateOpsItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOpsItemResult> createOpsItemAsync(CreateOpsItemRequest createOpsItemRequest);
+
+    /**
+     * <p>
+     * Creates a new OpsItem. You must have permission in AWS Identity and Access Management (IAM) to create a new
+     * OpsItem. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting Started
+     * with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Operations engineers and IT professionals use the Systems Manager OpsItems capability to view, investigate, and
+     * remediate operational issues impacting the performance and health of their AWS resources. For more information,
+     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS Systems Manager
+     * OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param createOpsItemRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateOpsItem operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.CreateOpsItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOpsItemResult> createOpsItemAsync(CreateOpsItemRequest createOpsItemRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateOpsItemRequest, CreateOpsItemResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a patch baseline.
      * </p>
      * <note>
@@ -1822,6 +1871,55 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Query a set of OpsItems. You must have permission in AWS Identity and Access Management (IAM) to query a list of
+     * OpsItems. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting Started
+     * with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Operations engineers and IT professionals use the Systems Manager OpsItems capability to view, investigate, and
+     * remediate operational issues impacting the performance and health of their AWS resources. For more information,
+     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS Systems Manager
+     * OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param describeOpsItemsRequest
+     * @return A Java Future containing the result of the DescribeOpsItems operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeOpsItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeOpsItems" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOpsItemsResult> describeOpsItemsAsync(DescribeOpsItemsRequest describeOpsItemsRequest);
+
+    /**
+     * <p>
+     * Query a set of OpsItems. You must have permission in AWS Identity and Access Management (IAM) to query a list of
+     * OpsItems. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting Started
+     * with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Operations engineers and IT professionals use the Systems Manager OpsItems capability to view, investigate, and
+     * remediate operational issues impacting the performance and health of their AWS resources. For more information,
+     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS Systems Manager
+     * OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param describeOpsItemsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeOpsItems operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeOpsItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeOpsItems" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOpsItemsResult> describeOpsItemsAsync(DescribeOpsItemsRequest describeOpsItemsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeOpsItemsRequest, DescribeOpsItemsResult> asyncHandler);
+
+    /**
+     * <p>
      * Get information about a parameter.
      * </p>
      * <p>
@@ -2556,6 +2654,86 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<GetMaintenanceWindowTaskResult> getMaintenanceWindowTaskAsync(GetMaintenanceWindowTaskRequest getMaintenanceWindowTaskRequest,
             com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowTaskRequest, GetMaintenanceWindowTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get information about an OpsItem by using the ID. You must have permission in AWS Identity and Access Management
+     * (IAM) to view information about an OpsItem. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting Started
+     * with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Operations engineers and IT professionals use the Systems Manager OpsItems capability to view, investigate, and
+     * remediate operational issues impacting the performance and health of their AWS resources. For more information,
+     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS Systems Manager
+     * OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param getOpsItemRequest
+     * @return A Java Future containing the result of the GetOpsItem operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetOpsItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetOpsItemResult> getOpsItemAsync(GetOpsItemRequest getOpsItemRequest);
+
+    /**
+     * <p>
+     * Get information about an OpsItem by using the ID. You must have permission in AWS Identity and Access Management
+     * (IAM) to view information about an OpsItem. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting Started
+     * with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Operations engineers and IT professionals use the Systems Manager OpsItems capability to view, investigate, and
+     * remediate operational issues impacting the performance and health of their AWS resources. For more information,
+     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS Systems Manager
+     * OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param getOpsItemRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetOpsItem operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetOpsItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetOpsItemResult> getOpsItemAsync(GetOpsItemRequest getOpsItemRequest,
+            com.amazonaws.handlers.AsyncHandler<GetOpsItemRequest, GetOpsItemResult> asyncHandler);
+
+    /**
+     * <p>
+     * View a summary of OpsItems based on specified filters and aggregators.
+     * </p>
+     * 
+     * @param getOpsSummaryRequest
+     * @return A Java Future containing the result of the GetOpsSummary operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetOpsSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsSummary" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetOpsSummaryResult> getOpsSummaryAsync(GetOpsSummaryRequest getOpsSummaryRequest);
+
+    /**
+     * <p>
+     * View a summary of OpsItems based on specified filters and aggregators.
+     * </p>
+     * 
+     * @param getOpsSummaryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetOpsSummary operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetOpsSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsSummary" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetOpsSummaryResult> getOpsSummaryAsync(GetOpsSummaryRequest getOpsSummaryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetOpsSummaryRequest, GetOpsSummaryResult> asyncHandler);
 
     /**
      * <p>
@@ -4601,6 +4779,55 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     java.util.concurrent.Future<UpdateManagedInstanceRoleResult> updateManagedInstanceRoleAsync(
             UpdateManagedInstanceRoleRequest updateManagedInstanceRoleRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateManagedInstanceRoleRequest, UpdateManagedInstanceRoleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Edit or change an OpsItem. You must have permission in AWS Identity and Access Management (IAM) to update an
+     * OpsItem. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting Started
+     * with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Operations engineers and IT professionals use the Systems Manager OpsItems capability to view, investigate, and
+     * remediate operational issues impacting the performance and health of their AWS resources. For more information,
+     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS Systems Manager
+     * OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param updateOpsItemRequest
+     * @return A Java Future containing the result of the UpdateOpsItem operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.UpdateOpsItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOpsItemResult> updateOpsItemAsync(UpdateOpsItemRequest updateOpsItemRequest);
+
+    /**
+     * <p>
+     * Edit or change an OpsItem. You must have permission in AWS Identity and Access Management (IAM) to update an
+     * OpsItem. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting Started
+     * with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Operations engineers and IT professionals use the Systems Manager OpsItems capability to view, investigate, and
+     * remediate operational issues impacting the performance and health of their AWS resources. For more information,
+     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS Systems Manager
+     * OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param updateOpsItemRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateOpsItem operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateOpsItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOpsItemResult> updateOpsItemAsync(UpdateOpsItemRequest updateOpsItemRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateOpsItemRequest, UpdateOpsItemResult> asyncHandler);
 
     /**
      * <p>

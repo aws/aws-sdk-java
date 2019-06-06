@@ -57,7 +57,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>, and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
-     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
+     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
@@ -195,7 +195,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>, and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
-     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
+     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
@@ -219,7 +219,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
      *        Guide</i>, and steps 2 and 3 in <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     *        Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
+     *        Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is
@@ -249,7 +249,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>, and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
-     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
+     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
@@ -274,7 +274,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations
      *         User Guide</i>, and steps 2 and 3 in <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     *         Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
+     *         Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
      *         </p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter
@@ -304,7 +304,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>, and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
-     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
+     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
@@ -328,7 +328,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
      *        Guide</i>, and steps 2 and 3 in <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     *        Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
+     *        Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is

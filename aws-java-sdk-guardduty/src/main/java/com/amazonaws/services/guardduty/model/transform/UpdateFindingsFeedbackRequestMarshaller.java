@@ -28,14 +28,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateFindingsFeedbackRequestMarshaller {
 
-    private static final MarshallingInfo<String> COMMENTS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("comments").build();
     private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("detectorId").build();
-    private static final MarshallingInfo<String> FEEDBACK_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("feedback").build();
     private static final MarshallingInfo<List> FINDINGIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("findingIds").build();
+    private static final MarshallingInfo<String> FEEDBACK_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("feedback").build();
+    private static final MarshallingInfo<String> COMMENTS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("comments").build();
 
     private static final UpdateFindingsFeedbackRequestMarshaller instance = new UpdateFindingsFeedbackRequestMarshaller();
 
@@ -53,10 +53,10 @@ public class UpdateFindingsFeedbackRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(updateFindingsFeedbackRequest.getComments(), COMMENTS_BINDING);
             protocolMarshaller.marshall(updateFindingsFeedbackRequest.getDetectorId(), DETECTORID_BINDING);
-            protocolMarshaller.marshall(updateFindingsFeedbackRequest.getFeedback(), FEEDBACK_BINDING);
             protocolMarshaller.marshall(updateFindingsFeedbackRequest.getFindingIds(), FINDINGIDS_BINDING);
+            protocolMarshaller.marshall(updateFindingsFeedbackRequest.getFeedback(), FEEDBACK_BINDING);
+            protocolMarshaller.marshall(updateFindingsFeedbackRequest.getComments(), COMMENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

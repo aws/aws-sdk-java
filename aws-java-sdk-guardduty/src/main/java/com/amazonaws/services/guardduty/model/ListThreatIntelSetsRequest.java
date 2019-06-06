@@ -25,21 +25,35 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListThreatIntelSetsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The detectorID that specifies the GuardDuty service whose ThreatIntelSets you want to list. */
+    /**
+     * <p>
+     * The unique ID of the detector the threatIntelSet is associated with.
+     * </p>
+     */
     private String detectorId;
     /**
-     * You can use this parameter to indicate the maximum number of items that you want in the response. The default
-     * value is 7. The maximum value is 7.
+     * <p>
+     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
+     * 50. The maximum value is 50.
+     * </p>
      */
     private Integer maxResults;
-    /** Pagination token to start retrieving threat intel sets from. */
+    /**
+     * <p>
+     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSets you want to list.
+     * <p>
+     * The unique ID of the detector the threatIntelSet is associated with.
+     * </p>
      * 
      * @param detectorId
-     *        The detectorID that specifies the GuardDuty service whose ThreatIntelSets you want to list.
+     *        The unique ID of the detector the threatIntelSet is associated with.
      */
 
     public void setDetectorId(String detectorId) {
@@ -47,9 +61,11 @@ public class ListThreatIntelSetsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSets you want to list.
+     * <p>
+     * The unique ID of the detector the threatIntelSet is associated with.
+     * </p>
      * 
-     * @return The detectorID that specifies the GuardDuty service whose ThreatIntelSets you want to list.
+     * @return The unique ID of the detector the threatIntelSet is associated with.
      */
 
     public String getDetectorId() {
@@ -57,10 +73,12 @@ public class ListThreatIntelSetsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose ThreatIntelSets you want to list.
+     * <p>
+     * The unique ID of the detector the threatIntelSet is associated with.
+     * </p>
      * 
      * @param detectorId
-     *        The detectorID that specifies the GuardDuty service whose ThreatIntelSets you want to list.
+     *        The unique ID of the detector the threatIntelSet is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,12 +88,14 @@ public class ListThreatIntelSetsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * You can use this parameter to indicate the maximum number of items that you want in the response. The default
-     * value is 7. The maximum value is 7.
+     * <p>
+     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
+     * 50. The maximum value is 50.
+     * </p>
      * 
      * @param maxResults
-     *        You can use this parameter to indicate the maximum number of items that you want in the response. The
-     *        default value is 7. The maximum value is 7.
+     *        You can use this parameter to indicate the maximum number of items you want in the response. The default
+     *        value is 50. The maximum value is 50.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -83,11 +103,13 @@ public class ListThreatIntelSetsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * You can use this parameter to indicate the maximum number of items that you want in the response. The default
-     * value is 7. The maximum value is 7.
+     * <p>
+     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
+     * 50. The maximum value is 50.
+     * </p>
      * 
-     * @return You can use this parameter to indicate the maximum number of items that you want in the response. The
-     *         default value is 7. The maximum value is 7.
+     * @return You can use this parameter to indicate the maximum number of items you want in the response. The default
+     *         value is 50. The maximum value is 50.
      */
 
     public Integer getMaxResults() {
@@ -95,12 +117,14 @@ public class ListThreatIntelSetsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * You can use this parameter to indicate the maximum number of items that you want in the response. The default
-     * value is 7. The maximum value is 7.
+     * <p>
+     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
+     * 50. The maximum value is 50.
+     * </p>
      * 
      * @param maxResults
-     *        You can use this parameter to indicate the maximum number of items that you want in the response. The
-     *        default value is 7. The maximum value is 7.
+     *        You can use this parameter to indicate the maximum number of items you want in the response. The default
+     *        value is 50. The maximum value is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,10 +134,16 @@ public class ListThreatIntelSetsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Pagination token to start retrieving threat intel sets from.
+     * <p>
+     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
      * 
      * @param nextToken
-     *        Pagination token to start retrieving threat intel sets from.
+     *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
+     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        of NextToken from the previous response to continue listing data.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,9 +151,15 @@ public class ListThreatIntelSetsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Pagination token to start retrieving threat intel sets from.
+     * <p>
+     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
      * 
-     * @return Pagination token to start retrieving threat intel sets from.
+     * @return You can use this parameter when paginating results. Set the value of this parameter to null on your first
+     *         call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *         of NextToken from the previous response to continue listing data.
      */
 
     public String getNextToken() {
@@ -131,10 +167,16 @@ public class ListThreatIntelSetsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Pagination token to start retrieving threat intel sets from.
+     * <p>
+     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
      * 
      * @param nextToken
-     *        Pagination token to start retrieving threat intel sets from.
+     *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
+     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        of NextToken from the previous response to continue listing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

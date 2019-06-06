@@ -1,3 +1,36 @@
+# __1.11.567__ __2019-06-06__
+## __AWS MediaConnect__
+  - ### Features
+    - This release adds support for encrypting entitlements using Secure Packager and Encoder Key Exchange (SPEKE).
+
+## __AWS Organizations__
+  - ### Features
+    - You can tag and untag accounts in your organization and view tags on an account in your organization.
+
+## __Amazon CloudWatch Logs__
+  - ### Features
+    - Documentation updates for logs
+
+## __Amazon DynamoDB__
+  - ### Features
+    - Documentation updates for dynamodb
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release of Amazon Elastic Container Service (Amazon ECS) introduces support for launching container instances using supported Amazon EC2 instance types that have increased elastic network interface density. Using these instance types and opting in to the awsvpcTrunking account setting provides increased elastic network interface (ENI) density on newly launched container instances which allows you to place more tasks on each container instance.
+
+## __Amazon GuardDuty__
+  - ### Features
+    - Improve FindingCriteria Condition field names, support long-typed conditions and deprecate old Condition field names.
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - You can now specify whether the Amazon Simple Email Service must deliver email over a connection that is encrypted using Transport Layer Security (TLS).
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - OpsCenter is a new Systems Manager capability that allows you to view, diagnose, and remediate, operational issues, aka OpsItems, related to various AWS resources by bringing together contextually relevant investigation information. New APIs to create, update, describe, and get OpsItems as well as OpsItems summary API. 
+
 # __1.11.566__ __2019-06-05__
 ## __AWS Glue__
   - ### Features

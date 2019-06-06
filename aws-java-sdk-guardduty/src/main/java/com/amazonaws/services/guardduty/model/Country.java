@@ -18,7 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Country information of the remote IP address.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Country" target="_top">AWS API
  *      Documentation</a>
@@ -26,13 +25,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Country implements Serializable, Cloneable, StructuredPojo {
 
-    /** Country code of the remote IP address. */
+    /**
+     * <p>
+     * Country code of the remote IP address.
+     * </p>
+     */
     private String countryCode;
-    /** Country name of the remote IP address. */
+    /**
+     * <p>
+     * Country name of the remote IP address.
+     * </p>
+     */
     private String countryName;
 
     /**
+     * <p>
      * Country code of the remote IP address.
+     * </p>
      * 
      * @param countryCode
      *        Country code of the remote IP address.
@@ -43,7 +52,9 @@ public class Country implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Country code of the remote IP address.
+     * </p>
      * 
      * @return Country code of the remote IP address.
      */
@@ -53,7 +64,9 @@ public class Country implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Country code of the remote IP address.
+     * </p>
      * 
      * @param countryCode
      *        Country code of the remote IP address.
@@ -66,7 +79,9 @@ public class Country implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Country name of the remote IP address.
+     * </p>
      * 
      * @param countryName
      *        Country name of the remote IP address.
@@ -77,7 +92,9 @@ public class Country implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Country name of the remote IP address.
+     * </p>
      * 
      * @return Country name of the remote IP address.
      */
@@ -87,7 +104,9 @@ public class Country implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Country name of the remote IP address.
+     * </p>
      * 
      * @param countryName
      *        Country name of the remote IP address.

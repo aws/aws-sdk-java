@@ -25,16 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The detectorID that specifies the GuardDuty service whose IPSet you want to delete. */
+    /**
+     * <p>
+     * The unique ID of the detector the ipSet is associated with.
+     * </p>
+     */
     private String detectorId;
-    /** The unique ID that specifies the IPSet that you want to delete. */
+    /**
+     * <p>
+     * The unique ID of the ipSet you want to delete.
+     * </p>
+     */
     private String ipSetId;
 
     /**
-     * The detectorID that specifies the GuardDuty service whose IPSet you want to delete.
+     * <p>
+     * The unique ID of the detector the ipSet is associated with.
+     * </p>
      * 
      * @param detectorId
-     *        The detectorID that specifies the GuardDuty service whose IPSet you want to delete.
+     *        The unique ID of the detector the ipSet is associated with.
      */
 
     public void setDetectorId(String detectorId) {
@@ -42,9 +52,11 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose IPSet you want to delete.
+     * <p>
+     * The unique ID of the detector the ipSet is associated with.
+     * </p>
      * 
-     * @return The detectorID that specifies the GuardDuty service whose IPSet you want to delete.
+     * @return The unique ID of the detector the ipSet is associated with.
      */
 
     public String getDetectorId() {
@@ -52,10 +64,12 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The detectorID that specifies the GuardDuty service whose IPSet you want to delete.
+     * <p>
+     * The unique ID of the detector the ipSet is associated with.
+     * </p>
      * 
      * @param detectorId
-     *        The detectorID that specifies the GuardDuty service whose IPSet you want to delete.
+     *        The unique ID of the detector the ipSet is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +79,12 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The unique ID that specifies the IPSet that you want to delete.
+     * <p>
+     * The unique ID of the ipSet you want to delete.
+     * </p>
      * 
      * @param ipSetId
-     *        The unique ID that specifies the IPSet that you want to delete.
+     *        The unique ID of the ipSet you want to delete.
      */
 
     public void setIpSetId(String ipSetId) {
@@ -76,9 +92,11 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The unique ID that specifies the IPSet that you want to delete.
+     * <p>
+     * The unique ID of the ipSet you want to delete.
+     * </p>
      * 
-     * @return The unique ID that specifies the IPSet that you want to delete.
+     * @return The unique ID of the ipSet you want to delete.
      */
 
     public String getIpSetId() {
@@ -86,10 +104,12 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The unique ID that specifies the IPSet that you want to delete.
+     * <p>
+     * The unique ID of the ipSet you want to delete.
+     * </p>
      * 
      * @param ipSetId
-     *        The unique ID that specifies the IPSet that you want to delete.
+     *        The unique ID of the ipSet you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

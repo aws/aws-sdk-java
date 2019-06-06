@@ -37,7 +37,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * infrastructure that is managed by Amazon ECS by launching your services or tasks using the Fargate launch type. For
  * more control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you
  * manage by using the EC2 launch type. For more information about launch types, see <a
- * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>.
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>.
  * </p>
  * <p>
  * Amazon ECS lets you launch and stop container-based applications with simple API calls, allows you to get the state
@@ -1571,6 +1571,39 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
 
                 try {
                     result = executeStopTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitAttachmentStateChangesResult> submitAttachmentStateChangesAsync(SubmitAttachmentStateChangesRequest request) {
+
+        return submitAttachmentStateChangesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitAttachmentStateChangesResult> submitAttachmentStateChangesAsync(final SubmitAttachmentStateChangesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SubmitAttachmentStateChangesRequest, SubmitAttachmentStateChangesResult> asyncHandler) {
+        final SubmitAttachmentStateChangesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SubmitAttachmentStateChangesResult>() {
+            @Override
+            public SubmitAttachmentStateChangesResult call() throws Exception {
+                SubmitAttachmentStateChangesResult result = null;
+
+                try {
+                    result = executeSubmitAttachmentStateChanges(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

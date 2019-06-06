@@ -18,8 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty to
- * generate a finding.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AccessKeyDetails" target="_top">AWS API
  *      Documentation</a>
@@ -27,17 +25,35 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo {
 
-    /** Access key ID of the user. */
+    /**
+     * <p>
+     * Access key ID of the user.
+     * </p>
+     */
     private String accessKeyId;
-    /** The principal ID of the user. */
+    /**
+     * <p>
+     * The principal ID of the user.
+     * </p>
+     */
     private String principalId;
-    /** The name of the user. */
+    /**
+     * <p>
+     * The name of the user.
+     * </p>
+     */
     private String userName;
-    /** The type of the user. */
+    /**
+     * <p>
+     * The type of the user.
+     * </p>
+     */
     private String userType;
 
     /**
+     * <p>
      * Access key ID of the user.
+     * </p>
      * 
      * @param accessKeyId
      *        Access key ID of the user.
@@ -48,7 +64,9 @@ public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Access key ID of the user.
+     * </p>
      * 
      * @return Access key ID of the user.
      */
@@ -58,7 +76,9 @@ public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Access key ID of the user.
+     * </p>
      * 
      * @param accessKeyId
      *        Access key ID of the user.
@@ -71,7 +91,9 @@ public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The principal ID of the user.
+     * </p>
      * 
      * @param principalId
      *        The principal ID of the user.
@@ -82,7 +104,9 @@ public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The principal ID of the user.
+     * </p>
      * 
      * @return The principal ID of the user.
      */
@@ -92,7 +116,9 @@ public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The principal ID of the user.
+     * </p>
      * 
      * @param principalId
      *        The principal ID of the user.
@@ -105,7 +131,9 @@ public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The name of the user.
+     * </p>
      * 
      * @param userName
      *        The name of the user.
@@ -116,7 +144,9 @@ public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The name of the user.
+     * </p>
      * 
      * @return The name of the user.
      */
@@ -126,7 +156,9 @@ public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The name of the user.
+     * </p>
      * 
      * @param userName
      *        The name of the user.
@@ -139,7 +171,9 @@ public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The type of the user.
+     * </p>
      * 
      * @param userType
      *        The type of the user.
@@ -150,7 +184,9 @@ public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The type of the user.
+     * </p>
      * 
      * @return The type of the user.
      */
@@ -160,7 +196,9 @@ public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * The type of the user.
+     * </p>
      * 
      * @param userType
      *        The type of the user.

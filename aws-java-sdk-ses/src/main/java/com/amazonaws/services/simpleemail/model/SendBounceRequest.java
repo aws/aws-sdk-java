@@ -67,7 +67,7 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
      * sending authorization policy that permits you to use the address in the "From" header of the bounce. For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      */
@@ -339,7 +339,7 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
      * sending authorization policy that permits you to use the address in the "From" header of the bounce. For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      * 
@@ -347,7 +347,7 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        This parameter is used only for sending authorization. It is the ARN of the identity that is associated
      *        with the sending authorization policy that permits you to use the address in the "From" header of the
      *        bounce. For more information about sending authorization, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
      *        Developer Guide</a>.
      */
 
@@ -360,14 +360,14 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
      * sending authorization policy that permits you to use the address in the "From" header of the bounce. For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      * 
      * @return This parameter is used only for sending authorization. It is the ARN of the identity that is associated
      *         with the sending authorization policy that permits you to use the address in the "From" header of the
      *         bounce. For more information about sending authorization, see the <a
-     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
      *         Developer Guide</a>.
      */
 
@@ -380,7 +380,7 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
      * sending authorization policy that permits you to use the address in the "From" header of the bounce. For more
      * information about sending authorization, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
      * Guide</a>.
      * </p>
      * 
@@ -388,7 +388,7 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        This parameter is used only for sending authorization. It is the ARN of the identity that is associated
      *        with the sending authorization policy that permits you to use the address in the "From" header of the
      *        bounce. For more information about sending authorization, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
      *        Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

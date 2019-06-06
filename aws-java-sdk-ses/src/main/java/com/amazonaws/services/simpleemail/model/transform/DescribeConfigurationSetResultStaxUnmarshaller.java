@@ -65,6 +65,11 @@ public class DescribeConfigurationSetResultStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
+                if (context.testExpression("DeliveryOptions", targetDepth)) {
+                    describeConfigurationSetResult.setDeliveryOptions(DeliveryOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ReputationOptions", targetDepth)) {
                     describeConfigurationSetResult.setReputationOptions(ReputationOptionsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

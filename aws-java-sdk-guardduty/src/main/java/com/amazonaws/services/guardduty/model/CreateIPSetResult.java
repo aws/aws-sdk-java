@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateIPSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the IPSet resource.
+     * </p>
+     */
     private String ipSetId;
 
     /**
+     * <p>
+     * The ID of the IPSet resource.
+     * </p>
+     * 
      * @param ipSetId
+     *        The ID of the IPSet resource.
      */
 
     public void setIpSetId(String ipSetId) {
@@ -34,7 +44,11 @@ public class CreateIPSetResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the IPSet resource.
+     * </p>
+     * 
+     * @return The ID of the IPSet resource.
      */
 
     public String getIpSetId() {
@@ -42,7 +56,12 @@ public class CreateIPSetResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The ID of the IPSet resource.
+     * </p>
+     * 
      * @param ipSetId
+     *        The ID of the IPSet resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

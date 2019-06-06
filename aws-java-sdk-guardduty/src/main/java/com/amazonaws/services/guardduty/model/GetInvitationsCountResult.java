@@ -23,11 +23,17 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetInvitationsCountResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The number of received invitations. */
+    /**
+     * <p>
+     * The number of received invitations.
+     * </p>
+     */
     private Integer invitationsCount;
 
     /**
+     * <p>
      * The number of received invitations.
+     * </p>
      * 
      * @param invitationsCount
      *        The number of received invitations.
@@ -38,7 +44,9 @@ public class GetInvitationsCountResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * The number of received invitations.
+     * </p>
      * 
      * @return The number of received invitations.
      */
@@ -48,7 +56,9 @@ public class GetInvitationsCountResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * The number of received invitations.
+     * </p>
      * 
      * @param invitationsCount
      *        The number of received invitations.

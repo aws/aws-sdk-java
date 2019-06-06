@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The overrides that should be sent to a container.
+ * The overrides that should be sent to a container. An empty container override can be passed in. An example of an
+ * empty container override would be <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is
+ * specified, the <code>name</code> parameter must be included.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerOverride" target="_top">AWS API

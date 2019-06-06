@@ -31,15 +31,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
      * Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
-     * service name. For example, <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
+     * service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
      * </p>
      */
     private String serviceArn;
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
+     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
+     * Region or across multiple Regions.
      * </p>
      */
     private String serviceName;
@@ -66,7 +66,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The details of the service discovery registries to assign to this service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ServiceRegistry> serviceRegistries;
@@ -99,7 +99,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private Integer pendingCount;
     /**
      * <p>
-     * The launch type on which your service is running. For more information, see <a
+     * The launch type on which your service is running. If no value is specified, it will default to <code>EC2</code>.
+     * Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -107,9 +108,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private String launchType;
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * The platform version on which to run your service. A platform version is only specified for tasks using the
+     * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -191,7 +192,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -241,7 +242,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
      * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -258,14 +259,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
      * Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
-     * service name. For example, <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
+     * service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
      * </p>
      * 
      * @param serviceArn
      *        The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
      *        the Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace,
-     *        and then the service name. For example,
-     *        <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
+     *        and then the service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
      */
 
     public void setServiceArn(String serviceArn) {
@@ -276,13 +276,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
      * Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
-     * service name. For example, <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
+     * service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
      * </p>
      * 
      * @return The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
      *         the Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace,
-     *         and then the service name. For example,
-     *         <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
+     *         and then the service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
      */
 
     public String getServiceArn() {
@@ -293,14 +292,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the
      * Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace, and then the
-     * service name. For example, <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
+     * service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
      * </p>
      * 
      * @param serviceArn
      *        The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
      *        the Region of the service, the AWS account ID of the service owner, the <code>service</code> namespace,
-     *        and then the service name. For example,
-     *        <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
+     *        and then the service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,15 +309,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
+     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
+     * Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
-     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores
-     *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
-     *        multiple clusters within a Region or across multiple Regions.
+     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     *        Service names must be unique within a cluster, but you can have similarly named services in multiple
+     *        clusters within a Region or across multiple Regions.
      */
 
     public void setServiceName(String serviceName) {
@@ -328,14 +326,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
+     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
+     * Region or across multiple Regions.
      * </p>
      * 
-     * @return The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores
-     *         are allowed. Service names must be unique within a cluster, but you can have similarly named services in
-     *         multiple clusters within a Region or across multiple Regions.
+     * @return The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     *         Service names must be unique within a cluster, but you can have similarly named services in multiple
+     *         clusters within a Region or across multiple Regions.
      */
 
     public String getServiceName() {
@@ -344,15 +342,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are
-     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
-     * clusters within a Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
+     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
+     * Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
-     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores
-     *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
-     *        multiple clusters within a Region or across multiple Regions.
+     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     *        Service names must be unique within a cluster, but you can have similarly named services in multiple
+     *        clusters within a Region or across multiple Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -541,11 +539,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The details of the service discovery registries to assign to this service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * 
      * @return The details of the service discovery registries to assign to this service. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *         Discovery</a>.
      */
 
@@ -559,12 +557,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The details of the service discovery registries to assign to this service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.
      */
 
@@ -580,7 +578,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The details of the service discovery registries to assign to this service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -590,7 +588,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -608,12 +606,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The details of the service discovery registries to assign to this service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        Discovery</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -803,15 +801,17 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your service is running. For more information, see <a
+     * The launch type on which your service is running. If no value is specified, it will default to <code>EC2</code>.
+     * Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your service is running. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The launch type on which your service is running. If no value is specified, it will default to
+     *        <code>EC2</code>. Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+     *        Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -821,14 +821,16 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your service is running. For more information, see <a
+     * The launch type on which your service is running. If no value is specified, it will default to <code>EC2</code>.
+     * Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The launch type on which your service is running. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return The launch type on which your service is running. If no value is specified, it will default to
+     *         <code>EC2</code>. Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information,
+     *         see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+     *         Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -838,15 +840,17 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your service is running. For more information, see <a
+     * The launch type on which your service is running. If no value is specified, it will default to <code>EC2</code>.
+     * Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your service is running. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The launch type on which your service is running. If no value is specified, it will default to
+     *        <code>EC2</code>. Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+     *        Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -858,15 +862,17 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your service is running. For more information, see <a
+     * The launch type on which your service is running. If no value is specified, it will default to <code>EC2</code>.
+     * Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your service is running. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The launch type on which your service is running. If no value is specified, it will default to
+     *        <code>EC2</code>. Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
+     *        Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -878,17 +884,17 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * The platform version on which to run your service. A platform version is only specified for tasks using the
+     * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which your tasks in the service are running. A platform version is only specified
-     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
-     *        is used by default. For more information, see <a
+     *        The platform version on which to run your service. A platform version is only specified for tasks using
+     *        the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     *        default. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -899,16 +905,16 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * The platform version on which to run your service. A platform version is only specified for tasks using the
+     * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The platform version on which your tasks in the service are running. A platform version is only specified
-     *         for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform
-     *         version is used by default. For more information, see <a
+     * @return The platform version on which to run your service. A platform version is only specified for tasks using
+     *         the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     *         default. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -919,17 +925,17 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * The platform version on which to run your service. A platform version is only specified for tasks using the
+     * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which your tasks in the service are running. A platform version is only specified
-     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
-     *        is used by default. For more information, see <a
+     *        The platform version on which to run your service. A platform version is only specified for tasks using
+     *        the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     *        default. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1594,7 +1600,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1622,7 +1628,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param schedulingStrategy
      *        The scheduling strategy to use for the service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *        <p>
      *        There are two service scheduler strategies available:
      *        </p>
@@ -1655,7 +1661,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1682,7 +1688,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @return The scheduling strategy to use for the service. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *         <p>
      *         There are two service scheduler strategies available:
      *         </p>
@@ -1715,7 +1721,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1743,7 +1749,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param schedulingStrategy
      *        The scheduling strategy to use for the service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *        <p>
      *        There are two service scheduler strategies available:
      *        </p>
@@ -1778,7 +1784,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
      * </p>
      * <p>
      * There are two service scheduler strategies available:
@@ -1806,7 +1812,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param schedulingStrategy
      *        The scheduling strategy to use for the service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      *        <p>
      *        There are two service scheduler strategies available:
      *        </p>
@@ -2010,13 +2016,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
      * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param enableECSManagedTags
      *        Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
+     *        see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
      *        Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -2027,13 +2033,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
      * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
-     *         Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     *         Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public Boolean getEnableECSManagedTags() {
@@ -2043,13 +2049,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
      * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param enableECSManagedTags
      *        Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
+     *        see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
      *        Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2062,13 +2068,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS
      * Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return Specifies whether to enable Amazon ECS managed tags for the tasks in the service. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your
-     *         Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     *         Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public Boolean isEnableECSManagedTags() {

@@ -76,6 +76,10 @@ public class ContainerInstanceJsonUnmarshaller implements Unmarshaller<Container
                     context.nextToken();
                     containerInstance.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("statusReason", targetDepth)) {
+                    context.nextToken();
+                    containerInstance.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("agentConnected", targetDepth)) {
                     context.nextToken();
                     containerInstance.setAgentConnected(context.getUnmarshaller(Boolean.class).unmarshall(context));

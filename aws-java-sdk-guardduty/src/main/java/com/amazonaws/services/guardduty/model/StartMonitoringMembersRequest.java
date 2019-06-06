@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * StartMonitoringMembers request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMonitoringMembers" target="_top">AWS
  *      API Documentation</a>
@@ -26,13 +25,66 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** A list of account IDs of the GuardDuty member accounts whose findings you want the master account to monitor. */
-    private java.util.List<String> accountIds;
-    /** The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members' findings. */
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members' findings.
+     * </p>
+     */
     private String detectorId;
+    /**
+     * <p>
+     * A list of account IDs of the GuardDuty member accounts whose findings you want the master account to monitor.
+     * </p>
+     */
+    private java.util.List<String> accountIds;
 
     /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members' findings.
+     * </p>
+     * 
+     * @param detectorId
+     *        The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members'
+     *        findings.
+     */
+
+    public void setDetectorId(String detectorId) {
+        this.detectorId = detectorId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members' findings.
+     * </p>
+     * 
+     * @return The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members'
+     *         findings.
+     */
+
+    public String getDetectorId() {
+        return this.detectorId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members' findings.
+     * </p>
+     * 
+     * @param detectorId
+     *        The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members'
+     *        findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartMonitoringMembersRequest withDetectorId(String detectorId) {
+        setDetectorId(detectorId);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of account IDs of the GuardDuty member accounts whose findings you want the master account to monitor.
+     * </p>
      * 
      * @return A list of account IDs of the GuardDuty member accounts whose findings you want the master account to
      *         monitor.
@@ -43,7 +95,9 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * A list of account IDs of the GuardDuty member accounts whose findings you want the master account to monitor.
+     * </p>
      * 
      * @param accountIds
      *        A list of account IDs of the GuardDuty member accounts whose findings you want the master account to
@@ -60,7 +114,9 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * A list of account IDs of the GuardDuty member accounts whose findings you want the master account to monitor.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAccountIds(java.util.Collection)} or {@link #withAccountIds(java.util.Collection)} if you want to
@@ -84,7 +140,9 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * A list of account IDs of the GuardDuty member accounts whose findings you want the master account to monitor.
+     * </p>
      * 
      * @param accountIds
      *        A list of account IDs of the GuardDuty member accounts whose findings you want the master account to
@@ -94,43 +152,6 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
 
     public StartMonitoringMembersRequest withAccountIds(java.util.Collection<String> accountIds) {
         setAccountIds(accountIds);
-        return this;
-    }
-
-    /**
-     * The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members' findings.
-     * 
-     * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members'
-     *        findings.
-     */
-
-    public void setDetectorId(String detectorId) {
-        this.detectorId = detectorId;
-    }
-
-    /**
-     * The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members' findings.
-     * 
-     * @return The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members'
-     *         findings.
-     */
-
-    public String getDetectorId() {
-        return this.detectorId;
-    }
-
-    /**
-     * The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members' findings.
-     * 
-     * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account whom you want to re-enable to monitor members'
-     *        findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartMonitoringMembersRequest withDetectorId(String detectorId) {
-        setDetectorId(detectorId);
         return this;
     }
 
@@ -146,10 +167,10 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAccountIds() != null)
-            sb.append("AccountIds: ").append(getAccountIds()).append(",");
         if (getDetectorId() != null)
-            sb.append("DetectorId: ").append(getDetectorId());
+            sb.append("DetectorId: ").append(getDetectorId()).append(",");
+        if (getAccountIds() != null)
+            sb.append("AccountIds: ").append(getAccountIds());
         sb.append("}");
         return sb.toString();
     }
@@ -164,13 +185,13 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
         if (obj instanceof StartMonitoringMembersRequest == false)
             return false;
         StartMonitoringMembersRequest other = (StartMonitoringMembersRequest) obj;
-        if (other.getAccountIds() == null ^ this.getAccountIds() == null)
-            return false;
-        if (other.getAccountIds() != null && other.getAccountIds().equals(this.getAccountIds()) == false)
-            return false;
         if (other.getDetectorId() == null ^ this.getDetectorId() == null)
             return false;
         if (other.getDetectorId() != null && other.getDetectorId().equals(this.getDetectorId()) == false)
+            return false;
+        if (other.getAccountIds() == null ^ this.getAccountIds() == null)
+            return false;
+        if (other.getAccountIds() != null && other.getAccountIds().equals(this.getAccountIds()) == false)
             return false;
         return true;
     }
@@ -180,8 +201,8 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
+        hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
         return hashCode;
     }
 

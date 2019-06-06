@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * You don't have permissions to perform the requested operation. The user or role that is making the request must have
  * at least one IAM permissions policy attached that grants the required permissions. For more information, see <a
  * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User
- * Guide</i>.
+ * Guide.</i>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

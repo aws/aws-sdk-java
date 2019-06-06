@@ -29,11 +29,11 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateDetectorRequestMarshaller {
 
+    private static final MarshallingInfo<Boolean> ENABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("enable").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<Boolean> ENABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("enable").build();
     private static final MarshallingInfo<String> FINDINGPUBLISHINGFREQUENCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingPublishingFrequency").build();
 
@@ -53,8 +53,8 @@ public class CreateDetectorRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createDetectorRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createDetectorRequest.getEnable(), ENABLE_BINDING);
+            protocolMarshaller.marshall(createDetectorRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createDetectorRequest.getFindingPublishingFrequency(), FINDINGPUBLISHINGFREQUENCY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

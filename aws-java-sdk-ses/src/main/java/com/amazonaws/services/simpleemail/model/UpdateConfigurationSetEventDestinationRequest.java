@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to update the event destination of a configuration set. Configuration sets enable you to publish
  * email sending events. For information about using configuration sets, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
  * Guide</a>.
  * </p>
  * 

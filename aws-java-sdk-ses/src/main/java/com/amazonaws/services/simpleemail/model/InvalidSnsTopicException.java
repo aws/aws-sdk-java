@@ -18,7 +18,7 @@ import javax.annotation.Generated;
  * <p>
  * Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES could not publish to the topic, possibly
  * due to permissions issues. For information about giving permissions, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer
  * Guide</a>.
  * </p>
  */

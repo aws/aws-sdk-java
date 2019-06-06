@@ -27,8 +27,9 @@ public class DescribeTasksRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to describe. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you
+     * do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you are
+     * describing were launched in any cluster other than the default cluster.
      * </p>
      */
     private String cluster;
@@ -48,13 +49,15 @@ public class DescribeTasksRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to describe. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you
+     * do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you are
+     * describing were launched in any cluster other than the default cluster.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to describe. If you
-     *        do not specify a cluster, the default cluster is assumed.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe.
+     *        If you do not specify a cluster, the default cluster is assumed. This parameter is required if the task or
+     *        tasks you are describing were launched in any cluster other than the default cluster.
      */
 
     public void setCluster(String cluster) {
@@ -63,12 +66,14 @@ public class DescribeTasksRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to describe. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you
+     * do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you are
+     * describing were launched in any cluster other than the default cluster.
      * </p>
      * 
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to describe. If you
-     *         do not specify a cluster, the default cluster is assumed.
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to
+     *         describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if
+     *         the task or tasks you are describing were launched in any cluster other than the default cluster.
      */
 
     public String getCluster() {
@@ -77,13 +82,15 @@ public class DescribeTasksRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to describe. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you
+     * do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you are
+     * describing were launched in any cluster other than the default cluster.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to describe. If you
-     *        do not specify a cluster, the default cluster is assumed.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe.
+     *        If you do not specify a cluster, the default cluster is assumed. This parameter is required if the task or
+     *        tasks you are describing were launched in any cluster other than the default cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,8 +38,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </ul>
  * <p>
  * For more information, see <a
- * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying Sensitive
- * Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+ * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Secret" target="_top">AWS API Documentation</a>

@@ -74,7 +74,12 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String accountId;
-    /** <p/> */
+    /**
+     * <p>
+     * If the account was created successfully, the unique identifier (ID) of the new account in the AWS GovCloud (US)
+     * Region.
+     * </p>
+     */
     private String govCloudAccountId;
     /**
      * <p>
@@ -435,9 +440,14 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * <p/>
+     * <p>
+     * If the account was created successfully, the unique identifier (ID) of the new account in the AWS GovCloud (US)
+     * Region.
+     * </p>
      * 
      * @param govCloudAccountId
+     *        If the account was created successfully, the unique identifier (ID) of the new account in the AWS GovCloud
+     *        (US) Region.
      */
 
     public void setGovCloudAccountId(String govCloudAccountId) {
@@ -445,9 +455,13 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * <p/>
+     * <p>
+     * If the account was created successfully, the unique identifier (ID) of the new account in the AWS GovCloud (US)
+     * Region.
+     * </p>
      * 
-     * @return
+     * @return If the account was created successfully, the unique identifier (ID) of the new account in the AWS
+     *         GovCloud (US) Region.
      */
 
     public String getGovCloudAccountId() {
@@ -455,9 +469,14 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * <p/>
+     * <p>
+     * If the account was created successfully, the unique identifier (ID) of the new account in the AWS GovCloud (US)
+     * Region.
+     * </p>
      * 
      * @param govCloudAccountId
+     *        If the account was created successfully, the unique identifier (ID) of the new account in the AWS GovCloud
+     *        (US) Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -23,12 +23,25 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListInvitationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A list of invitation descriptions.
+     * </p>
+     */
     private java.util.List<Invitation> invitations;
-
+    /**
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * A list of invitation descriptions.
+     * </p>
+     * 
+     * @return A list of invitation descriptions.
      */
 
     public java.util.List<Invitation> getInvitations() {
@@ -36,7 +49,12 @@ public class ListInvitationsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * A list of invitation descriptions.
+     * </p>
+     * 
      * @param invitations
+     *        A list of invitation descriptions.
      */
 
     public void setInvitations(java.util.Collection<Invitation> invitations) {
@@ -50,12 +68,16 @@ public class ListInvitationsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
+     * A list of invitation descriptions.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInvitations(java.util.Collection)} or {@link #withInvitations(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param invitations
+     *        A list of invitation descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +92,12 @@ public class ListInvitationsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * A list of invitation descriptions.
+     * </p>
+     * 
      * @param invitations
+     *        A list of invitation descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +107,12 @@ public class ListInvitationsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     * 
      * @param nextToken
+     *        Pagination parameter to be used on the next list operation to retrieve more items.
      */
 
     public void setNextToken(String nextToken) {
@@ -88,7 +120,11 @@ public class ListInvitationsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * @return
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     * 
+     * @return Pagination parameter to be used on the next list operation to retrieve more items.
      */
 
     public String getNextToken() {
@@ -96,7 +132,12 @@ public class ListInvitationsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * </p>
+     * 
      * @param nextToken
+     *        Pagination parameter to be used on the next list operation to retrieve more items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

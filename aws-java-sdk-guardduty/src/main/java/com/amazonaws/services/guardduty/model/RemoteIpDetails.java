@@ -18,7 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Remote IP information of the connection.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/RemoteIpDetails" target="_top">AWS API
  *      Documentation</a>
@@ -26,19 +25,41 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RemoteIpDetails implements Serializable, Cloneable, StructuredPojo {
 
-    /** City information of the remote IP address. */
+    /**
+     * <p>
+     * City information of the remote IP address.
+     * </p>
+     */
     private City city;
-    /** Country code of the remote IP address. */
+    /**
+     * <p>
+     * Country code of the remote IP address.
+     * </p>
+     */
     private Country country;
-    /** Location information of the remote IP address. */
+    /**
+     * <p>
+     * Location information of the remote IP address.
+     * </p>
+     */
     private GeoLocation geoLocation;
-    /** IPV4 remote address of the connection. */
+    /**
+     * <p>
+     * IPV4 remote address of the connection.
+     * </p>
+     */
     private String ipAddressV4;
-    /** ISP Organization information of the remote IP address. */
+    /**
+     * <p>
+     * ISP Organization information of the remote IP address.
+     * </p>
+     */
     private Organization organization;
 
     /**
+     * <p>
      * City information of the remote IP address.
+     * </p>
      * 
      * @param city
      *        City information of the remote IP address.
@@ -49,7 +70,9 @@ public class RemoteIpDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * City information of the remote IP address.
+     * </p>
      * 
      * @return City information of the remote IP address.
      */
@@ -59,7 +82,9 @@ public class RemoteIpDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * City information of the remote IP address.
+     * </p>
      * 
      * @param city
      *        City information of the remote IP address.
@@ -72,7 +97,9 @@ public class RemoteIpDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * Country code of the remote IP address.
+     * </p>
      * 
      * @param country
      *        Country code of the remote IP address.
@@ -83,7 +110,9 @@ public class RemoteIpDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * Country code of the remote IP address.
+     * </p>
      * 
      * @return Country code of the remote IP address.
      */
@@ -93,7 +122,9 @@ public class RemoteIpDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * Country code of the remote IP address.
+     * </p>
      * 
      * @param country
      *        Country code of the remote IP address.
@@ -106,7 +137,9 @@ public class RemoteIpDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * Location information of the remote IP address.
+     * </p>
      * 
      * @param geoLocation
      *        Location information of the remote IP address.
@@ -117,7 +150,9 @@ public class RemoteIpDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * Location information of the remote IP address.
+     * </p>
      * 
      * @return Location information of the remote IP address.
      */
@@ -127,7 +162,9 @@ public class RemoteIpDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * Location information of the remote IP address.
+     * </p>
      * 
      * @param geoLocation
      *        Location information of the remote IP address.
@@ -140,7 +177,9 @@ public class RemoteIpDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * IPV4 remote address of the connection.
+     * </p>
      * 
      * @param ipAddressV4
      *        IPV4 remote address of the connection.
@@ -151,7 +190,9 @@ public class RemoteIpDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * IPV4 remote address of the connection.
+     * </p>
      * 
      * @return IPV4 remote address of the connection.
      */
@@ -161,7 +202,9 @@ public class RemoteIpDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * IPV4 remote address of the connection.
+     * </p>
      * 
      * @param ipAddressV4
      *        IPV4 remote address of the connection.
@@ -174,7 +217,9 @@ public class RemoteIpDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * ISP Organization information of the remote IP address.
+     * </p>
      * 
      * @param organization
      *        ISP Organization information of the remote IP address.
@@ -185,7 +230,9 @@ public class RemoteIpDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * ISP Organization information of the remote IP address.
+     * </p>
      * 
      * @return ISP Organization information of the remote IP address.
      */
@@ -195,7 +242,9 @@ public class RemoteIpDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
      * ISP Organization information of the remote IP address.
+     * </p>
      * 
      * @param organization
      *        ISP Organization information of the remote IP address.

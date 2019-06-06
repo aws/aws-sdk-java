@@ -29,21 +29,21 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateFilterRequestMarshaller {
 
+    private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("detectorId").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("action").build();
+    private static final MarshallingInfo<Integer> RANK_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("rank").build();
+    private static final MarshallingInfo<StructuredPojo> FINDINGCRITERIA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingCriteria").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
-    private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("detectorId").build();
-    private static final MarshallingInfo<StructuredPojo> FINDINGCRITERIA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingCriteria").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
-    private static final MarshallingInfo<Integer> RANK_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("rank").build();
 
     private static final CreateFilterRequestMarshaller instance = new CreateFilterRequestMarshaller();
 
@@ -61,13 +61,13 @@ public class CreateFilterRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createFilterRequest.getAction(), ACTION_BINDING);
-            protocolMarshaller.marshall(createFilterRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(createFilterRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createFilterRequest.getDetectorId(), DETECTORID_BINDING);
-            protocolMarshaller.marshall(createFilterRequest.getFindingCriteria(), FINDINGCRITERIA_BINDING);
             protocolMarshaller.marshall(createFilterRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createFilterRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createFilterRequest.getAction(), ACTION_BINDING);
             protocolMarshaller.marshall(createFilterRequest.getRank(), RANK_BINDING);
+            protocolMarshaller.marshall(createFilterRequest.getFindingCriteria(), FINDINGCRITERIA_BINDING);
+            protocolMarshaller.marshall(createFilterRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -408,6 +408,39 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Creates a new OpsItem. You must have permission in AWS Identity and Access Management (IAM) to create a new
+     * OpsItem. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting Started
+     * with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Operations engineers and IT professionals use the Systems Manager OpsItems capability to view, investigate, and
+     * remediate operational issues impacting the performance and health of their AWS resources. For more information,
+     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS Systems Manager
+     * OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param createOpsItemRequest
+     * @return Result of the CreateOpsItem operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemAlreadyExistsException
+     *         The OpsItem already exists.
+     * @throws OpsItemLimitExceededException
+     *         The request caused OpsItems to exceed one or more limits. For information about OpsItem limits, see <a
+     *         href=
+     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-learn-more.html#OpsItems-learn-more-limits"
+     *         >What are the resource limits for OpsItems?</a>.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @sample AWSSimpleSystemsManagement.CreateOpsItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateOpsItemResult createOpsItem(CreateOpsItemRequest createOpsItemRequest);
+
+    /**
+     * <p>
      * Creates a patch baseline.
      * </p>
      * <note>
@@ -1370,6 +1403,30 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Query a set of OpsItems. You must have permission in AWS Identity and Access Management (IAM) to query a list of
+     * OpsItems. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting Started
+     * with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Operations engineers and IT professionals use the Systems Manager OpsItems capability to view, investigate, and
+     * remediate operational issues impacting the performance and health of their AWS resources. For more information,
+     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS Systems Manager
+     * OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param describeOpsItemsRequest
+     * @return Result of the DescribeOpsItems operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeOpsItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeOpsItems" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeOpsItemsResult describeOpsItems(DescribeOpsItemsRequest describeOpsItemsRequest);
+
+    /**
+     * <p>
      * Get information about a parameter.
      * </p>
      * <p>
@@ -1824,6 +1881,56 @@ public interface AWSSimpleSystemsManagement {
      *      API Documentation</a>
      */
     GetMaintenanceWindowTaskResult getMaintenanceWindowTask(GetMaintenanceWindowTaskRequest getMaintenanceWindowTaskRequest);
+
+    /**
+     * <p>
+     * Get information about an OpsItem by using the ID. You must have permission in AWS Identity and Access Management
+     * (IAM) to view information about an OpsItem. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting Started
+     * with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Operations engineers and IT professionals use the Systems Manager OpsItems capability to view, investigate, and
+     * remediate operational issues impacting the performance and health of their AWS resources. For more information,
+     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS Systems Manager
+     * OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param getOpsItemRequest
+     * @return Result of the GetOpsItem operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemNotFoundException
+     *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @sample AWSSimpleSystemsManagement.GetOpsItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetOpsItemResult getOpsItem(GetOpsItemRequest getOpsItemRequest);
+
+    /**
+     * <p>
+     * View a summary of OpsItems based on specified filters and aggregators.
+     * </p>
+     * 
+     * @param getOpsSummaryRequest
+     * @return Result of the GetOpsSummary operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidFilterException
+     *         The filter name is not valid. Verify the you entered the correct name and try again.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @throws InvalidTypeNameException
+     *         The parameter type name is not valid.
+     * @throws InvalidAggregatorException
+     *         The specified aggregator is not valid for inventory groups. Verify that the aggregator uses a valid
+     *         inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.
+     * @sample AWSSimpleSystemsManagement.GetOpsSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsSummary" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetOpsSummaryResult getOpsSummary(GetOpsSummaryRequest getOpsSummaryRequest);
 
     /**
      * <p>
@@ -3335,6 +3442,41 @@ public interface AWSSimpleSystemsManagement {
      *      API Documentation</a>
      */
     UpdateManagedInstanceRoleResult updateManagedInstanceRole(UpdateManagedInstanceRoleRequest updateManagedInstanceRoleRequest);
+
+    /**
+     * <p>
+     * Edit or change an OpsItem. You must have permission in AWS Identity and Access Management (IAM) to update an
+     * OpsItem. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-getting-started.html">Getting Started
+     * with OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Operations engineers and IT professionals use the Systems Manager OpsItems capability to view, investigate, and
+     * remediate operational issues impacting the performance and health of their AWS resources. For more information,
+     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems.html">AWS Systems Manager
+     * OpsItems</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param updateOpsItemRequest
+     * @return Result of the UpdateOpsItem operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemNotFoundException
+     *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @throws OpsItemAlreadyExistsException
+     *         The OpsItem already exists.
+     * @throws OpsItemLimitExceededException
+     *         The request caused OpsItems to exceed one or more limits. For information about OpsItem limits, see <a
+     *         href=
+     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsItems-learn-more.html#OpsItems-learn-more-limits"
+     *         >What are the resource limits for OpsItems?</a>.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @sample AWSSimpleSystemsManagement.UpdateOpsItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateOpsItemResult updateOpsItem(UpdateOpsItemRequest updateOpsItemRequest);
 
     /**
      * <p>

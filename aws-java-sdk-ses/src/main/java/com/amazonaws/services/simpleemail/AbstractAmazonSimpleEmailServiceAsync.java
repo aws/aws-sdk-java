@@ -688,6 +688,21 @@ public class AbstractAmazonSimpleEmailServiceAsync extends AbstractAmazonSimpleE
     }
 
     @Override
+    public java.util.concurrent.Future<PutConfigurationSetDeliveryOptionsResult> putConfigurationSetDeliveryOptionsAsync(
+            PutConfigurationSetDeliveryOptionsRequest request) {
+
+        return putConfigurationSetDeliveryOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConfigurationSetDeliveryOptionsResult> putConfigurationSetDeliveryOptionsAsync(
+            PutConfigurationSetDeliveryOptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutConfigurationSetDeliveryOptionsRequest, PutConfigurationSetDeliveryOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutIdentityPolicyResult> putIdentityPolicyAsync(PutIdentityPolicyRequest request) {
 
         return putIdentityPolicyAsync(request, null);

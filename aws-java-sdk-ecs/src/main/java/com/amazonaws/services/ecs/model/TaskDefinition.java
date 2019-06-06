@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details of a task definition.
+ * The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container
+ * Service task. You can specify which Docker images to use, the required resources, and other configurations related to
+ * launching the task definition through an Amazon ECS service or task.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskDefinition" target="_top">AWS API
@@ -45,14 +47,18 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<ContainerDefinition> containerDefinitions;
     /**
      * <p>
-     * The family of your task definition, used as the definition name.
+     * The name of a family that this task definition is registered to. A family groups multiple versions of a task
+     * definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1.
+     * Amazon ECS gives sequential revision numbers to each task definition that you add.
      * </p>
      */
     private String family;
     /**
      * <p>
-     * The ARN of the IAM role that containers in this task can assume. All containers in this task are granted the
-     * permissions that are specified in this role.
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants containers in the
+     * task permission to call AWS APIs on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task Role</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
@@ -65,8 +71,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private String taskRoleArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution role that containers in this task can assume. All containers
+     * in this task are granted the permissions that are specified in this role.
      * </p>
      */
     private String executionRoleArn;
@@ -90,8 +96,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -125,11 +131,11 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private Integer revision;
     /**
      * <p>
-     * The list of volumes in a task.
+     * The list of volume definitions for the task.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are not
-     * supported.
+     * If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
+     * not supported.
      * </p>
      * <p>
      * For more information about volume definition parameters and defaults, see <a
@@ -168,7 +174,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<String> compatibilities;
     /**
      * <p>
-     * The launch type that the task is using.
+     * The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid values
+     * include <code>EC2</code> and <code>FARGATE</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> requiresCompatibilities;
@@ -291,7 +298,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -324,7 +331,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are
      * launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required
      * versions of the container agent and <code>ecs-init</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -469,11 +476,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The family of your task definition, used as the definition name.
+     * The name of a family that this task definition is registered to. A family groups multiple versions of a task
+     * definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1.
+     * Amazon ECS gives sequential revision numbers to each task definition that you add.
      * </p>
      * 
      * @param family
-     *        The family of your task definition, used as the definition name.
+     *        The name of a family that this task definition is registered to. A family groups multiple versions of a
+     *        task definition. Amazon ECS gives the first task definition that you registered to a family a revision
+     *        number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add.
      */
 
     public void setFamily(String family) {
@@ -482,10 +493,14 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The family of your task definition, used as the definition name.
+     * The name of a family that this task definition is registered to. A family groups multiple versions of a task
+     * definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1.
+     * Amazon ECS gives sequential revision numbers to each task definition that you add.
      * </p>
      * 
-     * @return The family of your task definition, used as the definition name.
+     * @return The name of a family that this task definition is registered to. A family groups multiple versions of a
+     *         task definition. Amazon ECS gives the first task definition that you registered to a family a revision
+     *         number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add.
      */
 
     public String getFamily() {
@@ -494,11 +509,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The family of your task definition, used as the definition name.
+     * The name of a family that this task definition is registered to. A family groups multiple versions of a task
+     * definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1.
+     * Amazon ECS gives sequential revision numbers to each task definition that you add.
      * </p>
      * 
      * @param family
-     *        The family of your task definition, used as the definition name.
+     *        The name of a family that this task definition is registered to. A family groups multiple versions of a
+     *        task definition. Amazon ECS gives the first task definition that you registered to a family a revision
+     *        number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -509,8 +528,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the IAM role that containers in this task can assume. All containers in this task are granted the
-     * permissions that are specified in this role.
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants containers in the
+     * task permission to call AWS APIs on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task Role</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
@@ -521,8 +542,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param taskRoleArn
-     *        The ARN of the IAM role that containers in this task can assume. All containers in this task are granted
-     *        the permissions that are specified in this role.</p>
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants containers
+     *        in the task permission to call AWS APIs on your behalf. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task
+     *        Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
      *        IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you
      *        launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in
@@ -537,8 +560,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the IAM role that containers in this task can assume. All containers in this task are granted the
-     * permissions that are specified in this role.
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants containers in the
+     * task permission to call AWS APIs on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task Role</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
@@ -548,8 +573,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The ARN of the IAM role that containers in this task can assume. All containers in this task are granted
-     *         the permissions that are specified in this role.</p>
+     * @return The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants containers
+     *         in the task permission to call AWS APIs on your behalf. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task
+     *         Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *         <p>
      *         IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you
      *         launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in
@@ -564,8 +591,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the IAM role that containers in this task can assume. All containers in this task are granted the
-     * permissions that are specified in this role.
+     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants containers in the
+     * task permission to call AWS APIs on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task Role</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
@@ -576,8 +605,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param taskRoleArn
-     *        The ARN of the IAM role that containers in this task can assume. All containers in this task are granted
-     *        the permissions that are specified in this role.</p>
+     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants containers
+     *        in the task permission to call AWS APIs on your behalf. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task
+     *        Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
      *        IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you
      *        launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in
@@ -594,13 +625,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution role that containers in this task can assume. All containers
+     * in this task are granted the permissions that are specified in this role.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
-     *        Docker daemon can assume.
+     *        The Amazon Resource Name (ARN) of the task execution role that containers in this task can assume. All
+     *        containers in this task are granted the permissions that are specified in this role.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -609,12 +640,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution role that containers in this task can assume. All containers
+     * in this task are granted the permissions that are specified in this role.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
-     *         Docker daemon can assume.
+     * @return The Amazon Resource Name (ARN) of the task execution role that containers in this task can assume. All
+     *         containers in this task are granted the permissions that are specified in this role.
      */
 
     public String getExecutionRoleArn() {
@@ -623,13 +654,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution role that containers in this task can assume. All containers
+     * in this task are granted the permissions that are specified in this role.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
-     *        Docker daemon can assume.
+     *        The Amazon Resource Name (ARN) of the task execution role that containers in this task can assume. All
+     *        containers in this task are granted the permissions that are specified in this role.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -658,8 +689,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -700,8 +731,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
      *        definition. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
-     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -748,8 +779,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -789,7 +820,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *         If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *         must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
      *         definition. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      *         Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         <note>
@@ -839,8 +870,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -881,8 +912,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
      *        definition. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
-     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -931,8 +962,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -973,8 +1004,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
      *        definition. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
-     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -1021,8 +1052,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
-     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1063,8 +1094,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
      *        definition. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
-     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -1153,11 +1184,11 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of volumes in a task.
+     * The list of volume definitions for the task.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are not
-     * supported.
+     * If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
+     * not supported.
      * </p>
      * <p>
      * For more information about volume definition parameters and defaults, see <a
@@ -1165,10 +1196,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The list of volumes in a task.</p>
+     * @return The list of volume definitions for the task.</p>
      *         <p>
-     *         If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters
-     *         are not supported.
+     *         If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
+     *         parameters are not supported.
      *         </p>
      *         <p>
      *         For more information about volume definition parameters and defaults, see <a
@@ -1185,11 +1216,11 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of volumes in a task.
+     * The list of volume definitions for the task.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are not
-     * supported.
+     * If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
+     * not supported.
      * </p>
      * <p>
      * For more information about volume definition parameters and defaults, see <a
@@ -1198,10 +1229,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param volumes
-     *        The list of volumes in a task.</p>
+     *        The list of volume definitions for the task.</p>
      *        <p>
-     *        If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
-     *        not supported.
+     *        If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
+     *        parameters are not supported.
      *        </p>
      *        <p>
      *        For more information about volume definition parameters and defaults, see <a
@@ -1220,11 +1251,11 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of volumes in a task.
+     * The list of volume definitions for the task.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are not
-     * supported.
+     * If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
+     * not supported.
      * </p>
      * <p>
      * For more information about volume definition parameters and defaults, see <a
@@ -1238,10 +1269,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param volumes
-     *        The list of volumes in a task.</p>
+     *        The list of volume definitions for the task.</p>
      *        <p>
-     *        If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
-     *        not supported.
+     *        If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
+     *        parameters are not supported.
      *        </p>
      *        <p>
      *        For more information about volume definition parameters and defaults, see <a
@@ -1262,11 +1293,11 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of volumes in a task.
+     * The list of volume definitions for the task.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are not
-     * supported.
+     * If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
+     * not supported.
      * </p>
      * <p>
      * For more information about volume definition parameters and defaults, see <a
@@ -1275,10 +1306,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param volumes
-     *        The list of volumes in a task.</p>
+     *        The list of volume definitions for the task.</p>
      *        <p>
-     *        If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
-     *        not supported.
+     *        If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
+     *        parameters are not supported.
      *        </p>
      *        <p>
      *        For more information about volume definition parameters and defaults, see <a
@@ -1650,10 +1681,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type that the task is using.
+     * The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid values
+     * include <code>EC2</code> and <code>FARGATE</code>.
      * </p>
      * 
-     * @return The launch type that the task is using.
+     * @return The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid
+     *         values include <code>EC2</code> and <code>FARGATE</code>.
      * @see Compatibility
      */
 
@@ -1666,11 +1699,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type that the task is using.
+     * The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid values
+     * include <code>EC2</code> and <code>FARGATE</code>.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type that the task is using.
+     *        The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid
+     *        values include <code>EC2</code> and <code>FARGATE</code>.
      * @see Compatibility
      */
 
@@ -1685,7 +1720,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type that the task is using.
+     * The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid values
+     * include <code>EC2</code> and <code>FARGATE</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1694,7 +1730,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type that the task is using.
+     *        The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid
+     *        values include <code>EC2</code> and <code>FARGATE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1711,11 +1748,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type that the task is using.
+     * The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid values
+     * include <code>EC2</code> and <code>FARGATE</code>.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type that the task is using.
+     *        The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid
+     *        values include <code>EC2</code> and <code>FARGATE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1727,11 +1766,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type that the task is using.
+     * The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid values
+     * include <code>EC2</code> and <code>FARGATE</code>.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type that the task is using.
+     *        The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid
+     *        values include <code>EC2</code> and <code>FARGATE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -2462,7 +2503,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2504,7 +2545,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>
@@ -2552,7 +2593,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2593,7 +2634,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *         the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *         Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         <ul>
@@ -2641,7 +2682,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2683,7 +2724,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>
@@ -2733,7 +2774,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2775,7 +2816,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>
@@ -2823,7 +2864,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in the task,
      * the following will apply to your IPC resource namespace. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      * Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <ul>
@@ -2865,7 +2906,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        If you are setting namespaced kernel parameters using <code>systemControls</code> for the containers in
      *        the task, the following will apply to your IPC resource namespace. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
      *        Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <ul>
@@ -2904,7 +2945,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are
      * launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required
      * versions of the container agent and <code>ecs-init</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -2915,7 +2956,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container
      *        instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they
      *        contain the required versions of the container agent and <code>ecs-init</code>. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -2932,7 +2973,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are
      * launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required
      * versions of the container agent and <code>ecs-init</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -2943,7 +2984,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *         instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then
      *         they contain the required versions of the container agent and <code>ecs-init</code>. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      *         ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -2960,7 +3001,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are
      * launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required
      * versions of the container agent and <code>ecs-init</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -2971,7 +3012,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container
      *        instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they
      *        contain the required versions of the container agent and <code>ecs-init</code>. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

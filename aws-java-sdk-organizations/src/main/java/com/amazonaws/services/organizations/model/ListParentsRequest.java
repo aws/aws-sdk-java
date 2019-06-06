@@ -27,7 +27,7 @@ public class ListParentsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier (ID) of the OU or account whose parent containers you want to list. Do not specify a root.
+     * The unique identifier (ID) of the OU or account whose parent containers you want to list. Don't specify a root.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the
@@ -72,7 +72,7 @@ public class ListParentsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier (ID) of the OU or account whose parent containers you want to list. Do not specify a root.
+     * The unique identifier (ID) of the OU or account whose parent containers you want to list. Don't specify a root.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the
@@ -94,7 +94,7 @@ public class ListParentsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param childId
-     *        The unique identifier (ID) of the OU or account whose parent containers you want to list. Do not specify a
+     *        The unique identifier (ID) of the OU or account whose parent containers you want to list. Don't specify a
      *        root.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the
@@ -121,7 +121,7 @@ public class ListParentsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier (ID) of the OU or account whose parent containers you want to list. Do not specify a root.
+     * The unique identifier (ID) of the OU or account whose parent containers you want to list. Don't specify a root.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the
@@ -142,8 +142,8 @@ public class ListParentsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * 
-     * @return The unique identifier (ID) of the OU or account whose parent containers you want to list. Do not specify
-     *         a root.</p>
+     * @return The unique identifier (ID) of the OU or account whose parent containers you want to list. Don't specify a
+     *         root.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the
      *         following:
@@ -169,7 +169,7 @@ public class ListParentsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier (ID) of the OU or account whose parent containers you want to list. Do not specify a root.
+     * The unique identifier (ID) of the OU or account whose parent containers you want to list. Don't specify a root.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the
@@ -191,7 +191,7 @@ public class ListParentsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param childId
-     *        The unique identifier (ID) of the OU or account whose parent containers you want to list. Do not specify a
+     *        The unique identifier (ID) of the OU or account whose parent containers you want to list. Don't specify a
      *        root.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the

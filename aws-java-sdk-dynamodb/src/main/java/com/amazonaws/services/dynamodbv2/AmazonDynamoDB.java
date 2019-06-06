@@ -187,8 +187,7 @@ public interface AmazonDynamoDB {
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws RequestLimitExceededException
      *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
-     *         increase.
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.BatchGetItem
@@ -331,8 +330,7 @@ public interface AmazonDynamoDB {
      *         secondary indexes.
      * @throws RequestLimitExceededException
      *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
-     *         increase.
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.BatchWriteItem
@@ -657,8 +655,7 @@ public interface AmazonDynamoDB {
      *         Operation was rejected because there is an ongoing transaction for the item.
      * @throws RequestLimitExceededException
      *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
-     *         increase.
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DeleteItem
@@ -1027,8 +1024,7 @@ public interface AmazonDynamoDB {
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws RequestLimitExceededException
      *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
-     *         increase.
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.GetItem
@@ -1272,8 +1268,7 @@ public interface AmazonDynamoDB {
      *         Operation was rejected because there is an ongoing transaction for the item.
      * @throws RequestLimitExceededException
      *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
-     *         increase.
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.PutItem
@@ -1368,8 +1363,7 @@ public interface AmazonDynamoDB {
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws RequestLimitExceededException
      *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
-     *         increase.
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.Query
@@ -1621,8 +1615,7 @@ public interface AmazonDynamoDB {
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws RequestLimitExceededException
      *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
-     *         increase.
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.Scan
@@ -1730,9 +1723,9 @@ public interface AmazonDynamoDB {
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws TransactionCanceledException
-     *         The entire transaction request was rejected.</p>
+     *         The entire transaction request was canceled.</p>
      *         <p>
-     *         DynamoDB rejects a <code>TransactWriteItems</code> request under the following circumstances:
+     *         DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:
      *         </p>
      *         <ul>
      *         <li>
@@ -1768,7 +1761,7 @@ public interface AmazonDynamoDB {
      *         </li>
      *         </ul>
      *         <p>
-     *         DynamoDB rejects a <code>TransactGetItems</code> request under the following circumstances:
+     *         DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:
      *         </p>
      *         <ul>
      *         <li>
@@ -1793,6 +1786,238 @@ public interface AmazonDynamoDB {
      *         <p>
      *         There is a user error, such as an invalid data format.
      *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property.
+     *         This property is not set for other languages. Transaction cancellation reasons are ordered in the order
+     *         of requested items, if an item has no error it will have <code>NONE</code> code and <code>Null</code>
+     *         message.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Cancellation reason codes and possible error messages:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         No Errors:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>NONE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Message: <code>null</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Conditional Check Failed:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>ConditionalCheckFailed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Message: The conditional request failed.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Item Collection Size Limit Exceeded:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>ItemCollectionSizeLimitExceeded</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Message: Collection size exceeded.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Transaction Conflict:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>TransactionConflict</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Message: Transaction is ongoing for the item.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Provisioned Throughput Exceeded:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>ProvisionedThroughputExceeded</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Messages:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The level of configured provisioned throughput for the table was exceeded. Consider increasing your
+     *         provisioning level with the UpdateTable API.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.
+     *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         The level of configured provisioned throughput for one or more global secondary indexes of the table was
+     *         exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes
+     *         with the UpdateTable API.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This message is returned when provisioned throughput is exceeded is on a provisioned GSI.
+     *         </p>
+     *         </note></li>
+     *         </ul>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Throttling Error:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>ThrottlingError</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Messages:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your
+     *         table or index so please try again shortly. If exceptions persist, check if you have a hot key:
+     *         https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically
+     *         scaling the table.
+     *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is
+     *         automatically scaling your index so please try again shortly.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically
+     *         scaling the GSI.
+     *         </p>
+     *         </note></li>
+     *         </ul>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Validation Error:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>ValidationError</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Messages:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         One or more parameter values were invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The update expression attempted to update the secondary index key beyond allowed size limits.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The update expression attempted to update the secondary index key to unsupported type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An operand in the update expression has an incorrect data type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Item size to update has exceeded the maximum allowed size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Number overflow. Attempting to store a number with magnitude larger than supported range.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Type mismatch for attribute to update.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Nesting Levels have exceeded supported limits.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The document path provided in the update expression is invalid for update.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The provided expression refers to an attribute that does not exist in the item.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         </ul>
      *         </li>
      * @throws ProvisionedThroughputExceededException
      *         Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this
@@ -1892,9 +2117,9 @@ public interface AmazonDynamoDB {
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws TransactionCanceledException
-     *         The entire transaction request was rejected.</p>
+     *         The entire transaction request was canceled.</p>
      *         <p>
-     *         DynamoDB rejects a <code>TransactWriteItems</code> request under the following circumstances:
+     *         DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:
      *         </p>
      *         <ul>
      *         <li>
@@ -1930,7 +2155,7 @@ public interface AmazonDynamoDB {
      *         </li>
      *         </ul>
      *         <p>
-     *         DynamoDB rejects a <code>TransactGetItems</code> request under the following circumstances:
+     *         DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:
      *         </p>
      *         <ul>
      *         <li>
@@ -1955,6 +2180,238 @@ public interface AmazonDynamoDB {
      *         <p>
      *         There is a user error, such as an invalid data format.
      *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property.
+     *         This property is not set for other languages. Transaction cancellation reasons are ordered in the order
+     *         of requested items, if an item has no error it will have <code>NONE</code> code and <code>Null</code>
+     *         message.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Cancellation reason codes and possible error messages:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         No Errors:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>NONE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Message: <code>null</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Conditional Check Failed:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>ConditionalCheckFailed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Message: The conditional request failed.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Item Collection Size Limit Exceeded:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>ItemCollectionSizeLimitExceeded</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Message: Collection size exceeded.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Transaction Conflict:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>TransactionConflict</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Message: Transaction is ongoing for the item.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Provisioned Throughput Exceeded:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>ProvisionedThroughputExceeded</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Messages:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The level of configured provisioned throughput for the table was exceeded. Consider increasing your
+     *         provisioning level with the UpdateTable API.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.
+     *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         The level of configured provisioned throughput for one or more global secondary indexes of the table was
+     *         exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes
+     *         with the UpdateTable API.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This message is returned when provisioned throughput is exceeded is on a provisioned GSI.
+     *         </p>
+     *         </note></li>
+     *         </ul>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Throttling Error:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>ThrottlingError</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Messages:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your
+     *         table or index so please try again shortly. If exceptions persist, check if you have a hot key:
+     *         https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically
+     *         scaling the table.
+     *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is
+     *         automatically scaling your index so please try again shortly.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically
+     *         scaling the GSI.
+     *         </p>
+     *         </note></li>
+     *         </ul>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Validation Error:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>ValidationError</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Messages:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         One or more parameter values were invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The update expression attempted to update the secondary index key beyond allowed size limits.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The update expression attempted to update the secondary index key to unsupported type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An operand in the update expression has an incorrect data type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Item size to update has exceeded the maximum allowed size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Number overflow. Attempting to store a number with magnitude larger than supported range.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Type mismatch for attribute to update.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Nesting Levels have exceeded supported limits.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The document path provided in the update expression is invalid for update.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The provided expression refers to an attribute that does not exist in the item.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         </ul>
      *         </li>
      * @throws TransactionInProgressException
      *         The transaction with the given request token is already in progress.
@@ -2173,8 +2630,7 @@ public interface AmazonDynamoDB {
      *         Operation was rejected because there is an ongoing transaction for the item.
      * @throws RequestLimitExceededException
      *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS Support</a> to request a limit
-     *         increase.
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.UpdateItem

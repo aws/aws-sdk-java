@@ -27,16 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateIPSetRequestMarshaller {
 
-    private static final MarshallingInfo<Boolean> ACTIVATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activate").build();
     private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("detectorId").build();
     private static final MarshallingInfo<String> IPSETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("ipSetId").build();
-    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("location").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("location").build();
+    private static final MarshallingInfo<Boolean> ACTIVATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activate").build();
 
     private static final UpdateIPSetRequestMarshaller instance = new UpdateIPSetRequestMarshaller();
 
@@ -54,11 +54,11 @@ public class UpdateIPSetRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(updateIPSetRequest.getActivate(), ACTIVATE_BINDING);
             protocolMarshaller.marshall(updateIPSetRequest.getDetectorId(), DETECTORID_BINDING);
             protocolMarshaller.marshall(updateIPSetRequest.getIpSetId(), IPSETID_BINDING);
-            protocolMarshaller.marshall(updateIPSetRequest.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(updateIPSetRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateIPSetRequest.getLocation(), LOCATION_BINDING);
+            protocolMarshaller.marshall(updateIPSetRequest.getActivate(), ACTIVATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -675,6 +675,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<SubmitAttachmentStateChangesResult> submitAttachmentStateChangesAsync(SubmitAttachmentStateChangesRequest request) {
+
+        return submitAttachmentStateChangesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitAttachmentStateChangesResult> submitAttachmentStateChangesAsync(SubmitAttachmentStateChangesRequest request,
+            com.amazonaws.handlers.AsyncHandler<SubmitAttachmentStateChangesRequest, SubmitAttachmentStateChangesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SubmitContainerStateChangeResult> submitContainerStateChangeAsync(SubmitContainerStateChangeRequest request) {
 
         return submitContainerStateChangeAsync(request, null);

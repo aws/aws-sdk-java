@@ -33,10 +33,10 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master account.
-     * For more information, see <a href=
+     * <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the master
+     * account. For more information, see <a href=
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
-     * >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     * >Consolidated billing</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
      * The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
@@ -44,10 +44,11 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master account
-     * can also apply any type of policy to any member account in the organization. For more information, see <a href=
-     * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
-     * >All features</a> in the <i>AWS Organizations User Guide</i>.
+     * <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the master
+     * account can also apply any type of policy to any member account in the organization. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     * >All features</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -62,10 +63,10 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master account.
-     * For more information, see <a href=
+     * <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the master
+     * account. For more information, see <a href=
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
-     * >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     * >Consolidated billing</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
      * The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
@@ -73,10 +74,11 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master account
-     * can also apply any type of policy to any member account in the organization. For more information, see <a href=
-     * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
-     * >All features</a> in the <i>AWS Organizations User Guide</i>.
+     * <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the master
+     * account can also apply any type of policy to any member account in the organization. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     * >All features</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -87,10 +89,10 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master
-     *        account. For more information, see <a href=
+     *        <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the
+     *        master account. For more information, see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
-     *        >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     *        >Consolidated billing</a> in the <i>AWS Organizations User Guide.</i>
      *        </p>
      *        <p>
      *        The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
@@ -98,11 +100,11 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master
-     *        account can also apply any type of policy to any member account in the organization. For more information,
-     *        see <a href=
+     *        <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the
+     *        master account can also apply any type of policy to any member account in the organization. For more
+     *        information, see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
-     *        >All features</a> in the <i>AWS Organizations User Guide</i>.
+     *        >All features</a> in the <i>AWS Organizations User Guide.</i>
      *        </p>
      *        </li>
      * @see OrganizationFeatureSet
@@ -120,10 +122,10 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master account.
-     * For more information, see <a href=
+     * <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the master
+     * account. For more information, see <a href=
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
-     * >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     * >Consolidated billing</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
      * The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
@@ -131,10 +133,11 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master account
-     * can also apply any type of policy to any member account in the organization. For more information, see <a href=
-     * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
-     * >All features</a> in the <i>AWS Organizations User Guide</i>.
+     * <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the master
+     * account can also apply any type of policy to any member account in the organization. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     * >All features</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -144,10 +147,10 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master
-     *         account. For more information, see <a href=
+     *         <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the
+     *         master account. For more information, see <a href=
      *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
-     *         >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     *         >Consolidated billing</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         <p>
      *         The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US)
@@ -156,11 +159,11 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master
-     *         account can also apply any type of policy to any member account in the organization. For more
+     *         <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the
+     *         master account can also apply any type of policy to any member account in the organization. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
-     *         >All features</a> in the <i>AWS Organizations User Guide</i>.
+     *         >All features</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      * @see OrganizationFeatureSet
@@ -178,10 +181,10 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master account.
-     * For more information, see <a href=
+     * <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the master
+     * account. For more information, see <a href=
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
-     * >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     * >Consolidated billing</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
      * The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
@@ -189,10 +192,11 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master account
-     * can also apply any type of policy to any member account in the organization. For more information, see <a href=
-     * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
-     * >All features</a> in the <i>AWS Organizations User Guide</i>.
+     * <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the master
+     * account can also apply any type of policy to any member account in the organization. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     * >All features</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -203,10 +207,10 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master
-     *        account. For more information, see <a href=
+     *        <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the
+     *        master account. For more information, see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
-     *        >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     *        >Consolidated billing</a> in the <i>AWS Organizations User Guide.</i>
      *        </p>
      *        <p>
      *        The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
@@ -214,11 +218,11 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master
-     *        account can also apply any type of policy to any member account in the organization. For more information,
-     *        see <a href=
+     *        <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the
+     *        master account can also apply any type of policy to any member account in the organization. For more
+     *        information, see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
-     *        >All features</a> in the <i>AWS Organizations User Guide</i>.
+     *        >All features</a> in the <i>AWS Organizations User Guide.</i>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -238,10 +242,10 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master account.
-     * For more information, see <a href=
+     * <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the master
+     * account. For more information, see <a href=
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
-     * >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     * >Consolidated billing</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
      * The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
@@ -249,10 +253,11 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master account
-     * can also apply any type of policy to any member account in the organization. For more information, see <a href=
-     * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
-     * >All features</a> in the <i>AWS Organizations User Guide</i>.
+     * <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the master
+     * account can also apply any type of policy to any member account in the organization. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     * >All features</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -263,10 +268,10 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master
-     *        account. For more information, see <a href=
+     *        <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the
+     *        master account. For more information, see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
-     *        >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     *        >Consolidated billing</a> in the <i>AWS Organizations User Guide.</i>
      *        </p>
      *        <p>
      *        The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
@@ -274,11 +279,11 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master
-     *        account can also apply any type of policy to any member account in the organization. For more information,
-     *        see <a href=
+     *        <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the
+     *        master account can also apply any type of policy to any member account in the organization. For more
+     *        information, see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
-     *        >All features</a> in the <i>AWS Organizations User Guide</i>.
+     *        >All features</a> in the <i>AWS Organizations User Guide.</i>
      *        </p>
      *        </li>
      * @see OrganizationFeatureSet
@@ -296,10 +301,10 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master account.
-     * For more information, see <a href=
+     * <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the master
+     * account. For more information, see <a href=
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
-     * >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     * >Consolidated billing</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
      * The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
@@ -307,10 +312,11 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master account
-     * can also apply any type of policy to any member account in the organization. For more information, see <a href=
-     * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
-     * >All features</a> in the <i>AWS Organizations User Guide</i>.
+     * <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the master
+     * account can also apply any type of policy to any member account in the organization. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     * >All features</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -321,10 +327,10 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master
-     *        account. For more information, see <a href=
+     *        <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the
+     *        master account. For more information, see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
-     *        >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     *        >Consolidated billing</a> in the <i>AWS Organizations User Guide.</i>
      *        </p>
      *        <p>
      *        The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
@@ -332,11 +338,11 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master
-     *        account can also apply any type of policy to any member account in the organization. For more information,
-     *        see <a href=
+     *        <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the
+     *        master account can also apply any type of policy to any member account in the organization. For more
+     *        information, see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
-     *        >All features</a> in the <i>AWS Organizations User Guide</i>.
+     *        >All features</a> in the <i>AWS Organizations User Guide.</i>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

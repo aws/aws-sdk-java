@@ -25,25 +25,35 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique ID of the detector that you want to retrieve. */
+    /**
+     * <p>
+     * The unique ID of the detector the ipSet is associated with.
+     * </p>
+     */
     private String detectorId;
     /**
-     * You can use this parameter to indicate the maximum number of items that you want in the response. The default
-     * value is 7. The maximum value is 7.
+     * <p>
+     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
+     * 50. The maximum value is 50.
+     * </p>
      */
     private Integer maxResults;
     /**
+     * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the ListIPSet action. For subsequent calls to the action fill nextToken in the request with the value of
-     * NextToken from the previous response to continue listing data.
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
      */
     private String nextToken;
 
     /**
-     * The unique ID of the detector that you want to retrieve.
+     * <p>
+     * The unique ID of the detector the ipSet is associated with.
+     * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector that you want to retrieve.
+     *        The unique ID of the detector the ipSet is associated with.
      */
 
     public void setDetectorId(String detectorId) {
@@ -51,9 +61,11 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * The unique ID of the detector that you want to retrieve.
+     * <p>
+     * The unique ID of the detector the ipSet is associated with.
+     * </p>
      * 
-     * @return The unique ID of the detector that you want to retrieve.
+     * @return The unique ID of the detector the ipSet is associated with.
      */
 
     public String getDetectorId() {
@@ -61,10 +73,12 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * The unique ID of the detector that you want to retrieve.
+     * <p>
+     * The unique ID of the detector the ipSet is associated with.
+     * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector that you want to retrieve.
+     *        The unique ID of the detector the ipSet is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,12 +88,14 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * You can use this parameter to indicate the maximum number of items that you want in the response. The default
-     * value is 7. The maximum value is 7.
+     * <p>
+     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
+     * 50. The maximum value is 50.
+     * </p>
      * 
      * @param maxResults
-     *        You can use this parameter to indicate the maximum number of items that you want in the response. The
-     *        default value is 7. The maximum value is 7.
+     *        You can use this parameter to indicate the maximum number of items you want in the response. The default
+     *        value is 50. The maximum value is 50.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -87,11 +103,13 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * You can use this parameter to indicate the maximum number of items that you want in the response. The default
-     * value is 7. The maximum value is 7.
+     * <p>
+     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
+     * 50. The maximum value is 50.
+     * </p>
      * 
-     * @return You can use this parameter to indicate the maximum number of items that you want in the response. The
-     *         default value is 7. The maximum value is 7.
+     * @return You can use this parameter to indicate the maximum number of items you want in the response. The default
+     *         value is 50. The maximum value is 50.
      */
 
     public Integer getMaxResults() {
@@ -99,12 +117,14 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * You can use this parameter to indicate the maximum number of items that you want in the response. The default
-     * value is 7. The maximum value is 7.
+     * <p>
+     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
+     * 50. The maximum value is 50.
+     * </p>
      * 
      * @param maxResults
-     *        You can use this parameter to indicate the maximum number of items that you want in the response. The
-     *        default value is 7. The maximum value is 7.
+     *        You can use this parameter to indicate the maximum number of items you want in the response. The default
+     *        value is 50. The maximum value is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,14 +134,16 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the ListIPSet action. For subsequent calls to the action fill nextToken in the request with the value of
-     * NextToken from the previous response to continue listing data.
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *        call to the ListIPSet action. For subsequent calls to the action fill nextToken in the request with the
-     *        value of NextToken from the previous response to continue listing data.
+     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        of NextToken from the previous response to continue listing data.
      */
 
     public void setNextToken(String nextToken) {
@@ -129,13 +151,15 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the ListIPSet action. For subsequent calls to the action fill nextToken in the request with the value of
-     * NextToken from the previous response to continue listing data.
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
      * 
      * @return You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *         call to the ListIPSet action. For subsequent calls to the action fill nextToken in the request with the
-     *         value of NextToken from the previous response to continue listing data.
+     *         call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *         of NextToken from the previous response to continue listing data.
      */
 
     public String getNextToken() {
@@ -143,14 +167,16 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the ListIPSet action. For subsequent calls to the action fill nextToken in the request with the value of
-     * NextToken from the previous response to continue listing data.
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *        call to the ListIPSet action. For subsequent calls to the action fill nextToken in the request with the
-     *        value of NextToken from the previous response to continue listing data.
+     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        of NextToken from the previous response to continue listing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

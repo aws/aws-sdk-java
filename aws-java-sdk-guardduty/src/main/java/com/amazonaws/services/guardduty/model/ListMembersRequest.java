@@ -25,32 +25,42 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique ID of the detector of the GuardDuty account whose members you want to list. */
+    /**
+     * <p>
+     * The unique ID of the detector the member is associated with.
+     * </p>
+     */
     private String detectorId;
     /**
+     * <p>
      * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
-     * 1. The maximum value is 50.
+     * 50. The maximum value is 50.
+     * </p>
      */
     private Integer maxResults;
     /**
+     * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the ListMembers action. Subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
+     * </p>
      */
     private String nextToken;
     /**
-     * Specifies what member accounts the response is to include based on their relationship status with the master
-     * account. The default value is TRUE. If onlyAssociated is set to TRUE, the response will include member accounts
-     * whose relationship status with the master is set to Enabled, Disabled. If onlyAssociated is set to FALSE, the
-     * response will include all existing member accounts.
+     * <p>
+     * Specifies whether to only return associated members or to return all members (including members which haven't
+     * been invited yet or have been disassociated).
+     * </p>
      */
     private String onlyAssociated;
 
     /**
-     * The unique ID of the detector of the GuardDuty account whose members you want to list.
+     * <p>
+     * The unique ID of the detector the member is associated with.
+     * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account whose members you want to list.
+     *        The unique ID of the detector the member is associated with.
      */
 
     public void setDetectorId(String detectorId) {
@@ -58,9 +68,11 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The unique ID of the detector of the GuardDuty account whose members you want to list.
+     * <p>
+     * The unique ID of the detector the member is associated with.
+     * </p>
      * 
-     * @return The unique ID of the detector of the GuardDuty account whose members you want to list.
+     * @return The unique ID of the detector the member is associated with.
      */
 
     public String getDetectorId() {
@@ -68,10 +80,12 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The unique ID of the detector of the GuardDuty account whose members you want to list.
+     * <p>
+     * The unique ID of the detector the member is associated with.
+     * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account whose members you want to list.
+     *        The unique ID of the detector the member is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,12 +95,14 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
-     * 1. The maximum value is 50.
+     * 50. The maximum value is 50.
+     * </p>
      * 
      * @param maxResults
      *        You can use this parameter to indicate the maximum number of items you want in the response. The default
-     *        value is 1. The maximum value is 50.
+     *        value is 50. The maximum value is 50.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -94,11 +110,13 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
-     * 1. The maximum value is 50.
+     * 50. The maximum value is 50.
+     * </p>
      * 
      * @return You can use this parameter to indicate the maximum number of items you want in the response. The default
-     *         value is 1. The maximum value is 50.
+     *         value is 50. The maximum value is 50.
      */
 
     public Integer getMaxResults() {
@@ -106,12 +124,14 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
-     * 1. The maximum value is 50.
+     * 50. The maximum value is 50.
+     * </p>
      * 
      * @param maxResults
      *        You can use this parameter to indicate the maximum number of items you want in the response. The default
-     *        value is 1. The maximum value is 50.
+     *        value is 50. The maximum value is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,14 +141,16 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the ListMembers action. Subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
+     * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *        call to the ListMembers action. Subsequent calls to the action fill nextToken in the request with the
-     *        value of NextToken from the previous response to continue listing data.
+     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        of NextToken from the previous response to continue listing data.
      */
 
     public void setNextToken(String nextToken) {
@@ -136,13 +158,15 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the ListMembers action. Subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
+     * </p>
      * 
      * @return You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *         call to the ListMembers action. Subsequent calls to the action fill nextToken in the request with the
-     *         value of NextToken from the previous response to continue listing data.
+     *         call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *         of NextToken from the previous response to continue listing data.
      */
 
     public String getNextToken() {
@@ -150,14 +174,16 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the ListMembers action. Subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
+     * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *        call to the ListMembers action. Subsequent calls to the action fill nextToken in the request with the
-     *        value of NextToken from the previous response to continue listing data.
+     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        of NextToken from the previous response to continue listing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,16 +193,14 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Specifies what member accounts the response is to include based on their relationship status with the master
-     * account. The default value is TRUE. If onlyAssociated is set to TRUE, the response will include member accounts
-     * whose relationship status with the master is set to Enabled, Disabled. If onlyAssociated is set to FALSE, the
-     * response will include all existing member accounts.
+     * <p>
+     * Specifies whether to only return associated members or to return all members (including members which haven't
+     * been invited yet or have been disassociated).
+     * </p>
      * 
      * @param onlyAssociated
-     *        Specifies what member accounts the response is to include based on their relationship status with the
-     *        master account. The default value is TRUE. If onlyAssociated is set to TRUE, the response will include
-     *        member accounts whose relationship status with the master is set to Enabled, Disabled. If onlyAssociated
-     *        is set to FALSE, the response will include all existing member accounts.
+     *        Specifies whether to only return associated members or to return all members (including members which
+     *        haven't been invited yet or have been disassociated).
      */
 
     public void setOnlyAssociated(String onlyAssociated) {
@@ -184,15 +208,13 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Specifies what member accounts the response is to include based on their relationship status with the master
-     * account. The default value is TRUE. If onlyAssociated is set to TRUE, the response will include member accounts
-     * whose relationship status with the master is set to Enabled, Disabled. If onlyAssociated is set to FALSE, the
-     * response will include all existing member accounts.
+     * <p>
+     * Specifies whether to only return associated members or to return all members (including members which haven't
+     * been invited yet or have been disassociated).
+     * </p>
      * 
-     * @return Specifies what member accounts the response is to include based on their relationship status with the
-     *         master account. The default value is TRUE. If onlyAssociated is set to TRUE, the response will include
-     *         member accounts whose relationship status with the master is set to Enabled, Disabled. If onlyAssociated
-     *         is set to FALSE, the response will include all existing member accounts.
+     * @return Specifies whether to only return associated members or to return all members (including members which
+     *         haven't been invited yet or have been disassociated).
      */
 
     public String getOnlyAssociated() {
@@ -200,16 +222,14 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Specifies what member accounts the response is to include based on their relationship status with the master
-     * account. The default value is TRUE. If onlyAssociated is set to TRUE, the response will include member accounts
-     * whose relationship status with the master is set to Enabled, Disabled. If onlyAssociated is set to FALSE, the
-     * response will include all existing member accounts.
+     * <p>
+     * Specifies whether to only return associated members or to return all members (including members which haven't
+     * been invited yet or have been disassociated).
+     * </p>
      * 
      * @param onlyAssociated
-     *        Specifies what member accounts the response is to include based on their relationship status with the
-     *        master account. The default value is TRUE. If onlyAssociated is set to TRUE, the response will include
-     *        member accounts whose relationship status with the master is set to Enabled, Disabled. If onlyAssociated
-     *        is set to FALSE, the response will include all existing member accounts.
+     *        Specifies whether to only return associated members or to return all members (including members which
+     *        haven't been invited yet or have been disassociated).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

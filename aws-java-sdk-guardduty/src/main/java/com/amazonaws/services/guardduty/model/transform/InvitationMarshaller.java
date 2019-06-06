@@ -31,10 +31,10 @@ public class InvitationMarshaller {
             .marshallLocationName("accountId").build();
     private static final MarshallingInfo<String> INVITATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("invitationId").build();
-    private static final MarshallingInfo<String> INVITEDAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("invitedAt").build();
     private static final MarshallingInfo<String> RELATIONSHIPSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("relationshipStatus").build();
+    private static final MarshallingInfo<String> INVITEDAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("invitedAt").build();
 
     private static final InvitationMarshaller instance = new InvitationMarshaller();
 
@@ -54,8 +54,8 @@ public class InvitationMarshaller {
         try {
             protocolMarshaller.marshall(invitation.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(invitation.getInvitationId(), INVITATIONID_BINDING);
-            protocolMarshaller.marshall(invitation.getInvitedAt(), INVITEDAT_BINDING);
             protocolMarshaller.marshall(invitation.getRelationshipStatus(), RELATIONSHIPSTATUS_BINDING);
+            protocolMarshaller.marshall(invitation.getInvitedAt(), INVITEDAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

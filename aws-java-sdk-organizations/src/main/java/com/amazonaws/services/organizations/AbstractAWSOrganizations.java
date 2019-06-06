@@ -228,6 +228,11 @@ public class AbstractAWSOrganizations implements AWSOrganizations {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTargetsForPolicyResult listTargetsForPolicy(ListTargetsForPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -239,6 +244,16 @@ public class AbstractAWSOrganizations implements AWSOrganizations {
 
     @Override
     public RemoveAccountFromOrganizationResult removeAccountFromOrganization(RemoveAccountFromOrganizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

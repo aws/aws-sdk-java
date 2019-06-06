@@ -18,7 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Local port information of the connection.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/LocalPortDetails" target="_top">AWS API
  *      Documentation</a>
@@ -26,13 +25,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LocalPortDetails implements Serializable, Cloneable, StructuredPojo {
 
-    /** Port number of the local connection. */
+    /**
+     * <p>
+     * Port number of the local connection.
+     * </p>
+     */
     private Integer port;
-    /** Port name of the local connection. */
+    /**
+     * <p>
+     * Port name of the local connection.
+     * </p>
+     */
     private String portName;
 
     /**
+     * <p>
      * Port number of the local connection.
+     * </p>
      * 
      * @param port
      *        Port number of the local connection.
@@ -43,7 +52,9 @@ public class LocalPortDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Port number of the local connection.
+     * </p>
      * 
      * @return Port number of the local connection.
      */
@@ -53,7 +64,9 @@ public class LocalPortDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Port number of the local connection.
+     * </p>
      * 
      * @param port
      *        Port number of the local connection.
@@ -66,7 +79,9 @@ public class LocalPortDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Port name of the local connection.
+     * </p>
      * 
      * @param portName
      *        Port name of the local connection.
@@ -77,7 +92,9 @@ public class LocalPortDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Port name of the local connection.
+     * </p>
      * 
      * @return Port name of the local connection.
      */
@@ -87,7 +104,9 @@ public class LocalPortDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
      * Port name of the local connection.
+     * </p>
      * 
      * @param portName
      *        Port name of the local connection.

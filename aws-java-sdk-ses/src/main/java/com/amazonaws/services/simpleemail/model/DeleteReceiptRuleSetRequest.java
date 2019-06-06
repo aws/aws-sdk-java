@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to delete a receipt rule set and all of the receipt rules it contains. You use receipt rule sets
  * to receive email with Amazon SES. For more information, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
  * Guide</a>.
  * </p>
  * 

@@ -28,10 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class InviteMembersRequestMarshaller {
 
-    private static final MarshallingInfo<List> ACCOUNTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("accountIds").build();
     private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("detectorId").build();
+    private static final MarshallingInfo<List> ACCOUNTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountIds").build();
     private static final MarshallingInfo<Boolean> DISABLEEMAILNOTIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disableEmailNotification").build();
     private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -53,8 +53,8 @@ public class InviteMembersRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(inviteMembersRequest.getAccountIds(), ACCOUNTIDS_BINDING);
             protocolMarshaller.marshall(inviteMembersRequest.getDetectorId(), DETECTORID_BINDING);
+            protocolMarshaller.marshall(inviteMembersRequest.getAccountIds(), ACCOUNTIDS_BINDING);
             protocolMarshaller.marshall(inviteMembersRequest.getDisableEmailNotification(), DISABLEEMAILNOTIFICATION_BINDING);
             protocolMarshaller.marshall(inviteMembersRequest.getMessage(), MESSAGE_BINDING);
         } catch (Exception e) {

@@ -18,7 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Representation of a abnormal or suspicious activity.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Finding" target="_top">AWS API
  *      Documentation</a>
@@ -26,39 +25,101 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Finding implements Serializable, Cloneable, StructuredPojo {
 
-    /** AWS account ID where the activity occurred that prompted GuardDuty to generate a finding. */
+    /**
+     * <p>
+     * AWS account ID where the activity occurred that prompted GuardDuty to generate a finding.
+     * </p>
+     */
     private String accountId;
-    /** The ARN of a finding described by the action. */
+    /**
+     * <p>
+     * The ARN of a finding described by the action.
+     * </p>
+     */
     private String arn;
-    /** The confidence level of a finding. */
+    /**
+     * <p>
+     * The confidence level of a finding.
+     * </p>
+     */
     private Double confidence;
-    /** The time stamp at which a finding was generated. */
+    /**
+     * <p>
+     * The time stamp at which a finding was generated.
+     * </p>
+     */
     private String createdAt;
-    /** The description of a finding. */
+    /**
+     * <p>
+     * The description of a finding.
+     * </p>
+     */
     private String description;
-    /** The identifier that corresponds to a finding described by the action. */
+    /**
+     * <p>
+     * The identifier that corresponds to a finding described by the action.
+     * </p>
+     */
     private String id;
-    /** The AWS resource partition. */
+    /**
+     * <p>
+     * The AWS resource partition.
+     * </p>
+     */
     private String partition;
-    /** The AWS region where the activity occurred that prompted GuardDuty to generate a finding. */
+    /**
+     * <p>
+     * The AWS region where the activity occurred that prompted GuardDuty to generate a finding.
+     * </p>
+     */
     private String region;
-    /** The AWS resource associated with the activity that prompted GuardDuty to generate a finding. */
+    /**
+     * <p>
+     * The AWS resource associated with the activity that prompted GuardDuty to generate a finding.
+     * </p>
+     */
     private Resource resource;
-    /** Findings' schema version. */
+    /**
+     * <p>
+     * Findings' schema version.
+     * </p>
+     */
     private String schemaVersion;
-    /** Additional information assigned to the generated finding by GuardDuty. */
+    /**
+     * <p>
+     * Additional information assigned to the generated finding by GuardDuty.
+     * </p>
+     */
     private Service service;
-    /** The severity of a finding. */
+    /**
+     * <p>
+     * The severity of a finding.
+     * </p>
+     */
     private Double severity;
-    /** The title of a finding. */
+    /**
+     * <p>
+     * The title of a finding.
+     * </p>
+     */
     private String title;
-    /** The type of a finding described by the action. */
+    /**
+     * <p>
+     * The type of a finding described by the action.
+     * </p>
+     */
     private String type;
-    /** The time stamp at which a finding was last updated. */
+    /**
+     * <p>
+     * The time stamp at which a finding was last updated.
+     * </p>
+     */
     private String updatedAt;
 
     /**
+     * <p>
      * AWS account ID where the activity occurred that prompted GuardDuty to generate a finding.
+     * </p>
      * 
      * @param accountId
      *        AWS account ID where the activity occurred that prompted GuardDuty to generate a finding.
@@ -69,7 +130,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * AWS account ID where the activity occurred that prompted GuardDuty to generate a finding.
+     * </p>
      * 
      * @return AWS account ID where the activity occurred that prompted GuardDuty to generate a finding.
      */
@@ -79,7 +142,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * AWS account ID where the activity occurred that prompted GuardDuty to generate a finding.
+     * </p>
      * 
      * @param accountId
      *        AWS account ID where the activity occurred that prompted GuardDuty to generate a finding.
@@ -92,7 +157,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The ARN of a finding described by the action.
+     * </p>
      * 
      * @param arn
      *        The ARN of a finding described by the action.
@@ -103,7 +170,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The ARN of a finding described by the action.
+     * </p>
      * 
      * @return The ARN of a finding described by the action.
      */
@@ -113,7 +182,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The ARN of a finding described by the action.
+     * </p>
      * 
      * @param arn
      *        The ARN of a finding described by the action.
@@ -126,7 +197,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The confidence level of a finding.
+     * </p>
      * 
      * @param confidence
      *        The confidence level of a finding.
@@ -137,7 +210,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The confidence level of a finding.
+     * </p>
      * 
      * @return The confidence level of a finding.
      */
@@ -147,7 +222,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The confidence level of a finding.
+     * </p>
      * 
      * @param confidence
      *        The confidence level of a finding.
@@ -160,7 +237,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The time stamp at which a finding was generated.
+     * </p>
      * 
      * @param createdAt
      *        The time stamp at which a finding was generated.
@@ -171,7 +250,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The time stamp at which a finding was generated.
+     * </p>
      * 
      * @return The time stamp at which a finding was generated.
      */
@@ -181,7 +262,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The time stamp at which a finding was generated.
+     * </p>
      * 
      * @param createdAt
      *        The time stamp at which a finding was generated.
@@ -194,7 +277,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The description of a finding.
+     * </p>
      * 
      * @param description
      *        The description of a finding.
@@ -205,7 +290,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The description of a finding.
+     * </p>
      * 
      * @return The description of a finding.
      */
@@ -215,7 +302,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The description of a finding.
+     * </p>
      * 
      * @param description
      *        The description of a finding.
@@ -228,7 +317,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The identifier that corresponds to a finding described by the action.
+     * </p>
      * 
      * @param id
      *        The identifier that corresponds to a finding described by the action.
@@ -239,7 +330,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The identifier that corresponds to a finding described by the action.
+     * </p>
      * 
      * @return The identifier that corresponds to a finding described by the action.
      */
@@ -249,7 +342,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The identifier that corresponds to a finding described by the action.
+     * </p>
      * 
      * @param id
      *        The identifier that corresponds to a finding described by the action.
@@ -262,7 +357,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The AWS resource partition.
+     * </p>
      * 
      * @param partition
      *        The AWS resource partition.
@@ -273,7 +370,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The AWS resource partition.
+     * </p>
      * 
      * @return The AWS resource partition.
      */
@@ -283,7 +382,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The AWS resource partition.
+     * </p>
      * 
      * @param partition
      *        The AWS resource partition.
@@ -296,7 +397,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The AWS region where the activity occurred that prompted GuardDuty to generate a finding.
+     * </p>
      * 
      * @param region
      *        The AWS region where the activity occurred that prompted GuardDuty to generate a finding.
@@ -307,7 +410,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The AWS region where the activity occurred that prompted GuardDuty to generate a finding.
+     * </p>
      * 
      * @return The AWS region where the activity occurred that prompted GuardDuty to generate a finding.
      */
@@ -317,7 +422,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The AWS region where the activity occurred that prompted GuardDuty to generate a finding.
+     * </p>
      * 
      * @param region
      *        The AWS region where the activity occurred that prompted GuardDuty to generate a finding.
@@ -330,7 +437,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The AWS resource associated with the activity that prompted GuardDuty to generate a finding.
+     * </p>
      * 
      * @param resource
      *        The AWS resource associated with the activity that prompted GuardDuty to generate a finding.
@@ -341,7 +450,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The AWS resource associated with the activity that prompted GuardDuty to generate a finding.
+     * </p>
      * 
      * @return The AWS resource associated with the activity that prompted GuardDuty to generate a finding.
      */
@@ -351,7 +462,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The AWS resource associated with the activity that prompted GuardDuty to generate a finding.
+     * </p>
      * 
      * @param resource
      *        The AWS resource associated with the activity that prompted GuardDuty to generate a finding.
@@ -364,7 +477,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Findings' schema version.
+     * </p>
      * 
      * @param schemaVersion
      *        Findings' schema version.
@@ -375,7 +490,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Findings' schema version.
+     * </p>
      * 
      * @return Findings' schema version.
      */
@@ -385,7 +502,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Findings' schema version.
+     * </p>
      * 
      * @param schemaVersion
      *        Findings' schema version.
@@ -398,7 +517,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Additional information assigned to the generated finding by GuardDuty.
+     * </p>
      * 
      * @param service
      *        Additional information assigned to the generated finding by GuardDuty.
@@ -409,7 +530,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Additional information assigned to the generated finding by GuardDuty.
+     * </p>
      * 
      * @return Additional information assigned to the generated finding by GuardDuty.
      */
@@ -419,7 +542,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * Additional information assigned to the generated finding by GuardDuty.
+     * </p>
      * 
      * @param service
      *        Additional information assigned to the generated finding by GuardDuty.
@@ -432,7 +557,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The severity of a finding.
+     * </p>
      * 
      * @param severity
      *        The severity of a finding.
@@ -443,7 +570,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The severity of a finding.
+     * </p>
      * 
      * @return The severity of a finding.
      */
@@ -453,7 +582,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The severity of a finding.
+     * </p>
      * 
      * @param severity
      *        The severity of a finding.
@@ -466,7 +597,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The title of a finding.
+     * </p>
      * 
      * @param title
      *        The title of a finding.
@@ -477,7 +610,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The title of a finding.
+     * </p>
      * 
      * @return The title of a finding.
      */
@@ -487,7 +622,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The title of a finding.
+     * </p>
      * 
      * @param title
      *        The title of a finding.
@@ -500,7 +637,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The type of a finding described by the action.
+     * </p>
      * 
      * @param type
      *        The type of a finding described by the action.
@@ -511,7 +650,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The type of a finding described by the action.
+     * </p>
      * 
      * @return The type of a finding described by the action.
      */
@@ -521,7 +662,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The type of a finding described by the action.
+     * </p>
      * 
      * @param type
      *        The type of a finding described by the action.
@@ -534,7 +677,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The time stamp at which a finding was last updated.
+     * </p>
      * 
      * @param updatedAt
      *        The time stamp at which a finding was last updated.
@@ -545,7 +690,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The time stamp at which a finding was last updated.
+     * </p>
      * 
      * @return The time stamp at which a finding was last updated.
      */
@@ -555,7 +702,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The time stamp at which a finding was last updated.
+     * </p>
      * 
      * @param updatedAt
      *        The time stamp at which a finding was last updated.

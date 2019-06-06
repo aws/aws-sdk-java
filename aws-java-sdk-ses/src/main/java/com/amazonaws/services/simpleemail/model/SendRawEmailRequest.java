@@ -20,7 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * Represents a request to send a single raw email using Amazon SES. For more information, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail" target="_top">AWS API
@@ -83,7 +83,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment Types</a> in
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment Types</a> in
      * the <i>Amazon SES Developer Guide</i>.
      * </p>
      * </li>
@@ -96,7 +96,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we
      * highly recommend that you encode that content. For more information, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the
      * <i>Amazon SES Developer Guide</i>.
      * </p>
      * </li>
@@ -124,7 +124,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide,
      * or see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      * >Amazon SES Developer Guide</a>.
      * </p>
      * </note>
@@ -152,7 +152,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide,
      * or see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      * >Amazon SES Developer Guide</a>.
      * </p>
      * </note>
@@ -180,7 +180,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide,
      * or see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      * >Amazon SES Developer Guide</a>.
      * </p>
      * </note>
@@ -233,7 +233,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types,
-     *        see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment
+     *        see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment
      *        Types</a> in the <i>Amazon SES Developer Guide</i>.
      *        </p>
      *        </li>
@@ -246,7 +246,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character
      *        range, we highly recommend that you encode that content. For more information, see <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in
      *        the <i>Amazon SES Developer Guide</i>.
      *        </p>
      *        </li>
@@ -508,7 +508,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment Types</a> in
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment Types</a> in
      * the <i>Amazon SES Developer Guide</i>.
      * </p>
      * </li>
@@ -521,7 +521,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we
      * highly recommend that you encode that content. For more information, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the
      * <i>Amazon SES Developer Guide</i>.
      * </p>
      * </li>
@@ -554,7 +554,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types,
-     *        see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment
+     *        see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment
      *        Types</a> in the <i>Amazon SES Developer Guide</i>.
      *        </p>
      *        </li>
@@ -567,7 +567,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character
      *        range, we highly recommend that you encode that content. For more information, see <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in
      *        the <i>Amazon SES Developer Guide</i>.
      *        </p>
      *        </li>
@@ -606,7 +606,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment Types</a> in
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment Types</a> in
      * the <i>Amazon SES Developer Guide</i>.
      * </p>
      * </li>
@@ -619,7 +619,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we
      * highly recommend that you encode that content. For more information, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the
      * <i>Amazon SES Developer Guide</i>.
      * </p>
      * </li>
@@ -651,8 +651,8 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types,
-     *         see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment
-     *         Types</a> in the <i>Amazon SES Developer Guide</i>.
+     *         see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported
+     *         Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -664,7 +664,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character
      *         range, we highly recommend that you encode that content. For more information, see <a
-     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in
+     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in
      *         the <i>Amazon SES Developer Guide</i>.
      *         </p>
      *         </li>
@@ -703,7 +703,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment Types</a> in
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment Types</a> in
      * the <i>Amazon SES Developer Guide</i>.
      * </p>
      * </li>
@@ -716,7 +716,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we
      * highly recommend that you encode that content. For more information, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the
      * <i>Amazon SES Developer Guide</i>.
      * </p>
      * </li>
@@ -749,7 +749,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types,
-     *        see <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment
+     *        see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment
      *        Types</a> in the <i>Amazon SES Developer Guide</i>.
      *        </p>
      *        </li>
@@ -762,7 +762,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character
      *        range, we highly recommend that you encode that content. For more information, see <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in
      *        the <i>Amazon SES Developer Guide</i>.
      *        </p>
      *        </li>
@@ -795,7 +795,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide,
      * or see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      * >Amazon SES Developer Guide</a>.
      * </p>
      * </note>
@@ -813,7 +813,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this
      *        guide, or see the <a href=
-     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *        >Amazon SES Developer Guide</a>.
      *        </p>
      */
@@ -837,7 +837,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide,
      * or see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      * >Amazon SES Developer Guide</a>.
      * </p>
      * </note>
@@ -854,7 +854,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         For information about when to use this parameter, see the description of <code>SendRawEmail</code> in
      *         this guide, or see the <a href=
-     *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     *         "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *         >Amazon SES Developer Guide</a>.
      *         </p>
      */
@@ -878,7 +878,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide,
      * or see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      * >Amazon SES Developer Guide</a>.
      * </p>
      * </note>
@@ -896,7 +896,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this
      *        guide, or see the <a href=
-     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *        >Amazon SES Developer Guide</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -929,7 +929,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide,
      * or see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      * >Amazon SES Developer Guide</a>.
      * </p>
      * </note>
@@ -954,7 +954,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this
      *        guide, or see the <a href=
-     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *        >Amazon SES Developer Guide</a>.
      *        </p>
      */
@@ -985,7 +985,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide,
      * or see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      * >Amazon SES Developer Guide</a>.
      * </p>
      * </note>
@@ -1009,7 +1009,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         For information about when to use this parameter, see the description of <code>SendRawEmail</code> in
      *         this guide, or see the <a href=
-     *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     *         "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *         >Amazon SES Developer Guide</a>.
      *         </p>
      */
@@ -1040,7 +1040,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide,
      * or see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      * >Amazon SES Developer Guide</a>.
      * </p>
      * </note>
@@ -1065,7 +1065,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this
      *        guide, or see the <a href=
-     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *        >Amazon SES Developer Guide</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1098,7 +1098,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide,
      * or see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      * >Amazon SES Developer Guide</a>.
      * </p>
      * </note>
@@ -1123,7 +1123,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this
      *        guide, or see the <a href=
-     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *        >Amazon SES Developer Guide</a>.
      *        </p>
      */
@@ -1154,7 +1154,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide,
      * or see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      * >Amazon SES Developer Guide</a>.
      * </p>
      * </note>
@@ -1178,7 +1178,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         For information about when to use this parameter, see the description of <code>SendRawEmail</code> in
      *         this guide, or see the <a href=
-     *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     *         "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *         >Amazon SES Developer Guide</a>.
      *         </p>
      */
@@ -1209,7 +1209,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide,
      * or see the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     * "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      * >Amazon SES Developer Guide</a>.
      * </p>
      * </note>
@@ -1234,7 +1234,7 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this
      *        guide, or see the <a href=
-     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
+     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *        >Amazon SES Developer Guide</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

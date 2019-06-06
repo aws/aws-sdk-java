@@ -27,6 +27,31 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
+ * ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't yet have
+ * enough information to exist as a standalone account. This account requires you to first agree to the AWS Customer
+ * Agreement. Follow the steps at <a href=
+ * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
+ * >To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
+ * Organizations User Guide.</i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization that
+ * doesn't yet have enough information to exist as a standalone account. This account requires you to first complete
+ * phone verification. Follow the steps at <a href=
+ * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
+ * >To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
+ * Organizations User Guide.</i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create in one day.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization. If you
  * need more accounts, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a> to request an
  * increase in your limit.
@@ -53,83 +78,6 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of OUs that you can have in an organization.
- * </p>
- * </li>
- * <li>
- * <p>
- * OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
- * </p>
- * </li>
- * <li>
- * <p>
- * ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the organization to be
- * configured to support all features. An organization that supports only consolidated billing features can't perform
- * this operation.
- * </p>
- * </li>
- * <li>
- * <p>
- * POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an organization.
- * </p>
- * </li>
- * <li>
- * <p>
- * MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain type that can
- * be attached to an entity at one time.
- * </p>
- * </li>
- * <li>
- * <p>
- * MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would cause the
- * entity to have fewer than the minimum number of policies of a certain type required.
- * </p>
- * </li>
- * <li>
- * <p>
- * ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't yet have
- * enough information to exist as a standalone account. This account requires you to first agree to the AWS Customer
- * Agreement. Follow the steps at <a href=
- * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
- * >To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
- * Organizations User Guide</i>.
- * </p>
- * </li>
- * <li>
- * <p>
- * ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization that
- * doesn't yet have enough information to exist as a standalone account. This account requires you to first complete
- * phone verification. Follow the steps at <a href=
- * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
- * >To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
- * Organizations User Guide</i>.
- * </p>
- * </li>
- * <li>
- * <p>
- * MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first must
- * associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href=
- * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
- * >To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
- * Organizations User Guide</i>.
- * </p>
- * </li>
- * <li>
- * <p>
- * MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you first must
- * associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href=
- * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
- * >To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
- * Organizations User Guide</i>.
- * </p>
- * </li>
- * <li>
- * <p>
- * ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create in one day.
- * </p>
- * </li>
- * <li>
- * <p>
  * MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first must migrate
  * the organization's master account to the marketplace that corresponds to the master account's address. For example,
  * accounts with India addresses must be associated with the AISPL marketplace. All accounts in an organization must be
@@ -148,6 +96,63 @@ import javax.annotation.Generated;
  * in the AWS GovCloud (US-West) Region. For more information, see <a
  * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS Organizations</a> in
  * the <i>AWS GovCloud User Guide.</i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first must
+ * associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href=
+ * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
+ * >To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
+ * Organizations User Guide.</i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain type that can
+ * be attached to an entity at one time.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * MAX_TAG_LIMIT_EXCEEDED: You have exceeded the number of tags allowed on this resource.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you first must
+ * associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href=
+ * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
+ * >To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
+ * Organizations User Guide.</i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would cause the
+ * entity to have fewer than the minimum number of policies of a certain type required.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the organization to be
+ * configured to support all features. An organization that supports only consolidated billing features can't perform
+ * this operation.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of OUs that you can have in an organization.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an organization.
  * </p>
  * </li>
  * </ul>

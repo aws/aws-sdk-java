@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For information about setting up IP address filters, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer
  * Guide</a>.
  * </p>
  * 

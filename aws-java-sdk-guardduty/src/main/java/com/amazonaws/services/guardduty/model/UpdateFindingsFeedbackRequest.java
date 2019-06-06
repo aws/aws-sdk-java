@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * UpdateFindingsFeedback request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFindingsFeedback" target="_top">AWS
  *      API Documentation</a>
@@ -26,55 +25,37 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** Additional feedback about the GuardDuty findings. */
-    private String comments;
     /**
+     * <p>
      * The ID of the detector that specifies the GuardDuty service whose findings you want to mark as useful or not
      * useful.
+     * </p>
      */
     private String detectorId;
-    /** Valid values: USEFUL | NOT_USEFUL */
-    private String feedback;
-    /** IDs of the findings that you want to mark as useful or not useful. */
+    /**
+     * <p>
+     * IDs of the findings that you want to mark as useful or not useful.
+     * </p>
+     */
     private java.util.List<String> findingIds;
-
     /**
-     * Additional feedback about the GuardDuty findings.
-     * 
-     * @param comments
-     *        Additional feedback about the GuardDuty findings.
+     * <p>
+     * Valid values: USEFUL | NOT_USEFUL
+     * </p>
      */
-
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
-
+    private String feedback;
     /**
+     * <p>
      * Additional feedback about the GuardDuty findings.
-     * 
-     * @return Additional feedback about the GuardDuty findings.
+     * </p>
      */
-
-    public String getComments() {
-        return this.comments;
-    }
+    private String comments;
 
     /**
-     * Additional feedback about the GuardDuty findings.
-     * 
-     * @param comments
-     *        Additional feedback about the GuardDuty findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateFindingsFeedbackRequest withComments(String comments) {
-        setComments(comments);
-        return this;
-    }
-
-    /**
+     * <p>
      * The ID of the detector that specifies the GuardDuty service whose findings you want to mark as useful or not
      * useful.
+     * </p>
      * 
      * @param detectorId
      *        The ID of the detector that specifies the GuardDuty service whose findings you want to mark as useful or
@@ -86,8 +67,10 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * The ID of the detector that specifies the GuardDuty service whose findings you want to mark as useful or not
      * useful.
+     * </p>
      * 
      * @return The ID of the detector that specifies the GuardDuty service whose findings you want to mark as useful or
      *         not useful.
@@ -98,8 +81,10 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * The ID of the detector that specifies the GuardDuty service whose findings you want to mark as useful or not
      * useful.
+     * </p>
      * 
      * @param detectorId
      *        The ID of the detector that specifies the GuardDuty service whose findings you want to mark as useful or
@@ -113,58 +98,9 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Valid values: USEFUL | NOT_USEFUL
-     * 
-     * @param feedback
-     *        Valid values: USEFUL | NOT_USEFUL
-     * @see Feedback
-     */
-
-    public void setFeedback(String feedback) {
-        this.feedback = feedback;
-    }
-
-    /**
-     * Valid values: USEFUL | NOT_USEFUL
-     * 
-     * @return Valid values: USEFUL | NOT_USEFUL
-     * @see Feedback
-     */
-
-    public String getFeedback() {
-        return this.feedback;
-    }
-
-    /**
-     * Valid values: USEFUL | NOT_USEFUL
-     * 
-     * @param feedback
-     *        Valid values: USEFUL | NOT_USEFUL
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Feedback
-     */
-
-    public UpdateFindingsFeedbackRequest withFeedback(String feedback) {
-        setFeedback(feedback);
-        return this;
-    }
-
-    /**
-     * Valid values: USEFUL | NOT_USEFUL
-     * 
-     * @param feedback
-     *        Valid values: USEFUL | NOT_USEFUL
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Feedback
-     */
-
-    public UpdateFindingsFeedbackRequest withFeedback(Feedback feedback) {
-        this.feedback = feedback.toString();
-        return this;
-    }
-
-    /**
+     * <p>
      * IDs of the findings that you want to mark as useful or not useful.
+     * </p>
      * 
      * @return IDs of the findings that you want to mark as useful or not useful.
      */
@@ -174,7 +110,9 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * IDs of the findings that you want to mark as useful or not useful.
+     * </p>
      * 
      * @param findingIds
      *        IDs of the findings that you want to mark as useful or not useful.
@@ -190,7 +128,9 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * IDs of the findings that you want to mark as useful or not useful.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFindingIds(java.util.Collection)} or {@link #withFindingIds(java.util.Collection)} if you want to
@@ -213,7 +153,9 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * IDs of the findings that you want to mark as useful or not useful.
+     * </p>
      * 
      * @param findingIds
      *        IDs of the findings that you want to mark as useful or not useful.
@@ -222,6 +164,105 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
 
     public UpdateFindingsFeedbackRequest withFindingIds(java.util.Collection<String> findingIds) {
         setFindingIds(findingIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Valid values: USEFUL | NOT_USEFUL
+     * </p>
+     * 
+     * @param feedback
+     *        Valid values: USEFUL | NOT_USEFUL
+     * @see Feedback
+     */
+
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
+    }
+
+    /**
+     * <p>
+     * Valid values: USEFUL | NOT_USEFUL
+     * </p>
+     * 
+     * @return Valid values: USEFUL | NOT_USEFUL
+     * @see Feedback
+     */
+
+    public String getFeedback() {
+        return this.feedback;
+    }
+
+    /**
+     * <p>
+     * Valid values: USEFUL | NOT_USEFUL
+     * </p>
+     * 
+     * @param feedback
+     *        Valid values: USEFUL | NOT_USEFUL
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Feedback
+     */
+
+    public UpdateFindingsFeedbackRequest withFeedback(String feedback) {
+        setFeedback(feedback);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Valid values: USEFUL | NOT_USEFUL
+     * </p>
+     * 
+     * @param feedback
+     *        Valid values: USEFUL | NOT_USEFUL
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Feedback
+     */
+
+    public UpdateFindingsFeedbackRequest withFeedback(Feedback feedback) {
+        this.feedback = feedback.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Additional feedback about the GuardDuty findings.
+     * </p>
+     * 
+     * @param comments
+     *        Additional feedback about the GuardDuty findings.
+     */
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    /**
+     * <p>
+     * Additional feedback about the GuardDuty findings.
+     * </p>
+     * 
+     * @return Additional feedback about the GuardDuty findings.
+     */
+
+    public String getComments() {
+        return this.comments;
+    }
+
+    /**
+     * <p>
+     * Additional feedback about the GuardDuty findings.
+     * </p>
+     * 
+     * @param comments
+     *        Additional feedback about the GuardDuty findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFindingsFeedbackRequest withComments(String comments) {
+        setComments(comments);
         return this;
     }
 
@@ -237,14 +278,14 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getComments() != null)
-            sb.append("Comments: ").append(getComments()).append(",");
         if (getDetectorId() != null)
             sb.append("DetectorId: ").append(getDetectorId()).append(",");
+        if (getFindingIds() != null)
+            sb.append("FindingIds: ").append(getFindingIds()).append(",");
         if (getFeedback() != null)
             sb.append("Feedback: ").append(getFeedback()).append(",");
-        if (getFindingIds() != null)
-            sb.append("FindingIds: ").append(getFindingIds());
+        if (getComments() != null)
+            sb.append("Comments: ").append(getComments());
         sb.append("}");
         return sb.toString();
     }
@@ -259,21 +300,21 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
         if (obj instanceof UpdateFindingsFeedbackRequest == false)
             return false;
         UpdateFindingsFeedbackRequest other = (UpdateFindingsFeedbackRequest) obj;
-        if (other.getComments() == null ^ this.getComments() == null)
-            return false;
-        if (other.getComments() != null && other.getComments().equals(this.getComments()) == false)
-            return false;
         if (other.getDetectorId() == null ^ this.getDetectorId() == null)
             return false;
         if (other.getDetectorId() != null && other.getDetectorId().equals(this.getDetectorId()) == false)
+            return false;
+        if (other.getFindingIds() == null ^ this.getFindingIds() == null)
+            return false;
+        if (other.getFindingIds() != null && other.getFindingIds().equals(this.getFindingIds()) == false)
             return false;
         if (other.getFeedback() == null ^ this.getFeedback() == null)
             return false;
         if (other.getFeedback() != null && other.getFeedback().equals(this.getFeedback()) == false)
             return false;
-        if (other.getFindingIds() == null ^ this.getFindingIds() == null)
+        if (other.getComments() == null ^ this.getComments() == null)
             return false;
-        if (other.getFindingIds() != null && other.getFindingIds().equals(this.getFindingIds()) == false)
+        if (other.getComments() != null && other.getComments().equals(this.getComments()) == false)
             return false;
         return true;
     }
@@ -283,10 +324,10 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getComments() == null) ? 0 : getComments().hashCode());
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
-        hashCode = prime * hashCode + ((getFeedback() == null) ? 0 : getFeedback().hashCode());
         hashCode = prime * hashCode + ((getFindingIds() == null) ? 0 : getFindingIds().hashCode());
+        hashCode = prime * hashCode + ((getFeedback() == null) ? 0 : getFeedback().hashCode());
+        hashCode = prime * hashCode + ((getComments() == null) ? 0 : getComments().hashCode());
         return hashCode;
     }
 

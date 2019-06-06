@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * GetFindingsStatistics request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindingsStatistics" target="_top">AWS
  *      API Documentation</a>
@@ -26,15 +25,29 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve. */
+    /**
+     * <p>
+     * The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.
+     * </p>
+     */
     private String detectorId;
-    /** Represents the criteria used for querying findings. */
-    private FindingCriteria findingCriteria;
-    /** Types of finding statistics to retrieve. */
+    /**
+     * <p>
+     * Types of finding statistics to retrieve.
+     * </p>
+     */
     private java.util.List<String> findingStatisticTypes;
+    /**
+     * <p>
+     * Represents the criteria used for querying findings.
+     * </p>
+     */
+    private FindingCriteria findingCriteria;
 
     /**
+     * <p>
      * The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.
+     * </p>
      * 
      * @param detectorId
      *        The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to
@@ -46,7 +59,9 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
      * The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.
+     * </p>
      * 
      * @return The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to
      *         retrieve.
@@ -57,7 +72,9 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
      * The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.
+     * </p>
      * 
      * @param detectorId
      *        The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to
@@ -71,41 +88,9 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Represents the criteria used for querying findings.
-     * 
-     * @param findingCriteria
-     *        Represents the criteria used for querying findings.
-     */
-
-    public void setFindingCriteria(FindingCriteria findingCriteria) {
-        this.findingCriteria = findingCriteria;
-    }
-
-    /**
-     * Represents the criteria used for querying findings.
-     * 
-     * @return Represents the criteria used for querying findings.
-     */
-
-    public FindingCriteria getFindingCriteria() {
-        return this.findingCriteria;
-    }
-
-    /**
-     * Represents the criteria used for querying findings.
-     * 
-     * @param findingCriteria
-     *        Represents the criteria used for querying findings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetFindingsStatisticsRequest withFindingCriteria(FindingCriteria findingCriteria) {
-        setFindingCriteria(findingCriteria);
-        return this;
-    }
-
-    /**
+     * <p>
      * Types of finding statistics to retrieve.
+     * </p>
      * 
      * @return Types of finding statistics to retrieve.
      * @see FindingStatisticType
@@ -116,7 +101,9 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
      * Types of finding statistics to retrieve.
+     * </p>
      * 
      * @param findingStatisticTypes
      *        Types of finding statistics to retrieve.
@@ -133,7 +120,9 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
      * Types of finding statistics to retrieve.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFindingStatisticTypes(java.util.Collection)} or
@@ -157,7 +146,9 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
      * Types of finding statistics to retrieve.
+     * </p>
      * 
      * @param findingStatisticTypes
      *        Types of finding statistics to retrieve.
@@ -171,7 +162,9 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
      * Types of finding statistics to retrieve.
+     * </p>
      * 
      * @param findingStatisticTypes
      *        Types of finding statistics to retrieve.
@@ -193,6 +186,46 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Represents the criteria used for querying findings.
+     * </p>
+     * 
+     * @param findingCriteria
+     *        Represents the criteria used for querying findings.
+     */
+
+    public void setFindingCriteria(FindingCriteria findingCriteria) {
+        this.findingCriteria = findingCriteria;
+    }
+
+    /**
+     * <p>
+     * Represents the criteria used for querying findings.
+     * </p>
+     * 
+     * @return Represents the criteria used for querying findings.
+     */
+
+    public FindingCriteria getFindingCriteria() {
+        return this.findingCriteria;
+    }
+
+    /**
+     * <p>
+     * Represents the criteria used for querying findings.
+     * </p>
+     * 
+     * @param findingCriteria
+     *        Represents the criteria used for querying findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFindingsStatisticsRequest withFindingCriteria(FindingCriteria findingCriteria) {
+        setFindingCriteria(findingCriteria);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -206,10 +239,10 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
         sb.append("{");
         if (getDetectorId() != null)
             sb.append("DetectorId: ").append(getDetectorId()).append(",");
-        if (getFindingCriteria() != null)
-            sb.append("FindingCriteria: ").append(getFindingCriteria()).append(",");
         if (getFindingStatisticTypes() != null)
-            sb.append("FindingStatisticTypes: ").append(getFindingStatisticTypes());
+            sb.append("FindingStatisticTypes: ").append(getFindingStatisticTypes()).append(",");
+        if (getFindingCriteria() != null)
+            sb.append("FindingCriteria: ").append(getFindingCriteria());
         sb.append("}");
         return sb.toString();
     }
@@ -228,13 +261,13 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getDetectorId() != null && other.getDetectorId().equals(this.getDetectorId()) == false)
             return false;
-        if (other.getFindingCriteria() == null ^ this.getFindingCriteria() == null)
-            return false;
-        if (other.getFindingCriteria() != null && other.getFindingCriteria().equals(this.getFindingCriteria()) == false)
-            return false;
         if (other.getFindingStatisticTypes() == null ^ this.getFindingStatisticTypes() == null)
             return false;
         if (other.getFindingStatisticTypes() != null && other.getFindingStatisticTypes().equals(this.getFindingStatisticTypes()) == false)
+            return false;
+        if (other.getFindingCriteria() == null ^ this.getFindingCriteria() == null)
+            return false;
+        if (other.getFindingCriteria() != null && other.getFindingCriteria().equals(this.getFindingCriteria()) == false)
             return false;
         return true;
     }
@@ -245,8 +278,8 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
-        hashCode = prime * hashCode + ((getFindingCriteria() == null) ? 0 : getFindingCriteria().hashCode());
         hashCode = prime * hashCode + ((getFindingStatisticTypes() == null) ? 0 : getFindingStatisticTypes().hashCode());
+        hashCode = prime * hashCode + ((getFindingCriteria() == null) ? 0 : getFindingCriteria().hashCode());
         return hashCode;
     }
 

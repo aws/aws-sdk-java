@@ -18,7 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * The AWS resource associated with the activity that prompted GuardDuty to generate a finding.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Resource" target="_top">AWS API
  *      Documentation</a>
@@ -26,14 +25,36 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Resource implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty
+     * to generate a finding.
+     * </p>
+     */
     private AccessKeyDetails accessKeyDetails;
-
+    /**
+     * <p>
+     * The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a
+     * finding.
+     * </p>
+     */
     private InstanceDetails instanceDetails;
-    /** The type of the AWS resource. */
+    /**
+     * <p>
+     * The type of the AWS resource.
+     * </p>
+     */
     private String resourceType;
 
     /**
+     * <p>
+     * The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty
+     * to generate a finding.
+     * </p>
+     * 
      * @param accessKeyDetails
+     *        The IAM access key details (IAM user information) of a user that engaged in the activity that prompted
+     *        GuardDuty to generate a finding.
      */
 
     public void setAccessKeyDetails(AccessKeyDetails accessKeyDetails) {
@@ -41,7 +62,13 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty
+     * to generate a finding.
+     * </p>
+     * 
+     * @return The IAM access key details (IAM user information) of a user that engaged in the activity that prompted
+     *         GuardDuty to generate a finding.
      */
 
     public AccessKeyDetails getAccessKeyDetails() {
@@ -49,7 +76,14 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty
+     * to generate a finding.
+     * </p>
+     * 
      * @param accessKeyDetails
+     *        The IAM access key details (IAM user information) of a user that engaged in the activity that prompted
+     *        GuardDuty to generate a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -59,7 +93,14 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a
+     * finding.
+     * </p>
+     * 
      * @param instanceDetails
+     *        The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a
+     *        finding.
      */
 
     public void setInstanceDetails(InstanceDetails instanceDetails) {
@@ -67,7 +108,13 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a
+     * finding.
+     * </p>
+     * 
+     * @return The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a
+     *         finding.
      */
 
     public InstanceDetails getInstanceDetails() {
@@ -75,7 +122,14 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a
+     * finding.
+     * </p>
+     * 
      * @param instanceDetails
+     *        The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a
+     *        finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,7 +139,9 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The type of the AWS resource.
+     * </p>
      * 
      * @param resourceType
      *        The type of the AWS resource.
@@ -96,7 +152,9 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The type of the AWS resource.
+     * </p>
      * 
      * @return The type of the AWS resource.
      */
@@ -106,7 +164,9 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The type of the AWS resource.
+     * </p>
      * 
      * @param resourceType
      *        The type of the AWS resource.

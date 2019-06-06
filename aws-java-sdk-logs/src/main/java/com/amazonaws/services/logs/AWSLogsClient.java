@@ -1997,7 +1997,11 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     /**
      * <p>
      * Returns the results from the specified query. If the query is in progress, partial results of that current
-     * execution are returned. Only the fields requested in the query are returned.
+     * execution are returned.
+     * </p>
+     * <p>
+     * Only the fields requested in the query are returned, along with a <code>@ptr</code> field which is the identifier
+     * for the log record. You can use the value of <code>@ptr</code> in a operation to get the full log record.
      * </p>
      * <p>
      * <code>GetQueryResults</code> does not start a query execution. To run a query, use .
@@ -2270,7 +2274,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </li>
      * <li>
      * <p>
-     * None of the log events in the batch can be older than 14 days or the retention period of the log group.
+     * None of the log events in the batch can be older than 14 days or older than the retention period of the log
+     * group.
      * </p>
      * </li>
      * <li>
@@ -2649,6 +2654,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
      * Query Syntax</a>.
+     * </p>
+     * <p>
+     * Queries time out after 15 minutes of execution. If your queries are timing out, reduce the time range being
+     * searched, or partition your query into a number of queries.
      * </p>
      * 
      * @param startQueryRequest

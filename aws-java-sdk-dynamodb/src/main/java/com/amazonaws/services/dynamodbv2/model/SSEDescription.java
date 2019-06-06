@@ -30,27 +30,12 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of server-side encryption:
+     * Represents the current state of server-side encryption. The only supported values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ENABLING</code> - Server-side encryption is being enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ENABLED</code> - Server-side encryption is enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DISABLING</code> - Server-side encryption is being disabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DISABLED</code> - Server-side encryption is disabled.
      * </p>
      * </li>
      * <li>
@@ -63,14 +48,9 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * Server-side encryption type:
+     * Server-side encryption type. The only supported value is:
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
@@ -82,34 +62,19 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
     private String sSEType;
     /**
      * <p>
-     * The KMS master key ARN used for the KMS encryption.
+     * The KMS customer master key (CMK) ARN used for the KMS encryption.
      * </p>
      */
     private String kMSMasterKeyArn;
 
     /**
      * <p>
-     * The current state of server-side encryption:
+     * Represents the current state of server-side encryption. The only supported values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ENABLING</code> - Server-side encryption is being enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ENABLED</code> - Server-side encryption is enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DISABLING</code> - Server-side encryption is being disabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DISABLED</code> - Server-side encryption is disabled.
      * </p>
      * </li>
      * <li>
@@ -120,26 +85,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param status
-     *        The current state of server-side encryption:</p>
+     *        Represents the current state of server-side encryption. The only supported values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ENABLING</code> - Server-side encryption is being enabled.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>ENABLED</code> - Server-side encryption is enabled.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DISABLING</code> - Server-side encryption is being disabled.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DISABLED</code> - Server-side encryption is disabled.
      *        </p>
      *        </li>
      *        <li>
@@ -156,27 +106,12 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of server-side encryption:
+     * Represents the current state of server-side encryption. The only supported values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ENABLING</code> - Server-side encryption is being enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ENABLED</code> - Server-side encryption is enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DISABLING</code> - Server-side encryption is being disabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DISABLED</code> - Server-side encryption is disabled.
      * </p>
      * </li>
      * <li>
@@ -186,26 +121,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The current state of server-side encryption:</p>
+     * @return Represents the current state of server-side encryption. The only supported values are:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>ENABLING</code> - Server-side encryption is being enabled.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         <code>ENABLED</code> - Server-side encryption is enabled.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>DISABLING</code> - Server-side encryption is being disabled.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>DISABLED</code> - Server-side encryption is disabled.
      *         </p>
      *         </li>
      *         <li>
@@ -222,27 +142,12 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of server-side encryption:
+     * Represents the current state of server-side encryption. The only supported values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ENABLING</code> - Server-side encryption is being enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ENABLED</code> - Server-side encryption is enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DISABLING</code> - Server-side encryption is being disabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DISABLED</code> - Server-side encryption is disabled.
      * </p>
      * </li>
      * <li>
@@ -253,26 +158,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param status
-     *        The current state of server-side encryption:</p>
+     *        Represents the current state of server-side encryption. The only supported values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ENABLING</code> - Server-side encryption is being enabled.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>ENABLED</code> - Server-side encryption is enabled.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DISABLING</code> - Server-side encryption is being disabled.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DISABLED</code> - Server-side encryption is disabled.
      *        </p>
      *        </li>
      *        <li>
@@ -291,27 +181,12 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of server-side encryption:
+     * Represents the current state of server-side encryption. The only supported values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ENABLING</code> - Server-side encryption is being enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ENABLED</code> - Server-side encryption is enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DISABLING</code> - Server-side encryption is being disabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>DISABLED</code> - Server-side encryption is disabled.
      * </p>
      * </li>
      * <li>
@@ -322,26 +197,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param status
-     *        The current state of server-side encryption:</p>
+     *        Represents the current state of server-side encryption. The only supported values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ENABLING</code> - Server-side encryption is being enabled.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>ENABLED</code> - Server-side encryption is enabled.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DISABLING</code> - Server-side encryption is being disabled.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>DISABLED</code> - Server-side encryption is disabled.
      *        </p>
      *        </li>
      *        <li>
@@ -360,14 +220,9 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Server-side encryption type:
+     * Server-side encryption type. The only supported value is:
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
@@ -377,13 +232,8 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param sSEType
-     *        Server-side encryption type:</p>
+     *        Server-side encryption type. The only supported value is:</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
@@ -399,14 +249,9 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Server-side encryption type:
+     * Server-side encryption type. The only supported value is:
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
@@ -415,13 +260,8 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return Server-side encryption type:</p>
+     * @return Server-side encryption type. The only supported value is:</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
@@ -437,14 +277,9 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Server-side encryption type:
+     * Server-side encryption type. The only supported value is:
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
@@ -454,13 +289,8 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param sSEType
-     *        Server-side encryption type:</p>
+     *        Server-side encryption type. The only supported value is:</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
@@ -478,14 +308,9 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Server-side encryption type:
+     * Server-side encryption type. The only supported value is:
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your account
@@ -495,13 +320,8 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param sSEType
-     *        Server-side encryption type:</p>
+     *        Server-side encryption type. The only supported value is:</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not applicable).
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>KMS</code> - Server-side encryption which uses AWS Key Management Service. Key is stored in your
@@ -519,11 +339,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The KMS master key ARN used for the KMS encryption.
+     * The KMS customer master key (CMK) ARN used for the KMS encryption.
      * </p>
      * 
      * @param kMSMasterKeyArn
-     *        The KMS master key ARN used for the KMS encryption.
+     *        The KMS customer master key (CMK) ARN used for the KMS encryption.
      */
 
     public void setKMSMasterKeyArn(String kMSMasterKeyArn) {
@@ -532,10 +352,10 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The KMS master key ARN used for the KMS encryption.
+     * The KMS customer master key (CMK) ARN used for the KMS encryption.
      * </p>
      * 
-     * @return The KMS master key ARN used for the KMS encryption.
+     * @return The KMS customer master key (CMK) ARN used for the KMS encryption.
      */
 
     public String getKMSMasterKeyArn() {
@@ -544,11 +364,11 @@ public class SSEDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The KMS master key ARN used for the KMS encryption.
+     * The KMS customer master key (CMK) ARN used for the KMS encryption.
      * </p>
      * 
      * @param kMSMasterKeyArn
-     *        The KMS master key ARN used for the KMS encryption.
+     *        The KMS customer master key (CMK) ARN used for the KMS encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

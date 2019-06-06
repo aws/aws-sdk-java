@@ -23,8 +23,8 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For information using a receipt rule to call Amazon WorkMail, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-workmail.html">Amazon SES Developer
- * Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-workmail.html">Amazon SES
+ * Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/WorkmailAction" target="_top">AWS API
@@ -37,7 +37,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the WorkMail action is called. An example
      * of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
-     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.
      * </p>
      */
@@ -47,7 +47,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      * The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail organization ARN is
      * <code>arn:aws:workmail:us-west-2:123456789012:organization/m-68755160c4cb4e29a2b2f8fb58f359d7</code>. For
      * information about Amazon WorkMail organizations, see the <a
-     * href="http://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail
      * Administrator Guide</a>.
      * </p>
      */
@@ -57,7 +57,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the WorkMail action is called. An example
      * of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
-     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.
      * </p>
      * 
@@ -65,7 +65,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the WorkMail action is called. An
      *        example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
      *        information about Amazon SNS topics, see the <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      */
 
     public void setTopicArn(String topicArn) {
@@ -76,14 +76,14 @@ public class WorkmailAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the WorkMail action is called. An example
      * of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
-     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the WorkMail action is called. An
      *         example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
      *         information about Amazon SNS topics, see the <a
-     *         href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      */
 
     public String getTopicArn() {
@@ -94,7 +94,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the WorkMail action is called. An example
      * of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
-     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.
      * </p>
      * 
@@ -102,7 +102,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the WorkMail action is called. An
      *        example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
      *        information about Amazon SNS topics, see the <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,7 +116,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      * The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail organization ARN is
      * <code>arn:aws:workmail:us-west-2:123456789012:organization/m-68755160c4cb4e29a2b2f8fb58f359d7</code>. For
      * information about Amazon WorkMail organizations, see the <a
-     * href="http://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail
      * Administrator Guide</a>.
      * </p>
      * 
@@ -124,7 +124,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      *        The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail organization ARN is
      *        <code>arn:aws:workmail:us-west-2:123456789012:organization/m-68755160c4cb4e29a2b2f8fb58f359d7</code>. For
      *        information about Amazon WorkMail organizations, see the <a
-     *        href="http://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail
+     *        href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail
      *        Administrator Guide</a>.
      */
 
@@ -137,14 +137,14 @@ public class WorkmailAction implements Serializable, Cloneable {
      * The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail organization ARN is
      * <code>arn:aws:workmail:us-west-2:123456789012:organization/m-68755160c4cb4e29a2b2f8fb58f359d7</code>. For
      * information about Amazon WorkMail organizations, see the <a
-     * href="http://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail
      * Administrator Guide</a>.
      * </p>
      * 
      * @return The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail organization ARN is
      *         <code>arn:aws:workmail:us-west-2:123456789012:organization/m-68755160c4cb4e29a2b2f8fb58f359d7</code>. For
      *         information about Amazon WorkMail organizations, see the <a
-     *         href="http://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail
+     *         href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail
      *         Administrator Guide</a>.
      */
 
@@ -157,7 +157,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      * The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail organization ARN is
      * <code>arn:aws:workmail:us-west-2:123456789012:organization/m-68755160c4cb4e29a2b2f8fb58f359d7</code>. For
      * information about Amazon WorkMail organizations, see the <a
-     * href="http://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail
      * Administrator Guide</a>.
      * </p>
      * 
@@ -165,7 +165,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      *        The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail organization ARN is
      *        <code>arn:aws:workmail:us-west-2:123456789012:organization/m-68755160c4cb4e29a2b2f8fb58f359d7</code>. For
      *        information about Amazon WorkMail organizations, see the <a
-     *        href="http://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail
+     *        href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail
      *        Administrator Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

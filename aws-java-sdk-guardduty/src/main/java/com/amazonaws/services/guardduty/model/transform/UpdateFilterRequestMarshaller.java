@@ -27,18 +27,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateFilterRequestMarshaller {
 
-    private static final MarshallingInfo<String> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("action").build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("detectorId").build();
     private static final MarshallingInfo<String> FILTERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("filterName").build();
-    private static final MarshallingInfo<StructuredPojo> FINDINGCRITERIA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingCriteria").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("action").build();
     private static final MarshallingInfo<Integer> RANK_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("rank").build();
+    private static final MarshallingInfo<StructuredPojo> FINDINGCRITERIA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingCriteria").build();
 
     private static final UpdateFilterRequestMarshaller instance = new UpdateFilterRequestMarshaller();
 
@@ -56,12 +56,12 @@ public class UpdateFilterRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(updateFilterRequest.getAction(), ACTION_BINDING);
-            protocolMarshaller.marshall(updateFilterRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateFilterRequest.getDetectorId(), DETECTORID_BINDING);
             protocolMarshaller.marshall(updateFilterRequest.getFilterName(), FILTERNAME_BINDING);
-            protocolMarshaller.marshall(updateFilterRequest.getFindingCriteria(), FINDINGCRITERIA_BINDING);
+            protocolMarshaller.marshall(updateFilterRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateFilterRequest.getAction(), ACTION_BINDING);
             protocolMarshaller.marshall(updateFilterRequest.getRank(), RANK_BINDING);
+            protocolMarshaller.marshall(updateFilterRequest.getFindingCriteria(), FINDINGCRITERIA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

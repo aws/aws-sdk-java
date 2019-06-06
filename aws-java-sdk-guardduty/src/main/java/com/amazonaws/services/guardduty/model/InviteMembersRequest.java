@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * InviteMembers request body.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InviteMembers" target="_top">AWS API
  *      Documentation</a>
@@ -26,20 +25,76 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** A list of account IDs of the accounts that you want to invite to GuardDuty as members. */
-    private java.util.List<String> accountIds;
-    /** The unique ID of the detector of the GuardDuty account with which you want to invite members. */
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account with which you want to invite members.
+     * </p>
+     */
     private String detectorId;
     /**
+     * <p>
+     * A list of account IDs of the accounts that you want to invite to GuardDuty as members.
+     * </p>
+     */
+    private java.util.List<String> accountIds;
+    /**
+     * <p>
      * A boolean value that specifies whether you want to disable email notification to the accounts that you’re
      * inviting to GuardDuty as members.
+     * </p>
      */
     private Boolean disableEmailNotification;
-    /** The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members. */
+    /**
+     * <p>
+     * The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
+     * </p>
+     */
     private String message;
 
     /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account with which you want to invite members.
+     * </p>
+     * 
+     * @param detectorId
+     *        The unique ID of the detector of the GuardDuty account with which you want to invite members.
+     */
+
+    public void setDetectorId(String detectorId) {
+        this.detectorId = detectorId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account with which you want to invite members.
+     * </p>
+     * 
+     * @return The unique ID of the detector of the GuardDuty account with which you want to invite members.
+     */
+
+    public String getDetectorId() {
+        return this.detectorId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the detector of the GuardDuty account with which you want to invite members.
+     * </p>
+     * 
+     * @param detectorId
+     *        The unique ID of the detector of the GuardDuty account with which you want to invite members.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InviteMembersRequest withDetectorId(String detectorId) {
+        setDetectorId(detectorId);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of account IDs of the accounts that you want to invite to GuardDuty as members.
+     * </p>
      * 
      * @return A list of account IDs of the accounts that you want to invite to GuardDuty as members.
      */
@@ -49,7 +104,9 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * A list of account IDs of the accounts that you want to invite to GuardDuty as members.
+     * </p>
      * 
      * @param accountIds
      *        A list of account IDs of the accounts that you want to invite to GuardDuty as members.
@@ -65,7 +122,9 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * A list of account IDs of the accounts that you want to invite to GuardDuty as members.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAccountIds(java.util.Collection)} or {@link #withAccountIds(java.util.Collection)} if you want to
@@ -88,7 +147,9 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * A list of account IDs of the accounts that you want to invite to GuardDuty as members.
+     * </p>
      * 
      * @param accountIds
      *        A list of account IDs of the accounts that you want to invite to GuardDuty as members.
@@ -101,42 +162,10 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The unique ID of the detector of the GuardDuty account with which you want to invite members.
-     * 
-     * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account with which you want to invite members.
-     */
-
-    public void setDetectorId(String detectorId) {
-        this.detectorId = detectorId;
-    }
-
-    /**
-     * The unique ID of the detector of the GuardDuty account with which you want to invite members.
-     * 
-     * @return The unique ID of the detector of the GuardDuty account with which you want to invite members.
-     */
-
-    public String getDetectorId() {
-        return this.detectorId;
-    }
-
-    /**
-     * The unique ID of the detector of the GuardDuty account with which you want to invite members.
-     * 
-     * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account with which you want to invite members.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InviteMembersRequest withDetectorId(String detectorId) {
-        setDetectorId(detectorId);
-        return this;
-    }
-
-    /**
+     * <p>
      * A boolean value that specifies whether you want to disable email notification to the accounts that you’re
      * inviting to GuardDuty as members.
+     * </p>
      * 
      * @param disableEmailNotification
      *        A boolean value that specifies whether you want to disable email notification to the accounts that you’re
@@ -148,8 +177,10 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * A boolean value that specifies whether you want to disable email notification to the accounts that you’re
      * inviting to GuardDuty as members.
+     * </p>
      * 
      * @return A boolean value that specifies whether you want to disable email notification to the accounts that you’re
      *         inviting to GuardDuty as members.
@@ -160,8 +191,10 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * A boolean value that specifies whether you want to disable email notification to the accounts that you’re
      * inviting to GuardDuty as members.
+     * </p>
      * 
      * @param disableEmailNotification
      *        A boolean value that specifies whether you want to disable email notification to the accounts that you’re
@@ -175,8 +208,10 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * A boolean value that specifies whether you want to disable email notification to the accounts that you’re
      * inviting to GuardDuty as members.
+     * </p>
      * 
      * @return A boolean value that specifies whether you want to disable email notification to the accounts that you’re
      *         inviting to GuardDuty as members.
@@ -187,7 +222,9 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
+     * </p>
      * 
      * @param message
      *        The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
@@ -198,7 +235,9 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
+     * </p>
      * 
      * @return The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as
      *         members.
@@ -209,7 +248,9 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
+     * </p>
      * 
      * @param message
      *        The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
@@ -233,10 +274,10 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAccountIds() != null)
-            sb.append("AccountIds: ").append(getAccountIds()).append(",");
         if (getDetectorId() != null)
             sb.append("DetectorId: ").append(getDetectorId()).append(",");
+        if (getAccountIds() != null)
+            sb.append("AccountIds: ").append(getAccountIds()).append(",");
         if (getDisableEmailNotification() != null)
             sb.append("DisableEmailNotification: ").append(getDisableEmailNotification()).append(",");
         if (getMessage() != null)
@@ -255,13 +296,13 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (obj instanceof InviteMembersRequest == false)
             return false;
         InviteMembersRequest other = (InviteMembersRequest) obj;
-        if (other.getAccountIds() == null ^ this.getAccountIds() == null)
-            return false;
-        if (other.getAccountIds() != null && other.getAccountIds().equals(this.getAccountIds()) == false)
-            return false;
         if (other.getDetectorId() == null ^ this.getDetectorId() == null)
             return false;
         if (other.getDetectorId() != null && other.getDetectorId().equals(this.getDetectorId()) == false)
+            return false;
+        if (other.getAccountIds() == null ^ this.getAccountIds() == null)
+            return false;
+        if (other.getAccountIds() != null && other.getAccountIds().equals(this.getAccountIds()) == false)
             return false;
         if (other.getDisableEmailNotification() == null ^ this.getDisableEmailNotification() == null)
             return false;
@@ -279,8 +320,8 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
+        hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
         hashCode = prime * hashCode + ((getDisableEmailNotification() == null) ? 0 : getDisableEmailNotification().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         return hashCode;

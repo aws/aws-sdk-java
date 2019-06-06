@@ -29,19 +29,19 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateIPSetRequestMarshaller {
 
+    private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("detectorId").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("format").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("location").build();
     private static final MarshallingInfo<Boolean> ACTIVATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activate").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<String> DETECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("detectorId").build();
-    private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("format").build();
-    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("location").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
 
     private static final CreateIPSetRequestMarshaller instance = new CreateIPSetRequestMarshaller();
 
@@ -59,12 +59,12 @@ public class CreateIPSetRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createIPSetRequest.getActivate(), ACTIVATE_BINDING);
-            protocolMarshaller.marshall(createIPSetRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createIPSetRequest.getDetectorId(), DETECTORID_BINDING);
+            protocolMarshaller.marshall(createIPSetRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createIPSetRequest.getFormat(), FORMAT_BINDING);
             protocolMarshaller.marshall(createIPSetRequest.getLocation(), LOCATION_BINDING);
-            protocolMarshaller.marshall(createIPSetRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createIPSetRequest.getActivate(), ACTIVATE_BINDING);
+            protocolMarshaller.marshall(createIPSetRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

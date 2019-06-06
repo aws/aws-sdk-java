@@ -27,7 +27,7 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The unique identifier (ID) of the parent root or OU in which you want to create the new OU.
+     * The unique identifier (ID) of the parent root or OU that you want to create the new OU in.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
@@ -58,7 +58,7 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The unique identifier (ID) of the parent root or OU in which you want to create the new OU.
+     * The unique identifier (ID) of the parent root or OU that you want to create the new OU in.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
@@ -80,7 +80,7 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param parentId
-     *        The unique identifier (ID) of the parent root or OU in which you want to create the new OU.</p>
+     *        The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
      *        following:
@@ -106,7 +106,7 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The unique identifier (ID) of the parent root or OU in which you want to create the new OU.
+     * The unique identifier (ID) of the parent root or OU that you want to create the new OU in.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
@@ -127,7 +127,7 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * 
-     * @return The unique identifier (ID) of the parent root or OU in which you want to create the new OU.</p>
+     * @return The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of
      *         the following:
@@ -153,7 +153,7 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The unique identifier (ID) of the parent root or OU in which you want to create the new OU.
+     * The unique identifier (ID) of the parent root or OU that you want to create the new OU in.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
@@ -175,7 +175,7 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param parentId
-     *        The unique identifier (ID) of the parent root or OU in which you want to create the new OU.</p>
+     *        The unique identifier (ID) of the parent root or OU that you want to create the new OU in.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the
      *        following:

@@ -48,13 +48,13 @@ public class ListThreatIntelSetsResultJsonUnmarshaller implements Unmarshaller<L
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("nextToken", targetDepth)) {
-                    context.nextToken();
-                    listThreatIntelSetsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("threatIntelSetIds", targetDepth)) {
                     context.nextToken();
                     listThreatIntelSetsResult.setThreatIntelSetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("nextToken", targetDepth)) {
+                    context.nextToken();
+                    listThreatIntelSetsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -59,8 +59,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      * This parameter maps to <code>Driver</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxdriver</code> option to <a
-     * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
-     * </a>.
+     * href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      * </p>
      */
     private String driver;
@@ -69,8 +68,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      * A map of Docker driver-specific options passed through. This parameter maps to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxopt</code> option to <a
-     * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
-     * </a>.
+     * href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      * </p>
      */
     private java.util.Map<String, String> driverOpts;
@@ -79,8 +77,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      * Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxlabel</code> option to <a
-     * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
-     * </a>.
+     * href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      * </p>
      */
     private java.util.Map<String, String> labels;
@@ -254,8 +251,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      * This parameter maps to <code>Driver</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxdriver</code> option to <a
-     * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
-     * </a>.
+     * href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      * </p>
      * 
      * @param driver
@@ -267,8 +263,8 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      *        plugin discovery</a>. This parameter maps to <code>Driver</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxdriver</code>
-     *        option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">
-     *        <code>docker volume create</code> </a>.
+     *        option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume
+     *        create</a>.
      */
 
     public void setDriver(String driver) {
@@ -285,8 +281,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      * This parameter maps to <code>Driver</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxdriver</code> option to <a
-     * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
-     * </a>.
+     * href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      * </p>
      * 
      * @return The Docker volume driver to use. The driver value must match the driver name provided by Docker because
@@ -298,8 +293,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of
      *         the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *         <code>xxdriver</code> option to <a
-     *         href="https://docs.docker.com/engine/reference/commandline/volume_create/">
-     *         <code>docker volume create</code> </a>.
+     *         href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      */
 
     public String getDriver() {
@@ -316,8 +310,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      * This parameter maps to <code>Driver</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxdriver</code> option to <a
-     * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
-     * </a>.
+     * href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      * </p>
      * 
      * @param driver
@@ -329,8 +322,8 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      *        plugin discovery</a>. This parameter maps to <code>Driver</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxdriver</code>
-     *        option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">
-     *        <code>docker volume create</code> </a>.
+     *        option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume
+     *        create</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,16 +337,14 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      * A map of Docker driver-specific options passed through. This parameter maps to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxopt</code> option to <a
-     * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
-     * </a>.
+     * href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      * </p>
      * 
      * @return A map of Docker driver-specific options passed through. This parameter maps to <code>DriverOpts</code> in
      *         the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a>
      *         section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *         <code>xxopt</code> option to <a
-     *         href="https://docs.docker.com/engine/reference/commandline/volume_create/">
-     *         <code>docker volume create</code> </a>.
+     *         href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      */
 
     public java.util.Map<String, String> getDriverOpts() {
@@ -365,8 +356,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      * A map of Docker driver-specific options passed through. This parameter maps to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxopt</code> option to <a
-     * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
-     * </a>.
+     * href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      * </p>
      * 
      * @param driverOpts
@@ -374,8 +364,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      *        the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>xxopt</code> option to <a
-     *        href="https://docs.docker.com/engine/reference/commandline/volume_create/">
-     *        <code>docker volume create</code> </a>.
+     *        href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      */
 
     public void setDriverOpts(java.util.Map<String, String> driverOpts) {
@@ -387,8 +376,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      * A map of Docker driver-specific options passed through. This parameter maps to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxopt</code> option to <a
-     * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
-     * </a>.
+     * href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      * </p>
      * 
      * @param driverOpts
@@ -396,8 +384,7 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      *        the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>xxopt</code> option to <a
-     *        href="https://docs.docker.com/engine/reference/commandline/volume_create/">
-     *        <code>docker volume create</code> </a>.
+     *        href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -432,16 +419,14 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      * Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxlabel</code> option to <a
-     * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
-     * </a>.
+     * href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      * </p>
      * 
      * @return Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of
      *         the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *         <code>xxlabel</code> option to <a
-     *         href="https://docs.docker.com/engine/reference/commandline/volume_create/">
-     *         <code>docker volume create</code> </a>.
+     *         href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      */
 
     public java.util.Map<String, String> getLabels() {
@@ -453,16 +438,15 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      * Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxlabel</code> option to <a
-     * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
-     * </a>.
+     * href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      * </p>
      * 
      * @param labels
      *        Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxlabel</code>
-     *        option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">
-     *        <code>docker volume create</code> </a>.
+     *        option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume
+     *        create</a>.
      */
 
     public void setLabels(java.util.Map<String, String> labels) {
@@ -474,16 +458,15 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
      * Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxlabel</code> option to <a
-     * href="https://docs.docker.com/engine/reference/commandline/volume_create/"> <code>docker volume create</code>
-     * </a>.
+     * href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume create</a>.
      * </p>
      * 
      * @param labels
      *        Custom metadata to add to your Docker volume. This parameter maps to <code>Labels</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a volume</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>xxlabel</code>
-     *        option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">
-     *        <code>docker volume create</code> </a>.
+     *        option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">docker volume
+     *        create</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
