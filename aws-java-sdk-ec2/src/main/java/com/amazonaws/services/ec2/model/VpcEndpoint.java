@@ -116,6 +116,12 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The ID of the AWS account that owns the VPC endpoint.
+     * </p>
+     */
+    private String ownerId;
 
     /**
      * <p>
@@ -1006,6 +1012,46 @@ public class VpcEndpoint implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the AWS account that owns the VPC endpoint.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the VPC endpoint.
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the VPC endpoint.
+     * </p>
+     * 
+     * @return The ID of the AWS account that owns the VPC endpoint.
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the VPC endpoint.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the VPC endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1046,7 +1092,9 @@ public class VpcEndpoint implements Serializable, Cloneable {
         if (getCreationTimestamp() != null)
             sb.append("CreationTimestamp: ").append(getCreationTimestamp()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId());
         sb.append("}");
         return sb.toString();
     }
@@ -1121,6 +1169,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
         return true;
     }
 
@@ -1144,6 +1196,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDnsEntries() == null) ? 0 : getDnsEntries().hashCode());
         hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         return hashCode;
     }
 

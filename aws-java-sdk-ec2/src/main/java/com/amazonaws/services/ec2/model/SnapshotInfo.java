@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Object that contains information about a snapshot.
+ * Information about a snapshot.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SnapshotInfo" target="_top">AWS API
@@ -40,7 +40,7 @@ public class SnapshotInfo implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * Boolean that specifies whether or not this snapshot is encrypted.
+     * Indicates whether the snapshot is encrypted.
      * </p>
      */
     private Boolean encrypted;
@@ -202,11 +202,11 @@ public class SnapshotInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean that specifies whether or not this snapshot is encrypted.
+     * Indicates whether the snapshot is encrypted.
      * </p>
      * 
      * @param encrypted
-     *        Boolean that specifies whether or not this snapshot is encrypted.
+     *        Indicates whether the snapshot is encrypted.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -215,10 +215,10 @@ public class SnapshotInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean that specifies whether or not this snapshot is encrypted.
+     * Indicates whether the snapshot is encrypted.
      * </p>
      * 
-     * @return Boolean that specifies whether or not this snapshot is encrypted.
+     * @return Indicates whether the snapshot is encrypted.
      */
 
     public Boolean getEncrypted() {
@@ -227,11 +227,11 @@ public class SnapshotInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean that specifies whether or not this snapshot is encrypted.
+     * Indicates whether the snapshot is encrypted.
      * </p>
      * 
      * @param encrypted
-     *        Boolean that specifies whether or not this snapshot is encrypted.
+     *        Indicates whether the snapshot is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,10 +242,10 @@ public class SnapshotInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean that specifies whether or not this snapshot is encrypted.
+     * Indicates whether the snapshot is encrypted.
      * </p>
      * 
-     * @return Boolean that specifies whether or not this snapshot is encrypted.
+     * @return Indicates whether the snapshot is encrypted.
      */
 
     public Boolean isEncrypted() {

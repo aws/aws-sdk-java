@@ -25,21 +25,18 @@ public class ModifyEbsDefaultKmsKeyIdResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The full ARN of the default CMK that your account uses to encrypt an EBS volume when no CMK is specified in the
-     * API call that creates the volume.
+     * The Amazon Resource Name (ARN) of the default CMK for encryption by default.
      * </p>
      */
     private String kmsKeyId;
 
     /**
      * <p>
-     * The full ARN of the default CMK that your account uses to encrypt an EBS volume when no CMK is specified in the
-     * API call that creates the volume.
+     * The Amazon Resource Name (ARN) of the default CMK for encryption by default.
      * </p>
      * 
      * @param kmsKeyId
-     *        The full ARN of the default CMK that your account uses to encrypt an EBS volume when no CMK is specified
-     *        in the API call that creates the volume.
+     *        The Amazon Resource Name (ARN) of the default CMK for encryption by default.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -48,12 +45,10 @@ public class ModifyEbsDefaultKmsKeyIdResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The full ARN of the default CMK that your account uses to encrypt an EBS volume when no CMK is specified in the
-     * API call that creates the volume.
+     * The Amazon Resource Name (ARN) of the default CMK for encryption by default.
      * </p>
      * 
-     * @return The full ARN of the default CMK that your account uses to encrypt an EBS volume when no CMK is specified
-     *         in the API call that creates the volume.
+     * @return The Amazon Resource Name (ARN) of the default CMK for encryption by default.
      */
 
     public String getKmsKeyId() {
@@ -62,13 +57,11 @@ public class ModifyEbsDefaultKmsKeyIdResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The full ARN of the default CMK that your account uses to encrypt an EBS volume when no CMK is specified in the
-     * API call that creates the volume.
+     * The Amazon Resource Name (ARN) of the default CMK for encryption by default.
      * </p>
      * 
      * @param kmsKeyId
-     *        The full ARN of the default CMK that your account uses to encrypt an EBS volume when no CMK is specified
-     *        in the API call that creates the volume.
+     *        The Amazon Resource Name (ARN) of the default CMK for encryption by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

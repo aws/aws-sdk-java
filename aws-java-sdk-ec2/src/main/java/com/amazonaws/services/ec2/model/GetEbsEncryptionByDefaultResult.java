@@ -25,18 +25,18 @@ public class GetEbsEncryptionByDefaultResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Indicates whether default encryption for EBS volumes is enabled or disabled.
+     * Indicates whether encryption by default is enabled.
      * </p>
      */
     private Boolean ebsEncryptionByDefault;
 
     /**
      * <p>
-     * Indicates whether default encryption for EBS volumes is enabled or disabled.
+     * Indicates whether encryption by default is enabled.
      * </p>
      * 
      * @param ebsEncryptionByDefault
-     *        Indicates whether default encryption for EBS volumes is enabled or disabled.
+     *        Indicates whether encryption by default is enabled.
      */
 
     public void setEbsEncryptionByDefault(Boolean ebsEncryptionByDefault) {
@@ -45,10 +45,10 @@ public class GetEbsEncryptionByDefaultResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Indicates whether default encryption for EBS volumes is enabled or disabled.
+     * Indicates whether encryption by default is enabled.
      * </p>
      * 
-     * @return Indicates whether default encryption for EBS volumes is enabled or disabled.
+     * @return Indicates whether encryption by default is enabled.
      */
 
     public Boolean getEbsEncryptionByDefault() {
@@ -57,11 +57,11 @@ public class GetEbsEncryptionByDefaultResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Indicates whether default encryption for EBS volumes is enabled or disabled.
+     * Indicates whether encryption by default is enabled.
      * </p>
      * 
      * @param ebsEncryptionByDefault
-     *        Indicates whether default encryption for EBS volumes is enabled or disabled.
+     *        Indicates whether encryption by default is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,10 +72,10 @@ public class GetEbsEncryptionByDefaultResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Indicates whether default encryption for EBS volumes is enabled or disabled.
+     * Indicates whether encryption by default is enabled.
      * </p>
      * 
-     * @return Indicates whether default encryption for EBS volumes is enabled or disabled.
+     * @return Indicates whether encryption by default is enabled.
      */
 
     public Boolean isEbsEncryptionByDefault() {

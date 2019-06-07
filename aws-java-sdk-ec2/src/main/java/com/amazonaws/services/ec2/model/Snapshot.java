@@ -30,8 +30,8 @@ public class Snapshot implements Serializable, Cloneable {
      * The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the
      * data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys
      * are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key
-     * identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by the
-     * <a>DescribeSnapshots</a> API operation.
+     * identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by
+     * <a>DescribeSnapshots</a>.
      * </p>
      */
     private String dataEncryptionKeyId;
@@ -49,8 +49,8 @@ public class Snapshot implements Serializable, Cloneable {
     private Boolean encrypted;
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
-     * volume encryption key for the parent volume.
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+     * used to protect the volume encryption key for the parent volume.
      * </p>
      */
     private String kmsKeyId;
@@ -88,8 +88,7 @@ public class Snapshot implements Serializable, Cloneable {
      * <p>
      * Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the
      * proper AWS Key Management Service (AWS KMS) permissions are not obtained) this field displays error state details
-     * to help you diagnose why the error occurred. This parameter is only returned by the <a>DescribeSnapshots</a> API
-     * operation.
+     * to help you diagnose why the error occurred. This parameter is only returned by <a>DescribeSnapshots</a>.
      * </p>
      */
     private String stateMessage;
@@ -126,8 +125,8 @@ public class Snapshot implements Serializable, Cloneable {
      * The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the
      * data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys
      * are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key
-     * identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by the
-     * <a>DescribeSnapshots</a> API operation.
+     * identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by
+     * <a>DescribeSnapshots</a>.
      * </p>
      * 
      * @param dataEncryptionKeyId
@@ -135,7 +134,7 @@ public class Snapshot implements Serializable, Cloneable {
      *        the data encryption key that was used to encrypt the original volume or snapshot copy. Because data
      *        encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the
      *        same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter
-     *        is only returned by the <a>DescribeSnapshots</a> API operation.
+     *        is only returned by <a>DescribeSnapshots</a>.
      */
 
     public void setDataEncryptionKeyId(String dataEncryptionKeyId) {
@@ -147,15 +146,15 @@ public class Snapshot implements Serializable, Cloneable {
      * The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the
      * data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys
      * are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key
-     * identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by the
-     * <a>DescribeSnapshots</a> API operation.
+     * identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by
+     * <a>DescribeSnapshots</a>.
      * </p>
      * 
      * @return The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds
      *         to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data
      *         encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the
      *         same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter
-     *         is only returned by the <a>DescribeSnapshots</a> API operation.
+     *         is only returned by <a>DescribeSnapshots</a>.
      */
 
     public String getDataEncryptionKeyId() {
@@ -167,8 +166,8 @@ public class Snapshot implements Serializable, Cloneable {
      * The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the
      * data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys
      * are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key
-     * identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by the
-     * <a>DescribeSnapshots</a> API operation.
+     * identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by
+     * <a>DescribeSnapshots</a>.
      * </p>
      * 
      * @param dataEncryptionKeyId
@@ -176,7 +175,7 @@ public class Snapshot implements Serializable, Cloneable {
      *        the data encryption key that was used to encrypt the original volume or snapshot copy. Because data
      *        encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the
      *        same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter
-     *        is only returned by the <a>DescribeSnapshots</a> API operation.
+     *        is only returned by <a>DescribeSnapshots</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,13 +278,13 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
-     * volume encryption key for the parent volume.
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+     * used to protect the volume encryption key for the parent volume.
      * </p>
      * 
      * @param kmsKeyId
-     *        The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
-     *        protect the volume encryption key for the parent volume.
+     *        The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that
+     *        was used to protect the volume encryption key for the parent volume.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -294,12 +293,12 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
-     * volume encryption key for the parent volume.
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+     * used to protect the volume encryption key for the parent volume.
      * </p>
      * 
-     * @return The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
-     *         protect the volume encryption key for the parent volume.
+     * @return The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that
+     *         was used to protect the volume encryption key for the parent volume.
      */
 
     public String getKmsKeyId() {
@@ -308,13 +307,13 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
-     * volume encryption key for the parent volume.
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+     * used to protect the volume encryption key for the parent volume.
      * </p>
      * 
      * @param kmsKeyId
-     *        The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
-     *        protect the volume encryption key for the parent volume.
+     *        The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that
+     *        was used to protect the volume encryption key for the parent volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -560,15 +559,14 @@ public class Snapshot implements Serializable, Cloneable {
      * <p>
      * Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the
      * proper AWS Key Management Service (AWS KMS) permissions are not obtained) this field displays error state details
-     * to help you diagnose why the error occurred. This parameter is only returned by the <a>DescribeSnapshots</a> API
-     * operation.
+     * to help you diagnose why the error occurred. This parameter is only returned by <a>DescribeSnapshots</a>.
      * </p>
      * 
      * @param stateMessage
      *        Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example,
      *        if the proper AWS Key Management Service (AWS KMS) permissions are not obtained) this field displays error
-     *        state details to help you diagnose why the error occurred. This parameter is only returned by the
-     *        <a>DescribeSnapshots</a> API operation.
+     *        state details to help you diagnose why the error occurred. This parameter is only returned by
+     *        <a>DescribeSnapshots</a>.
      */
 
     public void setStateMessage(String stateMessage) {
@@ -579,14 +577,13 @@ public class Snapshot implements Serializable, Cloneable {
      * <p>
      * Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the
      * proper AWS Key Management Service (AWS KMS) permissions are not obtained) this field displays error state details
-     * to help you diagnose why the error occurred. This parameter is only returned by the <a>DescribeSnapshots</a> API
-     * operation.
+     * to help you diagnose why the error occurred. This parameter is only returned by <a>DescribeSnapshots</a>.
      * </p>
      * 
      * @return Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for
      *         example, if the proper AWS Key Management Service (AWS KMS) permissions are not obtained) this field
      *         displays error state details to help you diagnose why the error occurred. This parameter is only returned
-     *         by the <a>DescribeSnapshots</a> API operation.
+     *         by <a>DescribeSnapshots</a>.
      */
 
     public String getStateMessage() {
@@ -597,15 +594,14 @@ public class Snapshot implements Serializable, Cloneable {
      * <p>
      * Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the
      * proper AWS Key Management Service (AWS KMS) permissions are not obtained) this field displays error state details
-     * to help you diagnose why the error occurred. This parameter is only returned by the <a>DescribeSnapshots</a> API
-     * operation.
+     * to help you diagnose why the error occurred. This parameter is only returned by <a>DescribeSnapshots</a>.
      * </p>
      * 
      * @param stateMessage
      *        Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example,
      *        if the proper AWS Key Management Service (AWS KMS) permissions are not obtained) this field displays error
-     *        state details to help you diagnose why the error occurred. This parameter is only returned by the
-     *        <a>DescribeSnapshots</a> API operation.
+     *        state details to help you diagnose why the error occurred. This parameter is only returned by
+     *        <a>DescribeSnapshots</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

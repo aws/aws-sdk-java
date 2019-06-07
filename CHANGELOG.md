@@ -1,3 +1,8 @@
+# __1.11.568__ __2019-06-07__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Adds DNS entries and NLB ARNs to describe-vpc-endpoint-connections API response. Adds owner ID to describe-vpc-endpoints and create-vpc-endpoint API responses.
+
 # __1.11.567__ __2019-06-06__
 ## __AWS MediaConnect__
   - ### Features

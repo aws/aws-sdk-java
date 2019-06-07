@@ -150,6 +150,10 @@ public class VpcEndpointStaxUnmarshaller implements Unmarshaller<VpcEndpoint, St
                     continue;
                 }
 
+                if (context.testExpression("ownerId", targetDepth)) {
+                    vpcEndpoint.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpcEndpoint;

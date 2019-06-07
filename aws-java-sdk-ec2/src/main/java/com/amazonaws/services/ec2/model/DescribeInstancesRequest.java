@@ -38,7 +38,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code>).
+     * <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code> |
+     * <code>arm64</code>).
      * </p>
      * </li>
      * <li>
@@ -537,7 +538,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code>).
+     * <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code> |
+     * <code>arm64</code>).
      * </p>
      * </li>
      * <li>
@@ -1008,7 +1010,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code>).
+     *         <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code> |
+     *         <code>arm64</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -1497,7 +1500,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code>).
+     * <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code> |
+     * <code>arm64</code>).
      * </p>
      * </li>
      * <li>
@@ -1969,7 +1973,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code>).
+     *        <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code> |
+     *        <code>arm64</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2459,7 +2464,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code>).
+     * <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code> |
+     * <code>arm64</code>).
      * </p>
      * </li>
      * <li>
@@ -2936,7 +2942,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code>).
+     *        <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code> |
+     *        <code>arm64</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -3428,7 +3435,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code>).
+     * <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code> |
+     * <code>arm64</code>).
      * </p>
      * </li>
      * <li>
@@ -3900,7 +3908,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code>).
+     *        <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code> |
+     *        <code>arm64</code>).
      *        </p>
      *        </li>
      *        <li>

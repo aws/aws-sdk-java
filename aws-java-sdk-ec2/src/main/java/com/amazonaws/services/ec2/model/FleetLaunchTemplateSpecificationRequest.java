@@ -40,7 +40,7 @@ public class FleetLaunchTemplateSpecificationRequest implements Serializable, Cl
     private String launchTemplateName;
     /**
      * <p>
-     * The version number of the launch template.
+     * The version number of the launch template. Note: This is a required parameter and will be updated soon.
      * </p>
      */
     private String version;
@@ -127,11 +127,11 @@ public class FleetLaunchTemplateSpecificationRequest implements Serializable, Cl
 
     /**
      * <p>
-     * The version number of the launch template.
+     * The version number of the launch template. Note: This is a required parameter and will be updated soon.
      * </p>
      * 
      * @param version
-     *        The version number of the launch template.
+     *        The version number of the launch template. Note: This is a required parameter and will be updated soon.
      */
 
     public void setVersion(String version) {
@@ -140,10 +140,10 @@ public class FleetLaunchTemplateSpecificationRequest implements Serializable, Cl
 
     /**
      * <p>
-     * The version number of the launch template.
+     * The version number of the launch template. Note: This is a required parameter and will be updated soon.
      * </p>
      * 
-     * @return The version number of the launch template.
+     * @return The version number of the launch template. Note: This is a required parameter and will be updated soon.
      */
 
     public String getVersion() {
@@ -152,11 +152,11 @@ public class FleetLaunchTemplateSpecificationRequest implements Serializable, Cl
 
     /**
      * <p>
-     * The version number of the launch template.
+     * The version number of the launch template. Note: This is a required parameter and will be updated soon.
      * </p>
      * 
      * @param version
-     *        The version number of the launch template.
+     *        The version number of the launch template. Note: This is a required parameter and will be updated soon.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

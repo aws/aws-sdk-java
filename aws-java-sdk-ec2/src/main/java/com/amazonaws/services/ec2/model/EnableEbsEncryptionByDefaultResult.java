@@ -25,18 +25,18 @@ public class EnableEbsEncryptionByDefaultResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Account-level encryption status after performing the action.
+     * The updated status of encryption by default.
      * </p>
      */
     private Boolean ebsEncryptionByDefault;
 
     /**
      * <p>
-     * Account-level encryption status after performing the action.
+     * The updated status of encryption by default.
      * </p>
      * 
      * @param ebsEncryptionByDefault
-     *        Account-level encryption status after performing the action.
+     *        The updated status of encryption by default.
      */
 
     public void setEbsEncryptionByDefault(Boolean ebsEncryptionByDefault) {
@@ -45,10 +45,10 @@ public class EnableEbsEncryptionByDefaultResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Account-level encryption status after performing the action.
+     * The updated status of encryption by default.
      * </p>
      * 
-     * @return Account-level encryption status after performing the action.
+     * @return The updated status of encryption by default.
      */
 
     public Boolean getEbsEncryptionByDefault() {
@@ -57,11 +57,11 @@ public class EnableEbsEncryptionByDefaultResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Account-level encryption status after performing the action.
+     * The updated status of encryption by default.
      * </p>
      * 
      * @param ebsEncryptionByDefault
-     *        Account-level encryption status after performing the action.
+     *        The updated status of encryption by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,10 +72,10 @@ public class EnableEbsEncryptionByDefaultResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Account-level encryption status after performing the action.
+     * The updated status of encryption by default.
      * </p>
      * 
-     * @return Account-level encryption status after performing the action.
+     * @return The updated status of encryption by default.
      */
 
     public Boolean isEbsEncryptionByDefault() {

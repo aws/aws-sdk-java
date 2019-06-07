@@ -45,14 +45,14 @@ public class Volume implements Serializable, Cloneable {
     private java.util.Date createTime;
     /**
      * <p>
-     * Indicates whether the volume will be encrypted.
+     * Indicates whether the volume is encrypted.
      * </p>
      */
     private Boolean encrypted;
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
-     * volume encryption key for the volume.
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+     * used to protect the volume encryption key for the volume.
      * </p>
      */
     private String kmsKeyId;
@@ -271,11 +271,11 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume will be encrypted.
+     * Indicates whether the volume is encrypted.
      * </p>
      * 
      * @param encrypted
-     *        Indicates whether the volume will be encrypted.
+     *        Indicates whether the volume is encrypted.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -284,10 +284,10 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume will be encrypted.
+     * Indicates whether the volume is encrypted.
      * </p>
      * 
-     * @return Indicates whether the volume will be encrypted.
+     * @return Indicates whether the volume is encrypted.
      */
 
     public Boolean getEncrypted() {
@@ -296,11 +296,11 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume will be encrypted.
+     * Indicates whether the volume is encrypted.
      * </p>
      * 
      * @param encrypted
-     *        Indicates whether the volume will be encrypted.
+     *        Indicates whether the volume is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,10 +311,10 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume will be encrypted.
+     * Indicates whether the volume is encrypted.
      * </p>
      * 
-     * @return Indicates whether the volume will be encrypted.
+     * @return Indicates whether the volume is encrypted.
      */
 
     public Boolean isEncrypted() {
@@ -323,13 +323,13 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
-     * volume encryption key for the volume.
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+     * used to protect the volume encryption key for the volume.
      * </p>
      * 
      * @param kmsKeyId
-     *        The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
-     *        protect the volume encryption key for the volume.
+     *        The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that
+     *        was used to protect the volume encryption key for the volume.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -338,12 +338,12 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
-     * volume encryption key for the volume.
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+     * used to protect the volume encryption key for the volume.
      * </p>
      * 
-     * @return The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
-     *         protect the volume encryption key for the volume.
+     * @return The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that
+     *         was used to protect the volume encryption key for the volume.
      */
 
     public String getKmsKeyId() {
@@ -352,13 +352,13 @@ public class Volume implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
-     * volume encryption key for the volume.
+     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+     * used to protect the volume encryption key for the volume.
      * </p>
      * 
      * @param kmsKeyId
-     *        The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
-     *        protect the volume encryption key for the volume.
+     *        The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that
+     *        was used to protect the volume encryption key for the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

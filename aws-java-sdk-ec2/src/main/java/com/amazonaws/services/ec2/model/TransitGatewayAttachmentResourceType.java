@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum TransitGatewayAttachmentResourceType {
 
     Vpc("vpc"),
-    Vpn("vpn");
+    Vpn("vpn"),
+    DirectConnectGateway("direct-connect-gateway");
 
     private String value;
 
