@@ -35,6 +35,7 @@ public class PropertyNames {
     public static final String OUTPUT_PATH = "OutputPath";
     public static final String PARAMETERS = "Parameters";
     public static final String END = "End";
+    public static final String VERSION = "Version";
 
     // TaskState property names
     public static final String RESOURCE = "Resource";

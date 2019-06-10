@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -52,11 +51,15 @@ public final class StateMachine {
     @JsonProperty(PropertyNames.STATES)
     private final Map<String, State> states;
 
+    @JsonProperty(PropertyNames.VERSION)
+    private final String version;
+
     private StateMachine(Builder builder) {
-        this.comment = builder.comment;
-        this.startAt = builder.startAt;
-        this.timeoutSeconds = builder.timeoutSeconds;
-        this.states = Buildable.Utils.build(builder.states);
+        comment = builder.comment;
+        startAt = builder.startAt;
+        timeoutSeconds = builder.timeoutSeconds;
+        states = Buildable.Utils.build(builder.states);
+        version = builder.version;
     }
 
     /**
@@ -86,6 +89,13 @@ public final class StateMachine {
      */
     public Map<String, State> getStates() {
         return states;
+    }
+
+    /**
+     * @return The version for this state machine, if explicitly declared.
+     */
+    public String getVersion() {
+        return version;
     }
 
     /**
@@ -151,6 +161,9 @@ public final class StateMachine {
         @JsonProperty(PropertyNames.STATES)
         private final Map<String, State.Builder> states = new LinkedHashMap<String, State.Builder>();
 
+        @JsonProperty(PropertyNames.VERSION)
+        private String version;
+
         private Builder() {
         }
 
@@ -201,6 +214,17 @@ public final class StateMachine {
          */
         public Builder state(String stateName, State.Builder stateBuilder) {
             this.states.put(stateName, stateBuilder);
+            return this;
+        }
+
+        /**
+         * OPTIONAL. Version of the states language, if specified.
+         *
+         * @param version Version value.
+         * @return This object for method chaining.
+         */
+        public Builder version(String version) {
+            this.version = version;
             return this;
         }
 
