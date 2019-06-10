@@ -56,6 +56,14 @@ public class MergeMetadataJsonUnmarshaller implements Unmarshaller<MergeMetadata
                     context.nextToken();
                     mergeMetadata.setMergedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("mergeCommitId", targetDepth)) {
+                    context.nextToken();
+                    mergeMetadata.setMergeCommitId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("mergeOption", targetDepth)) {
+                    context.nextToken();
+                    mergeMetadata.setMergeOption(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

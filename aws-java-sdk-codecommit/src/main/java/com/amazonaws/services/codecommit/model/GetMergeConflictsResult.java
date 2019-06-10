@@ -25,7 +25,7 @@ public class GetMergeConflictsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A Boolean value that indicates whether the code is mergable by the specified merge option.
+     * A Boolean value that indicates whether the code is mergeable by the specified merge option.
      * </p>
      */
     private Boolean mergeable;
@@ -41,14 +41,32 @@ public class GetMergeConflictsResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String sourceCommitId;
+    /**
+     * <p>
+     * The commit ID of the merge base.
+     * </p>
+     */
+    private String baseCommitId;
+    /**
+     * <p>
+     * A list of metadata for any conflicts found.
+     * </p>
+     */
+    private java.util.List<ConflictMetadata> conflictMetadataList;
+    /**
+     * <p>
+     * An enumeration token that can be used in a request to return the next batch of the results.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
-     * A Boolean value that indicates whether the code is mergable by the specified merge option.
+     * A Boolean value that indicates whether the code is mergeable by the specified merge option.
      * </p>
      * 
      * @param mergeable
-     *        A Boolean value that indicates whether the code is mergable by the specified merge option.
+     *        A Boolean value that indicates whether the code is mergeable by the specified merge option.
      */
 
     public void setMergeable(Boolean mergeable) {
@@ -57,10 +75,10 @@ public class GetMergeConflictsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A Boolean value that indicates whether the code is mergable by the specified merge option.
+     * A Boolean value that indicates whether the code is mergeable by the specified merge option.
      * </p>
      * 
-     * @return A Boolean value that indicates whether the code is mergable by the specified merge option.
+     * @return A Boolean value that indicates whether the code is mergeable by the specified merge option.
      */
 
     public Boolean getMergeable() {
@@ -69,11 +87,11 @@ public class GetMergeConflictsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A Boolean value that indicates whether the code is mergable by the specified merge option.
+     * A Boolean value that indicates whether the code is mergeable by the specified merge option.
      * </p>
      * 
      * @param mergeable
-     *        A Boolean value that indicates whether the code is mergable by the specified merge option.
+     *        A Boolean value that indicates whether the code is mergeable by the specified merge option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,10 +102,10 @@ public class GetMergeConflictsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A Boolean value that indicates whether the code is mergable by the specified merge option.
+     * A Boolean value that indicates whether the code is mergeable by the specified merge option.
      * </p>
      * 
-     * @return A Boolean value that indicates whether the code is mergable by the specified merge option.
+     * @return A Boolean value that indicates whether the code is mergeable by the specified merge option.
      */
 
     public Boolean isMergeable() {
@@ -175,6 +193,156 @@ public class GetMergeConflictsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The commit ID of the merge base.
+     * </p>
+     * 
+     * @param baseCommitId
+     *        The commit ID of the merge base.
+     */
+
+    public void setBaseCommitId(String baseCommitId) {
+        this.baseCommitId = baseCommitId;
+    }
+
+    /**
+     * <p>
+     * The commit ID of the merge base.
+     * </p>
+     * 
+     * @return The commit ID of the merge base.
+     */
+
+    public String getBaseCommitId() {
+        return this.baseCommitId;
+    }
+
+    /**
+     * <p>
+     * The commit ID of the merge base.
+     * </p>
+     * 
+     * @param baseCommitId
+     *        The commit ID of the merge base.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMergeConflictsResult withBaseCommitId(String baseCommitId) {
+        setBaseCommitId(baseCommitId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of metadata for any conflicts found.
+     * </p>
+     * 
+     * @return A list of metadata for any conflicts found.
+     */
+
+    public java.util.List<ConflictMetadata> getConflictMetadataList() {
+        return conflictMetadataList;
+    }
+
+    /**
+     * <p>
+     * A list of metadata for any conflicts found.
+     * </p>
+     * 
+     * @param conflictMetadataList
+     *        A list of metadata for any conflicts found.
+     */
+
+    public void setConflictMetadataList(java.util.Collection<ConflictMetadata> conflictMetadataList) {
+        if (conflictMetadataList == null) {
+            this.conflictMetadataList = null;
+            return;
+        }
+
+        this.conflictMetadataList = new java.util.ArrayList<ConflictMetadata>(conflictMetadataList);
+    }
+
+    /**
+     * <p>
+     * A list of metadata for any conflicts found.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConflictMetadataList(java.util.Collection)} or {@link #withConflictMetadataList(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param conflictMetadataList
+     *        A list of metadata for any conflicts found.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMergeConflictsResult withConflictMetadataList(ConflictMetadata... conflictMetadataList) {
+        if (this.conflictMetadataList == null) {
+            setConflictMetadataList(new java.util.ArrayList<ConflictMetadata>(conflictMetadataList.length));
+        }
+        for (ConflictMetadata ele : conflictMetadataList) {
+            this.conflictMetadataList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of metadata for any conflicts found.
+     * </p>
+     * 
+     * @param conflictMetadataList
+     *        A list of metadata for any conflicts found.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMergeConflictsResult withConflictMetadataList(java.util.Collection<ConflictMetadata> conflictMetadataList) {
+        setConflictMetadataList(conflictMetadataList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An enumeration token that can be used in a request to return the next batch of the results.
+     * </p>
+     * 
+     * @param nextToken
+     *        An enumeration token that can be used in a request to return the next batch of the results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * An enumeration token that can be used in a request to return the next batch of the results.
+     * </p>
+     * 
+     * @return An enumeration token that can be used in a request to return the next batch of the results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * An enumeration token that can be used in a request to return the next batch of the results.
+     * </p>
+     * 
+     * @param nextToken
+     *        An enumeration token that can be used in a request to return the next batch of the results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMergeConflictsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -191,7 +359,13 @@ public class GetMergeConflictsResult extends com.amazonaws.AmazonWebServiceResul
         if (getDestinationCommitId() != null)
             sb.append("DestinationCommitId: ").append(getDestinationCommitId()).append(",");
         if (getSourceCommitId() != null)
-            sb.append("SourceCommitId: ").append(getSourceCommitId());
+            sb.append("SourceCommitId: ").append(getSourceCommitId()).append(",");
+        if (getBaseCommitId() != null)
+            sb.append("BaseCommitId: ").append(getBaseCommitId()).append(",");
+        if (getConflictMetadataList() != null)
+            sb.append("ConflictMetadataList: ").append(getConflictMetadataList()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +392,18 @@ public class GetMergeConflictsResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getSourceCommitId() != null && other.getSourceCommitId().equals(this.getSourceCommitId()) == false)
             return false;
+        if (other.getBaseCommitId() == null ^ this.getBaseCommitId() == null)
+            return false;
+        if (other.getBaseCommitId() != null && other.getBaseCommitId().equals(this.getBaseCommitId()) == false)
+            return false;
+        if (other.getConflictMetadataList() == null ^ this.getConflictMetadataList() == null)
+            return false;
+        if (other.getConflictMetadataList() != null && other.getConflictMetadataList().equals(this.getConflictMetadataList()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -229,6 +415,9 @@ public class GetMergeConflictsResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getMergeable() == null) ? 0 : getMergeable().hashCode());
         hashCode = prime * hashCode + ((getDestinationCommitId() == null) ? 0 : getDestinationCommitId().hashCode());
         hashCode = prime * hashCode + ((getSourceCommitId() == null) ? 0 : getSourceCommitId().hashCode());
+        hashCode = prime * hashCode + ((getBaseCommitId() == null) ? 0 : getBaseCommitId().hashCode());
+        hashCode = prime * hashCode + ((getConflictMetadataList() == null) ? 0 : getConflictMetadataList().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

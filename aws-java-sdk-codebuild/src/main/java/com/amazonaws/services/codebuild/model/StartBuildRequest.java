@@ -77,6 +77,15 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the
+     * build level) takes precedence.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * </p>
      */
     private String sourceVersion;
     /**
@@ -474,6 +483,15 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the
+     * build level) takes precedence.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * </p>
      * 
      * @param sourceVersion
      *        A version of the build input to be built, for this build only. If not specified, the latest version is
@@ -505,6 +523,15 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        input ZIP file to use.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at
+     *        the build level) takes precedence.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
+     *        Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
      */
 
     public void setSourceVersion(String sourceVersion) {
@@ -544,6 +571,15 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the
+     * build level) takes precedence.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * </p>
      * 
      * @return A version of the build input to be built, for this build only. If not specified, the latest version is
      *         used. If specified, must be one of:</p>
@@ -574,6 +610,15 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         input ZIP file to use.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at
+     *         the build level) takes precedence.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
+     *         Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
      */
 
     public String getSourceVersion() {
@@ -613,6 +658,15 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the
+     * build level) takes precedence.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * </p>
      * 
      * @param sourceVersion
      *        A version of the build input to be built, for this build only. If not specified, the latest version is
@@ -644,6 +698,15 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        input ZIP file to use.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at
+     *        the build level) takes precedence.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
+     *        Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

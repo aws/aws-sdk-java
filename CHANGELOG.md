@@ -1,3 +1,24 @@
+# __1.11.569__ __2019-06-10__
+## __AWS CodeBuild__
+  - ### Features
+    - AWS CodeBuild adds support for source version on project level.
+
+## __AWS CodeCommit__
+  - ### Features
+    - This release adds two merge strategies for merging pull requests: squash and three-way. It also adds functionality for resolving merge conflicts, testing merge outcomes, and for merging branches using one of the three supported merge strategies.
+
+## __Amazon Personalize__
+  - ### Features
+    - Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.
+
+## __Amazon Personalize Events__
+  - ### Features
+    - Introducing Amazon Personalize  - a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.
+
+## __Amazon Personalize Runtime__
+  - ### Features
+    - Amazon Personalize is a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.
+
 # __1.11.568__ __2019-06-07__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

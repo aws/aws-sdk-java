@@ -38,6 +38,10 @@ public class ProjectMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("source").build();
     private static final MarshallingInfo<List> SECONDARYSOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("secondarySources").build();
+    private static final MarshallingInfo<String> SOURCEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceVersion").build();
+    private static final MarshallingInfo<List> SECONDARYSOURCEVERSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("secondarySourceVersions").build();
     private static final MarshallingInfo<StructuredPojo> ARTIFACTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifacts").build();
     private static final MarshallingInfo<List> SECONDARYARTIFACTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -90,6 +94,8 @@ public class ProjectMarshaller {
             protocolMarshaller.marshall(project.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(project.getSource(), SOURCE_BINDING);
             protocolMarshaller.marshall(project.getSecondarySources(), SECONDARYSOURCES_BINDING);
+            protocolMarshaller.marshall(project.getSourceVersion(), SOURCEVERSION_BINDING);
+            protocolMarshaller.marshall(project.getSecondarySourceVersions(), SECONDARYSOURCEVERSIONS_BINDING);
             protocolMarshaller.marshall(project.getArtifacts(), ARTIFACTS_BINDING);
             protocolMarshaller.marshall(project.getSecondaryArtifacts(), SECONDARYARTIFACTS_BINDING);
             protocolMarshaller.marshall(project.getCache(), CACHE_BINDING);

@@ -35,6 +35,14 @@ public class GetMergeConflictsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceCommitSpecifier").build();
     private static final MarshallingInfo<String> MERGEOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mergeOption").build();
+    private static final MarshallingInfo<String> CONFLICTDETAILLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("conflictDetailLevel").build();
+    private static final MarshallingInfo<Integer> MAXCONFLICTFILES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxConflictFiles").build();
+    private static final MarshallingInfo<String> CONFLICTRESOLUTIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("conflictResolutionStrategy").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
 
     private static final GetMergeConflictsRequestMarshaller instance = new GetMergeConflictsRequestMarshaller();
 
@@ -56,6 +64,10 @@ public class GetMergeConflictsRequestMarshaller {
             protocolMarshaller.marshall(getMergeConflictsRequest.getDestinationCommitSpecifier(), DESTINATIONCOMMITSPECIFIER_BINDING);
             protocolMarshaller.marshall(getMergeConflictsRequest.getSourceCommitSpecifier(), SOURCECOMMITSPECIFIER_BINDING);
             protocolMarshaller.marshall(getMergeConflictsRequest.getMergeOption(), MERGEOPTION_BINDING);
+            protocolMarshaller.marshall(getMergeConflictsRequest.getConflictDetailLevel(), CONFLICTDETAILLEVEL_BINDING);
+            protocolMarshaller.marshall(getMergeConflictsRequest.getMaxConflictFiles(), MAXCONFLICTFILES_BINDING);
+            protocolMarshaller.marshall(getMergeConflictsRequest.getConflictResolutionStrategy(), CONFLICTRESOLUTIONSTRATEGY_BINDING);
+            protocolMarshaller.marshall(getMergeConflictsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

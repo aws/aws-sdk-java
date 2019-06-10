@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified merge option is not valid. The only valid value is FAST_FORWARD_MERGE.
+ * The specified merge option is not valid for this operation. Not all merge strategies are supported for all
+ * operations.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

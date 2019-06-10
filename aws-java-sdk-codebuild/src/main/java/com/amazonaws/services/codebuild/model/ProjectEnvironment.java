@@ -98,13 +98,20 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * If the operating system's base image is Ubuntu Linux:
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
      * </p>
      * <p>
-     * If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to <code>timeout</code>:
+     * <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * If the operating system's base image is Alpine Linux and the previous command does not work, add the
+     * <code>-t</code> argument to <code>timeout</code>:
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
+     * </p>
+     * <p>
+     * <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      */
     private Boolean privilegedMode;
@@ -671,13 +678,20 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * If the operating system's base image is Ubuntu Linux:
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
      * </p>
      * <p>
-     * If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to <code>timeout</code>:
+     * <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * If the operating system's base image is Alpine Linux and the previous command does not work, add the
+     * <code>-t</code> argument to <code>timeout</code>:
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
+     * </p>
+     * <p>
+     * <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * 
      * @param privilegedMode
@@ -692,14 +706,20 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        If the operating system's base image is Ubuntu Linux:
      *        </p>
      *        <p>
-     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
      *        </p>
      *        <p>
-     *        If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to
-     *        <code>timeout</code>:
+     *        <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      *        </p>
      *        <p>
-     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *        If the operating system's base image is Alpine Linux and the previous command does not work, add the
+     *        <code>-t</code> argument to <code>timeout</code>:
+     *        </p>
+     *        <p>
+     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
+     *        </p>
+     *        <p>
+     *        <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      */
 
     public void setPrivilegedMode(Boolean privilegedMode) {
@@ -719,13 +739,20 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * If the operating system's base image is Ubuntu Linux:
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
      * </p>
      * <p>
-     * If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to <code>timeout</code>:
+     * <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * If the operating system's base image is Alpine Linux and the previous command does not work, add the
+     * <code>-t</code> argument to <code>timeout</code>:
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
+     * </p>
+     * <p>
+     * <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * 
      * @return Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be
@@ -739,14 +766,20 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *         If the operating system's base image is Ubuntu Linux:
      *         </p>
      *         <p>
-     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
      *         </p>
      *         <p>
-     *         If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to
-     *         <code>timeout</code>:
+     *         <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      *         </p>
      *         <p>
-     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *         If the operating system's base image is Alpine Linux and the previous command does not work, add the
+     *         <code>-t</code> argument to <code>timeout</code>:
+     *         </p>
+     *         <p>
+     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
+     *         </p>
+     *         <p>
+     *         <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      */
 
     public Boolean getPrivilegedMode() {
@@ -766,13 +799,20 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * If the operating system's base image is Ubuntu Linux:
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
      * </p>
      * <p>
-     * If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to <code>timeout</code>:
+     * <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * If the operating system's base image is Alpine Linux and the previous command does not work, add the
+     * <code>-t</code> argument to <code>timeout</code>:
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
+     * </p>
+     * <p>
+     * <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * 
      * @param privilegedMode
@@ -787,14 +827,20 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        If the operating system's base image is Ubuntu Linux:
      *        </p>
      *        <p>
-     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
      *        </p>
      *        <p>
-     *        If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to
-     *        <code>timeout</code>:
+     *        <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      *        </p>
      *        <p>
-     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *        If the operating system's base image is Alpine Linux and the previous command does not work, add the
+     *        <code>-t</code> argument to <code>timeout</code>:
+     *        </p>
+     *        <p>
+     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
+     *        </p>
+     *        <p>
+     *        <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -816,13 +862,20 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * If the operating system's base image is Ubuntu Linux:
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
      * </p>
      * <p>
-     * If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to <code>timeout</code>:
+     * <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * If the operating system's base image is Alpine Linux and the previous command does not work, add the
+     * <code>-t</code> argument to <code>timeout</code>:
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
+     * </p>
+     * <p>
+     * <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * 
      * @return Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be
@@ -836,14 +889,20 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *         If the operating system's base image is Ubuntu Linux:
      *         </p>
      *         <p>
-     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
      *         </p>
      *         <p>
-     *         If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to
-     *         <code>timeout</code>:
+     *         <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      *         </p>
      *         <p>
-     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *         If the operating system's base image is Alpine Linux and the previous command does not work, add the
+     *         <code>-t</code> argument to <code>timeout</code>:
+     *         </p>
+     *         <p>
+     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code>
+     *         </p>
+     *         <p>
+     *         <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      */
 
     public Boolean isPrivilegedMode() {

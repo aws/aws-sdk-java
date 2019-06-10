@@ -145,6 +145,61 @@
  * </li>
  * </ul>
  * <p>
+ * Merges, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>BatchDescribeMergeConflicts</a>, which returns information about conflicts in a merge between commits in a
+ * repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateUnreferencedMergeCommit</a>, which creates an unreferenced commit between two branches or commits for the
+ * purpose of comparing them and identifying any potential conflicts.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMergeConflicts</a>, which returns information about merge conflicts between the base, source, and
+ * destination versions of a file in a potential merge.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetMergeCommit</a>, which returns information about the merge between a source and destination commit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetMergeConflicts</a>, which returns information about merge conflicts between the source and destination branch
+ * in a pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetMergeOptions</a>, which returns information about the available merge options between two branches or commit
+ * specifiers.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergeBranchesByFastForward</a>, which merges two branches using the fast-forward merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergeBranchesBySquash</a>, which merges two branches using the squash merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergeBranchesByThreeWay</a>, which merges two branches using the three-way merge option.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * Pull requests, by calling the following:
  * </p>
  * <ul>
@@ -165,12 +220,6 @@
  * </li>
  * <li>
  * <p>
- * <a>GetMergeConflicts</a>, which returns information about merge conflicts between the source and destination branch
- * in a pull request.
- * </p>
- * </li>
- * <li>
- * <p>
  * <a>GetPullRequest</a>, which returns information about a specified pull request.
  * </p>
  * </li>
@@ -183,6 +232,18 @@
  * <p>
  * <a>MergePullRequestByFastForward</a>, which merges the source destination branch of a pull request into the specified
  * destination branch for that pull request using the fast-forward merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergePullRequestBySquash</a>, which merges the source destination branch of a pull request into the specified
+ * destination branch for that pull request using the squash merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergePullRequestByThreeWay</a>. which merges the source destination branch of a pull request into the specified
+ * destination branch for that pull request using the three-way merge option.
  * </p>
  * </li>
  * <li>

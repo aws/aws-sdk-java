@@ -67,7 +67,7 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders
-     * empty. If this is specified as true, a .gitkeep file will be created for empty folders.
+     * empty. If this is specified as true, a .gitkeep file will be created for empty folders. The default is false.
      * </p>
      */
     private Boolean keepEmptyFolders;
@@ -351,12 +351,13 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders
-     * empty. If this is specified as true, a .gitkeep file will be created for empty folders.
+     * empty. If this is specified as true, a .gitkeep file will be created for empty folders. The default is false.
      * </p>
      * 
      * @param keepEmptyFolders
      *        If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the
-     *        folders empty. If this is specified as true, a .gitkeep file will be created for empty folders.
+     *        folders empty. If this is specified as true, a .gitkeep file will be created for empty folders. The
+     *        default is false.
      */
 
     public void setKeepEmptyFolders(Boolean keepEmptyFolders) {
@@ -366,11 +367,12 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders
-     * empty. If this is specified as true, a .gitkeep file will be created for empty folders.
+     * empty. If this is specified as true, a .gitkeep file will be created for empty folders. The default is false.
      * </p>
      * 
      * @return If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the
-     *         folders empty. If this is specified as true, a .gitkeep file will be created for empty folders.
+     *         folders empty. If this is specified as true, a .gitkeep file will be created for empty folders. The
+     *         default is false.
      */
 
     public Boolean getKeepEmptyFolders() {
@@ -380,12 +382,13 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders
-     * empty. If this is specified as true, a .gitkeep file will be created for empty folders.
+     * empty. If this is specified as true, a .gitkeep file will be created for empty folders. The default is false.
      * </p>
      * 
      * @param keepEmptyFolders
      *        If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the
-     *        folders empty. If this is specified as true, a .gitkeep file will be created for empty folders.
+     *        folders empty. If this is specified as true, a .gitkeep file will be created for empty folders. The
+     *        default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,11 +400,12 @@ public class CreateCommitRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders
-     * empty. If this is specified as true, a .gitkeep file will be created for empty folders.
+     * empty. If this is specified as true, a .gitkeep file will be created for empty folders. The default is false.
      * </p>
      * 
      * @return If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the
-     *         folders empty. If this is specified as true, a .gitkeep file will be created for empty folders.
+     *         folders empty. If this is specified as true, a .gitkeep file will be created for empty folders. The
+     *         default is false.
      */
 
     public Boolean isKeepEmptyFolders() {

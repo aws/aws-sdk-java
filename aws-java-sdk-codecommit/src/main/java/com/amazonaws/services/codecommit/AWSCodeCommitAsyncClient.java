@@ -163,6 +163,61 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * </ul>
  * <p>
+ * Merges, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>BatchDescribeMergeConflicts</a>, which returns information about conflicts in a merge between commits in a
+ * repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateUnreferencedMergeCommit</a>, which creates an unreferenced commit between two branches or commits for the
+ * purpose of comparing them and identifying any potential conflicts.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMergeConflicts</a>, which returns information about merge conflicts between the base, source, and
+ * destination versions of a file in a potential merge.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetMergeCommit</a>, which returns information about the merge between a source and destination commit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetMergeConflicts</a>, which returns information about merge conflicts between the source and destination branch
+ * in a pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetMergeOptions</a>, which returns information about the available merge options between two branches or commit
+ * specifiers.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergeBranchesByFastForward</a>, which merges two branches using the fast-forward merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergeBranchesBySquash</a>, which merges two branches using the squash merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergeBranchesByThreeWay</a>, which merges two branches using the three-way merge option.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * Pull requests, by calling the following:
  * </p>
  * <ul>
@@ -183,12 +238,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <a>GetMergeConflicts</a>, which returns information about merge conflicts between the source and destination branch
- * in a pull request.
- * </p>
- * </li>
- * <li>
- * <p>
  * <a>GetPullRequest</a>, which returns information about a specified pull request.
  * </p>
  * </li>
@@ -201,6 +250,18 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <a>MergePullRequestByFastForward</a>, which merges the source destination branch of a pull request into the specified
  * destination branch for that pull request using the fast-forward merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergePullRequestBySquash</a>, which merges the source destination branch of a pull request into the specified
+ * destination branch for that pull request using the squash merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergePullRequestByThreeWay</a>. which merges the source destination branch of a pull request into the specified
+ * destination branch for that pull request using the three-way merge option.
  * </p>
  * </li>
  * <li>
@@ -519,6 +580,39 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDescribeMergeConflictsResult> batchDescribeMergeConflictsAsync(BatchDescribeMergeConflictsRequest request) {
+
+        return batchDescribeMergeConflictsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDescribeMergeConflictsResult> batchDescribeMergeConflictsAsync(final BatchDescribeMergeConflictsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDescribeMergeConflictsRequest, BatchDescribeMergeConflictsResult> asyncHandler) {
+        final BatchDescribeMergeConflictsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDescribeMergeConflictsResult>() {
+            @Override
+            public BatchDescribeMergeConflictsResult call() throws Exception {
+                BatchDescribeMergeConflictsResult result = null;
+
+                try {
+                    result = executeBatchDescribeMergeConflicts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetRepositoriesResult> batchGetRepositoriesAsync(BatchGetRepositoriesRequest request) {
 
         return batchGetRepositoriesAsync(request, null);
@@ -684,6 +778,40 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUnreferencedMergeCommitResult> createUnreferencedMergeCommitAsync(CreateUnreferencedMergeCommitRequest request) {
+
+        return createUnreferencedMergeCommitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUnreferencedMergeCommitResult> createUnreferencedMergeCommitAsync(
+            final CreateUnreferencedMergeCommitRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateUnreferencedMergeCommitRequest, CreateUnreferencedMergeCommitResult> asyncHandler) {
+        final CreateUnreferencedMergeCommitRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateUnreferencedMergeCommitResult>() {
+            @Override
+            public CreateUnreferencedMergeCommitResult call() throws Exception {
+                CreateUnreferencedMergeCommitResult result = null;
+
+                try {
+                    result = executeCreateUnreferencedMergeCommit(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteBranchResult> deleteBranchAsync(DeleteBranchRequest request) {
 
         return deleteBranchAsync(request, null);
@@ -800,6 +928,39 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
 
                 try {
                     result = executeDeleteRepository(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMergeConflictsResult> describeMergeConflictsAsync(DescribeMergeConflictsRequest request) {
+
+        return describeMergeConflictsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMergeConflictsResult> describeMergeConflictsAsync(final DescribeMergeConflictsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeMergeConflictsRequest, DescribeMergeConflictsResult> asyncHandler) {
+        final DescribeMergeConflictsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeMergeConflictsResult>() {
+            @Override
+            public DescribeMergeConflictsResult call() throws Exception {
+                DescribeMergeConflictsResult result = null;
+
+                try {
+                    result = executeDescribeMergeConflicts(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1146,6 +1307,39 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<GetMergeCommitResult> getMergeCommitAsync(GetMergeCommitRequest request) {
+
+        return getMergeCommitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMergeCommitResult> getMergeCommitAsync(final GetMergeCommitRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMergeCommitRequest, GetMergeCommitResult> asyncHandler) {
+        final GetMergeCommitRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMergeCommitResult>() {
+            @Override
+            public GetMergeCommitResult call() throws Exception {
+                GetMergeCommitResult result = null;
+
+                try {
+                    result = executeGetMergeCommit(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMergeConflictsResult> getMergeConflictsAsync(GetMergeConflictsRequest request) {
 
         return getMergeConflictsAsync(request, null);
@@ -1163,6 +1357,39 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
 
                 try {
                     result = executeGetMergeConflicts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMergeOptionsResult> getMergeOptionsAsync(GetMergeOptionsRequest request) {
+
+        return getMergeOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMergeOptionsResult> getMergeOptionsAsync(final GetMergeOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMergeOptionsRequest, GetMergeOptionsResult> asyncHandler) {
+        final GetMergeOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMergeOptionsResult>() {
+            @Override
+            public GetMergeOptionsResult call() throws Exception {
+                GetMergeOptionsResult result = null;
+
+                try {
+                    result = executeGetMergeOptions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1410,6 +1637,105 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<MergeBranchesByFastForwardResult> mergeBranchesByFastForwardAsync(MergeBranchesByFastForwardRequest request) {
+
+        return mergeBranchesByFastForwardAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergeBranchesByFastForwardResult> mergeBranchesByFastForwardAsync(final MergeBranchesByFastForwardRequest request,
+            final com.amazonaws.handlers.AsyncHandler<MergeBranchesByFastForwardRequest, MergeBranchesByFastForwardResult> asyncHandler) {
+        final MergeBranchesByFastForwardRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<MergeBranchesByFastForwardResult>() {
+            @Override
+            public MergeBranchesByFastForwardResult call() throws Exception {
+                MergeBranchesByFastForwardResult result = null;
+
+                try {
+                    result = executeMergeBranchesByFastForward(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergeBranchesBySquashResult> mergeBranchesBySquashAsync(MergeBranchesBySquashRequest request) {
+
+        return mergeBranchesBySquashAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergeBranchesBySquashResult> mergeBranchesBySquashAsync(final MergeBranchesBySquashRequest request,
+            final com.amazonaws.handlers.AsyncHandler<MergeBranchesBySquashRequest, MergeBranchesBySquashResult> asyncHandler) {
+        final MergeBranchesBySquashRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<MergeBranchesBySquashResult>() {
+            @Override
+            public MergeBranchesBySquashResult call() throws Exception {
+                MergeBranchesBySquashResult result = null;
+
+                try {
+                    result = executeMergeBranchesBySquash(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergeBranchesByThreeWayResult> mergeBranchesByThreeWayAsync(MergeBranchesByThreeWayRequest request) {
+
+        return mergeBranchesByThreeWayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergeBranchesByThreeWayResult> mergeBranchesByThreeWayAsync(final MergeBranchesByThreeWayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<MergeBranchesByThreeWayRequest, MergeBranchesByThreeWayResult> asyncHandler) {
+        final MergeBranchesByThreeWayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<MergeBranchesByThreeWayResult>() {
+            @Override
+            public MergeBranchesByThreeWayResult call() throws Exception {
+                MergeBranchesByThreeWayResult result = null;
+
+                try {
+                    result = executeMergeBranchesByThreeWay(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<MergePullRequestByFastForwardResult> mergePullRequestByFastForwardAsync(MergePullRequestByFastForwardRequest request) {
 
         return mergePullRequestByFastForwardAsync(request, null);
@@ -1428,6 +1754,72 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
 
                 try {
                     result = executeMergePullRequestByFastForward(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergePullRequestBySquashResult> mergePullRequestBySquashAsync(MergePullRequestBySquashRequest request) {
+
+        return mergePullRequestBySquashAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergePullRequestBySquashResult> mergePullRequestBySquashAsync(final MergePullRequestBySquashRequest request,
+            final com.amazonaws.handlers.AsyncHandler<MergePullRequestBySquashRequest, MergePullRequestBySquashResult> asyncHandler) {
+        final MergePullRequestBySquashRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<MergePullRequestBySquashResult>() {
+            @Override
+            public MergePullRequestBySquashResult call() throws Exception {
+                MergePullRequestBySquashResult result = null;
+
+                try {
+                    result = executeMergePullRequestBySquash(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergePullRequestByThreeWayResult> mergePullRequestByThreeWayAsync(MergePullRequestByThreeWayRequest request) {
+
+        return mergePullRequestByThreeWayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergePullRequestByThreeWayResult> mergePullRequestByThreeWayAsync(final MergePullRequestByThreeWayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<MergePullRequestByThreeWayRequest, MergePullRequestByThreeWayResult> asyncHandler) {
+        final MergePullRequestByThreeWayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<MergePullRequestByThreeWayResult>() {
+            @Override
+            public MergePullRequestByThreeWayResult call() throws Exception {
+                MergePullRequestByThreeWayResult result = null;
+
+                try {
+                    result = executeMergePullRequestByThreeWay(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

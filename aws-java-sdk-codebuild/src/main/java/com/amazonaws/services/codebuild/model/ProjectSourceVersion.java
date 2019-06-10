@@ -66,6 +66,11 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * </p>
      */
     private String sourceVersion;
 
@@ -141,6 +146,11 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * </p>
      * 
      * @param sourceVersion
      *        The source version for the corresponding source identifier. If specified, must be one of:</p>
@@ -171,6 +181,11 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      *        input ZIP file to use.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
+     *        Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
      */
 
     public void setSourceVersion(String sourceVersion) {
@@ -209,6 +224,11 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * </p>
      * 
      * @return The source version for the corresponding source identifier. If specified, must be one of:</p>
      *         <ul>
@@ -238,6 +258,11 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      *         input ZIP file to use.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
+     *         Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
      */
 
     public String getSourceVersion() {
@@ -276,6 +301,11 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+     * with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+     * </p>
      * 
      * @param sourceVersion
      *        The source version for the corresponding source identifier. If specified, must be one of:</p>
@@ -306,6 +336,11 @@ public class ProjectSourceVersion implements Serializable, Cloneable, Structured
      *        input ZIP file to use.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version
+     *        Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
