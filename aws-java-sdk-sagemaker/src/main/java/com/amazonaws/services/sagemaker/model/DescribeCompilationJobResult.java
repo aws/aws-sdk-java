@@ -63,7 +63,8 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
     private java.util.Date compilationEndTime;
     /**
      * <p>
-     * The duration allowed for model compilation.
+     * Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon
+     * SageMaker ends the compilation job. Use this API to cap model training costs.
      * </p>
      */
     private StoppingCondition stoppingCondition;
@@ -381,11 +382,13 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The duration allowed for model compilation.
+     * Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon
+     * SageMaker ends the compilation job. Use this API to cap model training costs.
      * </p>
      * 
      * @param stoppingCondition
-     *        The duration allowed for model compilation.
+     *        Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon
+     *        SageMaker ends the compilation job. Use this API to cap model training costs.
      */
 
     public void setStoppingCondition(StoppingCondition stoppingCondition) {
@@ -394,10 +397,12 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The duration allowed for model compilation.
+     * Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon
+     * SageMaker ends the compilation job. Use this API to cap model training costs.
      * </p>
      * 
-     * @return The duration allowed for model compilation.
+     * @return Specifies a limit to how long a model compilation job can run. When the job reaches the time limit,
+     *         Amazon SageMaker ends the compilation job. Use this API to cap model training costs.
      */
 
     public StoppingCondition getStoppingCondition() {
@@ -406,11 +411,13 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The duration allowed for model compilation.
+     * Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon
+     * SageMaker ends the compilation job. Use this API to cap model training costs.
      * </p>
      * 
      * @param stoppingCondition
-     *        The duration allowed for model compilation.
+     *        Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon
+     *        SageMaker ends the compilation job. Use this API to cap model training costs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

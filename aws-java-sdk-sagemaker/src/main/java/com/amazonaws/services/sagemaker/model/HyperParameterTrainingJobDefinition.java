@@ -84,16 +84,8 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
     private ResourceConfig resourceConfig;
     /**
      * <p>
-     * Sets a maximum duration for the training jobs that the tuning job launches. Use this parameter to limit model
-     * training costs.
-     * </p>
-     * <p>
-     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal. This delays job termination
-     * for 120 seconds. Algorithms might use this 120-second window to save the model artifacts.
-     * </p>
-     * <p>
-     * When Amazon SageMaker terminates a job because the stopping condition has been met, training algorithms provided
-     * by Amazon SageMaker save the intermediate results of the job.
+     * Specifies a limit to how long a model hyperparameter training job can run. When the job reaches the time limit,
+     * Amazon SageMaker ends the training job. Use this API to cap model training costs.
      * </p>
      */
     private StoppingCondition stoppingCondition;
@@ -533,28 +525,13 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * Sets a maximum duration for the training jobs that the tuning job launches. Use this parameter to limit model
-     * training costs.
-     * </p>
-     * <p>
-     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal. This delays job termination
-     * for 120 seconds. Algorithms might use this 120-second window to save the model artifacts.
-     * </p>
-     * <p>
-     * When Amazon SageMaker terminates a job because the stopping condition has been met, training algorithms provided
-     * by Amazon SageMaker save the intermediate results of the job.
+     * Specifies a limit to how long a model hyperparameter training job can run. When the job reaches the time limit,
+     * Amazon SageMaker ends the training job. Use this API to cap model training costs.
      * </p>
      * 
      * @param stoppingCondition
-     *        Sets a maximum duration for the training jobs that the tuning job launches. Use this parameter to limit
-     *        model training costs. </p>
-     *        <p>
-     *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal. This delays job
-     *        termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts.
-     *        </p>
-     *        <p>
-     *        When Amazon SageMaker terminates a job because the stopping condition has been met, training algorithms
-     *        provided by Amazon SageMaker save the intermediate results of the job.
+     *        Specifies a limit to how long a model hyperparameter training job can run. When the job reaches the time
+     *        limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.
      */
 
     public void setStoppingCondition(StoppingCondition stoppingCondition) {
@@ -563,27 +540,12 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * Sets a maximum duration for the training jobs that the tuning job launches. Use this parameter to limit model
-     * training costs.
-     * </p>
-     * <p>
-     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal. This delays job termination
-     * for 120 seconds. Algorithms might use this 120-second window to save the model artifacts.
-     * </p>
-     * <p>
-     * When Amazon SageMaker terminates a job because the stopping condition has been met, training algorithms provided
-     * by Amazon SageMaker save the intermediate results of the job.
+     * Specifies a limit to how long a model hyperparameter training job can run. When the job reaches the time limit,
+     * Amazon SageMaker ends the training job. Use this API to cap model training costs.
      * </p>
      * 
-     * @return Sets a maximum duration for the training jobs that the tuning job launches. Use this parameter to limit
-     *         model training costs. </p>
-     *         <p>
-     *         To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal. This delays job
-     *         termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts.
-     *         </p>
-     *         <p>
-     *         When Amazon SageMaker terminates a job because the stopping condition has been met, training algorithms
-     *         provided by Amazon SageMaker save the intermediate results of the job.
+     * @return Specifies a limit to how long a model hyperparameter training job can run. When the job reaches the time
+     *         limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.
      */
 
     public StoppingCondition getStoppingCondition() {
@@ -592,28 +554,13 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * Sets a maximum duration for the training jobs that the tuning job launches. Use this parameter to limit model
-     * training costs.
-     * </p>
-     * <p>
-     * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal. This delays job termination
-     * for 120 seconds. Algorithms might use this 120-second window to save the model artifacts.
-     * </p>
-     * <p>
-     * When Amazon SageMaker terminates a job because the stopping condition has been met, training algorithms provided
-     * by Amazon SageMaker save the intermediate results of the job.
+     * Specifies a limit to how long a model hyperparameter training job can run. When the job reaches the time limit,
+     * Amazon SageMaker ends the training job. Use this API to cap model training costs.
      * </p>
      * 
      * @param stoppingCondition
-     *        Sets a maximum duration for the training jobs that the tuning job launches. Use this parameter to limit
-     *        model training costs. </p>
-     *        <p>
-     *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal. This delays job
-     *        termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts.
-     *        </p>
-     *        <p>
-     *        When Amazon SageMaker terminates a job because the stopping condition has been met, training algorithms
-     *        provided by Amazon SageMaker save the intermediate results of the job.
+     *        Specifies a limit to how long a model hyperparameter training job can run. When the job reaches the time
+     *        limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

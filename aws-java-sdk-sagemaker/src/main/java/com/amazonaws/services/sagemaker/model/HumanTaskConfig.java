@@ -150,7 +150,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * <b>Asia Pacific (Tokyo (ap-northeast-1):</b>
+     * <b>Asia Pacific (Tokyo) (ap-northeast-1):</b>
      * </p>
      * <ul>
      * <li>
@@ -175,7 +175,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * <b>Asia Pacific (Sydney (ap-southeast-1):</b>
+     * <b>Asia Pacific (Sydney) (ap-southeast-1):</b>
      * </p>
      * <ul>
      * <li>
@@ -447,7 +447,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * <b>Asia Pacific (Tokyo (ap-northeast-1):</b>
+     * <b>Asia Pacific (Tokyo) (ap-northeast-1):</b>
      * </p>
      * <ul>
      * <li>
@@ -472,7 +472,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * <b>Asia Pacific (Sydney (ap-southeast-1):</b>
+     * <b>Asia Pacific (Sydney) (ap-southeast-1):</b>
      * </p>
      * <ul>
      * <li>
@@ -605,7 +605,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>Asia Pacific (Tokyo (ap-northeast-1):</b>
+     *        <b>Asia Pacific (Tokyo) (ap-northeast-1):</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -630,7 +630,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>Asia Pacific (Sydney (ap-southeast-1):</b>
+     *        <b>Asia Pacific (Sydney) (ap-southeast-1):</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -769,7 +769,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * <b>Asia Pacific (Tokyo (ap-northeast-1):</b>
+     * <b>Asia Pacific (Tokyo) (ap-northeast-1):</b>
      * </p>
      * <ul>
      * <li>
@@ -794,7 +794,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * <b>Asia Pacific (Sydney (ap-southeast-1):</b>
+     * <b>Asia Pacific (Sydney) (ap-southeast-1):</b>
      * </p>
      * <ul>
      * <li>
@@ -926,7 +926,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         </ul>
      *         <p>
-     *         <b>Asia Pacific (Tokyo (ap-northeast-1):</b>
+     *         <b>Asia Pacific (Tokyo) (ap-northeast-1):</b>
      *         </p>
      *         <ul>
      *         <li>
@@ -951,7 +951,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         </ul>
      *         <p>
-     *         <b>Asia Pacific (Sydney (ap-southeast-1):</b>
+     *         <b>Asia Pacific (Sydney) (ap-southeast-1):</b>
      *         </p>
      *         <ul>
      *         <li>
@@ -1090,7 +1090,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * <b>Asia Pacific (Tokyo (ap-northeast-1):</b>
+     * <b>Asia Pacific (Tokyo) (ap-northeast-1):</b>
      * </p>
      * <ul>
      * <li>
@@ -1115,7 +1115,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * <b>Asia Pacific (Sydney (ap-southeast-1):</b>
+     * <b>Asia Pacific (Sydney) (ap-southeast-1):</b>
      * </p>
      * <ul>
      * <li>
@@ -1248,7 +1248,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>Asia Pacific (Tokyo (ap-northeast-1):</b>
+     *        <b>Asia Pacific (Tokyo) (ap-northeast-1):</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -1273,7 +1273,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>Asia Pacific (Sydney (ap-southeast-1):</b>
+     *        <b>Asia Pacific (Sydney) (ap-southeast-1):</b>
      *        </p>
      *        <ul>
      *        <li>

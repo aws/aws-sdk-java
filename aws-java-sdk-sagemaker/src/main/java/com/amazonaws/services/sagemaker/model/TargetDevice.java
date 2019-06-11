@@ -33,7 +33,8 @@ public enum TargetDevice {
     Rasp3b("rasp3b"),
     Deeplens("deeplens"),
     Rk3399("rk3399"),
-    Rk3288("rk3288");
+    Rk3288("rk3288"),
+    Sbe_c("sbe_c");
 
     private String value;
 

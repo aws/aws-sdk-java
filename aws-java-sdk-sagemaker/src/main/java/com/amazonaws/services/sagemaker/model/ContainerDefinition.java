@@ -89,7 +89,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private java.util.Map<String, String> environment;
     /**
      * <p>
-     * The name of the model package to use to create the model.
+     * The name or Amazon Resource Name (ARN) of the model package to use to create the model.
      * </p>
      */
     private String modelPackageName;
@@ -488,11 +488,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the model package to use to create the model.
+     * The name or Amazon Resource Name (ARN) of the model package to use to create the model.
      * </p>
      * 
      * @param modelPackageName
-     *        The name of the model package to use to create the model.
+     *        The name or Amazon Resource Name (ARN) of the model package to use to create the model.
      */
 
     public void setModelPackageName(String modelPackageName) {
@@ -501,10 +501,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the model package to use to create the model.
+     * The name or Amazon Resource Name (ARN) of the model package to use to create the model.
      * </p>
      * 
-     * @return The name of the model package to use to create the model.
+     * @return The name or Amazon Resource Name (ARN) of the model package to use to create the model.
      */
 
     public String getModelPackageName() {
@@ -513,11 +513,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the model package to use to create the model.
+     * The name or Amazon Resource Name (ARN) of the model package to use to create the model.
      * </p>
      * 
      * @param modelPackageName
-     *        The name of the model package to use to create the model.
+     *        The name or Amazon Resource Name (ARN) of the model package to use to create the model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

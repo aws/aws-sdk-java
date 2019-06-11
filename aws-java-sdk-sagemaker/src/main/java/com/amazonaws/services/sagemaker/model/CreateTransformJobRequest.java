@@ -111,6 +111,14 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
     private TransformResources transformResources;
     /**
      * <p>
+     * The data structure used for combining the input data and inference in the output file. For more information, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch Transform I/O
+     * Join</a>.
+     * </p>
+     */
+    private DataProcessing dataProcessing;
+    /**
+     * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
@@ -726,6 +734,61 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * The data structure used for combining the input data and inference in the output file. For more information, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch Transform I/O
+     * Join</a>.
+     * </p>
+     * 
+     * @param dataProcessing
+     *        The data structure used for combining the input data and inference in the output file. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch Transform I/O
+     *        Join</a>.
+     */
+
+    public void setDataProcessing(DataProcessing dataProcessing) {
+        this.dataProcessing = dataProcessing;
+    }
+
+    /**
+     * <p>
+     * The data structure used for combining the input data and inference in the output file. For more information, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch Transform I/O
+     * Join</a>.
+     * </p>
+     * 
+     * @return The data structure used for combining the input data and inference in the output file. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch Transform I/O
+     *         Join</a>.
+     */
+
+    public DataProcessing getDataProcessing() {
+        return this.dataProcessing;
+    }
+
+    /**
+     * <p>
+     * The data structure used for combining the input data and inference in the output file. For more information, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch Transform I/O
+     * Join</a>.
+     * </p>
+     * 
+     * @param dataProcessing
+     *        The data structure used for combining the input data and inference in the output file. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-io-join.html">Batch Transform I/O
+     *        Join</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTransformJobRequest withDataProcessing(DataProcessing dataProcessing) {
+        setDataProcessing(dataProcessing);
+        return this;
+    }
+
+    /**
+     * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
@@ -840,6 +903,8 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("TransformOutput: ").append(getTransformOutput()).append(",");
         if (getTransformResources() != null)
             sb.append("TransformResources: ").append(getTransformResources()).append(",");
+        if (getDataProcessing() != null)
+            sb.append("DataProcessing: ").append(getDataProcessing()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -892,6 +957,10 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getTransformResources() != null && other.getTransformResources().equals(this.getTransformResources()) == false)
             return false;
+        if (other.getDataProcessing() == null ^ this.getDataProcessing() == null)
+            return false;
+        if (other.getDataProcessing() != null && other.getDataProcessing().equals(this.getDataProcessing()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -913,6 +982,7 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getTransformInput() == null) ? 0 : getTransformInput().hashCode());
         hashCode = prime * hashCode + ((getTransformOutput() == null) ? 0 : getTransformOutput().hashCode());
         hashCode = prime * hashCode + ((getTransformResources() == null) ? 0 : getTransformResources().hashCode());
+        hashCode = prime * hashCode + ((getDataProcessing() == null) ? 0 : getDataProcessing().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

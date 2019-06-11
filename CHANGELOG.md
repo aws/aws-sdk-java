@@ -1,3 +1,8 @@
+# __1.11.570__ __2019-06-11__
+## __Amazon SageMaker Service__
+  - ### Features
+    - The default TaskTimeLimitInSeconds of labeling job is increased to 8 hours. Batch Transform introduces a new DataProcessing field which supports input and output filtering and data joining. Training job increases the max allowed input channels from 8 to 20.
+
 # __1.11.569__ __2019-06-10__
 ## __AWS CodeBuild__
   - ### Features

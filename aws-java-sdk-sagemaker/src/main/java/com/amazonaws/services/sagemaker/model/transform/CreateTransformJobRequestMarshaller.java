@@ -47,6 +47,8 @@ public class CreateTransformJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransformOutput").build();
     private static final MarshallingInfo<StructuredPojo> TRANSFORMRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransformResources").build();
+    private static final MarshallingInfo<StructuredPojo> DATAPROCESSING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataProcessing").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -75,6 +77,7 @@ public class CreateTransformJobRequestMarshaller {
             protocolMarshaller.marshall(createTransformJobRequest.getTransformInput(), TRANSFORMINPUT_BINDING);
             protocolMarshaller.marshall(createTransformJobRequest.getTransformOutput(), TRANSFORMOUTPUT_BINDING);
             protocolMarshaller.marshall(createTransformJobRequest.getTransformResources(), TRANSFORMRESOURCES_BINDING);
+            protocolMarshaller.marshall(createTransformJobRequest.getDataProcessing(), DATAPROCESSING_BINDING);
             protocolMarshaller.marshall(createTransformJobRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
