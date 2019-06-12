@@ -1,3 +1,8 @@
+# __1.11.571__ __2019-06-12__
+## __AWS Service Catalog__
+  - ### Features
+    - This release adds a new field named Guidance to update provisioning artifact, this field can be set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+
 # __1.11.570__ __2019-06-11__
 ## __Amazon SageMaker Service__
   - ### Features

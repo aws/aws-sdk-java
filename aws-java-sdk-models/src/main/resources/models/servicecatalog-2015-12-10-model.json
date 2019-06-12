@@ -1871,7 +1871,7 @@
         },
         "Tags":{
           "shape":"Tags",
-          "documentation":"<p>One or more tags.</p>"
+          "documentation":"<p>One or more tags.</p> <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>"
         }
       }
     },
@@ -4370,6 +4370,10 @@
         "CreatedTime":{
           "shape":"ProvisioningArtifactCreatedTime",
           "documentation":"<p>The UTC time stamp of the creation time.</p>"
+        },
+        "Guidance":{
+          "shape":"ProvisioningArtifactGuidance",
+          "documentation":"<p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>"
         }
       },
       "documentation":"<p>Information about a provisioning artifact. A provisioning artifact is also known as a product version.</p>"
@@ -4403,6 +4407,10 @@
         "Active":{
           "shape":"ProvisioningArtifactActive",
           "documentation":"<p>Indicates whether the product version is active.</p>"
+        },
+        "Guidance":{
+          "shape":"ProvisioningArtifactGuidance",
+          "documentation":"<p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>"
         }
       },
       "documentation":"<p>Information about a provisioning artifact (also known as a version) for a product.</p>"
@@ -4410,6 +4418,13 @@
     "ProvisioningArtifactDetails":{
       "type":"list",
       "member":{"shape":"ProvisioningArtifactDetail"}
+    },
+    "ProvisioningArtifactGuidance":{
+      "type":"string",
+      "enum":[
+        "DEFAULT",
+        "DEPRECATED"
+      ]
     },
     "ProvisioningArtifactInfo":{
       "type":"map",
@@ -5836,6 +5851,10 @@
         "Active":{
           "shape":"ProvisioningArtifactActive",
           "documentation":"<p>Indicates whether the product version is active.</p>"
+        },
+        "Guidance":{
+          "shape":"ProvisioningArtifactGuidance",
+          "documentation":"<p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p> <p>The <code>DEFAULT</code> value indicates that the product version is active.</p> <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>"
         }
       }
     },

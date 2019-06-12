@@ -78,6 +78,20 @@ public class UpdateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private Boolean active;
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * <p>
+     * The <code>DEFAULT</code> value indicates that the product version is active.
+     * </p>
+     * <p>
+     * The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is
+     * deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new
+     * provisioned products using a deprecated version.
+     * </p>
+     */
+    private String guidance;
 
     /**
      * <p>
@@ -431,6 +445,129 @@ public class UpdateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * <p>
+     * The <code>DEFAULT</code> value indicates that the product version is active.
+     * </p>
+     * <p>
+     * The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is
+     * deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new
+     * provisioned products using a deprecated version.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.</p>
+     *        <p>
+     *        The <code>DEFAULT</code> value indicates that the product version is active.
+     *        </p>
+     *        <p>
+     *        The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version
+     *        is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot
+     *        launch new provisioned products using a deprecated version.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public void setGuidance(String guidance) {
+        this.guidance = guidance;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * <p>
+     * The <code>DEFAULT</code> value indicates that the product version is active.
+     * </p>
+     * <p>
+     * The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is
+     * deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new
+     * provisioned products using a deprecated version.
+     * </p>
+     * 
+     * @return Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *         to use.</p>
+     *         <p>
+     *         The <code>DEFAULT</code> value indicates that the product version is active.
+     *         </p>
+     *         <p>
+     *         The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product
+     *         version is deprecated. Users are able to make updates to a provisioned product of a deprecated version
+     *         but cannot launch new provisioned products using a deprecated version.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public String getGuidance() {
+        return this.guidance;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * <p>
+     * The <code>DEFAULT</code> value indicates that the product version is active.
+     * </p>
+     * <p>
+     * The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is
+     * deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new
+     * provisioned products using a deprecated version.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.</p>
+     *        <p>
+     *        The <code>DEFAULT</code> value indicates that the product version is active.
+     *        </p>
+     *        <p>
+     *        The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version
+     *        is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot
+     *        launch new provisioned products using a deprecated version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public UpdateProvisioningArtifactRequest withGuidance(String guidance) {
+        setGuidance(guidance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * <p>
+     * The <code>DEFAULT</code> value indicates that the product version is active.
+     * </p>
+     * <p>
+     * The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is
+     * deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new
+     * provisioned products using a deprecated version.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.</p>
+     *        <p>
+     *        The <code>DEFAULT</code> value indicates that the product version is active.
+     *        </p>
+     *        <p>
+     *        The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version
+     *        is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot
+     *        launch new provisioned products using a deprecated version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public UpdateProvisioningArtifactRequest withGuidance(ProvisioningArtifactGuidance guidance) {
+        this.guidance = guidance.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -453,7 +590,9 @@ public class UpdateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getActive() != null)
-            sb.append("Active: ").append(getActive());
+            sb.append("Active: ").append(getActive()).append(",");
+        if (getGuidance() != null)
+            sb.append("Guidance: ").append(getGuidance());
         sb.append("}");
         return sb.toString();
     }
@@ -492,6 +631,10 @@ public class UpdateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getActive() != null && other.getActive().equals(this.getActive()) == false)
             return false;
+        if (other.getGuidance() == null ^ this.getGuidance() == null)
+            return false;
+        if (other.getGuidance() != null && other.getGuidance().equals(this.getGuidance()) == false)
+            return false;
         return true;
     }
 
@@ -506,6 +649,7 @@ public class UpdateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());
+        hashCode = prime * hashCode + ((getGuidance() == null) ? 0 : getGuidance().hashCode());
         return hashCode;
     }
 

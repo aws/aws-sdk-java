@@ -81,6 +81,12 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * </p>
      */
     private Boolean active;
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     */
+    private String guidance;
 
     /**
      * <p>
@@ -533,6 +539,84 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public void setGuidance(String guidance) {
+        this.guidance = guidance;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @return Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *         to use.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public String getGuidance() {
+        return this.guidance;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public ProvisioningArtifactDetail withGuidance(String guidance) {
+        setGuidance(guidance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public void setGuidance(ProvisioningArtifactGuidance guidance) {
+        withGuidance(guidance);
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public ProvisioningArtifactDetail withGuidance(ProvisioningArtifactGuidance guidance) {
+        this.guidance = guidance.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -555,7 +639,9 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
         if (getCreatedTime() != null)
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getActive() != null)
-            sb.append("Active: ").append(getActive());
+            sb.append("Active: ").append(getActive()).append(",");
+        if (getGuidance() != null)
+            sb.append("Guidance: ").append(getGuidance());
         sb.append("}");
         return sb.toString();
     }
@@ -594,6 +680,10 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
             return false;
         if (other.getActive() != null && other.getActive().equals(this.getActive()) == false)
             return false;
+        if (other.getGuidance() == null ^ this.getGuidance() == null)
+            return false;
+        if (other.getGuidance() != null && other.getGuidance().equals(this.getGuidance()) == false)
+            return false;
         return true;
     }
 
@@ -608,6 +698,7 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());
+        hashCode = prime * hashCode + ((getGuidance() == null) ? 0 : getGuidance().hashCode());
         return hashCode;
     }
 

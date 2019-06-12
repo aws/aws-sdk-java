@@ -52,6 +52,12 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
      * </p>
      */
     private java.util.Date createdTime;
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     */
+    private String guidance;
 
     /**
      * <p>
@@ -214,6 +220,69 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public void setGuidance(String guidance) {
+        this.guidance = guidance;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @return Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *         to use.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public String getGuidance() {
+        return this.guidance;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public ProvisioningArtifact withGuidance(String guidance) {
+        setGuidance(guidance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public ProvisioningArtifact withGuidance(ProvisioningArtifactGuidance guidance) {
+        this.guidance = guidance.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +301,9 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getGuidance() != null)
+            sb.append("Guidance: ").append(getGuidance());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +334,10 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
+        if (other.getGuidance() == null ^ this.getGuidance() == null)
+            return false;
+        if (other.getGuidance() != null && other.getGuidance().equals(this.getGuidance()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +350,7 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getGuidance() == null) ? 0 : getGuidance().hashCode());
         return hashCode;
     }
 
