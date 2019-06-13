@@ -68,6 +68,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * The tags to be added to a new filter resource.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -375,6 +381,67 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The tags to be added to a new filter resource.
+     * </p>
+     * 
+     * @return The tags to be added to a new filter resource.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to be added to a new filter resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to a new filter resource.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags to be added to a new filter resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to a new filter resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFilterRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateFilterRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFilterRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -399,7 +466,9 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getFindingCriteria() != null)
             sb.append("FindingCriteria: ").append(getFindingCriteria()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -442,6 +511,10 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -457,6 +530,7 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getRank() == null) ? 0 : getRank().hashCode());
         hashCode = prime * hashCode + ((getFindingCriteria() == null) ? 0 : getFindingCriteria().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

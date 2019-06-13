@@ -30,10 +30,56 @@ public class ServiceDiscovery implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Specifies any AWS Cloud Map information for the virtual node.
+     * </p>
+     */
+    private AwsCloudMapServiceDiscovery awsCloudMap;
+    /**
+     * <p>
      * Specifies the DNS information for the virtual node.
      * </p>
      */
     private DnsServiceDiscovery dns;
+
+    /**
+     * <p>
+     * Specifies any AWS Cloud Map information for the virtual node.
+     * </p>
+     * 
+     * @param awsCloudMap
+     *        Specifies any AWS Cloud Map information for the virtual node.
+     */
+
+    public void setAwsCloudMap(AwsCloudMapServiceDiscovery awsCloudMap) {
+        this.awsCloudMap = awsCloudMap;
+    }
+
+    /**
+     * <p>
+     * Specifies any AWS Cloud Map information for the virtual node.
+     * </p>
+     * 
+     * @return Specifies any AWS Cloud Map information for the virtual node.
+     */
+
+    public AwsCloudMapServiceDiscovery getAwsCloudMap() {
+        return this.awsCloudMap;
+    }
+
+    /**
+     * <p>
+     * Specifies any AWS Cloud Map information for the virtual node.
+     * </p>
+     * 
+     * @param awsCloudMap
+     *        Specifies any AWS Cloud Map information for the virtual node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceDiscovery withAwsCloudMap(AwsCloudMapServiceDiscovery awsCloudMap) {
+        setAwsCloudMap(awsCloudMap);
+        return this;
+    }
 
     /**
      * <p>
@@ -87,6 +133,8 @@ public class ServiceDiscovery implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAwsCloudMap() != null)
+            sb.append("AwsCloudMap: ").append(getAwsCloudMap()).append(",");
         if (getDns() != null)
             sb.append("Dns: ").append(getDns());
         sb.append("}");
@@ -103,6 +151,10 @@ public class ServiceDiscovery implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof ServiceDiscovery == false)
             return false;
         ServiceDiscovery other = (ServiceDiscovery) obj;
+        if (other.getAwsCloudMap() == null ^ this.getAwsCloudMap() == null)
+            return false;
+        if (other.getAwsCloudMap() != null && other.getAwsCloudMap().equals(this.getAwsCloudMap()) == false)
+            return false;
         if (other.getDns() == null ^ this.getDns() == null)
             return false;
         if (other.getDns() != null && other.getDns().equals(this.getDns()) == false)
@@ -115,6 +167,7 @@ public class ServiceDiscovery implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAwsCloudMap() == null) ? 0 : getAwsCloudMap().hashCode());
         hashCode = prime * hashCode + ((getDns() == null) ? 0 : getDns().hashCode());
         return hashCode;
     }

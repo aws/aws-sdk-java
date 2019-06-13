@@ -32,13 +32,12 @@ import com.amazonaws.services.appmesh.model.*;
  * </p>
  * <p>
  * App Mesh gives you consistent visibility and network traffic controls for every microservice in an application. You
- * can use App Mesh with AWS Fargate, Amazon ECS, Amazon EKS, and Kubernetes on AWS.
+ * can use App Mesh with AWS Fargate, Amazon ECS, Amazon EKS, Kubernetes on AWS, and Amazon EC2.
  * </p>
  * <note>
  * <p>
- * App Mesh supports microservice applications that use service discovery naming for their components. To use App Mesh,
- * you must have an application running on Amazon EC2 instances, hosted in either Amazon ECS, Amazon EKS, or Kubernetes
- * on AWS. For more information about service discovery on Amazon ECS, see <a
+ * App Mesh supports microservice applications that use service discovery naming for their components. For more
+ * information about service discovery on Amazon ECS, see <a
  * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a> in the
  * <i>Amazon Elastic Container Service Developer Guide</i>. Kubernetes <code>kube-dns</code> and <code>coredns</code>
  * are supported. For more information, see <a
@@ -146,8 +145,8 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * </p>
      * <p>
      * A virtual node acts as a logical pointer to a particular task group, such as an Amazon ECS service or a
-     * Kubernetes deployment. When you create a virtual node, you must specify the DNS service discovery hostname for
-     * your task group.
+     * Kubernetes deployment. When you create a virtual node, you can specify the service discovery information for your
+     * task group.
      * </p>
      * <p>
      * Any inbound traffic that your virtual node expects should be specified as a <code>listener</code>. Any outbound
@@ -182,8 +181,8 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * </p>
      * <p>
      * A virtual node acts as a logical pointer to a particular task group, such as an Amazon ECS service or a
-     * Kubernetes deployment. When you create a virtual node, you must specify the DNS service discovery hostname for
-     * your task group.
+     * Kubernetes deployment. When you create a virtual node, you can specify the service discovery information for your
+     * task group.
      * </p>
      * <p>
      * Any inbound traffic that your virtual node expects should be specified as a <code>listener</code>. Any outbound

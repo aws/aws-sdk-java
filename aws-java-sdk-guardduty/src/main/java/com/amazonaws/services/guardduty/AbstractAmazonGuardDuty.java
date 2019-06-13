@@ -193,6 +193,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListThreatIntelSetsResult listThreatIntelSets(ListThreatIntelSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -208,7 +213,17 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
     }
 
     @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UnarchiveFindingsResult unarchiveFindings(UnarchiveFindingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

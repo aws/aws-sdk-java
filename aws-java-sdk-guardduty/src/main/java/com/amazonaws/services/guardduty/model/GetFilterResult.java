@@ -54,6 +54,12 @@ public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private FindingCriteria findingCriteria;
+    /**
+     * <p>
+     * The tags of the filter resource.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -281,6 +287,67 @@ public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
+     * The tags of the filter resource.
+     * </p>
+     * 
+     * @return The tags of the filter resource.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags of the filter resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags of the filter resource.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags of the filter resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags of the filter resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFilterResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public GetFilterResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFilterResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -301,7 +368,9 @@ public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (getRank() != null)
             sb.append("Rank: ").append(getRank()).append(",");
         if (getFindingCriteria() != null)
-            sb.append("FindingCriteria: ").append(getFindingCriteria());
+            sb.append("FindingCriteria: ").append(getFindingCriteria()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -336,6 +405,10 @@ public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getFindingCriteria() != null && other.getFindingCriteria().equals(this.getFindingCriteria()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -349,6 +422,7 @@ public class GetFilterResult extends com.amazonaws.AmazonWebServiceResult<com.am
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getRank() == null) ? 0 : getRank().hashCode());
         hashCode = prime * hashCode + ((getFindingCriteria() == null) ? 0 : getFindingCriteria().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

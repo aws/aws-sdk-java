@@ -43,6 +43,12 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String findingPublishingFrequency;
+    /**
+     * <p>
+     * The tags to be added to a new detector resource.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -196,6 +202,67 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The tags to be added to a new detector resource.
+     * </p>
+     * 
+     * @return The tags to be added to a new detector resource.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to be added to a new detector resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to a new detector resource.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags to be added to a new detector resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to a new detector resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDetectorRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateDetectorRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDetectorRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -212,7 +279,9 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getFindingPublishingFrequency() != null)
-            sb.append("FindingPublishingFrequency: ").append(getFindingPublishingFrequency());
+            sb.append("FindingPublishingFrequency: ").append(getFindingPublishingFrequency()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -239,6 +308,10 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getFindingPublishingFrequency() != null && other.getFindingPublishingFrequency().equals(this.getFindingPublishingFrequency()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -250,6 +323,7 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getEnable() == null) ? 0 : getEnable().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getFindingPublishingFrequency() == null) ? 0 : getFindingPublishingFrequency().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

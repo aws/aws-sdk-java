@@ -622,6 +622,25 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
+     * Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, and Threat
+     * Intel sets, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a
+     * given resource..
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         Bad request exception object.
+     * @throws InternalServerErrorException
+     *         Internal server error exception object.
+     * @sample AmazonGuardDuty.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID.
      * </p>
      * 
@@ -677,6 +696,23 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
+     * Adds tags to a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         Bad request exception object.
+     * @throws InternalServerErrorException
+     *         Internal server error exception object.
+     * @sample AmazonGuardDuty.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
      * Unarchives Amazon GuardDuty findings specified by the list of finding IDs.
      * </p>
      * 
@@ -691,6 +727,23 @@ public interface AmazonGuardDuty {
      *      API Documentation</a>
      */
     UnarchiveFindingsResult unarchiveFindings(UnarchiveFindingsRequest unarchiveFindingsRequest);
+
+    /**
+     * <p>
+     * Removes tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         Bad request exception object.
+     * @throws InternalServerErrorException
+     *         Internal server error exception object.
+     * @sample AmazonGuardDuty.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

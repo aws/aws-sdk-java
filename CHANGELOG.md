@@ -1,3 +1,20 @@
+# __1.11.572__ __2019-06-13__
+## __AWS App Mesh__
+  - ### Features
+    - This release adds support for AWS Cloud Map as a service discovery method for virtual nodes.
+
+## __Amazon ElastiCache__
+  - ### Features
+    - This release is to add support for reader endpoint for cluster-mode disabled Amazon ElastiCache for Redis clusters.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - G4 instances are Amazon EC2 instances based on NVIDIA T4 GPUs and are designed to provide cost-effective machine learning inference for applications, like image classification, object detection, recommender systems, automated speech recognition, and language translation. G4 instances are also a cost-effective platform for building and running graphics-intensive applications, such as remote graphics workstations, video transcoding, photo-realistic design, and game streaming in the cloud. To get started with G4 instances visit https://aws.amazon.com/ec2/instance-types/g4.
+
+## __Amazon GuardDuty__
+  - ### Features
+    - Support for tagging functionality in Create and Get operations for Detector, IP Set, Threat Intel Set, and Finding Filter resources and 3 new tagging APIs: ListTagsForResource, TagResource, and UntagResource.
+
 # __1.11.571__ __2019-06-12__
 ## __AWS Service Catalog__
   - ### Features

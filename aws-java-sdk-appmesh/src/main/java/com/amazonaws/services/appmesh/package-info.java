@@ -19,13 +19,12 @@
  * </p>
  * <p>
  * App Mesh gives you consistent visibility and network traffic controls for every microservice in an application. You
- * can use App Mesh with AWS Fargate, Amazon ECS, Amazon EKS, and Kubernetes on AWS.
+ * can use App Mesh with AWS Fargate, Amazon ECS, Amazon EKS, Kubernetes on AWS, and Amazon EC2.
  * </p>
  * <note>
  * <p>
- * App Mesh supports microservice applications that use service discovery naming for their components. To use App Mesh,
- * you must have an application running on Amazon EC2 instances, hosted in either Amazon ECS, Amazon EKS, or Kubernetes
- * on AWS. For more information about service discovery on Amazon ECS, see <a
+ * App Mesh supports microservice applications that use service discovery naming for their components. For more
+ * information about service discovery on Amazon ECS, see <a
  * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a> in the
  * <i>Amazon Elastic Container Service Developer Guide</i>. Kubernetes <code>kube-dns</code> and <code>coredns</code>
  * are supported. For more information, see <a

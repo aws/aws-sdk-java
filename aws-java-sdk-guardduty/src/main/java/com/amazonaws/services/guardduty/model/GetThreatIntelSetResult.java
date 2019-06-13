@@ -49,6 +49,12 @@ public class GetThreatIntelSetResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * The tags of the Threat List resource.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -261,6 +267,67 @@ public class GetThreatIntelSetResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The tags of the Threat List resource.
+     * </p>
+     * 
+     * @return The tags of the Threat List resource.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags of the Threat List resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags of the Threat List resource.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags of the Threat List resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags of the Threat List resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetThreatIntelSetResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public GetThreatIntelSetResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetThreatIntelSetResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -279,7 +346,9 @@ public class GetThreatIntelSetResult extends com.amazonaws.AmazonWebServiceResul
         if (getLocation() != null)
             sb.append("Location: ").append(getLocation()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -310,6 +379,10 @@ public class GetThreatIntelSetResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -322,6 +395,7 @@ public class GetThreatIntelSetResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

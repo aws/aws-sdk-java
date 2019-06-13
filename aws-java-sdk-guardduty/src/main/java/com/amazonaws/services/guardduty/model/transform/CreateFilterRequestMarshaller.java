@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.guardduty.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -44,6 +46,8 @@ public class CreateFilterRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateFilterRequestMarshaller instance = new CreateFilterRequestMarshaller();
 
@@ -68,6 +72,7 @@ public class CreateFilterRequestMarshaller {
             protocolMarshaller.marshall(createFilterRequest.getRank(), RANK_BINDING);
             protocolMarshaller.marshall(createFilterRequest.getFindingCriteria(), FINDINGCRITERIA_BINDING);
             protocolMarshaller.marshall(createFilterRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createFilterRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
