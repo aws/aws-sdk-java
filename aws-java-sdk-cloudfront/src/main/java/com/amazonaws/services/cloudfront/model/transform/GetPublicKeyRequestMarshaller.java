@@ -38,7 +38,7 @@ public class GetPublicKeyRequestMarshaller implements Marshaller<Request<GetPubl
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2018-11-05/public-key/{Id}";
+        String uriResourcePath = "/2019-03-26/public-key/{Id}";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", getPublicKeyRequest.getId());
         request.setResourcePath(uriResourcePath);

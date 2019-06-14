@@ -46,13 +46,13 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2018-11-05/distribution";
+        String uriResourcePath = "/2019-03-26/distribution";
 
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2018-11-05/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2019-03-26/");
 
             DistributionConfig distributionConfig = createDistributionRequest.getDistributionConfig();
             if (distributionConfig != null) {

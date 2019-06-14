@@ -23,11 +23,11 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For the current limit on the number of origins or origin groups that you can specify for a distribution, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon CloudFront
+ * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon CloudFront
  * Limits</a> in the <i>AWS General Reference</i>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Origin" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Origin" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -43,7 +43,7 @@ public class Origin implements Serializable, Cloneable {
      * behavior, you indicate the origin to which you want the cache behavior to route requests by specifying the value
      * of the <code>Id</code> element for that origin. When a request matches the path pattern for that cache behavior,
      * CloudFront routes the request to the specified origin. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
      * >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
@@ -56,7 +56,7 @@ public class Origin implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about specifying this value for different types of origins, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
      * >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
@@ -175,7 +175,7 @@ public class Origin implements Serializable, Cloneable {
      * behavior, you indicate the origin to which you want the cache behavior to route requests by specifying the value
      * of the <code>Id</code> element for that origin. When a request matches the path pattern for that cache behavior,
      * CloudFront routes the request to the specified origin. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
      * >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -188,7 +188,7 @@ public class Origin implements Serializable, Cloneable {
      *        specifying the value of the <code>Id</code> element for that origin. When a request matches the path
      *        pattern for that cache behavior, CloudFront routes the request to the specified origin. For more
      *        information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
      *        >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -206,7 +206,7 @@ public class Origin implements Serializable, Cloneable {
      * behavior, you indicate the origin to which you want the cache behavior to route requests by specifying the value
      * of the <code>Id</code> element for that origin. When a request matches the path pattern for that cache behavior,
      * CloudFront routes the request to the specified origin. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
      * >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -218,7 +218,7 @@ public class Origin implements Serializable, Cloneable {
      *         specifying the value of the <code>Id</code> element for that origin. When a request matches the path
      *         pattern for that cache behavior, CloudFront routes the request to the specified origin. For more
      *         information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
      *         >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -236,7 +236,7 @@ public class Origin implements Serializable, Cloneable {
      * behavior, you indicate the origin to which you want the cache behavior to route requests by specifying the value
      * of the <code>Id</code> element for that origin. When a request matches the path pattern for that cache behavior,
      * CloudFront routes the request to the specified origin. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
      * >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -249,7 +249,7 @@ public class Origin implements Serializable, Cloneable {
      *        specifying the value of the <code>Id</code> element for that origin. When a request matches the path
      *        pattern for that cache behavior, CloudFront routes the request to the specified origin. For more
      *        information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
      *        >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -267,7 +267,7 @@ public class Origin implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about specifying this value for different types of origins, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
      * >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
@@ -324,7 +324,7 @@ public class Origin implements Serializable, Cloneable {
      *        bucket.</p>
      *        <p>
      *        For more information about specifying this value for different types of origins, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
      *        >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
@@ -386,7 +386,7 @@ public class Origin implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about specifying this value for different types of origins, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
      * >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
@@ -442,7 +442,7 @@ public class Origin implements Serializable, Cloneable {
      *         the bucket.</p>
      *         <p>
      *         For more information about specifying this value for different types of origins, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
      *         >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *         </p>
      *         <p>
@@ -504,7 +504,7 @@ public class Origin implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about specifying this value for different types of origins, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
      * >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
@@ -561,7 +561,7 @@ public class Origin implements Serializable, Cloneable {
      *        bucket.</p>
      *        <p>
      *        For more information about specifying this value for different types of origins, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
      *        >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>

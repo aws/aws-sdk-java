@@ -17,10 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A summary of the information for an Amazon CloudFront streaming distribution.
+ * A summary of the information for a CloudFront streaming distribution.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/StreamingDistributionSummary"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/StreamingDistributionSummary"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -85,6 +85,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the
      * updated distribution.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
      */
     private TrustedSigners trustedSigners;
     /**
@@ -93,7 +98,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * </p>
      */
     private String comment;
-    /** <p/> */
+    /**
+     * <p>
+     * A complex type that contains information about price class for this streaming distribution.
+     * </p>
+     */
     private String priceClass;
     /**
      * <p>
@@ -427,6 +436,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the
      * updated distribution.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
      * 
      * @param trustedSigners
      *        A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for
@@ -437,7 +451,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *        specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
      *        <code>Items</code>. To add, change, or remove one or more trusted signers, change <code>Enabled</code> to
      *        <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and
-     *        specify all of the trusted signers that you want to include in the updated distribution.
+     *        specify all of the trusted signers that you want to include in the updated distribution.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *        Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public void setTrustedSigners(TrustedSigners trustedSigners) {
@@ -456,6 +474,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the
      * updated distribution.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
      * 
      * @return A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for
      *         private content. If you want to require signed URLs in requests for objects in the target origin that
@@ -465,7 +488,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *         specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
      *         <code>Items</code>. To add, change, or remove one or more trusted signers, change <code>Enabled</code> to
      *         <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and
-     *         specify all of the trusted signers that you want to include in the updated distribution.
+     *         specify all of the trusted signers that you want to include in the updated distribution.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *         Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public TrustedSigners getTrustedSigners() {
@@ -484,6 +511,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * <code>Quantity</code> as applicable, and specify all of the trusted signers that you want to include in the
      * updated distribution.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
      * 
      * @param trustedSigners
      *        A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for
@@ -494,7 +526,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *        specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
      *        <code>Items</code>. To add, change, or remove one or more trusted signers, change <code>Enabled</code> to
      *        <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as applicable, and
-     *        specify all of the trusted signers that you want to include in the updated distribution.
+     *        specify all of the trusted signers that you want to include in the updated distribution.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *        Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -544,9 +580,12 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * A complex type that contains information about price class for this streaming distribution.
+     * </p>
      * 
      * @param priceClass
+     *        A complex type that contains information about price class for this streaming distribution.
      * @see PriceClass
      */
 
@@ -555,9 +594,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * A complex type that contains information about price class for this streaming distribution.
+     * </p>
      * 
-     * @return
+     * @return A complex type that contains information about price class for this streaming distribution.
      * @see PriceClass
      */
 
@@ -566,9 +607,12 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * A complex type that contains information about price class for this streaming distribution.
+     * </p>
      * 
      * @param priceClass
+     *        A complex type that contains information about price class for this streaming distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass
      */
@@ -579,9 +623,12 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * A complex type that contains information about price class for this streaming distribution.
+     * </p>
      * 
      * @param priceClass
+     *        A complex type that contains information about price class for this streaming distribution.
      * @see PriceClass
      */
 
@@ -590,9 +637,12 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * A complex type that contains information about price class for this streaming distribution.
+     * </p>
      * 
      * @param priceClass
+     *        A complex type that contains information about price class for this streaming distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass
      */

@@ -15,7 +15,9 @@ package com.amazonaws.services.cloudfront.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The CNAME specified is already defined for CloudFront.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CNAMEAlreadyExistsException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {

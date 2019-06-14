@@ -621,6 +621,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "InvalidRoleException",
+        "documentation" : "<p>The specified role is invalid.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InvalidAccountStatusException",
         "documentation" : "<p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>",
         "httpStatusCode" : null
@@ -45043,6 +45047,12 @@
       "enums" : [ {
         "name" : "WINDOWS",
         "value" : "WINDOWS"
+      }, {
+        "name" : "WINDOWS_SERVER_2016",
+        "value" : "WINDOWS_SERVER_2016"
+      }, {
+        "name" : "WINDOWS_SERVER_2019",
+        "value" : "WINDOWS_SERVER_2019"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

@@ -15,7 +15,9 @@ package com.amazonaws.services.cloudfront.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The headers specified are not valid for an Amazon S3 origin.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidHeadersForS3OriginException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {

@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * well as their active CloudFront key pair IDs, if any.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Signer" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Signer" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -29,7 +29,7 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this RTMP distribution. Valid
+     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this distribution. Valid
      * values include:
      * </p>
      * <ul>
@@ -56,7 +56,7 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this RTMP distribution. Valid
+     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this distribution. Valid
      * values include:
      * </p>
      * <ul>
@@ -73,8 +73,8 @@ public class Signer implements Serializable, Cloneable {
      * </ul>
      * 
      * @param awsAccountNumber
-     *        An AWS account that is included in the <code>TrustedSigners</code> complex type for this RTMP
-     *        distribution. Valid values include:</p>
+     *        An AWS account that is included in the <code>TrustedSigners</code> complex type for this distribution.
+     *        Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -94,7 +94,7 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this RTMP distribution. Valid
+     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this distribution. Valid
      * values include:
      * </p>
      * <ul>
@@ -110,8 +110,8 @@ public class Signer implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return An AWS account that is included in the <code>TrustedSigners</code> complex type for this RTMP
-     *         distribution. Valid values include:</p>
+     * @return An AWS account that is included in the <code>TrustedSigners</code> complex type for this distribution.
+     *         Valid values include:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -131,7 +131,7 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this RTMP distribution. Valid
+     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this distribution. Valid
      * values include:
      * </p>
      * <ul>
@@ -148,8 +148,8 @@ public class Signer implements Serializable, Cloneable {
      * </ul>
      * 
      * @param awsAccountNumber
-     *        An AWS account that is included in the <code>TrustedSigners</code> complex type for this RTMP
-     *        distribution. Valid values include:</p>
+     *        An AWS account that is included in the <code>TrustedSigners</code> complex type for this distribution.
+     *        Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>

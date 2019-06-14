@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Complex data type for field-level encryption profiles that includes all of the encryption entities.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/EncryptionEntities" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/EncryptionEntities" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

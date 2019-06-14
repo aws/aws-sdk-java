@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PlatformType {
 
-    WINDOWS("WINDOWS");
+    WINDOWS("WINDOWS"),
+    WINDOWS_SERVER_2016("WINDOWS_SERVER_2016"),
+    WINDOWS_SERVER_2019("WINDOWS_SERVER_2019");
 
     private String value;
 

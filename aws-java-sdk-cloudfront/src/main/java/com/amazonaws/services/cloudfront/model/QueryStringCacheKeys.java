@@ -16,8 +16,12 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * A complex type that contains information about the query string parameters that you want CloudFront to use for
+ * caching for a cache behavior.
+ * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/QueryStringCacheKeys" target="_top">AWS
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/QueryStringCacheKeys" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,25 +29,25 @@ public class QueryStringCacheKeys implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of <code>whitelisted</code> query string parameters for this cache behavior.
+     * The number of <code>whitelisted</code> query string parameters for a cache behavior.
      * </p>
      */
     private Integer quantity;
     /**
      * <p>
-     * (Optional) A list that contains the query string parameters that you want CloudFront to use as a basis for
-     * caching for this cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
+     * A list that contains the query string parameters that you want CloudFront to use as a basis for caching for a
+     * cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     /**
      * <p>
-     * The number of <code>whitelisted</code> query string parameters for this cache behavior.
+     * The number of <code>whitelisted</code> query string parameters for a cache behavior.
      * </p>
      * 
      * @param quantity
-     *        The number of <code>whitelisted</code> query string parameters for this cache behavior.
+     *        The number of <code>whitelisted</code> query string parameters for a cache behavior.
      */
 
     public void setQuantity(Integer quantity) {
@@ -52,10 +56,10 @@ public class QueryStringCacheKeys implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of <code>whitelisted</code> query string parameters for this cache behavior.
+     * The number of <code>whitelisted</code> query string parameters for a cache behavior.
      * </p>
      * 
-     * @return The number of <code>whitelisted</code> query string parameters for this cache behavior.
+     * @return The number of <code>whitelisted</code> query string parameters for a cache behavior.
      */
 
     public Integer getQuantity() {
@@ -64,11 +68,11 @@ public class QueryStringCacheKeys implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of <code>whitelisted</code> query string parameters for this cache behavior.
+     * The number of <code>whitelisted</code> query string parameters for a cache behavior.
      * </p>
      * 
      * @param quantity
-     *        The number of <code>whitelisted</code> query string parameters for this cache behavior.
+     *        The number of <code>whitelisted</code> query string parameters for a cache behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,12 +83,12 @@ public class QueryStringCacheKeys implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Optional) A list that contains the query string parameters that you want CloudFront to use as a basis for
-     * caching for this cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
+     * A list that contains the query string parameters that you want CloudFront to use as a basis for caching for a
+     * cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
      * </p>
      * 
-     * @return (Optional) A list that contains the query string parameters that you want CloudFront to use as a basis
-     *         for caching for this cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
+     * @return A list that contains the query string parameters that you want CloudFront to use as a basis for caching
+     *         for a cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
      */
 
     public java.util.List<String> getItems() {
@@ -96,13 +100,13 @@ public class QueryStringCacheKeys implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Optional) A list that contains the query string parameters that you want CloudFront to use as a basis for
-     * caching for this cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
+     * A list that contains the query string parameters that you want CloudFront to use as a basis for caching for a
+     * cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
      * </p>
      * 
      * @param items
-     *        (Optional) A list that contains the query string parameters that you want CloudFront to use as a basis for
-     *        caching for this cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
+     *        A list that contains the query string parameters that you want CloudFront to use as a basis for caching
+     *        for a cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
      */
 
     public void setItems(java.util.Collection<String> items) {
@@ -116,8 +120,8 @@ public class QueryStringCacheKeys implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Optional) A list that contains the query string parameters that you want CloudFront to use as a basis for
-     * caching for this cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
+     * A list that contains the query string parameters that you want CloudFront to use as a basis for caching for a
+     * cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -126,8 +130,8 @@ public class QueryStringCacheKeys implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        (Optional) A list that contains the query string parameters that you want CloudFront to use as a basis for
-     *        caching for this cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
+     *        A list that contains the query string parameters that you want CloudFront to use as a basis for caching
+     *        for a cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,13 +147,13 @@ public class QueryStringCacheKeys implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Optional) A list that contains the query string parameters that you want CloudFront to use as a basis for
-     * caching for this cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
+     * A list that contains the query string parameters that you want CloudFront to use as a basis for caching for a
+     * cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
      * </p>
      * 
      * @param items
-     *        (Optional) A list that contains the query string parameters that you want CloudFront to use as a basis for
-     *        caching for this cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
+     *        A list that contains the query string parameters that you want CloudFront to use as a basis for caching
+     *        for a cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -21,10 +21,12 @@ import javax.annotation.Generated;
  * <code>AwsAccountNumber</code>.
  * </p>
  * <p>
- * For more information, see <a>ActiveTrustedSigners</a>.
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+ * >ActiveTrustedSigners</a>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/KeyPairIds" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/KeyPairIds" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -35,7 +37,9 @@ public class KeyPairIds implements Serializable, Cloneable {
      * The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.
      * </p>
      * <p>
-     * For more information, see <a>ActiveTrustedSigners</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     * >ActiveTrustedSigners</a>.
      * </p>
      */
     private Integer quantity;
@@ -45,7 +49,9 @@ public class KeyPairIds implements Serializable, Cloneable {
      * <code>AwsAccountNumber</code>.
      * </p>
      * <p>
-     * For more information, see <a>ActiveTrustedSigners</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     * >ActiveTrustedSigners</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> items;
@@ -55,13 +61,17 @@ public class KeyPairIds implements Serializable, Cloneable {
      * The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.
      * </p>
      * <p>
-     * For more information, see <a>ActiveTrustedSigners</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     * >ActiveTrustedSigners</a>.
      * </p>
      * 
      * @param quantity
      *        The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.</p>
      *        <p>
-     *        For more information, see <a>ActiveTrustedSigners</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     *        >ActiveTrustedSigners</a>.
      */
 
     public void setQuantity(Integer quantity) {
@@ -73,12 +83,16 @@ public class KeyPairIds implements Serializable, Cloneable {
      * The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.
      * </p>
      * <p>
-     * For more information, see <a>ActiveTrustedSigners</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     * >ActiveTrustedSigners</a>.
      * </p>
      * 
      * @return The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.</p>
      *         <p>
-     *         For more information, see <a>ActiveTrustedSigners</a>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     *         >ActiveTrustedSigners</a>.
      */
 
     public Integer getQuantity() {
@@ -90,13 +104,17 @@ public class KeyPairIds implements Serializable, Cloneable {
      * The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.
      * </p>
      * <p>
-     * For more information, see <a>ActiveTrustedSigners</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     * >ActiveTrustedSigners</a>.
      * </p>
      * 
      * @param quantity
      *        The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.</p>
      *        <p>
-     *        For more information, see <a>ActiveTrustedSigners</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     *        >ActiveTrustedSigners</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,13 +129,17 @@ public class KeyPairIds implements Serializable, Cloneable {
      * <code>AwsAccountNumber</code>.
      * </p>
      * <p>
-     * For more information, see <a>ActiveTrustedSigners</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     * >ActiveTrustedSigners</a>.
      * </p>
      * 
      * @return A complex type that lists the active CloudFront key pairs, if any, that are associated with
      *         <code>AwsAccountNumber</code>.</p>
      *         <p>
-     *         For more information, see <a>ActiveTrustedSigners</a>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     *         >ActiveTrustedSigners</a>.
      */
 
     public java.util.List<String> getItems() {
@@ -133,14 +155,18 @@ public class KeyPairIds implements Serializable, Cloneable {
      * <code>AwsAccountNumber</code>.
      * </p>
      * <p>
-     * For more information, see <a>ActiveTrustedSigners</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     * >ActiveTrustedSigners</a>.
      * </p>
      * 
      * @param items
      *        A complex type that lists the active CloudFront key pairs, if any, that are associated with
      *        <code>AwsAccountNumber</code>.</p>
      *        <p>
-     *        For more information, see <a>ActiveTrustedSigners</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     *        >ActiveTrustedSigners</a>.
      */
 
     public void setItems(java.util.Collection<String> items) {
@@ -158,7 +184,9 @@ public class KeyPairIds implements Serializable, Cloneable {
      * <code>AwsAccountNumber</code>.
      * </p>
      * <p>
-     * For more information, see <a>ActiveTrustedSigners</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     * >ActiveTrustedSigners</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -170,7 +198,9 @@ public class KeyPairIds implements Serializable, Cloneable {
      *        A complex type that lists the active CloudFront key pairs, if any, that are associated with
      *        <code>AwsAccountNumber</code>.</p>
      *        <p>
-     *        For more information, see <a>ActiveTrustedSigners</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     *        >ActiveTrustedSigners</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,14 +220,18 @@ public class KeyPairIds implements Serializable, Cloneable {
      * <code>AwsAccountNumber</code>.
      * </p>
      * <p>
-     * For more information, see <a>ActiveTrustedSigners</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     * >ActiveTrustedSigners</a>.
      * </p>
      * 
      * @param items
      *        A complex type that lists the active CloudFront key pairs, if any, that are associated with
      *        <code>AwsAccountNumber</code>.</p>
      *        <p>
-     *        For more information, see <a>ActiveTrustedSigners</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
+     *        >ActiveTrustedSigners</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

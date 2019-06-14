@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A complex type that specifies how CloudFront handles query strings and cookies.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ForwardedValues" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ForwardedValues" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -49,7 +49,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
      * CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
@@ -58,15 +58,21 @@ public class ForwardedValues implements Serializable, Cloneable {
      * <p>
      * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which
      * ones. For more information about forwarding cookies to the origin, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards,
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards,
      * Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
     private CookiePreference cookies;
     /**
      * <p>
-     * A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to base caching on for
-     * this cache behavior.
+     * A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the origin
+     * for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also caches separate
+     * versions of a specified object that is based on the header values in viewer requests.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching Content
+     * Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
     private Headers headers;
@@ -101,7 +107,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
      * CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -127,7 +133,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html"
      *        >Configuring CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront
      *        Developer Guide</i>.
      */
@@ -159,7 +165,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
      * CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -184,7 +190,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html"
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html"
      *         >Configuring CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront
      *         Developer Guide</i>.
      */
@@ -216,7 +222,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
      * CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -242,7 +248,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html"
      *        >Configuring CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront
      *        Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -276,7 +282,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
      * CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -301,7 +307,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html"
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html"
      *         >Configuring CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront
      *         Developer Guide</i>.
      */
@@ -314,14 +320,14 @@ public class ForwardedValues implements Serializable, Cloneable {
      * <p>
      * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which
      * ones. For more information about forwarding cookies to the origin, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards,
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards,
      * Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param cookies
      *        A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so,
      *        which ones. For more information about forwarding cookies to the origin, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront
      *        Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -333,13 +339,13 @@ public class ForwardedValues implements Serializable, Cloneable {
      * <p>
      * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which
      * ones. For more information about forwarding cookies to the origin, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards,
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards,
      * Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @return A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so,
      *         which ones. For more information about forwarding cookies to the origin, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront
      *         Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -351,14 +357,14 @@ public class ForwardedValues implements Serializable, Cloneable {
      * <p>
      * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which
      * ones. For more information about forwarding cookies to the origin, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards,
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards,
      * Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param cookies
      *        A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so,
      *        which ones. For more information about forwarding cookies to the origin, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront
      *        Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -370,13 +376,24 @@ public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to base caching on for
-     * this cache behavior.
+     * A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the origin
+     * for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also caches separate
+     * versions of a specified object that is based on the header values in viewer requests.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching Content
+     * Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param headers
-     *        A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to base caching
-     *        on for this cache behavior.
+     *        A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the
+     *        origin for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also
+     *        caches separate versions of a specified object that is based on the header values in viewer requests.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching
+     *        Content Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public void setHeaders(Headers headers) {
@@ -385,12 +402,24 @@ public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to base caching on for
-     * this cache behavior.
+     * A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the origin
+     * for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also caches separate
+     * versions of a specified object that is based on the header values in viewer requests.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching Content
+     * Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to base caching
-     *         on for this cache behavior.
+     * @return A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to
+     *         the origin for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront
+     *         also caches separate versions of a specified object that is based on the header values in viewer
+     *         requests.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching
+     *         Content Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public Headers getHeaders() {
@@ -399,13 +428,24 @@ public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to base caching on for
-     * this cache behavior.
+     * A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the origin
+     * for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also caches separate
+     * versions of a specified object that is based on the header values in viewer requests.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching Content
+     * Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param headers
-     *        A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to base caching
-     *        on for this cache behavior.
+     *        A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the
+     *        origin for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also
+     *        caches separate versions of a specified object that is based on the header values in viewer requests.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching
+     *        Content Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

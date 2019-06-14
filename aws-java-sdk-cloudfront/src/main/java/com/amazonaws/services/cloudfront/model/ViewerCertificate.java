@@ -40,137 +40,38 @@ import javax.annotation.Generated;
  * </li>
  * </ul>
  * <p>
- * You must specify only one of the following values:
+ * Specify only one of the following values:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>ViewerCertificate$ACMCertificateArn</a>
+ * <a href=
+ * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+ * >ACMCertificateArn</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ViewerCertificate$IAMCertificateId</a>
+ * <a href=
+ * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+ * >IAMCertificateId</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
- * </p>
- * </li>
- * </ul>
- * <p>
- * Don't specify <code>false</code> for <code>CloudFrontDefaultCertificate</code>.
- * </p>
- * <p>
- * <b>If you want viewers to use HTTP instead of HTTPS to request your objects</b>: Specify the following value:
- * </p>
- * <p>
- * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>
- * </p>
- * <p>
- * In addition, specify <code>allow-all</code> for <code>ViewerProtocolPolicy</code> for all of your cache behaviors.
- * </p>
- * <p>
- * <b>If you want viewers to use HTTPS to request your objects</b>: Choose the type of certificate that you want to use
- * based on whether you're using an alternate domain name for your objects or the CloudFront domain name:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <b>If you're using an alternate domain name, such as example.com</b>: Specify one of the following values, depending
- * on whether ACM provided your certificate or you purchased your certificate from third-party certificate authority:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <code>&lt;ACMCertificateArn&gt;<i>ARN for ACM SSL/TLS certificate</i>&lt;ACMCertificateArn&gt;</code> where
- * <code> <i>ARN for ACM SSL/TLS certificate</i> </code> is the ARN for the ACM SSL/TLS certificate that you want to use
- * for this distribution.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>&lt;IAMCertificateId&gt;<i>IAM certificate ID</i>&lt;IAMCertificateId&gt;</code> where
- * <code> <i>IAM certificate ID</i> </code> is the ID that IAM returned when you added the certificate to the IAM
- * certificate store.
- * </p>
- * </li>
- * </ul>
- * <p>
- * If you specify <code>ACMCertificateArn</code> or <code>IAMCertificateId</code>, you must also specify a value for
- * <code>SSLSupportMethod</code>.
- * </p>
- * <p>
- * If you choose to use an ACM certificate or a certificate in the IAM certificate store, we recommend that you use only
- * an alternate domain name in your object URLs (<code>https://example.com/logo.jpg</code>). If you use the domain name
- * that is associated with your CloudFront distribution (such as
- * <code>https://d111111abcdef8.cloudfront.net/logo.jpg</code>) and the viewer supports <code>SNI</code>, then
- * CloudFront behaves normally. However, if the browser does not support SNI, the user's experience depends on the value
- * that you choose for <code>SSLSupportMethod</code>:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <code>vip</code>: The viewer displays a warning because there is a mismatch between the CloudFront domain name and
- * the domain name in your SSL/TLS certificate.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>sni-only</code>: CloudFront drops the connection with the browser without returning the object.
- * </p>
- * </li>
- * </ul>
- * </li>
- * <li>
- * <p>
- * <b>If you're using the CloudFront domain name for your distribution, such as
- * <code>d111111abcdef8.cloudfront.net</code> </b>: Specify the following value:
- * </p>
- * <p>
- * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt; </code>
- * </p>
- * </li>
- * </ul>
- * <p>
- * If you want viewers to use HTTPS, you must also specify one of the following values in your cache behaviors:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <code> &lt;ViewerProtocolPolicy&gt;https-only&lt;ViewerProtocolPolicy&gt;</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>&lt;ViewerProtocolPolicy&gt;redirect-to-https&lt;ViewerProtocolPolicy&gt;</code>
- * </p>
- * </li>
- * </ul>
- * <p>
- * You can also optionally require that CloudFront use HTTPS to communicate with your origin by specifying one of the
- * following values for the applicable origins:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <code>&lt;OriginProtocolPolicy&gt;https-only&lt;OriginProtocolPolicy&gt; </code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>&lt;OriginProtocolPolicy&gt;match-viewer&lt;OriginProtocolPolicy&gt; </code>
+ * <a href=
+ * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+ * >CloudFrontDefaultCertificate</a>
  * </p>
  * </li>
  * </ul>
  * <p>
  * For more information, see <a
- * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS">Using
- * Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
+ * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS">
+ * Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ViewerCertificate" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ViewerCertificate" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -178,66 +79,86 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For information about how and when to use <code>CloudFrontDefaultCertificate</code>, see
-     * <a>ViewerCertificate</a>.
+     * If you're using the CloudFront domain name for your distribution, such as
+     * <code>d111111abcdef8.cloudfront.net</code>, specify the following value:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt; </code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private Boolean cloudFrontDefaultCertificate;
     /**
      * <p>
-     * For information about how and when to use <code>IAMCertificateId</code>, see <a>ViewerCertificate</a>.
+     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name, you must
+     * choose the type of certificate that you want to use. Specify the following value if you purchased your
+     * certificate from a third-party certificate authority:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>&lt;IAMCertificateId&gt;<i>IAM certificate ID</i>&lt;IAMCertificateId&gt;</code> where
+     * <code> <i>IAM certificate ID</i> </code> is the ID that IAM returned when you added the certificate to the IAM
+     * certificate store.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>IAMCertificateId</code>, you must also specify a value for <code>SSLSupportMethod</code>.
      * </p>
      */
     private String iAMCertificateId;
     /**
      * <p>
-     * For information about how and when to use <code>ACMCertificateArn</code>, see <a>ViewerCertificate</a>.
+     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name, you must
+     * choose the type of certificate that you want to use. Specify the following value if ACM provided your
+     * certificate:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>&lt;ACMCertificateArn&gt;<i>ARN for ACM SSL/TLS certificate</i>&lt;ACMCertificateArn&gt;</code> where
+     * <code> <i>ARN for ACM SSL/TLS certificate</i> </code> is the ARN for the ACM SSL/TLS certificate that you want to
+     * use for this distribution.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>ACMCertificateArn</code>, you must also specify a value for <code>SSLSupportMethod</code>.
      * </p>
      */
     private String aCMCertificateArn;
     /**
      * <p>
-     * If you specify a value for <a>ViewerCertificate$ACMCertificateArn</a> or for
-     * <a>ViewerCertificate$IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests:
-     * using a method that works for all clients or one that works for most clients:
+     * If you specify a value for <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a> or for <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests: using a method that
+     * works for browsers and clients released after 2010 or one that works for all clients.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
-     * any viewer. However, you will incur additional monthly charges.
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers that support Server Name Indication
-     * (SNI). All modern browsers support SNI, but some browsers still in use don't support SNI. If some of your users'
-     * browsers don't support SNI, we recommend that you do one of the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Use the <code>vip</code> option (dedicated IP addresses) instead of <code>sni-only</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Use the CloudFront SSL/TLS certificate instead of a custom certificate. This requires that you use the CloudFront
-     * domain name of your distribution in the URLs for your objects, for example,
-     * <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.
+     * (SNI). All modern browsers support SNI, but there are a few that don't. For a current list of the browsers that
+     * support SNI, see the <a href="http://en.wikipedia.org/wiki/Server_Name_Indication">Wikipedia entry Server Name
+     * Indication</a>. To learn about options to explore if you have users with browsers that don't include SNI support,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     * >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you can control which browser your users use, upgrade the browser to one that supports SNI.
+     * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
+     * any viewer. However, there are additional monthly charges. For details, including specific pricing information,
+     * see <a href="http://aws.amazon.com/cloudfront/custom-ssl-domains/">Custom SSL options for Amazon CloudFront</a>
+     * on the AWS marketing site.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Use HTTP instead of HTTPS.
-     * </p>
-     * </li>
-     * </ul>
      * </li>
      * </ul>
      * <p>
@@ -245,9 +166,9 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html"
-     * >Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     * >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
     private String sSLSupportMethod;
@@ -301,7 +222,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * For information about the relationship between the security policy that you choose and the protocols and ciphers
      * that CloudFront uses to communicate with viewers, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
      * > Supported SSL/TLS Protocols and Ciphers for Communication Between Viewers and CloudFront</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.
      * </p>
@@ -309,22 +230,28 @@ public class ViewerCertificate implements Serializable, Cloneable {
     private String minimumProtocolVersion;
     /**
      * <p>
-     * This field has been deprecated. Use one of the following fields instead:
+     * This field is no longer used. Use one of the following fields instead:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a>ViewerCertificate$ACMCertificateArn</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$IAMCertificateId</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     * >CloudFrontDefaultCertificate</a>
      * </p>
      * </li>
      * </ul>
@@ -333,22 +260,28 @@ public class ViewerCertificate implements Serializable, Cloneable {
     private String certificate;
     /**
      * <p>
-     * This field has been deprecated. Use one of the following fields instead:
+     * This field is no longer used. Use one of the following fields instead:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a>ViewerCertificate$ACMCertificateArn</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$IAMCertificateId</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     * >CloudFrontDefaultCertificate</a>
      * </p>
      * </li>
      * </ul>
@@ -358,13 +291,26 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For information about how and when to use <code>CloudFrontDefaultCertificate</code>, see
-     * <a>ViewerCertificate</a>.
+     * If you're using the CloudFront domain name for your distribution, such as
+     * <code>d111111abcdef8.cloudfront.net</code>, specify the following value:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt; </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cloudFrontDefaultCertificate
-     *        For information about how and when to use <code>CloudFrontDefaultCertificate</code>, see
-     *        <a>ViewerCertificate</a>.
+     *        If you're using the CloudFront domain name for your distribution, such as
+     *        <code>d111111abcdef8.cloudfront.net</code>, specify the following value:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt; </code>
+     *        </p>
+     *        </li>
      */
 
     public void setCloudFrontDefaultCertificate(Boolean cloudFrontDefaultCertificate) {
@@ -373,12 +319,25 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For information about how and when to use <code>CloudFrontDefaultCertificate</code>, see
-     * <a>ViewerCertificate</a>.
+     * If you're using the CloudFront domain name for your distribution, such as
+     * <code>d111111abcdef8.cloudfront.net</code>, specify the following value:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt; </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return For information about how and when to use <code>CloudFrontDefaultCertificate</code>, see
-     *         <a>ViewerCertificate</a>.
+     * @return If you're using the CloudFront domain name for your distribution, such as
+     *         <code>d111111abcdef8.cloudfront.net</code>, specify the following value:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt; </code>
+     *         </p>
+     *         </li>
      */
 
     public Boolean getCloudFrontDefaultCertificate() {
@@ -387,13 +346,26 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For information about how and when to use <code>CloudFrontDefaultCertificate</code>, see
-     * <a>ViewerCertificate</a>.
+     * If you're using the CloudFront domain name for your distribution, such as
+     * <code>d111111abcdef8.cloudfront.net</code>, specify the following value:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt; </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cloudFrontDefaultCertificate
-     *        For information about how and when to use <code>CloudFrontDefaultCertificate</code>, see
-     *        <a>ViewerCertificate</a>.
+     *        If you're using the CloudFront domain name for your distribution, such as
+     *        <code>d111111abcdef8.cloudfront.net</code>, specify the following value:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt; </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -404,12 +376,25 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For information about how and when to use <code>CloudFrontDefaultCertificate</code>, see
-     * <a>ViewerCertificate</a>.
+     * If you're using the CloudFront domain name for your distribution, such as
+     * <code>d111111abcdef8.cloudfront.net</code>, specify the following value:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt; </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return For information about how and when to use <code>CloudFrontDefaultCertificate</code>, see
-     *         <a>ViewerCertificate</a>.
+     * @return If you're using the CloudFront domain name for your distribution, such as
+     *         <code>d111111abcdef8.cloudfront.net</code>, specify the following value:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt; </code>
+     *         </p>
+     *         </li>
      */
 
     public Boolean isCloudFrontDefaultCertificate() {
@@ -418,11 +403,39 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For information about how and when to use <code>IAMCertificateId</code>, see <a>ViewerCertificate</a>.
+     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name, you must
+     * choose the type of certificate that you want to use. Specify the following value if you purchased your
+     * certificate from a third-party certificate authority:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>&lt;IAMCertificateId&gt;<i>IAM certificate ID</i>&lt;IAMCertificateId&gt;</code> where
+     * <code> <i>IAM certificate ID</i> </code> is the ID that IAM returned when you added the certificate to the IAM
+     * certificate store.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>IAMCertificateId</code>, you must also specify a value for <code>SSLSupportMethod</code>.
      * </p>
      * 
      * @param iAMCertificateId
-     *        For information about how and when to use <code>IAMCertificateId</code>, see <a>ViewerCertificate</a>.
+     *        If you want viewers to use HTTPS to request your objects and you're using an alternate domain name, you
+     *        must choose the type of certificate that you want to use. Specify the following value if you purchased
+     *        your certificate from a third-party certificate authority:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>&lt;IAMCertificateId&gt;<i>IAM certificate ID</i>&lt;IAMCertificateId&gt;</code> where
+     *        <code> <i>IAM certificate ID</i> </code> is the ID that IAM returned when you added the certificate to the
+     *        IAM certificate store.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you specify <code>IAMCertificateId</code>, you must also specify a value for
+     *        <code>SSLSupportMethod</code>.
      */
 
     public void setIAMCertificateId(String iAMCertificateId) {
@@ -431,10 +444,38 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For information about how and when to use <code>IAMCertificateId</code>, see <a>ViewerCertificate</a>.
+     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name, you must
+     * choose the type of certificate that you want to use. Specify the following value if you purchased your
+     * certificate from a third-party certificate authority:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>&lt;IAMCertificateId&gt;<i>IAM certificate ID</i>&lt;IAMCertificateId&gt;</code> where
+     * <code> <i>IAM certificate ID</i> </code> is the ID that IAM returned when you added the certificate to the IAM
+     * certificate store.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>IAMCertificateId</code>, you must also specify a value for <code>SSLSupportMethod</code>.
      * </p>
      * 
-     * @return For information about how and when to use <code>IAMCertificateId</code>, see <a>ViewerCertificate</a>.
+     * @return If you want viewers to use HTTPS to request your objects and you're using an alternate domain name, you
+     *         must choose the type of certificate that you want to use. Specify the following value if you purchased
+     *         your certificate from a third-party certificate authority:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>&lt;IAMCertificateId&gt;<i>IAM certificate ID</i>&lt;IAMCertificateId&gt;</code> where
+     *         <code> <i>IAM certificate ID</i> </code> is the ID that IAM returned when you added the certificate to
+     *         the IAM certificate store.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you specify <code>IAMCertificateId</code>, you must also specify a value for
+     *         <code>SSLSupportMethod</code>.
      */
 
     public String getIAMCertificateId() {
@@ -443,11 +484,39 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For information about how and when to use <code>IAMCertificateId</code>, see <a>ViewerCertificate</a>.
+     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name, you must
+     * choose the type of certificate that you want to use. Specify the following value if you purchased your
+     * certificate from a third-party certificate authority:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>&lt;IAMCertificateId&gt;<i>IAM certificate ID</i>&lt;IAMCertificateId&gt;</code> where
+     * <code> <i>IAM certificate ID</i> </code> is the ID that IAM returned when you added the certificate to the IAM
+     * certificate store.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>IAMCertificateId</code>, you must also specify a value for <code>SSLSupportMethod</code>.
      * </p>
      * 
      * @param iAMCertificateId
-     *        For information about how and when to use <code>IAMCertificateId</code>, see <a>ViewerCertificate</a>.
+     *        If you want viewers to use HTTPS to request your objects and you're using an alternate domain name, you
+     *        must choose the type of certificate that you want to use. Specify the following value if you purchased
+     *        your certificate from a third-party certificate authority:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>&lt;IAMCertificateId&gt;<i>IAM certificate ID</i>&lt;IAMCertificateId&gt;</code> where
+     *        <code> <i>IAM certificate ID</i> </code> is the ID that IAM returned when you added the certificate to the
+     *        IAM certificate store.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you specify <code>IAMCertificateId</code>, you must also specify a value for
+     *        <code>SSLSupportMethod</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -458,11 +527,39 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For information about how and when to use <code>ACMCertificateArn</code>, see <a>ViewerCertificate</a>.
+     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name, you must
+     * choose the type of certificate that you want to use. Specify the following value if ACM provided your
+     * certificate:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>&lt;ACMCertificateArn&gt;<i>ARN for ACM SSL/TLS certificate</i>&lt;ACMCertificateArn&gt;</code> where
+     * <code> <i>ARN for ACM SSL/TLS certificate</i> </code> is the ARN for the ACM SSL/TLS certificate that you want to
+     * use for this distribution.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>ACMCertificateArn</code>, you must also specify a value for <code>SSLSupportMethod</code>.
      * </p>
      * 
      * @param aCMCertificateArn
-     *        For information about how and when to use <code>ACMCertificateArn</code>, see <a>ViewerCertificate</a>.
+     *        If you want viewers to use HTTPS to request your objects and you're using an alternate domain name, you
+     *        must choose the type of certificate that you want to use. Specify the following value if ACM provided your
+     *        certificate:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>&lt;ACMCertificateArn&gt;<i>ARN for ACM SSL/TLS certificate</i>&lt;ACMCertificateArn&gt;</code>
+     *        where <code> <i>ARN for ACM SSL/TLS certificate</i> </code> is the ARN for the ACM SSL/TLS certificate
+     *        that you want to use for this distribution.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you specify <code>ACMCertificateArn</code>, you must also specify a value for
+     *        <code>SSLSupportMethod</code>.
      */
 
     public void setACMCertificateArn(String aCMCertificateArn) {
@@ -471,10 +568,38 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For information about how and when to use <code>ACMCertificateArn</code>, see <a>ViewerCertificate</a>.
+     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name, you must
+     * choose the type of certificate that you want to use. Specify the following value if ACM provided your
+     * certificate:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>&lt;ACMCertificateArn&gt;<i>ARN for ACM SSL/TLS certificate</i>&lt;ACMCertificateArn&gt;</code> where
+     * <code> <i>ARN for ACM SSL/TLS certificate</i> </code> is the ARN for the ACM SSL/TLS certificate that you want to
+     * use for this distribution.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>ACMCertificateArn</code>, you must also specify a value for <code>SSLSupportMethod</code>.
      * </p>
      * 
-     * @return For information about how and when to use <code>ACMCertificateArn</code>, see <a>ViewerCertificate</a>.
+     * @return If you want viewers to use HTTPS to request your objects and you're using an alternate domain name, you
+     *         must choose the type of certificate that you want to use. Specify the following value if ACM provided
+     *         your certificate:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>&lt;ACMCertificateArn&gt;<i>ARN for ACM SSL/TLS certificate</i>&lt;ACMCertificateArn&gt;</code>
+     *         where <code> <i>ARN for ACM SSL/TLS certificate</i> </code> is the ARN for the ACM SSL/TLS certificate
+     *         that you want to use for this distribution.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you specify <code>ACMCertificateArn</code>, you must also specify a value for
+     *         <code>SSLSupportMethod</code>.
      */
 
     public String getACMCertificateArn() {
@@ -483,11 +608,39 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For information about how and when to use <code>ACMCertificateArn</code>, see <a>ViewerCertificate</a>.
+     * If you want viewers to use HTTPS to request your objects and you're using an alternate domain name, you must
+     * choose the type of certificate that you want to use. Specify the following value if ACM provided your
+     * certificate:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>&lt;ACMCertificateArn&gt;<i>ARN for ACM SSL/TLS certificate</i>&lt;ACMCertificateArn&gt;</code> where
+     * <code> <i>ARN for ACM SSL/TLS certificate</i> </code> is the ARN for the ACM SSL/TLS certificate that you want to
+     * use for this distribution.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>ACMCertificateArn</code>, you must also specify a value for <code>SSLSupportMethod</code>.
      * </p>
      * 
      * @param aCMCertificateArn
-     *        For information about how and when to use <code>ACMCertificateArn</code>, see <a>ViewerCertificate</a>.
+     *        If you want viewers to use HTTPS to request your objects and you're using an alternate domain name, you
+     *        must choose the type of certificate that you want to use. Specify the following value if ACM provided your
+     *        certificate:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>&lt;ACMCertificateArn&gt;<i>ARN for ACM SSL/TLS certificate</i>&lt;ACMCertificateArn&gt;</code>
+     *        where <code> <i>ARN for ACM SSL/TLS certificate</i> </code> is the ARN for the ACM SSL/TLS certificate
+     *        that you want to use for this distribution.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you specify <code>ACMCertificateArn</code>, you must also specify a value for
+     *        <code>SSLSupportMethod</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -498,47 +651,32 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you specify a value for <a>ViewerCertificate$ACMCertificateArn</a> or for
-     * <a>ViewerCertificate$IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests:
-     * using a method that works for all clients or one that works for most clients:
+     * If you specify a value for <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a> or for <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests: using a method that
+     * works for browsers and clients released after 2010 or one that works for all clients.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
-     * any viewer. However, you will incur additional monthly charges.
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers that support Server Name Indication
-     * (SNI). All modern browsers support SNI, but some browsers still in use don't support SNI. If some of your users'
-     * browsers don't support SNI, we recommend that you do one of the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Use the <code>vip</code> option (dedicated IP addresses) instead of <code>sni-only</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Use the CloudFront SSL/TLS certificate instead of a custom certificate. This requires that you use the CloudFront
-     * domain name of your distribution in the URLs for your objects, for example,
-     * <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.
+     * (SNI). All modern browsers support SNI, but there are a few that don't. For a current list of the browsers that
+     * support SNI, see the <a href="http://en.wikipedia.org/wiki/Server_Name_Indication">Wikipedia entry Server Name
+     * Indication</a>. To learn about options to explore if you have users with browsers that don't include SNI support,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     * >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you can control which browser your users use, upgrade the browser to one that supports SNI.
+     * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
+     * any viewer. However, there are additional monthly charges. For details, including specific pricing information,
+     * see <a href="http://aws.amazon.com/cloudfront/custom-ssl-domains/">Custom SSL options for Amazon CloudFront</a>
+     * on the AWS marketing site.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Use HTTP instead of HTTPS.
-     * </p>
-     * </li>
-     * </ul>
      * </li>
      * </ul>
      * <p>
@@ -546,52 +684,38 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html"
-     * >Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     * >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param sSLSupportMethod
-     *        If you specify a value for <a>ViewerCertificate$ACMCertificateArn</a> or for
-     *        <a>ViewerCertificate$IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS
-     *        requests: using a method that works for all clients or one that works for most clients:</p>
+     *        If you specify a value for <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     *        >ACMCertificateArn</a> or for <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     *        >IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests: using a
+     *        method that works for browsers and clients released after 2010 or one that works for all clients.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS
-     *        requests from any viewer. However, you will incur additional monthly charges.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers that support Server Name
-     *        Indication (SNI). All modern browsers support SNI, but some browsers still in use don't support SNI. If
-     *        some of your users' browsers don't support SNI, we recommend that you do one of the following:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Use the <code>vip</code> option (dedicated IP addresses) instead of <code>sni-only</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Use the CloudFront SSL/TLS certificate instead of a custom certificate. This requires that you use the
-     *        CloudFront domain name of your distribution in the URLs for your objects, for example,
-     *        <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.
+     *        Indication (SNI). All modern browsers support SNI, but there are a few that don't. For a current list of
+     *        the browsers that support SNI, see the <a
+     *        href="http://en.wikipedia.org/wiki/Server_Name_Indication">Wikipedia entry Server Name Indication</a>. To
+     *        learn about options to explore if you have users with browsers that don't include SNI support, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     *        >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If you can control which browser your users use, upgrade the browser to one that supports SNI.
+     *        <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS
+     *        requests from any viewer. However, there are additional monthly charges. For details, including specific
+     *        pricing information, see <a href="http://aws.amazon.com/cloudfront/custom-ssl-domains/">Custom SSL options
+     *        for Amazon CloudFront</a> on the AWS marketing site.
      *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Use HTTP instead of HTTPS.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        </li>
      *        </ul>
      *        <p>
@@ -600,8 +724,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html"
-     *        >Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     *        >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @see SSLSupportMethod
      */
 
@@ -611,47 +735,32 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you specify a value for <a>ViewerCertificate$ACMCertificateArn</a> or for
-     * <a>ViewerCertificate$IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests:
-     * using a method that works for all clients or one that works for most clients:
+     * If you specify a value for <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a> or for <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests: using a method that
+     * works for browsers and clients released after 2010 or one that works for all clients.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
-     * any viewer. However, you will incur additional monthly charges.
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers that support Server Name Indication
-     * (SNI). All modern browsers support SNI, but some browsers still in use don't support SNI. If some of your users'
-     * browsers don't support SNI, we recommend that you do one of the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Use the <code>vip</code> option (dedicated IP addresses) instead of <code>sni-only</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Use the CloudFront SSL/TLS certificate instead of a custom certificate. This requires that you use the CloudFront
-     * domain name of your distribution in the URLs for your objects, for example,
-     * <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.
+     * (SNI). All modern browsers support SNI, but there are a few that don't. For a current list of the browsers that
+     * support SNI, see the <a href="http://en.wikipedia.org/wiki/Server_Name_Indication">Wikipedia entry Server Name
+     * Indication</a>. To learn about options to explore if you have users with browsers that don't include SNI support,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     * >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you can control which browser your users use, upgrade the browser to one that supports SNI.
+     * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
+     * any viewer. However, there are additional monthly charges. For details, including specific pricing information,
+     * see <a href="http://aws.amazon.com/cloudfront/custom-ssl-domains/">Custom SSL options for Amazon CloudFront</a>
+     * on the AWS marketing site.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Use HTTP instead of HTTPS.
-     * </p>
-     * </li>
-     * </ul>
      * </li>
      * </ul>
      * <p>
@@ -659,51 +768,37 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html"
-     * >Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     * >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return If you specify a value for <a>ViewerCertificate$ACMCertificateArn</a> or for
-     *         <a>ViewerCertificate$IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS
-     *         requests: using a method that works for all clients or one that works for most clients:</p>
+     * @return If you specify a value for <a href=
+     *         "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     *         >ACMCertificateArn</a> or for <a href=
+     *         "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     *         >IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests: using a
+     *         method that works for browsers and clients released after 2010 or one that works for all clients.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS
-     *         requests from any viewer. However, you will incur additional monthly charges.
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers that support Server Name
-     *         Indication (SNI). All modern browsers support SNI, but some browsers still in use don't support SNI. If
-     *         some of your users' browsers don't support SNI, we recommend that you do one of the following:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Use the <code>vip</code> option (dedicated IP addresses) instead of <code>sni-only</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Use the CloudFront SSL/TLS certificate instead of a custom certificate. This requires that you use the
-     *         CloudFront domain name of your distribution in the URLs for your objects, for example,
-     *         <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.
+     *         Indication (SNI). All modern browsers support SNI, but there are a few that don't. For a current list of
+     *         the browsers that support SNI, see the <a
+     *         href="http://en.wikipedia.org/wiki/Server_Name_Indication">Wikipedia entry Server Name Indication</a>. To
+     *         learn about options to explore if you have users with browsers that don't include SNI support, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     *         >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If you can control which browser your users use, upgrade the browser to one that supports SNI.
+     *         <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS
+     *         requests from any viewer. However, there are additional monthly charges. For details, including specific
+     *         pricing information, see <a href="http://aws.amazon.com/cloudfront/custom-ssl-domains/">Custom SSL
+     *         options for Amazon CloudFront</a> on the AWS marketing site.
      *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Use HTTP instead of HTTPS.
-     *         </p>
-     *         </li>
-     *         </ul>
      *         </li>
      *         </ul>
      *         <p>
@@ -712,8 +807,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html"
-     *         >Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     *         >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @see SSLSupportMethod
      */
 
@@ -723,47 +818,32 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you specify a value for <a>ViewerCertificate$ACMCertificateArn</a> or for
-     * <a>ViewerCertificate$IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests:
-     * using a method that works for all clients or one that works for most clients:
+     * If you specify a value for <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a> or for <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests: using a method that
+     * works for browsers and clients released after 2010 or one that works for all clients.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
-     * any viewer. However, you will incur additional monthly charges.
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers that support Server Name Indication
-     * (SNI). All modern browsers support SNI, but some browsers still in use don't support SNI. If some of your users'
-     * browsers don't support SNI, we recommend that you do one of the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Use the <code>vip</code> option (dedicated IP addresses) instead of <code>sni-only</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Use the CloudFront SSL/TLS certificate instead of a custom certificate. This requires that you use the CloudFront
-     * domain name of your distribution in the URLs for your objects, for example,
-     * <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.
+     * (SNI). All modern browsers support SNI, but there are a few that don't. For a current list of the browsers that
+     * support SNI, see the <a href="http://en.wikipedia.org/wiki/Server_Name_Indication">Wikipedia entry Server Name
+     * Indication</a>. To learn about options to explore if you have users with browsers that don't include SNI support,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     * >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you can control which browser your users use, upgrade the browser to one that supports SNI.
+     * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
+     * any viewer. However, there are additional monthly charges. For details, including specific pricing information,
+     * see <a href="http://aws.amazon.com/cloudfront/custom-ssl-domains/">Custom SSL options for Amazon CloudFront</a>
+     * on the AWS marketing site.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Use HTTP instead of HTTPS.
-     * </p>
-     * </li>
-     * </ul>
      * </li>
      * </ul>
      * <p>
@@ -771,52 +851,38 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html"
-     * >Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     * >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param sSLSupportMethod
-     *        If you specify a value for <a>ViewerCertificate$ACMCertificateArn</a> or for
-     *        <a>ViewerCertificate$IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS
-     *        requests: using a method that works for all clients or one that works for most clients:</p>
+     *        If you specify a value for <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     *        >ACMCertificateArn</a> or for <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     *        >IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests: using a
+     *        method that works for browsers and clients released after 2010 or one that works for all clients.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS
-     *        requests from any viewer. However, you will incur additional monthly charges.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers that support Server Name
-     *        Indication (SNI). All modern browsers support SNI, but some browsers still in use don't support SNI. If
-     *        some of your users' browsers don't support SNI, we recommend that you do one of the following:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Use the <code>vip</code> option (dedicated IP addresses) instead of <code>sni-only</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Use the CloudFront SSL/TLS certificate instead of a custom certificate. This requires that you use the
-     *        CloudFront domain name of your distribution in the URLs for your objects, for example,
-     *        <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.
+     *        Indication (SNI). All modern browsers support SNI, but there are a few that don't. For a current list of
+     *        the browsers that support SNI, see the <a
+     *        href="http://en.wikipedia.org/wiki/Server_Name_Indication">Wikipedia entry Server Name Indication</a>. To
+     *        learn about options to explore if you have users with browsers that don't include SNI support, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     *        >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If you can control which browser your users use, upgrade the browser to one that supports SNI.
+     *        <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS
+     *        requests from any viewer. However, there are additional monthly charges. For details, including specific
+     *        pricing information, see <a href="http://aws.amazon.com/cloudfront/custom-ssl-domains/">Custom SSL options
+     *        for Amazon CloudFront</a> on the AWS marketing site.
      *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Use HTTP instead of HTTPS.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        </li>
      *        </ul>
      *        <p>
@@ -825,8 +891,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html"
-     *        >Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     *        >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SSLSupportMethod
      */
@@ -838,47 +904,32 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you specify a value for <a>ViewerCertificate$ACMCertificateArn</a> or for
-     * <a>ViewerCertificate$IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests:
-     * using a method that works for all clients or one that works for most clients:
+     * If you specify a value for <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a> or for <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests: using a method that
+     * works for browsers and clients released after 2010 or one that works for all clients.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
-     * any viewer. However, you will incur additional monthly charges.
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers that support Server Name Indication
-     * (SNI). All modern browsers support SNI, but some browsers still in use don't support SNI. If some of your users'
-     * browsers don't support SNI, we recommend that you do one of the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Use the <code>vip</code> option (dedicated IP addresses) instead of <code>sni-only</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Use the CloudFront SSL/TLS certificate instead of a custom certificate. This requires that you use the CloudFront
-     * domain name of your distribution in the URLs for your objects, for example,
-     * <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.
+     * (SNI). All modern browsers support SNI, but there are a few that don't. For a current list of the browsers that
+     * support SNI, see the <a href="http://en.wikipedia.org/wiki/Server_Name_Indication">Wikipedia entry Server Name
+     * Indication</a>. To learn about options to explore if you have users with browsers that don't include SNI support,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     * >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you can control which browser your users use, upgrade the browser to one that supports SNI.
+     * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
+     * any viewer. However, there are additional monthly charges. For details, including specific pricing information,
+     * see <a href="http://aws.amazon.com/cloudfront/custom-ssl-domains/">Custom SSL options for Amazon CloudFront</a>
+     * on the AWS marketing site.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Use HTTP instead of HTTPS.
-     * </p>
-     * </li>
-     * </ul>
      * </li>
      * </ul>
      * <p>
@@ -886,52 +937,38 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html"
-     * >Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     * >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param sSLSupportMethod
-     *        If you specify a value for <a>ViewerCertificate$ACMCertificateArn</a> or for
-     *        <a>ViewerCertificate$IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS
-     *        requests: using a method that works for all clients or one that works for most clients:</p>
+     *        If you specify a value for <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     *        >ACMCertificateArn</a> or for <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     *        >IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests: using a
+     *        method that works for browsers and clients released after 2010 or one that works for all clients.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS
-     *        requests from any viewer. However, you will incur additional monthly charges.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers that support Server Name
-     *        Indication (SNI). All modern browsers support SNI, but some browsers still in use don't support SNI. If
-     *        some of your users' browsers don't support SNI, we recommend that you do one of the following:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Use the <code>vip</code> option (dedicated IP addresses) instead of <code>sni-only</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Use the CloudFront SSL/TLS certificate instead of a custom certificate. This requires that you use the
-     *        CloudFront domain name of your distribution in the URLs for your objects, for example,
-     *        <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.
+     *        Indication (SNI). All modern browsers support SNI, but there are a few that don't. For a current list of
+     *        the browsers that support SNI, see the <a
+     *        href="http://en.wikipedia.org/wiki/Server_Name_Indication">Wikipedia entry Server Name Indication</a>. To
+     *        learn about options to explore if you have users with browsers that don't include SNI support, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     *        >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If you can control which browser your users use, upgrade the browser to one that supports SNI.
+     *        <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS
+     *        requests from any viewer. However, there are additional monthly charges. For details, including specific
+     *        pricing information, see <a href="http://aws.amazon.com/cloudfront/custom-ssl-domains/">Custom SSL options
+     *        for Amazon CloudFront</a> on the AWS marketing site.
      *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Use HTTP instead of HTTPS.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        </li>
      *        </ul>
      *        <p>
@@ -940,8 +977,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html"
-     *        >Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     *        >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @see SSLSupportMethod
      */
 
@@ -951,47 +988,32 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you specify a value for <a>ViewerCertificate$ACMCertificateArn</a> or for
-     * <a>ViewerCertificate$IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests:
-     * using a method that works for all clients or one that works for most clients:
+     * If you specify a value for <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a> or for <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests: using a method that
+     * works for browsers and clients released after 2010 or one that works for all clients.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
-     * any viewer. However, you will incur additional monthly charges.
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers that support Server Name Indication
-     * (SNI). All modern browsers support SNI, but some browsers still in use don't support SNI. If some of your users'
-     * browsers don't support SNI, we recommend that you do one of the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Use the <code>vip</code> option (dedicated IP addresses) instead of <code>sni-only</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Use the CloudFront SSL/TLS certificate instead of a custom certificate. This requires that you use the CloudFront
-     * domain name of your distribution in the URLs for your objects, for example,
-     * <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.
+     * (SNI). All modern browsers support SNI, but there are a few that don't. For a current list of the browsers that
+     * support SNI, see the <a href="http://en.wikipedia.org/wiki/Server_Name_Indication">Wikipedia entry Server Name
+     * Indication</a>. To learn about options to explore if you have users with browsers that don't include SNI support,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     * >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you can control which browser your users use, upgrade the browser to one that supports SNI.
+     * <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from
+     * any viewer. However, there are additional monthly charges. For details, including specific pricing information,
+     * see <a href="http://aws.amazon.com/cloudfront/custom-ssl-domains/">Custom SSL options for Amazon CloudFront</a>
+     * on the AWS marketing site.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Use HTTP instead of HTTPS.
-     * </p>
-     * </li>
-     * </ul>
      * </li>
      * </ul>
      * <p>
@@ -999,52 +1021,38 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html"
-     * >Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     * >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param sSLSupportMethod
-     *        If you specify a value for <a>ViewerCertificate$ACMCertificateArn</a> or for
-     *        <a>ViewerCertificate$IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS
-     *        requests: using a method that works for all clients or one that works for most clients:</p>
+     *        If you specify a value for <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     *        >ACMCertificateArn</a> or for <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     *        >IAMCertificateId</a>, you must also specify how you want CloudFront to serve HTTPS requests: using a
+     *        method that works for browsers and clients released after 2010 or one that works for all clients.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS
-     *        requests from any viewer. However, you will incur additional monthly charges.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>sni-only</code>: CloudFront can respond to HTTPS requests from viewers that support Server Name
-     *        Indication (SNI). All modern browsers support SNI, but some browsers still in use don't support SNI. If
-     *        some of your users' browsers don't support SNI, we recommend that you do one of the following:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Use the <code>vip</code> option (dedicated IP addresses) instead of <code>sni-only</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Use the CloudFront SSL/TLS certificate instead of a custom certificate. This requires that you use the
-     *        CloudFront domain name of your distribution in the URLs for your objects, for example,
-     *        <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.
+     *        Indication (SNI). All modern browsers support SNI, but there are a few that don't. For a current list of
+     *        the browsers that support SNI, see the <a
+     *        href="http://en.wikipedia.org/wiki/Server_Name_Indication">Wikipedia entry Server Name Indication</a>. To
+     *        learn about options to explore if you have users with browsers that don't include SNI support, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     *        >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If you can control which browser your users use, upgrade the browser to one that supports SNI.
+     *        <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can respond to HTTPS
+     *        requests from any viewer. However, there are additional monthly charges. For details, including specific
+     *        pricing information, see <a href="http://aws.amazon.com/cloudfront/custom-ssl-domains/">Custom SSL options
+     *        for Amazon CloudFront</a> on the AWS marketing site.
      *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Use HTTP instead of HTTPS.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        </li>
      *        </ul>
      *        <p>
@@ -1053,8 +1061,8 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html"
-     *        >Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-https-dedicated-ip-or-sni.html"
+     *        >Choosing How CloudFront Serves HTTPS Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SSLSupportMethod
      */
@@ -1114,7 +1122,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * For information about the relationship between the security policy that you choose and the protocols and ciphers
      * that CloudFront uses to communicate with viewers, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
      * > Supported SSL/TLS Protocols and Ciphers for Communication Between Viewers and CloudFront</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.
      * </p>
@@ -1167,7 +1175,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        For information about the relationship between the security policy that you choose and the protocols and
      *        ciphers that CloudFront uses to communicate with viewers, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
      *        > Supported SSL/TLS Protocols and Ciphers for Communication Between Viewers and CloudFront</a> in the
      *        <i>Amazon CloudFront Developer Guide</i>.
      * @see MinimumProtocolVersion
@@ -1227,7 +1235,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * For information about the relationship between the security policy that you choose and the protocols and ciphers
      * that CloudFront uses to communicate with viewers, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
      * > Supported SSL/TLS Protocols and Ciphers for Communication Between Viewers and CloudFront</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.
      * </p>
@@ -1280,7 +1288,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         <p>
      *         For information about the relationship between the security policy that you choose and the protocols and
      *         ciphers that CloudFront uses to communicate with viewers, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
      *         > Supported SSL/TLS Protocols and Ciphers for Communication Between Viewers and CloudFront</a> in the
      *         <i>Amazon CloudFront Developer Guide</i>.
      * @see MinimumProtocolVersion
@@ -1340,7 +1348,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * For information about the relationship between the security policy that you choose and the protocols and ciphers
      * that CloudFront uses to communicate with viewers, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
      * > Supported SSL/TLS Protocols and Ciphers for Communication Between Viewers and CloudFront</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.
      * </p>
@@ -1393,7 +1401,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        For information about the relationship between the security policy that you choose and the protocols and
      *        ciphers that CloudFront uses to communicate with viewers, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
      *        > Supported SSL/TLS Protocols and Ciphers for Communication Between Viewers and CloudFront</a> in the
      *        <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1455,7 +1463,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * For information about the relationship between the security policy that you choose and the protocols and ciphers
      * that CloudFront uses to communicate with viewers, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
      * > Supported SSL/TLS Protocols and Ciphers for Communication Between Viewers and CloudFront</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.
      * </p>
@@ -1508,7 +1516,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        For information about the relationship between the security policy that you choose and the protocols and
      *        ciphers that CloudFront uses to communicate with viewers, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
      *        > Supported SSL/TLS Protocols and Ciphers for Communication Between Viewers and CloudFront</a> in the
      *        <i>Amazon CloudFront Developer Guide</i>.
      * @see MinimumProtocolVersion
@@ -1568,7 +1576,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * For information about the relationship between the security policy that you choose and the protocols and ciphers
      * that CloudFront uses to communicate with viewers, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
      * > Supported SSL/TLS Protocols and Ciphers for Communication Between Viewers and CloudFront</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.
      * </p>
@@ -1621,7 +1629,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        For information about the relationship between the security policy that you choose and the protocols and
      *        ciphers that CloudFront uses to communicate with viewers, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers"
      *        > Supported SSL/TLS Protocols and Ciphers for Communication Between Viewers and CloudFront</a> in the
      *        <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1635,42 +1643,54 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field has been deprecated. Use one of the following fields instead:
+     * This field is no longer used. Use one of the following fields instead:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a>ViewerCertificate$ACMCertificateArn</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$IAMCertificateId</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     * >CloudFrontDefaultCertificate</a>
      * </p>
      * </li>
      * </ul>
      * 
      * @param certificate
-     *        This field has been deprecated. Use one of the following fields instead:</p>
+     *        This field is no longer used. Use one of the following fields instead:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$ACMCertificateArn</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     *        >ACMCertificateArn</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$IAMCertificateId</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     *        >IAMCertificateId</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     *        >CloudFrontDefaultCertificate</a>
      *        </p>
      *        </li>
      */
@@ -1681,41 +1701,53 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field has been deprecated. Use one of the following fields instead:
+     * This field is no longer used. Use one of the following fields instead:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a>ViewerCertificate$ACMCertificateArn</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$IAMCertificateId</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     * >CloudFrontDefaultCertificate</a>
      * </p>
      * </li>
      * </ul>
      * 
-     * @return This field has been deprecated. Use one of the following fields instead:</p>
+     * @return This field is no longer used. Use one of the following fields instead:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <a>ViewerCertificate$ACMCertificateArn</a>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     *         >ACMCertificateArn</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a>ViewerCertificate$IAMCertificateId</a>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     *         >IAMCertificateId</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     *         >CloudFrontDefaultCertificate</a>
      *         </p>
      *         </li>
      */
@@ -1726,42 +1758,54 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field has been deprecated. Use one of the following fields instead:
+     * This field is no longer used. Use one of the following fields instead:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a>ViewerCertificate$ACMCertificateArn</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$IAMCertificateId</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     * >CloudFrontDefaultCertificate</a>
      * </p>
      * </li>
      * </ul>
      * 
      * @param certificate
-     *        This field has been deprecated. Use one of the following fields instead:</p>
+     *        This field is no longer used. Use one of the following fields instead:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$ACMCertificateArn</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     *        >ACMCertificateArn</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$IAMCertificateId</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     *        >IAMCertificateId</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     *        >CloudFrontDefaultCertificate</a>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1774,42 +1818,54 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field has been deprecated. Use one of the following fields instead:
+     * This field is no longer used. Use one of the following fields instead:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a>ViewerCertificate$ACMCertificateArn</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$IAMCertificateId</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     * >CloudFrontDefaultCertificate</a>
      * </p>
      * </li>
      * </ul>
      * 
      * @param certificateSource
-     *        This field has been deprecated. Use one of the following fields instead:</p>
+     *        This field is no longer used. Use one of the following fields instead:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$ACMCertificateArn</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     *        >ACMCertificateArn</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$IAMCertificateId</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     *        >IAMCertificateId</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     *        >CloudFrontDefaultCertificate</a>
      *        </p>
      *        </li>
      * @see CertificateSource
@@ -1821,41 +1877,53 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field has been deprecated. Use one of the following fields instead:
+     * This field is no longer used. Use one of the following fields instead:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a>ViewerCertificate$ACMCertificateArn</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$IAMCertificateId</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     * >CloudFrontDefaultCertificate</a>
      * </p>
      * </li>
      * </ul>
      * 
-     * @return This field has been deprecated. Use one of the following fields instead:</p>
+     * @return This field is no longer used. Use one of the following fields instead:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <a>ViewerCertificate$ACMCertificateArn</a>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     *         >ACMCertificateArn</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a>ViewerCertificate$IAMCertificateId</a>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     *         >IAMCertificateId</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     *         >CloudFrontDefaultCertificate</a>
      *         </p>
      *         </li>
      * @see CertificateSource
@@ -1867,42 +1935,54 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field has been deprecated. Use one of the following fields instead:
+     * This field is no longer used. Use one of the following fields instead:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a>ViewerCertificate$ACMCertificateArn</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$IAMCertificateId</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     * >CloudFrontDefaultCertificate</a>
      * </p>
      * </li>
      * </ul>
      * 
      * @param certificateSource
-     *        This field has been deprecated. Use one of the following fields instead:</p>
+     *        This field is no longer used. Use one of the following fields instead:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$ACMCertificateArn</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     *        >ACMCertificateArn</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$IAMCertificateId</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     *        >IAMCertificateId</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     *        >CloudFrontDefaultCertificate</a>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1916,42 +1996,54 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field has been deprecated. Use one of the following fields instead:
+     * This field is no longer used. Use one of the following fields instead:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a>ViewerCertificate$ACMCertificateArn</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$IAMCertificateId</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     * >CloudFrontDefaultCertificate</a>
      * </p>
      * </li>
      * </ul>
      * 
      * @param certificateSource
-     *        This field has been deprecated. Use one of the following fields instead:</p>
+     *        This field is no longer used. Use one of the following fields instead:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$ACMCertificateArn</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     *        >ACMCertificateArn</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$IAMCertificateId</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     *        >IAMCertificateId</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     *        >CloudFrontDefaultCertificate</a>
      *        </p>
      *        </li>
      * @see CertificateSource
@@ -1963,42 +2055,54 @@ public class ViewerCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field has been deprecated. Use one of the following fields instead:
+     * This field is no longer used. Use one of the following fields instead:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a>ViewerCertificate$ACMCertificateArn</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     * >ACMCertificateArn</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$IAMCertificateId</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     * >IAMCertificateId</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     * >CloudFrontDefaultCertificate</a>
      * </p>
      * </li>
      * </ul>
      * 
      * @param certificateSource
-     *        This field has been deprecated. Use one of the following fields instead:</p>
+     *        This field is no longer used. Use one of the following fields instead:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$ACMCertificateArn</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-ACMCertificateArn"
+     *        >ACMCertificateArn</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$IAMCertificateId</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-IAMCertificateId"
+     *        >IAMCertificateId</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ViewerCertificate$CloudFrontDefaultCertificate</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ViewerCertificate.html#cloudfront-Type-ViewerCertificate-CloudFrontDefaultCertificate"
+     *        >CloudFrontDefaultCertificate</a>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

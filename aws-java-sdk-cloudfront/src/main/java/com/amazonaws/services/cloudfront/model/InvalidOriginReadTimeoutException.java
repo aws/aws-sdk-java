@@ -15,7 +15,9 @@ package com.amazonaws.services.cloudfront.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The read timeout specified for the origin is not valid.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidOriginReadTimeoutException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {

@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A complex type that contains a Lambda function association.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/LambdaFunctionAssociation"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/LambdaFunctionAssociation"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -72,7 +72,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
     /**
      * <p>
      * A flag that allows a Lambda function to have read access to the body content. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
      * >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
      * </p>
      */
@@ -500,13 +500,13 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
     /**
      * <p>
      * A flag that allows a Lambda function to have read access to the body content. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
      * >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
      * </p>
      * 
      * @param includeBody
      *        A flag that allows a Lambda function to have read access to the body content. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">
      *        Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer
      *        Guide.
      */
@@ -518,13 +518,13 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
     /**
      * <p>
      * A flag that allows a Lambda function to have read access to the body content. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
      * >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
      * </p>
      * 
      * @return A flag that allows a Lambda function to have read access to the body content. For more information, see
      *         <a href=
-     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
      *         >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer
      *         Guide.
      */
@@ -536,13 +536,13 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
     /**
      * <p>
      * A flag that allows a Lambda function to have read access to the body content. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
      * >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
      * </p>
      * 
      * @param includeBody
      *        A flag that allows a Lambda function to have read access to the body content. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">
      *        Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer
      *        Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -556,13 +556,13 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
     /**
      * <p>
      * A flag that allows a Lambda function to have read access to the body content. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
      * >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
      * </p>
      * 
      * @return A flag that allows a Lambda function to have read access to the body content. For more information, see
      *         <a href=
-     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
      *         >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer
      *         Guide.
      */

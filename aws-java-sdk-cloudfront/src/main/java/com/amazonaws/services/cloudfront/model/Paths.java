@@ -19,11 +19,11 @@ import javax.annotation.Generated;
  * <p>
  * A complex type that contains information about the objects that you want to invalidate. For more information, see <a
  * href=
- * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
+ * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
  * >Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Paths" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Paths" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -31,7 +31,7 @@ public class Paths implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of objects that you want to invalidate.
+     * The number of invalidation paths specified for the objects that you want to invalidate.
      * </p>
      */
     private Integer quantity;
@@ -44,11 +44,11 @@ public class Paths implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of objects that you want to invalidate.
+     * The number of invalidation paths specified for the objects that you want to invalidate.
      * </p>
      * 
      * @param quantity
-     *        The number of objects that you want to invalidate.
+     *        The number of invalidation paths specified for the objects that you want to invalidate.
      */
 
     public void setQuantity(Integer quantity) {
@@ -57,10 +57,10 @@ public class Paths implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of objects that you want to invalidate.
+     * The number of invalidation paths specified for the objects that you want to invalidate.
      * </p>
      * 
-     * @return The number of objects that you want to invalidate.
+     * @return The number of invalidation paths specified for the objects that you want to invalidate.
      */
 
     public Integer getQuantity() {
@@ -69,11 +69,11 @@ public class Paths implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of objects that you want to invalidate.
+     * The number of invalidation paths specified for the objects that you want to invalidate.
      * </p>
      * 
      * @param quantity
-     *        The number of objects that you want to invalidate.
+     *        The number of invalidation paths specified for the objects that you want to invalidate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

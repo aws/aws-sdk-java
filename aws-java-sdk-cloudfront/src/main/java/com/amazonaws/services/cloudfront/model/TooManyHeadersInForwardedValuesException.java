@@ -15,7 +15,9 @@ package com.amazonaws.services.cloudfront.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * Your request contains too many headers in forwarded values.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyHeadersInForwardedValuesException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {

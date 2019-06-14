@@ -363,6 +363,8 @@ public interface AmazonAppStream {
      * 
      * @param createUsageReportSubscriptionRequest
      * @return Result of the CreateUsageReportSubscription operation returned by the service.
+     * @throws InvalidRoleException
+     *         The specified role is invalid.
      * @throws InvalidAccountStatusException
      *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
      *         Support.

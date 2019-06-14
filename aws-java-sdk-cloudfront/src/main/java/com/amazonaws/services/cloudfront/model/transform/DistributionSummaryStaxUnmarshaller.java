@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudfront.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -137,6 +139,17 @@ public class DistributionSummaryStaxUnmarshaller implements Unmarshaller<Distrib
                     distributionSummary.setIsIPV6Enabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("AliasICPRecordals", targetDepth)) {
+                    distributionSummary.withAliasICPRecordals(new ArrayList<AliasICPRecordal>());
+                    continue;
+                }
+
+                if (context.testExpression("AliasICPRecordals/AliasICPRecordal", targetDepth)) {
+                    distributionSummary.withAliasICPRecordals(AliasICPRecordalStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return distributionSummary;

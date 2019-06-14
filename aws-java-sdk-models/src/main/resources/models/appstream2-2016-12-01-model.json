@@ -189,6 +189,7 @@
       "input":{"shape":"CreateUsageReportSubscriptionRequest"},
       "output":{"shape":"CreateUsageReportSubscriptionResult"},
       "errors":[
+        {"shape":"InvalidRoleException"},
         {"shape":"InvalidAccountStatusException"}
       ],
       "documentation":"<p>Creates a usage report subscription. Usage reports are generated daily.</p>"
@@ -2533,7 +2534,11 @@
     },
     "PlatformType":{
       "type":"string",
-      "enum":["WINDOWS"]
+      "enum":[
+        "WINDOWS",
+        "WINDOWS_SERVER_2016",
+        "WINDOWS_SERVER_2019"
+      ]
     },
     "RedirectURL":{
       "type":"string",

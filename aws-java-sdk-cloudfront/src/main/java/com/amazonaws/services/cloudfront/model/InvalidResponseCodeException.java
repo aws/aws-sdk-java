@@ -15,7 +15,9 @@ package com.amazonaws.services.cloudfront.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * A response code specified in the response body is not valid.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidResponseCodeException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {

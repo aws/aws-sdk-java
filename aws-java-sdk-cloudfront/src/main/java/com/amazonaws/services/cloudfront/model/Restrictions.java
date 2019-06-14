@@ -20,12 +20,18 @@ import javax.annotation.Generated;
  * A complex type that identifies ways in which you want to restrict distribution of your content.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Restrictions" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Restrictions" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Restrictions implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A complex type that controls the countries in which your content is distributed. CloudFront determines the
+     * location of your users using <code>MaxMind</code> GeoIP databases.
+     * </p>
+     */
     private GeoRestriction geoRestriction;
 
     /**
@@ -40,13 +46,22 @@ public class Restrictions implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param geoRestriction
+     *        A complex type that controls the countries in which your content is distributed. CloudFront determines the
+     *        location of your users using <code>MaxMind</code> GeoIP databases.
      */
     public Restrictions(GeoRestriction geoRestriction) {
         setGeoRestriction(geoRestriction);
     }
 
     /**
+     * <p>
+     * A complex type that controls the countries in which your content is distributed. CloudFront determines the
+     * location of your users using <code>MaxMind</code> GeoIP databases.
+     * </p>
+     * 
      * @param geoRestriction
+     *        A complex type that controls the countries in which your content is distributed. CloudFront determines the
+     *        location of your users using <code>MaxMind</code> GeoIP databases.
      */
 
     public void setGeoRestriction(GeoRestriction geoRestriction) {
@@ -54,7 +69,13 @@ public class Restrictions implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * A complex type that controls the countries in which your content is distributed. CloudFront determines the
+     * location of your users using <code>MaxMind</code> GeoIP databases.
+     * </p>
+     * 
+     * @return A complex type that controls the countries in which your content is distributed. CloudFront determines
+     *         the location of your users using <code>MaxMind</code> GeoIP databases.
      */
 
     public GeoRestriction getGeoRestriction() {
@@ -62,7 +83,14 @@ public class Restrictions implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A complex type that controls the countries in which your content is distributed. CloudFront determines the
+     * location of your users using <code>MaxMind</code> GeoIP databases.
+     * </p>
+     * 
      * @param geoRestriction
+     *        A complex type that controls the countries in which your content is distributed. CloudFront determines the
+     *        location of your users using <code>MaxMind</code> GeoIP databases.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

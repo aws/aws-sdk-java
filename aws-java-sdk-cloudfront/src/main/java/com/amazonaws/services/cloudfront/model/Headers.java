@@ -27,11 +27,11 @@ import javax.annotation.Generated;
  * CloudFront to cache your content based on values in the <code>product</code> header. CloudFront forwards the
  * <code>product</code> header to the origin and caches the response from the origin once for each header value. For
  * more information about caching based on header values, see <a
- * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">How CloudFront Forwards
+ * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">How CloudFront Forwards
  * and Caches Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Headers" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Headers" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -76,14 +76,14 @@ public class Headers implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>S3 bucket</b>: See <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers"
      * >HTTP Request Headers That CloudFront Removes or Updates</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>Custom origin</b>: See <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior"
      * >HTTP Request Headers and CloudFront Behavior</a>
      * </p>
      * </li>
@@ -137,14 +137,14 @@ public class Headers implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>S3 bucket</b>: See <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers"
      * >HTTP Request Headers That CloudFront Removes or Updates</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>Custom origin</b>: See <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior"
      * >HTTP Request Headers and CloudFront Behavior</a>
      * </p>
      * </li>
@@ -188,14 +188,14 @@ public class Headers implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>S3 bucket</b>: See <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers"
      *        >HTTP Request Headers That CloudFront Removes or Updates</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>Custom origin</b>: See <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior"
      *        >HTTP Request Headers and CloudFront Behavior</a>
      *        </p>
      *        </li>
@@ -244,14 +244,14 @@ public class Headers implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>S3 bucket</b>: See <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers"
      * >HTTP Request Headers That CloudFront Removes or Updates</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>Custom origin</b>: See <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior"
      * >HTTP Request Headers and CloudFront Behavior</a>
      * </p>
      * </li>
@@ -294,14 +294,14 @@ public class Headers implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <b>S3 bucket</b>: See <a href=
-     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers"
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers"
      *         >HTTP Request Headers That CloudFront Removes or Updates</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <b>Custom origin</b>: See <a href=
-     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior"
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior"
      *         >HTTP Request Headers and CloudFront Behavior</a>
      *         </p>
      *         </li>
@@ -350,14 +350,14 @@ public class Headers implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>S3 bucket</b>: See <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers"
      * >HTTP Request Headers That CloudFront Removes or Updates</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>Custom origin</b>: See <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior"
      * >HTTP Request Headers and CloudFront Behavior</a>
      * </p>
      * </li>
@@ -401,14 +401,14 @@ public class Headers implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>S3 bucket</b>: See <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers"
      *        >HTTP Request Headers That CloudFront Removes or Updates</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>Custom origin</b>: See <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior"
      *        >HTTP Request Headers and CloudFront Behavior</a>
      *        </p>
      *        </li>

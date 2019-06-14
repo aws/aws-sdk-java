@@ -78,7 +78,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * SEARCH_PERSONALIZATION
+     * PERSONALIZED_RANKING
      * </p>
      * </li>
      * <li>
@@ -388,7 +388,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * SEARCH_PERSONALIZATION
+     * PERSONALIZED_RANKING
      * </p>
      * </li>
      * <li>
@@ -408,7 +408,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        SEARCH_PERSONALIZATION
+     *        PERSONALIZED_RANKING
      *        </p>
      *        </li>
      *        <li>
@@ -434,7 +434,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * SEARCH_PERSONALIZATION
+     * PERSONALIZED_RANKING
      * </p>
      * </li>
      * <li>
@@ -453,7 +453,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         SEARCH_PERSONALIZATION
+     *         PERSONALIZED_RANKING
      *         </p>
      *         </li>
      *         <li>
@@ -479,7 +479,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * SEARCH_PERSONALIZATION
+     * PERSONALIZED_RANKING
      * </p>
      * </li>
      * <li>
@@ -499,7 +499,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        SEARCH_PERSONALIZATION
+     *        PERSONALIZED_RANKING
      *        </p>
      *        </li>
      *        <li>

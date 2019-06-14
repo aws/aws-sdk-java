@@ -15,7 +15,9 @@ package com.amazonaws.services.cloudfront.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The Origin Access Identity specified is already in use.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CloudFrontOriginAccessIdentityInUseException extends com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
