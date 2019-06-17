@@ -99,6 +99,9 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                             new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withModeledClass(
                                     com.amazonaws.services.robomaker.model.IdempotentParameterMismatchException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
+                                    com.amazonaws.services.robomaker.model.ServiceUnavailableException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
                                     com.amazonaws.services.robomaker.model.ResourceAlreadyExistsException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.robomaker.model.AWSRoboMakerException.class));
@@ -849,6 +852,8 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
      * @throws IdempotentParameterMismatchException
      *         The request uses the same client token as a previous, but non-identical request. Do not reuse a client
      *         token with different requests, unless the requests are identical.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
      * @sample AWSRoboMaker.CreateSimulationJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationJob" target="_top">AWS
      *      API Documentation</a>
@@ -1202,7 +1207,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
 
     /**
      * <p>
-     * Describes a deployment job. [Does it work regardless of deployment status, e.g. Failed?]
+     * Describes a deployment job.
      * </p>
      * 
      * @param describeDeploymentJobRequest

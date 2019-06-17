@@ -553,16 +553,8 @@ public interface AmazonNeptune {
      * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
      * </p>
      * <p>
-     * If the specified DB instance is part of a DB cluster, you can't delete the DB instance if both of the following
-     * conditions are true:
+     * You can't delete a DB instance if it is the only instance in the DB cluster.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The DB instance is the only instance in the DB cluster.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param deleteDBInstanceRequest
      * @return Result of the DeleteDBInstance operation returned by the service.

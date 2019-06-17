@@ -576,7 +576,7 @@ public interface AWSRoboMakerAsync extends AWSRoboMaker {
 
     /**
      * <p>
-     * Describes a deployment job. [Does it work regardless of deployment status, e.g. Failed?]
+     * Describes a deployment job.
      * </p>
      * 
      * @param describeDeploymentJobRequest
@@ -589,7 +589,7 @@ public interface AWSRoboMakerAsync extends AWSRoboMaker {
 
     /**
      * <p>
-     * Describes a deployment job. [Does it work regardless of deployment status, e.g. Failed?]
+     * Describes a deployment job.
      * </p>
      * 
      * @param describeDeploymentJobRequest

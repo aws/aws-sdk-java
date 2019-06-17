@@ -24,6 +24,7 @@ public enum DeploymentJobErrorCode {
     EnvironmentSetupError("EnvironmentSetupError"),
     EtagMismatch("EtagMismatch"),
     FailureThresholdBreached("FailureThresholdBreached"),
+    RobotDeploymentAborted("RobotDeploymentAborted"),
     RobotDeploymentNoResponse("RobotDeploymentNoResponse"),
     RobotAgentConnectionTimeout("RobotAgentConnectionTimeout"),
     GreengrassDeploymentFailed("GreengrassDeploymentFailed"),

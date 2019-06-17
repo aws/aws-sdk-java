@@ -249,6 +249,17 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                     dBCluster.setClusterCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("EnabledCloudwatchLogsExports", targetDepth)) {
+                    dBCluster.withEnabledCloudwatchLogsExports(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("EnabledCloudwatchLogsExports/member", targetDepth)) {
+                    dBCluster.withEnabledCloudwatchLogsExports(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBCluster;

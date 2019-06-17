@@ -123,6 +123,23 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
                     StringUtils.fromBoolean(restoreDBClusterToPointInTimeRequest.getEnableIAMDatabaseAuthentication()));
         }
 
+        if (restoreDBClusterToPointInTimeRequest.getEnableCloudwatchLogsExports() != null) {
+            java.util.List<String> enableCloudwatchLogsExportsList = restoreDBClusterToPointInTimeRequest.getEnableCloudwatchLogsExports();
+            if (enableCloudwatchLogsExportsList.isEmpty()) {
+                request.addParameter("EnableCloudwatchLogsExports", "");
+            } else {
+                int enableCloudwatchLogsExportsListIndex = 1;
+
+                for (String enableCloudwatchLogsExportsListValue : enableCloudwatchLogsExportsList) {
+                    if (enableCloudwatchLogsExportsListValue != null) {
+                        request.addParameter("EnableCloudwatchLogsExports.member." + enableCloudwatchLogsExportsListIndex,
+                                StringUtils.fromString(enableCloudwatchLogsExportsListValue));
+                    }
+                    enableCloudwatchLogsExportsListIndex++;
+                }
+            }
+        }
+
         if (restoreDBClusterToPointInTimeRequest.getDBClusterParameterGroupName() != null) {
             request.addParameter("DBClusterParameterGroupName", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getDBClusterParameterGroupName()));
         }

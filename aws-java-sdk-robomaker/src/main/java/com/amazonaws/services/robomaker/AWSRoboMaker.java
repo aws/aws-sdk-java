@@ -332,6 +332,8 @@ public interface AWSRoboMaker {
      * @throws IdempotentParameterMismatchException
      *         The request uses the same client token as a previous, but non-identical request. Do not reuse a client
      *         token with different requests, unless the requests are identical.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
      * @sample AWSRoboMaker.CreateSimulationJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationJob" target="_top">AWS
      *      API Documentation</a>
@@ -442,7 +444,7 @@ public interface AWSRoboMaker {
 
     /**
      * <p>
-     * Describes a deployment job. [Does it work regardless of deployment status, e.g. Failed?]
+     * Describes a deployment job.
      * </p>
      * 
      * @param describeDeploymentJobRequest

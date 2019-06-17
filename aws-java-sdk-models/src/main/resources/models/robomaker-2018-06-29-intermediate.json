@@ -639,6 +639,10 @@
         "exceptionName" : "IdempotentParameterMismatchException",
         "documentation" : "<p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : "<p>The request has failed due to a temporary failure of the server.</p>",
+        "httpStatusCode" : 503
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -891,7 +895,7 @@
       "asyncReturnType" : "DescribeDeploymentJobResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Describes a deployment job. [Does it work regardless of deployment status, e.g. Failed?]</p>",
+      "documentation" : "<p>Describes a deployment job.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -25014,6 +25018,9 @@
       }, {
         "name" : "FailureThresholdBreached",
         "value" : "FailureThresholdBreached"
+      }, {
+        "name" : "RobotDeploymentAborted",
+        "value" : "RobotDeploymentAborted"
       }, {
         "name" : "RobotDeploymentNoResponse",
         "value" : "RobotDeploymentNoResponse"
@@ -54472,6 +54479,44 @@
         "documentation" : null,
         "simpleType" : "RobotStatus",
         "variableSetterType" : "RobotStatus"
+      },
+      "wrapper" : false
+    },
+    "ServiceUnavailableException" : {
+      "c2jName" : "ServiceUnavailableException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The request has failed due to a temporary failure of the server.</p>",
+      "enums" : null,
+      "errorCode" : "ServiceUnavailableException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ServiceUnavailableException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ServiceUnavailableException",
+        "variableName" : "serviceUnavailableException",
+        "variableType" : "ServiceUnavailableException",
+        "documentation" : null,
+        "simpleType" : "ServiceUnavailableException",
+        "variableSetterType" : "ServiceUnavailableException"
       },
       "wrapper" : false
     },

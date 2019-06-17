@@ -1019,6 +1019,9 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *         One or more parameters provided to the operation are not valid.
      * @throws OperationNotSupportedException
      *         The operation is not supported.
+     * @throws InvalidStateException
+     *         An attempt was made to modify a resource that is in a state that is not valid. Check your resources to
+     *         ensure that they are in valid states before retrying the operation.
      * @sample AWSServiceCatalog.CreatePortfolioShare
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare"
      *      target="_top">AWS API Documentation</a>
@@ -1521,6 +1524,9 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *         One or more parameters provided to the operation are not valid.
      * @throws OperationNotSupportedException
      *         The operation is not supported.
+     * @throws InvalidStateException
+     *         An attempt was made to modify a resource that is in a state that is not valid. Check your resources to
+     *         ensure that they are in valid states before retrying the operation.
      * @sample AWSServiceCatalog.DeletePortfolioShare
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare"
      *      target="_top">AWS API Documentation</a>

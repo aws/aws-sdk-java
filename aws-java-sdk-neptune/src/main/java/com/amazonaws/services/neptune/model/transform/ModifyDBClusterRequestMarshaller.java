@@ -103,6 +103,46 @@ public class ModifyDBClusterRequestMarshaller implements Marshaller<Request<Modi
             request.addParameter("EnableIAMDatabaseAuthentication", StringUtils.fromBoolean(modifyDBClusterRequest.getEnableIAMDatabaseAuthentication()));
         }
 
+        {
+            CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration = modifyDBClusterRequest.getCloudwatchLogsExportConfiguration();
+            if (cloudwatchLogsExportConfiguration != null) {
+
+                if (cloudwatchLogsExportConfiguration.getEnableLogTypes() != null) {
+                    java.util.List<String> enableLogTypesList = cloudwatchLogsExportConfiguration.getEnableLogTypes();
+                    if (enableLogTypesList.isEmpty()) {
+                        request.addParameter("CloudwatchLogsExportConfiguration.EnableLogTypes", "");
+                    } else {
+                        int enableLogTypesListIndex = 1;
+
+                        for (String enableLogTypesListValue : enableLogTypesList) {
+                            if (enableLogTypesListValue != null) {
+                                request.addParameter("CloudwatchLogsExportConfiguration.EnableLogTypes.member." + enableLogTypesListIndex,
+                                        StringUtils.fromString(enableLogTypesListValue));
+                            }
+                            enableLogTypesListIndex++;
+                        }
+                    }
+                }
+
+                if (cloudwatchLogsExportConfiguration.getDisableLogTypes() != null) {
+                    java.util.List<String> disableLogTypesList = cloudwatchLogsExportConfiguration.getDisableLogTypes();
+                    if (disableLogTypesList.isEmpty()) {
+                        request.addParameter("CloudwatchLogsExportConfiguration.DisableLogTypes", "");
+                    } else {
+                        int disableLogTypesListIndex = 1;
+
+                        for (String disableLogTypesListValue : disableLogTypesList) {
+                            if (disableLogTypesListValue != null) {
+                                request.addParameter("CloudwatchLogsExportConfiguration.DisableLogTypes.member." + disableLogTypesListIndex,
+                                        StringUtils.fromString(disableLogTypesListValue));
+                            }
+                            disableLogTypesListIndex++;
+                        }
+                    }
+                }
+            }
+        }
+
         if (modifyDBClusterRequest.getEngineVersion() != null) {
             request.addParameter("EngineVersion", StringUtils.fromString(modifyDBClusterRequest.getEngineVersion()));
         }

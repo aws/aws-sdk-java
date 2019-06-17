@@ -173,6 +173,23 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("EnableIAMDatabaseAuthentication", StringUtils.fromBoolean(createDBClusterRequest.getEnableIAMDatabaseAuthentication()));
         }
 
+        if (createDBClusterRequest.getEnableCloudwatchLogsExports() != null) {
+            java.util.List<String> enableCloudwatchLogsExportsList = createDBClusterRequest.getEnableCloudwatchLogsExports();
+            if (enableCloudwatchLogsExportsList.isEmpty()) {
+                request.addParameter("EnableCloudwatchLogsExports", "");
+            } else {
+                int enableCloudwatchLogsExportsListIndex = 1;
+
+                for (String enableCloudwatchLogsExportsListValue : enableCloudwatchLogsExportsList) {
+                    if (enableCloudwatchLogsExportsListValue != null) {
+                        request.addParameter("EnableCloudwatchLogsExports.member." + enableCloudwatchLogsExportsListIndex,
+                                StringUtils.fromString(enableCloudwatchLogsExportsListValue));
+                    }
+                    enableCloudwatchLogsExportsListIndex++;
+                }
+            }
+        }
+
         return request;
     }
 

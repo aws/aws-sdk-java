@@ -140,6 +140,23 @@ public class RestoreDBClusterFromSnapshotRequestMarshaller implements
                     StringUtils.fromBoolean(restoreDBClusterFromSnapshotRequest.getEnableIAMDatabaseAuthentication()));
         }
 
+        if (restoreDBClusterFromSnapshotRequest.getEnableCloudwatchLogsExports() != null) {
+            java.util.List<String> enableCloudwatchLogsExportsList = restoreDBClusterFromSnapshotRequest.getEnableCloudwatchLogsExports();
+            if (enableCloudwatchLogsExportsList.isEmpty()) {
+                request.addParameter("EnableCloudwatchLogsExports", "");
+            } else {
+                int enableCloudwatchLogsExportsListIndex = 1;
+
+                for (String enableCloudwatchLogsExportsListValue : enableCloudwatchLogsExportsList) {
+                    if (enableCloudwatchLogsExportsListValue != null) {
+                        request.addParameter("EnableCloudwatchLogsExports.member." + enableCloudwatchLogsExportsListIndex,
+                                StringUtils.fromString(enableCloudwatchLogsExportsListValue));
+                    }
+                    enableCloudwatchLogsExportsListIndex++;
+                }
+            }
+        }
+
         if (restoreDBClusterFromSnapshotRequest.getDBClusterParameterGroupName() != null) {
             request.addParameter("DBClusterParameterGroupName", StringUtils.fromString(restoreDBClusterFromSnapshotRequest.getDBClusterParameterGroupName()));
         }
