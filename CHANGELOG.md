@@ -1,3 +1,12 @@
+# __1.11.575__ __2019-06-18__
+## __AWS Resource Groups Tagging API__
+  - ### Features
+    - You can use tag policies to help standardize on tags across your organization's resources.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - You can now launch new 12xlarge, 24xlarge, and metal instance sizes on the Amazon EC2 compute optimized C5 instance types featuring 2nd Gen Intel Xeon Scalable Processors.
+
 # __1.11.574__ __2019-06-17__
 ## __AWS RoboMaker__
   - ### Features

@@ -35,22 +35,79 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String paginationToken;
     /**
      * <p>
-     * A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.
+     * A list of TagFilters (keys and values). Each TagFilter specified must contain a key with values as optional. A
+     * request can include up to 50 keys, and each key can include up to 20 values.
      * </p>
      * <p>
-     * If you specify multiple filters connected by an AND operator in a single request, the response returns only those
-     * resources that are associated with every specified filter.
+     * Note the following when deciding how to use TagFilters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you <i>do</i> specify a TagFilter, the response returns only those resources that are currently associated
+     * with the specified tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you <i>don't</i> specify a TagFilter, the response includes all resources that were ever associated with tags.
+     * Resources that currently don't have associated tags are shown with an empty tag set, like this:
+     * <code>"Tags": []</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify more than one filter in a single request, the response returns only those resources that satisfy
+     * all specified filters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a filter that contains more than one value for a key, the response returns resources that match
+     * any of the specified values for that key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't specify any values for a key, the response returns resources that are tagged with that key
+     * irrespective of the value.
      * </p>
      * <p>
-     * If you specify multiple filters connected by an OR operator in a single request, the response returns all
-     * resources that are associated with at least one or possibly more of the specified filters.
+     * For example, for filters:
+     * <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or key2=value4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag key,
+     * irrespective of its value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
+     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      */
     private java.util.List<TagFilter> tagFilters;
     /**
      * <p>
      * A limit that restricts the number of resources returned by GetResources in paginated output. You can set
-     * ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.
+     * ResourcesPerPage to a minimum of 1 item and the maximum of 100 items.
      * </p>
      */
     private Integer resourcesPerPage;
@@ -68,7 +125,6 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each
      * with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.
      * </p>
-     * <p/>
      * <p>
      * You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.
      * </p>
@@ -78,8 +134,8 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The constraints on the resources that you want returned. The format of each resource type is
      * <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all
-     * tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of
-     * <code>ec2:instance</code> returns only EC2 instances.
+     * Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code>
+     * returns only EC2 instances.
      * </p>
      * <p>
      * The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource
@@ -107,8 +163,42 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the
+     * length constraint requirement applies to each resource type filter.
+     * </p>
      */
     private java.util.List<String> resourceTypeFilters;
+    /**
+     * <p>
+     * Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     * <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     * </p>
+     */
+    private Boolean includeComplianceDetails;
+    /**
+     * <p>
+     * Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if
+     * you are interested in retrieving information on noncompliant resources only.
+     * </p>
+     * <p>
+     * You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.
+     * </p>
+     */
+    private Boolean excludeCompliantResources;
+    /**
+     * <p>
+     * The tag policy to check resources against for compliance. If supplied, the compliance check follows the specified
+     * tag policy instead of following the effective tag policy. Using this parameter to specify a tag policy is useful
+     * for testing new tag policies before attaching them to a target.
+     * </p>
+     * <p>
+     * You can only use this parameter if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.
+     * </p>
+     */
+    private String policy;
 
     /**
      * <p>
@@ -164,26 +254,140 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.
+     * A list of TagFilters (keys and values). Each TagFilter specified must contain a key with values as optional. A
+     * request can include up to 50 keys, and each key can include up to 20 values.
      * </p>
      * <p>
-     * If you specify multiple filters connected by an AND operator in a single request, the response returns only those
-     * resources that are associated with every specified filter.
+     * Note the following when deciding how to use TagFilters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you <i>do</i> specify a TagFilter, the response returns only those resources that are currently associated
+     * with the specified tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you <i>don't</i> specify a TagFilter, the response includes all resources that were ever associated with tags.
+     * Resources that currently don't have associated tags are shown with an empty tag set, like this:
+     * <code>"Tags": []</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify more than one filter in a single request, the response returns only those resources that satisfy
+     * all specified filters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a filter that contains more than one value for a key, the response returns resources that match
+     * any of the specified values for that key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't specify any values for a key, the response returns resources that are tagged with that key
+     * irrespective of the value.
      * </p>
      * <p>
-     * If you specify multiple filters connected by an OR operator in a single request, the response returns all
-     * resources that are associated with at least one or possibly more of the specified filters.
+     * For example, for filters:
+     * <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or key2=value4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag key,
+     * irrespective of its value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
+     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
-     * @return A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20
-     *         values.</p>
+     * @return A list of TagFilters (keys and values). Each TagFilter specified must contain a key with values as
+     *         optional. A request can include up to 50 keys, and each key can include up to 20 values. </p>
      *         <p>
-     *         If you specify multiple filters connected by an AND operator in a single request, the response returns
-     *         only those resources that are associated with every specified filter.
+     *         Note the following when deciding how to use TagFilters:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you <i>do</i> specify a TagFilter, the response returns only those resources that are currently
+     *         associated with the specified tag.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you <i>don't</i> specify a TagFilter, the response includes all resources that were ever associated
+     *         with tags. Resources that currently don't have associated tags are shown with an empty tag set, like
+     *         this: <code>"Tags": []</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you specify more than one filter in a single request, the response returns only those resources that
+     *         satisfy all specified filters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you specify a filter that contains more than one value for a key, the response returns resources that
+     *         match any of the specified values for that key.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you don't specify any values for a key, the response returns resources that are tagged with that key
+     *         irrespective of the value.
      *         </p>
      *         <p>
-     *         If you specify multiple filters connected by an OR operator in a single request, the response returns all
-     *         resources that are associated with at least one or possibly more of the specified filters.
+     *         For example, for filters:
+     *         <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
+     *         key2=value4
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag
+     *         key, irrespective of its value
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
+     *         key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
      */
 
     public java.util.List<TagFilter> getTagFilters() {
@@ -192,27 +396,141 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.
+     * A list of TagFilters (keys and values). Each TagFilter specified must contain a key with values as optional. A
+     * request can include up to 50 keys, and each key can include up to 20 values.
      * </p>
      * <p>
-     * If you specify multiple filters connected by an AND operator in a single request, the response returns only those
-     * resources that are associated with every specified filter.
+     * Note the following when deciding how to use TagFilters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you <i>do</i> specify a TagFilter, the response returns only those resources that are currently associated
+     * with the specified tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you <i>don't</i> specify a TagFilter, the response includes all resources that were ever associated with tags.
+     * Resources that currently don't have associated tags are shown with an empty tag set, like this:
+     * <code>"Tags": []</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify more than one filter in a single request, the response returns only those resources that satisfy
+     * all specified filters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a filter that contains more than one value for a key, the response returns resources that match
+     * any of the specified values for that key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't specify any values for a key, the response returns resources that are tagged with that key
+     * irrespective of the value.
      * </p>
      * <p>
-     * If you specify multiple filters connected by an OR operator in a single request, the response returns all
-     * resources that are associated with at least one or possibly more of the specified filters.
+     * For example, for filters:
+     * <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or key2=value4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag key,
+     * irrespective of its value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
+     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param tagFilters
-     *        A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20
-     *        values.</p>
+     *        A list of TagFilters (keys and values). Each TagFilter specified must contain a key with values as
+     *        optional. A request can include up to 50 keys, and each key can include up to 20 values. </p>
      *        <p>
-     *        If you specify multiple filters connected by an AND operator in a single request, the response returns
-     *        only those resources that are associated with every specified filter.
+     *        Note the following when deciding how to use TagFilters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you <i>do</i> specify a TagFilter, the response returns only those resources that are currently
+     *        associated with the specified tag.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you <i>don't</i> specify a TagFilter, the response includes all resources that were ever associated
+     *        with tags. Resources that currently don't have associated tags are shown with an empty tag set, like this:
+     *        <code>"Tags": []</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify more than one filter in a single request, the response returns only those resources that
+     *        satisfy all specified filters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify a filter that contains more than one value for a key, the response returns resources that
+     *        match any of the specified values for that key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you don't specify any values for a key, the response returns resources that are tagged with that key
+     *        irrespective of the value.
      *        </p>
      *        <p>
-     *        If you specify multiple filters connected by an OR operator in a single request, the response returns all
-     *        resources that are associated with at least one or possibly more of the specified filters.
+     *        For example, for filters:
+     *        <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
+     *        key2=value4
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag
+     *        key, irrespective of its value
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
+     *        key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      */
 
     public void setTagFilters(java.util.Collection<TagFilter> tagFilters) {
@@ -226,16 +544,73 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.
+     * A list of TagFilters (keys and values). Each TagFilter specified must contain a key with values as optional. A
+     * request can include up to 50 keys, and each key can include up to 20 values.
      * </p>
      * <p>
-     * If you specify multiple filters connected by an AND operator in a single request, the response returns only those
-     * resources that are associated with every specified filter.
+     * Note the following when deciding how to use TagFilters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you <i>do</i> specify a TagFilter, the response returns only those resources that are currently associated
+     * with the specified tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you <i>don't</i> specify a TagFilter, the response includes all resources that were ever associated with tags.
+     * Resources that currently don't have associated tags are shown with an empty tag set, like this:
+     * <code>"Tags": []</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify more than one filter in a single request, the response returns only those resources that satisfy
+     * all specified filters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a filter that contains more than one value for a key, the response returns resources that match
+     * any of the specified values for that key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't specify any values for a key, the response returns resources that are tagged with that key
+     * irrespective of the value.
      * </p>
      * <p>
-     * If you specify multiple filters connected by an OR operator in a single request, the response returns all
-     * resources that are associated with at least one or possibly more of the specified filters.
+     * For example, for filters:
+     * <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or key2=value4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag key,
+     * irrespective of its value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
+     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagFilters(java.util.Collection)} or {@link #withTagFilters(java.util.Collection)} if you want to
@@ -243,15 +618,72 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param tagFilters
-     *        A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20
-     *        values.</p>
+     *        A list of TagFilters (keys and values). Each TagFilter specified must contain a key with values as
+     *        optional. A request can include up to 50 keys, and each key can include up to 20 values. </p>
      *        <p>
-     *        If you specify multiple filters connected by an AND operator in a single request, the response returns
-     *        only those resources that are associated with every specified filter.
+     *        Note the following when deciding how to use TagFilters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you <i>do</i> specify a TagFilter, the response returns only those resources that are currently
+     *        associated with the specified tag.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you <i>don't</i> specify a TagFilter, the response includes all resources that were ever associated
+     *        with tags. Resources that currently don't have associated tags are shown with an empty tag set, like this:
+     *        <code>"Tags": []</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify more than one filter in a single request, the response returns only those resources that
+     *        satisfy all specified filters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify a filter that contains more than one value for a key, the response returns resources that
+     *        match any of the specified values for that key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you don't specify any values for a key, the response returns resources that are tagged with that key
+     *        irrespective of the value.
      *        </p>
      *        <p>
-     *        If you specify multiple filters connected by an OR operator in a single request, the response returns all
-     *        resources that are associated with at least one or possibly more of the specified filters.
+     *        For example, for filters:
+     *        <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
+     *        key2=value4
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag
+     *        key, irrespective of its value
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
+     *        key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,27 +699,141 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20 values.
+     * A list of TagFilters (keys and values). Each TagFilter specified must contain a key with values as optional. A
+     * request can include up to 50 keys, and each key can include up to 20 values.
      * </p>
      * <p>
-     * If you specify multiple filters connected by an AND operator in a single request, the response returns only those
-     * resources that are associated with every specified filter.
+     * Note the following when deciding how to use TagFilters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you <i>do</i> specify a TagFilter, the response returns only those resources that are currently associated
+     * with the specified tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you <i>don't</i> specify a TagFilter, the response includes all resources that were ever associated with tags.
+     * Resources that currently don't have associated tags are shown with an empty tag set, like this:
+     * <code>"Tags": []</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify more than one filter in a single request, the response returns only those resources that satisfy
+     * all specified filters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify a filter that contains more than one value for a key, the response returns resources that match
+     * any of the specified values for that key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't specify any values for a key, the response returns resources that are tagged with that key
+     * irrespective of the value.
      * </p>
      * <p>
-     * If you specify multiple filters connected by an OR operator in a single request, the response returns all
-     * resources that are associated with at least one or possibly more of the specified filters.
+     * For example, for filters:
+     * <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or key2=value4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag key,
+     * irrespective of its value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
+     * key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param tagFilters
-     *        A list of tags (keys and values). A request can include up to 50 keys, and each key can include up to 20
-     *        values.</p>
+     *        A list of TagFilters (keys and values). Each TagFilter specified must contain a key with values as
+     *        optional. A request can include up to 50 keys, and each key can include up to 20 values. </p>
      *        <p>
-     *        If you specify multiple filters connected by an AND operator in a single request, the response returns
-     *        only those resources that are associated with every specified filter.
+     *        Note the following when deciding how to use TagFilters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you <i>do</i> specify a TagFilter, the response returns only those resources that are currently
+     *        associated with the specified tag.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you <i>don't</i> specify a TagFilter, the response includes all resources that were ever associated
+     *        with tags. Resources that currently don't have associated tags are shown with an empty tag set, like this:
+     *        <code>"Tags": []</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify more than one filter in a single request, the response returns only those resources that
+     *        satisfy all specified filters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify a filter that contains more than one value for a key, the response returns resources that
+     *        match any of the specified values for that key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you don't specify any values for a key, the response returns resources that are tagged with that key
+     *        irrespective of the value.
      *        </p>
      *        <p>
-     *        If you specify multiple filters connected by an OR operator in a single request, the response returns all
-     *        resources that are associated with at least one or possibly more of the specified filters.
+     *        For example, for filters:
+     *        <code>filter1 = {key1, {value1}}, filter2 = {key2, {value2,value3,value4}} , filter3 = {key3}</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>GetResources( {filter1} )</code> returns resources tagged with key1=value1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetResources( {filter2} )</code> returns resources tagged with key2=value2 or key2=value3 or
+     *        key2=value4
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetResources( {filter3} )</code> returns resources tagged with any tag containing key3 as its tag
+     *        key, irrespective of its value
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetResources( {filter1,filter2,filter3} )</code> returns resources tagged with ( key1=value1) and (
+     *        key2=value2 or key2=value3 or key2=value4) and (key3, irrespective of the value)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,12 +845,12 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A limit that restricts the number of resources returned by GetResources in paginated output. You can set
-     * ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.
+     * ResourcesPerPage to a minimum of 1 item and the maximum of 100 items.
      * </p>
      * 
      * @param resourcesPerPage
      *        A limit that restricts the number of resources returned by GetResources in paginated output. You can set
-     *        ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.
+     *        ResourcesPerPage to a minimum of 1 item and the maximum of 100 items.
      */
 
     public void setResourcesPerPage(Integer resourcesPerPage) {
@@ -314,11 +860,11 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A limit that restricts the number of resources returned by GetResources in paginated output. You can set
-     * ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.
+     * ResourcesPerPage to a minimum of 1 item and the maximum of 100 items.
      * </p>
      * 
      * @return A limit that restricts the number of resources returned by GetResources in paginated output. You can set
-     *         ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.
+     *         ResourcesPerPage to a minimum of 1 item and the maximum of 100 items.
      */
 
     public Integer getResourcesPerPage() {
@@ -328,12 +874,12 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A limit that restricts the number of resources returned by GetResources in paginated output. You can set
-     * ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.
+     * ResourcesPerPage to a minimum of 1 item and the maximum of 100 items.
      * </p>
      * 
      * @param resourcesPerPage
      *        A limit that restricts the number of resources returned by GetResources in paginated output. You can set
-     *        ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.
+     *        ResourcesPerPage to a minimum of 1 item and the maximum of 100 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -356,7 +902,6 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each
      * with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.
      * </p>
-     * <p/>
      * <p>
      * You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.
      * </p>
@@ -374,7 +919,6 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2
      *        resources, each with its 10 tags.
      *        </p>
-     *        <p/>
      *        <p>
      *        You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.
      */
@@ -397,7 +941,6 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each
      * with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.
      * </p>
-     * <p/>
      * <p>
      * You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.
      * </p>
@@ -414,7 +957,6 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         second page displaying the next 10 resources each with its 10 tags, and the third page displaying the
      *         remaining 2 resources, each with its 10 tags.
      *         </p>
-     *         <p/>
      *         <p>
      *         You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.
      */
@@ -437,7 +979,6 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * displaying the first 10 resources, each with its 10 tags, the second page displaying the next 10 resources each
      * with its 10 tags, and the third page displaying the remaining 2 resources, each with its 10 tags.
      * </p>
-     * <p/>
      * <p>
      * You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.
      * </p>
@@ -455,7 +996,6 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        displaying the next 10 resources each with its 10 tags, and the third page displaying the remaining 2
      *        resources, each with its 10 tags.
      *        </p>
-     *        <p/>
      *        <p>
      *        You can set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500 items.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -470,8 +1010,8 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The constraints on the resources that you want returned. The format of each resource type is
      * <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all
-     * tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of
-     * <code>ec2:instance</code> returns only EC2 instances.
+     * Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code>
+     * returns only EC2 instances.
      * </p>
      * <p>
      * The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource
@@ -499,10 +1039,14 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the
+     * length constraint requirement applies to each resource type filter.
+     * </p>
      * 
      * @return The constraints on the resources that you want returned. The format of each resource type is
      *         <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns
-     *         all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of
+     *         all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of
      *         <code>ec2:instance</code> returns only EC2 instances. </p>
      *         <p>
      *         The string for each service name and resource type is the same as that embedded in a resource's Amazon
@@ -530,6 +1074,10 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         (ARNs) and AWS Service Namespaces</a>.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         You can specify multiple resource types by using an array. The array can include up to 100 items. Note
+     *         that the length constraint requirement applies to each resource type filter.
      */
 
     public java.util.List<String> getResourceTypeFilters() {
@@ -540,8 +1088,8 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The constraints on the resources that you want returned. The format of each resource type is
      * <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all
-     * tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of
-     * <code>ec2:instance</code> returns only EC2 instances.
+     * Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code>
+     * returns only EC2 instances.
      * </p>
      * <p>
      * The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource
@@ -569,11 +1117,15 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the
+     * length constraint requirement applies to each resource type filter.
+     * </p>
      * 
      * @param resourceTypeFilters
      *        The constraints on the resources that you want returned. The format of each resource type is
      *        <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns
-     *        all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of
+     *        all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of
      *        <code>ec2:instance</code> returns only EC2 instances. </p>
      *        <p>
      *        The string for each service name and resource type is the same as that embedded in a resource's Amazon
@@ -601,6 +1153,10 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        (ARNs) and AWS Service Namespaces</a>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        You can specify multiple resource types by using an array. The array can include up to 100 items. Note
+     *        that the length constraint requirement applies to each resource type filter.
      */
 
     public void setResourceTypeFilters(java.util.Collection<String> resourceTypeFilters) {
@@ -616,8 +1172,8 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The constraints on the resources that you want returned. The format of each resource type is
      * <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all
-     * tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of
-     * <code>ec2:instance</code> returns only EC2 instances.
+     * Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code>
+     * returns only EC2 instances.
      * </p>
      * <p>
      * The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource
@@ -646,6 +1202,10 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
+     * You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the
+     * length constraint requirement applies to each resource type filter.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResourceTypeFilters(java.util.Collection)} or {@link #withResourceTypeFilters(java.util.Collection)}
      * if you want to override the existing values.
@@ -654,7 +1214,7 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param resourceTypeFilters
      *        The constraints on the resources that you want returned. The format of each resource type is
      *        <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns
-     *        all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of
+     *        all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of
      *        <code>ec2:instance</code> returns only EC2 instances. </p>
      *        <p>
      *        The string for each service name and resource type is the same as that embedded in a resource's Amazon
@@ -682,6 +1242,10 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        (ARNs) and AWS Service Namespaces</a>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        You can specify multiple resource types by using an array. The array can include up to 100 items. Note
+     *        that the length constraint requirement applies to each resource type filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -699,8 +1263,8 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The constraints on the resources that you want returned. The format of each resource type is
      * <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all
-     * tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of
-     * <code>ec2:instance</code> returns only EC2 instances.
+     * Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code>
+     * returns only EC2 instances.
      * </p>
      * <p>
      * The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource
@@ -728,11 +1292,15 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the
+     * length constraint requirement applies to each resource type filter.
+     * </p>
      * 
      * @param resourceTypeFilters
      *        The constraints on the resources that you want returned. The format of each resource type is
      *        <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns
-     *        all tagged Amazon EC2 resources (which includes tagged EC2 instances). Specifying a resource type of
+     *        all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of
      *        <code>ec2:instance</code> returns only EC2 instances. </p>
      *        <p>
      *        The string for each service name and resource type is the same as that embedded in a resource's Amazon
@@ -760,11 +1328,236 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        (ARNs) and AWS Service Namespaces</a>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        You can specify multiple resource types by using an array. The array can include up to 100 items. Note
+     *        that the length constraint requirement applies to each resource type filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetResourcesRequest withResourceTypeFilters(java.util.Collection<String> resourceTypeFilters) {
         setResourceTypeFilters(resourceTypeFilters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     * <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     * </p>
+     * 
+     * @param includeComplianceDetails
+     *        Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     *        <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     */
+
+    public void setIncludeComplianceDetails(Boolean includeComplianceDetails) {
+        this.includeComplianceDetails = includeComplianceDetails;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     * <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     * </p>
+     * 
+     * @return Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     *         <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     */
+
+    public Boolean getIncludeComplianceDetails() {
+        return this.includeComplianceDetails;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     * <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     * </p>
+     * 
+     * @param includeComplianceDetails
+     *        Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     *        <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetResourcesRequest withIncludeComplianceDetails(Boolean includeComplianceDetails) {
+        setIncludeComplianceDetails(includeComplianceDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     * <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     * </p>
+     * 
+     * @return Specifies whether to include details regarding the compliance with the effective tag policy. Set this to
+     *         <code>true</code> to determine whether resources are compliant with the tag policy and to get details.
+     */
+
+    public Boolean isIncludeComplianceDetails() {
+        return this.includeComplianceDetails;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if
+     * you are interested in retrieving information on noncompliant resources only.
+     * </p>
+     * <p>
+     * You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param excludeCompliantResources
+     *        Specifies whether to exclude resources that are compliant with the tag policy. Set this to
+     *        <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
+     *        <p>
+     *        You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     *        <code>true</code>.
+     */
+
+    public void setExcludeCompliantResources(Boolean excludeCompliantResources) {
+        this.excludeCompliantResources = excludeCompliantResources;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if
+     * you are interested in retrieving information on noncompliant resources only.
+     * </p>
+     * <p>
+     * You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @return Specifies whether to exclude resources that are compliant with the tag policy. Set this to
+     *         <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
+     *         <p>
+     *         You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     *         <code>true</code>.
+     */
+
+    public Boolean getExcludeCompliantResources() {
+        return this.excludeCompliantResources;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if
+     * you are interested in retrieving information on noncompliant resources only.
+     * </p>
+     * <p>
+     * You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param excludeCompliantResources
+     *        Specifies whether to exclude resources that are compliant with the tag policy. Set this to
+     *        <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
+     *        <p>
+     *        You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     *        <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetResourcesRequest withExcludeCompliantResources(Boolean excludeCompliantResources) {
+        setExcludeCompliantResources(excludeCompliantResources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if
+     * you are interested in retrieving information on noncompliant resources only.
+     * </p>
+     * <p>
+     * You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @return Specifies whether to exclude resources that are compliant with the tag policy. Set this to
+     *         <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
+     *         <p>
+     *         You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     *         <code>true</code>.
+     */
+
+    public Boolean isExcludeCompliantResources() {
+        return this.excludeCompliantResources;
+    }
+
+    /**
+     * <p>
+     * The tag policy to check resources against for compliance. If supplied, the compliance check follows the specified
+     * tag policy instead of following the effective tag policy. Using this parameter to specify a tag policy is useful
+     * for testing new tag policies before attaching them to a target.
+     * </p>
+     * <p>
+     * You can only use this parameter if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param policy
+     *        The tag policy to check resources against for compliance. If supplied, the compliance check follows the
+     *        specified tag policy instead of following the effective tag policy. Using this parameter to specify a tag
+     *        policy is useful for testing new tag policies before attaching them to a target.</p>
+     *        <p>
+     *        You can only use this parameter if the <code>IncludeComplianceDetails</code> parameter is also set to
+     *        <code>true</code>.
+     */
+
+    public void setPolicy(String policy) {
+        this.policy = policy;
+    }
+
+    /**
+     * <p>
+     * The tag policy to check resources against for compliance. If supplied, the compliance check follows the specified
+     * tag policy instead of following the effective tag policy. Using this parameter to specify a tag policy is useful
+     * for testing new tag policies before attaching them to a target.
+     * </p>
+     * <p>
+     * You can only use this parameter if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @return The tag policy to check resources against for compliance. If supplied, the compliance check follows the
+     *         specified tag policy instead of following the effective tag policy. Using this parameter to specify a tag
+     *         policy is useful for testing new tag policies before attaching them to a target.</p>
+     *         <p>
+     *         You can only use this parameter if the <code>IncludeComplianceDetails</code> parameter is also set to
+     *         <code>true</code>.
+     */
+
+    public String getPolicy() {
+        return this.policy;
+    }
+
+    /**
+     * <p>
+     * The tag policy to check resources against for compliance. If supplied, the compliance check follows the specified
+     * tag policy instead of following the effective tag policy. Using this parameter to specify a tag policy is useful
+     * for testing new tag policies before attaching them to a target.
+     * </p>
+     * <p>
+     * You can only use this parameter if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param policy
+     *        The tag policy to check resources against for compliance. If supplied, the compliance check follows the
+     *        specified tag policy instead of following the effective tag policy. Using this parameter to specify a tag
+     *        policy is useful for testing new tag policies before attaching them to a target.</p>
+     *        <p>
+     *        You can only use this parameter if the <code>IncludeComplianceDetails</code> parameter is also set to
+     *        <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetResourcesRequest withPolicy(String policy) {
+        setPolicy(policy);
         return this;
     }
 
@@ -789,7 +1582,13 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getTagsPerPage() != null)
             sb.append("TagsPerPage: ").append(getTagsPerPage()).append(",");
         if (getResourceTypeFilters() != null)
-            sb.append("ResourceTypeFilters: ").append(getResourceTypeFilters());
+            sb.append("ResourceTypeFilters: ").append(getResourceTypeFilters()).append(",");
+        if (getIncludeComplianceDetails() != null)
+            sb.append("IncludeComplianceDetails: ").append(getIncludeComplianceDetails()).append(",");
+        if (getExcludeCompliantResources() != null)
+            sb.append("ExcludeCompliantResources: ").append(getExcludeCompliantResources()).append(",");
+        if (getPolicy() != null)
+            sb.append("Policy: ").append(getPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -824,6 +1623,18 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getResourceTypeFilters() != null && other.getResourceTypeFilters().equals(this.getResourceTypeFilters()) == false)
             return false;
+        if (other.getIncludeComplianceDetails() == null ^ this.getIncludeComplianceDetails() == null)
+            return false;
+        if (other.getIncludeComplianceDetails() != null && other.getIncludeComplianceDetails().equals(this.getIncludeComplianceDetails()) == false)
+            return false;
+        if (other.getExcludeCompliantResources() == null ^ this.getExcludeCompliantResources() == null)
+            return false;
+        if (other.getExcludeCompliantResources() != null && other.getExcludeCompliantResources().equals(this.getExcludeCompliantResources()) == false)
+            return false;
+        if (other.getPolicy() == null ^ this.getPolicy() == null)
+            return false;
+        if (other.getPolicy() != null && other.getPolicy().equals(this.getPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -837,6 +1648,9 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getResourcesPerPage() == null) ? 0 : getResourcesPerPage().hashCode());
         hashCode = prime * hashCode + ((getTagsPerPage() == null) ? 0 : getTagsPerPage().hashCode());
         hashCode = prime * hashCode + ((getResourceTypeFilters() == null) ? 0 : getResourceTypeFilters().hashCode());
+        hashCode = prime * hashCode + ((getIncludeComplianceDetails() == null) ? 0 : getIncludeComplianceDetails().hashCode());
+        hashCode = prime * hashCode + ((getExcludeCompliantResources() == null) ? 0 : getExcludeCompliantResources().hashCode());
+        hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
         return hashCode;
     }
 

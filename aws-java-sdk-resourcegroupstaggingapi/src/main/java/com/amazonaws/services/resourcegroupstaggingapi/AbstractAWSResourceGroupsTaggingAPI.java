@@ -28,6 +28,36 @@ public class AbstractAWSResourceGroupsTaggingAPI implements AWSResourceGroupsTag
     }
 
     @Override
+    public DeleteTagPolicyResult deleteTagPolicy(DeleteTagPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeReportCreationResult describeReportCreation(DescribeReportCreationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisableTagPoliciesResult disableTagPolicies(DisableTagPoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableTagPoliciesResult enableTagPolicies(EnableTagPoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetComplianceSummaryResult getComplianceSummary(GetComplianceSummaryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetEffectiveTagPolicyResult getEffectiveTagPolicy(GetEffectiveTagPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetResourcesResult getResources(GetResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -38,7 +68,22 @@ public class AbstractAWSResourceGroupsTaggingAPI implements AWSResourceGroupsTag
     }
 
     @Override
+    public GetTagPolicyResult getTagPolicy(GetTagPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTagValuesResult getTagValues(GetTagValuesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutTagPolicyResult putTagPolicy(PutTagPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartReportCreationResult startReportCreation(StartReportCreationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -29,6 +29,8 @@ public class GetTagKeysRequestMarshaller {
 
     private static final MarshallingInfo<String> PAGINATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PaginationToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
 
     private static final GetTagKeysRequestMarshaller instance = new GetTagKeysRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class GetTagKeysRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getTagKeysRequest.getPaginationToken(), PAGINATIONTOKEN_BINDING);
+            protocolMarshaller.marshall(getTagKeysRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
